@@ -429,6 +429,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.Waypoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -441,6 +442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.Waypoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -517,6 +519,7 @@
 				7E16B8851E2D580600933E24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E16B8861E2D580600933E24 /* Build configuration list for PBXNativeTarget "WaypointTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +528,7 @@
 				7E16B8881E2D580600933E24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E16B8891E2D580600933E24 /* Build configuration list for PBXNativeTarget "WaypointUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +537,7 @@
 				7E16B88B1E2D580600933E24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
