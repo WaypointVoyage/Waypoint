@@ -76,6 +76,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DEBBB081E32E0ED00F059C0 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		7E16B84C1E2D580600933E24 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +106,7 @@
 		7E16B8571E2D580600933E24 /* Waypoint */ = {
 			isa = PBXGroup;
 			children = (
+				2DEBBB081E32E0ED00F059C0 /* Scenes */,
 				7E16B8581E2D580600933E24 /* AppDelegate.swift */,
 				7E16B85E1E2D580600933E24 /* GameScene.swift */,
 				7E16B8601E2D580600933E24 /* GameViewController.swift */,
