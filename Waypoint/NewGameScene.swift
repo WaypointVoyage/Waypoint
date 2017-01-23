@@ -11,7 +11,7 @@ import SpriteKit
 class NewGameScene: SKScene {
     let title = SKLabelNode(text: "New Game")
     
-    override func didMove(to view: SKView) {        
+    override func didMove(to view: SKView) {
         title.position = CGPoint(x: frame.midX, y: 0.9 * frame.midY)
         title.fontSize = fontSizeLarge
         title.fontName = tradeWinds
