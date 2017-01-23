@@ -17,6 +17,8 @@ class SplashScene: SKScene {
     let tapToCont = SKLabelNode(text: "Tap to continue ...")
     let fadeIn = SKAction.fadeIn(withDuration: 3.0)
     
+    var canProceed = false
+    
     override func didMove(to view: SKView) {
         
         // setup the title
@@ -32,7 +34,8 @@ class SplashScene: SKScene {
         
         // fade in all fancy
         titleNode.run(.fadeIn(withDuration: 3.0)) {
-            self.tapToCont.run(.fadeIn(withDuration: 1.0))
+            self.canProceed = true
+            self.tapToCont.run(.fadeIn(withDuration: 0.4))
         }
     }
     
@@ -41,6 +44,16 @@ class SplashScene: SKScene {
         label.alpha = 0
         label.fontName = self.fontName
         self.addChild(label)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (!self.canProceed) {
+            returnf
+        }
+        
+        let homeScene = HomeScene()
+        homeScene.scaleMode = .resizeFill
+        self.scene?.view?.presentScene(homeScene)
     }
 
 }
