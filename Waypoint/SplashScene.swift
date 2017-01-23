@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-import GameplayKit
 
 class SplashScene: SKScene {
     
@@ -23,13 +22,13 @@ class SplashScene: SKScene {
         
         // setup the title
         setup(label: titleNode)
-        titleNode.fontSize = 80
+        titleNode.fontSize = fontSizeTitle
         titleNode.fontColor = .cyan
         titleNode.position = CGPoint(x: frame.midX, y: frame.midY)
         
         // tap to continue...
         setup(label: tapToCont)
-        tapToCont.fontSize = 20
+        tapToCont.fontSize = fontSizeMedium
         tapToCont.position = CGPoint(x: frame.midX, y: 0.1 * frame.height)
         
         // fade in all fancy

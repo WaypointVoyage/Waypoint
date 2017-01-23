@@ -12,11 +12,9 @@ class HomeScene: SKScene {
     
     let text = SKLabelNode(text: "Menu")
     
-    override func didMove(to view: SKView) {
-        print("Moved to Home Scene!")
-        
+    override func didMove(to view: SKView) {        
         text.position = CGPoint(x: frame.midX, y: frame.midY)
-        text.fontSize = 70
+        text.fontSize = fontSizeLarge
         text.fontName = tradeWinds
         addChild(text)
     }
