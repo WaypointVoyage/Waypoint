@@ -10,10 +10,10 @@ import SpriteKit
 
 class SplashScene: SKScene {
     
-    let fontName = tradeWinds
+    let fontName = booter
     
     let titleNode = SKLabelNode(text: gameName)
-    let tapToCont = SKLabelNode(text: "Tap to continue ...")
+    let tapToCont = SKLabelNode(text: "Tap to continue...")
     let fadeIn = SKAction.fadeIn(withDuration: 3.0)
     
     var canProceed = false
@@ -28,7 +28,7 @@ class SplashScene: SKScene {
         
         // tap to continue...
         setup(label: tapToCont)
-        tapToCont.fontSize = fontSizeMedium
+        tapToCont.fontSize = fontSizeSmall
         tapToCont.position = CGPoint(x: frame.midX, y: 0.1 * frame.height)
         
         // fade in all fancy

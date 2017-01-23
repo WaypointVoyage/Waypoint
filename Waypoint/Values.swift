@@ -10,8 +10,9 @@ import SpriteKit
 
 let gameName = "Waypoint"
 let tradeWinds = "Trade Winds"
+let booter = "Booter - Five Zero"
 
-let fontSizeTitle = CGFloat(80)
-let fontSizeLarge = CGFloat(40)
-let fontSizeMedium = CGFloat(24)
-let fontSizeSmall = CGFloat(12)
+let fontSizeTitle = CGFloat(100)
+let fontSizeLarge = CGFloat(70)
+let fontSizeMedium = CGFloat(50)
+let fontSizeSmall = CGFloat(30)
