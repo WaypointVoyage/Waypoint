@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7E0D62031E36650B009C8516 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62021E36650B009C8516 /* HomeScene.swift */; };
+		7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */; };
+		7E0D62111E366F5F009C8516 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62101E366F5F009C8516 /* Values.swift */; };
 		7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8581E2D580600933E24 /* AppDelegate.swift */; };
 		7E16B85F1E2D580600933E24 /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B85E1E2D580600933E24 /* SplashScene.swift */; };
 		7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8601E2D580600933E24 /* GameViewController.swift */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		7E0D62021E36650B009C8516 /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TradeWinds-Regular.ttf"; sourceTree = "<group>"; };
+		7E0D62101E366F5F009C8516 /* Values.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		7E16B8551E2D580600933E24 /* Waypoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waypoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E16B8581E2D580600933E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E16B85E1E2D580600933E24 /* SplashScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScene.swift; sourceTree = "<group>"; };
@@ -85,9 +89,18 @@
 			name = Scenes;
 			sourceTree = "<group>";
 		};
+		7E0D620D1E366ED1009C8516 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		7E16B84C1E2D580600933E24 = {
 			isa = PBXGroup;
 			children = (
+				7E0D620D1E366ED1009C8516 /* Fonts */,
 				7E16B8571E2D580600933E24 /* Waypoint */,
 				7E16B8721E2D580600933E24 /* WaypointTests */,
 				7E16B87D1E2D580600933E24 /* WaypointUITests */,
@@ -114,6 +127,7 @@
 				7E16B8621E2D580600933E24 /* Main.storyboard */,
 				7E16B8651E2D580600933E24 /* Assets.xcassets */,
 				7E16B86A1E2D580600933E24 /* Info.plist */,
+				7E0D62101E366F5F009C8516 /* Values.swift */,
 			);
 			path = Waypoint;
 			sourceTree = "<group>";
@@ -245,6 +259,7 @@
 			files = (
 				7E16B8641E2D580600933E24 /* Main.storyboard in Resources */,
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
+				7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +286,7 @@
 			files = (
 				7E16B85F1E2D580600933E24 /* SplashScene.swift in Sources */,
 				7E0D62031E36650B009C8516 /* HomeScene.swift in Sources */,
+				7E0D62111E366F5F009C8516 /* Values.swift in Sources */,
 				7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */,
 				7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */,
 			);

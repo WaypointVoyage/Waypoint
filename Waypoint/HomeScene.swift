@@ -17,6 +17,7 @@ class HomeScene: SKScene {
         
         text.position = CGPoint(x: frame.midX, y: frame.midY)
         text.fontSize = 70
+        text.fontName = tradeWinds
         addChild(text)
     }
 }

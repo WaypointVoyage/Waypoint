@@ -11,9 +11,9 @@ import GameplayKit
 
 class SplashScene: SKScene {
     
-    let fontName = "Zapfino"
+    let fontName = tradeWinds
     
-    let titleNode = SKLabelNode(text: "Waypoint")
+    let titleNode = SKLabelNode(text: gameName)
     let tapToCont = SKLabelNode(text: "Tap to continue ...")
     let fadeIn = SKAction.fadeIn(withDuration: 3.0)
     
