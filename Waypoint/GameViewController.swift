@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            let scene = GameScene()
+            let scene = SplashScene()
             scene.backgroundColor = .blue
             // Set the scale mode to scale to fit the window and present the scene
             scene.scaleMode = .resizeFill // so only this one is working...

@@ -9,19 +9,38 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class SplashScene: SKScene {
+    
+    let fontName = "Zapfino"
+    
+    let titleNode = SKLabelNode(text: "Waypoint")
+    let tapToCont = SKLabelNode(text: "Tap to continue ...")
+    let fadeIn = SKAction.fadeIn(withDuration: 3.0)
     
     override func didMove(to view: SKView) {
         
         // setup the title
-        let titleNode = SKLabelNode(text: "Waypoint")
-        titleNode.zPosition = 1
+        setup(label: titleNode)
         titleNode.fontSize = 80
-        titleNode.fontName = "Zapfino"
         titleNode.fontColor = .cyan
         titleNode.position = CGPoint(x: frame.midX, y: frame.midY)
-        self.addChild(titleNode)
         
+        // tap to continue...
+        setup(label: tapToCont)
+        tapToCont.fontSize = 20
+        tapToCont.position = CGPoint(x: frame.midX, y: 0.1 * frame.height)
+        
+        // fade in all fancy
+        titleNode.run(.fadeIn(withDuration: 3.0)) {
+            self.tapToCont.run(.fadeIn(withDuration: 1.0))
+        }
+    }
+    
+    func setup(label: SKLabelNode) {
+        label.zPosition = 1
+        label.alpha = 0
+        label.fontName = self.fontName
+        self.addChild(label)
     }
 
 }
