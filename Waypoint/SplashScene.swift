@@ -48,7 +48,7 @@ class SplashScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (!self.canProceed) {
-            returnf
+            return
         }
         
         let homeScene = HomeScene()
