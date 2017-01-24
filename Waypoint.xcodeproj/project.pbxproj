@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */; };
-		7E0D62031E36650B009C8516 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62021E36650B009C8516 /* HomeScene.swift */; };
+		7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62021E36650B009C8516 /* WPTHomeScene.swift */; };
 		7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */; };
-		7E0D62111E366F5F009C8516 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62101E366F5F009C8516 /* Values.swift */; };
+		7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62101E366F5F009C8516 /* WPTValues.swift */; };
 		7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8581E2D580600933E24 /* AppDelegate.swift */; };
-		7E16B85F1E2D580600933E24 /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B85E1E2D580600933E24 /* SplashScene.swift */; };
+		7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B85E1E2D580600933E24 /* WPTSplashScene.swift */; };
 		7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8601E2D580600933E24 /* GameViewController.swift */; };
 		7E16B8641E2D580600933E24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E16B8621E2D580600933E24 /* Main.storyboard */; };
 		7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E16B8651E2D580600933E24 /* Assets.xcassets */; };
 		7E16B8741E2D580600933E24 /* WaypointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8731E2D580600933E24 /* WaypointTests.swift */; };
 		7E16B87F1E2D580600933E24 /* WaypointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B87E1E2D580600933E24 /* WaypointUITests.swift */; };
+		7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */; };
+		7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */; };
+		7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +42,12 @@
 
 /* Begin PBXFileReference section */
 		2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOOTERFZ.ttf; sourceTree = "<group>"; };
-		7E0D62021E36650B009C8516 /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		7E0D62021E36650B009C8516 /* WPTHomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHomeScene.swift; sourceTree = "<group>"; };
 		7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TradeWinds-Regular.ttf"; sourceTree = "<group>"; };
-		7E0D62101E366F5F009C8516 /* Values.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
+		7E0D62101E366F5F009C8516 /* WPTValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTValues.swift; sourceTree = "<group>"; };
 		7E16B8551E2D580600933E24 /* Waypoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waypoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E16B8581E2D580600933E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E16B85E1E2D580600933E24 /* SplashScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScene.swift; sourceTree = "<group>"; };
+		7E16B85E1E2D580600933E24 /* WPTSplashScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSplashScene.swift; sourceTree = "<group>"; };
 		7E16B8601E2D580600933E24 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7E16B8631E2D580600933E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E16B8651E2D580600933E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +58,9 @@
 		7E16B87A1E2D580600933E24 /* WaypointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaypointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E16B87E1E2D580600933E24 /* WaypointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointUITests.swift; sourceTree = "<group>"; };
 		7E16B8801E2D580600933E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTNewGameScene.swift; sourceTree = "<group>"; };
+		7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLabelNode.swift; sourceTree = "<group>"; };
+		7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSceneLabelNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +91,9 @@
 		2DEBBB081E32E0ED00F059C0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				7E16B85E1E2D580600933E24 /* SplashScene.swift */,
-				7E0D62021E36650B009C8516 /* HomeScene.swift */,
+				7E16B85E1E2D580600933E24 /* WPTSplashScene.swift */,
+				7E0D62021E36650B009C8516 /* WPTHomeScene.swift */,
+				7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -124,13 +131,14 @@
 		7E16B8571E2D580600933E24 /* Waypoint */ = {
 			isa = PBXGroup;
 			children = (
+				7E7C240D1E37120000E10E7A /* Labels */,
 				2DEBBB081E32E0ED00F059C0 /* Scenes */,
 				7E16B8581E2D580600933E24 /* AppDelegate.swift */,
 				7E16B8601E2D580600933E24 /* GameViewController.swift */,
 				7E16B8621E2D580600933E24 /* Main.storyboard */,
 				7E16B8651E2D580600933E24 /* Assets.xcassets */,
 				7E16B86A1E2D580600933E24 /* Info.plist */,
-				7E0D62101E366F5F009C8516 /* Values.swift */,
+				7E0D62101E366F5F009C8516 /* WPTValues.swift */,
 			);
 			path = Waypoint;
 			sourceTree = "<group>";
@@ -151,6 +159,15 @@
 				7E16B8801E2D580600933E24 /* Info.plist */,
 			);
 			path = WaypointUITests;
+			sourceTree = "<group>";
+		};
+		7E7C240D1E37120000E10E7A /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */,
+				7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */,
+			);
+			name = Labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,11 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E16B85F1E2D580600933E24 /* SplashScene.swift in Sources */,
-				7E0D62031E36650B009C8516 /* HomeScene.swift in Sources */,
-				7E0D62111E366F5F009C8516 /* Values.swift in Sources */,
+				7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */,
+				7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */,
+				7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */,
+				7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */,
+				7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */,
 				7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */,
 				7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */,
+				7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
