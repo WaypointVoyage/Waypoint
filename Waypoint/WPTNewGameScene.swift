@@ -20,8 +20,6 @@ class WPTNewGameScene: SKScene {
         startLabel.position = CGPoint(x: frame.midX, y: 0.1 * frame.height)
         addChild(startLabel)
         
-        let backLabel = WPTSceneLabelNode(text: "<Back", next: WPTHomeScene())
-        backLabel.position = CGPoint(x: 0.1 * frame.width, y: 0.1 * frame.height)
-        addChild(backLabel)
+        addChild(WPTHomeScene.getBack(frame: frame))
     }
 }

@@ -17,9 +17,7 @@ class WPTHighScoresScene: SKScene {
         titleLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
         addChild(titleLabel)
         
-        let back = WPTSceneLabelNode(text: "<Back", next: WPTHomeScene())
-        back.position = CGPoint(x: 0.1 * frame.width, y: 0.1 * frame.height)
-        addChild(back)
+        addChild(WPTHomeScene.getBack(frame: frame))
     }
     
 }
