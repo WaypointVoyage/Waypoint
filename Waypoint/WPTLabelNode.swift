@@ -19,6 +19,7 @@ class WPTLabelNode: SKLabelNode {
         
         self.text = text
         self.fontSize = fontSize
+        self.zPosition = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
