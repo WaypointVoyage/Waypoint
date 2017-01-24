@@ -21,6 +21,7 @@
 		7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */; };
 		7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */; };
 		7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */; };
+		7ED2206B1E371EDE00D2AA68 /* WPTHighScoresScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED2206A1E371EDE00D2AA68 /* WPTHighScoresScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTNewGameScene.swift; sourceTree = "<group>"; };
 		7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLabelNode.swift; sourceTree = "<group>"; };
 		7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSceneLabelNode.swift; sourceTree = "<group>"; };
+		7ED2206A1E371EDE00D2AA68 /* WPTHighScoresScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHighScoresScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				7E16B85E1E2D580600933E24 /* WPTSplashScene.swift */,
 				7E0D62021E36650B009C8516 /* WPTHomeScene.swift */,
 				7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */,
+				7ED2206A1E371EDE00D2AA68 /* WPTHighScoresScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			files = (
 				7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */,
 				7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */,
+				7ED2206B1E371EDE00D2AA68 /* WPTHighScoresScene.swift in Sources */,
 				7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */,
 				7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */,
 				7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */,

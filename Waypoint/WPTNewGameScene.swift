@@ -12,7 +12,6 @@ class WPTNewGameScene: SKScene {
     
     let headerLabel = WPTLabelNode(text: "New Game", fontSize: fontSizeLarge)
     let startLabel = WPTLabelNode(text: "Start", fontSize: fontSizeMedium)
-    let backLabel = WPTSceneLabelNode(text: "< Back", next: WPTHomeScene())
     
     override func didMove(to view: SKView) {
         headerLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
@@ -21,6 +20,7 @@ class WPTNewGameScene: SKScene {
         startLabel.position = CGPoint(x: frame.midX, y: 0.1 * frame.height)
         addChild(startLabel)
         
+        let backLabel = WPTSceneLabelNode(text: "<Back", next: WPTHomeScene())
         backLabel.position = CGPoint(x: 0.1 * frame.width, y: 0.1 * frame.height)
         addChild(backLabel)
     }

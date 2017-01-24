@@ -11,7 +11,7 @@ import SpriteKit
 class WPTHomeScene: SKScene {
     
     let newGame = WPTSceneLabelNode(text: "New Game", next: WPTNewGameScene())
-    let highScores = WPTLabelNode(text: "View High Scores", fontSize: fontSizeMedium)
+    let highScores = WPTSceneLabelNode(text: "High Scores", next: WPTHighScoresScene())
     
     override func didMove(to view: SKView) {        
         newGame.position = CGPoint(x: frame.midX, y: frame.midY+30)
