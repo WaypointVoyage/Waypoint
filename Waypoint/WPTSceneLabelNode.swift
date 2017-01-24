@@ -12,10 +12,6 @@ class WPTSceneLabelNode: WPTLabelNode {
     
     var nextScene: SKScene?
     
-    override init() {
-        super.init()
-    }
-    
     init(text: String, next: SKScene) {
         super.init(text: text, fontSize: fontSizeMedium)
         self.nextScene = next

@@ -10,22 +10,18 @@ import SpriteKit
 
 class WPTNewGameScene: SKScene {
     
-    let headerLabel = SKLabelNode(text: "New Game")
-    let startLabel = SKLabelNode(text: "Start")
+    let headerLabel = WPTLabelNode(text: "New Game", fontSize: fontSizeLarge)
+    let startLabel = WPTLabelNode(text: "Start", fontSize: fontSizeMedium)
+    let backLabel = WPTSceneLabelNode(text: "< Back", next: WPTHomeScene())
     
     override func didMove(to view: SKView) {
-        
-        // setup the header
-        headerLabel.fontName = booter
         headerLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
-        headerLabel.fontSize = fontSizeLarge
-        
-        // setup the start label
-        startLabel.fontName = booter
-        startLabel.position = CGPoint(x: frame.midX, y: 0.12 * frame.midY)
-        startLabel.fontSize = fontSizeMedium
-        
         addChild(headerLabel)
+        
+        startLabel.position = CGPoint(x: frame.midX, y: 0.1 * frame.height)
         addChild(startLabel)
+        
+        backLabel.position = CGPoint(x: 0.1 * frame.width, y: 0.1 * frame.height)
+        addChild(backLabel)
     }
 }
