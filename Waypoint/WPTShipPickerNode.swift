@@ -13,46 +13,54 @@ class WPTShipPickerNode: SKNode {
     let ARROW_SIZE = 40
     
     let ships: [WPTShip]
+    var shipTextures = [SKTexture]()
     var index = 0
     
     let leftArrow = SKSpriteNode(imageNamed: "chevron")
     let rightArrow = SKSpriteNode(imageNamed: "chevron")
+    var shipImage = SKSpriteNode(imageNamed: "box")
     
     var width: CGFloat?
     var height: CGFloat?
-    
-    init(ships: [WPTShip]) {
-        self.ships = ships
-        super.init()
-        assert(self.ships.count >= 1, "At least one ship is required!")
-        
-        isUserInteractionEnabled = true
-        
-        leftArrow.name = "leftArrow"
-        rightArrow.name = "rightArrow"
-        
-        rightArrow.zRotation = CGFloat.pi
-        leftArrow.size = CGSize(width: ARROW_SIZE, height: ARROW_SIZE)
-        rightArrow.size = leftArrow.size
-        
-        leftArrow.anchorPoint = CGPoint(x: 0, y: 0.5)
-        rightArrow.anchorPoint = CGPoint(x: 0, y: 0.5)
-        
-        addChild(leftArrow)
-        addChild(rightArrow)
-        
-        leftArrow.zPosition = 5
-        rightArrow.zPosition = 5
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     var currentShip: WPTShip {
         get {
             return ships[index]
         }
+    }
+    
+    var currentShipTexture: SKTexture {
+        get{
+            return shipTextures[index]
+        }
+    }
+    
+    init(ships: [WPTShip]) {
+        self.ships = ships
+        super.init()
+        assert(self.ships.count >= 1, "At least one ship is required!")
+        isUserInteractionEnabled = true
+        
+        // setup the arrows
+        rightArrow.zRotation = CGFloat.pi
+        leftArrow.size = CGSize(width: ARROW_SIZE, height: ARROW_SIZE)
+        rightArrow.size = leftArrow.size
+        leftArrow.anchorPoint = CGPoint(x: 0, y: 0.5)
+        rightArrow.anchorPoint = CGPoint(x: 0, y: 0.5)
+        addChild(leftArrow)
+        addChild(rightArrow)
+        
+        // setup the ship image
+        for ship in self.ships {
+            shipTextures.append(SKTexture(imageNamed: ship.imageName))
+        }
+        shipImage.texture = currentShipTexture
+        shipImage.position = CGPoint.zero
+        addChild(shipImage)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func setSize(width: CGFloat, height: CGFloat) {
@@ -61,6 +69,7 @@ class WPTShipPickerNode: SKNode {
         
         leftArrow.position = CGPoint(x: -width / 2, y: 0)
         rightArrow.position = CGPoint(x: width / 2, y: 0)
+        shipImage.size = CGSize(width: 0.9 * height, height: 0.9 * height)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -79,5 +88,6 @@ class WPTShipPickerNode: SKNode {
         if index < 0 { // so the % operator in swift is stupid.... -1 % 3 = -1. Not 2
             index += ships.count
         }
+        shipImage.texture = currentShipTexture
     }
 }
