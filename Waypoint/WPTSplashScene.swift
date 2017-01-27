@@ -28,7 +28,7 @@ class WPTSplashScene: SKScene {
         // setup the title
         titleNode.alpha = 0
         titleNode.fontColor = .black
-        titleNode.position = CGPoint(x: frame.midX, y: frame.midY)
+        titleNode.position = CGPoint(x: frame.midX, y: 0.75 * frame.height)
         addChild(titleNode)
         
         // tap to continue...

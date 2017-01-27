@@ -25,6 +25,7 @@
 		7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */; };
 		7ED2206B1E371EDE00D2AA68 /* WPTHighScoresScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED2206A1E371EDE00D2AA68 /* WPTHighScoresScene.swift */; };
 		7ED2206D1E37215F00D2AA68 /* WPTSecretMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED2206C1E37215F00D2AA68 /* WPTSecretMessage.swift */; };
+		7EF61E8C1E3B057900CB4CAB /* WPTShipPickerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF61E8B1E3B057900CB4CAB /* WPTShipPickerNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSceneLabelNode.swift; sourceTree = "<group>"; };
 		7ED2206A1E371EDE00D2AA68 /* WPTHighScoresScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHighScoresScene.swift; sourceTree = "<group>"; };
 		7ED2206C1E37215F00D2AA68 /* WPTSecretMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSecretMessage.swift; sourceTree = "<group>"; };
+		7EF61E8B1E3B057900CB4CAB /* WPTShipPickerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipPickerNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +152,8 @@
 		7E16B8571E2D580600933E24 /* Waypoint */ = {
 			isa = PBXGroup;
 			children = (
+				7EF61E891E3B056200CB4CAB /* Nodes */,
 				2D8E804C1E3ADBAF00CB2E0B /* Models */,
-				7E7C240D1E37120000E10E7A /* Labels */,
 				2DEBBB081E32E0ED00F059C0 /* Scenes */,
 				7E16B8581E2D580600933E24 /* AppDelegate.swift */,
 				7E16B8601E2D580600933E24 /* GameViewController.swift */,
@@ -181,13 +183,22 @@
 			path = WaypointUITests;
 			sourceTree = "<group>";
 		};
-		7E7C240D1E37120000E10E7A /* Labels */ = {
+		7EF61E891E3B056200CB4CAB /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				7EF61E8A1E3B056800CB4CAB /* UI */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
+		7EF61E8A1E3B056800CB4CAB /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */,
 				7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */,
+				7EF61E8B1E3B057900CB4CAB /* WPTShipPickerNode.swift */,
 			);
-			name = Labels;
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF61E8C1E3B057900CB4CAB /* WPTShipPickerNode.swift in Sources */,
 				7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */,
 				7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */,
 				7ED2206B1E371EDE00D2AA68 /* WPTHighScoresScene.swift in Sources */,
