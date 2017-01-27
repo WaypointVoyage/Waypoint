@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */; };
+		2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */; };
+		2D8E804E1E3ADBC400CB2E0B /* WPTShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */; };
 		7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62021E36650B009C8516 /* WPTHomeScene.swift */; };
 		7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */; };
 		7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62101E366F5F009C8516 /* WPTValues.swift */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOOTERFZ.ttf; sourceTree = "<group>"; };
+		2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSettingsScene.swift; sourceTree = "<group>"; };
+		2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShip.swift; sourceTree = "<group>"; };
 		7E0D62021E36650B009C8516 /* WPTHomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHomeScene.swift; sourceTree = "<group>"; };
 		7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TradeWinds-Regular.ttf"; sourceTree = "<group>"; };
 		7E0D62101E366F5F009C8516 /* WPTValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTValues.swift; sourceTree = "<group>"; };
@@ -92,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D8E804C1E3ADBAF00CB2E0B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		2DEBBB081E32E0ED00F059C0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 				7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */,
 				7ED2206A1E371EDE00D2AA68 /* WPTHighScoresScene.swift */,
 				7ED2206C1E37215F00D2AA68 /* WPTSecretMessage.swift */,
+				2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -137,6 +150,7 @@
 		7E16B8571E2D580600933E24 /* Waypoint */ = {
 			isa = PBXGroup;
 			children = (
+				2D8E804C1E3ADBAF00CB2E0B /* Models */,
 				7E7C240D1E37120000E10E7A /* Labels */,
 				2DEBBB081E32E0ED00F059C0 /* Scenes */,
 				7E16B8581E2D580600933E24 /* AppDelegate.swift */,
@@ -316,11 +330,13 @@
 				7ED2206B1E371EDE00D2AA68 /* WPTHighScoresScene.swift in Sources */,
 				7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */,
 				7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */,
+				2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */,
 				7ED2206D1E37215F00D2AA68 /* WPTSecretMessage.swift in Sources */,
 				7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */,
 				7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */,
 				7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */,
 				7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */,
+				2D8E804E1E3ADBC400CB2E0B /* WPTShip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
