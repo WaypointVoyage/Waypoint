@@ -45,8 +45,8 @@ class WPTShipPickerNode: SKNode {
         rightArrow.zRotation = CGFloat.pi
         leftArrow.size = CGSize(width: ARROW_SIZE, height: ARROW_SIZE)
         rightArrow.size = leftArrow.size
-        leftArrow.anchorPoint = CGPoint(x: 0, y: 0.5)
-        rightArrow.anchorPoint = CGPoint(x: 0, y: 0.5)
+        leftArrow.anchorPoint = CGPoint(x: -1, y: 0.5)
+        rightArrow.anchorPoint = CGPoint(x: -1, y: 0.5)
         addChild(leftArrow)
         addChild(rightArrow)
         
@@ -69,7 +69,7 @@ class WPTShipPickerNode: SKNode {
         
         leftArrow.position = CGPoint(x: -width / 2, y: 0)
         rightArrow.position = CGPoint(x: width / 2, y: 0)
-        shipImage.size = CGSize(width: 0.9 * height, height: 0.9 * height)
+        shipImage.size = CGSize(width: 0.6 * height, height: 0.6 * height)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
