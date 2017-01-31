@@ -23,6 +23,11 @@ class WPTNewGameScene: SKScene {
         headerLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
         addChild(headerLabel)
         
+        /* TESTING SHIP VALUES */
+        for ship in ships {
+            ship.initStats(speedScale: randStat(), damageScale: randStat(), healthScale: randStat(), rangeScale: randStat(), shotSpeedScale: randStat());
+        }
+        
         let shipPicker = WPTShipPickerNode(ships: ships)
         shipPicker.position = CGPoint(x: 0.35 * frame.width, y: frame.midY)
         shipPicker.setSize(width: 0.6 * frame.width, height: 0.6 * frame.height)
@@ -51,4 +56,9 @@ class WPTNewGameScene: SKScene {
         
         
     }
+    
+    func randStat() -> Double {
+        return (Double(arc4random()) / Double(UInt32.max)) * 2 - 1
+    }
+    
 }
