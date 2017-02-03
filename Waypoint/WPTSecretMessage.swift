@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class WPTSecretMessage: SKScene {
+class WPTSecretMessage: WPTScene {
     
     let color: UIColor = .yellow
     let fontName: String = "HoeflerText-BlackItalic"
@@ -18,6 +18,8 @@ class WPTSecretMessage: SKScene {
     let face = WPTLabelNode(text: "🎈 🎂 😀", fontSize: 90)
     
     override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        
         self.backgroundColor = .blue
         
         message1.fontName = self.fontName

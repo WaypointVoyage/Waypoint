@@ -8,11 +8,12 @@
 
 import SpriteKit
 
-class WPTHighScoresScene: SKScene {
+class WPTHighScoresScene: WPTScene {
     
     let titleLabel = WPTLabelNode(text: "High Scores", fontSize: fontSizeLarge)
     
     override func didMove(to view: SKView) {
+        super.didMove(to: view)
         
         titleLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
         addChild(titleLabel)

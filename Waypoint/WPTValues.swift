@@ -9,6 +9,7 @@
 import SpriteKit
 
 let gameName = "Waypoint"
+
 let tradeWinds = "Trade Winds"
 let booter = "Booter - Five Zero"
 

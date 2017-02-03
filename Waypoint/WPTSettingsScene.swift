@@ -8,11 +8,13 @@
 
 import SpriteKit
 
-class WPTSettingsScene: SKScene {
+class WPTSettingsScene: WPTScene {
     
     let headerLabel = WPTLabelNode(text: "Settings", fontSize: fontSizeLarge)
     
     override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        
         headerLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
         addChild(headerLabel)
         

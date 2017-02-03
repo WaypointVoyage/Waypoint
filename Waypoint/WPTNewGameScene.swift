@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class WPTNewGameScene: SKScene {
+class WPTNewGameScene: WPTScene {
     
     let headerLabel = WPTLabelNode(text: "New Game", fontSize: fontSizeLarge)
     let startLabel = WPTLabelNode(text: "Start", fontSize: fontSizeMedium)
@@ -21,6 +21,8 @@ class WPTNewGameScene: SKScene {
     var shipPicker: WPTShipPickerNode?
     
     override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        
         headerLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
         addChild(headerLabel)
         

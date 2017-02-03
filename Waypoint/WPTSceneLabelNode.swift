@@ -27,7 +27,6 @@ class WPTSceneLabelNode: WPTLabelNode {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        nextScene?.scaleMode = .resizeFill
         self.scene?.view?.presentScene(nextScene)
     }
 }
