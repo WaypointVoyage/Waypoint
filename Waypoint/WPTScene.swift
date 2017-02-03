@@ -13,7 +13,7 @@ class WPTScene: SKScene {
     var aspectRatio: CGFloat = 1.0
     
     override func didMove(to view: SKView) {
-        self.scaleMode = SKSceneScaleMode.fill
+        self.scaleMode = SKSceneScaleMode.resizeFill
         self.size = view.frame.size
         
         self.aspectRatio = self.size.width / self.size.height
