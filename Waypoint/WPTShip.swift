@@ -10,7 +10,7 @@ import Foundation
 
 class WPTShip {
     let imageName: String
-    let shipName = ""
+    
     var speedScale = 1.0
     var damageScale = 1.0   //cannonball damage
     var healthScale = 1.0
