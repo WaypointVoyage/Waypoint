@@ -11,7 +11,7 @@ import Foundation
 class WPTActor {
     // ship
     var shipName: String
-    var ship: WPTShip
+    var ship: WPTShip;
     
     // currency
     var doubloons: Int = 0 {
