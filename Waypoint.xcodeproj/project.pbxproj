@@ -14,6 +14,11 @@
 		7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */; };
 		7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62101E366F5F009C8516 /* WPTValues.swift */; };
 		7E13F6231E48E22900B5D2FD /* ActorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13F6221E48E22900B5D2FD /* ActorTests.swift */; };
+		7E13F6251E48E51000B5D2FD /* WPTConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13F6241E48E51000B5D2FD /* WPTConfig.swift */; };
+		7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 7E13F62D1E48ECAD00B5D2FD /* sword1.caf */; };
+		7E13F6301E48F50200B5D2FD /* WPTWorldScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13F62F1E48F50200B5D2FD /* WPTWorldScene.swift */; };
+		7E13F6321E48F53200B5D2FD /* WPTLevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13F6311E48F53200B5D2FD /* WPTLevelScene.swift */; };
+		7E13F6341E48F8B900B5D2FD /* WPTPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13F6331E48F8B900B5D2FD /* WPTPlayer.swift */; };
 		7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8581E2D580600933E24 /* AppDelegate.swift */; };
 		7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B85E1E2D580600933E24 /* WPTSplashScene.swift */; };
 		7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8601E2D580600933E24 /* GameViewController.swift */; };
@@ -58,6 +63,11 @@
 		7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TradeWinds-Regular.ttf"; sourceTree = "<group>"; };
 		7E0D62101E366F5F009C8516 /* WPTValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTValues.swift; sourceTree = "<group>"; };
 		7E13F6221E48E22900B5D2FD /* ActorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorTests.swift; sourceTree = "<group>"; };
+		7E13F6241E48E51000B5D2FD /* WPTConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTConfig.swift; sourceTree = "<group>"; };
+		7E13F62D1E48ECAD00B5D2FD /* sword1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sword1.caf; sourceTree = "<group>"; };
+		7E13F62F1E48F50200B5D2FD /* WPTWorldScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWorldScene.swift; sourceTree = "<group>"; };
+		7E13F6311E48F53200B5D2FD /* WPTLevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelScene.swift; sourceTree = "<group>"; };
+		7E13F6331E48F8B900B5D2FD /* WPTPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayer.swift; sourceTree = "<group>"; };
 		7E16B8551E2D580600933E24 /* Waypoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waypoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E16B8581E2D580600933E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E16B85E1E2D580600933E24 /* WPTSplashScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSplashScene.swift; sourceTree = "<group>"; };
@@ -114,6 +124,7 @@
 				2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */,
 				7ED739021E44F3B600122903 /* WPTActor.swift */,
 				7ED739041E44F9E100122903 /* WPTItem.swift */,
+				7E13F6331E48F8B900B5D2FD /* WPTPlayer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -128,6 +139,8 @@
 				7ED2206C1E37215F00D2AA68 /* WPTSecretMessage.swift */,
 				2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */,
 				7E5F06551E438A2300EAC166 /* WPTScene.swift */,
+				7E13F62F1E48F50200B5D2FD /* WPTWorldScene.swift */,
+				7E13F6311E48F53200B5D2FD /* WPTLevelScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -141,9 +154,34 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		7E13F6281E48EA7400B5D2FD /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				7E13F62A1E48EA7E00B5D2FD /* Music */,
+				7E13F6291E48EA7800B5D2FD /* Effects */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
+		7E13F6291E48EA7800B5D2FD /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				7E13F62D1E48ECAD00B5D2FD /* sword1.caf */,
+			);
+			name = Effects;
+			sourceTree = "<group>";
+		};
+		7E13F62A1E48EA7E00B5D2FD /* Music */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
 		7E16B84C1E2D580600933E24 = {
 			isa = PBXGroup;
 			children = (
+				7E13F6281E48EA7400B5D2FD /* Sound */,
 				7E0D620D1E366ED1009C8516 /* Fonts */,
 				7E16B8571E2D580600933E24 /* Waypoint */,
 				7E16B8721E2D580600933E24 /* WaypointTests */,
@@ -174,6 +212,7 @@
 				7E16B8651E2D580600933E24 /* Assets.xcassets */,
 				7E16B86A1E2D580600933E24 /* Info.plist */,
 				7E0D62101E366F5F009C8516 /* WPTValues.swift */,
+				7E13F6241E48E51000B5D2FD /* WPTConfig.swift */,
 			);
 			path = Waypoint;
 			sourceTree = "<group>";
@@ -327,6 +366,7 @@
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
 				7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */,
 				2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */,
+				7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,11 +402,15 @@
 				7E5F06561E438A2300EAC166 /* WPTScene.swift in Sources */,
 				2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */,
 				7ED2206D1E37215F00D2AA68 /* WPTSecretMessage.swift in Sources */,
+				7E13F6341E48F8B900B5D2FD /* WPTPlayer.swift in Sources */,
+				7E13F6321E48F53200B5D2FD /* WPTLevelScene.swift in Sources */,
 				7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */,
 				7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */,
 				7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */,
 				7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */,
+				7E13F6251E48E51000B5D2FD /* WPTConfig.swift in Sources */,
 				2D8E804E1E3ADBC400CB2E0B /* WPTShip.swift in Sources */,
+				7E13F6301E48F50200B5D2FD /* WPTWorldScene.swift in Sources */,
 				7ED739011E44EBF500122903 /* WPTWorldMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +556,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.Waypoint;
@@ -525,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.Waypoint;

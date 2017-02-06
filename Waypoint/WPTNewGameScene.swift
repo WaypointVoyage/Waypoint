@@ -11,7 +11,8 @@ import SpriteKit
 class WPTNewGameScene: WPTScene {
     
     let headerLabel = WPTLabelNode(text: "New Game", fontSize: fontSizeLarge)
-    let startLabel = WPTLabelNode(text: "Start", fontSize: fontSizeMedium)
+    var startLabel = WPTLabelNode(text: "Start", fontSize: fontSizeMedium)
+    
     let healthLabel = WPTLabelNode(text: "", fontSize: fontSizeSmall);
     let speedLabel = WPTLabelNode(text: "", fontSize: fontSizeSmall);
     let damageLabel = WPTLabelNode(text: "", fontSize: fontSizeSmall);
@@ -45,6 +46,7 @@ class WPTNewGameScene: WPTScene {
 
         startLabel.position = CGPoint(x: frame.midX, y: 0.1 * frame.height)
         addChild(startLabel)
+        
         addChild(WPTHomeScene.getBack(frame: frame))
     }
     
@@ -65,4 +67,13 @@ class WPTNewGameScene: WPTScene {
         return (Double(arc4random()) / Double(UInt32.max)) * 2 - 1
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        if self.startLabel.contains(touch.location(in: self)) {
+            // TODO: get the ship's name
+            let player = WPTPlayer(shipName: "PLAYER_SHIP_NAME", ship: (self.shipPicker?.currentShip)!)
+            
+            self.view?.presentScene(WPTWorldScene(player: player))
+        }
+    }
 }
