@@ -13,6 +13,7 @@ import GameplayKit
 class WPTTrailMapNode: SKNode {
     
     var path: CGPath?
+    let trailShader = SKShader(fileNamed: "trail_shader.fsh")
     
     override init() {
         super.init()
@@ -23,16 +24,17 @@ class WPTTrailMapNode: SKNode {
     }
     
     func position(for scene: WPTScene) {
+        self.removeAllChildren()
+        
         let h = scene.frame.width / maxAspectRatio
         let ymin = (scene.frame.height - h) / 2.0;
         self.position = CGPoint(x: 0, y: ymin)
         
         self.path = WPTTrailMapNode.setupTrailMap(size: CGSize(width: scene.frame.width, height: h))
         let trail = SKShapeNode(path: (self.path)!)
-        trail.fillColor = UIColor.clear
-        trail.strokeColor = UIColor.red
+        trail.lineWidth = 5
+        trail.strokeShader = trailShader
         
-        self.removeAllChildren()
         self.addChild(trail)
     }
     
