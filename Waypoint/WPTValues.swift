@@ -20,3 +20,5 @@ let fontSizeSmall = CGFloat(30)
 let fontSizeMiniscule = CGFloat(14)
 
 let statFormat = "%.2f"
+
+let maxAspectRatio: CGFloat = 16.0 / 9.0

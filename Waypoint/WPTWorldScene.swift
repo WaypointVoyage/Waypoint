@@ -7,10 +7,12 @@
 //
 
 import SpriteKit
+import UIKit
 
 class WPTWorldScene: WPTScene {
     
-    let worldMap = WPTWorldMap()
+    let worldMap = WPTWorldMapNode()
+    let trailMap = WPTTrailMapNode()
     
     var player: WPTPlayer
     
@@ -28,5 +30,9 @@ class WPTWorldScene: WPTScene {
         
         worldMap.position(for: self)
         self.addChild(worldMap)
+        
+        trailMap.zPosition = 1
+        trailMap.position(for: self)
+        self.addChild(trailMap)
     }
 }

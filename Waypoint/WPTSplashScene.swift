@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTSplashScene: WPTScene {
     
-    let background = WPTWorldMap()
+    let background = WPTWorldMapNode()
     
     let titleNode = WPTLabelNode(text: gameName, fontSize: fontSizeTitle)
     let tapToCont = WPTLabelNode(text: "Tap to continue...", fontSize: fontSizeSmall)
