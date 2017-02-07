@@ -26,9 +26,8 @@ class WPTTrailMapNode: SKNode {
         let h = scene.frame.width / maxAspectRatio
         let ymin = (scene.frame.height - h) / 2.0;
         self.position = CGPoint(x: 0, y: ymin)
-//        self.setScale(scene.frame.width)
         
-        self.path = WPTTrailMapNode.setupTrailMap(size: scene.frame.size)
+        self.path = WPTTrailMapNode.setupTrailMap(size: CGSize(width: scene.frame.width, height: h))
         let trail = SKShapeNode(path: (self.path)!)
         trail.fillColor = UIColor.clear
         trail.strokeColor = UIColor.red
