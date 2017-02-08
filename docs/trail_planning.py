@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
+import json
+
 map_size = (2732.0, 2049.0)
 aspect_ratio = 16.0 / 9.0
 h = map_size[0] / aspect_ratio
-print("h: {}".format(h))
 ymin = (map_size[1] - h) / 2.0
 ymax = ymin + h
 
@@ -51,24 +52,28 @@ def convert_x(x):
 def convert_y(y):
     return 1 - (y - ymin) / h
 
-for i in range(point_count):
-    if i == 0:
-        p = points[0]
-        print("path.move(to: WPTTrailMapNode.scaledPoint(x: {}, y: {}, size: size))".format(
-            convert_x(p[0]), convert_y(p[1])
-        ))
-    else:
-        target = points[3 * i]
-        other1 = points[3 * i - 2]
-        other2 = points[3 * i - 1]
-        print("path.addCurve(to: {}, controlPoint1: {}, controlPoint2: {})".format(
-            "WPTTrailMapNode.scaledPoint(x: {}, y: {}, size: size)".format(
-                convert_x(target[0]), convert_y(target[1])
-            ),
-            "WPTTrailMapNode.scaledPoint(x: {}, y: {}, size: size)".format(
-                convert_x(other1[0]), convert_y(other1[1])
-            ),
-            "WPTTrailMapNode.scaledPoint(x: {}, y: {}, size: size)".format(
-                convert_x(other2[0]), convert_y(other2[1])
-            )
-        ))
+def point_to_dict(point):
+    return {
+        'x': convert_x(point[0]),
+        'y': convert_y(point[1]),
+    }
+
+def path_to_dict():
+    path = {}
+    path['startPoint'] = point_to_dict(points[0])
+
+    pointSets = []
+    for i in range(1, point_count):
+        pointSet = {
+            'target': point_to_dict(points[3 * i]),
+            'controlPoint1': point_to_dict(points[3 * i - 2]),
+            'controlPoint2': point_to_dict(points[3 * i - 1]),
+        }
+        pointSets.append(pointSet)
+    path['points'] = pointSets
+
+    return path
+
+if __name__ == "__main__":
+    path = path_to_dict()
+    print(json.dumps(path))
