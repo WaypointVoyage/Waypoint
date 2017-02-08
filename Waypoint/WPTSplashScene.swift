@@ -45,7 +45,7 @@ class WPTSplashScene: WPTScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if (self.canProceed) {
+        if (self.canProceed || WPTConfig.values.testing) {
             self.scene?.view?.presentScene(WPTHomeScene())
         }
     }

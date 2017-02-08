@@ -156,6 +156,7 @@
 				7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */,
 			);
 			name = Fonts;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		7E13F6281E48EA7400B5D2FD /* Sound */ = {
@@ -165,6 +166,7 @@
 				7E13F6291E48EA7800B5D2FD /* Effects */,
 			);
 			name = Sound;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		7E13F6291E48EA7800B5D2FD /* Effects */ = {
@@ -185,9 +187,6 @@
 		7E16B84C1E2D580600933E24 = {
 			isa = PBXGroup;
 			children = (
-				7E73A0A71E4A6EE3008F6DA8 /* Shaders */,
-				7E13F6281E48EA7400B5D2FD /* Sound */,
-				7E0D620D1E366ED1009C8516 /* Fonts */,
 				7E16B8571E2D580600933E24 /* Waypoint */,
 				7E16B8721E2D580600933E24 /* WaypointTests */,
 				7E16B87D1E2D580600933E24 /* WaypointUITests */,
@@ -208,6 +207,10 @@
 		7E16B8571E2D580600933E24 /* Waypoint */ = {
 			isa = PBXGroup;
 			children = (
+				7ED3775A1E4AB4F000DB1EA2 /* Data */,
+				7E73A0A71E4A6EE3008F6DA8 /* Shaders */,
+				7E13F6281E48EA7400B5D2FD /* Sound */,
+				7E0D620D1E366ED1009C8516 /* Fonts */,
 				7EF61E891E3B056200CB4CAB /* Nodes */,
 				2D8E804C1E3ADBAF00CB2E0B /* Models */,
 				2DEBBB081E32E0ED00F059C0 /* Scenes */,
@@ -247,6 +250,14 @@
 				7E73A0A81E4A6F09008F6DA8 /* trail_shader.fsh */,
 			);
 			name = Shaders;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		7ED3775A1E4AB4F000DB1EA2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		7EF61E891E3B056200CB4CAB /* Nodes */ = {

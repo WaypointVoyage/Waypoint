@@ -12,6 +12,7 @@ class WPTConfig {
     
     var playMusic = true
     var playSoundEffects = true
+    var testing = true
     
     // singleton instance
     static let values: WPTConfig = {
