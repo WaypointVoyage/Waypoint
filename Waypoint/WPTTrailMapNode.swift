@@ -14,6 +14,10 @@ class WPTTrailMapNode: SKNode {
     
     var trailMap: WPTTrailMap?
     let trailShader = SKShader(fileNamed: "trail_shader.fsh")
+    let startMarker = SKSpriteNode(imageNamed: "red_circle")
+    let treasureMarker = SKSpriteNode(imageNamed: "x_marks_the_spot")
+    
+    let markerTexture = SKTexture(imageNamed: "red_circle")
     
     func position(for scene: WPTScene) {
         self.removeAllChildren()
@@ -29,6 +33,23 @@ class WPTTrailMapNode: SKNode {
         trail.strokeShader = trailShader
         
         self.addChild(trail)
+        
+        self.startMarker.position = self.trailMap!.startLocation
+        self.startMarker.scale(to: CGSize(width: 30, height: 30))
+        self.addChild(self.startMarker)
+        
+        self.treasureMarker.position = self.trailMap!.treasureLocation!
+        self.treasureMarker.scale(to: CGSize(width: 45, height: 45))
+        self.addChild(self.treasureMarker)
+        
+        let markerSize = CGSize(width: 20, height: 20)
+        self.trailMap?.traversePoints({
+            (index, point) in
+            let marker = SKSpriteNode(texture: self.markerTexture)
+            marker.position = point
+            marker.scale(to: markerSize)
+            self.addChild(marker)
+        })
     }
     
     static func setupTrailMap(size: CGSize) -> WPTTrailMap {

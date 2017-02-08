@@ -32,6 +32,15 @@ class WPTTrailMap {
         }
     }
     
+    func traversePoints(_ action: (Int, CGPoint) -> Void) {
+        action(0, self.startLocation)
+        var index = 1
+        for pointSet in self.points {
+            action(index, pointSet.target)
+            index += 1
+        }
+    }
+    
     func toCGPath() -> CGPath {
         let result = UIBezierPath()
         
