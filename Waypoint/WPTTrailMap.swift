@@ -31,13 +31,18 @@ class WPTTrailMap {
         self.startPoint = WPTTrailMap.scaled(CGPoint(x: startPointDict["x"]!, y: startPointDict["y"]!), mapSize: mapSize)
         
         self.points = [WPTTrailStop]()
+        var prev: WPTTrailStop = WPTTrailStop(target: self.startPoint)
         let pointsArr = trailMapDict["points"] as! [[String: [String: CGFloat]]]
         for pointSetDict in pointsArr {
             let target = WPTTrailMap.scaled(CGPoint(x: pointSetDict["target"]!["x"]!, y: pointSetDict["target"]!["y"]!), mapSize: mapSize)
             let controlPoint1 = WPTTrailMap.scaled(CGPoint(x: pointSetDict["controlPoint1"]!["x"]!, y: pointSetDict["controlPoint1"]!["y"]!), mapSize: mapSize)
             let controlPoint2 = WPTTrailMap.scaled(CGPoint(x: pointSetDict["controlPoint2"]!["x"]!, y: pointSetDict["controlPoint2"]!["y"]!), mapSize: mapSize)
             
-            points.append(WPTTrailStop(target: target, controlPoint1: controlPoint1, controlPoint2: controlPoint2))
+            let stop = WPTTrailStop(target: target, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
+            stop.prev = prev
+            prev.next = stop
+            prev = stop
+            points.append(stop)
         }
     }
     
@@ -55,7 +60,7 @@ class WPTTrailMap {
         
         result.move(to: self.startPoint)
         for pointSet in points {
-            result.addCurve(to: pointSet.target, controlPoint1: pointSet.controlPoint1, controlPoint2: pointSet.controlPoint2)
+            result.addCurve(to: pointSet.target, controlPoint1: pointSet.controlPoint1!, controlPoint2: pointSet.controlPoint2!)
         }
         
         return result.cgPath
