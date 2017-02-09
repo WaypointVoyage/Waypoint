@@ -8,9 +8,9 @@
 
 import SpriteKit
 
-class WPTSplashScene: SKScene {
+class WPTSplashScene: WPTScene {
     
-    let background = SKSpriteNode(imageNamed: "worldmap")
+    let background = WPTWorldMapNode()
     
     let titleNode = WPTLabelNode(text: gameName, fontSize: fontSizeTitle)
     let tapToCont = WPTLabelNode(text: "Tap to continue...", fontSize: fontSizeSmall)
@@ -19,10 +19,10 @@ class WPTSplashScene: SKScene {
     var canProceed = false
     
     override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        
         // add the map to the background
-        background.position = CGPoint(x: frame.midX, y: frame.midY)
-        background.size = CGSize(width: frame.width, height: frame.height)
-        background.zPosition = -1
+        background.position(for: self)
         addChild(background)
         
         // setup the title
@@ -45,13 +45,9 @@ class WPTSplashScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if (!self.canProceed) {
-            return
+        if (self.canProceed || WPTConfig.values.testing) {
+            self.scene?.view?.presentScene(WPTHomeScene())
         }
-        
-        let homeScene = WPTHomeScene()
-        homeScene.scaleMode = .resizeFill
-        self.scene?.view?.presentScene(homeScene)
     }
 
 }

@@ -8,14 +8,16 @@
 
 import SpriteKit
 
-class WPTHomeScene: SKScene {
+class WPTHomeScene: WPTScene {
     
     let newGame = WPTSceneLabelNode(text: "New Game", next: WPTNewGameScene())
     let highScores = WPTSceneLabelNode(text: "High Scores", next: WPTHighScoresScene())
     let settings = WPTSceneLabelNode(text: "Settings", next: WPTSettingsScene())
     let secretMessage = WPTSceneLabelNode(text: "Secret Message...", next: WPTSecretMessage())
     
-    override func didMove(to view: SKView) {        
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        
         newGame.position = CGPoint(x: frame.midX, y: frame.midY+50)
         addChild(newGame)
         

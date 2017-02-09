@@ -16,6 +16,8 @@ class WPTShipPickerNode: SKNode {
     var shipTextures = [SKTexture]()
     var index = 0
     
+    var onChange: (WPTShip) -> Void
+    
     let leftArrow = SKSpriteNode(imageNamed: "chevron")
     let rightArrow = SKSpriteNode(imageNamed: "chevron")
     var shipImage = SKSpriteNode(imageNamed: "box")
@@ -35,8 +37,9 @@ class WPTShipPickerNode: SKNode {
         }
     }
     
-    init(ships: [WPTShip]) {
+    init(ships: [WPTShip], onChange: @escaping (WPTShip) -> Void) {
         self.ships = ships
+        self.onChange = onChange
         super.init()
         assert(self.ships.count >= 1, "At least one ship is required!")
         isUserInteractionEnabled = true
@@ -89,5 +92,6 @@ class WPTShipPickerNode: SKNode {
             index += ships.count
         }
         shipImage.texture = currentShipTexture
+        self.onChange(self.currentShip)
     }
 }
