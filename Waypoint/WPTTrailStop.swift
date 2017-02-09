@@ -22,13 +22,9 @@ class WPTTrailStop {
     }
     
     init(from: WPTTrailStop, scale: CGSize) {
-        self.target = WPTTrailStop.scaled(point: from.target, mapSize: scale);
-        self.controlPoint1 = WPTTrailStop.scaled(point: from.controlPoint1, mapSize: scale)
-        self.controlPoint2 = WPTTrailStop.scaled(point: from.controlPoint2, mapSize: scale)
+        self.target = WPTTrailMap.scaled(from.target, mapSize: scale);
+        self.controlPoint1 = WPTTrailMap.scaled(from.controlPoint1, mapSize: scale)
+        self.controlPoint2 = WPTTrailMap.scaled(from.controlPoint2, mapSize: scale)
         self.unlocked = from.unlocked
-    }
-    
-    public static func scaled(point: CGPoint, mapSize: CGSize) -> CGPoint {
-        return CGPoint(x: point.x * mapSize.width, y: point.y * mapSize.height);
     }
 }

@@ -26,7 +26,7 @@ class WPTTrailMapNode: SKNode {
         let ymin = (scene.frame.height - h) / 2.0;
         self.position = CGPoint(x: 0, y: ymin)
         
-        self.trailMap = WPTTrailMapNode.setupTrailMap(size: CGSize(width: scene.frame.width, height: h))
+        self.trailMap = WPTTrailMap(mapSize: CGSize(width: scene.frame.width, height: h))
         let trail = SKShapeNode(path: self.trailMap!.toCGPath())
         trail.lineWidth = 2.5
         trail.strokeColor = .clear
@@ -56,24 +56,5 @@ class WPTTrailMapNode: SKNode {
             marker.zPosition = 2
             self.addChild(marker)
         })
-    }
-    
-    static func setupTrailMap(size: CGSize) -> WPTTrailMap {
-        let plistPath = Bundle.main.path(forResource: "trail_map", ofType: "plist")!
-        let trailMapDict = NSDictionary(contentsOfFile: plistPath) as! [String: Any]
-        let startPointDict = trailMapDict["startPoint"] as! [String: CGFloat]
-        let startPoint = CGPoint(x: startPointDict["x"]!, y: startPointDict["y"]!)
-        
-        var points = [WPTTrailStop]()
-        let pointsArr = trailMapDict["points"] as! [[String: [String: CGFloat]]]
-        for pointSetDict in pointsArr {
-            let target = CGPoint(x: pointSetDict["target"]!["x"]!, y: pointSetDict["target"]!["y"]!)
-            let controlPoint1 = CGPoint(x: pointSetDict["controlPoint1"]!["x"]!, y: pointSetDict["controlPoint1"]!["y"]!)
-            let controlPoint2 = CGPoint(x: pointSetDict["controlPoint2"]!["x"]!, y: pointSetDict["controlPoint2"]!["y"]!)
-            
-            points.append(WPTTrailStop(target: target, controlPoint1: controlPoint1, controlPoint2: controlPoint2))
-        }
-        
-        return WPTTrailMap(startPoint: startPoint, points: points, mapSize: size)
     }
 }
