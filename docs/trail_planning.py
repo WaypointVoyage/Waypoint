@@ -32,10 +32,10 @@ points = [
     (1063, 631), # control point 1
     (1459, 597), # control point 2
     (1598, 1000), # 7
-    (1860, 945), # control point 1
+    (1735, 653), # control point 1
     (2268, 226), # control point 2
     (2056, 808), # 8
-    (1584, 434), # control point 1
+    (1623, 655), # control point 1
     (1757, 1227), # control point 2
     (2042, 958), # 9
     (2063, 1151), # control point 1

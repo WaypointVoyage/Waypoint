@@ -1,0 +1,1 @@
+plutil -convert xml1 in.json -o out.plist

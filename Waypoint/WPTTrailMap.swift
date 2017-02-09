@@ -10,8 +10,7 @@ import SpriteKit
 
 class WPTTrailMap {
     private var startPoint: CGPoint
-    private var points: [(target: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint)]
-    private var mapSize: CGSize
+    private var points: [WPTTrailStop]
     
     public var startLocation: CGPoint {
         return startPoint
@@ -21,22 +20,25 @@ class WPTTrailMap {
         return self.points.last?.target
     }
     
-    init(startPoint: CGPoint, points: [(CGPoint, CGPoint, CGPoint)], mapSize: CGSize) {
+    public var stopCount: Int {
+        return 1 + self.points.count
+    }
+    
+    init(startPoint: CGPoint, points: [WPTTrailStop], mapSize: CGSize) {
         self.startPoint = startPoint
-        self.points = [(CGPoint, CGPoint, CGPoint)]()
-        self.mapSize = mapSize
+        self.points = [WPTTrailStop]()
         
-        self.startPoint = scaled(point: self.startPoint)
+        self.startPoint = WPTTrailStop.scaled(point: self.startPoint, mapSize: mapSize)
         for pointSet in points {
-            self.points.append((scaled(point: pointSet.0), scaled(point: pointSet.1), scaled(point: pointSet.2)))
+            self.points.append(WPTTrailStop(from: pointSet, scale: mapSize))
         }
     }
     
-    func traversePoints(_ action: (Int, CGPoint) -> Void) {
-        action(0, self.startLocation)
+    func traversePoints(_ action: (Int, CGPoint, Bool) -> Void) {
+        action(0, self.startLocation, true)
         var index = 1
         for pointSet in self.points {
-            action(index, pointSet.target)
+            action(index, pointSet.target, pointSet.unlocked)
             index += 1
         }
     }
@@ -50,9 +52,5 @@ class WPTTrailMap {
         }
         
         return result.cgPath
-    }
-    
-    private func scaled(point: CGPoint) -> CGPoint {
-        return CGPoint(x: point.x * mapSize.width, y: point.y * mapSize.height)
     }
 }
