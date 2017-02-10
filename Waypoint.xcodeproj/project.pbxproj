@@ -33,6 +33,9 @@
 		7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */; };
 		7EBF5E231E4D06D200F81982 /* WPTTrailStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */; };
 		7EBF5E671E4E129400F81982 /* trail_map.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EBF5E661E4E129400F81982 /* trail_map.plist */; };
+		7EBF5E691E4E1B4000F81982 /* WPTUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF5E681E4E1B4000F81982 /* WPTUtils.swift */; };
+		7EBF5E6B1E4E213A00F81982 /* stat_bar.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7EBF5E6A1E4E213A00F81982 /* stat_bar.fsh */; };
+		7EBF5E6D1E4E218200F81982 /* WPTStatBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF5E6C1E4E218200F81982 /* WPTStatBarNode.swift */; };
 		7ED2206B1E371EDE00D2AA68 /* WPTHighScoresScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED2206A1E371EDE00D2AA68 /* WPTHighScoresScene.swift */; };
 		7ED2206D1E37215F00D2AA68 /* WPTSecretMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED2206C1E37215F00D2AA68 /* WPTSecretMessage.swift */; };
 		7ED3775C1E4ABE8800DB1EA2 /* WPTTrailMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3775B1E4ABE8800DB1EA2 /* WPTTrailMap.swift */; };
@@ -93,6 +96,9 @@
 		7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSceneLabelNode.swift; sourceTree = "<group>"; };
 		7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailStop.swift; sourceTree = "<group>"; };
 		7EBF5E661E4E129400F81982 /* trail_map.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = trail_map.plist; sourceTree = "<group>"; };
+		7EBF5E681E4E1B4000F81982 /* WPTUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTUtils.swift; sourceTree = "<group>"; };
+		7EBF5E6A1E4E213A00F81982 /* stat_bar.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = stat_bar.fsh; sourceTree = "<group>"; };
+		7EBF5E6C1E4E218200F81982 /* WPTStatBarNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTStatBarNode.swift; sourceTree = "<group>"; };
 		7ED2206A1E371EDE00D2AA68 /* WPTHighScoresScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHighScoresScene.swift; sourceTree = "<group>"; };
 		7ED2206C1E37215F00D2AA68 /* WPTSecretMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSecretMessage.swift; sourceTree = "<group>"; };
 		7ED3775B1E4ABE8800DB1EA2 /* WPTTrailMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailMap.swift; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 				7E16B86A1E2D580600933E24 /* Info.plist */,
 				7E0D62101E366F5F009C8516 /* WPTValues.swift */,
 				7E13F6241E48E51000B5D2FD /* WPTConfig.swift */,
+				7EBF5E681E4E1B4000F81982 /* WPTUtils.swift */,
 			);
 			path = Waypoint;
 			sourceTree = "<group>";
@@ -255,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				7E73A0A81E4A6F09008F6DA8 /* trail_shader.fsh */,
+				7EBF5E6A1E4E213A00F81982 /* stat_bar.fsh */,
 			);
 			name = Shaders;
 			path = ..;
@@ -293,6 +301,7 @@
 				7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */,
 				7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */,
 				7EF61E8B1E3B057900CB4CAB /* WPTShipPickerNode.swift */,
+				7EBF5E6C1E4E218200F81982 /* WPTStatBarNode.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -407,6 +416,7 @@
 				7E16B8641E2D580600933E24 /* Main.storyboard in Resources */,
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
 				7EBF5E671E4E129400F81982 /* trail_map.plist in Resources */,
+				7EBF5E6B1E4E213A00F81982 /* stat_bar.fsh in Resources */,
 				7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */,
 				2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */,
 				7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */,
@@ -436,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EF61E8C1E3B057900CB4CAB /* WPTShipPickerNode.swift in Sources */,
+				7EBF5E6D1E4E218200F81982 /* WPTStatBarNode.swift in Sources */,
 				7ED3775C1E4ABE8800DB1EA2 /* WPTTrailMap.swift in Sources */,
 				7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */,
 				7ED739031E44F3B600122903 /* WPTActor.swift in Sources */,
@@ -458,6 +469,7 @@
 				7E13F6251E48E51000B5D2FD /* WPTConfig.swift in Sources */,
 				2D8E804E1E3ADBC400CB2E0B /* WPTShip.swift in Sources */,
 				7E13F6301E48F50200B5D2FD /* WPTWorldScene.swift in Sources */,
+				7EBF5E691E4E1B4000F81982 /* WPTUtils.swift in Sources */,
 				7ED739011E44EBF500122903 /* WPTWorldMapNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

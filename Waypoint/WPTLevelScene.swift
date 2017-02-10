@@ -9,7 +9,9 @@
 import SpriteKit
 
 class WPTLevelScene: WPTScene {
+    
     override func didMove(to view: SKView) {
         super.didMove(to: view)
     }
+    
 }

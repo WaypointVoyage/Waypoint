@@ -33,7 +33,6 @@ class WPTWorldScene: WPTScene {
         
         trailMap.zPosition = 1
         trailMap.position(for: self)
-        print("x: \(trailMap.trailMap?.startLocation.x), y: \(trailMap.trailMap?.startLocation.y)")
         self.addChild(trailMap)
     }
 }
