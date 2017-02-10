@@ -11,13 +11,13 @@ ymax = ymin + h
 point_count = 12
 points = [
     (330, 515), # start
-    (400, 600), # control point 1
-    (380, 690), # control point 2
+    (460, 600), # control point 1
+    (400, 690), # control point 2
     (290, 780), # 1
     (118, 930), # control point 1
     (100, 1032), # control point 2
-    (95, 1181), # 2
-    (81, 1328), # control point 1
+    (95, 1081), # 2
+    (120, 1328), # control point 1
     (213, 977), # control point 2
     (633, 1313), # 3
     (951, 1570), # control point 1
@@ -29,11 +29,11 @@ points = [
     (1212, 1265), # control point 1
     (1233, 1234), # control point 2
     (1100, 1133), # 6
-    (1063, 631), # control point 1
-    (1459, 597), # control point 2
+    (1146, 930), # control point 1
+    (1452, 708), # control point 2
     (1598, 1000), # 7
     (1735, 653), # control point 1
-    (2268, 226), # control point 2
+    (1947, 585), # control point 2
     (2056, 808), # 8
     (1623, 655), # control point 1
     (1757, 1227), # control point 2
@@ -41,8 +41,8 @@ points = [
     (2063, 1151), # control point 1
     (1979, 1260), # control point 2
     (1781, 1312), # 10
-    (1555, 1609), # control point 1
-    (1904, 1791), # control point 2
+    (1519, 1358), # control point 1
+    (1951, 1588), # control point 2
     (2318, 1470), # treasure
 ]
 

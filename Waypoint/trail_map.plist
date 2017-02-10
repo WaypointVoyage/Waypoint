@@ -8,14 +8,14 @@
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.14641288433382138</real>
+				<real>0.16837481698389459</real>
 				<key>y</key>
 				<real>0.77623230844314306</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.13909224011713031</real>
+				<real>0.14641288433382138</real>
 				<key>y</key>
 				<real>0.71766715470961451</real>
 			</dict>
@@ -47,14 +47,14 @@
 				<key>x</key>
 				<real>0.034773060029282578</real>
 				<key>y</key>
-				<real>0.39816170489669755</real>
+				<real>0.46323409793395154</real>
 			</dict>
 		</dict>
 		<dict>
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.02964860907759883</real>
+				<real>0.043923865300146414</real>
 				<key>y</key>
 				<real>0.30250528713193425</real>
 			</dict>
@@ -146,16 +146,16 @@
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.38909224011713028</real>
+				<real>0.41947291361639827</real>
 				<key>y</key>
-				<real>0.7560598666015943</real>
+				<real>0.56149341142020504</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.53404099560761342</real>
+				<real>0.53147877013177158</real>
 				<key>y</key>
-				<real>0.77818448023426057</real>
+				<real>0.7059541239629088</real>
 			</dict>
 			<key>target</key>
 			<dict>
@@ -176,9 +176,9 @@
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.8301610541727672</real>
+				<real>0.71266471449487556</real>
 				<key>y</key>
-				<real>1.0196030584024727</real>
+				<real>0.78599316739873104</real>
 			</dict>
 			<key>target</key>
 			<dict>
@@ -238,16 +238,16 @@
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.56918008784773055</real>
+				<real>0.55600292825768671</real>
 				<key>y</key>
-				<real>0.1196518626972507</real>
+				<real>0.28298356922075807</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.69692532942898977</real>
+				<real>0.7141288433382138</real>
 				<key>y</key>
-				<real>0.0012201073694485531</real>
+				<real>0.13331706523507403</real>
 			</dict>
 			<key>target</key>
 			<dict>
