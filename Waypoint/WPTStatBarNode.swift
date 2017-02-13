@@ -9,10 +9,11 @@
 import SpriteKit
 
 class WPTStatBarNode: SKNode {
+    static let fontSize = WPTValues.fontSizeSmall
     static let texture = SKTexture(imageNamed: "stat_bar")
     let shader = SKShader(fileNamed: "stat_bar.fsh")
     
-    let label = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeSmall)
+    let label = WPTLabelNode(text: "", fontSize: WPTStatBarNode.fontSize)
     let statBar = SKSpriteNode(texture: WPTStatBarNode.texture)
     
     var statMin: Double

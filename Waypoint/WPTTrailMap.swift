@@ -24,7 +24,7 @@ class WPTTrailMap {
         return 1 + self.points.count
     }
     
-    init(mapSize: CGSize) {
+    init(mapSize: CGSize, progress: WPTPlayerProgress) {
         let plistPath = Bundle.main.path(forResource: "trail_map", ofType: "plist")!
         let trailMapDict = NSDictionary(contentsOfFile: plistPath) as! [String: Any]
         let startPointDict = trailMapDict["startPoint"] as! [String: CGFloat]

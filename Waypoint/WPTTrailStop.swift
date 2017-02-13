@@ -13,7 +13,9 @@ class WPTTrailStop {
     var controlPoint1: CGPoint?
     var controlPoint2: CGPoint?
     
+    var levelFileNamed: String?
     var unlocked = false
+    var completed = false
     
     var prev: WPTTrailStop?
     var next: WPTTrailStop?
@@ -27,6 +29,7 @@ class WPTTrailStop {
     convenience init(target: CGPoint) {
         self.init(target: target, controlPoint1: nil, controlPoint2: nil)
         self.unlocked = true
+        self.completed = true
     }
     
     init(from: WPTTrailStop, scale: CGSize) {

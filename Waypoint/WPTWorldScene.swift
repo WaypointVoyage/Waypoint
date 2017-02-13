@@ -12,12 +12,13 @@ import UIKit
 class WPTWorldScene: WPTScene {
     
     let worldMap = WPTWorldMapNode()
-    let trailMap = WPTTrailMapNode()
+    let trailMap: WPTTrailMapNode
     
     var player: WPTPlayer
     
     init(player: WPTPlayer) {
         self.player = player
+        self.trailMap = WPTTrailMapNode(progress: player.progress)
         super.init(size: CGSize(width: 0, height: 0))
     }
     

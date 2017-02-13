@@ -11,9 +11,11 @@ import SpriteKit
 class WPTLevelScene: WPTScene {
     
     let player: WPTPlayer
+    let level: WPTLevel
     
-    init(player: WPTPlayer) {
+    init(player: WPTPlayer, level: WPTLevel) {
         self.player = player
+        self.level = level
         super.init(size: CGSize(width: 0, height: 0))
     }
     

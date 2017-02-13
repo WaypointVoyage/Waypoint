@@ -40,23 +40,22 @@ class WPTNewGameScene: WPTScene {
 
         /* ship stats */
         let width: CGFloat = 0.35 * self.frame.width
-        position(label: self.healthLabel, width: width, at: 1.15 * self.frame.midY)
-        position(label: self.damageLabel, width: width, at: 1.0 * self.frame.midY)
-        position(label: self.speedLabel, width: width, at: 0.85 * self.frame.midY)
-        position(label: self.rangeLabel, width: width, at: 0.7 * self.frame.midY)
-        position(label: self.shotSpeedLabel, width: width, at: 0.55 * self.frame.midY)
+        var labels = [healthLabel, damageLabel, speedLabel, rangeLabel, shotSpeedLabel]
+        let spacing = WPTValues.fontSizeMiniscule + WPTStatBarNode.fontSize
+        let h = CGFloat(labels.count) * spacing
+        let top = self.frame.midY + (h / 2) - WPTValues.fontSizeMiniscule
+        for i in 0..<labels.count {
+            let label = labels[i]
+            label.position = CGPoint(x: 0.70 * self.frame.width, y: top - CGFloat(i) * spacing)
+            label.setWidth(width)
+            self.addChild(label)
+        }
         updateStats(ship: (shipPicker?.currentShip)!)
 
         startLabel.position = CGPoint(x: frame.midX, y: 0.1 * frame.height)
         addChild(startLabel)
         
         addChild(WPTHomeScene.getBack(frame: frame))
-    }
-    
-    func position(label: WPTStatBarNode, width: CGFloat, at height: CGFloat) {
-        label.position = CGPoint(x: 0.70 * self.frame.width, y: height)
-        label.setWidth(width)
-        addChild(label)
     }
     
     func updateStats(ship: WPTShip) {
@@ -71,7 +70,7 @@ class WPTNewGameScene: WPTScene {
         let touch = touches.first!
         if self.startLabel.contains(touch.location(in: self)) {
             // TODO: get the ship's name
-            let player = WPTPlayer(shipName: "PLAYER_SHIP_NAME", ship: (self.shipPicker?.currentShip)!)
+            let player = WPTPlayer(ship: (self.shipPicker?.currentShip)!, shipName: "PLAYER_SHIP_NAME")
             
             self.view?.presentScene(WPTWorldScene(player: player))
         }

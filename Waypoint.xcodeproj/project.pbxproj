@@ -43,6 +43,8 @@
 		7ED739031E44F3B600122903 /* WPTActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED739021E44F3B600122903 /* WPTActor.swift */; };
 		7ED739051E44F9E100122903 /* WPTItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED739041E44F9E100122903 /* WPTItem.swift */; };
 		7EDD063A1E4A1C750054EB7E /* WPTTrailMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */; };
+		7EE7981B1E523030006D683B /* WPTPlayerProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */; };
+		7EE7981D1E5234A3006D683B /* WPTLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981C1E5234A3006D683B /* WPTLevel.swift */; };
 		7EF61E8C1E3B057900CB4CAB /* WPTShipPickerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF61E8B1E3B057900CB4CAB /* WPTShipPickerNode.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +108,8 @@
 		7ED739021E44F3B600122903 /* WPTActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTActor.swift; sourceTree = "<group>"; };
 		7ED739041E44F9E100122903 /* WPTItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItem.swift; sourceTree = "<group>"; };
 		7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailMapNode.swift; sourceTree = "<group>"; };
+		7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayerProgress.swift; sourceTree = "<group>"; };
+		7EE7981C1E5234A3006D683B /* WPTLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevel.swift; sourceTree = "<group>"; };
 		7EF61E8B1E3B057900CB4CAB /* WPTShipPickerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipPickerNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +146,8 @@
 				7ED739021E44F3B600122903 /* WPTActor.swift */,
 				7ED739041E44F9E100122903 /* WPTItem.swift */,
 				7E13F6331E48F8B900B5D2FD /* WPTPlayer.swift */,
+				7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */,
+				7EE7981C1E5234A3006D683B /* WPTLevel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -447,12 +453,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EF61E8C1E3B057900CB4CAB /* WPTShipPickerNode.swift in Sources */,
+				7EE7981B1E523030006D683B /* WPTPlayerProgress.swift in Sources */,
 				7EBF5E6D1E4E218200F81982 /* WPTStatBarNode.swift in Sources */,
 				7ED3775C1E4ABE8800DB1EA2 /* WPTTrailMap.swift in Sources */,
 				7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */,
 				7ED739031E44F3B600122903 /* WPTActor.swift in Sources */,
 				7ED739051E44F9E100122903 /* WPTItem.swift in Sources */,
 				7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */,
+				7EE7981D1E5234A3006D683B /* WPTLevel.swift in Sources */,
 				7ED2206B1E371EDE00D2AA68 /* WPTHighScoresScene.swift in Sources */,
 				7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */,
 				7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */,

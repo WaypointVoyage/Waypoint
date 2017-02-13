@@ -9,5 +9,12 @@
 import Foundation
 
 class WPTPlayer: WPTActor {
+    let shipName: String
+    let progress: WPTPlayerProgress
     
+    init(ship: WPTShip, shipName: String, _ progress: WPTPlayerProgress? = nil) {
+        self.shipName = shipName
+        self.progress = progress == nil ? WPTPlayerProgress() : progress!
+        super.init(ship: ship)
+    }
 }
