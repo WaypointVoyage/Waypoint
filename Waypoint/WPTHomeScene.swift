@@ -28,7 +28,7 @@ class WPTHomeScene: WPTScene {
         addChild(settings)
         
         secretMessage.position = CGPoint(x: frame.midX, y: 0.1 * frame.height)
-        secretMessage.fontSize = fontSizeMiniscule
+        secretMessage.fontSize = WPTValues.fontSizeMiniscule
         //addChild(secretMessage)
     }
     

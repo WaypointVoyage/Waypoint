@@ -15,7 +15,7 @@ class WPTLabelNode: SKLabelNode {
     }
     
     init(text: String, fontSize: CGFloat) {
-        super.init(fontNamed: booter)
+        super.init(fontNamed: WPTValues.booter)
         
         self.text = text
         self.fontSize = fontSize

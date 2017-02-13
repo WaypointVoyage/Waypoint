@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTHighScoresScene: WPTScene {
     
-    let titleLabel = WPTLabelNode(text: "High Scores", fontSize: fontSizeLarge)
+    let titleLabel = WPTLabelNode(text: "High Scores", fontSize: WPTValues.fontSizeLarge)
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)

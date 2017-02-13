@@ -10,8 +10,8 @@ import SpriteKit
 
 class WPTNewGameScene: WPTScene {
     
-    let headerLabel = WPTLabelNode(text: "New Game", fontSize: fontSizeLarge)
-    var startLabel = WPTLabelNode(text: "Start", fontSize: fontSizeMedium)
+    let headerLabel = WPTLabelNode(text: "New Game", fontSize: WPTValues.fontSizeLarge)
+    var startLabel = WPTLabelNode(text: "Start", fontSize: WPTValues.fontSizeMedium)
     
     let healthLabel = WPTStatBarNode("Health")
     let speedLabel = WPTStatBarNode("Speed")

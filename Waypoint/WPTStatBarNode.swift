@@ -12,7 +12,7 @@ class WPTStatBarNode: SKNode {
     static let texture = SKTexture(imageNamed: "stat_bar")
     let shader = SKShader(fileNamed: "stat_bar.fsh")
     
-    let label = WPTLabelNode(text: "", fontSize: fontSizeSmall)
+    let label = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeSmall)
     let statBar = SKSpriteNode(texture: WPTStatBarNode.texture)
     
     var statMin: Double

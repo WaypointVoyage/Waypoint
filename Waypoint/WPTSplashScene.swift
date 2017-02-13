@@ -12,8 +12,8 @@ class WPTSplashScene: WPTScene {
     
     let background = WPTWorldMapNode()
     
-    let titleNode = WPTLabelNode(text: gameName, fontSize: fontSizeTitle)
-    let tapToCont = WPTLabelNode(text: "Tap to continue...", fontSize: fontSizeSmall)
+    let titleNode = WPTLabelNode(text: WPTValues.gameName, fontSize: WPTValues.fontSizeTitle)
+    let tapToCont = WPTLabelNode(text: "Tap to continue...", fontSize: WPTValues.fontSizeSmall)
     let fadeIn = SKAction.fadeIn(withDuration: 3.0)
     
     var canProceed = false

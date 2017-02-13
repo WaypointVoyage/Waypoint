@@ -20,7 +20,7 @@ class WPTSceneLabelNode: WPTLabelNode {
     }
     
     init(text: String, next: SKScene) {
-        super.init(text: text, fontSize: fontSizeMedium)
+        super.init(text: text, fontSize: WPTValues.fontSizeMedium)
         self.nextScene = next
         self.isUserInteractionEnabled = true
     }

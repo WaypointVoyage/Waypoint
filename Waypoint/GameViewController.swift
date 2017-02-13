@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        WPTValues.initValues(deviceScreenSize: self.view.frame.size)
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'

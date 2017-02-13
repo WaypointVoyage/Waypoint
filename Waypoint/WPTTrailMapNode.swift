@@ -22,7 +22,7 @@ class WPTTrailMapNode: SKNode {
     func position(for scene: WPTScene) {
         self.removeAllChildren()
         
-        let h = scene.frame.width / maxAspectRatio
+        let h = scene.frame.width / WPTValues.maxAspectRatio
         let ymin = (scene.frame.height - h) / 2.0;
         self.position = CGPoint(x: 0, y: ymin)
         

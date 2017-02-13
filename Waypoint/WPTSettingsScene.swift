@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTSettingsScene: WPTScene {
     
-    let headerLabel = WPTLabelNode(text: "Settings", fontSize: fontSizeLarge)
+    let headerLabel = WPTLabelNode(text: "Settings", fontSize: WPTValues.fontSizeLarge)
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
