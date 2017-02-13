@@ -10,6 +10,17 @@ import SpriteKit
 
 class WPTLevelScene: WPTScene {
     
+    let player: WPTPlayer
+    
+    init(player: WPTPlayer) {
+        self.player = player
+        super.init(size: CGSize(width: 0, height: 0))
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func didMove(to view: SKView) {
         super.didMove(to: view)
     }

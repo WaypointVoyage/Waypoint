@@ -13,23 +13,19 @@ class WPTHomeScene: WPTScene {
     let newGame = WPTSceneLabelNode(text: "New Game", next: WPTNewGameScene())
     let highScores = WPTSceneLabelNode(text: "High Scores", next: WPTHighScoresScene())
     let settings = WPTSceneLabelNode(text: "Settings", next: WPTSettingsScene())
-    let secretMessage = WPTSceneLabelNode(text: "Secret Message...", next: WPTSecretMessage())
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
-        newGame.position = CGPoint(x: frame.midX, y: frame.midY+50)
-        addChild(newGame)
-        
-        highScores.position = CGPoint(x: frame.midX, y: frame.midY-10)
-        addChild(highScores)
-        
-        settings.position = CGPoint(x: frame.midX, y: frame.midY-70)
-        addChild(settings)
-        
-        secretMessage.position = CGPoint(x: frame.midX, y: 0.1 * frame.height)
-        secretMessage.fontSize = WPTValues.fontSizeMiniscule
-        //addChild(secretMessage)
+        var labels = [newGame, highScores, settings]
+        let spacing = WPTValues.fontSizeMiniscule + WPTSceneLabelNode.fontSize
+        let h = CGFloat(labels.count) * spacing
+        let top = self.frame.midY + (h / 2) - WPTValues.fontSizeMiniscule
+        for i in 0..<labels.count {
+            let label = labels[i]
+            label.position = CGPoint(x: self.frame.midX, y: top - CGFloat(i) * spacing)
+            self.addChild(label)
+        }
     }
     
     static func getBack(frame: CGRect) -> SKLabelNode {

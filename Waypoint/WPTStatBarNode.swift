@@ -39,7 +39,7 @@ class WPTStatBarNode: SKNode {
     func setWidth(_ width: CGFloat) {
         let spacing: CGFloat = 8
         let barWidth = width - 0.35 * width - 2 * spacing
-        self.statBar.scale(to: CGSize(width: barWidth, height: self.label.frame.height))
+        self.statBar.scale(to: CGSize(width: barWidth, height: self.label.fontSize))
         self.statBar.position.x = spacing + self.statBar.frame.width / 2
     }
     

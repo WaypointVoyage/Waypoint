@@ -23,9 +23,16 @@ class GameViewController: UIViewController {
             
             // set up the view
             view.ignoresSiblingOrder = true
-            view.showsFPS = true
-            view.showsNodeCount = true
+            
+            if WPTConfig.values.testing {
+                view.showsFPS = true
+                view.showsNodeCount = true
+            }
         }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
     override var shouldAutorotate: Bool {
