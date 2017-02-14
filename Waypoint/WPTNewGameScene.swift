@@ -35,10 +35,10 @@ class WPTNewGameScene: WPTScene {
         
         shipPicker = WPTShipPickerNode(ships: ships, onChange: updateStats)
         shipPicker!.position = CGPoint(x: 0.25 * frame.width, y: frame.midY)
-        shipPicker!.setSize(width: 0.55 * frame.width, height: 0.6 * frame.height)
+        shipPicker!.setSize(width: 0.6 * frame.width, height: 0.6 * frame.height)
         addChild(shipPicker!)
 
-        /* ship stats */
+        // ship stats
         let width: CGFloat = 0.35 * self.frame.width
         var labels = [healthLabel, damageLabel, speedLabel, rangeLabel, shotSpeedLabel]
         let spacing = WPTValues.fontSizeMiniscule + WPTStatBarNode.fontSize

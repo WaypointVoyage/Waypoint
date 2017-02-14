@@ -52,12 +52,15 @@ class WPTTrailMapNode: SKNode {
             var scale: CGSize?
             switch (index) {
             case 0:
-                scale = CGSize(width: 30, height: 30)
+                let scaleSize = 0.08 * WPTValues.usableScreenHeight
+                scale = CGSize(width: scaleSize, height: scaleSize)
             case self.trailMap!.stopCount - 1:
-                scale = CGSize(width: 45, height: 45)
+                let scaleSize = 0.15 * WPTValues.usableScreenHeight
+                scale = CGSize(width: scaleSize, height: scaleSize)
                 texture = treasureMarkerTexture
             default:
-                scale = CGSize(width: 20, height: 20)
+                let scaleSize = 0.06 * WPTValues.usableScreenHeight
+                scale = CGSize(width: scaleSize, height: scaleSize)
             }
             
             let marker = SKSpriteNode(texture: texture)

@@ -10,7 +10,6 @@ import Foundation
 import SpriteKit
 
 class WPTShipPickerNode: SKNode {
-    let ARROW_SIZE = 40
     
     let ships: [WPTShip]
     var shipTextures = [SKTexture]()
@@ -46,7 +45,8 @@ class WPTShipPickerNode: SKNode {
         
         // setup the arrows
         rightArrow.zRotation = CGFloat.pi
-        leftArrow.size = CGSize(width: ARROW_SIZE, height: ARROW_SIZE)
+        let arrowSize = 0.08 * WPTValues.screenSize.width
+        leftArrow.size = CGSize(width: arrowSize, height: arrowSize)
         rightArrow.size = leftArrow.size
         leftArrow.anchorPoint = CGPoint(x: -1, y: 0.5)
         rightArrow.anchorPoint = CGPoint(x: -1, y: 0.5)
@@ -59,6 +59,8 @@ class WPTShipPickerNode: SKNode {
         }
         shipImage.texture = currentShipTexture
         shipImage.position = CGPoint.zero
+        let shipImgSize = 0.2 * WPTValues.screenSize.width
+        shipImage.size = CGSize(width: shipImgSize, height: shipImgSize)
         addChild(shipImage)
     }
     
