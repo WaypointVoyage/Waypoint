@@ -55,12 +55,21 @@ class WPTWorldScene: WPTScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
-        
-        if let target = self.trailMap.getStopIndex(for: touch) {
-            if let path = self.trailMap.getConnectedPath(from: self.currentStop, to: target) {
-                print("found path!")
-                print(path)
+        if !self.player.hasActions() {
+            if let target = self.trailMap.getStopIndex(for: touch) {
+                if let path = self.trailMap.getConnectedPath(from: self.currentStop, to: target) {
+                    let action = SKAction.follow(path, asOffset: false, orientToPath: false, speed: WPTWorldPlayerNode.pathSpeed)
+                    self.player.run(action, completion: {
+                        self.updatePlayerStopLocation(target)
+                    })
+                }
             }
         }
+    }
+    
+    private func updatePlayerStopLocation(_ stop: Int) {
+        self.currentStop = stop
+        
+        // TODO: actions to update the UI to start a specific level
     }
 }

@@ -54,11 +54,11 @@ class WPTTrailMap {
         }
     }
     
-    func traversePoints(_ action: (Int, CGPoint, Bool) -> Void) {
-        action(0, self.startPoint.target, true)
+    func traversePoints(_ action: (Int, CGPoint, Bool, Bool) -> Void) {
+        action(0, self.startPoint.target, true, false)
         var index = 1
         for pointSet in self.points {
-            action(index, pointSet.target, pointSet.unlocked)
+            action(index, pointSet.target, pointSet.unlocked, pointSet.completed)
             index += 1
         }
     }
