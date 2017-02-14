@@ -29,8 +29,8 @@ class WPTHomeScene: WPTScene {
     }
     
     static func getBack(frame: CGRect) -> SKLabelNode {
-        let back = WPTSceneLabelNode(text: "<Back", next: WPTHomeScene())
-        back.position = CGPoint(x: 0.15 * frame.width, y: 0.2 * frame.height)
+        let back = WPTSceneLabelNode(text: "< Back", next: WPTHomeScene())
+        back.position = CGPoint(x: 0.15 * frame.width, y: 0.15 * frame.height)
         return back
     }
 }

@@ -9,7 +9,10 @@
 import Foundation
 
 
-extension WPTShip {
+class WPTShip {
+    let previewImage: String
+    let inGameImage: String
+    
     // TODO: finalize these values
     static let minSpeedScale: Double = 0.4
     static let maxSpeedScale: Double = 2.4
@@ -21,10 +24,6 @@ extension WPTShip {
     static let maxRangeScale: Double = 15.0
     static let minShotSpeedScale: Double = 0.3
     static let maxShotSpeedScale: Double = 10.0
-}
-
-class WPTShip {
-    let imageName: String
     
     var speedScale: Double = 1.0 {
         didSet { clamp(&speedScale, min: WPTShip.minSpeedScale, max: WPTShip.maxSpeedScale) }
@@ -46,8 +45,9 @@ class WPTShip {
         didSet { clamp(&shotSpeedScale, min: WPTShip.minShotSpeedScale, max: WPTShip.maxShotSpeedScale) }
     }
     
-    init(imageName: String) {
-        self.imageName = imageName
+    init(previewImage: String, inGameImage: String) {
+        self.previewImage = previewImage
+        self.inGameImage = inGameImage
         self.initStats()
     }
     

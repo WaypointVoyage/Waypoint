@@ -19,6 +19,7 @@ class WPTValues {
     static var screenSize = CGSize(width: 1920, height: 1080)
     static var srceenAspectRatio: CGFloat = 16.0 / 9.0
     static var usableScreenHeight: CGFloat = 1080
+    static var heightShift = CGPoint.zero
     static var fontSizeTitle = CGFloat(100)
     static var fontSizeLarge = CGFloat(70)
     static var fontSizeMedium = CGFloat(50)
@@ -34,6 +35,7 @@ class WPTValues {
         WPTValues.screenSize = deviceScreenSize
         WPTValues.srceenAspectRatio = screenSize.width / screenSize.height
         WPTValues.usableScreenHeight = screenSize.width / WPTValues.maxAspectRatio
+        WPTValues.heightShift = CGPoint(x: 0, y: (screenSize.height - usableScreenHeight) / 2.0)
         
         WPTValues.fontSizeTitle = 0.25 * usableScreenHeight
         WPTValues.fontSizeLarge = 0.175 * usableScreenHeight

@@ -19,7 +19,17 @@ class WPTNewGameScene: WPTScene {
     let rangeLabel = WPTStatBarNode("Range")
     let shotSpeedLabel = WPTStatBarNode("Shot Speed")
     
-    let ships = [WPTShip(imageName: "WaypointShip"), WPTShip(imageName: "PaperBoat"), WPTShip(imageName: "Spaceship")] // TODO: find better way to initialize ship data.
+    let ships: [WPTShip] = {
+        // TODO: find better way to initialize ship data.
+        var ships = [WPTShip]()
+        
+        let waypointShip = WPTShip(previewImage: "WaypointShip", inGameImage: "waypoint_ship_top_down")
+        waypointShip.shuffleStats()
+        ships.append(waypointShip)
+        
+        return ships
+    }()
+    
     var shipPicker: WPTShipPickerNode?
     
     override func didMove(to view: SKView) {
@@ -27,11 +37,6 @@ class WPTNewGameScene: WPTScene {
         
         headerLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
         addChild(headerLabel)
-        
-        /* TESTING SHIP VALUES */
-        for ship in ships {
-            ship.shuffleStats()
-        }
         
         shipPicker = WPTShipPickerNode(ships: ships, onChange: updateStats)
         shipPicker!.position = CGPoint(x: 0.25 * frame.width, y: frame.midY)

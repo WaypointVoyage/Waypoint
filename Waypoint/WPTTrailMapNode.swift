@@ -20,6 +20,8 @@ class WPTTrailMapNode: SKNode {
     let lockedMarkerTexture = SKTexture(imageNamed: "red_circle")
     let treasureMarkerTexture = SKTexture(imageNamed: "x_marks_the_spot")
     
+    private var markers = [SKSpriteNode]()
+    
     init(progress: WPTPlayerProgress) {
         self.progress = progress
         super.init()
@@ -44,6 +46,7 @@ class WPTTrailMapNode: SKNode {
         
         self.addChild(trail)
         
+        self.markers.removeAll()
         self.trailMap!.traversePoints({
             (index, point, isUnlocked) in
             
@@ -67,7 +70,58 @@ class WPTTrailMapNode: SKNode {
             marker.position = point
             marker.scale(to: scale!)
             marker.zPosition = 2
+            self.markers.append(marker)
             self.addChild(marker)
         })
+    }
+    
+    func getStopIndex(for touch: UITouch) -> Int? {
+        var target: Int? = nil
+        self.trailMap!.traversePoints({
+            (index, point, isUnlocked) in
+            if (target == nil) {
+                let marker = self.markers[index]
+                if marker.contains(touch.location(in: self)) {
+                    target = index
+                }
+            }
+        })
+        return target
+    }
+    
+    func getConnectedPath(from start: Int, to target: Int) -> CGPath? {
+        if (start == target) { return nil }
+        let startStop = self.trailMap![start]
+        let targetStop = self.trailMap![target]
+        return start < target ? getForewardPath(start: startStop, target: targetStop, checkLocked: false)
+            : getBackwardPath(start: startStop, target: targetStop, checkLocked: false)
+    }
+    
+    private func getForewardPath(start: WPTTrailStop, target: WPTTrailStop, checkLocked: Bool = true) -> CGPath? {
+        let path = UIBezierPath()
+        var current = start
+        path.move(to: current.target)
+        
+        while current !== target {
+            current = current.next!
+            if (checkLocked && !current.unlocked) { return nil }
+            path.addCurve(to: current.target, controlPoint1: current.controlPoint1!, controlPoint2: current.controlPoint2!)
+        }
+        
+        return path.cgPath
+    }
+    
+    private func getBackwardPath(start: WPTTrailStop, target: WPTTrailStop, checkLocked: Bool = true) -> CGPath? {
+        let path = UIBezierPath()
+        var current = start
+        path.move(to: current.target)
+        
+        while current !== target {
+            current = current.prev!
+            if (checkLocked && !current.unlocked) { return nil }
+            path.addCurve(to: current.target, controlPoint1: current.next!.controlPoint2!, controlPoint2: current.next!.controlPoint1!)
+        }
+        
+        return path.cgPath
     }
 }

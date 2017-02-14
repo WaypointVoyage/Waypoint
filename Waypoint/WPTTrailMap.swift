@@ -9,15 +9,15 @@
 import SpriteKit
 
 class WPTTrailMap {
-    private var startPoint: CGPoint
+    private var startPoint: WPTTrailStop
     private var points: [WPTTrailStop]
     
     public var startLocation: CGPoint {
-        return startPoint
+        return startPoint.target + WPTValues.heightShift
     }
     
     var treasureLocation: CGPoint? {
-        return self.points.last?.target
+        return (self.points.last?.target)! + WPTValues.heightShift
     }
     
     public var stopCount: Int {
@@ -28,10 +28,10 @@ class WPTTrailMap {
         let plistPath = Bundle.main.path(forResource: "trail_map", ofType: "plist")!
         let trailMapDict = NSDictionary(contentsOfFile: plistPath) as! [String: Any]
         let startPointDict = trailMapDict["startPoint"] as! [String: CGFloat]
-        self.startPoint = WPTTrailMap.scaled(CGPoint(x: startPointDict["x"]!, y: startPointDict["y"]!), mapSize: mapSize)
+        self.startPoint = WPTTrailStop(target: WPTTrailMap.scaled(CGPoint(x: startPointDict["x"]!, y: startPointDict["y"]!), mapSize: mapSize))
         
         self.points = [WPTTrailStop]()
-        var prev: WPTTrailStop = WPTTrailStop(target: self.startPoint)
+        var prev: WPTTrailStop = self.startPoint
         let pointsArr = trailMapDict["points"] as! [[String: [String: CGFloat]]]
         for pointSetDict in pointsArr {
             let target = WPTTrailMap.scaled(CGPoint(x: pointSetDict["target"]!["x"]!, y: pointSetDict["target"]!["y"]!), mapSize: mapSize)
@@ -46,8 +46,16 @@ class WPTTrailMap {
         }
     }
     
+    subscript(index: Int) -> WPTTrailStop {
+        get {
+            assert(0 <= index && index <= self.points.count, "Invalid Index!")
+            if index == 0 { return self.startPoint }
+            return self.points[index - 1]
+        }
+    }
+    
     func traversePoints(_ action: (Int, CGPoint, Bool) -> Void) {
-        action(0, self.startLocation, true)
+        action(0, self.startPoint.target, true)
         var index = 1
         for pointSet in self.points {
             action(index, pointSet.target, pointSet.unlocked)
@@ -58,7 +66,7 @@ class WPTTrailMap {
     func toCGPath() -> CGPath {
         let result = UIBezierPath()
         
-        result.move(to: self.startPoint)
+        result.move(to: self.startPoint.target)
         for pointSet in points {
             result.addCurve(to: pointSet.target, controlPoint1: pointSet.controlPoint1!, controlPoint2: pointSet.controlPoint2!)
         }
