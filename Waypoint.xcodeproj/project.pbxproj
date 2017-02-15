@@ -34,12 +34,13 @@
 		7E69329E1E53E0D500AF7373 /* WPTHudBottomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69329D1E53E0D500AF7373 /* WPTHudBottomNode.swift */; };
 		7E6932A01E53E2D500AF7373 /* WPTFireButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69329F1E53E2D500AF7373 /* WPTFireButtonNode.swift */; };
 		7E6932A21E53ECF500AF7373 /* WPTUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6932A11E53ECF500AF7373 /* WPTUpdatable.swift */; };
+		7E6932A61E54118A00AF7373 /* setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E6932A51E54118A00AF7373 /* setting_sail.plist */; };
+		7E6932A81E541C0200AF7373 /* trail_map.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E6932A71E541C0200AF7373 /* trail_map.plist */; };
 		7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E73A0A81E4A6F09008F6DA8 /* trail_shader.fsh */; };
 		7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */; };
 		7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */; };
 		7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */; };
 		7EBF5E231E4D06D200F81982 /* WPTTrailStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */; };
-		7EBF5E671E4E129400F81982 /* trail_map.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EBF5E661E4E129400F81982 /* trail_map.plist */; };
 		7EBF5E691E4E1B4000F81982 /* WPTUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF5E681E4E1B4000F81982 /* WPTUtils.swift */; };
 		7EBF5E6B1E4E213A00F81982 /* stat_bar.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7EBF5E6A1E4E213A00F81982 /* stat_bar.fsh */; };
 		7EBF5E6D1E4E218200F81982 /* WPTStatBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF5E6C1E4E218200F81982 /* WPTStatBarNode.swift */; };
@@ -107,12 +108,13 @@
 		7E69329D1E53E0D500AF7373 /* WPTHudBottomNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHudBottomNode.swift; sourceTree = "<group>"; };
 		7E69329F1E53E2D500AF7373 /* WPTFireButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTFireButtonNode.swift; sourceTree = "<group>"; };
 		7E6932A11E53ECF500AF7373 /* WPTUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTUpdatable.swift; sourceTree = "<group>"; };
+		7E6932A51E54118A00AF7373 /* setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setting_sail.plist; sourceTree = "<group>"; };
+		7E6932A71E541C0200AF7373 /* trail_map.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = trail_map.plist; sourceTree = "<group>"; };
 		7E73A0A81E4A6F09008F6DA8 /* trail_shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = trail_shader.fsh; sourceTree = "<group>"; };
 		7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTNewGameScene.swift; sourceTree = "<group>"; };
 		7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLabelNode.swift; sourceTree = "<group>"; };
 		7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSceneLabelNode.swift; sourceTree = "<group>"; };
 		7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailStop.swift; sourceTree = "<group>"; };
-		7EBF5E661E4E129400F81982 /* trail_map.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = trail_map.plist; sourceTree = "<group>"; };
 		7EBF5E681E4E1B4000F81982 /* WPTUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTUtils.swift; sourceTree = "<group>"; };
 		7EBF5E6A1E4E213A00F81982 /* stat_bar.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = stat_bar.fsh; sourceTree = "<group>"; };
 		7EBF5E6C1E4E218200F81982 /* WPTStatBarNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTStatBarNode.swift; sourceTree = "<group>"; };
@@ -309,6 +311,14 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		7E6932A41E54117900AF7373 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				7E6932A51E54118A00AF7373 /* setting_sail.plist */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
 		7E73A0A71E4A6EE3008F6DA8 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,7 +341,8 @@
 		7ED3775A1E4AB4F000DB1EA2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7EBF5E661E4E129400F81982 /* trail_map.plist */,
+				7E6932A41E54117900AF7373 /* Levels */,
+				7E6932A71E541C0200AF7373 /* trail_map.plist */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -478,8 +489,9 @@
 			files = (
 				7E16B8641E2D580600933E24 /* Main.storyboard in Resources */,
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
-				7EBF5E671E4E129400F81982 /* trail_map.plist in Resources */,
+				7E6932A81E541C0200AF7373 /* trail_map.plist in Resources */,
 				7EBF5E6B1E4E213A00F81982 /* stat_bar.fsh in Resources */,
+				7E6932A61E54118A00AF7373 /* setting_sail.plist in Resources */,
 				7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */,
 				2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */,
 				7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */,

@@ -9,5 +9,11 @@
 import Foundation
 
 class WPTPlayerProgress {
+    var completedLevels = [String]()
     
+    init(completedLevels: [String]?) {
+        if let cp = completedLevels {
+            self.completedLevels = cp
+        }
+    }
 }

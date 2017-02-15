@@ -23,7 +23,7 @@ class WPTWorldPlayerNode: SKSpriteNode, WPTUpdatable {
         self.player = player
         
         let texture = SKTexture(imageNamed: player.ship.previewImage)
-        let size = 0.1 * WPTValues.screenSize.width
+        let size = 0.1 * WPTValues.usableScreenHeight
         self.ungulationAmp = WPTWorldPlayerNode.ungulationAmp / Double(texture.size().height)
         
         super.init(texture: texture, color: .white, size: CGSize(width: size, height: size))

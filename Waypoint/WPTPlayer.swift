@@ -14,7 +14,7 @@ class WPTPlayer: WPTActor {
     
     init(ship: WPTShip, shipName: String, _ progress: WPTPlayerProgress? = nil) {
         self.shipName = shipName
-        self.progress = progress == nil ? WPTPlayerProgress() : progress!
+        self.progress = progress == nil ? WPTPlayerProgress(completedLevels: nil) : progress!
         super.init(ship: ship)
     }
 }

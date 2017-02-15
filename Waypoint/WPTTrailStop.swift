@@ -16,21 +16,21 @@ class WPTTrailStop {
     var prev: WPTTrailStop?
     var next: WPTTrailStop?
 
-    let level: WPTLevel
+    var level: WPTLevel? = nil
     var unlocked = false
     var completed = false
     
-    init(target: CGPoint, controlPoint1: CGPoint?, controlPoint2: CGPoint?) {
+    init(target: CGPoint, controlPoint1: CGPoint?, controlPoint2: CGPoint?, levelNamed: String?) {
         self.target = target
         self.controlPoint1 = controlPoint1
         self.controlPoint2 = controlPoint2
-        self.level = WPTLevel("level file name", beaten: false)
+        self.level = WPTLevel(levelNamed)
     }
     
     // start node with nil control points
-    convenience init(target: CGPoint) {
-        self.init(target: target, controlPoint1: nil, controlPoint2: nil)
-        self.unlocked = true
-        self.completed = true
+    convenience init(target: CGPoint, levelNamed: String?) {
+        self.init(target: target, controlPoint1: nil, controlPoint2: nil, levelNamed: levelNamed)
+//        self.unlocked = true
+//        self.completed = false
     }
 }

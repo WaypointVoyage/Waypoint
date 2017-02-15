@@ -60,11 +60,15 @@ def point_to_dict(point):
 
 def path_to_dict():
     path = {}
-    path['startPoint'] = point_to_dict(points[0])
+    path['startPoint'] = {
+        'levelNamed': 'setting_sail',
+        'target': point_to_dict(points[0])
+    }
 
     pointSets = []
     for i in range(1, point_count):
         pointSet = {
+            'levelNamed': 'LEVEL_NAME',
             'target': point_to_dict(points[3 * i]),
             'controlPoint1': point_to_dict(points[3 * i - 2]),
             'controlPoint2': point_to_dict(points[3 * i - 1]),

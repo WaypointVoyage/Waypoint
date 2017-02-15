@@ -25,24 +25,60 @@ class WPTTrailMap {
     }
     
     init(mapSize: CGSize, progress: WPTPlayerProgress) {
+        /* load the path information */
         let plistPath = Bundle.main.path(forResource: "trail_map", ofType: "plist")!
         let trailMapDict = NSDictionary(contentsOfFile: plistPath) as! [String: Any]
-        let startPointDict = trailMapDict["startPoint"] as! [String: CGFloat]
-        self.startPoint = WPTTrailStop(target: WPTTrailMap.scaled(CGPoint(x: startPointDict["x"]!, y: startPointDict["y"]!), mapSize: mapSize))
         
+        // start point
+        let startPointDict = trailMapDict["startPoint"] as! [String: AnyObject]
+        let startTarget = startPointDict["target"] as! [String: CGFloat]
+        let startTargetPoint = WPTTrailMap.scaled(CGPoint(x: startTarget["x"]!, y: startTarget["y"]!), mapSize: mapSize)
+        let startLevel = startPointDict["levelNamed"] as! String
+        self.startPoint = WPTTrailStop(target: startTargetPoint, levelNamed: startLevel)
+        
+        // the rest of the points
         self.points = [WPTTrailStop]()
         var prev: WPTTrailStop = self.startPoint
-        let pointsArr = trailMapDict["points"] as! [[String: [String: CGFloat]]]
-        for pointSetDict in pointsArr {
-            let target = WPTTrailMap.scaled(CGPoint(x: pointSetDict["target"]!["x"]!, y: pointSetDict["target"]!["y"]!), mapSize: mapSize)
-            let controlPoint1 = WPTTrailMap.scaled(CGPoint(x: pointSetDict["controlPoint1"]!["x"]!, y: pointSetDict["controlPoint1"]!["y"]!), mapSize: mapSize)
-            let controlPoint2 = WPTTrailMap.scaled(CGPoint(x: pointSetDict["controlPoint2"]!["x"]!, y: pointSetDict["controlPoint2"]!["y"]!), mapSize: mapSize)
+        let pointsArr = trailMapDict["points"] as! [[String: AnyObject]]
+        for pointDict in pointsArr {
             
-            let stop = WPTTrailStop(target: target, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
+            // level name
+            let levelNamed = pointDict["levelNamed"] as! String
+            
+            // target point
+            let targetDict = pointDict["target"] as! [String:CGFloat]
+            let target = CGPoint(x: targetDict["x"]!, y: targetDict["y"]!)
+            let scaledTarget = WPTTrailMap.scaled(target, mapSize: mapSize)
+            
+            // control point 1
+            let c1Dict = pointDict["controlPoint1"] as! [String:CGFloat]
+            let c1 = CGPoint(x: c1Dict["x"]!, y: c1Dict["y"]!)
+            let scaledC1 = WPTTrailMap.scaled(c1, mapSize: mapSize)
+            
+            // control point 2
+            let c2Dict = pointDict["controlPoint2"] as! [String:CGFloat]
+            let c2 = CGPoint(x: c2Dict["x"]!, y: c2Dict["y"]!)
+            let scaledC2 = WPTTrailMap.scaled(c2, mapSize: mapSize)
+            
+            let stop = WPTTrailStop(target: scaledTarget, controlPoint1: scaledC1, controlPoint2: scaledC2, levelNamed: levelNamed)
+            
+            // linked list setup
             stop.prev = prev
             prev.next = stop
             prev = stop
+            
             points.append(stop)
+        }
+        
+        /* load player progress */
+        var statusStop: WPTTrailStop? = self.startPoint
+        while statusStop != nil && progress.completedLevels.contains(statusStop!.level!.name) {
+            statusStop!.completed = true
+            statusStop!.unlocked = true
+            statusStop = statusStop!.next
+        }
+        if statusStop != nil {
+            statusStop!.unlocked = true
         }
     }
     
@@ -55,7 +91,7 @@ class WPTTrailMap {
     }
     
     func traversePoints(_ action: (Int, CGPoint, Bool, Bool) -> Void) {
-        action(0, self.startPoint.target, true, false)
+        action(0, self.startPoint.target, self.startPoint.unlocked, self.startPoint.completed)
         var index = 1
         for pointSet in self.points {
             action(index, pointSet.target, pointSet.unlocked, pointSet.completed)

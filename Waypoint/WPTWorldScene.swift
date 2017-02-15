@@ -15,7 +15,8 @@ class WPTWorldScene: WPTScene {
     let trailMap: WPTTrailMapNode
     let player: WPTWorldPlayerNode
     
-    let startLevel = WPTLabelNode(text: "Level", fontSize: WPTValues.fontSizeMedium)
+    let levelName = WPTLabelNode(text: "Level", fontSize: WPTValues.fontSizeMedium)
+    let startLevel = WPTLabelNode(text: "Start", fontSize: WPTValues.fontSizeMedium)
     
     private var currentStop: Int = -1
     
@@ -36,10 +37,10 @@ class WPTWorldScene: WPTScene {
         worldMap.position(for: self)
         self.addChild(worldMap)
         
-        self.startLevel.position = CGPoint(x: self.frame.midX, y: 0.75 * self.frame.height)
-        self.startLevel.zPosition = 5
-        self.startLevel.fontColor = .black
-        self.addChild(startLevel)
+        self.levelName.position = CGPoint(x: self.frame.midX, y: 0.85 * self.frame.height)
+        self.levelName.zPosition = 5
+        self.levelName.fontColor = .black
+        self.addChild(self.levelName)
         
         trailMap.zPosition = 1
         trailMap.position(for: self)
@@ -51,17 +52,15 @@ class WPTWorldScene: WPTScene {
         self.addChild(self.player)
         
         let back = WPTHomeScene.getBack(frame: self.frame)
-        back.position.x = self.frame.midX
-        back.fontColor = .black
+        back.position.x = 0.4 * self.frame.width
+        back.fontColor = UIColor.black
         back.text = "Exit"
         self.addChild(back)
-        
-        /* TEST LEVEL LABEL */
-        let level = WPTLevel("file name", beaten: false)
-        let testLevelLabel = WPTSceneLabelNode(text: "test level", next: WPTLevelScene(player: self.player.player, level: level))
-        testLevelLabel.zPosition = 5
-        testLevelLabel.position = CGPoint(x: 0.8 * self.frame.width, y: 0.1 * self.frame.height)
-        self.addChild(testLevelLabel)
+    
+        self.startLevel.verticalAlignmentMode = .top
+        self.startLevel.fontColor = UIColor.black
+        self.startLevel.position = CGPoint(x: 0.6 * self.frame.width, y: back.position.y)
+        self.addChild(self.startLevel)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -70,14 +69,23 @@ class WPTWorldScene: WPTScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
-        if !self.player.hasActions() {
+        
+        // start level
+        if self.startLevel.contains(touch.location(in: self)) {
+            let level = self.trailMap.trailMap![self.currentStop].level!
+            let levelScene = WPTLevelScene(player: self.player.player, level: level)
+            self.scene?.view?.presentScene(levelScene)
+        }
+        
+        // movement along the trail
+        else if !self.player.hasActions() {
             if let target = self.trailMap.getStopIndex(for: touch) {
                 if let path = self.trailMap.getConnectedPath(from: self.currentStop, to: target) {
                     
-                    self.startLevel.isHidden = true
+                    self.levelName.isHidden = true
                     let action = SKAction.follow(path, asOffset: false, orientToPath: false, speed: WPTWorldPlayerNode.pathSpeed)
                     self.player.run(action, completion: {
-                        self.startLevel.isHidden = false
+                        self.levelName.isHidden = false
                         self.updatePlayerStopLocation(target)
                     })
                 }
@@ -90,6 +98,6 @@ class WPTWorldScene: WPTScene {
         let stop = self.trailMap.trailMap![stopIndex]
         
         // TODO: actions to update the UI to start a specific level
-        self.startLevel.text = stop.level.name
+        self.levelName.text = stop.level?.name
     }
 }

@@ -18,6 +18,7 @@ class WPTTrailMapNode: SKNode {
     let trailShader = SKShader(fileNamed: "trail_shader.fsh")
     let unlockedMarkerTexture = SKTexture(imageNamed: "blue_circle")
     let lockedMarkerTexture = SKTexture(imageNamed: "red_circle")
+    let completedMarkerTexture = SKTexture(imageNamed: "green_circle")
     let treasureMarkerTexture = SKTexture(imageNamed: "x_marks_the_spot")
     
     private var markers = [SKSpriteNode]()
@@ -50,12 +51,12 @@ class WPTTrailMapNode: SKNode {
         self.trailMap!.traversePoints({
             (index, point, isUnlocked, isCompleted) in
             
-            var texture = isCompleted ? unlockedMarkerTexture : lockedMarkerTexture
+            var texture = isCompleted ? completedMarkerTexture : isUnlocked ? unlockedMarkerTexture : lockedMarkerTexture
             
             var scale: CGSize?
             switch (index) {
             case 0:
-                let scaleSize = 0.08 * WPTValues.usableScreenHeight
+                let scaleSize = 0.06 * WPTValues.usableScreenHeight
                 scale = CGSize(width: scaleSize, height: scaleSize)
             case self.trailMap!.stopCount - 1:
                 let scaleSize = 0.15 * WPTValues.usableScreenHeight
@@ -93,8 +94,8 @@ class WPTTrailMapNode: SKNode {
         if (start == target) { return nil }
         let startStop = self.trailMap![start]
         let targetStop = self.trailMap![target]
-        return start < target ? getForewardPath(start: startStop, target: targetStop, checkLocked: false)
-            : getBackwardPath(start: startStop, target: targetStop, checkLocked: false)
+        return start < target ? getForewardPath(start: startStop, target: targetStop, checkLocked: true)
+            : getBackwardPath(start: startStop, target: targetStop, checkLocked: true)
     }
     
     private func getForewardPath(start: WPTTrailStop, target: WPTTrailStop, checkLocked: Bool = true) -> CGPath? {

@@ -11,10 +11,18 @@ import Foundation
 class WPTLevel {
     
     let name: String
-    let beaten: Bool
     
-    init(_ levelFileNamed: String, beaten: Bool = false) {
-        name = "LEVEL NAME"
-        self.beaten = beaten
+    init(_ levelFileNamed: String?) {
+        let lfn = levelFileNamed == nil ? "NOTAREAL" : levelFileNamed
+        if let plistPath = Bundle.main.path(forResource: lfn, ofType: "plist") {
+            
+            let levelDict = NSDictionary(contentsOfFile: plistPath) as! [String: AnyObject]
+            self.name = levelDict["name"] as! String
+            
+        } else {
+            
+            self.name = "LEVEL NAME"
+            
+        }
     }
 }
