@@ -30,6 +30,7 @@ class WPTValues {
     // in-game positioning and configuration
     static let actorZPosition: CGFloat = 10
     static var actorDefaultSize: CGFloat = 125
+    static let pauseShroudZPosition: CGFloat = 100
     
     static func initValues(deviceScreenSize: CGSize) {
         if (deviceScreenSize.width / deviceScreenSize.height > WPTValues.maxAspectRatio) {

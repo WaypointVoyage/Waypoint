@@ -10,10 +10,16 @@ import SpriteKit
 
 class WPTLevelScene: WPTScene {
     
+    private static let levelNameTag = "LEVEL_NAME_TAG"
+    
     let level: WPTLevel
     
     let player: WPTLevelPlayerNode
     let hud: WPTHudNode
+    
+    var levelPaused: Bool = false {
+        didSet { self.pauseChanged() }
+    }
     
     init(player: WPTPlayer, level: WPTLevel) {
         self.player = WPTLevelPlayerNode(player: player)
@@ -41,6 +47,7 @@ class WPTLevelScene: WPTScene {
         
         // breif flash of level name
         let levelName = WPTLabelNode(text: self.level.name, fontSize: WPTValues.fontSizeLarge)
+        levelName.name = WPTLevelScene.levelNameTag
         levelName.position = CGPoint(x: self.frame.midX, y: 0.7 * self.frame.height)
         levelName.alpha = 0
         levelName.fontColor = UIColor.black
@@ -55,6 +62,15 @@ class WPTLevelScene: WPTScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        
+        if self.levelPaused { return } // everything below this is subject to the pause
+        
         self.hud.update(currentTime)
+    }
+        
+    private func pauseChanged() {
+        if let levelName = self.childNode(withName: WPTLevelScene.levelNameTag) {
+            levelName.isPaused = self.levelPaused
+        }
     }
 }
