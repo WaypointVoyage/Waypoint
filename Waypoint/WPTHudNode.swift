@@ -46,7 +46,8 @@ class WPTHudNode: SKNode, WPTUpdatable {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touchPos = touches.first!.location(in: self)
+        let touch = touches.first!
+        let touchPos = touch.location(in: self)
         var paused = false
         let scene = self.scene as? WPTLevelScene
         if scene != nil {
@@ -54,9 +55,8 @@ class WPTHudNode: SKNode, WPTUpdatable {
         }
         
         if paused {
-            if self.pauseMenu.contains(touchPos) {
-                print("menu touched.")
-            } else {
+            if !self.pauseMenu.contains(touchPos) {
+                // the background was touched, unpause
                 scene?.levelPaused = false
                 self.toggleShroud(false)
             }
@@ -70,6 +70,8 @@ class WPTHudNode: SKNode, WPTUpdatable {
     
     private func toggleShroud(_ isPaused: Bool) {
         if isPaused {
+            self.pauseMenu.levelName = (self.scene as! WPTLevelScene).level.name
+            
             self.addChild(self.pauseShroud)
             self.addChild(self.pauseMenu)
         } else {

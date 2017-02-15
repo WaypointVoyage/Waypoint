@@ -9,21 +9,51 @@
 import SpriteKit
 
 class WPTPauseMenuNode: SKNode {
-    let background = SKSpriteNode(imageNamed: "pause_scroll")
+    
+    private let exit = WPTLabelNode(text: "Exit", fontSize: WPTValues.fontSizeSmall)
+    private var levelNameNode: WPTLabelNode? = nil
+    var levelName: String? = nil {
+        didSet { self.levelNameNode?.text = self.levelName }
+    }
     
     override init() {
         super.init()
         
-        self.background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        self.background.zPosition = WPTValues.pauseShroudZPosition + 1
+        self.isUserInteractionEnabled = true
+    
+        // background
+        let background = SKSpriteNode(imageNamed: "pause_scroll")
+        background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        background.zPosition = WPTValues.pauseShroudZPosition + 1
         let width = 0.9 * WPTValues.screenSize.height
-        let scale = width / (self.background.texture?.size().width)!
-        self.background.size = CGSize(width: width, height: scale * self.background.texture!.size().height)
-        self.background.zRotation = CGFloat(M_PI) / 2.0
-        self.addChild(self.background)
+        let scale = width / (background.texture?.size().width)!
+        background.size = CGSize(width: width, height: scale * background.texture!.size().height)
+        background.zRotation = CGFloat(M_PI) / 2.0
+        self.addChild(background)
+        
+        // level name
+        self.levelNameNode = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeSmall)
+        levelNameNode!.zPosition = WPTValues.pauseShroudZPosition + 2
+        levelNameNode!.fontColor = UIColor.black
+        levelNameNode!.position.y += 0.5 * background.size.height
+        self.addChild(levelNameNode!)
+        
+        // exit
+        exit.zPosition = WPTValues.pauseShroudZPosition + 2
+        exit.fontColor = UIColor.black
+        exit.position.y -= 0.5 * background.size.height
+        self.addChild(exit)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touchPos = touches.first!.location(in: self)
+        
+        if self.exit.contains(touchPos) {
+            self.scene?.view?.presentScene(WPTHomeScene())
+        }
     }
 }
