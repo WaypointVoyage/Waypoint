@@ -46,6 +46,13 @@ points = [
     (2318, 1470), # treasure
 ]
 
+level_names = [
+    '0_setting_sail', '1_sea_legs', '2_pegleg_plunder', '3_cutlass_careen',
+    '4_fire_in_the_hole', '5_dead_men_tell_no_tales', '6_davy_jones_locker',
+    '7_letter_of_marque', '8_give_no_quarter', '9_boom_about', '10_high_seas',
+    '11_shiver_me_timbers',
+]
+
 def convert_x(x):
     return x / map_size[0]
 
@@ -61,14 +68,14 @@ def point_to_dict(point):
 def path_to_dict():
     path = {}
     path['startPoint'] = {
-        'levelNamed': 'setting_sail',
+        'levelNamed': level_names[0],
         'target': point_to_dict(points[0])
     }
 
     pointSets = []
     for i in range(1, point_count):
         pointSet = {
-            'levelNamed': 'LEVEL_NAME',
+            'levelNamed': level_names[i],
             'target': point_to_dict(points[3 * i]),
             'controlPoint1': point_to_dict(points[3 * i - 2]),
             'controlPoint2': point_to_dict(points[3 * i - 1]),

@@ -72,7 +72,7 @@ class WPTTrailMap {
         
         /* load player progress */
         var statusStop: WPTTrailStop? = self.startPoint
-        while statusStop != nil && progress.completedLevels.contains(statusStop!.level!.name) {
+        while statusStop != nil && (progress.completedLevels.contains(statusStop!.level!.name) || WPTConfig.values.allUnlocked) {
             statusStop!.completed = true
             statusStop!.unlocked = true
             statusStop = statusStop!.next

@@ -38,6 +38,16 @@ class WPTLevelScene: WPTScene {
         self.addChild(self.hud)
         
         self.loadLevel()
+        
+        // breif flash of level name
+        let levelName = WPTLabelNode(text: self.level.name, fontSize: WPTValues.fontSizeLarge)
+        levelName.position = CGPoint(x: self.frame.midX, y: 0.7 * self.frame.height)
+        levelName.alpha = 0
+        levelName.fontColor = UIColor.black
+        self.addChild(levelName)
+        WPTLabelNode.fadeInOut(levelName, 0.5, 2, 2, 2, completion: {
+            levelName.removeFromParent()
+        })
     }
     
     private func loadLevel() {

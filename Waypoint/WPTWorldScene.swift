@@ -71,7 +71,7 @@ class WPTWorldScene: WPTScene {
         let touch = touches.first!
         
         // start level
-        if self.startLevel.contains(touch.location(in: self)) {
+        if self.startLevel.contains(touch.location(in: self)) && self.startLevel.alpha == 1.0 {
             let level = self.trailMap.trailMap![self.currentStop].level!
             let levelScene = WPTLevelScene(player: self.player.player, level: level)
             self.scene?.view?.presentScene(levelScene)
@@ -83,9 +83,11 @@ class WPTWorldScene: WPTScene {
                 if let path = self.trailMap.getConnectedPath(from: self.currentStop, to: target) {
                     
                     self.levelName.isHidden = true
+                    self.startLevel.alpha = 0.4
                     let action = SKAction.follow(path, asOffset: false, orientToPath: false, speed: WPTWorldPlayerNode.pathSpeed)
                     self.player.run(action, completion: {
                         self.levelName.isHidden = false
+                        self.startLevel.alpha = 1.0
                         self.updatePlayerStopLocation(target)
                     })
                 }
