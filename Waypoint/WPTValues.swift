@@ -27,6 +27,10 @@ class WPTValues {
     static var fontSizeMiniscule = CGFloat(14)
     static var em = CGFloat(30)
     
+    // in-game positioning and configuration
+    static let actorZPosition: CGFloat = 10
+    static var actorDefaultSize: CGFloat = 125
+    
     static func initValues(deviceScreenSize: CGSize) {
         if (deviceScreenSize.width / deviceScreenSize.height > WPTValues.maxAspectRatio) {
             print("WARNING: current screen aspect ratio is larger than the maximum supported.")
@@ -43,5 +47,7 @@ class WPTValues {
         WPTValues.fontSizeSmall = 0.075 * usableScreenHeight
         WPTValues.fontSizeMiniscule = 0.035 * usableScreenHeight
         WPTValues.em = WPTValues.fontSizeSmall
+        
+        WPTValues.actorDefaultSize = 0.1157 * usableScreenHeight
     }
 }

@@ -10,7 +10,11 @@ import Foundation
 
 class WPTLevel {
     
+    let name: String
+    let beaten: Bool
+    
     init(_ levelFileNamed: String, beaten: Bool = false) {
-        
+        name = "LEVEL NAME"
+        self.beaten = beaten
     }
 }

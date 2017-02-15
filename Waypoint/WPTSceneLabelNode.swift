@@ -34,7 +34,7 @@ class WPTSceneLabelNode: WPTLabelNode {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.useSound && WPTConfig.values.playSoundEffects {
-            print("running sound effect")
+//            print("running sound effect")
 //            self.run(soundEffect)
         }
         self.scene?.view?.presentScene(nextScene)

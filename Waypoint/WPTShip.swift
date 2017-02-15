@@ -6,8 +6,7 @@
 //  Copyright © 2017 cpe436group. All rights reserved.
 //
 
-import Foundation
-
+import SpriteKit
 
 class WPTShip {
     let previewImage: String
@@ -24,6 +23,8 @@ class WPTShip {
     static let maxRangeScale: Double = 15.0
     static let minShotSpeedScale: Double = 0.3
     static let maxShotSpeedScale: Double = 10.0
+    static let minSizeScale: Double = 0.5
+    static let maxSizeScale: Double = 20
     
     var speedScale: Double = 1.0 {
         didSet { clamp(&speedScale, min: WPTShip.minSpeedScale, max: WPTShip.maxSpeedScale) }
@@ -43,6 +44,10 @@ class WPTShip {
     
     var shotSpeedScale = 1.0 {
         didSet { clamp(&shotSpeedScale, min: WPTShip.minShotSpeedScale, max: WPTShip.maxShotSpeedScale) }
+    }
+    
+    var sizeScale = 1.0 {
+        didSet { clamp(&sizeScale, min: WPTShip.minSizeScale, max: WPTShip.maxSizeScale) }
     }
     
     init(previewImage: String, inGameImage: String) {

@@ -27,6 +27,8 @@
 		7E16B8741E2D580600933E24 /* WaypointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8731E2D580600933E24 /* WaypointTests.swift */; };
 		7E16B87F1E2D580600933E24 /* WaypointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B87E1E2D580600933E24 /* WaypointUITests.swift */; };
 		7E5F06561E438A2300EAC166 /* WPTScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F06551E438A2300EAC166 /* WPTScene.swift */; };
+		7E6932951E53B48800AF7373 /* WPTLevelPlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */; };
+		7E6932971E53B55C00AF7373 /* WPTLevelActorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */; };
 		7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E73A0A81E4A6F09008F6DA8 /* trail_shader.fsh */; };
 		7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */; };
 		7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */; };
@@ -93,6 +95,8 @@
 		7E16B87E1E2D580600933E24 /* WaypointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointUITests.swift; sourceTree = "<group>"; };
 		7E16B8801E2D580600933E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E5F06551E438A2300EAC166 /* WPTScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTScene.swift; sourceTree = "<group>"; };
+		7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelPlayerNode.swift; sourceTree = "<group>"; };
+		7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelActorNode.swift; sourceTree = "<group>"; };
 		7E73A0A81E4A6F09008F6DA8 /* trail_shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = trail_shader.fsh; sourceTree = "<group>"; };
 		7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTNewGameScene.swift; sourceTree = "<group>"; };
 		7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLabelNode.swift; sourceTree = "<group>"; };
@@ -266,6 +270,15 @@
 			path = WaypointUITests;
 			sourceTree = "<group>";
 		};
+		7E6932931E53B47700AF7373 /* Level */ = {
+			isa = PBXGroup;
+			children = (
+				7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */,
+				7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */,
+			);
+			name = Level;
+			sourceTree = "<group>";
+		};
 		7E73A0A71E4A6EE3008F6DA8 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +309,7 @@
 		7EF61E891E3B056200CB4CAB /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				7E6932931E53B47700AF7373 /* Level */,
 				7EF76AA81E52DB66003BFCD1 /* World */,
 				7EF61E8A1E3B056800CB4CAB /* UI */,
 			);
@@ -468,6 +482,7 @@
 				7EBF5E6D1E4E218200F81982 /* WPTStatBarNode.swift in Sources */,
 				7ED3775C1E4ABE8800DB1EA2 /* WPTTrailMap.swift in Sources */,
 				7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */,
+				7E6932951E53B48800AF7373 /* WPTLevelPlayerNode.swift in Sources */,
 				7ED739031E44F3B600122903 /* WPTActor.swift in Sources */,
 				7ED739051E44F9E100122903 /* WPTItem.swift in Sources */,
 				7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */,
@@ -490,6 +505,7 @@
 				2D8E804E1E3ADBC400CB2E0B /* WPTShip.swift in Sources */,
 				7EF76AAA1E52DB7E003BFCD1 /* WPTWorldPlayerNode.swift in Sources */,
 				7E13F6301E48F50200B5D2FD /* WPTWorldScene.swift in Sources */,
+				7E6932971E53B55C00AF7373 /* WPTLevelActorNode.swift in Sources */,
 				7EBF5E691E4E1B4000F81982 /* WPTUtils.swift in Sources */,
 				7ED739011E44EBF500122903 /* WPTWorldMapNode.swift in Sources */,
 			);
