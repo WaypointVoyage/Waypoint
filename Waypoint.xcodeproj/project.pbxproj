@@ -29,6 +29,11 @@
 		7E5F06561E438A2300EAC166 /* WPTScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F06551E438A2300EAC166 /* WPTScene.swift */; };
 		7E6932951E53B48800AF7373 /* WPTLevelPlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */; };
 		7E6932971E53B55C00AF7373 /* WPTLevelActorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */; };
+		7E69329A1E53E08100AF7373 /* WPTHudNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6932991E53E08100AF7373 /* WPTHudNode.swift */; };
+		7E69329C1E53E0B200AF7373 /* WPTHudTopNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69329B1E53E0B200AF7373 /* WPTHudTopNode.swift */; };
+		7E69329E1E53E0D500AF7373 /* WPTHudBottomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69329D1E53E0D500AF7373 /* WPTHudBottomNode.swift */; };
+		7E6932A01E53E2D500AF7373 /* WPTFireButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69329F1E53E2D500AF7373 /* WPTFireButtonNode.swift */; };
+		7E6932A21E53ECF500AF7373 /* WPTUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6932A11E53ECF500AF7373 /* WPTUpdatable.swift */; };
 		7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E73A0A81E4A6F09008F6DA8 /* trail_shader.fsh */; };
 		7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */; };
 		7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */; };
@@ -97,6 +102,11 @@
 		7E5F06551E438A2300EAC166 /* WPTScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTScene.swift; sourceTree = "<group>"; };
 		7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelPlayerNode.swift; sourceTree = "<group>"; };
 		7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelActorNode.swift; sourceTree = "<group>"; };
+		7E6932991E53E08100AF7373 /* WPTHudNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHudNode.swift; sourceTree = "<group>"; };
+		7E69329B1E53E0B200AF7373 /* WPTHudTopNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHudTopNode.swift; sourceTree = "<group>"; };
+		7E69329D1E53E0D500AF7373 /* WPTHudBottomNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHudBottomNode.swift; sourceTree = "<group>"; };
+		7E69329F1E53E2D500AF7373 /* WPTFireButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTFireButtonNode.swift; sourceTree = "<group>"; };
+		7E6932A11E53ECF500AF7373 /* WPTUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTUpdatable.swift; sourceTree = "<group>"; };
 		7E73A0A81E4A6F09008F6DA8 /* trail_shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = trail_shader.fsh; sourceTree = "<group>"; };
 		7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTNewGameScene.swift; sourceTree = "<group>"; };
 		7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLabelNode.swift; sourceTree = "<group>"; };
@@ -232,10 +242,7 @@
 		7E16B8571E2D580600933E24 /* Waypoint */ = {
 			isa = PBXGroup;
 			children = (
-				7ED3775A1E4AB4F000DB1EA2 /* Data */,
-				7E73A0A71E4A6EE3008F6DA8 /* Shaders */,
-				7E13F6281E48EA7400B5D2FD /* Sound */,
-				7E0D620D1E366ED1009C8516 /* Fonts */,
+				7E6932A31E53EDB400AF7373 /* Resources */,
 				7EF61E891E3B056200CB4CAB /* Nodes */,
 				2D8E804C1E3ADBAF00CB2E0B /* Models */,
 				2DEBBB081E32E0ED00F059C0 /* Scenes */,
@@ -273,10 +280,33 @@
 		7E6932931E53B47700AF7373 /* Level */ = {
 			isa = PBXGroup;
 			children = (
+				7E6932981E53DFFB00AF7373 /* HUD */,
 				7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */,
 				7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */,
 			);
 			name = Level;
+			sourceTree = "<group>";
+		};
+		7E6932981E53DFFB00AF7373 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				7E6932991E53E08100AF7373 /* WPTHudNode.swift */,
+				7E69329B1E53E0B200AF7373 /* WPTHudTopNode.swift */,
+				7E69329D1E53E0D500AF7373 /* WPTHudBottomNode.swift */,
+				7E69329F1E53E2D500AF7373 /* WPTFireButtonNode.swift */,
+			);
+			name = HUD;
+			sourceTree = "<group>";
+		};
+		7E6932A31E53EDB400AF7373 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7ED3775A1E4AB4F000DB1EA2 /* Data */,
+				7E73A0A71E4A6EE3008F6DA8 /* Shaders */,
+				7E13F6281E48EA7400B5D2FD /* Sound */,
+				7E0D620D1E366ED1009C8516 /* Fonts */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		7E73A0A71E4A6EE3008F6DA8 /* Shaders */ = {
@@ -309,6 +339,7 @@
 		7EF61E891E3B056200CB4CAB /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				7E6932A11E53ECF500AF7373 /* WPTUpdatable.swift */,
 				7E6932931E53B47700AF7373 /* Level */,
 				7EF76AA81E52DB66003BFCD1 /* World */,
 				7EF61E8A1E3B056800CB4CAB /* UI */,
@@ -485,16 +516,21 @@
 				7E6932951E53B48800AF7373 /* WPTLevelPlayerNode.swift in Sources */,
 				7ED739031E44F3B600122903 /* WPTActor.swift in Sources */,
 				7ED739051E44F9E100122903 /* WPTItem.swift in Sources */,
+				7E69329C1E53E0B200AF7373 /* WPTHudTopNode.swift in Sources */,
 				7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */,
+				7E6932A21E53ECF500AF7373 /* WPTUpdatable.swift in Sources */,
+				7E6932A01E53E2D500AF7373 /* WPTFireButtonNode.swift in Sources */,
 				7EE7981D1E5234A3006D683B /* WPTLevel.swift in Sources */,
 				7ED2206B1E371EDE00D2AA68 /* WPTHighScoresScene.swift in Sources */,
 				7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */,
 				7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */,
+				7E69329A1E53E08100AF7373 /* WPTHudNode.swift in Sources */,
 				7E5F06561E438A2300EAC166 /* WPTScene.swift in Sources */,
 				2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */,
 				7ED2206D1E37215F00D2AA68 /* WPTSecretMessage.swift in Sources */,
 				7E13F6341E48F8B900B5D2FD /* WPTPlayer.swift in Sources */,
 				7E13F6321E48F53200B5D2FD /* WPTLevelScene.swift in Sources */,
+				7E69329E1E53E0D500AF7373 /* WPTHudBottomNode.swift in Sources */,
 				7EDD063A1E4A1C750054EB7E /* WPTTrailMapNode.swift in Sources */,
 				7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */,
 				7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */,

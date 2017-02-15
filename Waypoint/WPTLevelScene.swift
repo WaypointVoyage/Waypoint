@@ -10,12 +10,15 @@ import SpriteKit
 
 class WPTLevelScene: WPTScene {
     
-    let player: WPTLevelPlayerNode
     let level: WPTLevel
+    
+    let player: WPTLevelPlayerNode
+    let hud: WPTHudNode
     
     init(player: WPTPlayer, level: WPTLevel) {
         self.player = WPTLevelPlayerNode(player: player)
         self.level = level
+        self.hud = WPTHudNode(player: self.player.player)
         super.init(size: CGSize(width: 0, height: 0))
         
         self.scene?.backgroundColor = UIColor.cyan
@@ -32,6 +35,8 @@ class WPTLevelScene: WPTScene {
         self.player.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         self.addChild(self.player)
         
+        self.addChild(self.hud)
+        
         self.loadLevel()
     }
     
@@ -39,4 +44,7 @@ class WPTLevelScene: WPTScene {
         print("loading level: \(self.level.name)")
     }
     
+    override func update(_ currentTime: TimeInterval) {
+        self.hud.update(currentTime)
+    }
 }

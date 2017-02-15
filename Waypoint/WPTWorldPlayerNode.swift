@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class WPTWorldPlayerNode: SKSpriteNode {
+class WPTWorldPlayerNode: SKSpriteNode, WPTUpdatable {
     
     public static let pathSpeed: CGFloat = 250
     
