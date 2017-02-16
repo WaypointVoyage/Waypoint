@@ -30,7 +30,7 @@ class WPTLevelScene: WPTScene {
         self.terrain = WPTTerrainNode(level: level)
         super.init(size: CGSize(width: 0, height: 0))
         
-        self.scene?.backgroundColor = UIColor.cyan
+        self.scene?.backgroundColor = UIColor.black
     }
     
     required init?(coder aDecoder: NSCoder) {
