@@ -11,8 +11,8 @@ import SpriteKit
 class WPTLevelActorNode: SKNode {
     
     let actor: WPTActor
-    var actorSize: CGFloat {
-        return WPTValues.actorDefaultSize * CGFloat(self.actor.ship.sizeScale)
+    var actorSizeScale: CGFloat {
+        return WPTValues.actorDefaultSizeScale * CGFloat(self.actor.ship.sizeScale)
     }
     
     // child nodes
@@ -25,7 +25,7 @@ class WPTLevelActorNode: SKNode {
         
         self.zPosition = WPTValues.actorZPosition
         
-        self.sprite.size = CGSize(width: self.actorSize, height: self.actorSize)
+        self.setScale(self.actorSizeScale)
         self.addChild(self.sprite)
     }
     

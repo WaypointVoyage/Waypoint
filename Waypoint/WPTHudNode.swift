@@ -24,7 +24,6 @@ class WPTHudNode: SKNode, WPTUpdatable {
         
         self.isUserInteractionEnabled = true
         
-        self.position = CGPoint.zero
         self.addChild(top)
         self.addChild(bottom)
         
