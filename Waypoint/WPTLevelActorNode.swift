@@ -8,12 +8,15 @@
 
 import SpriteKit
 
-class WPTLevelActorNode: SKNode {
+class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     let actor: WPTActor
     var actorSizeScale: CGFloat {
         return WPTValues.actorDefaultSizeScale * CGFloat(self.actor.ship.sizeScale)
     }
+    
+    var forward: Vec2 = Vec2(x: 0, y: 1)
+    var boatSpeed: CGFloat = CGFloat(5)
     
     // child nodes
     let sprite: SKSpriteNode
@@ -31,5 +34,9 @@ class WPTLevelActorNode: SKNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func update(_ currentTime: TimeInterval) {
+        
     }
 }

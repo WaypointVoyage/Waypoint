@@ -78,8 +78,12 @@ class WPTLevelScene: WPTScene {
 
         if self.levelPaused { return } // everything below this is subject to the pause
         
-        self.hud.update(currentTime)
+        self.player.update(currentTime)
         
+        self.hud.update(currentTime)
+    }
+    
+    override func didEvaluateActions() {
         // center the camera on the player
         let shift = self.terrain.position + self.player.position
         self.cam.position = shift
