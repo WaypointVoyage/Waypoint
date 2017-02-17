@@ -10,6 +10,8 @@ import SpriteKit
 
 class WPTSceneLabelNode: WPTLabelNode {
     
+    static let fontSize = WPTValues.fontSizeMedium
+    
     var nextScene: SKScene?
     var useSound = true
     
@@ -20,9 +22,10 @@ class WPTSceneLabelNode: WPTLabelNode {
     }
     
     init(text: String, next: SKScene) {
-        super.init(text: text, fontSize: fontSizeMedium)
+        super.init(text: text, fontSize: WPTSceneLabelNode.fontSize)
         self.nextScene = next
         self.isUserInteractionEnabled = true
+        self.verticalAlignmentMode = .top
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,7 +34,7 @@ class WPTSceneLabelNode: WPTLabelNode {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.useSound && WPTConfig.values.playSoundEffects {
-            print("running sound effect")
+//            print("running sound effect")
 //            self.run(soundEffect)
         }
         self.scene?.view?.presentScene(nextScene)

@@ -13,20 +13,33 @@ import GameplayKit
 class WPTTrailMapNode: SKNode {
     
     var trailMap: WPTTrailMap?
-    let trailShader = SKShader(fileNamed: "trail_shader.fsh")
-    let startMarker = SKSpriteNode(imageNamed: "red_circle")
-    let treasureMarker = SKSpriteNode(imageNamed: "x_marks_the_spot")
+    private let progress: WPTPlayerProgress
     
-    let markerTexture = SKTexture(imageNamed: "red_circle")
+    let trailShader = SKShader(fileNamed: "trail_shader.fsh")
+    let unlockedMarkerTexture = SKTexture(imageNamed: "blue_circle")
+    let lockedMarkerTexture = SKTexture(imageNamed: "red_circle")
+    let completedMarkerTexture = SKTexture(imageNamed: "green_circle")
+    let treasureMarkerTexture = SKTexture(imageNamed: "x_marks_the_spot")
+    
+    private var markers = [SKSpriteNode]()
+    
+    init(progress: WPTPlayerProgress) {
+        self.progress = progress
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func position(for scene: WPTScene) {
         self.removeAllChildren()
         
-        let h = scene.frame.width / maxAspectRatio
+        let h = scene.frame.width / WPTValues.maxAspectRatio
         let ymin = (scene.frame.height - h) / 2.0;
         self.position = CGPoint(x: 0, y: ymin)
         
-        self.trailMap = WPTTrailMapNode.setupTrailMap(size: CGSize(width: scene.frame.width, height: h))
+        self.trailMap = WPTTrailMap(mapSize: CGSize(width: scene.frame.width, height: h), progress: self.progress)
         let trail = SKShapeNode(path: self.trailMap!.toCGPath())
         trail.lineWidth = 2.5
         trail.strokeColor = .clear
@@ -34,40 +47,94 @@ class WPTTrailMapNode: SKNode {
         
         self.addChild(trail)
         
-        self.startMarker.position = self.trailMap!.startLocation
-        self.startMarker.scale(to: CGSize(width: 30, height: 30))
-        self.addChild(self.startMarker)
-        
-        self.treasureMarker.position = self.trailMap!.treasureLocation!
-        self.treasureMarker.scale(to: CGSize(width: 45, height: 45))
-        self.addChild(self.treasureMarker)
-        
-        let markerSize = CGSize(width: 20, height: 20)
-        self.trailMap?.traversePoints({
-            (index, point) in
-            let marker = SKSpriteNode(texture: self.markerTexture)
+        self.markers.removeAll()
+        self.trailMap!.traversePoints({
+            (index, point, isUnlocked, isCompleted) in
+            
+            var texture = isCompleted ? completedMarkerTexture : isUnlocked ? unlockedMarkerTexture : lockedMarkerTexture
+            
+            var scale: CGSize?
+            switch (index) {
+            case 0:
+                let scaleSize = 0.06 * WPTValues.usableScreenHeight
+                scale = CGSize(width: scaleSize, height: scaleSize)
+            case self.trailMap!.stopCount - 1:
+                let scaleSize = 0.15 * WPTValues.usableScreenHeight
+                scale = CGSize(width: scaleSize, height: scaleSize)
+                texture = treasureMarkerTexture
+            default:
+                let scaleSize = 0.06 * WPTValues.usableScreenHeight
+                scale = CGSize(width: scaleSize, height: scaleSize)
+            }
+            
+            let marker = SKSpriteNode(texture: texture)
             marker.position = point
-            marker.scale(to: markerSize)
+            marker.scale(to: scale!)
+            marker.zPosition = 2
+            self.markers.append(marker)
             self.addChild(marker)
         })
     }
     
-    static func setupTrailMap(size: CGSize) -> WPTTrailMap {
-        let plistPath = Bundle.main.path(forResource: "trail_map", ofType: "plist")!
-        let trailMapDict = NSDictionary(contentsOfFile: plistPath) as! [String: Any]
-        let startPointDict = trailMapDict["startPoint"] as! [String: CGFloat]
-        let startPoint = CGPoint(x: startPointDict["x"]!, y: startPointDict["y"]!)
+    func getStopIndex(for touch: UITouch) -> Int? {
+        var target: Int? = nil
+        self.trailMap!.traversePoints({
+            (index, point, isUnlocked, isCompleted) in
+            if (target == nil) {
+                let marker = self.markers[index]
+                if marker.contains(touch.location(in: self)) {
+                    target = index
+                }
+            }
+        })
+        return target
+    }
+    
+    func getConnectedPath(from start: Int, to target: Int) -> CGPath? {
+        if (start == target) { return nil }
+        let startStop = self.trailMap![start]
+        let targetStop = self.trailMap![target]
+        return start < target ? getForewardPath(start: startStop, target: targetStop, checkLocked: true)
+            : getBackwardPath(start: startStop, target: targetStop, checkLocked: true)
+    }
+    
+    private func getForewardPath(start: WPTTrailStop, target: WPTTrailStop, checkLocked: Bool = true) -> CGPath? {
+        let path = UIBezierPath()
+        var current = start
+        path.move(to: current.target + WPTValues.heightShift)
         
-        var points = [(target: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint)]()
-        let pointsArr = trailMapDict["points"] as! [[String: [String: CGFloat]]]
-        for pointSetDict in pointsArr {
-            let target = CGPoint(x: pointSetDict["target"]!["x"]!, y: pointSetDict["target"]!["y"]!)
-            let controlPoint1 = CGPoint(x: pointSetDict["controlPoint1"]!["x"]!, y: pointSetDict["controlPoint1"]!["y"]!)
-            let controlPoint2 = CGPoint(x: pointSetDict["controlPoint2"]!["x"]!, y: pointSetDict["controlPoint2"]!["y"]!)
+        while current !== target {
+            current = current.next!
+            if (checkLocked && !current.unlocked) {
+                return current.prev! === start ? nil : path.cgPath
+            }
             
-            points.append((target, controlPoint1, controlPoint2))
+            let target = current.target + WPTValues.heightShift
+            let c1 = current.controlPoint1! + WPTValues.heightShift
+            let c2 = current.controlPoint2! + WPTValues.heightShift
+            path.addCurve(to: target, controlPoint1: c1, controlPoint2: c2)
         }
         
-        return WPTTrailMap(startPoint: startPoint, points: points, mapSize: size)
+        return path.cgPath
+    }
+    
+    private func getBackwardPath(start: WPTTrailStop, target: WPTTrailStop, checkLocked: Bool = true) -> CGPath? {
+        let path = UIBezierPath()
+        var current = start
+        path.move(to: current.target + WPTValues.heightShift)
+        
+        while current !== target {
+            current = current.prev!
+            if (checkLocked && !current.unlocked) {
+                return current.next! === start ? nil : path.cgPath
+            }
+            
+            let target = current.target + WPTValues.heightShift
+            let c1 = current.next!.controlPoint2! + WPTValues.heightShift
+            let c2 = current.next!.controlPoint1! + WPTValues.heightShift
+            path.addCurve(to: target, controlPoint1: c1, controlPoint2: c2)
+        }
+        
+        return path.cgPath
     }
 }

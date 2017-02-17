@@ -10,7 +10,6 @@ import Foundation
 
 class WPTActor {
     // ship
-    var shipName: String
     var ship: WPTShip;
     
     // currency
@@ -40,8 +39,7 @@ class WPTActor {
     var items: [WPTItem] = []
     var itemCounts: [String:Int] = [:] // item.name -> count
     
-    init(shipName: String, ship: WPTShip) {
-        self.shipName = shipName
+    init(ship: WPTShip) {
         self.ship = ship
     }
     

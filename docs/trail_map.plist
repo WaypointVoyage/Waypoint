@@ -8,17 +8,19 @@
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.14641288433382138</real>
+				<real>0.16837481698389459</real>
 				<key>y</key>
 				<real>0.77623230844314306</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.13909224011713031</real>
+				<real>0.14641288433382138</real>
 				<key>y</key>
 				<real>0.71766715470961451</real>
 			</dict>
+			<key>levelNamed</key>
+			<string>1_sea_legs</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
@@ -42,19 +44,21 @@
 				<key>y</key>
 				<real>0.49511957052220601</real>
 			</dict>
+			<key>levelNamed</key>
+			<string>2_pegleg_plunder</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
 				<real>0.034773060029282578</real>
 				<key>y</key>
-				<real>0.39816170489669755</real>
+				<real>0.46323409793395154</real>
 			</dict>
 		</dict>
 		<dict>
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.02964860907759883</real>
+				<real>0.043923865300146414</real>
 				<key>y</key>
 				<real>0.30250528713193425</real>
 			</dict>
@@ -65,6 +69,8 @@
 				<key>y</key>
 				<real>0.53090938669269561</real>
 			</dict>
+			<key>levelNamed</key>
+			<string>3_cutlass_careen</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
@@ -88,6 +94,8 @@
 				<key>y</key>
 				<real>0.33178786399869853</real>
 			</dict>
+			<key>levelNamed</key>
+			<string>4_fire_in_the_hole</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
@@ -111,6 +119,8 @@
 				<key>y</key>
 				<real>0.09752724906458432</real>
 			</dict>
+			<key>levelNamed</key>
+			<string>5_dead_men_tell_no_tales</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
@@ -134,6 +144,8 @@
 				<key>y</key>
 				<real>0.363673336586953</real>
 			</dict>
+			<key>levelNamed</key>
+			<string>6_davy_jones_locker</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
@@ -146,17 +158,19 @@
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.38909224011713028</real>
+				<real>0.41947291361639827</real>
 				<key>y</key>
-				<real>0.7560598666015943</real>
+				<real>0.56149341142020504</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.53404099560761342</real>
+				<real>0.53147877013177158</real>
 				<key>y</key>
-				<real>0.77818448023426057</real>
+				<real>0.7059541239629088</real>
 			</dict>
+			<key>levelNamed</key>
+			<string>7_letter_of_marque</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
@@ -169,17 +183,19 @@
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.68081991215226945</real>
+				<real>0.6350658857979502</real>
 				<key>y</key>
-				<real>0.55173255246461683</real>
+				<real>0.74174394013339839</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.8301610541727672</real>
+				<real>0.71266471449487556</real>
 				<key>y</key>
-				<real>1.0196030584024727</real>
+				<real>0.78599316739873104</real>
 			</dict>
+			<key>levelNamed</key>
+			<string>8_give_no_quarter</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
@@ -192,9 +208,9 @@
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.57979502196193267</real>
+				<real>0.59407027818448022</real>
 				<key>y</key>
-				<real>0.88425248088498454</real>
+				<real>0.74044249227265335</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
@@ -203,6 +219,8 @@
 				<key>y</key>
 				<real>0.36822840409956081</real>
 			</dict>
+			<key>levelNamed</key>
+			<string>9_boom_about</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
@@ -226,6 +244,8 @@
 				<key>y</key>
 				<real>0.34675451439726701</real>
 			</dict>
+			<key>levelNamed</key>
+			<string>10_high_seas</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
@@ -238,17 +258,19 @@
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.56918008784773055</real>
+				<real>0.55600292825768671</real>
 				<key>y</key>
-				<real>0.1196518626972507</real>
+				<real>0.28298356922075807</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.69692532942898977</real>
+				<real>0.7141288433382138</real>
 				<key>y</key>
-				<real>0.0012201073694485531</real>
+				<real>0.13331706523507403</real>
 			</dict>
+			<key>levelNamed</key>
+			<string>11_shiver_me_timbers</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
@@ -260,10 +282,15 @@
 	</array>
 	<key>startPoint</key>
 	<dict>
-		<key>x</key>
-		<real>0.12079062957540264</real>
-		<key>y</key>
-		<real>0.83154384252480884</real>
+		<key>levelNamed</key>
+		<string>0_setting_sail</string>
+		<key>target</key>
+		<dict>
+			<key>x</key>
+			<real>0.12079062957540264</real>
+			<key>y</key>
+			<real>0.83154384252480884</real>
+		</dict>
 	</dict>
 </dict>
 </plist>

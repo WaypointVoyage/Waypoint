@@ -15,7 +15,7 @@ class WPTLabelNode: SKLabelNode {
     }
     
     init(text: String, fontSize: CGFloat) {
-        super.init(fontNamed: booter)
+        super.init(fontNamed: WPTValues.booter)
         
         self.text = text
         self.fontSize = fontSize
@@ -24,5 +24,15 @@ class WPTLabelNode: SKLabelNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    static func fadeInOut(_ label: WPTLabelNode, _ delayDuration: TimeInterval, _ inDuration: TimeInterval, _ waitDuration: TimeInterval, _ outDuration: TimeInterval, completion: @escaping () -> Void) {
+        
+        let delay = SKAction.wait(forDuration: delayDuration)
+        let fadeIn = SKAction.fadeIn(withDuration: inDuration)
+        let wait = SKAction.wait(forDuration: waitDuration)
+        let fadeOut = SKAction.fadeOut(withDuration: outDuration)
+        
+        label.run(SKAction.sequence([delay, fadeIn, wait, fadeOut]), completion: completion)
     }
 }

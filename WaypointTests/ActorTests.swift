@@ -16,7 +16,7 @@ class ActorTests: XCTestCase {
         let noMultItem = WPTItem(name: "b", imageName: "img", typeMask: 0, multiplicity: 0)
         let mult3Item = WPTItem(name: "c", imageName: "img", typeMask: 0, multiplicity: 3)
         
-        let actor = WPTActor(shipName: "ship", ship: WPTShip(imageName: "img"))
+        let actor = WPTActor(ship: WPTShip(previewImage: "img", inGameImage: "ingimg"))
         
         XCTAssert(actor.items.count == 0)
         

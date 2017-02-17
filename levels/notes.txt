@@ -1,0 +1,12 @@
+s: setting sail
+1: Sea Legs
+2: Pegleg Plunder
+3: cutlass careen
+4: Fire In The Hole
+5: Dead Men Tell No Tales
+6: Davy Jones' Locker
+7: letter of marque
+8: Give No Quarter
+9: Boom About
+10: High Seas
+t: Shiver me timbers
