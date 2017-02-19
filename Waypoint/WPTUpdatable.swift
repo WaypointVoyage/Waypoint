@@ -9,5 +9,5 @@
 import SpriteKit
 
 protocol WPTUpdatable {
-    func update(_ currentTime: TimeInterval)
+    func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval)
 }

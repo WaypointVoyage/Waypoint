@@ -25,6 +25,8 @@ class WPTShip {
     static let maxShotSpeedScale: Double = 10.0
     static let minSizeScale: Double = 0.5
     static let maxSizeScale: Double = 20
+    static let minTurnRateScale: Double = 0.3
+    static let maxTurnRateScale: Double = 10
     
     var speedScale: Double = 1.0 {
         didSet { clamp(&speedScale, min: WPTShip.minSpeedScale, max: WPTShip.maxSpeedScale) }
@@ -48,6 +50,10 @@ class WPTShip {
     
     var sizeScale = 1.0 {
         didSet { clamp(&sizeScale, min: WPTShip.minSizeScale, max: WPTShip.maxSizeScale) }
+    }
+    
+    var turnRateScale = 1.0 {
+        didSet { clamp(&turnRateScale, min: WPTShip.minTurnRateScale, max: WPTShip.maxTurnRateScale) }
     }
     
     init(previewImage: String, inGameImage: String) {

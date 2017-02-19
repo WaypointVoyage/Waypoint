@@ -21,7 +21,6 @@ class WPTHudBottomNode: SKNode {
         self.leftFire = WPTFireButtonNode()
         self.rightFire = WPTFireButtonNode()
         super.init()
-        
         self.isUserInteractionEnabled = true
         
         let offset = WPTValues.fontSizeMedium / 2 + WPTValues.fontSizeMiniscule
