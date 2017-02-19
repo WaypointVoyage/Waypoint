@@ -1,3 +1,11 @@
 {
-   "name": "Letter of Marque"
+   "name": "Letter of Marque",
+   "size": {
+      "width": 2160,
+      "height": 2160
+   },
+   "spawnPoint": {
+      "x": 1080,
+      "y": 1080
+   }
 }

@@ -19,8 +19,8 @@ class WPTTerrainNode: SKNode {
     
     init(level: WPTLevel) {
         self.level = level
-        self.size = CGSize(width: 1080 * 5, height: 1080 * 5)
-        self.spawnPoint = CGPoint(x: self.size.width / 3.0, y: 0.9 * self.size.height)
+        self.size = level.size
+        self.spawnPoint = level.spawnPoint
         self.boundary = nil
         super.init()
         self.isUserInteractionEnabled = true

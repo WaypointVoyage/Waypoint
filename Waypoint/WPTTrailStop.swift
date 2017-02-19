@@ -20,7 +20,7 @@ class WPTTrailStop {
     var unlocked = false
     var completed = false
     
-    init(target: CGPoint, controlPoint1: CGPoint?, controlPoint2: CGPoint?, levelNamed: String?) {
+    init(target: CGPoint, controlPoint1: CGPoint?, controlPoint2: CGPoint?, levelNamed: String) {
         self.target = target
         self.controlPoint1 = controlPoint1
         self.controlPoint2 = controlPoint2
@@ -28,9 +28,7 @@ class WPTTrailStop {
     }
     
     // start node with nil control points
-    convenience init(target: CGPoint, levelNamed: String?) {
+    convenience init(target: CGPoint, levelNamed: String) {
         self.init(target: target, controlPoint1: nil, controlPoint2: nil, levelNamed: levelNamed)
-//        self.unlocked = true
-//        self.completed = false
     }
 }
