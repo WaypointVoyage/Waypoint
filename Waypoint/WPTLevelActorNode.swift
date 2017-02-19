@@ -26,6 +26,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     // child nodes
     let sprite: SKSpriteNode
+    var cannonNodes = [WPTCannonNode]()
     
     init(actor: WPTActor) {
         self.actor = actor
@@ -33,8 +34,12 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         self.physics = SKPhysicsBody(texture: self.sprite.texture!, size: self.sprite.frame.size)
         super.init()
         
+        // sprite
         self.zPosition = WPTValues.actorZPosition
         self.addChild(self.sprite)
+        
+        // cannons
+        for _ in 0..<actor.ship.cannonSet.numCannons { let _ = self.addCannon() }
         
         // configure physics behavior
         self.physicsBody = physics
@@ -50,6 +55,18 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addCannon() -> Bool {
+        if self.cannonNodes.count >= self.actor.ship.cannonSet.maxCannons {
+            print("WARN: can't add cannon. Already have max cannons.")
+            return false
+        }
+        
+        let node = WPTCannonNode(self.actor.ship.cannonSet)
+        self.cannonNodes.append(node)
+        self.addChild(node)
+        return true
     }
     
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {

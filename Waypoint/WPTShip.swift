@@ -9,10 +9,6 @@
 import SpriteKit
 
 class WPTShip {
-    let previewImage: String
-    let inGameImage: String
-    
-    // TODO: finalize these values
     static let minSpeedScale: Double = 0.4
     static let maxSpeedScale: Double = 2.4
     static let minDamageScale: Double = 0.5
@@ -56,18 +52,33 @@ class WPTShip {
         didSet { clamp(&turnRateScale, min: WPTShip.minTurnRateScale, max: WPTShip.maxTurnRateScale) }
     }
     
-    init(previewImage: String, inGameImage: String) {
-        self.previewImage = previewImage
-        self.inGameImage = inGameImage
-        self.initStats()
+    let previewImage: String
+    let inGameImage: String
+    let cannonSet: WPTCannonSet
+    
+    init(dict: [String:AnyObject]) {
+        self.previewImage = dict["previewImage"] as! String
+        self.inGameImage = dict["inGameImage"] as! String
+        self.cannonSet = WPTCannonSet(dict: dict["cannonSet"] as! [String:AnyObject])
+        
+        let stats = dict["stats"] as! [String:Double]
+        self.speedScale = stats["speedScale"]!
+        self.damageScale = stats["damageScale"]!
+        self.healthScale = stats["healthScale"]!
+        self.rangeScale = stats["rangeScale"]!
+        self.shotSpeedScale = stats["shotSpeedScale"]!
+        self.sizeScale = stats["sizeScale"]!
+        self.turnRateScale = stats["turnRateScale"]!
     }
     
-    func initStats(speedScale: Double = 1.0, damageScale: Double = 1.0, healthScale: Double = 1.0, rangeScale: Double = 1.0, shotSpeedScale: Double = 1.0) {
+    func initStats(speedScale: Double = 1.0, damageScale: Double = 1.0, healthScale: Double = 1.0, rangeScale: Double = 1.0, shotSpeedScale: Double = 1.0, sizeScale: Double = 1.0, turnRateScale: Double = 1.0) {
         self.speedScale = speedScale
         self.damageScale = damageScale
         self.healthScale = healthScale
         self.rangeScale = rangeScale
         self.shotSpeedScale = shotSpeedScale
+        self.sizeScale = sizeScale
+        self.turnRateScale = turnRateScale
     }
     
     func shuffleStats() {
@@ -76,6 +87,8 @@ class WPTShip {
         self.healthScale = WPTShip.randStat(min: WPTShip.minHealthScale, max: WPTShip.maxHealthScale)
         self.rangeScale = WPTShip.randStat(min: WPTShip.minRangeScale, max: WPTShip.maxRangeScale)
         self.shotSpeedScale = WPTShip.randStat(min: WPTShip.minShotSpeedScale, max: WPTShip.maxShotSpeedScale)
+        self.sizeScale = WPTShip.randStat(min: WPTShip.minSizeScale, max: WPTShip.maxSizeScale)
+        self.turnRateScale = WPTShip.randStat(min: WPTShip.minTurnRateScale, max: WPTShip.maxTurnRateScale)
     }
     
     static func randStat(min: Double, max: Double) -> Double {

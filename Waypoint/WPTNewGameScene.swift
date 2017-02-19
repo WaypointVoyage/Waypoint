@@ -6,6 +6,7 @@
 //  Copyright © 2017 cpe436group. All rights reserved.
 //
 
+import Foundation
 import SpriteKit
 
 class WPTNewGameScene: WPTScene {
@@ -20,16 +21,12 @@ class WPTNewGameScene: WPTScene {
     let shotSpeedLabel = WPTStatBarNode("Shot Speed")
     
     let ships: [WPTShip] = {
-        // TODO: find better way to initialize ship data.
         var ships = [WPTShip]()
-        
-        let waypointShip = WPTShip(previewImage: "WaypointShip", inGameImage: "waypoint_ship_top_down")
-        ships.append(waypointShip)
-        
-        let paperBoat = WPTShip(previewImage: "PaperBoat", inGameImage: "paper_boat_top_down")
-        paperBoat.shuffleStats()
-        ships.append(paperBoat)
-        
+        let plistPath = Bundle.main.path(forResource: "the_ships", ofType: "plist")!
+        let allShips = NSArray(contentsOfFile: plistPath) as! [[String: AnyObject]]
+        for ship in allShips {
+            ships.append(WPTShip(dict: ship))
+        }
         return ships
     }()
     
