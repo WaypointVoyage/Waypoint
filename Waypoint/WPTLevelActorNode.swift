@@ -44,7 +44,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         self.physics.angularDamping = WPTValues.waterAngularDampening        
         
         // set starting position in the world
-        self.zRotation += 3.0 * CGFloat(M_PI) / 2.0
+        self.zRotation += CGFloat(M_PI) / 2.0
         self.setScale(self.actorSizeScale)
     }
     
@@ -57,7 +57,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         
         // rotate to face target
         if let target = self.targetRot {
-            turnVector = CGVector(dx: cos(target), dy: sin(target))
+            turnVector = CGVector(dx: cos(target), dy: sin(target)) // unit vector pointing at target
             
             // calculate the angle delta
             let zRot = self.zRotation < 0 ? self.zRotation + 2.0 * CG_PI : self.zRotation   // target and zRot are in [0, 2pi)

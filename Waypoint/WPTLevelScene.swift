@@ -89,10 +89,32 @@ class WPTLevelScene: WPTScene {
         self.hud.update(currentTime, deltaTime)
     }
     
-    override func didEvaluateActions() {
-        // center the camera on the player
-        let shift = self.terrain.position + self.player.position
-        self.cam.position = shift
+    override func didSimulatePhysics() {
+        // center camera on player while restricting the camera bounds
+        var target = self.terrain.position + self.player.position
+        
+        // restrict vertical direction
+        let sceneHeight = self.scene!.size.height * self.cam.yScale
+        let top = target.y + sceneHeight / 2.0
+        let bottom = top - sceneHeight
+        if top > terrain.size.height {
+            target.y = terrain.size.height - sceneHeight / 2.0
+        } else if bottom < 0 {
+            target.y = sceneHeight / 2.0
+        }
+        
+        // restrict horizontal direction
+        let sceneWidth = self.scene!.size.width * self.cam.xScale
+        let left = target.x - sceneWidth / 2.0
+        let right = left + sceneWidth
+        if left < 0 {
+            target.x = sceneWidth / 2.0
+        } else if right > terrain.size.width {
+            target.x = terrain.size.width - sceneWidth / 2.0
+        }
+        
+        // apply the camera position
+        self.cam.position = target
     }
         
     private func pauseChanged() {
