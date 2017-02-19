@@ -17,4 +17,3 @@ class WPTCannonSet {
         self.maxCannons = dict["maxCannons"] as! Int
     }
 }
-
