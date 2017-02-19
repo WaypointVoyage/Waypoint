@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703D61E590F8C0000827E /* random_ship_names.plist */; };
 		2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */; };
+		2D7FD1811E5801A1001B6208 /* WPTShipNamePopUpNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */; };
 		2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */; };
 		2D8E804E1E3ADBC400CB2E0B /* WPTShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */; };
 		7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62021E36650B009C8516 /* WPTHomeScene.swift */; };
@@ -93,7 +95,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D1703D61E590F8C0000827E /* random_ship_names.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = random_ship_names.plist; sourceTree = "<group>"; };
 		2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOOTERFZ.ttf; sourceTree = "<group>"; };
+		2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipNamePopUpNode.swift; sourceTree = "<group>"; };
 		2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSettingsScene.swift; sourceTree = "<group>"; };
 		2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShip.swift; sourceTree = "<group>"; };
 		7E0D62021E36650B009C8516 /* WPTHomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHomeScene.swift; sourceTree = "<group>"; };
@@ -421,6 +425,7 @@
 				7E6932A41E54117900AF7373 /* Levels */,
 				7E6932A71E541C0200AF7373 /* trail_map_old.plist */,
 				7E43CC761E54B844009367BC /* trail_map.plist */,
+				2D1703D61E590F8C0000827E /* random_ship_names.plist */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				7E6932931E53B47700AF7373 /* Level */,
 				7EF76AA81E52DB66003BFCD1 /* World */,
 				7EF61E8A1E3B056800CB4CAB /* UI */,
+				2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -571,6 +577,7 @@
 				7E5A6BFB1E5A1DE40067EAF3 /* the_ships.plist in Resources */,
 				7E5242901E56440900120002 /* water.fsh in Resources */,
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
+				2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */,
 				7E6932A81E541C0200AF7373 /* trail_map_old.plist in Resources */,
 				7EBF5E6B1E4E213A00F81982 /* stat_bar.fsh in Resources */,
 				7E5A6BE01E5A05CF0067EAF3 /* 1_sea_legs.plist in Resources */,
@@ -650,6 +657,7 @@
 				7EF76AAA1E52DB7E003BFCD1 /* WPTWorldPlayerNode.swift in Sources */,
 				7E13F6301E48F50200B5D2FD /* WPTWorldScene.swift in Sources */,
 				7E6932971E53B55C00AF7373 /* WPTLevelActorNode.swift in Sources */,
+				2D7FD1811E5801A1001B6208 /* WPTShipNamePopUpNode.swift in Sources */,
 				7EBF5E691E4E1B4000F81982 /* WPTUtils.swift in Sources */,
 				7ED739011E44EBF500122903 /* WPTWorldMapNode.swift in Sources */,
 			);

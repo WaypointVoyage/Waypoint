@@ -24,6 +24,7 @@ class WPTValues {
     static var fontSizeLarge = CGFloat(70)
     static var fontSizeMedium = CGFloat(50)
     static var fontSizeSmall = CGFloat(30)
+    static var fontSizeTiny = CGFloat(22)
     static var fontSizeMiniscule = CGFloat(14)
     static var em = CGFloat(30)
     static var levelSceneScale: CGFloat = 1
