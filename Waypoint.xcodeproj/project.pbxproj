@@ -26,6 +26,7 @@
 		7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E16B8651E2D580600933E24 /* Assets.xcassets */; };
 		7E16B8741E2D580600933E24 /* WaypointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8731E2D580600933E24 /* WaypointTests.swift */; };
 		7E16B87F1E2D580600933E24 /* WaypointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B87E1E2D580600933E24 /* WaypointUITests.swift */; };
+		7E2F9B781E575DF500C77026 /* WPTTouchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B771E575DF500C77026 /* WPTTouchHandler.swift */; };
 		7E43CC6A1E54B6F6009367BC /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E43CC5E1E54B6F6009367BC /* 0_setting_sail.plist */; };
 		7E43CC6B1E54B6F6009367BC /* 1_sea_legs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E43CC5F1E54B6F6009367BC /* 1_sea_legs.plist */; };
 		7E43CC6C1E54B6F6009367BC /* 2_pegleg_plunder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E43CC601E54B6F6009367BC /* 2_pegleg_plunder.plist */; };
@@ -115,6 +116,7 @@
 		7E16B87A1E2D580600933E24 /* WaypointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaypointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E16B87E1E2D580600933E24 /* WaypointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointUITests.swift; sourceTree = "<group>"; };
 		7E16B8801E2D580600933E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E2F9B771E575DF500C77026 /* WPTTouchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTouchHandler.swift; sourceTree = "<group>"; };
 		7E43CC5E1E54B6F6009367BC /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
 		7E43CC5F1E54B6F6009367BC /* 1_sea_legs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_sea_legs.plist; sourceTree = "<group>"; };
 		7E43CC601E54B6F6009367BC /* 2_pegleg_plunder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 2_pegleg_plunder.plist; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */,
 				7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */,
 				7E5242871E56331D00120002 /* WPTTerrainNode.swift */,
+				7E2F9B771E575DF500C77026 /* WPTTouchHandler.swift */,
 			);
 			name = Level;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				7EDD063A1E4A1C750054EB7E /* WPTTrailMapNode.swift in Sources */,
 				7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */,
 				7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */,
+				7E2F9B781E575DF500C77026 /* WPTTouchHandler.swift in Sources */,
 				7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */,
 				7EBF5E231E4D06D200F81982 /* WPTTrailStop.swift in Sources */,
 				7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */,

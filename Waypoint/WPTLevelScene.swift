@@ -9,8 +9,8 @@
 import SpriteKit
 
 class WPTLevelScene: WPTScene {
-    private static let levelNameTag = "_LEVEL"
-    private static let playerNameTag = "_PLAYER"
+    static let levelNameTag = "_LEVEL"
+    static let playerNameTag = "_PLAYER"
     
     let level: WPTLevel
     
@@ -30,7 +30,12 @@ class WPTLevelScene: WPTScene {
         self.terrain = WPTTerrainNode(level: level)
         super.init(size: CGSize(width: 0, height: 0))
         
+        self.isUserInteractionEnabled = true
+        
         self.scene?.backgroundColor = UIColor.black
+        
+        // setup the physics behavior
+        self.physicsWorld.gravity = CGVector.zero
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,7 +44,6 @@ class WPTLevelScene: WPTScene {
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
-        self.removeAllChildren()
         
         // camera
         cam = SKCameraNode()
@@ -74,13 +78,14 @@ class WPTLevelScene: WPTScene {
         self.addChild(self.terrain)
     }
     
+    private let lastCurrentTime: TimeInterval? = nil
     override func update(_ currentTime: TimeInterval) {
+        let deltaTime = lastCurrentTime == nil ? 0 : currentTime - lastCurrentTime!
 
         if self.levelPaused { return } // everything below this is subject to the pause
         
-        self.player.update(currentTime)
-        
-        self.hud.update(currentTime)
+        self.player.update(currentTime, deltaTime)
+        self.hud.update(currentTime, deltaTime)
     }
     
     override func didEvaluateActions() {
@@ -93,5 +98,6 @@ class WPTLevelScene: WPTScene {
         if let levelName = self.childNode(withName: WPTLevelScene.levelNameTag) {
             levelName.isPaused = self.levelPaused
         }
+        self.physicsWorld.speed = self.levelPaused ? 0.0 : 1.0 // pause physics simulation
     }
 }

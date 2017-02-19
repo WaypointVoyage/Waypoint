@@ -14,15 +14,19 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     
     init(player: WPTPlayer) {
         super.init(actor: player)
+        self.isUserInteractionEnabled = true
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        super.update(currentTime)
-        
-        self.position += self.boatSpeed * self.forward
+    override func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
+        super.update(currentTime, deltaTime)
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.anchored = !self.anchored
+    }
+    
 }

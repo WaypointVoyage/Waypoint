@@ -11,6 +11,7 @@ import SpriteKit
 class WPTPauseMenuNode: SKNode {
     
     private let exit = WPTLabelNode(text: "Exit", fontSize: WPTValues.fontSizeSmall)
+    private let reset = WPTLabelNode(text: "Reset Level", fontSize: WPTValues.fontSizeSmall)
     private var levelNameNode: WPTLabelNode? = nil
     var levelName: String? = nil {
         didSet { self.levelNameNode?.text = self.levelName }
@@ -18,9 +19,8 @@ class WPTPauseMenuNode: SKNode {
     
     override init() {
         super.init()
-        
         self.isUserInteractionEnabled = true
-    
+        
         // background
         let background = SKSpriteNode(imageNamed: "pause_scroll")
         background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -38,6 +38,12 @@ class WPTPauseMenuNode: SKNode {
         levelNameNode!.position.y += 0.5 * background.size.height
         self.addChild(levelNameNode!)
         
+        // reset
+        reset.zPosition = WPTValues.pauseShroudZPosition + 2
+        reset.fontColor = UIColor.black
+        reset.position.y -= 0.4 * background.size.height
+        if WPTConfig.values.testing { self.addChild(self.reset) }
+        
         // exit
         exit.zPosition = WPTValues.pauseShroudZPosition + 2
         exit.fontColor = UIColor.black
@@ -54,6 +60,10 @@ class WPTPauseMenuNode: SKNode {
         
         if self.exit.contains(touchPos) {
             self.scene?.view?.presentScene(WPTHomeScene())
+        } else if self.reset.contains(touchPos) {
+            if let scene = self.scene as? WPTLevelScene {
+                scene.view?.presentScene(WPTLevelScene(player: scene.player.player, level: scene.level))
+            }
         }
     }
 }

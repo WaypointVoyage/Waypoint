@@ -21,7 +21,6 @@ class WPTHudNode: SKNode, WPTUpdatable {
         self.pauseShroud = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: WPTValues.screenSize))
         self.pauseMenu = WPTPauseMenuNode()
         super.init()
-        
         self.isUserInteractionEnabled = true
         
         self.addChild(top)
@@ -40,8 +39,8 @@ class WPTHudNode: SKNode, WPTUpdatable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func update(_ currentTime: TimeInterval) {
-        self.top.update(currentTime)
+    func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
+        self.top.update(currentTime, deltaTime)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

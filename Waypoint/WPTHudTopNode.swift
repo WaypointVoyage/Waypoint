@@ -30,7 +30,7 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func update(_ currentTime: TimeInterval) {
+    func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
         
     }
 }
