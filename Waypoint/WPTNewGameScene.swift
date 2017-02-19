@@ -24,7 +24,6 @@ class WPTNewGameScene: WPTScene {
         var ships = [WPTShip]()
         
         let waypointShip = WPTShip(previewImage: "WaypointShip", inGameImage: "waypoint_ship_top_down")
-        waypointShip.shuffleStats()
         ships.append(waypointShip)
         
         let paperBoat = WPTShip(previewImage: "PaperBoat", inGameImage: "paper_boat_top_down")

@@ -63,9 +63,10 @@ class WPTWorldScene: WPTScene {
         self.addChild(self.startLevel)
     }
     
-    let lastCurrentTime: TimeInterval? = nil
+    private var lastCurrentTime: TimeInterval? = nil
     override func update(_ currentTime: TimeInterval) {
         let deltaTime = lastCurrentTime == nil ? 0 : currentTime - lastCurrentTime!
+        self.lastCurrentTime = currentTime
         self.player.update(currentTime, deltaTime)
     }
     

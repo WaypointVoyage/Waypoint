@@ -20,9 +20,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     // movement
     var forward: CGVector { return CGVector(dx: cos(zRotation), dy: sin(zRotation)) }
     var targetRot: CGFloat? = nil
-    var boatSpeed: CGFloat = CGFloat(150)
+    var boatSpeed: CGFloat { return CGFloat(self.actor.ship.speedScale) * 3500.0 }
     var anchored: Bool = true
-    var turnRate: CGFloat { return CGFloat(self.actor.ship.turnRateScale) * 0.03 }
+    var turnRate: CGFloat { return CGFloat(self.actor.ship.turnRateScale) }
     
     // child nodes
     let sprite: SKSpriteNode
@@ -35,8 +35,13 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         
         self.zPosition = WPTValues.actorZPosition
         self.addChild(self.sprite)
+        
+        // configure physics behavior
         self.physicsBody = physics
         self.physics.allowsRotation = false
+        self.physics.mass = WPTValues.actorMass
+        self.physics.linearDamping = WPTValues.waterLinearDampening
+        self.physics.angularDamping = WPTValues.waterAngularDampening        
         
         // set starting position in the world
         self.zRotation += 3.0 * CGFloat(M_PI) / 2.0
@@ -48,36 +53,43 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     }
     
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
-        // TODO: use deltaTime to calculate rotation amount
+        var turnVector: CGVector? = nil
         
         // rotate to face target
         if let target = self.targetRot {
+            turnVector = CGVector(dx: cos(target), dy: sin(target))
             
             // calculate the angle delta
-            let zRot = self.zRotation < 0 ? self.zRotation + 2.0 * CG_PI : self.zRotation // target and zRot are in [0, 2pi)
-            let delta1 = target - zRot
-            let delta2 = delta1 + (delta1 < 0 ? 1 : -1) * 2.0 * CG_PI
-            let delta = abs(delta1) < abs(delta2) ? delta1 : delta2
-            
-            print("delta: \(delta)")
+            let zRot = self.zRotation < 0 ? self.zRotation + 2.0 * CG_PI : self.zRotation   // target and zRot are in [0, 2pi)
+            let delta1 = target - zRot                                                      // radians to turn one direction
+            let delta2 = delta1 + (delta1 < 0 ? 2.0 : -2.0) * CG_PI                         // radians to turn the other direction
+            let delta = abs(delta1) < abs(delta2) ? delta1 : delta2                         // use the smallest angle
             
             // apply the rotation
-            if abs(delta) < self.turnRate + 0.005 {
+            let rate = self.turnRate * CGFloat(deltaTime)
+            if abs(delta) < rate + 0.005 {
                 self.zRotation = target
                 self.targetRot = nil
             } else {
-                self.zRotation += (delta > 0 ? 1 : -1) * self.turnRate
+                self.zRotation += (delta > 0 ? 1 : -1) * rate
             }
         }
         
         // move foreward if not anchored
-        self.physics.velocity = self.anchored ? CGVector.zero : self.boatSpeed * self.forward // TODO: switch to a force instead of altering velocity directly?
+        if !self.anchored {
+            var force: CGVector? = nil
+            if let turnVector = turnVector {
+                let dot = forward.dot(turnVector)
+                let speed: CGFloat = dot < 0 ? 0 : dot * boatSpeed
+                force = speed * turnVector
+            } else {
+                force = self.boatSpeed * self.forward
+            }
+            self.physics.applyForce(force!)
+        }
     }
     
     func facePoint(_ target: CGPoint) {
         self.targetRot = CGVector(start: self.position, end: target).angle()
-        print("zRotation: \(self.zRotation)")
-        print("target   : \(self.targetRot!)")
-        print("delta    : \(self.targetRot! - self.zRotation)")
     }
 }

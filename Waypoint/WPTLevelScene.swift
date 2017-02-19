@@ -78,9 +78,10 @@ class WPTLevelScene: WPTScene {
         self.addChild(self.terrain)
     }
     
-    private let lastCurrentTime: TimeInterval? = nil
+    private var lastCurrentTime: TimeInterval? = nil
     override func update(_ currentTime: TimeInterval) {
         let deltaTime = lastCurrentTime == nil ? 0 : currentTime - lastCurrentTime!
+        lastCurrentTime = currentTime
 
         if self.levelPaused { return } // everything below this is subject to the pause
         
