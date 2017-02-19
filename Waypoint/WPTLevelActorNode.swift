@@ -56,11 +56,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             // calculate the angle delta
             let zRot = self.zRotation < 0 ? self.zRotation + 2.0 * CG_PI : self.zRotation // target and zRot are in [0, 2pi)
             let delta1 = target - zRot
-            var delta2 = delta1 - 2.0 * CG_PI
-            if delta2 < -2.0 * CG_PI {
-                delta2 += 4.0 * CG_PI
-            }
-            
+            let delta2 = delta1 + (delta1 < 0 ? 1 : -1) * 2.0 * CG_PI
             let delta = abs(delta1) < abs(delta2) ? delta1 : delta2
             
             print("delta: \(delta)")
