@@ -20,7 +20,7 @@ class WPTFireButtonNode: SKNode {
         self.button.size = size
         super.init()
         
-        self.zPosition = 1
+        self.zPosition = WPTValues.pauseShroudZPosition + 5
         self.addChild(button)
     }
     

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>cannonSet</key>
+		<dict>
+			<key>maxCannons</key>
+			<integer>8</integer>
+			<key>numCannons</key>
+			<integer>2</integer>
+		</dict>
+		<key>inGameImage</key>
+		<string>waypoint_ship_top_down</string>
+		<key>previewImage</key>
+		<string>WaypointShip</string>
+		<key>stats</key>
+		<dict>
+			<key>damageScale</key>
+			<real>1</real>
+			<key>healthScale</key>
+			<real>1</real>
+			<key>rangeScale</key>
+			<real>1</real>
+			<key>shotSpeedScale</key>
+			<real>1</real>
+			<key>sizeScale</key>
+			<real>1</real>
+			<key>speedScale</key>
+			<real>1</real>
+			<key>turnRateScale</key>
+			<real>1</real>
+		</dict>
+	</dict>
+	<dict>
+		<key>cannonSet</key>
+		<dict>
+			<key>maxCannons</key>
+			<integer>8</integer>
+			<key>numCannons</key>
+			<integer>2</integer>
+		</dict>
+		<key>inGameImage</key>
+		<string>paper_boat_top_down</string>
+		<key>previewImage</key>
+		<string>PaperBoat</string>
+		<key>stats</key>
+		<dict>
+			<key>damageScale</key>
+			<real>0.5</real>
+			<key>healthScale</key>
+			<real>0.5</real>
+			<key>rangeScale</key>
+			<real>1.2</real>
+			<key>shotSpeedScale</key>
+			<real>1.2</real>
+			<key>sizeScale</key>
+			<real>0.80000000000000004</real>
+			<key>speedScale</key>
+			<real>2</real>
+			<key>turnRateScale</key>
+			<real>2.3999999999999999</real>
+		</dict>
+	</dict>
+</array>
+</plist>

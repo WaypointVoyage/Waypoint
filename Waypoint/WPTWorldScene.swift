@@ -63,8 +63,11 @@ class WPTWorldScene: WPTScene {
         self.addChild(self.startLevel)
     }
     
+    private var lastCurrentTime: TimeInterval? = nil
     override func update(_ currentTime: TimeInterval) {
-        self.player.update(currentTime)
+        let deltaTime = lastCurrentTime == nil ? 0 : currentTime - lastCurrentTime!
+        self.lastCurrentTime = currentTime
+        self.player.update(currentTime, deltaTime)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -27,11 +27,17 @@ class WPTValues {
     static var fontSizeTiny = CGFloat(22)
     static var fontSizeMiniscule = CGFloat(14)
     static var em = CGFloat(30)
+    static var levelSceneScale: CGFloat = 1
     
     // in-game positioning and configuration
     static let actorZPosition: CGFloat = 10
-    static var actorDefaultSize: CGFloat = 125
+    static var actorDefaultSizeScale: CGFloat = 0.3
     static let pauseShroudZPosition: CGFloat = 100
+    
+    // physics behavior
+    static let actorMass: CGFloat = 17
+    static let waterLinearDampening: CGFloat = 1.0
+    static let waterAngularDampening: CGFloat = 0.9
     
     static func initValues(deviceScreenSize: CGSize) {
         if (deviceScreenSize.width / deviceScreenSize.height > WPTValues.maxAspectRatio) {
@@ -42,6 +48,7 @@ class WPTValues {
         WPTValues.srceenAspectRatio = screenSize.width / screenSize.height
         WPTValues.usableScreenHeight = screenSize.width / WPTValues.maxAspectRatio
         WPTValues.heightShift = CGPoint(x: 0, y: (screenSize.height - usableScreenHeight) / 2.0)
+        WPTValues.levelSceneScale = usableScreenHeight / 1080.0
         
         WPTValues.fontSizeTitle = 0.25 * usableScreenHeight
         WPTValues.fontSizeLarge = 0.175 * usableScreenHeight
@@ -49,7 +56,5 @@ class WPTValues {
         WPTValues.fontSizeSmall = 0.075 * usableScreenHeight
         WPTValues.fontSizeMiniscule = 0.035 * usableScreenHeight
         WPTValues.em = WPTValues.fontSizeSmall
-        
-        WPTValues.actorDefaultSize = 0.1157 * usableScreenHeight
     }
 }

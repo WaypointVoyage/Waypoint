@@ -35,7 +35,7 @@ class WPTWorldPlayerNode: SKSpriteNode, WPTUpdatable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func update(_ currentTime: TimeInterval) {
+    func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
         self.anchorPoint.y += CGFloat(self.ungulationAmp * sin(WPTWorldPlayerNode.ungulationScale * currentTime))
         self.zRotation += CGFloat(0.007 * cos(WPTWorldPlayerNode.ungulationScale * currentTime))
     }
