@@ -20,6 +20,9 @@ class WPTNewGameScene: WPTScene {
     let rangeLabel = WPTStatBarNode("Range")
     let shotSpeedLabel = WPTStatBarNode("Shot Speed")
     
+    var shipInputField:UITextField?
+    var shipPop:WPTShipNamePopUpNode?
+    
     let ships: [WPTShip] = {
         var ships = [WPTShip]()
         let plistPath = Bundle.main.path(forResource: "the_ships", ofType: "plist")!
@@ -73,11 +76,46 @@ class WPTNewGameScene: WPTScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
+        
+        if shipPop != nil && self.children.contains(shipPop!) {
+            shipPop?.removeFromParent()
+            shipInputField?.removeFromSuperview()
+        }
+        
         if self.startLabel.contains(touch.location(in: self)) {
-            // TODO: get the ship's name
-            let player = WPTPlayer(ship: (self.shipPicker?.currentShip)!, shipName: "PLAYER_SHIP_NAME")
             
-            self.view?.presentScene(WPTWorldScene(player: player))
+            self.shipInputField = UITextField()
+            shipInputField?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+            shipInputField?.addTarget(self, action: #selector(textFieldShouldReturn(textField:)), for: .editingDidEndOnExit)
+            shipInputField?.frame = CGRect(x: 0.79*frame.midX, y: frame.midY, width: 158, height: 30)
+            self.view!.addSubview(shipInputField!)
+            shipInputField?.placeholder = "Enter ship name..."
+            shipInputField?.font = UIFont(name: WPTValues.booter, size: WPTValues.fontSizeTiny)
+            shipInputField?.backgroundColor = UIColor.white
+            shipInputField?.layer.cornerRadius = 3
+            shipInputField?.layer.borderColor = (UIColor.gray).cgColor
+            shipInputField?.layer.borderWidth = 1.0
+            shipInputField?.textAlignment = .center
+            
+            self.shipPop = WPTShipNamePopUpNode()
+            self.shipPop?.position = CGPoint(x: frame.midX, y: frame.midY)
+            self.shipPop!.setInputField(inputField: self.shipInputField!)
+            self.shipPop!.setShipPicker(shipPicker: self.shipPicker!)
+            self.addChild(shipPop!)
         }
     }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        if (textField.text != "") {
+            self.shipPop!.startLevel.alpha = 1.0
+        } else {
+            self.shipPop!.startLevel.alpha = 0.4
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // Populates the SKLabelNode
+        textField.resignFirstResponder()
+        return true
+    } 
 }
