@@ -59,6 +59,7 @@ class WPTLevelScene: WPTScene {
         // breif flash of level name
         let levelName = WPTLabelNode(text: self.level.name, fontSize: WPTValues.fontSizeLarge)
         levelName.name = WPTLevelScene.levelNameTag
+        levelName.zPosition = WPTValues.pauseShroudZPosition + 2
         levelName.position.y += 0.2 * WPTValues.screenSize.height
         levelName.alpha = 0
         levelName.fontColor = UIColor.black

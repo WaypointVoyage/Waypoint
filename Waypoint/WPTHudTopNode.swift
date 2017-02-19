@@ -20,6 +20,7 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         
         let pauseSize = 0.8 * WPTValues.fontSizeSmall
         let pauseOffset = 1.25 * pauseSize
+        self.pause.zPosition = WPTValues.pauseShroudZPosition + 2
         self.pause.position = CGPoint(x: WPTValues.screenSize.width - pauseOffset, y: WPTValues.screenSize.height - pauseOffset)
         self.pause.size = CGSize(width: pauseSize, height: pauseSize)
         self.pause.zPosition = 1
