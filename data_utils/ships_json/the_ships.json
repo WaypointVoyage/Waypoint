@@ -30,12 +30,19 @@
    {
       "previewImage": "PaperBoat",
       "inGameImage": "paper_boat_top_down",
-      "cannonSet": [],
+      "cannonSet": [
+         {
+            "hasCannon": true,
+            "x": 200,
+            "y": 0,
+            "angle": 0,
+         },
+      ],
       "stats": {
          "speedScale": 2.0,
          "damageScale": 0.5,
          "healthScale": 0.5,
-         "rangeScale": 1.2,
+         "rangeScale": 3.4,
          "shotSpeedScale": 1.2,
          "sizeScale": 0.8,
          "turnRateScale": 2.4,
