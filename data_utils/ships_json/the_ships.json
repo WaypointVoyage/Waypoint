@@ -2,10 +2,20 @@
    {
       "previewImage": "WaypointShip",
       "inGameImage": "waypoint_ship_top_down",
-      "cannonSet": {
-         "numCannons": 2,
-         "maxCannons": 8,
-      },
+      "cannonSet": [
+         {
+            "hasCannon": true,
+            "x": -128,
+            "y": -100,
+            "angle": -1.5707963267948966,
+         },
+         {
+            "hasCannon": true,
+            "x": -128,
+            "y": 100,
+            "angle": 1.5707963267948966,
+         },
+      ],
       "stats": {
          "speedScale": 1.0,
          "damageScale": 1.0,
@@ -19,10 +29,7 @@
    {
       "previewImage": "PaperBoat",
       "inGameImage": "paper_boat_top_down",
-      "cannonSet": {
-         "numCannons": 2,
-         "maxCannons": 8,
-      },
+      "cannonSet": [],
       "stats": {
          "speedScale": 2.0,
          "damageScale": 0.5,

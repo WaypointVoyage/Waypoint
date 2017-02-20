@@ -59,7 +59,7 @@ class WPTShip {
     init(dict: [String:AnyObject]) {
         self.previewImage = dict["previewImage"] as! String
         self.inGameImage = dict["inGameImage"] as! String
-        self.cannonSet = WPTCannonSet(dict: dict["cannonSet"] as! [String:AnyObject])
+        self.cannonSet = WPTCannonSet(dict["cannonSet"] as! [[String:AnyObject]])
         
         let stats = dict["stats"] as! [String:Double]
         self.speedScale = stats["speedScale"]!

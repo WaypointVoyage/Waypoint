@@ -36,6 +36,8 @@ class WPTTerrainNode: SKNode {
         // put a boundary on the scene
         self.boundary = SKPhysicsBody(edgeLoopFrom: water.frame)
         self.physicsBody = boundary
+        boundary.categoryBitMask = WPTValues.boundaryCbm
+        boundary.collisionBitMask = WPTValues.actorCbm
     }
     
     required init?(coder aDecoder: NSCoder) {

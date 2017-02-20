@@ -4,12 +4,28 @@
 <array>
 	<dict>
 		<key>cannonSet</key>
-		<dict>
-			<key>maxCannons</key>
-			<integer>8</integer>
-			<key>numCannons</key>
-			<integer>2</integer>
-		</dict>
+		<array>
+			<dict>
+				<key>angle</key>
+				<real>-1.570796326794897</real>
+				<key>hasCannon</key>
+				<true/>
+				<key>x</key>
+				<integer>-128</integer>
+				<key>y</key>
+				<integer>-100</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>1.5707963267949</real>
+				<key>hasCannon</key>
+				<true/>
+				<key>x</key>
+				<integer>-128</integer>
+				<key>y</key>
+				<integer>100</integer>
+			</dict>
+		</array>
 		<key>inGameImage</key>
 		<string>waypoint_ship_top_down</string>
 		<key>previewImage</key>
@@ -34,12 +50,7 @@
 	</dict>
 	<dict>
 		<key>cannonSet</key>
-		<dict>
-			<key>maxCannons</key>
-			<integer>8</integer>
-			<key>numCannons</key>
-			<integer>2</integer>
-		</dict>
+		<array/>
 		<key>inGameImage</key>
 		<string>paper_boat_top_down</string>
 		<key>previewImage</key>
@@ -55,11 +66,11 @@
 			<key>shotSpeedScale</key>
 			<real>1.2</real>
 			<key>sizeScale</key>
-			<real>0.80000000000000004</real>
+			<real>0.8</real>
 			<key>speedScale</key>
 			<real>2</real>
 			<key>turnRateScale</key>
-			<real>2.3999999999999999</real>
+			<real>2.4</real>
 		</dict>
 	</dict>
 </array>

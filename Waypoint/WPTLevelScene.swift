@@ -18,6 +18,7 @@ class WPTLevelScene: WPTScene {
     let player: WPTLevelPlayerNode
     let hud: WPTHudNode
     var cam: SKCameraNode!
+    let projectiles: SKNode
     
     var levelPaused: Bool = false {
         didSet { self.pauseChanged() }
@@ -26,8 +27,9 @@ class WPTLevelScene: WPTScene {
     init(player: WPTPlayer, level: WPTLevel) {
         self.player = WPTLevelPlayerNode(player: player)
         self.level = level
-        self.hud = WPTHudNode(player: self.player.player)
+        self.hud = WPTHudNode(player: self.player)
         self.terrain = WPTTerrainNode(level: level)
+        self.projectiles = SKNode()
         super.init(size: CGSize(width: 0, height: 0))
         
         self.isUserInteractionEnabled = true
@@ -76,6 +78,7 @@ class WPTLevelScene: WPTScene {
         self.terrain.addChild(self.player)
         
         // add everything to the scene
+        self.addChild(projectiles)
         self.addChild(self.terrain)
     }
     

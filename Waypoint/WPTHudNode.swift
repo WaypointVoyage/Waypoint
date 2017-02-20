@@ -15,22 +15,26 @@ class WPTHudNode: SKNode, WPTUpdatable {
     let pauseShroud: SKShapeNode
     let pauseMenu: WPTPauseMenuNode
     
-    init(player: WPTPlayer) {
-        self.top = WPTHudTopNode(player: player)
+    init(player: WPTLevelPlayerNode) {
+        self.top = WPTHudTopNode(player: player.player)
         self.bottom = WPTHudBottomNode()
         self.pauseShroud = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: WPTValues.screenSize))
         self.pauseMenu = WPTPauseMenuNode()
         super.init()
         self.isUserInteractionEnabled = true
         
+        // top/bottom nodes
         self.addChild(top)
+        self.bottom.onStartPress = player.fireCannons
         self.addChild(bottom)
         
+        // shroud
         self.pauseShroud.fillColor = UIColor.black
         self.pauseShroud.strokeColor = UIColor.black
         self.pauseShroud.zPosition = WPTValues.pauseShroudZPosition
         self.pauseShroud.alpha = 0.6
         
+        // pause menu
         self.pauseMenu.zPosition = WPTValues.pauseShroudZPosition + 1
         self.pauseMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
     }

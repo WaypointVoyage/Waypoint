@@ -39,14 +39,21 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         self.addChild(self.sprite)
         
         // cannons
-        for _ in 0..<actor.ship.cannonSet.numCannons { let _ = self.addCannon() }
+        for cannon in self.actor.ship.cannonSet.cannons {
+            if cannon.hasCannon {
+                let cannonNode = WPTCannonNode(cannon)
+                self.cannonNodes.append(cannonNode)
+                self.addChild(cannonNode)
+            }
+        }
         
         // configure physics behavior
         self.physicsBody = physics
         self.physics.allowsRotation = false
         self.physics.mass = WPTValues.actorMass
         self.physics.linearDamping = WPTValues.waterLinearDampening
-        self.physics.angularDamping = WPTValues.waterAngularDampening        
+        self.physics.angularDamping = WPTValues.waterAngularDampening
+        self.physics.categoryBitMask = WPTValues.actorCbm
         
         // set starting position in the world
         self.zRotation += CGFloat(M_PI) / 2.0
@@ -55,18 +62,6 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func addCannon() -> Bool {
-        if self.cannonNodes.count >= self.actor.ship.cannonSet.maxCannons {
-            print("WARN: can't add cannon. Already have max cannons.")
-            return false
-        }
-        
-        let node = WPTCannonNode(self.actor.ship.cannonSet)
-        self.cannonNodes.append(node)
-        self.addChild(node)
-        return true
     }
     
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
@@ -103,6 +98,21 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
                 force = self.boatSpeed * self.forward
             }
             self.physics.applyForce(force!)
+        }
+    }
+    
+    func fireCannons() {
+        if let projectileNode = (self.scene as? WPTLevelScene)?.projectiles {
+            for cannonNode in self.cannonNodes {
+                let ball = WPTCannonBallNode(self.actor.cannonBall)
+                ball.position = self.convert(cannonNode.cannonBallSpawnPoint, to: projectileNode)
+                let direction = CGVector(dx: cos(self.zRotation + cannonNode.zRotation), dy: sin(self.zRotation + cannonNode.zRotation))
+                ball.physics.velocity = CGFloat(self.actor.ship.shotSpeedScale) * 1000.0 * direction
+                projectileNode.addChild(ball)
+                ball.run(SKAction.wait(forDuration: 20), completion: {
+                    ball.removeFromParent()
+                })
+            }
         }
     }
     
