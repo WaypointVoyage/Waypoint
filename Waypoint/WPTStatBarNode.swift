@@ -16,9 +16,9 @@ class WPTStatBarNode: SKNode {
     let label = WPTLabelNode(text: "", fontSize: WPTStatBarNode.fontSize)
     let statBar = SKSpriteNode(texture: WPTStatBarNode.texture)
     
-    var statMin: Double
-    var statMax: Double
-    var statVal: Double
+    var statMin: CGFloat
+    var statMax: CGFloat
+    var statVal: CGFloat
     var statUniform: SKUniform
     
     init(_ labelText: String) {
@@ -44,7 +44,7 @@ class WPTStatBarNode: SKNode {
         self.statBar.position.x = spacing + self.statBar.frame.width / 2
     }
     
-    func setStat(_ value: Double, min: Double? = nil, max: Double? = nil) {
+    func setStat(_ value: CGFloat, min: CGFloat? = nil, max: CGFloat? = nil) {
         self.statVal = value
         self.statMax = max == nil ? self.statMax : max!
         self.statMin = min == nil ? self.statMin : min!

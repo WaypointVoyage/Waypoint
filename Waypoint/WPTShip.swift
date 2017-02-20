@@ -9,47 +9,63 @@
 import SpriteKit
 
 class WPTShip {
-    static let minSpeedScale: Double = 0.4
-    static let maxSpeedScale: Double = 2.4
-    static let minDamageScale: Double = 0.5
-    static let maxDamageScale: Double = 50.0
-    static let minHealthScale: Double = 1.0
-    static let maxHealthScale: Double = 50.0
-    static let minRangeScale: Double = 0.4
-    static let maxRangeScale: Double = 15.0
-    static let minShotSpeedScale: Double = 0.3
-    static let maxShotSpeedScale: Double = 10.0
-    static let minSizeScale: Double = 0.5
-    static let maxSizeScale: Double = 20
-    static let minTurnRateScale: Double = 0.3
-    static let maxTurnRateScale: Double = 10
     
-    var speedScale: Double = 1.0 {
+    /* All stats are multipliers of base values and clamped between min/max values. */
+    
+    var speedScale: CGFloat = 1.0 { // determines the speed of the ship as it moves
         didSet { clamp(&speedScale, min: WPTShip.minSpeedScale, max: WPTShip.maxSpeedScale) }
     }
+    var speed: CGFloat {
+        get { return speedScale * WPTShip.baseSpeed }
+    }
     
-    var damageScale = 1.0 {
+    var damageScale: CGFloat = 1.0 { // determines the amount of damage that the ship does
         didSet { clamp(&damageScale, min: WPTShip.minDamageScale, max: WPTShip.maxDamageScale) }
     }
+    var damage: CGFloat {
+        get { return damageScale * WPTShip.baseDamage }
+    }
     
-    var healthScale = 1.0 {
+    var healthScale: CGFloat = 1.0 { // determines the amount of health on the ship
         didSet { clamp(&healthScale, min: WPTShip.minHealthScale, max: WPTShip.maxHealthScale) }
     }
+    var health: CGFloat {
+        get { return healthScale * WPTShip.baseHealth }
+    }
     
-    var rangeScale = 1.0 {
+    var rangeScale: CGFloat = 1.0 { // determines how far cannon shots travel before hitting the water/ground
         didSet { clamp(&rangeScale, min: WPTShip.minRangeScale, max: WPTShip.maxRangeScale) }
     }
+    var range: CGFloat {
+        get { return rangeScale * WPTShip.baseRange }
+    }
     
-    var shotSpeedScale = 1.0 {
+    var shotSpeedScale: CGFloat = 1.0 { // determines how fast cannon shots travel through the air
         didSet { clamp(&shotSpeedScale, min: WPTShip.minShotSpeedScale, max: WPTShip.maxShotSpeedScale) }
     }
-    
-    var sizeScale = 1.0 {
-        didSet { clamp(&sizeScale, min: WPTShip.minSizeScale, max: WPTShip.maxSizeScale) }
+    var shotSpeed: CGFloat {
+        get { return shotSpeedScale * WPTShip.baseShotSpeed }
     }
     
-    var turnRateScale = 1.0 {
+    var sizeScale: CGFloat = 1.0 { // determines the size of the ship on the screen
+        didSet { clamp(&sizeScale, min: WPTShip.minSizeScale, max: WPTShip.maxSizeScale) }
+    }
+    var size: CGFloat {
+        get { return sizeScale * WPTShip.baseSize }
+    }
+    
+    var turnRateScale: CGFloat = 1.0 { // determines how quickly the ship makes turns
         didSet { clamp(&turnRateScale, min: WPTShip.minTurnRateScale, max: WPTShip.maxTurnRateScale) }
+    }
+    var turnRate: CGFloat {
+        get { return turnRateScale * WPTShip.baseTurnRate }
+    }
+    
+    var fireRateScale: CGFloat = 1.0 { // determines how many shots/second can be made
+        didSet { clamp(&fireRateScale, min: WPTShip.minFireRateScale, max: WPTShip.maxFireRateScale) }
+    }
+    var fireRate: CGFloat {
+        get { return fireRateScale * WPTShip.baseFireRate }
     }
     
     let previewImage: String
@@ -61,7 +77,7 @@ class WPTShip {
         self.inGameImage = dict["inGameImage"] as! String
         self.cannonSet = WPTCannonSet(dict["cannonSet"] as! [[String:AnyObject]])
         
-        let stats = dict["stats"] as! [String:Double]
+        let stats = dict["stats"] as! [String:CGFloat]
         self.speedScale = stats["speedScale"]!
         self.damageScale = stats["damageScale"]!
         self.healthScale = stats["healthScale"]!
@@ -69,9 +85,10 @@ class WPTShip {
         self.shotSpeedScale = stats["shotSpeedScale"]!
         self.sizeScale = stats["sizeScale"]!
         self.turnRateScale = stats["turnRateScale"]!
+        self.fireRateScale = stats["fireRateScale"]!
     }
     
-    func initStats(speedScale: Double = 1.0, damageScale: Double = 1.0, healthScale: Double = 1.0, rangeScale: Double = 1.0, shotSpeedScale: Double = 1.0, sizeScale: Double = 1.0, turnRateScale: Double = 1.0) {
+    func initStats(speedScale: CGFloat = 1.0, damageScale: CGFloat = 1.0, healthScale: CGFloat = 1.0, rangeScale: CGFloat = 1.0, shotSpeedScale: CGFloat = 1.0, sizeScale: CGFloat = 1.0, turnRateScale: CGFloat = 1.0, fireRateScale: CGFloat = 1.0) {
         self.speedScale = speedScale
         self.damageScale = damageScale
         self.healthScale = healthScale
@@ -79,6 +96,7 @@ class WPTShip {
         self.shotSpeedScale = shotSpeedScale
         self.sizeScale = sizeScale
         self.turnRateScale = turnRateScale
+        self.fireRateScale = fireRateScale
     }
     
     func shuffleStats() {
@@ -89,10 +107,45 @@ class WPTShip {
         self.shotSpeedScale = WPTShip.randStat(min: WPTShip.minShotSpeedScale, max: WPTShip.maxShotSpeedScale)
         self.sizeScale = WPTShip.randStat(min: WPTShip.minSizeScale, max: WPTShip.maxSizeScale)
         self.turnRateScale = WPTShip.randStat(min: WPTShip.minTurnRateScale, max: WPTShip.maxTurnRateScale)
+        self.fireRateScale = WPTShip.randStat(min: WPTShip.minFireRateScale, max: WPTShip.maxFireRateScale)
     }
     
-    static func randStat(min: Double, max: Double) -> Double {
-        let rand = Double(arc4random()) / Double(UInt32.max)
+    static func randStat(min: CGFloat, max: CGFloat) -> CGFloat {
+        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
         return (max - min) * rand + min
     }
+}
+
+extension WPTShip {
+    static let minSpeedScale: CGFloat = 0.4
+    static let maxSpeedScale: CGFloat = 2.4
+    static let baseSpeed: CGFloat = 3500.0
+    
+    static let minDamageScale: CGFloat = 0.5
+    static let maxDamageScale: CGFloat = 50.0
+    static let baseDamage: CGFloat = 20
+    
+    static let minHealthScale: CGFloat = 1.0
+    static let maxHealthScale: CGFloat = 50.0
+    static let baseHealth: CGFloat = 100
+    
+    static let minRangeScale: CGFloat = 0.4
+    static let maxRangeScale: CGFloat = 15.0
+    static let baseRange: CGFloat = 350
+    
+    static let minShotSpeedScale: CGFloat = 0.3
+    static let maxShotSpeedScale: CGFloat = 10.0
+    static let baseShotSpeed: CGFloat = 1000.0
+    
+    static let minSizeScale: CGFloat = 0.5
+    static let maxSizeScale: CGFloat = 20
+    static let baseSize: CGFloat = 0.3
+    
+    static let minTurnRateScale: CGFloat = 0.3
+    static let maxTurnRateScale: CGFloat = 10
+    static let baseTurnRate: CGFloat = 1.0
+    
+    static let minFireRateScale: CGFloat = 0.1
+    static let maxFireRateScale: CGFloat = 20
+    static let baseFireRate: CGFloat = 2
 }
