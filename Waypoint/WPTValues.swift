@@ -45,6 +45,8 @@ class WPTValues {
     static let boundaryCbm: UInt32 = 1 << 2
     static let terrainCbm: UInt32 = 1 << 3
     
+    // game stats
+    static let maxHealth: CGFloat = 100
     
     static func initValues(deviceScreenSize: CGSize) {
         let ar = deviceScreenSize.width / deviceScreenSize.height

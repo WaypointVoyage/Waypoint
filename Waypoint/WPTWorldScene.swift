@@ -98,7 +98,7 @@ class WPTWorldScene: WPTScene {
         }
     }
     
-    private func updatePlayerStopLocation(_ stopIndex: Int) {
+    func updatePlayerStopLocation(_ stopIndex: Int) {
         self.currentStop = stopIndex
         let stop = self.trailMap.trailMap![stopIndex]
         
