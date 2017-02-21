@@ -39,6 +39,9 @@ class WPTValues {
     static let waterLinearDampening: CGFloat = 1.0
     static let waterAngularDampening: CGFloat = 0.9
     
+    // game stats
+    static let maxHealth: CGFloat = 100
+    
     static func initValues(deviceScreenSize: CGSize) {
         if (deviceScreenSize.width / deviceScreenSize.height > WPTValues.maxAspectRatio) {
             print("WARNING: current screen aspect ratio is larger than the maximum supported.")

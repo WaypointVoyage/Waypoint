@@ -59,7 +59,9 @@ class WPTPauseMenuNode: SKNode {
         let touchPos = touches.first!.location(in: self)
         
         if self.exit.contains(touchPos) {
-            self.scene?.view?.presentScene(WPTHomeScene())
+            if let scene = self.scene as? WPTLevelScene {
+                self.scene?.view?.presentScene(WPTWorldScene(player: scene.player.player))
+            }
         } else if self.reset.contains(touchPos) {
             if let scene = self.scene as? WPTLevelScene {
                 scene.view?.presentScene(WPTLevelScene(player: scene.player.player, level: scene.level))
