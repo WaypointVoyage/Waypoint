@@ -1,3 +1,6 @@
 .DS_Store
 
 data_utils/*plist
+
+xcuserdata/
+project.xcworkspace
