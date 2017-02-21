@@ -15,10 +15,13 @@ class WPTHealthBarNode: SKNode {
     let healthBarWidth: CGFloat = 90
     let healthBarHeight: CGFloat = 9
 
+    let player: WPTPlayer
+    
     var shipImage: SKSpriteNode
     var shipHealthBar = SKSpriteNode()
     
     init(player: WPTPlayer) {
+        self.player = player
         
         self.shipImage = SKSpriteNode(imageNamed: player.ship.previewImage)
         self.shipImage.zPosition = WPTValues.pauseShroudZPosition + 2
@@ -35,7 +38,7 @@ class WPTHealthBarNode: SKNode {
         self.addChild(shipImage)
         self.addChild(shipHealthBar)
         
-        updateHealthBar(node: self.shipHealthBar, healthPoints: WPTValues.maxHealth)
+        updateHealthBar(node: self.shipHealthBar)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,7 +46,7 @@ class WPTHealthBarNode: SKNode {
     }
 
 
-    func updateHealthBar(node: SKSpriteNode, healthPoints hp: CGFloat) {
+    func updateHealthBar(node: SKSpriteNode) {
         
         let barSize = CGSize(width: healthBarWidth, height: healthBarHeight);
         
@@ -61,7 +64,7 @@ class WPTHealthBarNode: SKNode {
         
         // draw the health bar with a colored rectangle
         fillColor.setFill()
-        let barWidth = (barSize.width - 1) * hp / WPTValues.maxHealth
+        let barWidth = (barSize.width - 1) * CGFloat(player.health) / WPTValues.maxHealth
         let barRect = CGRect(x: 0.5, y: 0.5, width: barWidth, height: barSize.height - 1)
         context!.fill(barRect)
         

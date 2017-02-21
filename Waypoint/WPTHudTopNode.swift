@@ -69,7 +69,7 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         
     }
     
-    func updateMoney(player: WPTPlayer) {
+    func updateMoney() {
         self.moneyCount.text = String(player.doubloons)
     }
 
