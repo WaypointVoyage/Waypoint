@@ -13,6 +13,8 @@ class WPTLevel {
     let name: String
     let size: CGSize
     let spawnPoint: CGPoint
+    let terrainImage: String?
+    let terrainBodies: [[[CGFloat]]]?
     
     init(_ levelFileNamed: String) {
         let plistPath = Bundle.main.path(forResource: levelFileNamed, ofType: "plist")!
@@ -25,5 +27,13 @@ class WPTLevel {
         
         let spawnDict = levelDict["spawnPoint"] as! [String: CGFloat]
         self.spawnPoint = CGPoint(x: spawnDict["x"]!, y: spawnDict["y"]!)
+        
+        if let terrainDict = levelDict["terrain"] as? [String:AnyObject] {
+            self.terrainImage = terrainDict["image"] as? String
+            self.terrainBodies = terrainDict["bodies"] as? [[[CGFloat]]]
+        } else {
+            self.terrainImage = nil
+            self.terrainBodies = nil
+        }
     }
 }

@@ -33,11 +33,45 @@ class WPTTerrainNode: SKNode {
         water.zPosition = -100
         self.addChild(water)
         
+        loadTerrain()
+        
         // put a boundary on the scene
         self.boundary = SKPhysicsBody(edgeLoopFrom: water.frame)
         self.physicsBody = boundary
         boundary.categoryBitMask = WPTValues.boundaryCbm
         boundary.collisionBitMask = WPTValues.actorCbm
+    }
+    
+    private func loadTerrain() {
+        // if there is a terrain file, show it
+        if let terrainImg = level.terrainImage {
+            let terrain = SKSpriteNode(imageNamed: terrainImg)
+            terrain.anchorPoint = CGPoint.zero
+            terrain.zPosition = -98
+
+            // handle the terrain bodies
+            if let bodies = level.terrainBodies {
+                var physicsBodies = [SKPhysicsBody]()
+                
+                for body in bodies {
+                    let path = CGMutablePath()
+                    path.move(to: 2.0 * CGPoint(x: body[0][0], y: body[0][1]))
+                    for i in 1..<body.count {
+                        path.addLine(to: 2.0 * CGPoint(x: body[i][0], y: body[i][1]))
+                    }
+                    path.closeSubpath()
+                    
+                    physicsBodies.append(SKPhysicsBody(edgeLoopFrom: path))
+                }
+                
+                terrain.physicsBody = SKPhysicsBody(bodies: physicsBodies)
+                terrain.physicsBody!.isDynamic = false
+                terrain.physicsBody!.categoryBitMask = WPTValues.terrainCbm
+                terrain.physicsBody!.collisionBitMask = WPTValues.actorCbm | WPTValues.projectileCbm
+            }
+            
+            self.addChild(terrain)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

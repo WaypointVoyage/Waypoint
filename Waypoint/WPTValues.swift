@@ -43,6 +43,7 @@ class WPTValues {
     static let actorCbm: UInt32 = 1 << 0
     static let projectileCbm: UInt32 = 1 << 1
     static let boundaryCbm: UInt32 = 1 << 2
+    static let terrainCbm: UInt32 = 1 << 3
     
     
     static func initValues(deviceScreenSize: CGSize) {
