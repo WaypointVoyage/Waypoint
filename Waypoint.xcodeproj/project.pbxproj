@@ -37,7 +37,6 @@
 		7E43CC791E54CB50009367BC /* WPTPauseMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E43CC781E54CB50009367BC /* WPTPauseMenuNode.swift */; };
 		7E5242881E56331D00120002 /* WPTTerrainNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5242871E56331D00120002 /* WPTTerrainNode.swift */; };
 		7E5242901E56440900120002 /* water.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E52428F1E56440900120002 /* water.fsh */; };
-		7E5A6BE21E5A05CF0067EAF3 /* 3_cutlass_careen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E5A6BD61E5A05CF0067EAF3 /* 3_cutlass_careen.plist */; };
 		7E5A6BE31E5A05CF0067EAF3 /* 4_fire_in_the_hole.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E5A6BD71E5A05CF0067EAF3 /* 4_fire_in_the_hole.plist */; };
 		7E5A6BE41E5A05CF0067EAF3 /* 5_dead_men_tell_no_tales.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E5A6BD81E5A05CF0067EAF3 /* 5_dead_men_tell_no_tales.plist */; };
 		7E5A6BE51E5A05CF0067EAF3 /* 6_davy_jones_locker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E5A6BD91E5A05CF0067EAF3 /* 6_davy_jones_locker.plist */; };
@@ -68,6 +67,7 @@
 		7ED17D421E5CA69B00116B39 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ED17D411E5CA69B00116B39 /* 0_setting_sail.plist */; };
 		7ED17D4D1E5CADA300116B39 /* 1_sea_legs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ED17D4B1E5CADA300116B39 /* 1_sea_legs.plist */; };
 		7ED17D4E1E5CADA300116B39 /* 2_pegleg_plunder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ED17D4C1E5CADA300116B39 /* 2_pegleg_plunder.plist */; };
+		7ED17D521E5CB49F00116B39 /* 3_cutlass_careen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ED17D511E5CB49F00116B39 /* 3_cutlass_careen.plist */; };
 		7ED2206B1E371EDE00D2AA68 /* WPTHighScoresScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED2206A1E371EDE00D2AA68 /* WPTHighScoresScene.swift */; };
 		7ED2206D1E37215F00D2AA68 /* WPTSecretMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED2206C1E37215F00D2AA68 /* WPTSecretMessage.swift */; };
 		7ED3775C1E4ABE8800DB1EA2 /* WPTTrailMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3775B1E4ABE8800DB1EA2 /* WPTTrailMap.swift */; };
@@ -135,7 +135,6 @@
 		7E43CC781E54CB50009367BC /* WPTPauseMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPauseMenuNode.swift; sourceTree = "<group>"; };
 		7E5242871E56331D00120002 /* WPTTerrainNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTerrainNode.swift; sourceTree = "<group>"; };
 		7E52428F1E56440900120002 /* water.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = water.fsh; sourceTree = "<group>"; };
-		7E5A6BD61E5A05CF0067EAF3 /* 3_cutlass_careen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 3_cutlass_careen.plist; sourceTree = "<group>"; };
 		7E5A6BD71E5A05CF0067EAF3 /* 4_fire_in_the_hole.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 4_fire_in_the_hole.plist; sourceTree = "<group>"; };
 		7E5A6BD81E5A05CF0067EAF3 /* 5_dead_men_tell_no_tales.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 5_dead_men_tell_no_tales.plist; sourceTree = "<group>"; };
 		7E5A6BD91E5A05CF0067EAF3 /* 6_davy_jones_locker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 6_davy_jones_locker.plist; sourceTree = "<group>"; };
@@ -166,6 +165,7 @@
 		7ED17D411E5CA69B00116B39 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
 		7ED17D4B1E5CADA300116B39 /* 1_sea_legs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_sea_legs.plist; sourceTree = "<group>"; };
 		7ED17D4C1E5CADA300116B39 /* 2_pegleg_plunder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 2_pegleg_plunder.plist; sourceTree = "<group>"; };
+		7ED17D511E5CB49F00116B39 /* 3_cutlass_careen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 3_cutlass_careen.plist; sourceTree = "<group>"; };
 		7ED2206A1E371EDE00D2AA68 /* WPTHighScoresScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHighScoresScene.swift; sourceTree = "<group>"; };
 		7ED2206C1E37215F00D2AA68 /* WPTSecretMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSecretMessage.swift; sourceTree = "<group>"; };
 		7ED3775B1E4ABE8800DB1EA2 /* WPTTrailMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailMap.swift; sourceTree = "<group>"; };
@@ -406,7 +406,7 @@
 				7ED17D411E5CA69B00116B39 /* 0_setting_sail.plist */,
 				7ED17D4B1E5CADA300116B39 /* 1_sea_legs.plist */,
 				7ED17D4C1E5CADA300116B39 /* 2_pegleg_plunder.plist */,
-				7E5A6BD61E5A05CF0067EAF3 /* 3_cutlass_careen.plist */,
+				7ED17D511E5CB49F00116B39 /* 3_cutlass_careen.plist */,
 				7E5A6BD71E5A05CF0067EAF3 /* 4_fire_in_the_hole.plist */,
 				7E5A6BD81E5A05CF0067EAF3 /* 5_dead_men_tell_no_tales.plist */,
 				7E5A6BD91E5A05CF0067EAF3 /* 6_davy_jones_locker.plist */,
@@ -591,7 +591,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E5A6BE21E5A05CF0067EAF3 /* 3_cutlass_careen.plist in Resources */,
 				7E16B8641E2D580600933E24 /* Main.storyboard in Resources */,
 				7E5A6BE31E5A05CF0067EAF3 /* 4_fire_in_the_hole.plist in Resources */,
 				7E5242901E56440900120002 /* water.fsh in Resources */,
@@ -614,6 +613,7 @@
 				7E5A6BE41E5A05CF0067EAF3 /* 5_dead_men_tell_no_tales.plist in Resources */,
 				7E5A6BE51E5A05CF0067EAF3 /* 6_davy_jones_locker.plist in Resources */,
 				7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */,
+				7ED17D521E5CB49F00116B39 /* 3_cutlass_careen.plist in Resources */,
 				7E5A6BE61E5A05CF0067EAF3 /* 7_letter_of_marque.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
