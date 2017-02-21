@@ -395,6 +395,8 @@
 		</array>
 		<key>image</key>
 		<string>setting_sail_terrain</string>
+		<key>waterImage</key>
+		<string>setting_sail_water</string>
 	</dict>
 </dict>
 </plist>

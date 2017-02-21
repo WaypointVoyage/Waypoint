@@ -10,6 +10,7 @@
    },
    "terrain": {
       "image": "cutlass_careen_terrain",
+      "waterImage": "cutlass_careen_water",
       "bodies": [
          [
             [77, 1279],

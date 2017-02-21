@@ -441,6 +441,8 @@
 		</array>
 		<key>image</key>
 		<string>pegleg_plunder_terrain</string>
+		<key>waterImage</key>
+		<string>pegleg_plunder_water</string>
 	</dict>
 </dict>
 </plist>

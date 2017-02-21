@@ -14,6 +14,7 @@ class WPTLevel {
     let size: CGSize
     let spawnPoint: CGPoint
     let terrainImage: String?
+    let waterImage: String?
     let terrainBodies: [[[CGFloat]]]?
     
     init(_ levelFileNamed: String) {
@@ -30,9 +31,11 @@ class WPTLevel {
         
         if let terrainDict = levelDict["terrain"] as? [String:AnyObject] {
             self.terrainImage = terrainDict["image"] as? String
+            self.waterImage = terrainDict["waterImage"] as? String
             self.terrainBodies = terrainDict["bodies"] as? [[[CGFloat]]]
         } else {
             self.terrainImage = nil
+            self.waterImage = nil
             self.terrainBodies = nil
         }
     }

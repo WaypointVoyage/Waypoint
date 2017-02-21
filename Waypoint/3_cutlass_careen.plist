@@ -1215,6 +1215,8 @@
 		</array>
 		<key>image</key>
 		<string>cutlass_careen_terrain</string>
+		<key>waterImage</key>
+		<string>cutlass_careen_water</string>
 	</dict>
 </dict>
 </plist>

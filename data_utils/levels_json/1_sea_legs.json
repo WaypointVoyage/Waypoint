@@ -10,6 +10,7 @@
    },
    "terrain": {
       "image": "sea_legs_terrain",
+      "waterImage": "sea_legs_water",
       "bodies": [
          [
             [1023, 1079],

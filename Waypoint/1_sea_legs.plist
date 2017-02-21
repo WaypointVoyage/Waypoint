@@ -477,6 +477,8 @@
 		</array>
 		<key>image</key>
 		<string>sea_legs_terrain</string>
+		<key>waterImage</key>
+		<string>sea_legs_water</string>
 	</dict>
 </dict>
 </plist>
