@@ -39,9 +39,17 @@ class WPTValues {
     static let waterLinearDampening: CGFloat = 1.0
     static let waterAngularDampening: CGFloat = 0.9
     
+    // collision bitmasks
+    static let actorCbm: UInt32 = 1 << 0
+    static let projectileCbm: UInt32 = 1 << 1
+    static let boundaryCbm: UInt32 = 1 << 2
+    static let terrainCbm: UInt32 = 1 << 3
+    
+    
     static func initValues(deviceScreenSize: CGSize) {
-        if (deviceScreenSize.width / deviceScreenSize.height > WPTValues.maxAspectRatio) {
-            print("WARNING: current screen aspect ratio is larger than the maximum supported.")
+        let ar = deviceScreenSize.width / deviceScreenSize.height
+        if (ar > WPTValues.maxAspectRatio) {
+            print("WARNING: current screen aspect ratio (\(ar)) is larger than the maximum supported.")
         }
         
         WPTValues.screenSize = deviceScreenSize

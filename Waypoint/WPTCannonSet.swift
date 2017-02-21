@@ -9,11 +9,11 @@
 import Foundation
 
 class WPTCannonSet {
-    var numCannons: Int
-    var maxCannons: Int
+    public private(set) var cannons = [WPTCannon]()
     
-    init(dict: [String:AnyObject]) {
-        self.numCannons = dict["numCannons"] as! Int
-        self.maxCannons = dict["maxCannons"] as! Int
+    init(_ dict: [[String:AnyObject]]) {
+        for cannonJson in dict {
+            self.cannons.append(WPTCannon(cannonJson))
+        }
     }
 }

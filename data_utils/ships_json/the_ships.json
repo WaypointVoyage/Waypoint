@@ -2,10 +2,62 @@
    {
       "previewImage": "WaypointShip",
       "inGameImage": "waypoint_ship_top_down",
-      "cannonSet": {
-         "numCannons": 2,
-         "maxCannons": 8,
-      },
+      "cannonSet": [
+         {
+            "hasCannon": true,
+            "x": -128,
+            "y": -100,
+            "angle": -1.5707963267948966,
+         },
+         {
+            "hasCannon": true,
+            "x": -128,
+            "y": 100,
+            "angle": 1.5707963267948966,
+         },
+         {
+            "hasCannon": false,
+            "x": 90,
+            "y": 90,
+            "angle": 1.5707963267948966,
+         },
+         {
+            "hasCannon": false,
+            "x": 90,
+            "y": -90,
+            "angle": -1.5707963267948966,
+         },
+         {
+            "hasCannon": false,
+            "x": 240,
+            "y": 0,
+            "angle": 0,
+         },
+         {
+            "hasCannon": false,
+            "x": -216,
+            "y": -100,
+            "angle": 3.9269908169872414,
+         },
+         {
+            "hasCannon": false,
+            "x": -216,
+            "y": 100,
+            "angle": 2.356194490192345,
+         },
+         {
+            "hasCannon": false,
+            "x": 184,
+            "y": 50,
+            "angle": 0.7853981633974483,
+         },
+         {
+            "hasCannon": false,
+            "x": 184,
+            "y": -50,
+            "angle": 5.497787143782138,
+         },
+      ],
       "stats": {
          "speedScale": 1.0,
          "damageScale": 1.0,
@@ -14,23 +66,29 @@
          "shotSpeedScale": 1.0,
          "sizeScale": 1.0,
          "turnRateScale": 1.0,
+         "fireRateScale": 1.0,
       },
    },
    {
       "previewImage": "PaperBoat",
       "inGameImage": "paper_boat_top_down",
-      "cannonSet": {
-         "numCannons": 2,
-         "maxCannons": 8,
-      },
+      "cannonSet": [
+         {
+            "hasCannon": true,
+            "x": 200,
+            "y": 0,
+            "angle": 0,
+         },
+      ],
       "stats": {
          "speedScale": 2.0,
          "damageScale": 0.5,
          "healthScale": 0.5,
-         "rangeScale": 1.2,
+         "rangeScale": 3.4,
          "shotSpeedScale": 1.2,
          "sizeScale": 0.8,
          "turnRateScale": 2.4,
+         "fireRateScale": 5.0,
       },
    },
 ]

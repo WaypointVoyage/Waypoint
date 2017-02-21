@@ -11,6 +11,7 @@ import Foundation
 class WPTActor {
     // ship
     var ship: WPTShip;
+    public private(set) var cannonBall: WPTCannonBall // TODO: adjust for parameters
     
     // currency
     var doubloons: Int = 0 {
@@ -41,6 +42,7 @@ class WPTActor {
     
     init(ship: WPTShip) {
         self.ship = ship
+        self.cannonBall = WPTCannonBall()
     }
     
     func apply(item: WPTItem) {
