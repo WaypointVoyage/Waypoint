@@ -7,7 +7,7 @@
 		<array>
 			<dict>
 				<key>angle</key>
-				<real>-1.570796326794897</real>
+				<real>-1.5707963267948966</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -17,13 +17,83 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.570796326794897</real>
+				<real>1.5707963267948966</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
 				<integer>-128</integer>
 				<key>y</key>
 				<integer>100</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>90</integer>
+				<key>y</key>
+				<integer>90</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>-1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>90</integer>
+				<key>y</key>
+				<integer>-90</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<integer>0</integer>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>240</integer>
+				<key>y</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>3.9269908169872414</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>-216</integer>
+				<key>y</key>
+				<integer>-100</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>2.3561944901923448</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>-216</integer>
+				<key>y</key>
+				<integer>100</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>0.78539816339744828</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>184</integer>
+				<key>y</key>
+				<integer>50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>5.497787143782138</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>184</integer>
+				<key>y</key>
+				<integer>-50</integer>
 			</dict>
 		</array>
 		<key>inGameImage</key>
@@ -77,15 +147,15 @@
 			<key>healthScale</key>
 			<real>0.5</real>
 			<key>rangeScale</key>
-			<real>3.4</real>
+			<real>3.3999999999999999</real>
 			<key>shotSpeedScale</key>
 			<real>1.2</real>
 			<key>sizeScale</key>
-			<real>0.8</real>
+			<real>0.80000000000000004</real>
 			<key>speedScale</key>
 			<real>2</real>
 			<key>turnRateScale</key>
-			<real>2.4</real>
+			<real>2.3999999999999999</real>
 		</dict>
 	</dict>
 </array>
