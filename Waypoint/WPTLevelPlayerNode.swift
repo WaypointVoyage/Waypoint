@@ -15,6 +15,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     init(player: WPTPlayer) {
         super.init(actor: player)
         self.isUserInteractionEnabled = true
+        self.zPosition = WPTValues.movementHandlerZPosition + 1
     }
     
     required init?(coder aDecoder: NSCoder) {

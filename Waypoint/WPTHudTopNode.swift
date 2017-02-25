@@ -22,7 +22,7 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         self.player = player
         
         self.shipName = WPTLabelNode(text: player.shipName, fontSize: WPTValues.fontSizeSmall)
-        self.shipName.zPosition = WPTValues.pauseShroudZPosition + 2
+        self.shipName.zPosition = WPTValues.movementHandlerZPosition - 1
         let shipNameSize = WPTValues.fontSizeSmall
         let nameOffset = 0.95 * shipNameSize
         self.shipName.position = CGPoint(x: nameOffset, y: WPTValues.screenSize.height - nameOffset)
@@ -42,12 +42,12 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         
         let moneyImgSize = 1.15 * WPTValues.fontSizeSmall
         let moneyOffset = 1.4 * moneyImgSize
-        self.moneyImage.zPosition = WPTValues.pauseShroudZPosition + 2
+        self.moneyImage.zPosition = WPTValues.movementHandlerZPosition - 1
         self.moneyImage.position = CGPoint(x: moneyOffset, y: WPTValues.screenSize.height - moneyOffset*1.7)
         self.moneyImage.size = CGSize(width: moneyImgSize, height: moneyImgSize)
         self.addChild(self.moneyImage)
         
-        self.moneyCount.zPosition = WPTValues.pauseShroudZPosition + 2
+        self.moneyCount.zPosition = WPTValues.movementHandlerZPosition - 1
         self.moneyCount.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.moneyCount.fontColor = UIColor.black
         self.moneyCount.position = CGPoint(x: moneyOffset * 1.55, y: WPTValues.screenSize.height - moneyOffset * 1.85)
@@ -57,7 +57,6 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         self.pause.zPosition = WPTValues.pauseShroudZPosition + 2
         self.pause.position = CGPoint(x: WPTValues.screenSize.width - pauseOffset, y: WPTValues.screenSize.height - pauseOffset)
         self.pause.size = CGSize(width: pauseSize, height: pauseSize)
-        self.pause.zPosition = 1
         self.addChild(self.pause)
     }
     

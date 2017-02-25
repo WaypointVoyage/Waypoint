@@ -17,13 +17,12 @@ class WPTTerrainNode: SKNode {
     
     var boundary: SKPhysicsBody!
     
-    init(level: WPTLevel) {
+    init(level: WPTLevel, player: WPTLevelPlayerNode) {
         self.level = level
         self.size = level.size
         self.spawnPoint = level.spawnPoint
         self.boundary = nil
         super.init()
-        self.isUserInteractionEnabled = true
         
         // setup the water backdrop
         var water: SKNode? = nil
@@ -40,6 +39,9 @@ class WPTTerrainNode: SKNode {
         }
         water!.zPosition = -100
         self.addChild(water!)
+        
+        // and the touch handler
+        self.addChild(WPTPlayerMovementNode(self.size, player))
         
         loadTerrain()
         
@@ -84,13 +86,5 @@ class WPTTerrainNode: SKNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let player = self.childNode(withName: WPTLevelScene.playerNameTag) as? WPTLevelPlayerNode {
-            if let target = touches.first?.location(in: self) {
-                player.facePoint(target)
-            }
-        }
     }
 }

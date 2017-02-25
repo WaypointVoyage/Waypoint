@@ -24,14 +24,14 @@ class WPTHealthBarNode: SKNode {
         self.player = player
         
         self.shipImage = SKSpriteNode(imageNamed: player.ship.previewImage)
-        self.shipImage.zPosition = WPTValues.pauseShroudZPosition + 2
+        self.shipImage.zPosition = WPTValues.movementHandlerZPosition - 1
         let shipImgSize = 1.15 * WPTValues.fontSizeSmall
         let shipOffset = 1.4 * shipImgSize
         self.shipImage.position = CGPoint(x: shipOffset, y: WPTValues.screenSize.height - shipOffset)
         self.shipImage.size = CGSize(width: shipImgSize, height: shipImgSize)
         
-        self.shipHealthBar.zPosition = WPTValues.pauseShroudZPosition + 2
-        self.shipHealthBar.position = CGPoint(x: shipOffset * 2.5, y: WPTValues.screenSize.height - shipOffset*1.1)
+        self.shipHealthBar.zPosition = WPTValues.movementHandlerZPosition - 1
+        self.shipHealthBar.position = CGPoint(x: shipOffset * 2.5, y: WPTValues.screenSize.height - shipOffset * 1.1)
         
         super.init()
         

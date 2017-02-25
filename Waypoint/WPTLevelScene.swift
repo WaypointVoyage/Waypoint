@@ -28,11 +28,9 @@ class WPTLevelScene: WPTScene {
         self.player = WPTLevelPlayerNode(player: player)
         self.level = level
         self.hud = WPTHudNode(player: self.player)
-        self.terrain = WPTTerrainNode(level: level)
+        self.terrain = WPTTerrainNode(level: level, player: self.player)
         self.projectiles = SKNode()
         super.init(size: CGSize(width: 0, height: 0))
-        
-        self.isUserInteractionEnabled = true
         
         self.scene?.backgroundColor = UIColor.black
         
@@ -61,7 +59,7 @@ class WPTLevelScene: WPTScene {
         // breif flash of level name
         let levelName = WPTLabelNode(text: self.level.name, fontSize: WPTValues.fontSizeLarge)
         levelName.name = WPTLevelScene.levelNameTag
-        levelName.zPosition = WPTValues.pauseShroudZPosition + 2
+        levelName.zPosition = WPTValues.movementHandlerZPosition - 1
         levelName.position.y += 0.2 * WPTValues.screenSize.height
         levelName.alpha = 0
         levelName.fontColor = UIColor.black
