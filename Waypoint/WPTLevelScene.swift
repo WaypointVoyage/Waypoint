@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 class WPTLevelScene: WPTScene {
     static let levelNameTag = "_LEVEL"
@@ -16,7 +17,7 @@ class WPTLevelScene: WPTScene {
     
     let terrain: WPTTerrainNode
     let player: WPTLevelPlayerNode
-    let hud: WPTHudNode
+    var hud: WPTHudNode
     var cam: SKCameraNode!
     let projectiles: SKNode
     
@@ -27,10 +28,12 @@ class WPTLevelScene: WPTScene {
     init(player: WPTPlayer, level: WPTLevel) {
         self.player = WPTLevelPlayerNode(player: player)
         self.level = level
-        self.hud = WPTHudNode(player: self.player)
         self.terrain = WPTTerrainNode(level: level)
+        self.hud = WPTHudNode(player: self.player, terrain: self.terrain)
         self.projectiles = SKNode()
         super.init(size: CGSize(width: 0, height: 0))
+        
+        self.listener = self.player
         
         self.isUserInteractionEnabled = true
         

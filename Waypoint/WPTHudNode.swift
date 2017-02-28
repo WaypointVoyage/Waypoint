@@ -10,16 +10,19 @@ import SpriteKit
 
 class WPTHudNode: SKNode, WPTUpdatable {
     
+    let player: WPTLevelPlayerNode
     let top: WPTHudTopNode
     let bottom: WPTHudBottomNode
     let pauseShroud: SKShapeNode
     let pauseMenu: WPTPauseMenuNode
+    let backgroundMusic = SKAudioNode(fileNamed: "windWaker.mp3")
     
-    init(player: WPTLevelPlayerNode) {
+    init(player: WPTLevelPlayerNode, terrain: WPTTerrainNode) {
+        self.player = player
         self.top = WPTHudTopNode(player: player.player)
         self.bottom = WPTHudBottomNode()
         self.pauseShroud = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: WPTValues.screenSize))
-        self.pauseMenu = WPTPauseMenuNode()
+        self.pauseMenu = WPTPauseMenuNode(terrain: terrain)
         super.init()
         self.isUserInteractionEnabled = true
         
@@ -37,6 +40,13 @@ class WPTHudNode: SKNode, WPTUpdatable {
         // pause menu
         self.pauseMenu.zPosition = WPTValues.pauseShroudZPosition + 1
         self.pauseMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
+        
+        //audio
+        self.scene?.listener = player
+        backgroundMusic.isPositional = false
+        backgroundMusic.position = CGPoint(x: self.player.position.x, y: self.player.position.y)
+        backgroundMusic.autoplayLooped = true
+        self.addChild(backgroundMusic)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,6 +55,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
     
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
         self.top.update(currentTime, deltaTime)
+        self.backgroundMusic.position = CGPoint(x: self.player.position.x, y: self.player.position.y)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -73,13 +84,22 @@ class WPTHudNode: SKNode, WPTUpdatable {
     private func toggleShroud(_ isPaused: Bool) {
         if isPaused {
             self.pauseMenu.levelName = (self.scene as! WPTLevelScene).level.name
-            
+            backgroundMusic.run(SKAction.pause())
             self.addChild(self.pauseShroud)
             self.addChild(self.pauseMenu)
         } else {
+            backgroundMusic.run(SKAction.play())
             self.pauseShroud.removeFromParent()
             self.pauseMenu.removeFromParent()
         }
+    }
+    
+    func addAudioNode() {
+        
+        let backgroundMusic = SKAudioNode(fileNamed: "distance.m4a")
+        backgroundMusic.isPositional = false
+        
+        self.addChild(backgroundMusic)
     }
 }
 

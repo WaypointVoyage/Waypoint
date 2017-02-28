@@ -14,6 +14,7 @@ class WPTTerrainNode: SKNode {
     let level: WPTLevel
     let size: CGSize
     let spawnPoint: CGPoint
+    var terrainPaths = [CGPath]()
     
     var boundary: SKPhysicsBody!
     
@@ -68,6 +69,7 @@ class WPTTerrainNode: SKNode {
                         path.addLine(to: 2.0 * CGPoint(x: body[i][0], y: body[i][1]))
                     }
                     path.closeSubpath()
+                    self.terrainPaths.append(path)
                     
                     physicsBodies.append(SKPhysicsBody(edgeLoopFrom: path))
                 }
