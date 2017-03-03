@@ -2,8 +2,46 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>entities</key>
+	<dict>
+		<key>boulders</key>
+		<integer>0</integer>
+		<key>whirlpools</key>
+		<integer>0</integer>
+	</dict>
 	<key>name</key>
 	<string>Sea Legs</string>
+	<key>port</key>
+	<dict>
+		<key>inventory</key>
+		<array>
+			<dict>
+				<key>inStock</key>
+				<true/>
+				<key>item</key>
+				<string>ITEM_NAME</string>
+				<key>price</key>
+				<integer>10</integer>
+			</dict>
+			<dict>
+				<key>inStock</key>
+				<true/>
+				<key>item</key>
+				<string>ITEM NAME</string>
+				<key>price</key>
+				<integer>10</integer>
+			</dict>
+		</array>
+		<key>position</key>
+		<dict>
+			<key>angle</key>
+			<integer>0</integer>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
 	<key>size</key>
 	<dict>
 		<key>height</key>

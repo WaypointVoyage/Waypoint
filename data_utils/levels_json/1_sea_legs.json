@@ -8,6 +8,29 @@
       "x": 980,
       "y": 1200,
    },
+   "port": {
+      "position": {
+         "x": 0,
+         "y": 0,
+         "angle": 0
+      },
+      "inventory": [
+         {
+            "item": "ITEM_NAME",
+            "price": 10,
+            "inStock": true
+         },
+         {
+            "item": "ITEM NAME",
+            "price": 10,
+            "inStock": true
+         }
+      ]
+   },
+   "entities": {
+      "whirlpools": 0,
+      "boulders": 0
+   },
    "terrain": {
       "image": "sea_legs_terrain",
       "waterImage": "sea_legs_water",
