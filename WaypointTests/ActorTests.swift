@@ -12,9 +12,9 @@ import XCTest
 class ActorTests: XCTestCase {
     
     func testItemMultiplicity() {
-        let nilItem = WPTItem(name: "a", imageName: "img", typeMask: 0, multiplicity: nil)
-        let noMultItem = WPTItem(name: "b", imageName: "img", typeMask: 0, multiplicity: 0)
-        let mult3Item = WPTItem(name: "c", imageName: "img", typeMask: 0, multiplicity: 3)
+        let nilItem = WPTItem(name: "a", imageName: "img", tier: WPTItemTier.statModifier, multiplicity: nil)
+        let noMultItem = WPTItem(name: "b", imageName: "img", tier: WPTItemTier.statModifier, multiplicity: 0)
+        let mult3Item = WPTItem(name: "c", imageName: "img", tier: WPTItemTier.statModifier, multiplicity: 3)
         
         let actor = WPTActor(ship: WPTShip(previewImage: "img", inGameImage: "ingimg"))
         

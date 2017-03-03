@@ -1,0 +1,20 @@
+[
+   {
+      "name": "One Doubloon",
+      "imageName": "doubloon",
+      "value": 1,
+      "prevalence": 100
+   },
+   {
+      "name": "Some Doubloons",
+      "imageName": "doubloon",
+      "value": 5,
+      "prevalence": 20
+   },
+   {
+      "name": "A Bunch Of Doubloons",
+      "imageName": "doubloon",
+      "value": 1,
+      "prevalence": 5
+   }
+]

@@ -37,8 +37,8 @@ class WPTActor {
     }
     
     // items
-    var items: [WPTItem] = []
-    var itemCounts: [String:Int] = [:] // item.name -> count
+    var items: [WPTItem] = [] // items that modify behavior
+    private var itemCounts: [String:Int] = [:] // item.name -> count
     
     init(ship: WPTShip) {
         self.ship = ship
@@ -46,6 +46,7 @@ class WPTActor {
     }
     
     func apply(item: WPTItem) {
+        assert(item.tier == WPTItemTier.statModifier)
         var canAdd = true
         
         // update the item's count

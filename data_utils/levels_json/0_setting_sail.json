@@ -8,6 +8,29 @@
       "x": 1080,
       "y": 1080
    },
+   "port": {
+      "position": {
+         "x": 0,
+         "y": 0,
+         "angle": 0
+      },
+      "inventory": [
+         {
+            "item": "ITEM_NAME",
+            "price": 10,
+            "inStock": true
+         },
+         {
+            "item": "ITEM NAME",
+            "price": 10,
+            "inStock": true
+         }
+      ]
+   },
+   "entities": {
+      "whirlpools": 0,
+      "boulders": 0
+   },
    "terrain": {
       "image": "setting_sail_terrain",
       "waterImage": "setting_sail_water",
@@ -57,7 +80,7 @@
             [248, 27],
             [255, 1],
             [0, 1],
-            [-1, 1079],
+            [-1, 1079]
          ],
          [
             [811, 824],
@@ -80,7 +103,7 @@
             [780, 789],
             [783, 799],
             [792, 812],
-            [803, 817],
+            [803, 817]
          ],
          [
             [695, 418],
@@ -107,8 +130,8 @@
             [684, 369],
             [686, 378],
             [685, 395],
-            [688, 409],
-         ],
-      ],
-   },
+            [688, 409]
+         ]
+      ]
+   }
 }

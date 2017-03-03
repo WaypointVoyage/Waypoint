@@ -44,6 +44,8 @@
 		7E5242881E56331D00120002 /* WPTTerrainNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5242871E56331D00120002 /* WPTTerrainNode.swift */; };
 		7E5242901E56440900120002 /* water.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E52428F1E56440900120002 /* water.fsh */; };
 		7E52C85A1E61E72F004FDB27 /* WPTPlayerMovementNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52C8591E61E72F004FDB27 /* WPTPlayerMovementNode.swift */; };
+		7E575DD61E69C1D2004D92BF /* WPTPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E575DD51E69C1D2004D92BF /* WPTPort.swift */; };
+		7E575DD81E69C3C7004D92BF /* WPTItemCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E575DD71E69C3C7004D92BF /* WPTItemCatalog.swift */; };
 		7E5A6BEE1E5A0E070067EAF3 /* WPTCannonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */; };
 		7E5A6BF01E5A0E200067EAF3 /* WPTCannonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A6BEF1E5A0E200067EAF3 /* WPTCannonSet.swift */; };
 		7E5AB51C1E6336D700BFF54D /* 4_fire_in_the_hole.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E5AB51B1E6336D700BFF54D /* 4_fire_in_the_hole.plist */; };
@@ -82,6 +84,9 @@
 		7ED739031E44F3B600122903 /* WPTActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED739021E44F3B600122903 /* WPTActor.swift */; };
 		7ED739051E44F9E100122903 /* WPTItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED739041E44F9E100122903 /* WPTItem.swift */; };
 		7EDD063A1E4A1C750054EB7E /* WPTTrailMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */; };
+		7EE57D3B1E69DAF20020693B /* currency_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D381E69DAF20020693B /* currency_items.plist */; };
+		7EE57D3C1E69DAF20020693B /* repair_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D391E69DAF20020693B /* repair_items.plist */; };
+		7EE57D3D1E69DAF20020693B /* stat_modifier_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D3A1E69DAF20020693B /* stat_modifier_items.plist */; };
 		7EE7981B1E523030006D683B /* WPTPlayerProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */; };
 		7EE7981D1E5234A3006D683B /* WPTLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981C1E5234A3006D683B /* WPTLevel.swift */; };
 		7EF61E8C1E3B057900CB4CAB /* WPTShipPickerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF61E8B1E3B057900CB4CAB /* WPTShipPickerNode.swift */; };
@@ -149,6 +154,8 @@
 		7E5242871E56331D00120002 /* WPTTerrainNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTerrainNode.swift; sourceTree = "<group>"; };
 		7E52428F1E56440900120002 /* water.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = water.fsh; sourceTree = "<group>"; };
 		7E52C8591E61E72F004FDB27 /* WPTPlayerMovementNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayerMovementNode.swift; sourceTree = "<group>"; };
+		7E575DD51E69C1D2004D92BF /* WPTPort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPort.swift; sourceTree = "<group>"; };
+		7E575DD71E69C3C7004D92BF /* WPTItemCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItemCatalog.swift; sourceTree = "<group>"; };
 		7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonNode.swift; sourceTree = "<group>"; };
 		7E5A6BEF1E5A0E200067EAF3 /* WPTCannonSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonSet.swift; sourceTree = "<group>"; };
 		7E5AB51B1E6336D700BFF54D /* 4_fire_in_the_hole.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 4_fire_in_the_hole.plist; sourceTree = "<group>"; };
@@ -187,6 +194,9 @@
 		7ED739021E44F3B600122903 /* WPTActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTActor.swift; sourceTree = "<group>"; };
 		7ED739041E44F9E100122903 /* WPTItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItem.swift; sourceTree = "<group>"; };
 		7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailMapNode.swift; sourceTree = "<group>"; };
+		7EE57D381E69DAF20020693B /* currency_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = currency_items.plist; sourceTree = "<group>"; };
+		7EE57D391E69DAF20020693B /* repair_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = repair_items.plist; sourceTree = "<group>"; };
+		7EE57D3A1E69DAF20020693B /* stat_modifier_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stat_modifier_items.plist; sourceTree = "<group>"; };
 		7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayerProgress.swift; sourceTree = "<group>"; };
 		7EE7981C1E5234A3006D683B /* WPTLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevel.swift; sourceTree = "<group>"; };
 		7EF61E8B1E3B057900CB4CAB /* WPTShipPickerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipPickerNode.swift; sourceTree = "<group>"; };
@@ -221,13 +231,13 @@
 		2D8E804C1E3ADBAF00CB2E0B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7E575DD41E69C18B004D92BF /* Levels */,
 				7EBF5E211E4D06B200F81982 /* Trail */,
 				2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */,
 				7ED739021E44F3B600122903 /* WPTActor.swift */,
 				7ED739041E44F9E100122903 /* WPTItem.swift */,
 				7E13F6331E48F8B900B5D2FD /* WPTPlayer.swift */,
 				7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */,
-				7EE7981C1E5234A3006D683B /* WPTLevel.swift */,
 				7E5A6BEF1E5A0E200067EAF3 /* WPTCannonSet.swift */,
 				7E4215F71E5A6916004ADBD7 /* WPTCannon.swift */,
 				7E4215FD1E5A716E004ADBD7 /* WPTCannonBall.swift */,
@@ -353,6 +363,7 @@
 			children = (
 				7EBF5E681E4E1B4000F81982 /* WPTUtils.swift */,
 				7E4216031E5B56BF004ADBD7 /* WPTFireRateManager.swift */,
+				7E575DD71E69C3C7004D92BF /* WPTItemCatalog.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -372,6 +383,25 @@
 				7E52428F1E56440900120002 /* water.fsh */,
 			);
 			name = Level;
+			sourceTree = "<group>";
+		};
+		7E575DD41E69C18B004D92BF /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				7EE7981C1E5234A3006D683B /* WPTLevel.swift */,
+				7E575DD51E69C1D2004D92BF /* WPTPort.swift */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
+		7E575DD91E69CBA4004D92BF /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				7EE57D381E69DAF20020693B /* currency_items.plist */,
+				7EE57D391E69DAF20020693B /* repair_items.plist */,
+				7EE57D3A1E69DAF20020693B /* stat_modifier_items.plist */,
+			);
+			name = Items;
 			sourceTree = "<group>";
 		};
 		7E5A6BEB1E5A0DA90067EAF3 /* Actors */ = {
@@ -462,9 +492,10 @@
 		7ED3775A1E4AB4F000DB1EA2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7E42160F1E5BEB9C004ADBD7 /* the_ships.plist */,
+				7E575DD91E69CBA4004D92BF /* Items */,
 				7E6932A41E54117900AF7373 /* Levels */,
 				7E6932A71E541C0200AF7373 /* trail_map_old.plist */,
+				7E42160F1E5BEB9C004ADBD7 /* the_ships.plist */,
 				7E43CC761E54B844009367BC /* trail_map.plist */,
 				2D1703D61E590F8C0000827E /* random_ship_names.plist */,
 			);
@@ -616,7 +647,9 @@
 				7E5242901E56440900120002 /* water.fsh in Resources */,
 				7E5AB5241E6362DD00BFF54D /* 8_give_no_quarter.plist in Resources */,
 				7E5AB5261E63669400BFF54D /* 9_boom_about.plist in Resources */,
+				7EE57D3C1E69DAF20020693B /* repair_items.plist in Resources */,
 				7E5AB52A1E638FA500BFF54D /* 11_shiver_me_timbers.plist in Resources */,
+				7EE57D3B1E69DAF20020693B /* currency_items.plist in Resources */,
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
 				2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */,
 				7E6932A81E541C0200AF7373 /* trail_map_old.plist in Resources */,
@@ -637,6 +670,7 @@
 				7ED17D591E5CBC1F00116B39 /* 2_pegleg_plunder.plist in Resources */,
 				2D1703DD1E625F1E0000827E /* distance.m4a in Resources */,
 				7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */,
+				7EE57D3D1E69DAF20020693B /* stat_modifier_items.plist in Resources */,
 				7E5AB51E1E633C6200BFF54D /* 5_dead_men_tell_no_tales.plist in Resources */,
 				7E5AB5221E635F0E00BFF54D /* 7_letter_of_marque.plist in Resources */,
 				7ED17D5A1E5CBC1F00116B39 /* 3_cutlass_careen.plist in Resources */,
@@ -687,6 +721,7 @@
 				7ED2206D1E37215F00D2AA68 /* WPTSecretMessage.swift in Sources */,
 				7E4215FE1E5A716E004ADBD7 /* WPTCannonBall.swift in Sources */,
 				7E52C85A1E61E72F004FDB27 /* WPTPlayerMovementNode.swift in Sources */,
+				7E575DD61E69C1D2004D92BF /* WPTPort.swift in Sources */,
 				2D1703D91E5B9BA30000827E /* WPTHealthBarNode.swift in Sources */,
 				7E13F6341E48F8B900B5D2FD /* WPTPlayer.swift in Sources */,
 				7E13F6321E48F53200B5D2FD /* WPTLevelScene.swift in Sources */,
@@ -695,6 +730,7 @@
 				7E69329E1E53E0D500AF7373 /* WPTHudBottomNode.swift in Sources */,
 				7EDD063A1E4A1C750054EB7E /* WPTTrailMapNode.swift in Sources */,
 				7E4216041E5B56BF004ADBD7 /* WPTFireRateManager.swift in Sources */,
+				7E575DD81E69C3C7004D92BF /* WPTItemCatalog.swift in Sources */,
 				7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */,
 				7E4215F81E5A6916004ADBD7 /* WPTCannon.swift in Sources */,
 				7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */,

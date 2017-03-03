@@ -72,6 +72,12 @@ class WPTShip {
     let inGameImage: String
     let cannonSet: WPTCannonSet
     
+    init(previewImage: String, inGameImage: String) {
+        self.previewImage = previewImage
+        self.inGameImage = inGameImage
+        self.cannonSet = WPTCannonSet([[String:AnyObject]]())
+    }
+    
     init(dict: [String:AnyObject]) {
         self.previewImage = dict["previewImage"] as! String
         self.inGameImage = dict["inGameImage"] as! String
