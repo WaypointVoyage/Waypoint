@@ -14,7 +14,8 @@ class WPTItemCatalog {
         var items = [String:WPTItem]()
         for itemGroup in [("currency_items", WPTItemTier.currency),
                          ("repair_items", WPTItemTier.repair),
-                         ("stat_modifier_items", WPTItemTier.statModifier)] {
+                         ("stat_modifier_items", WPTItemTier.statModifier),
+                         ("other_items", WPTItemTier.other)] {
             
             let theFile = Bundle.main.path(forResource: itemGroup.0, ofType: "plist")
             for itemDict in NSArray(contentsOfFile: theFile!) as! [[String:AnyObject]] {
@@ -27,6 +28,8 @@ class WPTItemCatalog {
                     item = WPTItem(asRepair: itemDict)
                 case WPTItemTier.statModifier:
                     item = WPTItem(asStatModifier: itemDict)
+                case WPTItemTier.other:
+                    item = WPTItem(itemDict)
                 }
                 
                 assert(items[item.name] != nil, "An item with the name \(item.name) already exists!")

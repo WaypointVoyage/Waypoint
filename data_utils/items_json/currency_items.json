@@ -7,13 +7,13 @@
    },
    {
       "name": "Some Doubloons",
-      "imageName": "doubloon",
+      "imageName": "some_doubloons",
       "value": 5,
       "prevalence": 20
    },
    {
       "name": "A Bunch Of Doubloons",
-      "imageName": "doubloon",
+      "imageName": "a_bunch_of_doubloons",
       "value": 1,
       "prevalence": 5
    }

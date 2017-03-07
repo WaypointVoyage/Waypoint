@@ -14,7 +14,7 @@
 	</dict>
 	<dict>
 		<key>imageName</key>
-		<string>doubloon</string>
+		<string>some_doubloons</string>
 		<key>name</key>
 		<string>Some Doubloons</string>
 		<key>prevalence</key>
@@ -24,7 +24,7 @@
 	</dict>
 	<dict>
 		<key>imageName</key>
-		<string>doubloon</string>
+		<string>a_bunch_of_doubloons</string>
 		<key>name</key>
 		<string>A Bunch Of Doubloons</string>
 		<key>prevalence</key>

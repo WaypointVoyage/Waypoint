@@ -38,7 +38,7 @@ class WPTHealthBarNode: SKNode {
         self.addChild(shipImage)
         self.addChild(shipHealthBar)
         
-        updateHealthBar(node: self.shipHealthBar)
+        updateHealthBar()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,7 +46,7 @@ class WPTHealthBarNode: SKNode {
     }
 
 
-    func updateHealthBar(node: SKSpriteNode) {
+    func updateHealthBar() {
         
         let barSize = CGSize(width: healthBarWidth, height: healthBarHeight);
         
@@ -73,8 +73,8 @@ class WPTHealthBarNode: SKNode {
         UIGraphicsEndImageContext()
         
         // set sprite texture and size
-        node.texture = SKTexture(image: spriteImage!)
-        node.size = barSize
+        self.shipHealthBar.texture = SKTexture(image: spriteImage!)
+        self.shipHealthBar.size = barSize
     }
 
 }

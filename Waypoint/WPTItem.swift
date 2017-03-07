@@ -67,4 +67,5 @@ enum WPTItemTier: String {
     case currency = "CURRENCY"
     case repair = "REPAIR"
     case statModifier = "STAT_MODIFIER"
+    case other = "OTHER"
 }
