@@ -86,6 +86,16 @@ class WPTTerrainNode: SKNode {
         }
     }
     
+    public func pointOnLand(scenePoint p: CGPoint) -> Bool {
+        let point = self.convert(p, from: self.scene!)
+        for path in self.terrainPaths {
+            if path.contains(point) {
+                return true;
+            }
+        }
+        return false
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
