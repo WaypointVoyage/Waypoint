@@ -17,6 +17,7 @@
    "entities": {
       "whirlpools": 0,
       "whirlpoolLocations": [],
+      "boulders": 0,
    },
    "terrain": {
       "image": "give_no_quarter_terrain",

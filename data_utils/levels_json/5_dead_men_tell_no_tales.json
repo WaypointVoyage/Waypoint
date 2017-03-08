@@ -17,6 +17,7 @@
    "entities": {
       "whirlpools": 0,
       "whirlpoolLocations": [],
+      "boulders": 0,
    },
    "terrain": {
       "image": "dead_men_tell_no_tales_terrain",
