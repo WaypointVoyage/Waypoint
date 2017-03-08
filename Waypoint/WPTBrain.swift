@@ -9,5 +9,9 @@
 import SpriteKit
 
 class WPTBrain {
+    let name: String
     
+    init(_ brainDict: [String:AnyObject]) {
+        name = brainDict["name"] as! String
+    }
 }

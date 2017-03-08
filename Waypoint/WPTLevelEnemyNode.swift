@@ -9,14 +9,13 @@
 import SpriteKit
 
 class WPTLevelEnemyNode: WPTLevelActorNode {
-    
-    let brain: WPTBrain
+    let enemy: WPTEnemy
     let player: WPTLevelPlayerNode
     
-    init(actor: WPTActor, player: WPTLevelPlayerNode) {
-        brain = WPTBrain()
+    init(enemy: WPTEnemy, player: WPTLevelPlayerNode) {
+        self.enemy = enemy
         self.player = player
-        super.init(actor: actor)
+        super.init(actor: enemy)
     }
     
     required init?(coder aDecoder: NSCoder) {

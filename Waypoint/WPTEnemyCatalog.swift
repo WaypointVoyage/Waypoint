@@ -9,10 +9,41 @@
 import SpriteKit
 
 class WPTEnemyCatalog {
-    static let enemiesByName: [String:WPTActor] = {
-        var enemies = [String:WPTActor]()
+    static let allBrains: [WPTBrain] = {
+        var brains = [WPTBrain]()
         
+        let path = Bundle.main.path(forResource: "brains", ofType: "plist")!
+        for brain in NSArray(contentsOfFile: path) as! [[String:AnyObject]] {
+            brains.append(WPTBrain(brain))
+        }
         
-        return enemies
+        return brains;
+    }()
+    
+    static let brainsByName: [String:WPTBrain] = {
+        var map = [String:WPTBrain]()
+        for brain in WPTEnemyCatalog.allBrains {
+            map[brain.name] = brain
+        }
+        return map
+    }()
+    
+    static let allEnemies: [WPTEnemy] = {
+        var enemies = [WPTEnemy]()
+        
+        let path = Bundle.main.path(forResource: "enemies", ofType: "plist")!
+        for enemy in NSArray(contentsOfFile: path) as! [[String:AnyObject]] {
+            enemies.append(WPTEnemy(enemy))
+        }
+        
+        return enemies;
+    }()
+    
+    static let enemiesByName: [String:WPTEnemy] = {
+        var map = [String:WPTEnemy]()
+        for enemy in WPTEnemyCatalog.allEnemies {
+            map[enemy.name] = enemy;
+        }
+        return map
     }()
 }
