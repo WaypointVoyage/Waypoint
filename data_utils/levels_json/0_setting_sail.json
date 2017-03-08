@@ -29,7 +29,7 @@
    },
    "entities": {
       "whirlpools": 0,
-      "whilePoolLocations": [
+      "whirlpoolLocations": [
          [508, 1012],
          [615, 1018],
          [741, 1022],

@@ -6,7 +6,7 @@
 	<dict>
 		<key>boulders</key>
 		<integer>0</integer>
-		<key>whilePoolLocations</key>
+		<key>whirlpoolLocations</key>
 		<array>
 			<array>
 				<integer>508</integer>
