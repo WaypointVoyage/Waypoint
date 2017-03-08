@@ -9,7 +9,7 @@
 import SpriteKit
 import AVFoundation
 
-class WPTLevelScene: WPTScene {
+class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
     static let levelNameTag = "_LEVEL"
     static let playerNameTag = "_PLAYER"
     
@@ -54,6 +54,8 @@ class WPTLevelScene: WPTScene {
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
+        physicsWorld.contactDelegate = self
+        
         // camera
         cam = SKCameraNode()
         self.camera = cam
@@ -90,7 +92,7 @@ class WPTLevelScene: WPTScene {
         rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
         let yPos = CGFloat(heightMax - heightMin) * rand + CGFloat(heightMin)
         boulder.position = CGPoint(x: xPos, y: yPos)
-        boulder.zRotation = CGFloat(M_PI)/rand
+        boulder.boulderImage.zRotation = CGFloat(M_PI)/rand
     }
     
     private func placeWhirlpool(_ whirlpool: WPTWhirlpoolNode) {
@@ -171,5 +173,32 @@ class WPTLevelScene: WPTScene {
             levelName.isPaused = self.levelPaused
         }
         self.physicsWorld.speed = self.levelPaused ? 0.0 : 1.0 // pause physics simulation
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+
+        var firstBody: SKPhysicsBody?
+        var secondBody: SKPhysicsBody?
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        }
+        else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        let contactMask = (firstBody?.categoryBitMask)! | (secondBody?.categoryBitMask)!
+        
+        switch (contactMask){
+            
+        case WPTValues.boulderCbm | WPTValues.projectileCbm:
+            
+            let boulder = secondBody?.node as! WPTBoulderNode
+            boulder.processHealthStatus(-20.0)
+            
+        default :
+            return
+        }
     }
 }

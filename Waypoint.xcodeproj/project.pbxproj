@@ -16,6 +16,9 @@
 		2D1703E31E62665B0000827E /* windWaker.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703E21E62665B0000827E /* windWaker.mp3 */; };
 		2D1704371E6F66FD0000827E /* WPTWhirlpoolNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1704361E6F66FD0000827E /* WPTWhirlpoolNode.swift */; };
 		2D1704391E6F670A0000827E /* WPTBoulderNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1704381E6F670A0000827E /* WPTBoulderNode.swift */; };
+		2D17043B1E6FF3CD0000827E /* WPTHealthNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D17043A1E6FF3CD0000827E /* WPTHealthNode.swift */; };
+		2D17043F1E7005170000827E /* fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2D17043E1E7005170000827E /* fire.sks */; };
+		2D1704471E7009890000827E /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2D1704461E7009890000827E /* explosion.sks */; };
 		2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */; };
 		2D7FD1811E5801A1001B6208 /* WPTShipNamePopUpNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */; };
 		2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */; };
@@ -132,6 +135,9 @@
 		2D1703E21E62665B0000827E /* windWaker.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = windWaker.mp3; sourceTree = "<group>"; };
 		2D1704361E6F66FD0000827E /* WPTWhirlpoolNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWhirlpoolNode.swift; sourceTree = "<group>"; };
 		2D1704381E6F670A0000827E /* WPTBoulderNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBoulderNode.swift; sourceTree = "<group>"; };
+		2D17043A1E6FF3CD0000827E /* WPTHealthNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHealthNode.swift; sourceTree = "<group>"; };
+		2D17043E1E7005170000827E /* fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fire.sks; sourceTree = "<group>"; };
+		2D1704461E7009890000827E /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 		2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOOTERFZ.ttf; sourceTree = "<group>"; };
 		2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipNamePopUpNode.swift; sourceTree = "<group>"; };
 		2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSettingsScene.swift; sourceTree = "<group>"; };
@@ -464,6 +470,7 @@
 				7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */,
 				7E52C8591E61E72F004FDB27 /* WPTPlayerMovementNode.swift */,
 				7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */,
+				2D17043A1E6FF3CD0000827E /* WPTHealthNode.swift */,
 			);
 			name = Level;
 			sourceTree = "<group>";
@@ -489,6 +496,8 @@
 				7E73A0A71E4A6EE3008F6DA8 /* Shaders */,
 				7E13F6281E48EA7400B5D2FD /* Sound */,
 				7E0D620D1E366ED1009C8516 /* Fonts */,
+				2D17043E1E7005170000827E /* fire.sks */,
+				2D1704461E7009890000827E /* explosion.sks */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -722,7 +731,9 @@
 				7E43CC771E54B844009367BC /* trail_map.plist in Resources */,
 				7EE8A8F81E6FA84600C119B9 /* brains.plist in Resources */,
 				7EE8A8F11E6FA15500C119B9 /* the_enemy_ships.plist in Resources */,
+				2D1704471E7009890000827E /* explosion.sks in Resources */,
 				7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */,
+				2D17043F1E7005170000827E /* fire.sks in Resources */,
 				7EE8A9291E6FDD7100C119B9 /* 10_high_seas.plist in Resources */,
 				2D1703DD1E625F1E0000827E /* distance.m4a in Resources */,
 				7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */,
@@ -778,6 +789,7 @@
 				2D1704371E6F66FD0000827E /* WPTWhirlpoolNode.swift in Sources */,
 				7ED2206D1E37215F00D2AA68 /* WPTSecretMessage.swift in Sources */,
 				7EE8A8C81E6F779700C119B9 /* WPTShipCatalog.swift in Sources */,
+				2D17043B1E6FF3CD0000827E /* WPTHealthNode.swift in Sources */,
 				7E4215FE1E5A716E004ADBD7 /* WPTCannonBall.swift in Sources */,
 				7E52C85A1E61E72F004FDB27 /* WPTPlayerMovementNode.swift in Sources */,
 				7E575DD61E69C1D2004D92BF /* WPTPort.swift in Sources */,
