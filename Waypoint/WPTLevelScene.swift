@@ -72,11 +72,40 @@ class WPTLevelScene: WPTScene {
         })
     }
     
+    private func placeBoulder(_ boulder: WPTBoulderNode, _ radius: CGFloat) {
+        let widthMin = radius
+        let widthMax = self.terrain.size.width - radius
+        let heightMin = radius
+        let heightMax = self.terrain.size.height - radius
+        
+        var rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+        let xPos = CGFloat(widthMax - widthMin) * rand + CGFloat(widthMin)
+        rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+        let yPos = CGFloat(heightMax - heightMin) * rand + CGFloat(heightMin)
+        boulder.position = CGPoint(x: xPos, y: yPos)
+    }
+    
     private func loadLevel() {
         // setup the player
         self.player.name = WPTLevelScene.playerNameTag
         self.player.position = self.terrain.spawnPoint
         self.terrain.addChild(self.player)
+        
+//        for _ in 0..<self.level.whirlpools {
+//            let whirlpool = WPTWhirlpoolNode()
+//            let placed = placeObstacle(whirlpool, WPTWhirlpoolNode.whirlpoolRadius)
+////            if (placed) {
+//                self.terrain.addChild(whirlpool)
+////            }
+//        }
+        for _ in 0..<self.level.boulders {
+            let boulder = WPTBoulderNode()
+            placeBoulder(boulder, WPTBoulderNode.boulderRadius)
+            print("terrain size: \(self.terrain.size)")
+            self.terrain.addChild(boulder)
+        }
+        
+        
         
         // add everything to the scene
         self.addChild(projectiles)

@@ -76,7 +76,6 @@ class WPTPauseMenuNode: SKNode {
             self.map.setScale(CGFloat(scale))
             bound = SKShapeNode(rectOf: self.map.calculateAccumulatedFrame().size)
             bound.fillColor = UIColor.magenta
-            print("Width: \(bound.frame.width)")
         }
     }
     

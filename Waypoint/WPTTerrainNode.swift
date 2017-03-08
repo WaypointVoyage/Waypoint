@@ -79,7 +79,7 @@ class WPTTerrainNode: SKNode {
                 terrain.physicsBody = SKPhysicsBody(bodies: physicsBodies)
                 terrain.physicsBody!.isDynamic = false
                 terrain.physicsBody!.categoryBitMask = WPTValues.terrainCbm
-                terrain.physicsBody!.collisionBitMask = WPTValues.actorCbm | WPTValues.projectileCbm
+                terrain.physicsBody!.collisionBitMask = WPTValues.actorCbm | WPTValues.whirlpoolCbm
             }
             
             self.addChild(terrain)

@@ -45,6 +45,8 @@ class WPTValues {
     static let projectileCbm: UInt32 = 1 << 1
     static let boundaryCbm: UInt32 = 1 << 2
     static let terrainCbm: UInt32 = 1 << 3
+    static let whirlpoolCbm: UInt32 = 1 << 4
+    static let boulderCbm: UInt32 = 1 << 5
     
     // game stats
     static let maxHealth: CGFloat = 100

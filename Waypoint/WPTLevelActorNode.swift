@@ -51,6 +51,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         self.physics.linearDamping = WPTValues.waterLinearDampening
         self.physics.angularDamping = WPTValues.waterAngularDampening
         self.physics.categoryBitMask = WPTValues.actorCbm
+        self.physics.collisionBitMask = WPTValues.terrainCbm | WPTValues.boundaryCbm | WPTValues.boulderCbm
         
         // set starting position in the world
         self.zRotation += CGFloat(M_PI) / 2.0

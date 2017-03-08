@@ -47,6 +47,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
         backgroundMusic.position = CGPoint(x: self.player.position.x, y: self.player.position.y)
         backgroundMusic.autoplayLooped = true
         self.addChild(backgroundMusic)
+
     }
     
     required init?(coder aDecoder: NSCoder) {

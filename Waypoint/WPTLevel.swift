@@ -56,7 +56,7 @@ class WPTLevel {
         }
         
         // obstacles
-        if let obstaclesDict = levelDict["obstacles"] as? [String:AnyObject] {
+        if let obstaclesDict = levelDict["entities"] as? [String:AnyObject] {
             self.whirlpools = obstaclesDict["whirlpools"] as! Int
             self.boulders = obstaclesDict["boulders"] as! Int
         } else {
