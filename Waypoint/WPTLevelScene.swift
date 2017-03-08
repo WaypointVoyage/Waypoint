@@ -98,12 +98,12 @@ class WPTLevelScene: WPTScene {
 //                self.terrain.addChild(whirlpool)
 ////            }
 //        }
-        for _ in 0..<self.level.boulders {
-            let boulder = WPTBoulderNode()
-            placeBoulder(boulder, WPTBoulderNode.boulderRadius)
-            print("terrain size: \(self.terrain.size)")
-            self.terrain.addChild(boulder)
-        }
+//        for _ in 0..<self.level.boulders {
+//            let boulder = WPTBoulderNode()
+//            placeBoulder(boulder, WPTBoulderNode.boulderRadius)
+//            print("terrain size: \(self.terrain.size)")
+//            self.terrain.addChild(boulder)
+//        }
         
         
         
