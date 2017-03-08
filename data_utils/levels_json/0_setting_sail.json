@@ -10,8 +10,8 @@
    },
    "port": {
       "position": {
-         "x": 0,
-         "y": 0,
+         "x": 240,
+         "y": 90,
          "angle": 0
       },
       "inventory": [

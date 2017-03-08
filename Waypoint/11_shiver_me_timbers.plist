@@ -13,20 +13,6 @@
 	</dict>
 	<key>name</key>
 	<string>Shiver Me Timbers</string>
-	<key>port</key>
-	<dict>
-		<key>inventory</key>
-		<array/>
-		<key>position</key>
-		<dict>
-			<key>angle</key>
-			<integer>0</integer>
-			<key>x</key>
-			<integer>0</integer>
-			<key>y</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
 	<key>size</key>
 	<dict>
 		<key>height</key>
