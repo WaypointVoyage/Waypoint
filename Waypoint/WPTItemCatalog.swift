@@ -51,20 +51,19 @@ class WPTItemCatalog {
     
     private class PrevalenceMap {
         private var map = [WPTItem]()
-        private let min: Int = 0
-        private let max: Int
         
         init(for items: [WPTItem]) {
             for item in items {
-                map.append(item)
+                for _ in 0..<item.prevalence {
+                    map.append(item)
+                }
             }
-            max = map.count
-            assert(max >= 1)
+            assert(map.count > 1)
         }
         
         func random() -> WPTItem {
             let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-            let index = CGFloat(max - min) * rand + CGFloat(min)
+            let index = CGFloat(map.count - 1) * rand
             return self.map[Int(index)]
         }
     }
