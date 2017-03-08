@@ -1,5 +1,7 @@
 [
    {
+      "name": "Catapult",
+      "previewImage": "",
       "inGameImage": "catapult_top_down",
       "cannonSet": [
          {
