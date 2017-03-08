@@ -34,5 +34,10 @@ class WPTPlayerMovementNode: SKNode {
         if let target = touches.first?.location(in: self) {
             player.facePoint(target)
         }
+        
+//        if let scene = self.scene as? WPTLevelScene {
+//            let point = scene.convert(touches.first!.location(in: self), from: self)
+//            let onLand = scene.terrain.pointOnLand(scenePoint: point)
+//        }
     }
 }

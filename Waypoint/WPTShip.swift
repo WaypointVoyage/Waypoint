@@ -10,6 +10,9 @@ import SpriteKit
 
 class WPTShip {
     
+    let name: String
+    let playable: Bool
+    
     /* All stats are multipliers of base values and clamped between min/max values. */
     
     var speedScale: CGFloat = 1.0 { // determines the speed of the ship as it moves
@@ -72,13 +75,18 @@ class WPTShip {
     let inGameImage: String
     let cannonSet: WPTCannonSet
     
-    init(previewImage: String, inGameImage: String) {
+    init(name: String, previewImage: String, inGameImage: String) {
+        self.name = name
         self.previewImage = previewImage
         self.inGameImage = inGameImage
         self.cannonSet = WPTCannonSet([[String:AnyObject]]())
+        self.playable = false
     }
     
-    init(dict: [String:AnyObject]) {
+    init(dict: [String:AnyObject], playable: Bool) {
+        self.playable = playable
+        
+        self.name = dict["name"] as! String
         self.previewImage = dict["previewImage"] as! String
         self.inGameImage = dict["inGameImage"] as! String
         self.cannonSet = WPTCannonSet(dict["cannonSet"] as! [[String:AnyObject]])

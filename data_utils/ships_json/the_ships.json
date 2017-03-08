@@ -1,5 +1,6 @@
 [
    {
+      "name": "Waypoint Ship",
       "previewImage": "WaypointShip",
       "inGameImage": "waypoint_ship_top_down",
       "cannonSet": [
@@ -70,6 +71,7 @@
       },
    },
    {
+      "name": "Waypoint Ship",
       "previewImage": "PaperBoat",
       "inGameImage": "paper_boat_top_down",
       "cannonSet": [

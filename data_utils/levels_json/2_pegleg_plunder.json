@@ -29,6 +29,7 @@
    },
    "entities": {
       "whirlpools": 0,
+      "whirlpoolLocations": [],
       "boulders": 0
    },
    "terrain": {

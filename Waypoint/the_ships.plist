@@ -98,6 +98,8 @@
 		</array>
 		<key>inGameImage</key>
 		<string>waypoint_ship_top_down</string>
+		<key>name</key>
+		<string>Waypoint Ship</string>
 		<key>previewImage</key>
 		<string>WaypointShip</string>
 		<key>stats</key>
@@ -136,6 +138,8 @@
 		</array>
 		<key>inGameImage</key>
 		<string>paper_boat_top_down</string>
+		<key>name</key>
+		<string>Waypoint Ship</string>
 		<key>previewImage</key>
 		<string>PaperBoat</string>
 		<key>stats</key>

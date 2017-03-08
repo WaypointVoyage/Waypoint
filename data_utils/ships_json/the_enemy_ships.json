@@ -1,0 +1,23 @@
+[
+   {
+      "name": "Catapult",
+      "previewImage": "",
+      "inGameImage": "catapult_top_down",
+      "cannonSet": [
+         {
+            "hasCannon": true,
+            "x": 0, "y": 0, "angle": 0,
+         },
+      ],
+      "stats": {
+         "speedScale": 0.0,
+         "damageScale": 1.0,
+         "healthScale": 2.3,
+         "rangeScale": 2.0,
+         "shotSpeedScale": 1.1,
+         "sizeScale": 1.3,
+         "turnRateScale": 1.8,
+         "fireRateScale": 0.5,
+      },
+   },
+]

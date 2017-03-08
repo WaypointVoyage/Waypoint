@@ -23,16 +23,6 @@ class WPTNewGameScene: WPTScene {
     var shipInputField:UITextField?
     var shipPop:WPTShipNamePopUpNode?
     
-    let ships: [WPTShip] = {
-        var ships = [WPTShip]()
-        let plistPath = Bundle.main.path(forResource: "the_ships", ofType: "plist")!
-        let allShips = NSArray(contentsOfFile: plistPath) as! [[String: AnyObject]]
-        for ship in allShips {
-            ships.append(WPTShip(dict: ship))
-        }
-        return ships
-    }()
-    
     var shipPicker: WPTShipPickerNode?
     
     override func didMove(to view: SKView) {
@@ -41,7 +31,7 @@ class WPTNewGameScene: WPTScene {
         headerLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
         addChild(headerLabel)
         
-        shipPicker = WPTShipPickerNode(ships: ships, onChange: updateStats)
+        shipPicker = WPTShipPickerNode(ships: WPTShipCatalog.playableShips, onChange: updateStats)
         shipPicker!.position = CGPoint(x: 0.25 * frame.width, y: frame.midY)
         shipPicker!.setSize(width: 0.6 * frame.width, height: 0.6 * frame.height)
         addChild(shipPicker!)
