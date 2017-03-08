@@ -37,11 +37,11 @@
 		<key>position</key>
 		<dict>
 			<key>angle</key>
-			<integer>0</integer>
+			<real>-0.39269908169872414</real>
 			<key>x</key>
-			<integer>0</integer>
+			<integer>621</integer>
 			<key>y</key>
-			<integer>0</integer>
+			<integer>261</integer>
 		</dict>
 	</dict>
 	<key>size</key>

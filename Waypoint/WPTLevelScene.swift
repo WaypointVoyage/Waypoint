@@ -20,6 +20,7 @@ class WPTLevelScene: WPTScene {
     var hud: WPTHudNode
     var cam: SKCameraNode!
     let projectiles: SKNode
+    let port: WPTPortNode?
     
     var levelPaused: Bool = false {
         didSet { self.pauseChanged() }
@@ -31,6 +32,11 @@ class WPTLevelScene: WPTScene {
         self.terrain = WPTTerrainNode(level: level, player: self.player)
         self.hud = WPTHudNode(player: self.player, terrain: self.terrain)
         self.projectiles = SKNode()
+        if let port = level.port {
+            self.port = WPTPortNode(port: port)
+        } else {
+            self.port = nil
+        }
         super.init(size: CGSize(width: 0, height: 0))
         
         self.listener = self.player
@@ -77,6 +83,11 @@ class WPTLevelScene: WPTScene {
         self.player.name = WPTLevelScene.playerNameTag
         self.player.position = self.terrain.spawnPoint
         self.terrain.addChild(self.player)
+        
+        // setup the port
+        if let port = self.port {
+            self.addChild(port)
+        }
         
         // add everything to the scene
         self.addChild(projectiles)
