@@ -10,12 +10,12 @@ import SpriteKit
 
 class WPTFireButtonNode: SKNode {
     
-    private let pressedTex = SKTexture(imageNamed: "blue_circle")
-    private let unpressedTex = SKTexture(imageNamed: "red_circle")
+    private let pressedTex = SKTexture(imageNamed: "blueButton")
+    private let unpressedTex = SKTexture(imageNamed: "redButton")
     private let button: SKSpriteNode
     
     override init() {
-        let size = CGSize(width: WPTValues.fontSizeMedium, height: WPTValues.fontSizeMedium)
+        let size = CGSize(width: WPTValues.fontSizeMedium*1.1, height: WPTValues.fontSizeMedium*1.1)
         self.button = SKSpriteNode(texture: unpressedTex)
         self.button.size = size
         super.init()

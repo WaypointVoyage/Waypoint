@@ -27,19 +27,20 @@ class WPTHudBottomNode: SKNode {
         
         let offset = WPTValues.fontSizeMedium / 2 + WPTValues.fontSizeMiniscule
         leftFire.position = CGPoint(x: offset, y: offset)
-        leftFire.zPosition = 2
         self.addChild(leftFire)
         
         rightFire.position = CGPoint(x: WPTValues.screenSize.width - offset, y: offset)
-        rightFire.zPosition = 2
+        rightFire.xScale =  -1 * self.rightBorder.xScale
         self.addChild(rightFire)
         
         self.leftBorder.position = CGPoint(x: offset*1.2, y: offset)
         self.leftBorder.size = CGSize(width: WPTValues.fontSizeLarge*2, height: WPTValues.fontSizeLarge*2)
+        self.leftBorder.zPosition = WPTValues.pauseShroudZPosition + 4
         self.addChild(leftBorder)
         
         self.rightBorder.xScale =  -1 * self.rightBorder.xScale
         self.rightBorder.size = CGSize(width: WPTValues.fontSizeLarge*2, height: WPTValues.fontSizeLarge*2)
+        self.rightBorder.zPosition = WPTValues.pauseShroudZPosition + 4
         self.rightBorder.position = CGPoint(x: WPTValues.screenSize.width - (offset*1.2), y: offset)
         self.addChild(rightBorder)
         
