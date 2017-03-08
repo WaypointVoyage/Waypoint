@@ -93,6 +93,7 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
         let yPos = CGFloat(heightMax - heightMin) * rand + CGFloat(heightMin)
         boulder.position = CGPoint(x: xPos, y: yPos)
         boulder.boulderImage.zRotation = CGFloat(M_PI)/rand
+        boulder.crackedImage.zRotation = CGFloat(M_PI)/rand
     }
     
     private func placeWhirlpool(_ whirlpool: WPTWhirlpoolNode) {

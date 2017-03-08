@@ -14,6 +14,7 @@ class WPTBoulderNode: SKNode {
     static let maxBoulderHealth: CGFloat = 100.0
     
     let boulderImage = SKSpriteNode(imageNamed: "boulder")
+    let crackedImage = SKSpriteNode(imageNamed: "crackedBoulder")
     var health: WPTHealthNode
     
     override init() {
@@ -24,6 +25,8 @@ class WPTBoulderNode: SKNode {
         
         boulderImage.anchorPoint = CGPoint(x: CGFloat(0.5), y: CGFloat(0.5))
         boulderImage.size = CGSize(width: WPTBoulderNode.boulderRadius*2, height: WPTBoulderNode.boulderRadius*2)
+        crackedImage.anchorPoint = CGPoint(x: CGFloat(0.5), y: CGFloat(0.5))
+        crackedImage.size = CGSize(width: WPTBoulderNode.boulderRadius*2, height: WPTBoulderNode.boulderRadius*2)
         self.physicsBody = SKPhysicsBody(circleOfRadius: WPTBoulderNode.boulderRadius*0.6)
         self.physicsBody!.isDynamic = false
         self.physicsBody!.categoryBitMask = WPTValues.boulderCbm
@@ -49,13 +52,18 @@ class WPTBoulderNode: SKNode {
         if (!alive) {
             self.health.removeFromParent()
             let emitterNode = SKEmitterNode(fileNamed: "explosion.sks")
-            emitterNode?.particlePosition = self.boulderImage.position
-            emitterNode?.particleSize = CGSize(width: self.boulderImage.size.width * 2, height: self.boulderImage.size.height * 2)
+            emitterNode?.particlePosition = self.crackedImage.position
+            emitterNode?.particleSize = CGSize(width: self.crackedImage.size.width * 2, height: self.crackedImage.size.height * 2)
             self.addChild(emitterNode!)
             // Don't forget to remove the emitter node after the explosion
             self.run(SKAction.wait(forDuration: 1), completion: {
-                self.boulderImage.removeFromParent()
+                self.removeFromParent()
             })
+        } else if (self.health.curHealth <= self.health.maxHealth/2.0) {
+            self.boulderImage.removeFromParent()
+            if (self.crackedImage.parent == nil) {
+                self.addChild(crackedImage)
+            }
         }
     }
 }
