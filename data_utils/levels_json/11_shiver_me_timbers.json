@@ -17,6 +17,7 @@
    "entities": {
       "whirlpools": 0,
       "whirlpoolLocations": [],
+      "boulders": 0,
    },
    "terrain": {
       "image": "shiver_me_timbers_terrain",
