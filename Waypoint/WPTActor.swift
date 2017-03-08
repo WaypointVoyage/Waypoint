@@ -6,12 +6,11 @@
 //  Copyright © 2017 cpe436group. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
 
 class WPTActor {
     // ship
     var ship: WPTShip;
-    public private(set) var cannonBall: WPTCannonBall // TODO: adjust for parameters
     
     // currency
     var doubloons: Int = 0 {
@@ -22,27 +21,12 @@ class WPTActor {
         }
     }
     
-    // health
-    static let minHealth = 0.0
-    static let maxHealth = 100.0
-    var health: Double = WPTActor.maxHealth {
-        didSet {
-            if self.health < WPTActor.minHealth {
-                self.health = WPTActor.minHealth
-            }
-            else if self.health > WPTActor.maxHealth {
-                self.health = WPTActor.maxHealth
-            }
-        }
-    }
-    
     // items
     var items: [WPTItem] = [] // items that modify behavior
     private var itemCounts: [String:Int] = [:] // item.name -> count
     
     init(ship: WPTShip) {
         self.ship = ship
-        self.cannonBall = WPTCannonBall()
     }
     
     func apply(item: WPTItem) {
