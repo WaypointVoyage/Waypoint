@@ -64,7 +64,7 @@ class WPTHealthBarNode: SKNode {
         
         // draw the health bar with a colored rectangle
         fillColor.setFill()
-        let barWidth = (barSize.width - 1) * CGFloat(player.health) / WPTValues.maxHealth
+        let barWidth = (barSize.width - 1) * CGFloat(player.ship.health) / WPTValues.maxHealth
         let barRect = CGRect(x: 0.5, y: 0.5, width: barWidth, height: barSize.height - 1)
         context!.fill(barRect)
         

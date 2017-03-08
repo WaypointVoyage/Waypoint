@@ -11,6 +11,7 @@ import SpriteKit
 class WPTActor {
     // ship
     var ship: WPTShip;
+    var cannonBall: WPTCannonBall = WPTCannonBall() // TODO: rethink this?
     
     // currency
     var doubloons: Int = 0 {

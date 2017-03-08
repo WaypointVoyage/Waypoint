@@ -8,6 +8,16 @@
       "x": 2160,
       "y": 1000,
    },
+   "port": {
+      "position": {
+         "x": 0, "y": 0, "angle": 0
+      },
+      "inventory": [],
+   },
+   "entities": {
+      "whirlpools": 0,
+      "whirlpoolLocations": [],
+   },
    "terrain": {
       "image": "give_no_quarter_terrain",
       "waterImage": "give_no_quarter_water",

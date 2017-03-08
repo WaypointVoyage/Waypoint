@@ -2,8 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>entities</key>
+	<dict>
+		<key>whirlpoolLocations</key>
+		<array/>
+		<key>whirlpools</key>
+		<integer>0</integer>
+	</dict>
 	<key>name</key>
-	<string>Davy Jones&apos; Locker</string>
+	<string>Davy Jones' Locker</string>
+	<key>port</key>
+	<dict>
+		<key>inventory</key>
+		<array/>
+		<key>position</key>
+		<dict>
+			<key>angle</key>
+			<integer>0</integer>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
 	<key>size</key>
 	<dict>
 		<key>height</key>
@@ -14,9 +35,9 @@
 	<key>spawnPoint</key>
 	<dict>
 		<key>x</key>
-		<real>1080</real>
+		<integer>1080</integer>
 		<key>y</key>
-		<real>1480</real>
+		<integer>1480</integer>
 	</dict>
 	<key>terrain</key>
 	<dict>

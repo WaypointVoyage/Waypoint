@@ -8,6 +8,16 @@
       "x": 4080,
       "y": 3080,
    },
+   "port": {
+      "position": {
+         "x": 0, "y": 0, "angle": 0
+      },
+      "inventory": [],
+   },
+   "entities": {
+      "whirlpools": 0,
+      "whirlpoolLocations": [],
+   },
    "terrain": {
       "image": "fire_in_the_hole_terrain",
       "waterImage": "fire_in_the_hole_water",
