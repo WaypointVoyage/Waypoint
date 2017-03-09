@@ -191,10 +191,6 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        
-        //let contactMask = (firstBody?.categoryBitMask)! | (secondBody?.categoryBitMask)!
-        
-        //switch (contactMask){
             
         if ((firstBody.categoryBitMask & WPTValues.projectileCbm) != 0 && (secondBody.categoryBitMask & WPTValues.boulderCbm) != 0) {
             if let cannonBall = firstBody.node as? WPTCannonBallNode,
@@ -210,6 +206,14 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
                     self.hud.top.updateMoney()
                     item.removeFromParent()
                 }
+            }
+        } else if ((firstBody.categoryBitMask & WPTValues.actorCbm) != 0 && (secondBody.categoryBitMask & WPTValues.whirlpoolCbm) != 0) {
+            if let player = firstBody.node as? WPTLevelActorNode,
+                let _ = secondBody.node as? WPTWhirlpoolNode {
+                let oldPosition = player.position
+                let oneRevolution = SKAction.rotate(byAngle: -.pi * 2, duration: 1.0)
+                player.run(oneRevolution)
+                player.position = CGPoint(x: oldPosition.x - 50, y: oldPosition.y - 50)
             }
         }
     }

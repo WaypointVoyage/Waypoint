@@ -19,10 +19,11 @@ class WPTWhirlpoolNode: SKNode {
         
         whirlImage.anchorPoint = CGPoint(x: CGFloat(0.5), y: CGFloat(0.5))
         whirlImage.size = CGSize(width: WPTWhirlpoolNode.whirlpoolRadius*2, height: WPTWhirlpoolNode.whirlpoolRadius*2)
-        self.physicsBody = SKPhysicsBody(circleOfRadius: WPTWhirlpoolNode.whirlpoolRadius)
+        self.physicsBody = SKPhysicsBody(circleOfRadius: WPTWhirlpoolNode.whirlpoolRadius/5)
         self.physicsBody!.isDynamic = false
         self.physicsBody!.categoryBitMask = WPTValues.whirlpoolCbm
         self.physicsBody!.collisionBitMask = WPTValues.actorCbm | WPTValues.terrainCbm
+        self.physicsBody!.contactTestBitMask = WPTValues.actorCbm
         //could be important, it was for my project
         self.addChild(whirlImage)
         let oneRevolution = SKAction.rotate(byAngle: -.pi * 2, duration: 1.0)
