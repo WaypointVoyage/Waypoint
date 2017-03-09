@@ -5,7 +5,7 @@
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
-		<integer>0</integer>
+		<integer>15</integer>
 		<key>whirlpoolLocations</key>
 		<array>
 			<array>

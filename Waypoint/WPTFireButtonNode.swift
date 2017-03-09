@@ -10,8 +10,8 @@ import SpriteKit
 
 class WPTFireButtonNode: SKNode {
     
-    private let pressedTex = SKTexture(imageNamed: "blueButton")
-    private let unpressedTex = SKTexture(imageNamed: "redButton")
+    private let pressedTex = SKTexture(imageNamed: "ballButton")
+    private let unpressedTex = SKTexture(imageNamed: "cannonButton")
     private let button: SKSpriteNode
     
     override init() {

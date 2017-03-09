@@ -32,7 +32,7 @@ class WPTItemCatalog {
                     item = WPTItem(itemDict)
                 }
                 
-                assert(items[item.name] != nil, "An item with the name \(item.name) already exists!")
+                assert(items[item.name] == nil, "An item with the name \(item.name) already exists!")
                 items[item.name] = item
             }
             

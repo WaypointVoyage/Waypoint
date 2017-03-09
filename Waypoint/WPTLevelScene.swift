@@ -20,6 +20,7 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
     var hud: WPTHudNode
     var cam: SKCameraNode!
     let projectiles: SKNode
+    let items: SKNode
     let port: WPTPortNode?
     
     var levelPaused: Bool = false {
@@ -32,6 +33,7 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
         self.terrain = WPTTerrainNode(level: level, player: self.player)
         self.hud = WPTHudNode(player: self.player, terrain: self.terrain)
         self.projectiles = SKNode()
+        self.items = SKNode()
         if let port = level.port {
             self.port = WPTPortNode(port: port)
         } else {
@@ -127,6 +129,7 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
         
         // add everything to the scene
         self.addChild(projectiles)
+        self.addChild(items)
         self.addChild(self.terrain)
     }
     
@@ -178,8 +181,8 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
 
-        var firstBody: SKPhysicsBody?
-        var secondBody: SKPhysicsBody?
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
             firstBody = contact.bodyA
             secondBody = contact.bodyB
@@ -189,17 +192,25 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         
-        let contactMask = (firstBody?.categoryBitMask)! | (secondBody?.categoryBitMask)!
+        //let contactMask = (firstBody?.categoryBitMask)! | (secondBody?.categoryBitMask)!
         
-        switch (contactMask){
+        //switch (contactMask){
             
-        case WPTValues.boulderCbm | WPTValues.projectileCbm:
-            
-            let boulder = secondBody?.node as! WPTBoulderNode
-            boulder.processHealthStatus(-20.0)
-            
-        default :
-            return
+        if ((firstBody.categoryBitMask & WPTValues.projectileCbm) != 0 && (secondBody.categoryBitMask & WPTValues.boulderCbm) != 0) {
+            if let cannonBall = firstBody.node as? WPTCannonBallNode,
+                let boulder = secondBody.node as? WPTBoulderNode {
+                cannonBall.removeFromParent()
+                boulder.processHealthStatus(-20.0)
+            }
+        } else if ((firstBody.categoryBitMask & WPTValues.actorCbm) != 0 && (secondBody.categoryBitMask & WPTValues.itemCbm) != 0) {
+            if let player = firstBody.node as? WPTLevelActorNode,
+                let item = secondBody.node as? WPTItemNode {
+                if (item.tier.rawValue == "CURRENCY") {
+                    player.actor.doubloons += item.value
+                    self.hud.top.updateMoney()
+                    item.removeFromParent()
+                }
+            }
         }
     }
 }

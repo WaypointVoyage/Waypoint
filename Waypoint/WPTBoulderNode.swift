@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTBoulderNode: SKNode {
     
-    static let boulderRadius: CGFloat = 100.0
+    static let boulderRadius: CGFloat = 80.0
     static let maxBoulderHealth: CGFloat = 100.0
     
     let boulderImage = SKSpriteNode(imageNamed: "boulder")
@@ -50,20 +50,48 @@ class WPTBoulderNode: SKNode {
     func processHealthStatus(_ healthPoints: CGFloat) {
         let alive = self.health.updateHealth(healthPoints)
         if (!alive) {
-            self.health.removeFromParent()
-            let emitterNode = SKEmitterNode(fileNamed: "explosion.sks")
-            emitterNode?.particlePosition = self.crackedImage.position
-            emitterNode?.particleSize = CGSize(width: self.crackedImage.size.width * 2, height: self.crackedImage.size.height * 2)
-            self.addChild(emitterNode!)
-            // Don't forget to remove the emitter node after the explosion
-            self.run(SKAction.wait(forDuration: 1), completion: {
-                self.removeFromParent()
-            })
+            destroyBoulder()
         } else if (self.health.curHealth <= self.health.maxHealth/2.0) {
             self.boulderImage.removeFromParent()
             if (self.crackedImage.parent == nil) {
                 self.addChild(crackedImage)
             }
         }
+    }
+    
+    func destroyBoulder() {
+        self.health.removeFromParent()
+        let emitterNode = SKEmitterNode(fileNamed: "explosion.sks")
+        emitterNode?.particlePosition = self.crackedImage.position
+        emitterNode?.particleSize = CGSize(width: self.crackedImage.size.width * 2, height: self.crackedImage.size.height * 2)
+        self.addChild(emitterNode!)
+        // Don't forget to remove the emitter node after the explosion
+        self.run(SKAction.wait(forDuration: 0.5), completion: {
+            self.generateCoins()
+            self.removeFromParent()
+        })
+    }
+    
+    func generateCoins() {
+        guard let itemNode = (self.scene as? WPTLevelScene)?.items else { return }
+        for _ in 0..<6 {
+            let randomMoney = WPTItemCatalog.randomCurrency()
+            let moneyNode = WPTItemNode(randomMoney)
+            moneyNode.position = getRandomPosition()
+            itemNode.addChild(moneyNode)
+        }
+    }
+    
+    func getRandomPosition() -> CGPoint {
+        let minWidth = self.position.x - WPTBoulderNode.boulderRadius * 2
+        let maxWidth = self.position.x + WPTBoulderNode.boulderRadius * 2
+        let minHeight = self.position.y - WPTBoulderNode.boulderRadius * 2
+        let maxHeight = self.position.y + WPTBoulderNode.boulderRadius * 2
+        
+        var rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+        let xPos = CGFloat(maxWidth - minWidth) * rand + CGFloat(minWidth)
+        rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+        let yPos = CGFloat(maxHeight - minHeight) * rand + CGFloat(minHeight)
+        return CGPoint(x: xPos, y: yPos)
     }
 }
