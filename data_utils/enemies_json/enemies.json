@@ -2,6 +2,7 @@
    {
       "name": "Catapult",
       "ship": "catapult",
+      "brain": "stand_and_shoot",
       "items": [],
    },
 ]

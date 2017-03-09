@@ -10,11 +10,13 @@ import SpriteKit
 
 class WPTPortNode: SKNode {
     let port: WPTPort
+    let active: Bool
     
     let sprite = SKSpriteNode(imageNamed: "port")
     
-    init(port: WPTPort) {
+    init(port: WPTPort, active: Bool = true) {
         self.port = port;
+        self.active = active
         super.init()
         let scale: CGFloat = 0.25
         
@@ -27,9 +29,27 @@ class WPTPortNode: SKNode {
         sprite.anchorPoint = CGPoint(x: 0.2, y: 0.5)
         self.addChild(sprite)
         
-        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: scale * self.sprite.frame.size.width, height: scale * self.sprite.frame.size.height), center: CGPoint(x: 0.15 * self.sprite.frame.width / 2, y: 0))
+        // setup physics
+        let height = scale * self.sprite.frame.height
+        let width = scale * self.sprite.frame.width
+        let physSize = CGSize(width: width, height: height)
+        let physCenter = CGPoint(x: 0.15 * self.sprite.frame.width / 2, y: 0)
+        self.physicsBody = SKPhysicsBody(rectangleOf: physSize, center: physCenter)
         self.physicsBody!.categoryBitMask = WPTValues.terrainCbm
         self.physicsBody!.isDynamic = false
+        
+        // add player capture volumes
+        let docks: [WPTDockNode] = [WPTDockNode(self), WPTDockNode(self)]
+        for dock in docks {
+            let size = CGSize(width: 0.6 * self.sprite.size.width, height: 0.35 * self.sprite.size.height)
+            dock.position = CGPoint(x: 0.8 * size.width, y: 2 * size.height)
+            dock.physicsBody = SKPhysicsBody(rectangleOf: size)
+            dock.physicsBody!.isDynamic = false
+            dock.physicsBody!.categoryBitMask = WPTValues.dockCbm
+            dock.physicsBody!.contactTestBitMask = WPTValues.actorCbm
+            self.addChild(dock)
+        }
+        docks[1].position.y *= -1
     }
     
     required init?(coder aDecoder: NSCoder) {

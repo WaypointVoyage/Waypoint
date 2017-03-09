@@ -24,6 +24,10 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     private let fireRateMgr: WPTFireRateManager
     
+    public var isPlayer: Bool {
+        return self as? WPTLevelPlayerNode != nil;
+    }
+    
     init(actor: WPTActor) {
         self.actor = actor
         self.sprite = SKSpriteNode(imageNamed: actor.ship.inGameImage)

@@ -48,6 +48,7 @@ class WPTValues {
     static let whirlpoolCbm: UInt32 = 1 << 4
     static let boulderCbm: UInt32 = 1 << 5
     static let itemCbm: UInt32 = 1 << 6
+    static let dockCbm: UInt32 = 1 << 7
     
     // game stats
     static let maxHealth: CGFloat = 100

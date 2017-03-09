@@ -9,6 +9,7 @@
 import SpriteKit
 
 class WPTEnemyCatalog {
+    
     static let allBrains: [WPTBrain] = {
         var brains = [WPTBrain]()
         

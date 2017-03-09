@@ -9,7 +9,7 @@
 import SpriteKit
 import AVFoundation
 
-class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
+class WPTLevelScene: WPTScene {
     static let levelNameTag = "_LEVEL"
     static let playerNameTag = "_PLAYER"
     
@@ -22,6 +22,8 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
     let projectiles: SKNode
     let items: SKNode
     let port: WPTPortNode?
+    
+    var contactDelegate: WPTLevelPhysicsContactHandler! = nil
     
     var levelPaused: Bool = false {
         didSet { self.pauseChanged() }
@@ -47,6 +49,8 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
         
         // setup the physics behavior
         self.physicsWorld.gravity = CGVector.zero
+        self.contactDelegate = WPTLevelPhysicsContactHandler(self)
+        self.physicsWorld.contactDelegate = self.contactDelegate
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -55,8 +59,6 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
-        
-        physicsWorld.contactDelegate = self
         
         // camera
         cam = SKCameraNode()
@@ -177,45 +179,5 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
             levelName.isPaused = self.levelPaused
         }
         self.physicsWorld.speed = self.levelPaused ? 0.0 : 1.0 // pause physics simulation
-    }
-    
-    func didBegin(_ contact: SKPhysicsContact) {
-
-        var firstBody: SKPhysicsBody
-        var secondBody: SKPhysicsBody
-        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
-        }
-        else {
-            firstBody = contact.bodyB
-            secondBody = contact.bodyA
-        }
-            
-        if ((firstBody.categoryBitMask & WPTValues.projectileCbm) != 0 && (secondBody.categoryBitMask & WPTValues.boulderCbm) != 0) {
-            if let cannonBall = firstBody.node as? WPTCannonBallNode,
-                let boulder = secondBody.node as? WPTBoulderNode {
-                cannonBall.removeFromParent()
-                boulder.processHealthStatus(-20.0)
-            }
-        } else if ((firstBody.categoryBitMask & WPTValues.actorCbm) != 0 && (secondBody.categoryBitMask & WPTValues.itemCbm) != 0) {
-            if let player = firstBody.node as? WPTLevelActorNode,
-                let item = secondBody.node as? WPTItemNode {
-                if (item.tier.rawValue == "CURRENCY") {
-                    player.actor.doubloons += item.value
-                    self.hud.top.updateMoney()
-                    item.removeFromParent()
-                }
-            }
-        } else if ((firstBody.categoryBitMask & WPTValues.actorCbm) != 0 && (secondBody.categoryBitMask & WPTValues.whirlpoolCbm) != 0) {
-            if let player = firstBody.node as? WPTLevelActorNode,
-                let _ = secondBody.node as? WPTWhirlpoolNode {
-                let oldPosition = player.position
-                player.position = CGPoint(x: oldPosition.x - 50, y: oldPosition.y - 50)
-                let oneRevolution = SKAction.rotate(byAngle: -.pi * 2, duration: 1.0)
-                player.run(oneRevolution)
-                self.hud.processShipHealthStatus(-5)
-            }
-        }
     }
 }
