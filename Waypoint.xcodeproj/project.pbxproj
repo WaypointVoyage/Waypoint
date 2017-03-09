@@ -19,6 +19,9 @@
 		2D17043F1E7005170000827E /* fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2D17043E1E7005170000827E /* fire.sks */; };
 		2D1704471E7009890000827E /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2D1704461E7009890000827E /* explosion.sks */; };
 		2D1704491E70D23F0000827E /* WPTItemNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1704481E70D23F0000827E /* WPTItemNode.swift */; };
+		2D17044B1E7103D70000827E /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044A1E7103D70000827E /* explosion.mp3 */; };
+		2D17044D1E7104090000827E /* cannon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044C1E7104090000827E /* cannon.mp3 */; };
+		2D17044F1E7105940000827E /* coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044E1E7105940000827E /* coin.mp3 */; };
 		2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */; };
 		2D7FD1811E5801A1001B6208 /* WPTShipNamePopUpNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */; };
 		2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */; };
@@ -138,6 +141,9 @@
 		2D17043E1E7005170000827E /* fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fire.sks; sourceTree = "<group>"; };
 		2D1704461E7009890000827E /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 		2D1704481E70D23F0000827E /* WPTItemNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItemNode.swift; sourceTree = "<group>"; };
+		2D17044A1E7103D70000827E /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
+		2D17044C1E7104090000827E /* cannon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cannon.mp3; sourceTree = "<group>"; };
+		2D17044E1E7105940000827E /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
 		2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOOTERFZ.ttf; sourceTree = "<group>"; };
 		2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipNamePopUpNode.swift; sourceTree = "<group>"; };
 		2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSettingsScene.swift; sourceTree = "<group>"; };
@@ -324,6 +330,9 @@
 		7E13F6291E48EA7800B5D2FD /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				2D17044E1E7105940000827E /* coin.mp3 */,
+				2D17044C1E7104090000827E /* cannon.mp3 */,
+				2D17044A1E7103D70000827E /* explosion.mp3 */,
 				7E13F62D1E48ECAD00B5D2FD /* sword1.caf */,
 			);
 			name = Effects;
@@ -709,6 +718,7 @@
 				7EE8A9221E6FDD7100C119B9 /* 3_cutlass_careen.plist in Resources */,
 				7EE8A9271E6FDD7100C119B9 /* 8_give_no_quarter.plist in Resources */,
 				7E5242901E56440900120002 /* water.fsh in Resources */,
+				2D17044B1E7103D70000827E /* explosion.mp3 in Resources */,
 				7EE57D3C1E69DAF20020693B /* repair_items.plist in Resources */,
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
 				7EE8A9201E6FDD7100C119B9 /* 1_sea_legs.plist in Resources */,
@@ -728,10 +738,12 @@
 				2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */,
 				7EE8A8F21E6FA15500C119B9 /* the_ships.plist in Resources */,
 				7EE8A9211E6FDD7100C119B9 /* 2_pegleg_plunder.plist in Resources */,
+				2D17044F1E7105940000827E /* coin.mp3 in Resources */,
 				7E43CC771E54B844009367BC /* trail_map.plist in Resources */,
 				7EE8A8F81E6FA84600C119B9 /* brains.plist in Resources */,
 				7EE8A8F11E6FA15500C119B9 /* the_enemy_ships.plist in Resources */,
 				2D1704471E7009890000827E /* explosion.sks in Resources */,
+				2D17044D1E7104090000827E /* cannon.mp3 in Resources */,
 				7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */,
 				2D17043F1E7005170000827E /* fire.sks in Resources */,
 				7EE8A9291E6FDD7100C119B9 /* 10_high_seas.plist in Resources */,

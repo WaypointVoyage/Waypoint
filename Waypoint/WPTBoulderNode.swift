@@ -65,6 +65,7 @@ class WPTBoulderNode: SKNode {
         emitterNode?.particlePosition = self.crackedImage.position
         emitterNode?.particleSize = CGSize(width: self.crackedImage.size.width * 2, height: self.crackedImage.size.height * 2)
         self.addChild(emitterNode!)
+        self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
         // Don't forget to remove the emitter node after the explosion
         self.run(SKAction.wait(forDuration: 0.5), completion: {
             self.generateCoins()

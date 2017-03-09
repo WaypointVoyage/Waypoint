@@ -196,12 +196,14 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
             if let cannonBall = firstBody.node as? WPTCannonBallNode,
                 let boulder = secondBody.node as? WPTBoulderNode {
                 cannonBall.removeFromParent()
+                self.run(SKAction.playSoundFileNamed("explosion.mp3", waitForCompletion: false))
                 boulder.processHealthStatus(-20.0)
             }
         } else if ((firstBody.categoryBitMask & WPTValues.actorCbm) != 0 && (secondBody.categoryBitMask & WPTValues.itemCbm) != 0) {
             if let player = firstBody.node as? WPTLevelActorNode,
                 let item = secondBody.node as? WPTItemNode {
                 if (item.tier.rawValue == "CURRENCY") {
+                    self.run(SKAction.playSoundFileNamed("coin.mp3", waitForCompletion: false))
                     player.actor.doubloons += item.value
                     self.hud.top.updateMoney()
                     item.removeFromParent()
