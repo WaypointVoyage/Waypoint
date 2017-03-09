@@ -118,6 +118,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             ball.physics.velocity = actor.ship.shotSpeed * direction
             projectileNode.addChild(ball)
             ball.run(SKAction.wait(forDuration: Double(time)), completion: { ball.removeFromParent() })
+            self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
         }
         fireRateMgr.registerFire()
     }
