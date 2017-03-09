@@ -211,9 +211,10 @@ class WPTLevelScene: WPTScene, SKPhysicsContactDelegate {
             if let player = firstBody.node as? WPTLevelActorNode,
                 let _ = secondBody.node as? WPTWhirlpoolNode {
                 let oldPosition = player.position
+                player.position = CGPoint(x: oldPosition.x - 50, y: oldPosition.y - 50)
                 let oneRevolution = SKAction.rotate(byAngle: -.pi * 2, duration: 1.0)
                 player.run(oneRevolution)
-                player.position = CGPoint(x: oldPosition.x - 50, y: oldPosition.y - 50)
+                self.hud.processShipHealthStatus(-5)
             }
         }
     }

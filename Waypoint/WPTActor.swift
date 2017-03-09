@@ -10,6 +10,9 @@ import SpriteKit
 
 class WPTActor {
     // ship
+    
+    static let maxPlayerHealth: CGFloat = 100.0
+    
     var ship: WPTShip;
     var cannonBall: WPTCannonBall = WPTCannonBall() // TODO: rethink this?
     

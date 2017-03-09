@@ -95,6 +95,13 @@ class WPTHudNode: SKNode, WPTUpdatable {
         }
     }
     
+    func processShipHealthStatus(_ healthPoints: CGFloat) {
+        let alive = self.top.shipHealth.updateHealth(healthPoints)
+        if (!alive) {
+            //displayDestroyedPage()
+        }
+    }
+    
     func addAudioNode() {
         
         let backgroundMusic = SKAudioNode(fileNamed: "distance.m4a")

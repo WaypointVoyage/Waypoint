@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703D61E590F8C0000827E /* random_ship_names.plist */; };
-		2D1703D91E5B9BA30000827E /* WPTHealthBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1703D81E5B9BA30000827E /* WPTHealthBarNode.swift */; };
 		2D1703DB1E601E180000827E /* WPTMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1703DA1E601E180000827E /* WPTMapView.swift */; };
 		2D1703DD1E625F1E0000827E /* distance.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703DC1E625F1E0000827E /* distance.m4a */; };
 		2D1703DF1E6264200000827E /* dragonRoost.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703DE1E6264200000827E /* dragonRoost.m4a */; };
@@ -128,7 +127,6 @@
 
 /* Begin PBXFileReference section */
 		2D1703D61E590F8C0000827E /* random_ship_names.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = random_ship_names.plist; sourceTree = "<group>"; };
-		2D1703D81E5B9BA30000827E /* WPTHealthBarNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHealthBarNode.swift; sourceTree = "<group>"; };
 		2D1703DA1E601E180000827E /* WPTMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTMapView.swift; sourceTree = "<group>"; };
 		2D1703DC1E625F1E0000827E /* distance.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = distance.m4a; sourceTree = "<group>"; };
 		2D1703DE1E6264200000827E /* dragonRoost.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragonRoost.m4a; sourceTree = "<group>"; };
@@ -486,7 +484,6 @@
 				7E69329D1E53E0D500AF7373 /* WPTHudBottomNode.swift */,
 				7E69329F1E53E2D500AF7373 /* WPTFireButtonNode.swift */,
 				7E43CC781E54CB50009367BC /* WPTPauseMenuNode.swift */,
-				2D1703D81E5B9BA30000827E /* WPTHealthBarNode.swift */,
 				2D1703DA1E601E180000827E /* WPTMapView.swift */,
 			);
 			name = HUD;
@@ -797,7 +794,6 @@
 				2D1704491E70D23F0000827E /* WPTItemNode.swift in Sources */,
 				7E52C85A1E61E72F004FDB27 /* WPTPlayerMovementNode.swift in Sources */,
 				7E575DD61E69C1D2004D92BF /* WPTPort.swift in Sources */,
-				2D1703D91E5B9BA30000827E /* WPTHealthBarNode.swift in Sources */,
 				7ED049DD1E6F6A4600CD69E1 /* WPTBrain.swift in Sources */,
 				7E13F6341E48F8B900B5D2FD /* WPTPlayer.swift in Sources */,
 				7E13F6321E48F53200B5D2FD /* WPTLevelScene.swift in Sources */,

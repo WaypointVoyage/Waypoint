@@ -16,7 +16,8 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
     let moneyImage = SKSpriteNode(imageNamed: "doubloons")
     var shipName: WPTLabelNode
     var moneyCount: WPTLabelNode
-    var shipHealthBar: WPTHealthBarNode
+    var shipHealth: WPTHealthNode
+    var shipImage: SKSpriteNode
     
     init(player: WPTPlayer) {
         self.player = player
@@ -30,14 +31,24 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         self.shipName.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.shipName.fontColor = UIColor.black
         
-        self.shipHealthBar = WPTHealthBarNode(player: self.player)
+        self.shipImage = SKSpriteNode(imageNamed: player.ship.previewImage)
+        self.shipImage.zPosition = WPTValues.movementHandlerZPosition - 1
+        let shipImgSize = 1.15 * WPTValues.fontSizeSmall
+        let shipOffset = 1.4 * shipImgSize
+        self.shipImage.position = CGPoint(x: shipOffset, y: WPTValues.screenSize.height - shipOffset)
+        self.shipImage.size = CGSize(width: shipImgSize, height: shipImgSize)
+        
+        self.shipHealth = WPTHealthNode(maxHealth: WPTActor.maxPlayerHealth)
+        self.shipHealth.zPosition = WPTValues.movementHandlerZPosition - 1
+        self.shipHealth.position = CGPoint(x: shipOffset * 2.5, y: WPTValues.screenSize.height - shipOffset * 1.1)
         
         self.moneyCount = WPTLabelNode(text: "\(String(player.doubloons))", fontSize: WPTValues.fontSizeSmall)
         
         super.init()
         
         self.addChild(shipName)
-        self.addChild(shipHealthBar)
+        self.addChild(shipImage)
+        self.addChild(shipHealth)
         self.addChild(moneyCount)
         
         let moneyImgSize = 1.15 * WPTValues.fontSizeSmall
