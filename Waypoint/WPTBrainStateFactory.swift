@@ -9,14 +9,24 @@
 import Foundation
 
 class WPTBrainStateFactory {
-    static func get(_ state: String) -> WPTBrainState {
+    static func get(_ state: String) -> WPTBrainState? {
         switch (state) {
             
         case String(describing: WPTStandAndShootBS.self):
             return WPTStandAndShootBS()
             
+        case String(describing: WPTDoNothingBS.self):
+            return WPTDoNothingBS()
+            
         default:
-            assert(false, "Unknown WPTBrainState: \(state)")
+            return nil
         }
+    }
+    
+    static func classFromString(_ className: String?) -> AnyClass? {
+        guard let className = className else { return nil }
+        let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String;
+        let cls: AnyClass? = NSClassFromString("\(namespace).\(className)");
+        return cls;
     }
 }

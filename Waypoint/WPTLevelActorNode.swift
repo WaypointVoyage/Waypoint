@@ -107,6 +107,12 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         }
     }
     
+    func distance(to actor: WPTLevelActorNode) -> CGFloat {
+        let deltaX = actor.position.x - self.position.x
+        let deltaY = actor.position.y - self.position.y
+        return CGFloat(sqrt(deltaX * deltaX + deltaY * deltaY))
+    }
+    
     func fireCannons() {
         // make sure we can handle the cannon balls
         guard fireRateMgr.canFire else { return }

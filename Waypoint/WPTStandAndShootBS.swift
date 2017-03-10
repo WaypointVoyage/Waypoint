@@ -11,7 +11,10 @@ import Foundation
 class WPTStandAndShootBS: WPTBrainState {
     
     init() {
-        super.init(name: String(describing: WPTStandAndShootBS.self))
+        super.init(name: String(describing: WPTStandAndShootBS.self), type: WPTBrainStateType.OFFENSE)
     }
     
+    override func update(deltaTime seconds: TimeInterval) {
+        self.enemy.facePoint(self.player.position)
+    }
 }

@@ -3,12 +3,16 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>aggression</key>
+		<real>0.5</real>
+		<key>brain</key>
+		<string>stand_and_shoot</string>
 		<key>items</key>
 		<array/>
 		<key>name</key>
 		<string>Catapult</string>
 		<key>ship</key>
-		<string>catapult</string>
+		<string>Catapult</string>
 	</dict>
 </array>
 </plist>
