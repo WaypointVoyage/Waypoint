@@ -11,54 +11,33 @@ import SpriteKit
 class WPTLevelPlayerNode: WPTLevelActorNode {
     
     var player: WPTPlayer { return self.actor as! WPTPlayer }
-    private var port: WPTPortNode? = nil
-    var docked: Bool { return port != nil }
-    private var dockPos: CGPoint? = nil
-    var canDock = true
+    var portHandler: WPTPortDockingHandler! = nil
     
     init(player: WPTPlayer) {
         super.init(actor: player)
         self.isUserInteractionEnabled = true
         self.zPosition = WPTValues.movementHandlerZPosition + 1
+        
+        // components
+        portHandler = WPTPortDockingHandler(self)
+        self.addChild(self.portHandler)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func dockAt(dock: WPTDockNode) {
-        // update state
-        self.port = dock.port
-        self.anchored = true
-        self.canDock = false
-        self.targetRot = nil
-        
-        let theDockPos = self.scene!.convert(dock.position, from: self.port!)
-        let position = SKAction.move(to: theDockPos, duration: 1)
-        let rotation = SKAction.rotate(toAngle: (port?.zRotation)!, duration: 1)
-        self.run(position) {
-            self.dockPos = theDockPos
-        }
-        self.run(rotation)
-    }
-    
-    func undock() {
-        self.port = nil
-        self.anchored = false
-        self.dockPos = nil
-    }
-    
     override func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
-        if !docked {
+        if !portHandler.docked {
             super.update(currentTime, deltaTime)
-        } else if let dockPos = dockPos {
+        } else if let dockPos = portHandler.dockPos {
             self.position = dockPos
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if docked {
-            self.undock()
+        if portHandler.docked {
+            self.portHandler.undock()
         } else {
             self.anchored = !self.anchored
         }

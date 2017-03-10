@@ -60,6 +60,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         // set starting position in the world
         self.zRotation += CGFloat(M_PI) / 2.0
         self.setScale(actor.ship.size)
+        
+        // components
+        self.addChild(WPTWhirlpoolHandler(self))
     }
     
     required init?(coder aDecoder: NSCoder) {
