@@ -13,6 +13,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     var player: WPTPlayer { return self.actor as! WPTPlayer }
     private var port: WPTPortNode? = nil
     var docked: Bool { return port != nil }
+    private var dockPos: CGPoint? = nil
     var canDock = true
     
     init(player: WPTPlayer) {
@@ -26,27 +27,33 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     }
     
     func dockAt(dock: WPTDockNode) {
+        // update state
         self.port = dock.port
-        self.physicsBody!.isDynamic = false
         self.anchored = true
         self.canDock = false
+        self.targetRot = nil
         
-        let dockPos = self.scene!.convert(dock.position, from: self.port!)
-        let position = SKAction.move(to: dockPos, duration: 1)
+        let theDockPos = self.scene!.convert(dock.position, from: self.port!)
+        let position = SKAction.move(to: theDockPos, duration: 1)
         let rotation = SKAction.rotate(toAngle: (port?.zRotation)!, duration: 1)
-        self.run(position)
+        self.run(position) {
+            self.dockPos = theDockPos
+        }
         self.run(rotation)
     }
     
     func undock() {
         self.port = nil
-        self.physicsBody!.isDynamic = true
         self.anchored = false
+        self.dockPos = nil
     }
     
     override func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
-        guard !docked else { return }
-        super.update(currentTime, deltaTime)
+        if !docked {
+            super.update(currentTime, deltaTime)
+        } else if let dockPos = dockPos {
+            self.position = dockPos
+        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -55,7 +62,6 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         } else {
             self.anchored = !self.anchored
         }
-        
     }
     
 }

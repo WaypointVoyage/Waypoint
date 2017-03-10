@@ -428,14 +428,23 @@
 		7E4216021E5B56A8004ADBD7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7EDAC9B31E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift */,
+				7E4C88C81E72ED0600760EDA /* Catalogs */,
 				7ED049DB1E6F6A0D00CD69E1 /* Brains */,
 				7EBF5E681E4E1B4000F81982 /* WPTUtils.swift */,
 				7E4216031E5B56BF004ADBD7 /* WPTFireRateManager.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		7E4C88C81E72ED0600760EDA /* Catalogs */ = {
+			isa = PBXGroup;
+			children = (
 				7E575DD71E69C3C7004D92BF /* WPTItemCatalog.swift */,
 				7ED049E21E6F6DE900CD69E1 /* WPTEnemyCatalog.swift */,
 				7EE8A8C71E6F779700C119B9 /* WPTShipCatalog.swift */,
 			);
-			name = Utils;
+			name = Catalogs;
 			sourceTree = "<group>";
 		};
 		7E52428D1E5643F300120002 /* UI */ = {
@@ -499,7 +508,6 @@
 				7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */,
 				2D17043A1E6FF3CD0000827E /* WPTHealthNode.swift */,
 				2D1704481E70D23F0000827E /* WPTItemNode.swift */,
-				7EDAC9B31E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift */,
 				7EDAC9B51E71FAA9002CEC0F /* WPTDockNode.swift */,
 			);
 			name = Level;

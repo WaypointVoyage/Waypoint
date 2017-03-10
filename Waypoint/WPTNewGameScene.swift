@@ -56,7 +56,7 @@ class WPTNewGameScene: WPTScene {
         self.shipInputField = UITextField()
         shipInputField?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         shipInputField?.addTarget(self, action: #selector(textFieldShouldReturn(textField:)), for: .editingDidEndOnExit)
-        shipInputField?.frame = CGRect(x: 0.79*frame.midX, y: frame.midY, width: 158, height: 30)
+        shipInputField?.frame = CGRect(x: 0.79*frame.midX, y: 0.4 * frame.height, width: 158, height: 30)
         shipInputField?.placeholder = "Enter ship name..."
         shipInputField?.font = UIFont(name: WPTValues.booter, size: WPTValues.fontSizeTiny)
         shipInputField?.backgroundColor = UIColor.white
