@@ -84,6 +84,7 @@
 		7EC222161E730D1900E98243 /* WPTBrainTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */; };
 		7EC2221A1E73277000E98243 /* enemies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EC222191E73277000E98243 /* enemies.plist */; };
 		7EC2221C1E7327A900E98243 /* brains.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EC2221B1E7327A900E98243 /* brains.plist */; };
+		7ECB5A001E74586E00A05563 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ECB59FF1E74586E00A05563 /* 0_setting_sail.plist */; };
 		7ED049DD1E6F6A4600CD69E1 /* WPTBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED049DC1E6F6A4600CD69E1 /* WPTBrain.swift */; };
 		7ED049DF1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED049DE1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift */; };
 		7ED049E11E6F6D4200CD69E1 /* WPTCatapultNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED049E01E6F6D4200CD69E1 /* WPTCatapultNode.swift */; };
@@ -106,7 +107,6 @@
 		7EE8A8C81E6F779700C119B9 /* WPTShipCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8A8C71E6F779700C119B9 /* WPTShipCatalog.swift */; };
 		7EE8A8F41E6FA4A500C119B9 /* WPTEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8A8F31E6FA4A500C119B9 /* WPTEnemy.swift */; };
 		7EE8A9121E6FD07F00C119B9 /* WPTPortNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */; };
-		7EE8A91F1E6FDD7100C119B9 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE8A9131E6FDD7100C119B9 /* 0_setting_sail.plist */; };
 		7EE8A9201E6FDD7100C119B9 /* 1_sea_legs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE8A9141E6FDD7100C119B9 /* 1_sea_legs.plist */; };
 		7EE8A9211E6FDD7100C119B9 /* 2_pegleg_plunder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE8A9151E6FDD7100C119B9 /* 2_pegleg_plunder.plist */; };
 		7EE8A9221E6FDD7100C119B9 /* 3_cutlass_careen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE8A9161E6FDD7100C119B9 /* 3_cutlass_careen.plist */; };
@@ -223,6 +223,7 @@
 		7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainTemplate.swift; sourceTree = "<group>"; };
 		7EC222191E73277000E98243 /* enemies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enemies.plist; sourceTree = "<group>"; };
 		7EC2221B1E7327A900E98243 /* brains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = brains.plist; sourceTree = "<group>"; };
+		7ECB59FF1E74586E00A05563 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
 		7ED049DC1E6F6A4600CD69E1 /* WPTBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrain.swift; sourceTree = "<group>"; };
 		7ED049DE1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelEnemyNode.swift; sourceTree = "<group>"; };
 		7ED049E01E6F6D4200CD69E1 /* WPTCatapultNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCatapultNode.swift; sourceTree = "<group>"; };
@@ -245,7 +246,6 @@
 		7EE8A8C71E6F779700C119B9 /* WPTShipCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipCatalog.swift; sourceTree = "<group>"; };
 		7EE8A8F31E6FA4A500C119B9 /* WPTEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTEnemy.swift; sourceTree = "<group>"; };
 		7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPortNode.swift; sourceTree = "<group>"; };
-		7EE8A9131E6FDD7100C119B9 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
 		7EE8A9141E6FDD7100C119B9 /* 1_sea_legs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_sea_legs.plist; sourceTree = "<group>"; };
 		7EE8A9151E6FDD7100C119B9 /* 2_pegleg_plunder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 2_pegleg_plunder.plist; sourceTree = "<group>"; };
 		7EE8A9161E6FDD7100C119B9 /* 3_cutlass_careen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 3_cutlass_careen.plist; sourceTree = "<group>"; };
@@ -559,7 +559,7 @@
 		7E6932A41E54117900AF7373 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				7EE8A9131E6FDD7100C119B9 /* 0_setting_sail.plist */,
+				7ECB59FF1E74586E00A05563 /* 0_setting_sail.plist */,
 				7EE8A9141E6FDD7100C119B9 /* 1_sea_legs.plist */,
 				7EE8A9151E6FDD7100C119B9 /* 2_pegleg_plunder.plist */,
 				7EE8A9161E6FDD7100C119B9 /* 3_cutlass_careen.plist */,
@@ -773,7 +773,6 @@
 				7E16B8641E2D580600933E24 /* Main.storyboard in Resources */,
 				7EC222121E73058900E98243 /* the_ships.plist in Resources */,
 				7E0C78931E73C2C2006C79C3 /* the_enemy_ships.plist in Resources */,
-				7EE8A91F1E6FDD7100C119B9 /* 0_setting_sail.plist in Resources */,
 				7EE8A9221E6FDD7100C119B9 /* 3_cutlass_careen.plist in Resources */,
 				7EE8A9271E6FDD7100C119B9 /* 8_give_no_quarter.plist in Resources */,
 				7EC2221C1E7327A900E98243 /* brains.plist in Resources */,
@@ -785,6 +784,7 @@
 				2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */,
 				7EE8A9231E6FDD7100C119B9 /* 4_fire_in_the_hole.plist in Resources */,
 				7EE8A92A1E6FDD7100C119B9 /* 11_shiver_me_timbers.plist in Resources */,
+				7ECB5A001E74586E00A05563 /* 0_setting_sail.plist in Resources */,
 				7EC2221A1E73277000E98243 /* enemies.plist in Resources */,
 				7EE8A9241E6FDD7100C119B9 /* 5_dead_men_tell_no_tales.plist in Resources */,
 				7EE8A9281E6FDD7100C119B9 /* 9_boom_about.plist in Resources */,

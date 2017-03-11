@@ -12,7 +12,8 @@ class WPTPauseMenuNode: SKNode {
     
     private let exit = WPTLabelNode(text: "Exit", fontSize: WPTValues.fontSizeSmall)
     private let reset = WPTLabelNode(text: "Reset Level", fontSize: WPTValues.fontSizeSmall)
-    private var map: WPTMapView
+    var map: WPTMapView
+    private var background: SKSpriteNode! = nil
     private var levelNameNode: WPTLabelNode? = nil
     var levelName: String? = nil {
         didSet { self.levelNameNode?.text = self.levelName }
@@ -24,9 +25,8 @@ class WPTPauseMenuNode: SKNode {
         super.init()
         self.isUserInteractionEnabled = true
         
-        
         // background
-        let background = SKSpriteNode(imageNamed: "pause_scroll")
+        background = SKSpriteNode(imageNamed: "pause_scroll")
         background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         background.zPosition = WPTValues.pauseShroudZPosition + 1
         let width = 0.9 * WPTValues.screenSize.height
@@ -44,7 +44,6 @@ class WPTPauseMenuNode: SKNode {
         
         //map
         self.map.zPosition = WPTValues.pauseShroudZPosition + 2
-        self.map.position = CGPoint(x: 0-85, y: 0-85)
         scaleMap()
         self.addChild(map)
         
@@ -66,17 +65,20 @@ class WPTPauseMenuNode: SKNode {
     }
     
     func scaleMap() {
-        var bound = SKShapeNode(rectOf: self.map.calculateAccumulatedFrame().size)
-        let width = 0.9 * WPTValues.screenSize.height
-        var scale = 1.0
-        print("Pause Width: \(width)")
-        print("Map Width: \(bound.frame.width)")
-        while (bound.frame.width  > width/2 || bound.frame.height > width/2) {
-            scale -= 0.01
-            self.map.setScale(CGFloat(scale))
-            bound = SKShapeNode(rectOf: self.map.calculateAccumulatedFrame().size)
-            bound.fillColor = UIColor.magenta
+        let width: CGFloat = 0.7 * background.frame.width
+        let height: CGFloat = 0.5 * background.frame.height
+        let targetAspect = width / height
+        let actualAspect = self.map.width / self.map.height
+        
+
+        if actualAspect > targetAspect {
+            print("width")
+            self.map.setScale(width / self.map.width)
+        } else {
+            print("height")
+            self.map.setScale(height / self.map.height)
         }
+        self.map.position.y += 0.05 * background.frame.height
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

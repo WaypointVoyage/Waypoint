@@ -19,7 +19,6 @@ class WPTLine {
     
     func intersects(circle: WPTCircle) -> Bool {
         let dist = self.distance(point: circle.center)
-        print("radius: \(circle.radius), dist: \(dist)")
         return dist <= circle.radius
     }
     

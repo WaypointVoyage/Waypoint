@@ -78,6 +78,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
             if self.top.pause.contains(touchPos) {
                 scene?.levelPaused = true
                 self.toggleShroud(true)
+                self.pauseMenu.map.updateActorPositions()
             }
         }
     }
