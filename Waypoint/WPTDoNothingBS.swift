@@ -24,7 +24,7 @@ class WPTDoNothingBS: WPTBrainState {
         if let rad = radiusOfObliviousness {
             let dist = self.enemy.distance(to: self.player)
             if dist < rad {
-                // TODO: transition states
+                let _ = self.brain.transition(WPTBrainStateType.OFFENSE)
             }
         }
     }

@@ -22,7 +22,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     let sprite: SKSpriteNode
     var cannonNodes = [WPTCannonNode]()
     
-    private let fireRateMgr: WPTFireRateManager
+    let fireRateMgr: WPTFireRateManager
     
     public var isPlayer: Bool {
         return self as? WPTLevelPlayerNode != nil;
@@ -113,6 +113,12 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         return CGFloat(sqrt(deltaX * deltaX + deltaY * deltaY))
     }
     
+    func getCannonVelocity(_ cannonNode: WPTCannonNode) -> CGVector {
+        let rot = self.zRotation + cannonNode.zRotation
+        let direction = CGVector(dx: cos(rot), dy: sin(rot))
+        return actor.ship.shotSpeed * direction
+    }
+    
     func fireCannons() {
         // make sure we can handle the cannon balls
         guard fireRateMgr.canFire else { return }
@@ -123,8 +129,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         for cannonNode in self.cannonNodes {
             let ball = WPTCannonBallNode(self.actor.cannonBall)
             ball.position = self.convert(cannonNode.cannonBallSpawnPoint, to: projectileNode)
-            let direction = CGVector(dx: cos(self.zRotation + cannonNode.zRotation), dy: sin(self.zRotation + cannonNode.zRotation))
-            ball.physics.velocity = actor.ship.shotSpeed * direction
+            ball.physics.velocity = getCannonVelocity(cannonNode)
             projectileNode.addChild(ball)
             ball.run(SKAction.wait(forDuration: Double(time)), completion: { ball.removeFromParent() })
             self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))

@@ -37,6 +37,14 @@ extension CGPoint {
         lhs.x += rhs.dx
         lhs.y += rhs.dy
     }
+    
+    func magnitude() -> CGFloat {
+        return sqrt(pow(self.x, 2) + pow(self.y, 2))
+    }
+    
+    func toVector() -> CGVector {
+        return CGVector(dx: x, dy: y)
+    }
 }
 
 extension CGVector {
