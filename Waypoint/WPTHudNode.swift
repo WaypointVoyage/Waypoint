@@ -15,6 +15,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
     let bottom: WPTHudBottomNode
     let pauseShroud: SKShapeNode
     let pauseMenu: WPTPauseMenuNode
+    let destroyMenu: WPTDestroyMenuNode
     let backgroundMusic = SKAudioNode(fileNamed: "windWaker.mp3")
     
     init(player: WPTLevelPlayerNode, terrain: WPTTerrainNode) {
@@ -23,6 +24,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
         self.bottom = WPTHudBottomNode()
         self.pauseShroud = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: WPTValues.screenSize))
         self.pauseMenu = WPTPauseMenuNode(terrain: terrain)
+        self.destroyMenu = WPTDestroyMenuNode(player: player.player)
         super.init()
         self.isUserInteractionEnabled = true
         
@@ -40,6 +42,10 @@ class WPTHudNode: SKNode, WPTUpdatable {
         // pause menu
         self.pauseMenu.zPosition = WPTValues.pauseShroudZPosition + 1
         self.pauseMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
+        
+        // destroy menu
+        self.destroyMenu.zPosition = WPTValues.pauseShroudZPosition + 1
+        self.destroyMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
         
         //audio
         self.scene?.listener = player
@@ -68,7 +74,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
             paused = scene!.levelPaused
         }
         
-        if paused {
+        if paused && self.destroyMenu.parent == nil {
             if !self.pauseMenu.contains(touchPos) {
                 // the background was touched, unpause
                 scene?.levelPaused = false
@@ -96,9 +102,15 @@ class WPTHudNode: SKNode, WPTUpdatable {
     }
     
     func processShipHealthStatus(_ healthPoints: CGFloat) {
+        let scene = self.scene as? WPTLevelScene
         let alive = self.top.shipHealth.updateHealth(healthPoints)
         if (!alive) {
-            //displayDestroyedPage()
+            scene!.contactDelegate = nil
+            scene!.levelPaused = true
+            self.top.pause.isHidden = true
+            self.bottom.hideBorder()
+            self.addChild(self.pauseShroud)
+            self.addChild(self.destroyMenu)
         }
     }
     

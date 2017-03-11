@@ -22,6 +22,7 @@
 		2D17044B1E7103D70000827E /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044A1E7103D70000827E /* explosion.mp3 */; };
 		2D17044D1E7104090000827E /* cannon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044C1E7104090000827E /* cannon.mp3 */; };
 		2D17044F1E7105940000827E /* coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044E1E7105940000827E /* coin.mp3 */; };
+		2D2C8B581E727D1A00B1D862 /* WPTDestroyMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */; };
 		2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */; };
 		2D7FD1811E5801A1001B6208 /* WPTShipNamePopUpNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */; };
 		2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */; };
@@ -149,6 +150,7 @@
 		2D17044A1E7103D70000827E /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
 		2D17044C1E7104090000827E /* cannon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cannon.mp3; sourceTree = "<group>"; };
 		2D17044E1E7105940000827E /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
+		2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDestroyMenuNode.swift; sourceTree = "<group>"; };
 		2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOOTERFZ.ttf; sourceTree = "<group>"; };
 		2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipNamePopUpNode.swift; sourceTree = "<group>"; };
 		2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSettingsScene.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				7E69329F1E53E2D500AF7373 /* WPTFireButtonNode.swift */,
 				7E43CC781E54CB50009367BC /* WPTPauseMenuNode.swift */,
 				2D1703DA1E601E180000827E /* WPTMapView.swift */,
+				2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */,
 			);
 			name = HUD;
 			sourceTree = "<group>";
@@ -696,7 +699,7 @@
 				TargetAttributes = {
 					7E16B8541E2D580600933E24 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 66743KUV39;
+						DevelopmentTeam = 3GEHA95597;
 						ProvisioningStyle = Automatic;
 					};
 					7E16B86E1E2D580600933E24 = {
@@ -814,6 +817,7 @@
 				7E6932A21E53ECF500AF7373 /* WPTUpdatable.swift in Sources */,
 				7E6932A01E53E2D500AF7373 /* WPTFireButtonNode.swift in Sources */,
 				7EDAC9B41E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift in Sources */,
+				2D2C8B581E727D1A00B1D862 /* WPTDestroyMenuNode.swift in Sources */,
 				7EE7981D1E5234A3006D683B /* WPTLevel.swift in Sources */,
 				7ED2206B1E371EDE00D2AA68 /* WPTHighScoresScene.swift in Sources */,
 				7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */,
@@ -1008,10 +1012,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 66743KUV39;
+				DEVELOPMENT_TEAM = 3GEHA95597;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
+				PRODUCT_BUNDLE_IDENTIFIER = hils124;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1022,10 +1026,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 66743KUV39;
+				DEVELOPMENT_TEAM = 3GEHA95597;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
+				PRODUCT_BUNDLE_IDENTIFIER = hils124;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

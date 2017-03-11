@@ -72,4 +72,18 @@ class WPTHudBottomNode: SKNode {
             self.onEndPress?()
         }
     }
+    
+    func hideBorder() {
+        self.leftFire.isHidden = true
+        self.rightFire.isHidden = true
+        self.leftBorder.isHidden = true
+        self.rightBorder.isHidden = true
+    }
+    
+    func displayBorder() {
+        self.leftFire.isHidden = false
+        self.rightFire.isHidden = false
+        self.leftBorder.isHidden = false
+        self.rightBorder.isHidden = false
+    }
 }
