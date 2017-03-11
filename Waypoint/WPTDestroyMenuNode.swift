@@ -10,13 +10,11 @@ import SpriteKit
 
 class WPTDestroyMenuNode: SKNode {
     
+    //Thar She Blows
     private let gameOver = WPTLabelNode(text: "Game Over Matey!", fontSize: WPTValues.fontSizeMedium)
-    private let level = WPTLabelNode(text: "Level", fontSize: WPTValues.fontSizeSmall)
-    private let doubloons = WPTLabelNode(text: "Doubloons", fontSize: WPTValues.fontSizeSmall)
+    private let levelLabel = WPTLabelNode(text: "Level", fontSize: WPTValues.fontSizeSmall)
+    private let doubloonLabel = WPTLabelNode(text: "Doubloons", fontSize: WPTValues.fontSizeSmall)
     private var levelNameNode: WPTLabelNode? = nil
-    var levelName: String? = nil {
-        didSet { self.levelNameNode?.text = self.levelName }
-    }
     
     init(player: WPTPlayer) {
         
@@ -42,19 +40,33 @@ class WPTDestroyMenuNode: SKNode {
         shipImage.zPosition = WPTValues.pauseShroudZPosition + 2
         self.addChild(shipImage)
         
-        
-        // level name
-        self.levelNameNode = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeSmall)
-        levelNameNode!.zPosition = WPTValues.pauseShroudZPosition + 2
-        levelNameNode!.fontColor = UIColor.black
-        levelNameNode!.position.y += 0.5 * background.size.height
-        self.addChild(levelNameNode!)
-        
         // game over
         gameOver.zPosition = WPTValues.pauseShroudZPosition + 2
         gameOver.fontColor = UIColor.black
         gameOver.position.y += 0.2 * background.size.height
         self.addChild(gameOver)
+        
+        // levelLabel
+        levelLabel.zPosition = WPTValues.pauseShroudZPosition + 2
+        levelLabel.fontColor = UIColor.black
+        levelLabel.position.y += 0.05 * background.size.height
+        levelLabel.position.x += 0.1 * background.size.height
+        self.addChild(levelLabel)
+        
+        // doubloonLabel
+        doubloonLabel.zPosition = WPTValues.pauseShroudZPosition + 2
+        doubloonLabel.fontColor = UIColor.black
+        doubloonLabel.position.y -= 0.04 * background.size.height
+        doubloonLabel.position.x += 0.15 * background.size.height
+        self.addChild(doubloonLabel)
+        
+        let doubloons = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)
+        doubloons.zPosition = WPTValues.pauseShroudZPosition + 2
+        doubloons.fontColor = UIColor.black
+        doubloons.position.y -= 0.04 * background.size.height
+        doubloons.position.x += 0.25 * background.size.height
+        self.addChild(doubloons)
+        
  
     }
     
