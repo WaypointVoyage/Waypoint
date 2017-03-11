@@ -106,7 +106,7 @@ class WPTLevelScene: WPTScene {
         let point = self.terrain.randomPoint(borderWidth: catapult.sprite.size.width / 2.0, onLand: true)
         catapult.position = point
         self.enemies.append(catapult)
-        self.addChild(catapult)
+        self.terrain.addEnemy(catapult)
     }
     
     private func loadLevel() {

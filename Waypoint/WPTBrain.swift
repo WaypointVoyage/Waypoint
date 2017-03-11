@@ -19,6 +19,8 @@ class WPTBrain: GKStateMachine {
     let defenseState: WPTBrainState?
     let fleeState: WPTBrainState?
     
+    var currentBrainState: WPTBrainState { return self.currentState as! WPTBrainState }
+    
     init(_ template: WPTBrainTemplate, player: WPTLevelPlayerNode) {
         self.template = template
         self.player = player
@@ -48,6 +50,27 @@ class WPTBrain: GKStateMachine {
         let started = self.enter(WPTBrainStateFactory.classFromString(template.brainStates[WPTBrainStateType.NOTHING]!)!)
         if !started {
             NSLog("ERROR: failed to start brain: \(template.name)")
+        }
+    }
+    
+    func transition(_ type: WPTBrainStateType) -> Bool {
+        guard self.currentBrainState.type != type else { return false; }
+        
+        switch (type) {
+        case WPTBrainStateType.NOTHING:
+            return self.enter(WPTBrainStateFactory.classFromInstance(self.nothingState))
+        case WPTBrainStateType.OFFENSE:
+            if let target = self.offenseState {
+                return self.enter(WPTBrainStateFactory.classFromInstance(target))
+            } else { return false; }
+        case WPTBrainStateType.DEFENSE:
+            if let target = self.defenseState {
+                return self.enter(WPTBrainStateFactory.classFromInstance(target));
+            } else { return false; }
+        case WPTBrainStateType.FLEE:
+            if let target = self.fleeState {
+                return self.enter(WPTBrainStateFactory.classFromInstance(target));
+            } else { return false; }
         }
     }
 }

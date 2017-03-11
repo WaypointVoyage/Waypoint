@@ -39,7 +39,7 @@
 			<key>speedScale</key>
 			<real>0.0</real>
 			<key>turnRateScale</key>
-			<real>1.8</real>
+			<real>0.55000000000000004</real>
 		</dict>
 	</dict>
 </array>

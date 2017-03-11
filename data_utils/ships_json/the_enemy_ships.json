@@ -16,7 +16,7 @@
          "rangeScale": 2.0,
          "shotSpeedScale": 1.1,
          "sizeScale": 1.3,
-         "turnRateScale": 1.8,
+         "turnRateScale": 0.55,
          "fireRateScale": 0.5,
       },
    },

@@ -18,11 +18,15 @@ class WPTTerrainNode: SKNode {
     
     var boundary: SKPhysicsBody!
     
+    let player: WPTLevelPlayerNode
+    var enemies = [WPTLevelEnemyNode]()
+    
     init(level: WPTLevel, player: WPTLevelPlayerNode) {
         self.level = level
         self.size = level.size
         self.spawnPoint = level.spawnPoint
         self.boundary = nil
+        self.player = player
         super.init()
         
         // setup the water backdrop
@@ -51,6 +55,11 @@ class WPTTerrainNode: SKNode {
         self.physicsBody = boundary
         boundary.categoryBitMask = WPTValues.boundaryCbm
         boundary.collisionBitMask = WPTValues.actorCbm
+    }
+    
+    func addEnemy(_ enemy: WPTLevelEnemyNode) {
+        self.addChild(enemy)
+        self.enemies.append(enemy)
     }
     
     private func loadTerrain() {

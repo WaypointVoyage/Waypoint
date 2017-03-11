@@ -11,7 +11,7 @@
    "port": {
       "position": {
          "x": 240,
-         "y": 90,
+         "y": 120,
          "angle": 0
       },
       "inventory": [
@@ -28,7 +28,7 @@
       ]
    },
    "entities": {
-      "whirlpools": 0,
+      "whirlpools": 2,
       "whirlpoolLocations": [
          [508, 1012],
          [615, 1018],
@@ -158,7 +158,7 @@
          [484, 52],
          [324, 49],
       ],
-      "boulders": 0
+      "boulders": 10, 
    },
    "terrain": {
       "image": "setting_sail_terrain",
