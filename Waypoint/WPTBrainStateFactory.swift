@@ -18,6 +18,12 @@ class WPTBrainStateFactory {
         case String(describing: WPTDoNothingBS.self):
             return WPTDoNothingBS()
             
+        case String(describing: WPTPursueBS.self):
+            return WPTPursueBS()
+            
+        case String(describing: WPTFleeBS.self):
+            return WPTFleeBS()
+            
         default:
             return nil
         }
@@ -32,7 +38,6 @@ class WPTBrainStateFactory {
     
     static func classFromInstance(_ instance: WPTBrainState) -> AnyClass {
         let string = String(describing: type(of: instance))
-        print("string: \(string)")
         return classFromString(string)!
     }
 }

@@ -14,7 +14,7 @@ class WPTPortNode: SKNode {
     
     let sprite = SKSpriteNode(imageNamed: "port")
     
-    init(port: WPTPort, active: Bool = true) {
+    init(port: WPTPort, active: Bool = false) {
         self.port = port;
         self.active = active
         super.init()

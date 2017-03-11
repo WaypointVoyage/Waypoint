@@ -61,7 +61,9 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
                 if let dockHandler = player.childNode(withName: WPTPortDockingHandler.nodeName) as? WPTPortDockingHandler {
                     if !dockHandler.docked && dockHandler.canDock {
                         if let dock = secondBody.node as? WPTDockNode {
-                            dockHandler.dockAt(dock: dock)
+                            if (dock.port?.active)! {
+                                dockHandler.dockAt(dock: dock)
+                            }
                         }
                     }
                 }
