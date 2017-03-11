@@ -47,7 +47,7 @@ class WPTShipNamePopUpNode: SKNode {
         randomIcon?.zPosition = WPTValues.pauseShroudZPosition + 2
         let size = CGSize(width: WPTValues.fontSizeSmall, height: WPTValues.fontSizeSmall)
         randomIcon?.size = size
-        randomIcon?.position.y -= 14
+        randomIcon?.position.y += 60
         randomIcon?.position.x += 100
         self.addChild(randomIcon!)
         
@@ -60,7 +60,7 @@ class WPTShipNamePopUpNode: SKNode {
         
         shipName.zPosition = WPTValues.pauseShroudZPosition + 2
         shipName.fontColor = UIColor.black
-        shipName.position.y += 0.1 * background.size.height
+        shipName.position.y += 0.23 * background.size.height
         self.addChild(shipName)
     }
     

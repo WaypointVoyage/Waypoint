@@ -1,8 +1,11 @@
 [
    {
       "name": "stand_and_shoot",
-      "brainStates": [
-         
-      ],
+      "brainStates": {
+         "nothing": "WPTDoNothingBS",
+         "offense": "WPTStandAndShootBS",
+         "defense": "",
+         "flee": "",
+      },
    },
 ]

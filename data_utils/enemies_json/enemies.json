@@ -1,8 +1,9 @@
 [
    {
       "name": "Catapult",
-      "ship": "catapult",
+      "ship": "Catapult",
       "brain": "stand_and_shoot",
+      "aggression": 0.5,
       "items": [],
    },
 ]

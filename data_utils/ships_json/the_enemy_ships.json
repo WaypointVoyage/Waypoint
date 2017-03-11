@@ -6,7 +6,7 @@
       "cannonSet": [
          {
             "hasCannon": true,
-            "x": 0, "y": 0, "angle": 0,
+            "x": 100, "y": 0, "angle": 0,
          },
       ],
       "stats": {

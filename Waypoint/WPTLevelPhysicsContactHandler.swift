@@ -31,13 +31,13 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         setContacts(contact)
         
-        if ((firstBody.categoryBitMask & WPTValues.projectileCbm) != 0 && (secondBody.categoryBitMask & WPTValues.boulderCbm) != 0) {
+        if collisionBetween(WPTValues.projectileCbm, WPTValues.boulderCbm) {
             if let cannonBall = firstBody.node as? WPTCannonBallNode,
                 let boulder = secondBody.node as? WPTBoulderNode {
                 cannonBall.removeFromParent()
                 boulder.processHealthStatus(-20.0)
             }
-        } else if ((firstBody.categoryBitMask & WPTValues.actorCbm) != 0 && (secondBody.categoryBitMask & WPTValues.itemCbm) != 0) {
+        } else if collisionBetween(WPTValues.actorCbm, WPTValues.itemCbm) {
             if let player = firstBody.node as? WPTLevelActorNode,
                 let item = secondBody.node as? WPTItemNode {
                 if (item.tier.rawValue == "CURRENCY") {
@@ -46,21 +46,22 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
                     item.removeFromParent()
                 }
             }
-        } else if ((firstBody.categoryBitMask & WPTValues.actorCbm) != 0 && (secondBody.categoryBitMask & WPTValues.whirlpoolCbm) != 0) {
-            if let player = firstBody.node as? WPTLevelActorNode,
-                let _ = secondBody.node as? WPTWhirlpoolNode {
-                let oldPosition = player.position
-                player.position = CGPoint(x: oldPosition.x - 50, y: oldPosition.y - 50)
-                let oneRevolution = SKAction.rotate(byAngle: -.pi * 2, duration: 1.0)
-                player.run(oneRevolution)
-                self.scene.hud.processShipHealthStatus(-5)
+        } else if collisionBetween(WPTValues.actorCbm, WPTValues.whirlpoolCbm) {
+            if let actor = firstBody.node as? WPTLevelActorNode, let _ = secondBody.node as? WPTWhirlpoolNode {
+                if let whirlpoolHandler = actor.childNode(withName: WPTWhirlpoolHandler.nodeName) as? WPTWhirlpoolHandler {
+                    if whirlpoolHandler.canEnterWhirlpool {
+                        whirlpoolHandler.enterWhirlpool()
+                    }
+                }
             }
         }
-        else if firstBody.categoryBitMask & WPTValues.actorCbm != 0 && secondBody.categoryBitMask & WPTValues.dockCbm != 0 {
+        else if collisionBetween(WPTValues.actorCbm, WPTValues.dockCbm) {
             if let player = firstBody.node as? WPTLevelPlayerNode {
-                if !player.docked && player.canDock {
-                    if let dock = secondBody.node as? WPTDockNode {
-                        player.dockAt(dock: dock)
+                if let dockHandler = player.childNode(withName: WPTPortDockingHandler.nodeName) as? WPTPortDockingHandler {
+                    if !dockHandler.docked && dockHandler.canDock {
+                        if let dock = secondBody.node as? WPTDockNode {
+                            dockHandler.dockAt(dock: dock)
+                        }
                     }
                 }
             }
@@ -70,15 +71,19 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
     func didEnd(_ contact: SKPhysicsContact) {
         setContacts(contact)
         
-        if firstBody.categoryBitMask & WPTValues.actorCbm != 0 && secondBody.categoryBitMask & WPTValues.dockCbm != 0 {
-            if let player = firstBody.node as? WPTLevelPlayerNode {
-                if let _ = secondBody.node as? WPTDockNode {
-                    player.run(SKAction.wait(forDuration: 3)) {
-                        player.canDock = true
-                    }
-                }
+        if collisionBetween(WPTValues.actorCbm, WPTValues.whirlpoolCbm) {
+            if let whirlpoolHanlder = (firstBody.node as? WPTLevelActorNode)?.childNode(withName: WPTWhirlpoolHandler.nodeName) as? WPTWhirlpoolHandler, let _ = secondBody.node as? WPTWhirlpoolNode {
+                whirlpoolHanlder.exitWhirlpool()
+            }
+        }
+        else if collisionBetween(WPTValues.actorCbm, WPTValues.dockCbm) {
+            if let dockHandler = (firstBody.node as? WPTLevelPlayerNode)?.childNode(withName: WPTPortDockingHandler.nodeName) as? WPTPortDockingHandler, let _ = secondBody.node as? WPTDockNode {
+                dockHandler.leaveDock()
             }
         }
     }
     
+    private func collisionBetween(_ first: UInt32, _ second: UInt32) -> Bool {
+        return firstBody.categoryBitMask & first != 0 && secondBody.categoryBitMask & second != 0
+    }
 }

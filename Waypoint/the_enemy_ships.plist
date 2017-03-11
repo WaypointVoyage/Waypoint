@@ -3,8 +3,6 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>previewImage</key>
-		<string></string>
 		<key>cannonSet</key>
 		<array>
 			<dict>
@@ -13,7 +11,7 @@
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
-				<integer>0</integer>
+				<integer>100</integer>
 				<key>y</key>
 				<integer>0</integer>
 			</dict>
@@ -22,6 +20,8 @@
 		<string>catapult_top_down</string>
 		<key>name</key>
 		<string>Catapult</string>
+		<key>previewImage</key>
+		<string></string>
 		<key>stats</key>
 		<dict>
 			<key>damageScale</key>
@@ -29,15 +29,15 @@
 			<key>fireRateScale</key>
 			<real>0.5</real>
 			<key>healthScale</key>
-			<real>2.3</real>
+			<real>2.2999999999999998</real>
 			<key>rangeScale</key>
 			<real>2</real>
 			<key>shotSpeedScale</key>
-			<real>1.1</real>
+			<real>1.1000000000000001</real>
 			<key>sizeScale</key>
 			<real>1.3</real>
 			<key>speedScale</key>
-			<real>0</real>
+			<real>0.0</real>
 			<key>turnRateScale</key>
 			<real>1.8</real>
 		</dict>

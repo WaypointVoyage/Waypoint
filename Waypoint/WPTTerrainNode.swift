@@ -86,14 +86,38 @@ class WPTTerrainNode: SKNode {
         }
     }
     
-    public func pointOnLand(scenePoint p: CGPoint) -> Bool {
-        let point = self.convert(p, from: self.scene!)
+    public func randomPoint(borderWidth: CGFloat, onLand: Bool? = nil) -> CGPoint {
+        for _ in 0..<2000 {
+            var rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+            let xPos = borderWidth + rand * CGFloat(self.size.width - 2 * borderWidth)
+            rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+            let yPos = borderWidth + rand * CGFloat(self.size.height - 2 * borderWidth)
+            let point = CGPoint(x: xPos, y: yPos)
+            if let onLand = onLand {
+                let onLandTest = pointOnLand(terrainPoint: point)
+                if onLand == onLandTest {
+                    return point
+                }
+            } else {
+                return point
+            }
+        }
+        NSLog("WARN: after 2000 tries, couldn't get random terrain point...")
+        return CGPoint.zero
+    }
+    
+    public func pointOnLand(terrainPoint p: CGPoint) -> Bool {
         for path in self.terrainPaths {
-            if path.contains(point) {
-                return true;
+            if path.contains(p) {
+                return true
             }
         }
         return false
+    }
+    
+    public func pointOnLand(scenePoint p: CGPoint) -> Bool {
+        let point = self.convert(p, from: self.scene!)
+        return pointOnLand(terrainPoint: point)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -22,6 +22,7 @@ class WPTLevelScene: WPTScene {
     let projectiles: SKNode
     let items: SKNode
     let port: WPTPortNode?
+    var enemies: [WPTLevelEnemyNode] = [WPTLevelEnemyNode]()
     
     var contactDelegate: WPTLevelPhysicsContactHandler! = nil
     
@@ -85,17 +86,9 @@ class WPTLevelScene: WPTScene {
     }
     
     private func placeBoulder(_ boulder: WPTBoulderNode) {
-        let radius = WPTBoulderNode.boulderRadius
-        let widthMin = radius
-        let widthMax = self.terrain.size.width - radius
-        let heightMin = radius
-        let heightMax = self.terrain.size.height - radius
+        boulder.position = self.terrain.randomPoint(borderWidth: WPTBoulderNode.boulderRadius)
         
-        var rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-        let xPos = CGFloat(widthMax - widthMin) * rand + CGFloat(widthMin)
-        rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-        let yPos = CGFloat(heightMax - heightMin) * rand + CGFloat(heightMin)
-        boulder.position = CGPoint(x: xPos, y: yPos)
+        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
         boulder.boulderImage.zRotation = CGFloat(M_PI)/rand
         boulder.crackedImage.zRotation = CGFloat(M_PI)/rand
     }
@@ -107,17 +100,29 @@ class WPTLevelScene: WPTScene {
         whirlpool.position = CGPoint(x: whirlpools[Int(index)].x * 2, y: whirlpools[Int(index)].y * 2)
     }
     
+    private func loadEnemies() {
+        // TEMPORARY load one catapult
+        let catapult = WPTLevelEnemyNode(enemy: WPTEnemyCatalog.enemiesByName["Catapult"]!, player: self.player)
+        let point = self.terrain.randomPoint(borderWidth: catapult.sprite.size.width / 2.0, onLand: true)
+        catapult.position = point
+        self.enemies.append(catapult)
+        self.addChild(catapult)
+    }
+    
     private func loadLevel() {
         // setup the player
         self.player.name = WPTLevelScene.playerNameTag
         self.player.position = self.terrain.spawnPoint
         self.terrain.addChild(self.player)
         
+        // place whirlpools
         for _ in 0..<self.level.whirlpools {
             let whirlpool = WPTWhirlpoolNode()
             placeWhirlpool(whirlpool)
             self.terrain.addChild(whirlpool)
         }
+        
+        // place boulders
         for _ in 0..<self.level.boulders {
             let boulder = WPTBoulderNode()
             placeBoulder(boulder)
@@ -128,6 +133,9 @@ class WPTLevelScene: WPTScene {
         if let port = self.port {
             self.addChild(port)
         }
+        
+        // load enemies
+        loadEnemies()
         
         // add everything to the scene
         self.addChild(projectiles)
@@ -143,6 +151,9 @@ class WPTLevelScene: WPTScene {
         if self.levelPaused { return } // everything below this is subject to the pause
         
         self.player.update(currentTime, deltaTime)
+        for enemy in self.enemies {
+            enemy.update(currentTime, deltaTime)
+        }
         self.hud.update(currentTime, deltaTime)
     }
     

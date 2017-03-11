@@ -11,9 +11,27 @@ import GameplayKit
 
 class WPTBrainState: GKState {
     let name: String
+    let type: WPTBrainStateType
     
-    init(name: String) {
-        print("BrainState: \(name)")
-        self.name = name
+    var brain: WPTBrain { return self.stateMachine as! WPTBrain }
+    
+    var enemy: WPTLevelEnemyNode {
+        return (self.stateMachine as! WPTBrain).enemy
     }
+    
+    var player: WPTLevelPlayerNode {
+        return (self.stateMachine as! WPTBrain).player
+    }
+    
+    init(name: String, type: WPTBrainStateType) {
+        self.name = name
+        self.type = type
+    }
+}
+
+enum WPTBrainStateType: String {
+    case NOTHING = "_NOTHING"
+    case OFFENSE = "_OFFENSE"
+    case DEFENSE = "_DEFENSE"
+    case FLEE = "_FLEE"
 }

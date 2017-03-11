@@ -3,6 +3,17 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>brainStates</key>
+		<dict>
+			<key>defense</key>
+			<string></string>
+			<key>flee</key>
+			<string></string>
+			<key>nothing</key>
+			<string>WPTDoNothingBS</string>
+			<key>offense</key>
+			<string>WPTStandAndShootBS</string>
+		</dict>
 		<key>name</key>
 		<string>stand_and_shoot</string>
 	</dict>

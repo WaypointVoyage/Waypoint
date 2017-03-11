@@ -10,20 +10,20 @@ import SpriteKit
 
 class WPTEnemyCatalog {
     
-    static let allBrains: [WPTBrain] = {
-        var brains = [WPTBrain]()
+    static let allBrainTemplates: [WPTBrainTemplate] = {
+        var brains = [WPTBrainTemplate]()
         
         let path = Bundle.main.path(forResource: "brains", ofType: "plist")!
         for brain in NSArray(contentsOfFile: path) as! [[String:AnyObject]] {
-            brains.append(WPTBrain(brain))
+            brains.append(WPTBrainTemplate(brain))
         }
         
         return brains;
     }()
     
-    static let brainsByName: [String:WPTBrain] = {
-        var map = [String:WPTBrain]()
-        for brain in WPTEnemyCatalog.allBrains {
+    static let brainTemplatesByName: [String:WPTBrainTemplate] = {
+        var map = [String:WPTBrainTemplate]()
+        for brain in WPTEnemyCatalog.allBrainTemplates {
             map[brain.name] = brain
         }
         return map

@@ -60,6 +60,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         // set starting position in the world
         self.zRotation += CGFloat(M_PI) / 2.0
         self.setScale(actor.ship.size)
+        
+        // components
+        self.addChild(WPTWhirlpoolHandler(self))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -102,6 +105,12 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             }
             self.physics.applyForce(force!)
         }
+    }
+    
+    func distance(to actor: WPTLevelActorNode) -> CGFloat {
+        let deltaX = actor.position.x - self.position.x
+        let deltaY = actor.position.y - self.position.y
+        return CGFloat(sqrt(deltaX * deltaX + deltaY * deltaY))
     }
     
     func fireCannons() {

@@ -10,15 +10,44 @@ import SpriteKit
 import GameplayKit
 
 class WPTBrain: GKStateMachine {
-    let name: String
+    let template: WPTBrainTemplate
+    weak var enemy: WPTLevelEnemyNode! = nil
+    let player: WPTLevelPlayerNode
     
-    init(_ brainDict: [String:AnyObject]) {
-        name = brainDict["name"] as! String
+    let nothingState: WPTBrainState
+    let offenseState: WPTBrainState?
+    let defenseState: WPTBrainState?
+    let fleeState: WPTBrainState?
+    
+    init(_ template: WPTBrainTemplate, player: WPTLevelPlayerNode) {
+        self.template = template
+        self.player = player
         
-        var brainStates: Set<WPTBrainState> = Set<WPTBrainState>()
-        for stateName in brainDict["brainStates"] as! [String] {
-            brainStates.insert(WPTBrainStateFactory.get(stateName))
+        nothingState = WPTBrainStateFactory.get(template.brainStates[WPTBrainStateType.NOTHING]!)!
+        if let str = template.brainStates[WPTBrainStateType.OFFENSE] {
+            offenseState = WPTBrainStateFactory.get(str)
+        } else { offenseState = nil }
+        if let str = template.brainStates[WPTBrainStateType.DEFENSE] {
+            defenseState = WPTBrainStateFactory.get(str)
+        } else { defenseState = nil }
+        if let str = template.brainStates[WPTBrainStateType.FLEE] {
+            fleeState = WPTBrainStateFactory.get(str)
+        } else { fleeState = nil }
+        
+        var states = [WPTBrainState]()
+        states.append(nothingState)
+        for state in [offenseState, defenseState, fleeState] {
+            if let state = state {
+                states.append(state)
+            }
         }
-        super.init(states: Array(brainStates))
+        super.init(states: states)
+    }
+    
+    func start() {
+        let started = self.enter(WPTBrainStateFactory.classFromString(template.brainStates[WPTBrainStateType.NOTHING]!)!)
+        if !started {
+            NSLog("ERROR: failed to start brain: \(template.name)")
+        }
     }
 }
