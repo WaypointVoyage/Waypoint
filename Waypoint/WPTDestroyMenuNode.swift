@@ -14,9 +14,19 @@ class WPTDestroyMenuNode: SKNode {
     private let gameOver = WPTLabelNode(text: "Game Over Matey!", fontSize: WPTValues.fontSizeMedium)
     private let levelLabel = WPTLabelNode(text: "Level", fontSize: WPTValues.fontSizeSmall)
     private let doubloonLabel = WPTLabelNode(text: "Doubloons", fontSize: WPTValues.fontSizeSmall)
+    private let continueLabel = WPTLabelNode(text: "Continue >", fontSize: WPTValues.fontSizeSmall)
     private var levelNameNode: WPTLabelNode? = nil
+    private var doubloons: WPTLabelNode
+    private var level: WPTLabelNode
+    private var player: WPTPlayer
     
     init(player: WPTPlayer) {
+        
+        self.player = player
+        self.doubloons = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)
+        
+        //may need to change later once player progress is implemented
+        self.level = WPTLabelNode(text: String(player.progress.completedLevels.count + 1), fontSize: WPTValues.fontSizeSmall)
         
         super.init()
         self.isUserInteractionEnabled = true
@@ -53,6 +63,13 @@ class WPTDestroyMenuNode: SKNode {
         levelLabel.position.x += 0.1 * background.size.height
         self.addChild(levelLabel)
         
+        // level
+        level.zPosition = WPTValues.pauseShroudZPosition + 2
+        level.fontColor = UIColor.black
+        level.position.y += 0.35 * background.size.height
+        level.position.x += 0.1 * background.size.height
+        self.addChild(level)
+        
         // doubloonLabel
         doubloonLabel.zPosition = WPTValues.pauseShroudZPosition + 2
         doubloonLabel.fontColor = UIColor.black
@@ -60,12 +77,17 @@ class WPTDestroyMenuNode: SKNode {
         doubloonLabel.position.x += 0.15 * background.size.height
         self.addChild(doubloonLabel)
         
-        let doubloons = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)
         doubloons.zPosition = WPTValues.pauseShroudZPosition + 2
         doubloons.fontColor = UIColor.black
         doubloons.position.y -= 0.04 * background.size.height
-        doubloons.position.x += 0.25 * background.size.height
+        doubloons.position.x += 0.35 * background.size.height
         self.addChild(doubloons)
+        
+        continueLabel.zPosition = WPTValues.pauseShroudZPosition + 2
+        continueLabel.fontColor = UIColor.black
+        continueLabel.position.y -= 0.25 * background.size.height
+        continueLabel.position.x += 0.25 * background.size.height
+        self.addChild(continueLabel)
         
  
     }
@@ -74,15 +96,15 @@ class WPTDestroyMenuNode: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateMoney() {
+        self.doubloons.text = String(player.doubloons)
+    }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touchPos = touches.first!.location(in: self)
+        let touch = touches.first!
         
-//        if self.exit.contains(touchPos) {
-//            self.scene?.view?.presentScene(WPTHomeScene())
-//        } else if self.reset.contains(touchPos) {
-//            if let scene = self.scene as? WPTLevelScene {
-//                scene.view?.presentScene(WPTLevelScene(player: scene.player.player, level: scene.level))
-//            }
-//        }
+        if self.continueLabel.contains(touch.location(in: self)) {
+            self.scene?.view?.presentScene(WPTHomeScene())
+        }
     }
 }

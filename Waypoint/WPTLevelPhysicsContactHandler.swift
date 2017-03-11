@@ -43,6 +43,7 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
                 if (item.tier.rawValue == "CURRENCY") {
                     player.actor.doubloons += item.value
                     self.scene.hud.top.updateMoney()
+                    self.scene.hud.destroyMenu.updateMoney()
                     item.removeFromParent()
                 }
             }

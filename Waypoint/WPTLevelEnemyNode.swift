@@ -9,6 +9,7 @@
 import SpriteKit
 
 class WPTLevelEnemyNode: WPTLevelActorNode {
+    
     let enemy: WPTEnemy
     let player: WPTLevelPlayerNode
     

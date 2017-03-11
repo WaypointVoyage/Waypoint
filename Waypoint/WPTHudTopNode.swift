@@ -42,7 +42,7 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         self.shipHealth.zPosition = WPTValues.movementHandlerZPosition - 1
         self.shipHealth.position = CGPoint(x: shipOffset * 2.5, y: WPTValues.screenSize.height - shipOffset * 1.1)
         
-        self.moneyCount = WPTLabelNode(text: "\(String(player.doubloons))", fontSize: WPTValues.fontSizeSmall)
+        self.moneyCount = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)
         
         super.init()
         
