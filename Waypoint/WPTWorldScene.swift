@@ -87,7 +87,8 @@ class WPTWorldScene: WPTScene {
                     
                     self.levelName.isHidden = true
                     self.startLevel.alpha = 0.4
-                    let action = SKAction.follow(path, asOffset: false, orientToPath: false, speed: WPTWorldPlayerNode.pathSpeed)
+                    let speed = !WPTConfig.values.testing ? WPTWorldPlayerNode.pathSpeed : 10 * WPTWorldPlayerNode.pathSpeed
+                    let action = SKAction.follow(path, asOffset: false, orientToPath: false, speed: speed)
                     self.player.run(action, completion: {
                         self.levelName.isHidden = false
                         self.startLevel.alpha = 1.0

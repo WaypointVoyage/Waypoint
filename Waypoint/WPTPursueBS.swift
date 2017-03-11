@@ -21,15 +21,17 @@ class WPTPursueBS: WPTBrainState {
         self.tryShoot()
         
         if enemy.anchored {
+            // priority on firing at the player
             self.aimAtPlayer()
-            if dist > brain.outerRadiusOfObliviousness {
+            if dist > brain.radiusOfEngagement {
                 enemy.anchored = false
             }
         } else {
+            // priority on approaching the player
             enemy.facePoint(player.position)
-            if dist < brain.innerRadiusOfObliviousness {
+            if dist < brain.radiusOfEngagement {
                 enemy.anchored = true
             }
-        }        
+        }
     }
 }

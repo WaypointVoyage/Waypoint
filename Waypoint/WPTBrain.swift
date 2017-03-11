@@ -10,6 +10,12 @@ import SpriteKit
 import GameplayKit
 
 class WPTBrain: GKStateMachine {
+    // these stack onto eachother, see the state diagram for clarification
+    static let baseRadiusOfEngagement: CGFloat = 300
+    static let baseInnerRadiusOfObliviousness: CGFloat = 300
+    static let baseOuterRadiusOfObliviousness: CGFloat = 300
+    static let baseRadiusOfSafety: CGFloat = 300
+    
     let template: WPTBrainTemplate
     weak var enemy: WPTLevelEnemyNode! = nil
     let player: WPTLevelPlayerNode
@@ -54,10 +60,10 @@ class WPTBrain: GKStateMachine {
     }
     
     func setBehavior() {
-        radiusOfEngagement = enemy.enemy.haste * 500
-        innerRadiusOfObliviousness = radiusOfEngagement + enemy.enemy.aggression * 300
-        outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * 400
-        radiusOfSafety = outerRadiusOfObliviousness + enemy.enemy.caution * 500
+        radiusOfEngagement = enemy.enemy.haste * WPTBrain.baseRadiusOfEngagement
+        innerRadiusOfObliviousness = radiusOfEngagement + enemy.enemy.aggression * WPTBrain.baseInnerRadiusOfObliviousness
+        outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * WPTBrain.baseOuterRadiusOfObliviousness
+        radiusOfSafety = outerRadiusOfObliviousness + enemy.enemy.caution * WPTBrain.baseRadiusOfSafety
         healthCutoff = radiusOfEngagement / radiusOfSafety
     }
     
@@ -73,21 +79,21 @@ class WPTBrain: GKStateMachine {
         
         switch (type) {
         case WPTBrainStateType.NOTHING:
-            print("transitioning to nothing")
+//            print("transitioning to nothing")
             return self.enter(WPTBrainStateFactory.classFromInstance(self.nothingState))
         case WPTBrainStateType.OFFENSE:
             if let target = self.offenseState {
-                print("transitioning to offense")
+//                print("transitioning to offense")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target))
             } else { return false; }
         case WPTBrainStateType.DEFENSE:
             if let target = self.defenseState {
-                print("transitioning to defense")
+//                print("transitioning to defense")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
         case WPTBrainStateType.FLEE:
             if let target = self.fleeState {
-                print("transitioning to flee")
+//                print("transitioning to flee")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
         }
@@ -112,7 +118,7 @@ class WPTBrain: GKStateMachine {
         case WPTBrainStateType.FLEE:
             updateFlee(deltaTime: sec, dist: dist, healthLow: healthLow)
         }
-        print("current state: \(self.currentBrainState.type)")
+//        print("current state: \(self.currentBrainState.type)")
     }
     
     func updateNothing(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
