@@ -21,6 +21,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         super.init(actor: enemy)
         
         self.brain.enemy = self
+        self.brain.setBehavior()
         self.brain.start()
     }
     

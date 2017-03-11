@@ -33,7 +33,9 @@ class WPTWhirlpoolHandler: SKNode {
         self.canEnterWhirlpool = false
         self.actor.run(WPTWhirlpoolHandler.spin)
         if let hud = (self.scene as? WPTLevelScene)?.hud {
-            hud.processShipHealthStatus(WPTWhirlpoolHandler.whirlpoolDamage)
+            let oldHealth = actor.currentHealth
+            actor.currentHealth -= WPTWhirlpoolHandler.whirlpoolDamage
+            hud.processShipHealthStatus(actor.currentHealth - oldHealth)
         }
     }
     

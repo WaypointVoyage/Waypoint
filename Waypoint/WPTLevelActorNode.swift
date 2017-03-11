@@ -12,6 +12,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     let actor: WPTActor
     let physics: SKPhysicsBody!
+    var currentHealth: CGFloat
     
     // movement
     var forward: CGVector { return CGVector(dx: cos(zRotation), dy: sin(zRotation)) }
@@ -30,6 +31,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     init(actor: WPTActor) {
         self.actor = actor
+        self.currentHealth = actor.ship.health
         self.sprite = SKSpriteNode(imageNamed: actor.ship.inGameImage)
         self.physics = SKPhysicsBody(texture: self.sprite.texture!, size: self.sprite.frame.size)
         self.fireRateMgr = WPTFireRateManager(actor.ship)
@@ -55,7 +57,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         self.physics.linearDamping = WPTValues.waterLinearDampening
         self.physics.angularDamping = WPTValues.waterAngularDampening
         self.physics.categoryBitMask = WPTValues.actorCbm
-        self.physics.collisionBitMask = WPTValues.terrainCbm | WPTValues.boundaryCbm | WPTValues.boulderCbm
+        self.physics.collisionBitMask = WPTValues.actorCbm | WPTValues.terrainCbm | WPTValues.boundaryCbm | WPTValues.boulderCbm
         
         // set starting position in the world
         self.zRotation += CGFloat(M_PI) / 2.0

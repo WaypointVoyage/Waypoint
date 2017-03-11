@@ -17,5 +17,20 @@
 		<key>name</key>
 		<string>stand_and_shoot</string>
 	</dict>
+	<dict>
+		<key>brainStates</key>
+		<dict>
+			<key>defense</key>
+			<string></string>
+			<key>flee</key>
+			<string>WPTFleeBS</string>
+			<key>nothing</key>
+			<string>WPTDoNothingBS</string>
+			<key>offense</key>
+			<string>WPTPursueBS</string>
+		</dict>
+		<key>name</key>
+		<string>pirate_brain</string>
+	</dict>
 </array>
 </plist>

@@ -21,10 +21,17 @@ class WPTBrain: GKStateMachine {
     
     var currentBrainState: WPTBrainState { return self.currentState as! WPTBrainState }
     
+    var radiusOfEngagement: CGFloat! = nil
+    var innerRadiusOfObliviousness: CGFloat! = nil
+    var outerRadiusOfObliviousness: CGFloat! = nil
+    var radiusOfSafety: CGFloat! = nil
+    var healthCutoff: CGFloat! = nil
+    
     init(_ template: WPTBrainTemplate, player: WPTLevelPlayerNode) {
         self.template = template
         self.player = player
         
+        // set states
         nothingState = WPTBrainStateFactory.get(template.brainStates[WPTBrainStateType.NOTHING]!)!
         if let str = template.brainStates[WPTBrainStateType.OFFENSE] {
             offenseState = WPTBrainStateFactory.get(str)
@@ -46,6 +53,14 @@ class WPTBrain: GKStateMachine {
         super.init(states: states)
     }
     
+    func setBehavior() {
+        radiusOfEngagement = enemy.enemy.haste * 500
+        innerRadiusOfObliviousness = radiusOfEngagement + enemy.enemy.aggression * 300
+        outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * 400
+        radiusOfSafety = outerRadiusOfObliviousness + enemy.enemy.caution * 500
+        healthCutoff = radiusOfEngagement / radiusOfSafety
+    }
+    
     func start() {
         let started = self.enter(WPTBrainStateFactory.classFromString(template.brainStates[WPTBrainStateType.NOTHING]!)!)
         if !started {
@@ -58,19 +73,83 @@ class WPTBrain: GKStateMachine {
         
         switch (type) {
         case WPTBrainStateType.NOTHING:
+            print("transitioning to nothing")
             return self.enter(WPTBrainStateFactory.classFromInstance(self.nothingState))
         case WPTBrainStateType.OFFENSE:
             if let target = self.offenseState {
+                print("transitioning to offense")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target))
             } else { return false; }
         case WPTBrainStateType.DEFENSE:
             if let target = self.defenseState {
+                print("transitioning to defense")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
         case WPTBrainStateType.FLEE:
             if let target = self.fleeState {
+                print("transitioning to flee")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
+        }
+    }
+    
+    override func update(deltaTime sec: TimeInterval) {
+        if let curState = self.currentState {
+            curState.update(deltaTime: sec)
+        }
+        
+        let healthLow = enemy.currentHealth < healthCutoff * enemy.enemy.ship.health
+        let dist = CGVector(dx: player.position.x - enemy.position.x, dy: player.position.y - enemy.position.y).magnitude()
+        
+        // new state?
+        switch (currentBrainState.type) {
+        case WPTBrainStateType.NOTHING:
+            updateNothing(deltaTime: sec, dist: dist, healthLow: healthLow)
+        case WPTBrainStateType.OFFENSE:
+            updateOffense(deltaTime: sec, dist: dist, healthLow: healthLow)
+        case WPTBrainStateType.DEFENSE:
+            updateDefense(deltaTime: sec, dist: dist, healthLow: healthLow)
+        case WPTBrainStateType.FLEE:
+            updateFlee(deltaTime: sec, dist: dist, healthLow: healthLow)
+        }
+    }
+    
+    func updateNothing(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
+        if healthLow && dist < outerRadiusOfObliviousness {
+            if transition(WPTBrainStateType.FLEE) { return }
+        }
+        if !healthLow && dist < innerRadiusOfObliviousness {
+            if transition(WPTBrainStateType.OFFENSE) { return }
+        }
+    }
+    
+    func updateOffense(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
+        if healthLow && dist < radiusOfEngagement {
+            if transition(WPTBrainStateType.DEFENSE) { return }
+        }
+        if healthLow && dist < outerRadiusOfObliviousness {
+            if transition(WPTBrainStateType.FLEE) { return }
+        }
+        if dist > outerRadiusOfObliviousness {
+            if transition(WPTBrainStateType.NOTHING) { return }
+        }
+    }
+    
+    func updateDefense(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
+        if !healthLow && dist < innerRadiusOfObliviousness {
+            if transition(WPTBrainStateType.OFFENSE) { return }
+        }
+        if healthLow && dist > innerRadiusOfObliviousness {
+            if transition(WPTBrainStateType.FLEE) { return }
+        }
+    }
+    
+    func updateFlee(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
+        if !healthLow && dist < outerRadiusOfObliviousness {
+            if transition(WPTBrainStateType.OFFENSE) { return }
+        }
+        if !healthLow || dist > radiusOfSafety {
+            if transition(WPTBrainStateType.NOTHING) { return }
         }
     }
 }

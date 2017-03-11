@@ -4,15 +4,43 @@
 <array>
 	<dict>
 		<key>aggression</key>
-		<real>0.5</real>
+		<integer>1</integer>
+		<key>awareness</key>
+		<integer>1</integer>
 		<key>brain</key>
 		<string>stand_and_shoot</string>
+		<key>caution</key>
+		<integer>1</integer>
+		<key>haste</key>
+		<integer>1</integer>
 		<key>items</key>
 		<array/>
 		<key>name</key>
 		<string>Catapult</string>
 		<key>ship</key>
 		<string>Catapult</string>
+		<key>terrainType</key>
+		<string>_LAND</string>
+	</dict>
+	<dict>
+		<key>aggression</key>
+		<integer>1</integer>
+		<key>awareness</key>
+		<integer>1</integer>
+		<key>brain</key>
+		<string>pirate_brain</string>
+		<key>caution</key>
+		<integer>1</integer>
+		<key>haste</key>
+		<integer>1</integer>
+		<key>items</key>
+		<array/>
+		<key>name</key>
+		<string>Pirate</string>
+		<key>ship</key>
+		<string>Waypoint Ship</string>
+		<key>terrainType</key>
+		<string>_SEA</string>
 	</dict>
 </array>
 </plist>

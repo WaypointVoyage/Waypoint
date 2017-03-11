@@ -7,7 +7,7 @@
 		<array>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -17,7 +17,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -27,7 +27,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -37,7 +37,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -57,7 +57,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>3.9269908169872414</real>
+				<real>3.926990816987241</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -67,7 +67,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>2.3561944901923448</real>
+				<real>2.356194490192345</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -77,7 +77,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>0.78539816339744828</real>
+				<real>0.7853981633974483</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -139,7 +139,7 @@
 		<key>inGameImage</key>
 		<string>paper_boat_top_down</string>
 		<key>name</key>
-		<string>Waypoint Ship</string>
+		<string>Paper Boat</string>
 		<key>previewImage</key>
 		<string>PaperBoat</string>
 		<key>stats</key>
@@ -151,15 +151,15 @@
 			<key>healthScale</key>
 			<real>0.5</real>
 			<key>rangeScale</key>
-			<real>3.3999999999999999</real>
+			<real>3.4</real>
 			<key>shotSpeedScale</key>
 			<real>1.2</real>
 			<key>sizeScale</key>
-			<real>0.80000000000000004</real>
+			<real>0.8</real>
 			<key>speedScale</key>
 			<real>2</real>
 			<key>turnRateScale</key>
-			<real>2.3999999999999999</real>
+			<real>2.4</real>
 		</dict>
 	</dict>
 </array>

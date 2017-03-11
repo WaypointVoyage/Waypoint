@@ -38,7 +38,7 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         self.shipImage.position = CGPoint(x: shipOffset, y: WPTValues.screenSize.height - shipOffset)
         self.shipImage.size = CGSize(width: shipImgSize, height: shipImgSize)
         
-        self.shipHealth = WPTHealthNode(maxHealth: WPTActor.maxPlayerHealth)
+        self.shipHealth = WPTHealthNode(maxHealth: player.ship.health)
         self.shipHealth.zPosition = WPTValues.movementHandlerZPosition - 1
         self.shipHealth.position = CGPoint(x: shipOffset * 2.5, y: WPTValues.screenSize.height - shipOffset * 1.1)
         

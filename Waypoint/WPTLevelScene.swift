@@ -101,12 +101,25 @@ class WPTLevelScene: WPTScene {
     }
     
     private func loadEnemies() {
-        // TEMPORARY load one catapult
-        let catapult = WPTLevelEnemyNode(enemy: WPTEnemyCatalog.enemiesByName["Catapult"]!, player: self.player)
-        let point = self.terrain.randomPoint(borderWidth: catapult.sprite.size.width / 2.0, onLand: true)
+        /* TEMPORARY */
+        
+        // catapult
+        var enemy = WPTEnemyCatalog.enemiesByName["Catapult"]!
+        let catapult = WPTLevelEnemyNode(enemy: enemy, player: self.player)
+        var onLand: Bool? = enemy.terrainType == WPTEnemyTerrainType.sea ? false : enemy.terrainType == WPTEnemyTerrainType.land ? true : nil
+        var point = self.terrain.randomPoint(borderWidth: catapult.sprite.size.width / 2.0, onLand: onLand)
         catapult.position = point
         self.enemies.append(catapult)
         self.terrain.addEnemy(catapult)
+        
+        // pirate
+        enemy = WPTEnemyCatalog.enemiesByName["Pirate"]!
+        let pirate = WPTLevelEnemyNode(enemy: enemy, player: self.player)
+        onLand = enemy.terrainType == WPTEnemyTerrainType.sea ? false : enemy.terrainType == WPTEnemyTerrainType.land ? true : nil
+        point = self.terrain.randomPoint(borderWidth: pirate.sprite.size.width / 2.0, onLand: onLand)
+        pirate.position = point
+        self.enemies.append(pirate)
+        self.terrain.addEnemy(pirate)
     }
     
     private func loadLevel() {
