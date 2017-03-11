@@ -11,7 +11,7 @@ import GameplayKit
 
 class WPTBrain: GKStateMachine {
     // these stack onto eachother, see the state diagram for clarification
-    static let baseRadiusOfEngagement: CGFloat = 300
+    static let baseRadiusOfEngagement: CGFloat = 500
     static let baseInnerRadiusOfObliviousness: CGFloat = 300
     static let baseOuterRadiusOfObliviousness: CGFloat = 300
     static let baseRadiusOfSafety: CGFloat = 300
@@ -64,7 +64,10 @@ class WPTBrain: GKStateMachine {
         innerRadiusOfObliviousness = radiusOfEngagement + enemy.enemy.aggression * WPTBrain.baseInnerRadiusOfObliviousness
         outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * WPTBrain.baseOuterRadiusOfObliviousness
         radiusOfSafety = outerRadiusOfObliviousness + enemy.enemy.caution * WPTBrain.baseRadiusOfSafety
+        
         healthCutoff = radiusOfEngagement / radiusOfSafety
+        
+        enemy.fireRateMgr.modifier = enemy.enemy.triggerHappiness
     }
     
     func start() {

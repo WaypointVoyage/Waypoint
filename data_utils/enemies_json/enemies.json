@@ -8,6 +8,7 @@
       "aggression": 1,
       "awareness": 1,
       "caution": 1,
+      "triggerHappiness": 0.5,
       "items": [],
    },
    {
@@ -19,6 +20,7 @@
       "aggression": 1,
       "awareness": 1,
       "caution": 1,
+      "triggerHappiness": 0.5,
       "items": [],
    }
 ]

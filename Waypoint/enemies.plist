@@ -21,6 +21,8 @@
 		<string>Catapult</string>
 		<key>terrainType</key>
 		<string>_LAND</string>
+		<key>triggerHappiness</key>
+		<real>0.5</real>
 	</dict>
 	<dict>
 		<key>aggression</key>
@@ -41,6 +43,8 @@
 		<string>Waypoint Ship</string>
 		<key>terrainType</key>
 		<string>_SEA</string>
+		<key>triggerHappiness</key>
+		<real>0.5</real>
 	</dict>
 </array>
 </plist>

@@ -6,7 +6,7 @@
 //  Copyright © 2017 cpe436group. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
 
 class WPTFireRateManager: WPTUpdatable {
     
@@ -14,11 +14,13 @@ class WPTFireRateManager: WPTUpdatable {
     private var lastFireTime: TimeInterval? = nil
     private var currentTime: TimeInterval? = nil
     
+    var modifier: CGFloat = 1
+    
     var canFire: Bool {
         get {
             guard let curT = currentTime else { return false }
             guard let lastT = lastFireTime else { return true }
-            return (curT - lastT) > (1.0 / Double(ship.fireRate))
+            return (curT - lastT) > (1.0 / Double(modifier * ship.fireRate))
         }
     }
     

@@ -13,11 +13,12 @@ class WPTEnemy: WPTActor {
     let name: String
     let terrainType: WPTEnemyTerrainType
     
-    // behavior (values should be >= 0)
-    let haste: CGFloat          // radius of engagement
-    let aggression: CGFloat     // inner radius of obliviousness
-    let awareness: CGFloat      // outer radius of obliviousness
-    let caution: CGFloat        // radius of safety
+    // behavior
+    let haste: CGFloat            // radius of engagement (>= 0)
+    let aggression: CGFloat       // inner radius of obliviousness (>= 0)
+    let awareness: CGFloat        // outer radius of obliviousness (>= 0)
+    let caution: CGFloat          // radius of safety (>= 0)
+    let triggerHappiness: CGFloat // modifies fire rate
     
     init(_ enemyDict: [String:AnyObject]) {
         name = enemyDict["name"] as! String
@@ -25,6 +26,7 @@ class WPTEnemy: WPTActor {
         self.aggression = enemyDict["aggression"] as! CGFloat
         self.haste = enemyDict["haste"] as! CGFloat
         self.caution = enemyDict["caution"] as! CGFloat
+        self.triggerHappiness = enemyDict["triggerHappiness"] as! CGFloat
         brainTemplate = WPTEnemyCatalog.brainTemplatesByName[enemyDict["brain"] as! String]!
         let ship = WPTShipCatalog.shipsByName[enemyDict["ship"] as! String]!
         terrainType = WPTEnemyTerrainType.init(rawValue: enemyDict["terrainType"] as! String)!
