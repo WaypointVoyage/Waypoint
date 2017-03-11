@@ -72,10 +72,8 @@ class WPTPauseMenuNode: SKNode {
         
 
         if actualAspect > targetAspect {
-            print("width")
             self.map.setScale(width / self.map.width)
         } else {
-            print("height")
             self.map.setScale(height / self.map.height)
         }
         self.map.position.y += 0.05 * background.frame.height

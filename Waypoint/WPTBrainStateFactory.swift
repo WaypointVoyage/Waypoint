@@ -32,7 +32,6 @@ class WPTBrainStateFactory {
     
     static func classFromInstance(_ instance: WPTBrainState) -> AnyClass {
         let string = String(describing: type(of: instance))
-        print("string: \(string)")
         return classFromString(string)!
     }
 }

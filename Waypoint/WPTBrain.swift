@@ -112,6 +112,7 @@ class WPTBrain: GKStateMachine {
         case WPTBrainStateType.FLEE:
             updateFlee(deltaTime: sec, dist: dist, healthLow: healthLow)
         }
+        print("current state: \(self.currentBrainState.type)")
     }
     
     func updateNothing(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
