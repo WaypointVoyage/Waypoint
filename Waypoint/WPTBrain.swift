@@ -11,10 +11,10 @@ import GameplayKit
 
 class WPTBrain: GKStateMachine {
     // these stack onto eachother, see the state diagram for clarification
-    static let baseRadiusOfEngagement: CGFloat = 500
-    static let baseInnerRadiusOfObliviousness: CGFloat = 300
-    static let baseOuterRadiusOfObliviousness: CGFloat = 300
-    static let baseRadiusOfSafety: CGFloat = 300
+    static let baseRadiusOfEngagement: CGFloat = 700
+    static let baseInnerRadiusOfObliviousness: CGFloat = 400
+    static let baseOuterRadiusOfObliviousness: CGFloat = 400
+    static let baseRadiusOfSafety: CGFloat = 600
     
     let template: WPTBrainTemplate
     weak var enemy: WPTLevelEnemyNode! = nil
@@ -108,7 +108,18 @@ class WPTBrain: GKStateMachine {
         }
         
         let healthLow = enemy.currentHealth < healthCutoff * enemy.enemy.ship.health
-        let dist = CGVector(dx: player.position.x - enemy.position.x, dy: player.position.y - enemy.position.y).magnitude()
+        let dist = CGVector(start: enemy.position, end: player.position).magnitude()
+        if dist < radiusOfEngagement {
+            print("ROE")
+        } else if dist < innerRadiusOfObliviousness {
+            print("iROO")
+        } else if dist < outerRadiusOfObliviousness {
+            print("oROO")
+        } else if dist < radiusOfSafety {
+            print("ROS")
+        } else {
+            print("N/A")
+        }
         
         // new state?
         switch (currentBrainState.type) {

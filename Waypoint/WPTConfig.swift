@@ -14,6 +14,7 @@ class WPTConfig {
     var playSoundEffects = true
     var testing = true
     var allUnlocked = true
+    var showBrainRadii = true
     
     // singleton instance
     static let values: WPTConfig = {
