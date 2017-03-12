@@ -120,6 +120,11 @@ class WPTLevelScene: WPTScene {
         pirate.position = point
         self.enemies.append(pirate)
         self.terrain.addEnemy(pirate)
+        
+        // oar
+        let oar = WPTItemNode(WPTItemCatalog.itemsByName["Oar"]!)
+        oar.position = self.terrain.randomPoint(borderWidth: 0, onLand: false)
+        self.items.addChild(oar)
     }
     
     private func loadLevel() {

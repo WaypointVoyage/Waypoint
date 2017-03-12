@@ -38,13 +38,23 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
                 boulder.processHealthStatus(-20.0)
             }
         } else if collisionBetween(WPTValues.actorCbm, WPTValues.itemCbm) {
-            if let player = firstBody.node as? WPTLevelActorNode,
-                let item = secondBody.node as? WPTItemNode {
-                if (item.tier.rawValue == "CURRENCY") {
-                    player.actor.doubloons += item.value
+            if let player = firstBody.node as? WPTLevelPlayerNode, let item = secondBody.node as? WPTItemNode {
+                
+                // all items have the potential to give money
+                if let doubloons = item.item.doubloons {
+                    player.actor.doubloons += doubloons
                     self.scene.hud.top.updateMoney()
-                    item.removeFromParent()
                 }
+                
+                // tier specific behavior
+                switch (item.item.tier) {
+                case WPTItemTier.statModifier:
+                    player.actor.apply(item: item.item)
+                default: break
+                }
+                
+                // remove item from scene
+                item.removeFromParent()
             }
         } else if collisionBetween(WPTValues.actorCbm, WPTValues.whirlpoolCbm) {
             if let actor = firstBody.node as? WPTLevelActorNode, let _ = secondBody.node as? WPTWhirlpoolNode {

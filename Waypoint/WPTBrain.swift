@@ -109,17 +109,17 @@ class WPTBrain: GKStateMachine {
         
         let healthLow = enemy.currentHealth < healthCutoff * enemy.enemy.ship.health
         let dist = CGVector(start: enemy.position, end: player.position).magnitude()
-        if dist < radiusOfEngagement {
-            print("ROE")
-        } else if dist < innerRadiusOfObliviousness {
-            print("iROO")
-        } else if dist < outerRadiusOfObliviousness {
-            print("oROO")
-        } else if dist < radiusOfSafety {
-            print("ROS")
-        } else {
-            print("N/A")
-        }
+//        if dist < radiusOfEngagement {
+//            print("ROE")
+//        } else if dist < innerRadiusOfObliviousness {
+//            print("iROO")
+//        } else if dist < outerRadiusOfObliviousness {
+//            print("oROO")
+//        } else if dist < radiusOfSafety {
+//            print("ROS")
+//        } else {
+//            print("N/A")
+//        }
         
         // new state?
         switch (currentBrainState.type) {

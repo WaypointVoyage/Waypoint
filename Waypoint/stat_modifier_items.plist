@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array/>
+<array>
+	<dict>
+		<key>imageName</key>
+		<string>oar</string>
+		<key>modifiers</key>
+		<dict>
+			<key>speed</key>
+			<real>0.1</real>
+		</dict>
+		<key>multiplicity</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Oar</string>
+		<key>prevalence</key>
+		<integer>100</integer>
+		<key>value</key>
+		<integer>20</integer>
+	</dict>
+</array>
 </plist>

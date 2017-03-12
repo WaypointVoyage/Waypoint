@@ -1,3 +1,12 @@
 [
-   
+   {
+      "name": "Oar",
+      "imageName": "oar",
+      "multiplicity": 0,
+      "value": 20,
+      "prevalence": 100,
+      "modifiers": {
+         "speed": 0.1,
+      },
+   },
 ]

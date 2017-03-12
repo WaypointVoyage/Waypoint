@@ -9,28 +9,21 @@
 import SpriteKit
 
 class WPTItemNode: SKNode {
-    private let item: WPTItem
+    private static let currencySize: CGFloat = 36
+    private static let itemSize: CGFloat = 84
+    
+    let item: WPTItem
     
     let itemImage: SKSpriteNode
-    let tier: WPTItemTier
-    let multiplicity: Int?
-    let prevalence: Int
-    let value: Int
-    
-//    let physics: SKPhysicsBody!
     
     init(_ item: WPTItem) {
         self.item = item
         self.itemImage = SKSpriteNode(imageNamed: self.item.imageName)
-        self.tier = item.tier
-        self.multiplicity = item.multiplicity
-        self.prevalence = item.prevalence
-        self.value = item.value
-        
         super.init()
-        self.physicsBody = SKPhysicsBody(circleOfRadius: 18)
         
-        itemImage.scale(to: CGSize(width: 36, height: 36))
+        let size = item.tier == WPTItemTier.currency ? WPTItemNode.currencySize : WPTItemNode.itemSize
+        self.physicsBody = SKPhysicsBody(circleOfRadius: size / 2)
+        itemImage.scale(to: CGSize(width: size, height: size))
         self.addChild(itemImage)
         self.physicsBody!.isDynamic = false
         self.physicsBody!.categoryBitMask = WPTValues.itemCbm

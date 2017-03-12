@@ -27,6 +27,8 @@ class GameViewController: UIViewController {
             if WPTConfig.values.testing {
                 view.showsFPS = true
                 view.showsNodeCount = true
+            }
+            if WPTConfig.values.showPhysics {
                 view.showsPhysics = true
             }
         }

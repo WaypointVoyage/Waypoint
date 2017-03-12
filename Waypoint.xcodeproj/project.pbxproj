@@ -50,6 +50,7 @@
 		7E16B87F1E2D580600933E24 /* WaypointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B87E1E2D580600933E24 /* WaypointUITests.swift */; };
 		7E3EF6E81E7522E50036A895 /* the_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E3EF6E71E7522E50036A895 /* the_ships.plist */; };
 		7E3EF6EA1E7532EB0036A895 /* WPTBrainRadiiNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3EF6E91E7532EB0036A895 /* WPTBrainRadiiNode.swift */; };
+		7E3EF6EC1E7549080036A895 /* stat_modifier_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E3EF6EB1E7549080036A895 /* stat_modifier_items.plist */; };
 		7E4215F81E5A6916004ADBD7 /* WPTCannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215F71E5A6916004ADBD7 /* WPTCannon.swift */; };
 		7E4215FC1E5A6F23004ADBD7 /* WPTCannonBallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */; };
 		7E4215FE1E5A716E004ADBD7 /* WPTCannonBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215FD1E5A716E004ADBD7 /* WPTCannonBall.swift */; };
@@ -102,7 +103,6 @@
 		7EDAC9B61E71FAA9002CEC0F /* WPTDockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAC9B51E71FAA9002CEC0F /* WPTDockNode.swift */; };
 		7EDD063A1E4A1C750054EB7E /* WPTTrailMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */; };
 		7EE57D3C1E69DAF20020693B /* repair_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D391E69DAF20020693B /* repair_items.plist */; };
-		7EE57D3D1E69DAF20020693B /* stat_modifier_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D3A1E69DAF20020693B /* stat_modifier_items.plist */; };
 		7EE57D471E69E19D0020693B /* other_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D461E69E19D0020693B /* other_items.plist */; };
 		7EE57D491E69E20C0020693B /* currency_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D481E69E20C0020693B /* currency_items.plist */; };
 		7EE7981B1E523030006D683B /* WPTPlayerProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */; };
@@ -192,6 +192,7 @@
 		7E16B8801E2D580600933E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E3EF6E71E7522E50036A895 /* the_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_ships.plist; sourceTree = "<group>"; };
 		7E3EF6E91E7532EB0036A895 /* WPTBrainRadiiNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainRadiiNode.swift; sourceTree = "<group>"; };
+		7E3EF6EB1E7549080036A895 /* stat_modifier_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stat_modifier_items.plist; sourceTree = "<group>"; };
 		7E4215F71E5A6916004ADBD7 /* WPTCannon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannon.swift; sourceTree = "<group>"; };
 		7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonBallNode.swift; sourceTree = "<group>"; };
 		7E4215FD1E5A716E004ADBD7 /* WPTCannonBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonBall.swift; sourceTree = "<group>"; };
@@ -244,7 +245,6 @@
 		7EDAC9B51E71FAA9002CEC0F /* WPTDockNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDockNode.swift; sourceTree = "<group>"; };
 		7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailMapNode.swift; sourceTree = "<group>"; };
 		7EE57D391E69DAF20020693B /* repair_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = repair_items.plist; sourceTree = "<group>"; };
-		7EE57D3A1E69DAF20020693B /* stat_modifier_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stat_modifier_items.plist; sourceTree = "<group>"; };
 		7EE57D461E69E19D0020693B /* other_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = other_items.plist; sourceTree = "<group>"; };
 		7EE57D481E69E20C0020693B /* currency_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = currency_items.plist; sourceTree = "<group>"; };
 		7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayerProgress.swift; sourceTree = "<group>"; };
@@ -503,7 +503,7 @@
 				7EE57D481E69E20C0020693B /* currency_items.plist */,
 				7EE57D461E69E19D0020693B /* other_items.plist */,
 				7EE57D391E69DAF20020693B /* repair_items.plist */,
-				7EE57D3A1E69DAF20020693B /* stat_modifier_items.plist */,
+				7E3EF6EB1E7549080036A895 /* stat_modifier_items.plist */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -793,6 +793,7 @@
 				7EE8A9231E6FDD7100C119B9 /* 4_fire_in_the_hole.plist in Resources */,
 				7EE8A92A1E6FDD7100C119B9 /* 11_shiver_me_timbers.plist in Resources */,
 				7ECB5A001E74586E00A05563 /* 0_setting_sail.plist in Resources */,
+				7E3EF6EC1E7549080036A895 /* stat_modifier_items.plist in Resources */,
 				7EE8A9241E6FDD7100C119B9 /* 5_dead_men_tell_no_tales.plist in Resources */,
 				7E4A23981E74A182006E9E5D /* enemies.plist in Resources */,
 				7EE8A9281E6FDD7100C119B9 /* 9_boom_about.plist in Resources */,
@@ -817,7 +818,6 @@
 				7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */,
 				7EE57D491E69E20C0020693B /* currency_items.plist in Resources */,
 				7EE8A9261E6FDD7100C119B9 /* 7_letter_of_marque.plist in Resources */,
-				7EE57D3D1E69DAF20020693B /* stat_modifier_items.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

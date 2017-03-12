@@ -152,6 +152,17 @@ class WPTShip {
         let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
         return (max - min) * rand + min
     }
+    
+    func upgrade(with item: WPTItem) {
+        self.speedScale += item.speedModifier ?? 0
+        self.damageScale += item.damageModifier ?? 0
+        self.healthScale += item.healthModifier ?? 0
+        self.rangeScale += item.rangeModifier ?? 0
+        self.shotSpeedScale += item.shotSpeedModifier ?? 0
+        self.sizeScale += item.sizeModifier ?? 0
+        self.turnRateScale += item.turnRateModifier ?? 0
+        self.fireRateScale += item.fireRateModifier ?? 0
+    }
 }
 
 extension WPTShip {

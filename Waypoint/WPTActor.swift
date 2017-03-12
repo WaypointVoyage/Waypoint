@@ -51,6 +51,7 @@ class WPTActor {
         // add it to the item array
         if canAdd {
             self.items.append(item)
+            ship.upgrade(with: item)
         }
     }
 }
