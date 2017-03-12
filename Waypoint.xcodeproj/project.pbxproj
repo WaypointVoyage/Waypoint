@@ -48,6 +48,7 @@
 		7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E16B8651E2D580600933E24 /* Assets.xcassets */; };
 		7E16B8741E2D580600933E24 /* WaypointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8731E2D580600933E24 /* WaypointTests.swift */; };
 		7E16B87F1E2D580600933E24 /* WaypointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B87E1E2D580600933E24 /* WaypointUITests.swift */; };
+		7E3EF6DC1E75127D0036A895 /* the_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E3EF6DB1E75127D0036A895 /* the_ships.plist */; };
 		7E4215F81E5A6916004ADBD7 /* WPTCannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215F71E5A6916004ADBD7 /* WPTCannon.swift */; };
 		7E4215FC1E5A6F23004ADBD7 /* WPTCannonBallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */; };
 		7E4215FE1E5A716E004ADBD7 /* WPTCannonBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215FD1E5A716E004ADBD7 /* WPTCannonBall.swift */; };
@@ -81,7 +82,6 @@
 		7EC222061E72F49D00E98243 /* WPTWhirlpoolHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222051E72F49D00E98243 /* WPTWhirlpoolHandler.swift */; };
 		7EC222081E72F54A00E98243 /* WPTPortDockingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */; };
 		7EC2220A1E73037300E98243 /* WPTDoNothingBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222091E73037300E98243 /* WPTDoNothingBS.swift */; };
-		7EC222121E73058900E98243 /* the_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EC222101E73058900E98243 /* the_ships.plist */; };
 		7EC222161E730D1900E98243 /* WPTBrainTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */; };
 		7ECB5A001E74586E00A05563 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ECB59FF1E74586E00A05563 /* 0_setting_sail.plist */; };
 		7ECB5A021E745CA500A05563 /* WPTPursueBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */; };
@@ -189,6 +189,7 @@
 		7E16B87A1E2D580600933E24 /* WaypointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaypointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E16B87E1E2D580600933E24 /* WaypointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointUITests.swift; sourceTree = "<group>"; };
 		7E16B8801E2D580600933E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E3EF6DB1E75127D0036A895 /* the_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_ships.plist; sourceTree = "<group>"; };
 		7E4215F71E5A6916004ADBD7 /* WPTCannon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannon.swift; sourceTree = "<group>"; };
 		7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonBallNode.swift; sourceTree = "<group>"; };
 		7E4215FD1E5A716E004ADBD7 /* WPTCannonBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonBall.swift; sourceTree = "<group>"; };
@@ -222,7 +223,6 @@
 		7EC222051E72F49D00E98243 /* WPTWhirlpoolHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWhirlpoolHandler.swift; sourceTree = "<group>"; };
 		7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPortDockingHandler.swift; sourceTree = "<group>"; };
 		7EC222091E73037300E98243 /* WPTDoNothingBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDoNothingBS.swift; sourceTree = "<group>"; };
-		7EC222101E73058900E98243 /* the_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_ships.plist; sourceTree = "<group>"; };
 		7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainTemplate.swift; sourceTree = "<group>"; };
 		7ECB59FF1E74586E00A05563 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
 		7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPursueBS.swift; sourceTree = "<group>"; };
@@ -626,10 +626,10 @@
 				7E575DD91E69CBA4004D92BF /* Items */,
 				7E6932A41E54117900AF7373 /* Levels */,
 				7E43CC761E54B844009367BC /* trail_map.plist */,
-				7EC222101E73058900E98243 /* the_ships.plist */,
 				7ECB5A051E745E6D00A05563 /* brains.plist */,
 				7E4A23971E74A182006E9E5D /* enemies.plist */,
 				7E0C78921E73C2C2006C79C3 /* the_enemy_ships.plist */,
+				7E3EF6DB1E75127D0036A895 /* the_ships.plist */,
 				2D1703D61E590F8C0000827E /* random_ship_names.plist */,
 			);
 			name = Data;
@@ -777,8 +777,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E16B8641E2D580600933E24 /* Main.storyboard in Resources */,
-				7EC222121E73058900E98243 /* the_ships.plist in Resources */,
 				7E0C78931E73C2C2006C79C3 /* the_enemy_ships.plist in Resources */,
+				7E3EF6DC1E75127D0036A895 /* the_ships.plist in Resources */,
 				7EE8A9221E6FDD7100C119B9 /* 3_cutlass_careen.plist in Resources */,
 				7EE8A9271E6FDD7100C119B9 /* 8_give_no_quarter.plist in Resources */,
 				7E5242901E56440900120002 /* water.fsh in Resources */,

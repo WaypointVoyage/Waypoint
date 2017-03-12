@@ -93,4 +93,82 @@
          "fireRateScale": 5.0,
       },
    },
+   {
+      "testing": true,
+      "name": "Best Ship",
+      "previewImage": "best_ship",
+      "inGameImage": "best_ship_top_down",
+      "cannonSet": [
+         {
+            "hasCannon": true,
+            "x": 220,
+            "y": 0,
+            "angle": 0,
+         },
+         {
+            "hasCannon": true,
+            "x": 0,
+            "y": 200,
+            "angle": 1.5707963267948966,
+         },
+         {
+            "hasCannon": true,
+            "x": 0,
+            "y": -200,
+            "angle": -1.5707963267948966,
+         },
+         {
+            "hasCannon": true,
+            "x": 150,
+            "y": 100,
+            "angle": 0.7853981633974483,
+         },
+         {
+            "hasCannon": true,
+            "x": 150,
+            "y": -100,
+            "angle": -0.7853981633974483,
+         },
+      ],
+      "stats": "max",
+   },
+   {
+      "testing": true,
+      "name": "",
+      "previewImage": "worst_ship",
+      "inGameImage": "worst_ship_top_down",
+      "cannonSet": [
+         {
+            "hasCannon": true,
+            "x": 220,
+            "y": 0,
+            "angle": 0,
+         },
+         {
+            "hasCannon": false,
+            "x": 0,
+            "y": 200,
+            "angle": 1.5707963267948966,
+         },
+         {
+            "hasCannon": false,
+            "x": 0,
+            "y": -200,
+            "angle": -1.5707963267948966,
+         },
+         {
+            "hasCannon": false,
+            "x": 150,
+            "y": 100,
+            "angle": 0.7853981633974483,
+         },
+         {
+            "hasCannon": false,
+            "x": 150,
+            "y": -100,
+            "angle": -0.7853981633974483,
+         },
+      ],
+      "stats": "min",
+   },
 ]
