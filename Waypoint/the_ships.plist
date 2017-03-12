@@ -135,6 +135,36 @@
 				<key>y</key>
 				<integer>0</integer>
 			</dict>
+			<dict>
+				<key>angle</key>
+				<real>3.1415926535897931</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>-200</integer>
+				<key>y</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>0</integer>
+				<key>y</key>
+				<integer>120</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>-1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>0</integer>
+				<key>y</key>
+				<integer>-120</integer>
+			</dict>
 		</array>
 		<key>inGameImage</key>
 		<string>paper_boat_top_down</string>
@@ -147,11 +177,11 @@
 			<key>damageScale</key>
 			<real>0.5</real>
 			<key>fireRateScale</key>
-			<real>5</real>
+			<real>3</real>
 			<key>healthScale</key>
 			<real>0.5</real>
 			<key>rangeScale</key>
-			<real>3.3999999999999999</real>
+			<real>1</real>
 			<key>shotSpeedScale</key>
 			<real>1.2</real>
 			<key>sizeScale</key>
@@ -160,6 +190,156 @@
 			<real>2</real>
 			<key>turnRateScale</key>
 			<real>2.3999999999999999</real>
+		</dict>
+	</dict>
+	<dict>
+		<key>cannonSet</key>
+		<array>
+			<dict>
+				<key>angle</key>
+				<real>1.5707963267948966</real>
+				<key>hasCannon</key>
+				<true/>
+				<key>x</key>
+				<integer>167</integer>
+				<key>y</key>
+				<integer>50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>1.5707963267948966</real>
+				<key>hasCannon</key>
+				<true/>
+				<key>x</key>
+				<integer>-167</integer>
+				<key>y</key>
+				<integer>50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>58</integer>
+				<key>y</key>
+				<integer>50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>-58</integer>
+				<key>y</key>
+				<integer>50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>118</integer>
+				<key>y</key>
+				<integer>50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>-118</integer>
+				<key>y</key>
+				<integer>50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>-1.5707963267948966</real>
+				<key>hasCannon</key>
+				<true/>
+				<key>x</key>
+				<integer>167</integer>
+				<key>y</key>
+				<integer>-50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>-1.5707963267948966</real>
+				<key>hasCannon</key>
+				<true/>
+				<key>x</key>
+				<integer>-167</integer>
+				<key>y</key>
+				<integer>-50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>-1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>58</integer>
+				<key>y</key>
+				<integer>-50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>-1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>-58</integer>
+				<key>y</key>
+				<integer>-50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>-1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>118</integer>
+				<key>y</key>
+				<integer>-50</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
+				<real>-1.5707963267948966</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>-118</integer>
+				<key>y</key>
+				<integer>-50</integer>
+			</dict>
+		</array>
+		<key>inGameImage</key>
+		<string>longship_top_down</string>
+		<key>name</key>
+		<string>Longship</string>
+		<key>previewImage</key>
+		<string>longship</string>
+		<key>stats</key>
+		<dict>
+			<key>damageScale</key>
+			<real>1</real>
+			<key>fireRateScale</key>
+			<real>0.80000000000000004</real>
+			<key>healthScale</key>
+			<real>1</real>
+			<key>rangeScale</key>
+			<real>1.2</real>
+			<key>shotSpeedScale</key>
+			<real>1</real>
+			<key>sizeScale</key>
+			<real>1.6000000000000001</real>
+			<key>speedScale</key>
+			<real>2.2999999999999998</real>
+			<key>turnRateScale</key>
+			<real>0.80000000000000004</real>
 		</dict>
 	</dict>
 	<dict>
