@@ -13,6 +13,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     let actor: WPTActor
     let physics: SKPhysicsBody!
     var currentHealth: CGFloat
+    var teamBitMask: UInt32
     
     // movement
     var forward: CGVector { return CGVector(dx: cos(zRotation), dy: sin(zRotation)) }
@@ -29,12 +30,13 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         return self as? WPTLevelPlayerNode != nil;
     }
     
-    init(actor: WPTActor) {
+    init(actor: WPTActor, teamBitMask tbm: UInt32) {
         self.actor = actor
         self.currentHealth = actor.ship.health
         self.sprite = SKSpriteNode(imageNamed: actor.ship.inGameImage)
         self.physics = SKPhysicsBody(texture: self.sprite.texture!, size: self.sprite.frame.size)
         self.fireRateMgr = WPTFireRateManager(actor.ship)
+        self.teamBitMask = tbm
         super.init()
         
         // sprite
@@ -130,10 +132,11 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         let time = actor.ship.range / actor.ship.shotSpeed
         for cannonNode in self.cannonNodes {
             let ball = WPTCannonBallNode(self.actor.cannonBall)
+            ball.teamBitMask = self.teamBitMask
             ball.position = self.convert(cannonNode.cannonBallSpawnPoint, to: projectileNode)
             ball.physics.velocity = getCannonVelocity(cannonNode)
             projectileNode.addChild(ball)
-            ball.run(SKAction.wait(forDuration: Double(time)), completion: { ball.removeFromParent() })
+            ball.run(SKAction.wait(forDuration: Double(time)), completion: { ball.collideWithGround() })
             self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
         }
         fireRateMgr.registerFire()
@@ -159,9 +162,23 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         
         // tier specific behavior
         switch (item.tier) {
-            case WPTItemTier.statModifier:
-                actor.apply(item: item)
-            default: break
+        case WPTItemTier.statModifier:
+            actor.apply(item: item)
+        case WPTItemTier.other:
+            if item.name == "Cannon" { addCannon() }
+        default: break
+        }
+    }
+    
+    private func addCannon() {
+        for cannon in self.actor.ship.cannonSet.cannons {
+            if !cannon.hasCannon {
+                cannon.hasCannon = true
+                let cannonNode = WPTCannonNode(cannon)
+                self.cannonNodes.append(cannonNode)
+                self.addChild(cannonNode)
+                return
+            }
         }
     }
 }

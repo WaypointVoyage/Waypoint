@@ -19,7 +19,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         self.enemy = enemy
         self.player = player
         self.brain = WPTBrain(self.enemy.brainTemplate, player: self.player)
-        super.init(actor: enemy)
+        super.init(actor: enemy, teamBitMask: WPTValues.enemyTbm)
         
         self.brain.enemy = self
         self.brain.setBehavior()

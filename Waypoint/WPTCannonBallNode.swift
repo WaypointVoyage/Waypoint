@@ -13,6 +13,7 @@ class WPTCannonBallNode: SKNode {
     let sprite: SKSpriteNode
     
     let physics: SKPhysicsBody!
+    var teamBitMask: UInt32? = nil
     
     init(_ cannonBall: WPTCannonBall) {
         self.cannonBall = cannonBall
@@ -30,9 +31,25 @@ class WPTCannonBallNode: SKNode {
         physics.friction = 0
         physics.categoryBitMask = WPTValues.projectileCbm
         physics.collisionBitMask = WPTValues.actorCbm | WPTValues.boulderCbm
+        physics.contactTestBitMask = WPTValues.actorCbm
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func collide(with actor: WPTLevelActorNode) {
+        
+        // TODO: apply damage/update health bars/explosion?
+        
+        self.removeFromParent()
+    }
+    
+    func collideWithGround() {
+        
+        // TODO: splash/dusk cloud?
+        
+        
+        self.removeFromParent()
     }
 }
