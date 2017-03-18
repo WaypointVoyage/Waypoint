@@ -13,12 +13,12 @@ fools gold
 ---
 
 Oars: more speed
+
 Gun Powder: shot speed
 spiked cannon balls: more damage
 Motor: speed
 Rudder: better turn rate
 sail: speed
-stranded sailor: all stats up
 telescope: range
 ship's wheel: steering
 hook hand: reduces fire rate, more damage
@@ -35,6 +35,8 @@ rope: turn rate up
 barrel: speed down, health up
 blunderbuss: damage up, shot speed up
 life ring: health up
+
+stranded sailor: all stats up
 ship in a bottle: decrease size
 chain: turn rate up
 palm leaves: speed up
