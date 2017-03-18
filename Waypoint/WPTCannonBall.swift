@@ -9,5 +9,5 @@
 import Foundation
 
 class WPTCannonBall {
-    
+    var image: String = "cannon_ball" // default value, but can change with items
 }

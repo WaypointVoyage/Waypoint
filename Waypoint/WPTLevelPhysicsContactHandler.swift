@@ -39,21 +39,7 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
             }
         } else if collisionBetween(WPTValues.actorCbm, WPTValues.itemCbm) {
             if let player = firstBody.node as? WPTLevelPlayerNode, let item = secondBody.node as? WPTItemNode {
-                
-                // all items have the potential to give money
-                if let doubloons = item.item.doubloons {
-                    player.actor.doubloons += doubloons
-                    self.scene.hud.top.updateMoney()
-                }
-                
-                // tier specific behavior
-                switch (item.item.tier) {
-                case WPTItemTier.statModifier:
-                    player.actor.apply(item: item.item)
-                default: break
-                }
-                
-                // remove item from scene
+                player.give(item: item.item);
                 item.removeFromParent()
             }
         } else if collisionBetween(WPTValues.actorCbm, WPTValues.whirlpoolCbm) {

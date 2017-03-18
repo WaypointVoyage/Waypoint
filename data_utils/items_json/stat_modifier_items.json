@@ -28,6 +28,7 @@
       "modifiers": {
          "damage": 1.5,
       },
+      "cannonBallImage": "spiked_cannon_ball",
    },
    {
       "name": "Propeller",

@@ -31,6 +31,10 @@ class WPTItem {
     public private(set) var repair: CGFloat?        // on pickup, gain this much health
     public private(set) var doubloons: Int?     // on pickup, gain this many doubloons
     
+    // other modifiers
+    public private(set) var cannonBallImage: String? = nil // replaces the current cannon ball image
+    
+    // raw values initialization
     init(name: String, imageName: String, tier: WPTItemTier, multiplicity: Int?, value: Int, prevalence: Int) {
         self.name = name
         self.imageName = imageName
@@ -40,6 +44,7 @@ class WPTItem {
         self.prevalence = prevalence
     }
     
+    // initialize from a dictionary
     init(_ itemDict: [String:AnyObject]) {
         self.name = itemDict["name"] as! String
         self.imageName = itemDict["imageName"] as! String
@@ -47,8 +52,10 @@ class WPTItem {
         self.multiplicity = itemDict["multiplicity"] as? Int
         self.value = itemDict["value"] as! Int
         self.prevalence = itemDict["prevalence"] as! Int
+        self.cannonBallImage = itemDict["cannonBallImage"] as? String
     }
     
+    // initialize as currency
     init(asCurrency itemDict: [String:AnyObject]) {
         self.name = itemDict["name"] as! String
         self.imageName = itemDict["imageName"] as! String
@@ -60,6 +67,7 @@ class WPTItem {
         self.doubloons = self.value // same for currency
     }
     
+    // initialize as a repair item
     init(asRepair itemDict: [String:AnyObject]) {
         self.name = itemDict["name"] as! String
         self.imageName = itemDict["imageName"] as! String
@@ -71,6 +79,7 @@ class WPTItem {
         self.repair = repairVal
     }
     
+    // initialize as a stat modifier
     init(asStatModifier itemDict: [String:AnyObject]) {
         self.name = itemDict["name"] as! String
         self.imageName = itemDict["imageName"] as! String
@@ -78,6 +87,7 @@ class WPTItem {
         self.multiplicity = itemDict["multiplicity"] as? Int
         self.value = itemDict["value"] as! Int
         self.prevalence = itemDict["prevalence"] as! Int
+        self.cannonBallImage = itemDict["cannonBallImage"] as? String
         initStatModifiers(itemDict)
     }
     

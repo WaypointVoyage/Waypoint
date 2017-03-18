@@ -142,4 +142,26 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     func facePoint(_ target: CGPoint) {
         self.targetRot = CGVector(start: self.position, end: target).angle()
     }
+    
+    func give(item: WPTItem) {
+        // all items have the potential to give money
+        if let doubloons = item.doubloons {
+            actor.doubloons += doubloons
+            if let top = (self.scene as? WPTLevelScene)?.hud.top {
+                top.updateMoney()
+            }
+        }
+        
+        // could have a new cannon ball image?
+        if let newImg = item.cannonBallImage {
+            actor.cannonBall.image = newImg
+        }
+        
+        // tier specific behavior
+        switch (item.tier) {
+            case WPTItemTier.statModifier:
+                actor.apply(item: item)
+            default: break
+        }
+    }
 }

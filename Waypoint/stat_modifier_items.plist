@@ -37,6 +37,8 @@
 		<integer>18</integer>
 	</dict>
 	<dict>
+		<key>cannonBallImage</key>
+		<string>spiked_cannon_ball</string>
 		<key>imageName</key>
 		<string>spiked_cannon_ball</string>
 		<key>modifiers</key>

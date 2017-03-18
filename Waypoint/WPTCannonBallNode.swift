@@ -10,13 +10,14 @@ import SpriteKit
 
 class WPTCannonBallNode: SKNode {
     private let cannonBall: WPTCannonBall
-    let sprite = SKSpriteNode(imageNamed: "cannon_ball")
+    let sprite: SKSpriteNode
     
     let physics: SKPhysicsBody!
     
     init(_ cannonBall: WPTCannonBall) {
         self.cannonBall = cannonBall
         self.physics = SKPhysicsBody(circleOfRadius: 16)
+        self.sprite = SKSpriteNode(imageNamed: cannonBall.image)
         super.init()
         
         sprite.scale(to: CGSize(width: 32, height: 32))
