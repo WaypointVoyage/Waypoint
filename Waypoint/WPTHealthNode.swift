@@ -18,9 +18,10 @@ class WPTHealthNode: SKNode {
     var curHealth: CGFloat
     
     var shipHealthBar = SKSpriteNode()
+    let persistent: Bool
     
-    init(maxHealth: CGFloat) {
-        
+    init(maxHealth: CGFloat, persistent: Bool) {
+        self.persistent = persistent
         self.maxHealth = maxHealth
         self.curHealth = maxHealth
         
@@ -28,7 +29,12 @@ class WPTHealthNode: SKNode {
         
         self.addChild(shipHealthBar)
         
-        updateHealthBar(maxHealth)
+        if !persistent {
+            shipHealthBar.isHidden = true
+            shipHealthBar.alpha = 0
+        }
+        
+        updateHealthBar(maxHealth, flash: false)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,8 +51,7 @@ class WPTHealthNode: SKNode {
     }
     
     
-    func updateHealthBar(_ currentHealth: CGFloat) {
-        
+    func updateHealthBar(_ currentHealth: CGFloat, flash: Bool = true) {
         let barSize = CGSize(width: healthBarWidth, height: healthBarHeight);
         
         let fillColor = UIColor(red: 51.0/255, green: 255.0/255, blue: 51.0/255, alpha:1)
@@ -74,6 +79,18 @@ class WPTHealthNode: SKNode {
         // set sprite texture and size
         self.shipHealthBar.texture = SKTexture(image: spriteImage!)
         self.shipHealthBar.size = barSize
+        
+        if flash && !persistent {
+            shipHealthBar.removeAllActions()
+            shipHealthBar.isHidden = false
+            shipHealthBar.alpha = 1.0
+            shipHealthBar.run(SKAction.wait(forDuration: 1.4)) {
+                self.shipHealthBar.run(SKAction.fadeOut(withDuration: 0.4)) {
+                    self.shipHealthBar.isHidden = true
+                    self.shipHealthBar.alpha = 0
+                }
+            }
+        }
     }
     
 }

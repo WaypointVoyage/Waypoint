@@ -19,7 +19,7 @@ class WPTBoulderNode: SKNode {
     
     override init() {
         
-        self.health = WPTHealthNode(maxHealth: WPTBoulderNode.maxBoulderHealth)
+        self.health = WPTHealthNode(maxHealth: WPTBoulderNode.maxBoulderHealth, persistent: false)
         
         super.init()
         
