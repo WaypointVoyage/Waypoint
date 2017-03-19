@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTPortDockingHandler: SKNode {
     public static let nodeName: String = "_PORT_DOCKING_HANDLER"
-    private static let portDelay = SKAction.wait(forDuration: 3)
+    private static let portDelay = SKAction.wait(forDuration: 5)
     
     weak var actor: WPTLevelActorNode!
     

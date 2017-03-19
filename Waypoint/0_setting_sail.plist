@@ -520,6 +520,8 @@
 		<key>whirlpools</key>
 		<integer>2</integer>
 	</dict>
+	<key>hasTutorial</key>
+	<true/>
 	<key>name</key>
 	<string>Setting Sail</string>
 	<key>port</key>
@@ -567,6 +569,19 @@
 		<key>y</key>
 		<integer>1080</integer>
 	</dict>
+	<key>spawnVolumes</key>
+	<array>
+		<dict>
+			<key>maxx</key>
+			<integer>1</integer>
+			<key>maxy</key>
+			<integer>1</integer>
+			<key>minx</key>
+			<integer>0</integer>
+			<key>miny</key>
+			<integer>0</integer>
+		</dict>
+	</array>
 	<key>terrain</key>
 	<dict>
 		<key>bodies</key>
@@ -947,5 +962,29 @@
 		<key>waterImage</key>
 		<string>setting_sail_water</string>
 	</dict>
+	<key>waves</key>
+	<array>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Catapult</key>
+				<integer>2</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Pirate</key>
+				<integer>2</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Marooner</key>
+				<integer>1</integer>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

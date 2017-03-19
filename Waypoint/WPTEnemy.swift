@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class WPTEnemy: WPTActor {
+class WPTEnemy: WPTActor, Hashable, Equatable {
     let brainTemplate: WPTBrainTemplate
     let name: String
     let terrainType: WPTEnemyTerrainType
@@ -19,6 +19,10 @@ class WPTEnemy: WPTActor {
     let awareness: CGFloat        // outer radius of obliviousness (>= 0)
     let caution: CGFloat          // radius of safety (>= 0)
     let triggerHappiness: CGFloat // modifies fire rate
+    
+    var hashValue: Int {
+        return name.hashValue
+    }
     
     init(_ enemyDict: [String:AnyObject]) {
         name = enemyDict["name"] as! String
@@ -39,6 +43,10 @@ class WPTEnemy: WPTActor {
         for behavior in [awareness, aggression, haste, caution] {
             assert(0 <= behavior)
         }
+    }
+    
+    static func ==(lhs: WPTEnemy, rhs: WPTEnemy) -> Bool {
+        return lhs.name == rhs.name
     }
 }
 

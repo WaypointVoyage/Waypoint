@@ -58,11 +58,11 @@ class WPTBrain: GKStateMachine {
         }
         super.init(states: states)
         
-        print("name: \(template.name)")
-        print(" nothing - \(template.brainStates[WPTBrainStateType.NOTHING])")
-        print(" offense - \(template.brainStates[WPTBrainStateType.OFFENSE])")
-        print(" defense - \(template.brainStates[WPTBrainStateType.DEFENSE])")
-        print(" flee    - \(template.brainStates[WPTBrainStateType.FLEE])")
+//        print("name: \(template.name)")
+//        print(" nothing - \(template.brainStates[WPTBrainStateType.NOTHING])")
+//        print(" offense - \(template.brainStates[WPTBrainStateType.OFFENSE])")
+//        print(" defense - \(template.brainStates[WPTBrainStateType.DEFENSE])")
+//        print(" flee    - \(template.brainStates[WPTBrainStateType.FLEE])")
     }
     
     func setBehavior() {
@@ -88,21 +88,21 @@ class WPTBrain: GKStateMachine {
         
         switch (type) {
         case WPTBrainStateType.NOTHING:
-            print("transitioning to nothing")
+//            print("transitioning to nothing")
             return self.enter(WPTBrainStateFactory.classFromInstance(self.nothingState))
         case WPTBrainStateType.OFFENSE:
             if let target = self.offenseState {
-                print("transitioning to offense")
+//                print("transitioning to offense")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target))
             } else { return false; }
         case WPTBrainStateType.DEFENSE:
             if let target = self.defenseState {
-                print("transitioning to defense")
+//                print("transitioning to defense")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
         case WPTBrainStateType.FLEE:
             if let target = self.fleeState {
-                print("transitioning to flee")
+//                print("transitioning to flee")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
         }
@@ -110,7 +110,7 @@ class WPTBrain: GKStateMachine {
     
     override func update(deltaTime sec: TimeInterval) {
         if let curState = self.currentState {
-            curState.update(deltaTime: sec)
+            curState.update(deltaTime: sec) // TODO: call as super instead? 
         }
         
         let healthLow = enemy.currentHealth < healthCutoff * enemy.enemy.ship.health

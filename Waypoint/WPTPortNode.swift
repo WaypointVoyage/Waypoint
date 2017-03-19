@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTPortNode: SKNode {
     let port: WPTPort
-    let active: Bool
+    var active: Bool
     
     let sprite = SKSpriteNode(imageNamed: "port")
     

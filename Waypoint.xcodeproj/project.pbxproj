@@ -51,6 +51,7 @@
 		7E16B87F1E2D580600933E24 /* WaypointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B87E1E2D580600933E24 /* WaypointUITests.swift */; };
 		7E3EF6E81E7522E50036A895 /* the_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E3EF6E71E7522E50036A895 /* the_ships.plist */; };
 		7E3EF6EA1E7532EB0036A895 /* WPTBrainRadiiNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3EF6E91E7532EB0036A895 /* WPTBrainRadiiNode.swift */; };
+		7E4182C91E7ECA7100FCEBD8 /* WPTPuppetMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4182C81E7ECA7100FCEBD8 /* WPTPuppetMaster.swift */; };
 		7E4215F81E5A6916004ADBD7 /* WPTCannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215F71E5A6916004ADBD7 /* WPTCannon.swift */; };
 		7E4215FC1E5A6F23004ADBD7 /* WPTCannonBallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */; };
 		7E4215FE1E5A716E004ADBD7 /* WPTCannonBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215FD1E5A716E004ADBD7 /* WPTCannonBall.swift */; };
@@ -64,6 +65,11 @@
 		7E575DD81E69C3C7004D92BF /* WPTItemCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E575DD71E69C3C7004D92BF /* WPTItemCatalog.swift */; };
 		7E5A6BEE1E5A0E070067EAF3 /* WPTCannonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */; };
 		7E5A6BF01E5A0E200067EAF3 /* WPTCannonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A6BEF1E5A0E200067EAF3 /* WPTCannonSet.swift */; };
+		7E5DB72A1E7ED233000B1307 /* WPTPlayerPrepPMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DB7291E7ED233000B1307 /* WPTPlayerPrepPMS.swift */; };
+		7E5DB72C1E7ED271000B1307 /* WPTWaveCreationPMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DB72B1E7ED271000B1307 /* WPTWaveCreationPMS.swift */; };
+		7E5DB72E1E7ED2A1000B1307 /* WPTWaveExecutionPMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DB72D1E7ED2A1000B1307 /* WPTWaveExecutionPMS.swift */; };
+		7E5DB7301E7ED324000B1307 /* WPTLevelBeatenPMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DB72F1E7ED324000B1307 /* WPTLevelBeatenPMS.swift */; };
+		7E5DB7321E7EE2AA000B1307 /* WPTLevelWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DB7311E7EE2AA000B1307 /* WPTLevelWave.swift */; };
 		7E5F06561E438A2300EAC166 /* WPTScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F06551E438A2300EAC166 /* WPTScene.swift */; };
 		7E6932951E53B48800AF7373 /* WPTLevelPlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */; };
 		7E6932971E53B55C00AF7373 /* WPTLevelActorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */; };
@@ -84,7 +90,7 @@
 		7EC222081E72F54A00E98243 /* WPTPortDockingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */; };
 		7EC2220A1E73037300E98243 /* WPTDoNothingBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222091E73037300E98243 /* WPTDoNothingBS.swift */; };
 		7EC222161E730D1900E98243 /* WPTBrainTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */; };
-		7ECB5A001E74586E00A05563 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ECB59FF1E74586E00A05563 /* 0_setting_sail.plist */; };
+		7EC987991E7F1F2100626C60 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EC987981E7F1F2100626C60 /* 0_setting_sail.plist */; };
 		7ECB5A021E745CA500A05563 /* WPTPursueBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */; };
 		7ECB5A041E745CD000A05563 /* WPTFleeBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5A031E745CD000A05563 /* WPTFleeBS.swift */; };
 		7ED049DD1E6F6A4600CD69E1 /* WPTBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED049DC1E6F6A4600CD69E1 /* WPTBrain.swift */; };
@@ -196,6 +202,7 @@
 		7E16B8801E2D580600933E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E3EF6E71E7522E50036A895 /* the_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_ships.plist; sourceTree = "<group>"; };
 		7E3EF6E91E7532EB0036A895 /* WPTBrainRadiiNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainRadiiNode.swift; sourceTree = "<group>"; };
+		7E4182C81E7ECA7100FCEBD8 /* WPTPuppetMaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPuppetMaster.swift; sourceTree = "<group>"; };
 		7E4215F71E5A6916004ADBD7 /* WPTCannon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannon.swift; sourceTree = "<group>"; };
 		7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonBallNode.swift; sourceTree = "<group>"; };
 		7E4215FD1E5A716E004ADBD7 /* WPTCannonBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonBall.swift; sourceTree = "<group>"; };
@@ -209,6 +216,11 @@
 		7E575DD71E69C3C7004D92BF /* WPTItemCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItemCatalog.swift; sourceTree = "<group>"; };
 		7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonNode.swift; sourceTree = "<group>"; };
 		7E5A6BEF1E5A0E200067EAF3 /* WPTCannonSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonSet.swift; sourceTree = "<group>"; };
+		7E5DB7291E7ED233000B1307 /* WPTPlayerPrepPMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayerPrepPMS.swift; sourceTree = "<group>"; };
+		7E5DB72B1E7ED271000B1307 /* WPTWaveCreationPMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWaveCreationPMS.swift; sourceTree = "<group>"; };
+		7E5DB72D1E7ED2A1000B1307 /* WPTWaveExecutionPMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWaveExecutionPMS.swift; sourceTree = "<group>"; };
+		7E5DB72F1E7ED324000B1307 /* WPTLevelBeatenPMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelBeatenPMS.swift; sourceTree = "<group>"; };
+		7E5DB7311E7EE2AA000B1307 /* WPTLevelWave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelWave.swift; sourceTree = "<group>"; };
 		7E5F06551E438A2300EAC166 /* WPTScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTScene.swift; sourceTree = "<group>"; };
 		7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelPlayerNode.swift; sourceTree = "<group>"; };
 		7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelActorNode.swift; sourceTree = "<group>"; };
@@ -229,7 +241,7 @@
 		7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPortDockingHandler.swift; sourceTree = "<group>"; };
 		7EC222091E73037300E98243 /* WPTDoNothingBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDoNothingBS.swift; sourceTree = "<group>"; };
 		7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainTemplate.swift; sourceTree = "<group>"; };
-		7ECB59FF1E74586E00A05563 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
+		7EC987981E7F1F2100626C60 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
 		7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPursueBS.swift; sourceTree = "<group>"; };
 		7ECB5A031E745CD000A05563 /* WPTFleeBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTFleeBS.swift; sourceTree = "<group>"; };
 		7ED049DC1E6F6A4600CD69E1 /* WPTBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrain.swift; sourceTree = "<group>"; };
@@ -298,13 +310,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D1704351E6F66EB0000827E /* Obstacles */ = {
+		2D1704351E6F66EB0000827E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */,
+				2D1704481E70D23F0000827E /* WPTItemNode.swift */,
+				7EDAC9B51E71FAA9002CEC0F /* WPTDockNode.swift */,
+				7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */,
 				2D1704361E6F66FD0000827E /* WPTWhirlpoolNode.swift */,
 				2D1704381E6F670A0000827E /* WPTBoulderNode.swift */,
 			);
-			name = Obstacles;
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		2D8E804C1E3ADBAF00CB2E0B /* Models */ = {
@@ -455,9 +471,22 @@
 			path = WaypointUITests;
 			sourceTree = "<group>";
 		};
+		7E4182C71E7EC9C900FCEBD8 /* PuppetMaster */ = {
+			isa = PBXGroup;
+			children = (
+				7E4182C81E7ECA7100FCEBD8 /* WPTPuppetMaster.swift */,
+				7E5DB7291E7ED233000B1307 /* WPTPlayerPrepPMS.swift */,
+				7E5DB72B1E7ED271000B1307 /* WPTWaveCreationPMS.swift */,
+				7E5DB72D1E7ED2A1000B1307 /* WPTWaveExecutionPMS.swift */,
+				7E5DB72F1E7ED324000B1307 /* WPTLevelBeatenPMS.swift */,
+			);
+			name = PuppetMaster;
+			sourceTree = "<group>";
+		};
 		7E4216021E5B56A8004ADBD7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7E4182C71E7EC9C900FCEBD8 /* PuppetMaster */,
 				7EDAC9B31E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift */,
 				7E4C88C81E72ED0600760EDA /* Catalogs */,
 				7ED049DB1E6F6A0D00CD69E1 /* Brains */,
@@ -501,6 +530,7 @@
 			children = (
 				7EE7981C1E5234A3006D683B /* WPTLevel.swift */,
 				7E575DD51E69C1D2004D92BF /* WPTPort.swift */,
+				7E5DB7311E7EE2AA000B1307 /* WPTLevelWave.swift */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -519,6 +549,8 @@
 		7E5A6BEB1E5A0DA90067EAF3 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
+				7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */,
+				7E52C8591E61E72F004FDB27 /* WPTPlayerMovementNode.swift */,
 				7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */,
 				7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */,
 				7ED049DE1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift */,
@@ -532,17 +564,10 @@
 			isa = PBXGroup;
 			children = (
 				7EC222041E72F48500E98243 /* Components */,
-				2D1704351E6F66EB0000827E /* Obstacles */,
+				2D1704351E6F66EB0000827E /* Entities */,
 				7E5A6BEB1E5A0DA90067EAF3 /* Actors */,
 				7E6932981E53DFFB00AF7373 /* HUD */,
 				7E5242871E56331D00120002 /* WPTTerrainNode.swift */,
-				7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */,
-				7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */,
-				7E52C8591E61E72F004FDB27 /* WPTPlayerMovementNode.swift */,
-				7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */,
-				2D17043A1E6FF3CD0000827E /* WPTHealthNode.swift */,
-				2D1704481E70D23F0000827E /* WPTItemNode.swift */,
-				7EDAC9B51E71FAA9002CEC0F /* WPTDockNode.swift */,
 			);
 			name = Level;
 			sourceTree = "<group>";
@@ -550,6 +575,7 @@
 		7E6932981E53DFFB00AF7373 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				2D17043A1E6FF3CD0000827E /* WPTHealthNode.swift */,
 				7E6932991E53E08100AF7373 /* WPTHudNode.swift */,
 				7E69329B1E53E0B200AF7373 /* WPTHudTopNode.swift */,
 				7E69329D1E53E0D500AF7373 /* WPTHudBottomNode.swift */,
@@ -577,7 +603,7 @@
 		7E6932A41E54117900AF7373 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				7ECB59FF1E74586E00A05563 /* 0_setting_sail.plist */,
+				7EC987981E7F1F2100626C60 /* 0_setting_sail.plist */,
 				7EE8A9141E6FDD7100C119B9 /* 1_sea_legs.plist */,
 				7EE8A9151E6FDD7100C119B9 /* 2_pegleg_plunder.plist */,
 				7EE8A9161E6FDD7100C119B9 /* 3_cutlass_careen.plist */,
@@ -802,7 +828,7 @@
 				2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */,
 				7EE8A9231E6FDD7100C119B9 /* 4_fire_in_the_hole.plist in Resources */,
 				7EE8A92A1E6FDD7100C119B9 /* 11_shiver_me_timbers.plist in Resources */,
-				7ECB5A001E74586E00A05563 /* 0_setting_sail.plist in Resources */,
+				7EC987991E7F1F2100626C60 /* 0_setting_sail.plist in Resources */,
 				7ED963391E7DF18000B58C1C /* enemies.plist in Resources */,
 				7ED9632F1E7DD8E700B58C1C /* stat_modifier_items.plist in Resources */,
 				7EE8A9241E6FDD7100C119B9 /* 5_dead_men_tell_no_tales.plist in Resources */,
@@ -857,6 +883,8 @@
 				7EBF5E6D1E4E218200F81982 /* WPTStatBarNode.swift in Sources */,
 				7ED3775C1E4ABE8800DB1EA2 /* WPTTrailMap.swift in Sources */,
 				7EC222061E72F49D00E98243 /* WPTWhirlpoolHandler.swift in Sources */,
+				7E5DB7301E7ED324000B1307 /* WPTLevelBeatenPMS.swift in Sources */,
+				7E5DB72E1E7ED2A1000B1307 /* WPTWaveExecutionPMS.swift in Sources */,
 				7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */,
 				7E6932951E53B48800AF7373 /* WPTLevelPlayerNode.swift in Sources */,
 				7ED739031E44F3B600122903 /* WPTActor.swift in Sources */,
@@ -876,6 +904,7 @@
 				2D1704391E6F670A0000827E /* WPTBoulderNode.swift in Sources */,
 				7E69329A1E53E08100AF7373 /* WPTHudNode.swift in Sources */,
 				7E5F06561E438A2300EAC166 /* WPTScene.swift in Sources */,
+				7E5DB72A1E7ED233000B1307 /* WPTPlayerPrepPMS.swift in Sources */,
 				7E0C78951E73D1DD006C79C3 /* WPTCircle.swift in Sources */,
 				7ECB5A021E745CA500A05563 /* WPTPursueBS.swift in Sources */,
 				2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */,
@@ -893,6 +922,7 @@
 				7EDAC9B61E71FAA9002CEC0F /* WPTDockNode.swift in Sources */,
 				7EC2220A1E73037300E98243 /* WPTDoNothingBS.swift in Sources */,
 				7ED049DD1E6F6A4600CD69E1 /* WPTBrain.swift in Sources */,
+				7E4182C91E7ECA7100FCEBD8 /* WPTPuppetMaster.swift in Sources */,
 				7E13F6341E48F8B900B5D2FD /* WPTPlayer.swift in Sources */,
 				7E13F6321E48F53200B5D2FD /* WPTLevelScene.swift in Sources */,
 				7E5242881E56331D00120002 /* WPTTerrainNode.swift in Sources */,
@@ -904,6 +934,8 @@
 				7E4216041E5B56BF004ADBD7 /* WPTFireRateManager.swift in Sources */,
 				7E575DD81E69C3C7004D92BF /* WPTItemCatalog.swift in Sources */,
 				7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */,
+				7E5DB72C1E7ED271000B1307 /* WPTWaveCreationPMS.swift in Sources */,
+				7E5DB7321E7EE2AA000B1307 /* WPTLevelWave.swift in Sources */,
 				7E4215F81E5A6916004ADBD7 /* WPTCannon.swift in Sources */,
 				7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */,
 				7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */,

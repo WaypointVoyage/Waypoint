@@ -95,19 +95,30 @@ class WPTTerrainNode: SKNode {
         }
     }
     
-    public func randomPoint(borderWidth: CGFloat, onLand: Bool? = nil) -> CGPoint {
+    public func randomPoint(borderWidth: CGFloat, onLand: Bool? = nil, inCameraView: Bool? = nil) -> CGPoint {
         for _ in 0..<2000 {
             var rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
             let xPos = borderWidth + rand * CGFloat(self.size.width - 2 * borderWidth)
             rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
             let yPos = borderWidth + rand * CGFloat(self.size.height - 2 * borderWidth)
             let point = CGPoint(x: xPos, y: yPos)
+            
+            // test restrictions
+            var restrictionsPassed = true
             if let onLand = onLand {
                 let onLandTest = pointOnLand(terrainPoint: point)
-                if onLand == onLandTest {
-                    return point
+                if onLandTest != onLand {
+                    restrictionsPassed = false
                 }
-            } else {
+            }
+            if let inCameraView = inCameraView {
+                let inCameraViewTest = pointInCameraView(terrainPoint: point)
+                if inCameraViewTest != inCameraView {
+                    restrictionsPassed = false
+                }
+            }
+            
+            if restrictionsPassed {
                 return point
             }
         }
@@ -127,6 +138,20 @@ class WPTTerrainNode: SKNode {
     public func pointOnLand(scenePoint p: CGPoint) -> Bool {
         let point = self.convert(p, from: self.scene!)
         return pointOnLand(terrainPoint: point)
+    }
+    
+    public func pointInCameraView(terrainPoint p: CGPoint) -> Bool {
+        let camPos = (self.scene as! WPTLevelScene).cam.position
+        let minx = camPos.x - WPTValues.screenSize.width;
+        let maxx = camPos.x + WPTValues.screenSize.width;
+        let miny = camPos.y - WPTValues.screenSize.height;
+        let maxy = camPos.y + WPTValues.screenSize.height;
+        return minx <= p.x && p.x <= maxx && miny <= p.y && p.y <= maxy
+    }
+    
+    public func pointInCameraView(scenePoint p: CGPoint) -> Bool {
+        let point = self.convert(p, from: self.scene!)
+        return pointInCameraView(terrainPoint: point)
     }
     
     required init?(coder aDecoder: NSCoder) {
