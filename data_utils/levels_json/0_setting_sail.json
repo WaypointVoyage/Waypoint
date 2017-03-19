@@ -1,5 +1,6 @@
 {
    "name": "Setting Sail",
+   "hasTutorial": true,
    "size": {
       "width": 2160,
       "height": 2160
@@ -27,6 +28,31 @@
          }
       ]
    },
+   "spawnVolumes": [
+      {
+         "minx": 0,
+         "maxx": 1,
+         "miny": 0,
+         "maxy": 1,
+      },
+   ],
+   "waves": [
+      {
+         "enemies": {
+            "Catapult": 2,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 2,
+         },
+      },
+      {
+         "enemies": {
+            "Marooner": 1,
+         },
+      },
+   ],
    "entities": {
       "whirlpools": 2,
       "whirlpoolLocations": [
@@ -158,7 +184,7 @@
          [484, 52],
          [324, 49],
       ],
-      "boulders": 10, 
+      "boulders": 10,
    },
    "terrain": {
       "image": "setting_sail_terrain",

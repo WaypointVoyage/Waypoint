@@ -48,7 +48,6 @@ class WPTLevelScene: WPTScene {
         
         self.listener = self.player
         self.scene?.backgroundColor = UIColor.black
-        self.puppetMaster!.start(levelBeaten: player.progress.completedLevels.contains(level.name))
         
         // setup the physics behavior
         self.physicsWorld.gravity = CGVector.zero
@@ -72,20 +71,23 @@ class WPTLevelScene: WPTScene {
         self.cam.setScale(1.0 / WPTValues.levelSceneScale)
         cam.addChild(self.hud)
         
-        // setup the player
-        self.player.name = WPTLevelScene.playerNameTag
-        self.player.position = self.terrain.spawnPoint
-        self.terrain.addChild(self.player)
-        
         // setup the port
         if let port = self.port {
             self.addChild(port)
         }
         
+        // setup the player
+        self.player.name = WPTLevelScene.playerNameTag
+        self.player.position = self.terrain.spawnPoint
+        self.terrain.addChild(self.player)
+        
         // add everything to the scene
         self.addChild(projectiles)
         self.addChild(items)
         self.addChild(self.terrain)
+        
+        // setup the puppet master
+        self.puppetMaster!.setStage(levelBeaten: player.player.progress.completedLevels.contains(level.name))
         
         // breif flash of level name
         let levelName = WPTLabelNode(text: self.level.name, fontSize: WPTValues.fontSizeLarge)
@@ -99,43 +101,6 @@ class WPTLevelScene: WPTScene {
             levelName.removeFromParent()
         })
     }
-    
-//    private func placeBoulder(_ boulder: WPTBoulderNode) {
-//        boulder.position = self.terrain.randomPoint(borderWidth: WPTBoulderNode.boulderRadius)
-//        
-//        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-//        boulder.boulderImage.zRotation = CGFloat(M_PI)/rand
-//        boulder.crackedImage.zRotation = CGFloat(M_PI)/rand
-//    }
-//    
-//    private func placeWhirlpool(_ whirlpool: WPTWhirlpoolNode) {
-//        let whirlpools = self.level.whirlpoolLocations
-//        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-//        let index = CGFloat(whirlpools.count - 1) * rand
-//        whirlpool.position = CGPoint(x: whirlpools[Int(index)].x * 2, y: whirlpools[Int(index)].y * 2)
-//    }
-    
-//    private func loadLevel() {
-    
-//        // place whirlpools
-//        for _ in 0..<self.level.whirlpools {
-//            let whirlpool = WPTWhirlpoolNode()
-//            placeWhirlpool(whirlpool)
-//            self.terrain.addChild(whirlpool)
-//        }
-//        
-//        // place boulders
-//        for _ in 0..<self.level.boulders {
-//            let boulder = WPTBoulderNode()
-//            placeBoulder(boulder)
-//            self.terrain.addChild(boulder)
-//        }
-        
-        
-        // load enemies
-//        loadEnemies()
-        
-//    }
     
     private var lastCurrentTime: TimeInterval? = nil
     override func update(_ currentTime: TimeInterval) {

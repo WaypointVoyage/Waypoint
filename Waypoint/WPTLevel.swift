@@ -26,6 +26,11 @@ class WPTLevel {
     var whirlpoolLocations = [CGPoint]()
     let boulders: Int
     
+    let hasTutorial: Bool
+    
+    // spawn volumes
+    public private(set) var spawnVolumes = [CGRect]()
+    
     // waves
     public private(set) var waves = [WPTLevelWave]()
     
@@ -34,6 +39,7 @@ class WPTLevel {
         let levelDict = NSDictionary(contentsOfFile: plistPath) as! [String: AnyObject]
         
         self.name = levelDict["name"] as! String
+        self.hasTutorial = (levelDict["hasTutorial"] as? Bool) == true
         
         let sizeDict = levelDict["size"] as! [String: CGFloat]
         self.size = CGSize(width: sizeDict["width"]!, height: sizeDict["height"]!)
@@ -71,6 +77,19 @@ class WPTLevel {
             self.boulders = 0
         }
         
+        // spawn volumes
+        if let volumesArr = levelDict["spawnVolumes"] as? [[String:CGFloat]] {
+            for vol in volumesArr {
+                let minx = vol["minx"]!
+                let maxx = vol["maxx"]!
+                let miny = vol["miny"]!
+                let maxy = vol["maxy"]!
+                assert(maxx > minx && maxy > miny, "Invalid spawn volume")
+                let rect = CGRect(x: minx, y: miny, width: maxx - minx, height: maxy - miny)
+                self.spawnVolumes.append(rect)
+            }
+        }
+        
         // waves
         if let allWaveDicts = levelDict["waves"] as? [[String:AnyObject]] {
             for waveDict in allWaveDicts {
@@ -80,5 +99,11 @@ class WPTLevel {
                 self.waves[i].next = self.waves[i + 1]
             }
         }
+    }
+    
+    func randomSpawnVolume() -> CGRect {
+        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+        let index = CGFloat(spawnVolumes.count - 1) * rand
+        return self.spawnVolumes[Int(index)]
     }
 }

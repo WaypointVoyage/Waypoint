@@ -54,8 +54,8 @@ class WPTValues {
     static let itemCbm: UInt32 = 1 << 6
     static let dockCbm: UInt32 = 1 << 7
     
-    // game stats
-    static let maxHealth: CGFloat = 100
+    // level bahaviors
+    static let playerPrepTime: TimeInterval = 4
     
     static func initValues(deviceScreenSize: CGSize) {
         let ar = deviceScreenSize.width / deviceScreenSize.height
