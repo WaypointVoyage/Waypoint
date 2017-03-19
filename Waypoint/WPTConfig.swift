@@ -14,7 +14,7 @@ class WPTConfig {
     var playSoundEffects = true
     var testing = true
     var allUnlocked = true
-    var showBrainRadii = false
+    var showBrainRadii = true
     var showPhysics = false
     
     // singleton instance

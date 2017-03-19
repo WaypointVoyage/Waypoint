@@ -103,6 +103,13 @@ class WPTLevelScene: WPTScene {
     private func loadEnemies() {
         /* TEMPORARY */
         
+        // marooner
+        let enemy = WPTEnemyCatalog.enemiesByName["Marooner"]!
+        let marooner = WPTLevelEnemyNode(enemy: enemy, player: self.player)
+        marooner.position = terrain.randomPoint(borderWidth: marooner.sprite.size.width / 2.0, onLand: false)
+        self.enemies.append(marooner)
+        self.terrain.addEnemy(marooner)
+        
         // catapult
 //        var enemy = WPTEnemyCatalog.enemiesByName["Catapult"]!
 //        let catapult = WPTLevelEnemyNode(enemy: enemy, player: self.player)
@@ -129,10 +136,10 @@ class WPTLevelScene: WPTScene {
 //        }
         
         // cannon
-        let cannonItem = WPTItemCatalog.itemsByName["Cannon"]!
-        let cannonNode = WPTItemNode(cannonItem)
-        cannonNode.position = terrain.randomPoint(borderWidth: 0, onLand: false)
-        self.items.addChild(cannonNode)
+//        let cannonItem = WPTItemCatalog.itemsByName["Cannon"]!
+//        let cannonNode = WPTItemNode(cannonItem)
+//        cannonNode.position = terrain.randomPoint(borderWidth: 0, onLand: false)
+//        self.items.addChild(cannonNode)
     }
     
     private func loadLevel() {

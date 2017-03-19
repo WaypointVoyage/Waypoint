@@ -13,7 +13,7 @@ class WPTPursueBS: WPTBrainState {
     static let type: WPTBrainStateType = WPTBrainStateType.OFFENSE
     
     init() {
-        super.init(name: String(describing: WPTDoNothingBS.self), type: WPTPursueBS.type)
+        super.init(name: String(describing: WPTPursueBS.self), type: WPTPursueBS.type)
     }
     
     override func update(deltaTime seconds: TimeInterval) {

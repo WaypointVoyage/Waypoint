@@ -24,7 +24,14 @@ class WPTBrainStateFactory {
         case String(describing: WPTFleeBS.self):
             return WPTFleeBS()
             
+        case String(describing: WPTFleeOffenseBS.self):
+            return WPTFleeOffenseBS()
+            
+        case String(describing: WPTWanderBS.self):
+            return WPTWanderBS()
+            
         default:
+            print("WARNING: unknown brain state: \(state), Perhaps it was just added? If so, create a new WPTBrainStateFactory.get case!!!")
             return nil
         }
     }

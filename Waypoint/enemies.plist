@@ -46,5 +46,27 @@
 		<key>triggerHappiness</key>
 		<real>0.5</real>
 	</dict>
+	<dict>
+		<key>aggression</key>
+		<real>0.59999999999999998</real>
+		<key>awareness</key>
+		<real>1.2</real>
+		<key>brain</key>
+		<string>marooner_brain</string>
+		<key>caution</key>
+		<real>1.2</real>
+		<key>haste</key>
+		<real>0.40000000000000002</real>
+		<key>items</key>
+		<array/>
+		<key>name</key>
+		<string>Marooner</string>
+		<key>ship</key>
+		<string>Waypoint Ship</string>
+		<key>terrainType</key>
+		<string>_SEA</string>
+		<key>triggerHappiness</key>
+		<real>0.5</real>
+	</dict>
 </array>
 </plist>

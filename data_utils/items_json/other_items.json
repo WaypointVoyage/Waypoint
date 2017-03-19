@@ -1,7 +1,7 @@
 [
    {
       "name": "Cannon",
-      "imageName": "cannon",
+      "imageName": "cannon_item",
       "tier": "OTHER",
       "multiplicity": 0,
       "value": 100,

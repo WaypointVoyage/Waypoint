@@ -13,7 +13,7 @@ class WPTFleeBS: WPTBrainState {
     static let type: WPTBrainStateType = WPTBrainStateType.FLEE
     
     init() {
-        super.init(name: String(describing: WPTDoNothingBS.self), type: WPTFleeBS.type)
+        super.init(name: String(describing: WPTFleeBS.self), type: WPTFleeBS.type)
     }
     
     override func update(deltaTime seconds: TimeInterval) {

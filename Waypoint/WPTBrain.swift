@@ -57,6 +57,12 @@ class WPTBrain: GKStateMachine {
             }
         }
         super.init(states: states)
+        
+        print("name: \(template.name)")
+        print(" nothing - \(template.brainStates[WPTBrainStateType.NOTHING])")
+        print(" offense - \(template.brainStates[WPTBrainStateType.OFFENSE])")
+        print(" defense - \(template.brainStates[WPTBrainStateType.DEFENSE])")
+        print(" flee    - \(template.brainStates[WPTBrainStateType.FLEE])")
     }
     
     func setBehavior() {
@@ -82,21 +88,21 @@ class WPTBrain: GKStateMachine {
         
         switch (type) {
         case WPTBrainStateType.NOTHING:
-//            print("transitioning to nothing")
+            print("transitioning to nothing")
             return self.enter(WPTBrainStateFactory.classFromInstance(self.nothingState))
         case WPTBrainStateType.OFFENSE:
             if let target = self.offenseState {
-//                print("transitioning to offense")
+                print("transitioning to offense")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target))
             } else { return false; }
         case WPTBrainStateType.DEFENSE:
             if let target = self.defenseState {
-//                print("transitioning to defense")
+                print("transitioning to defense")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
         case WPTBrainStateType.FLEE:
             if let target = self.fleeState {
-//                print("transitioning to flee")
+                print("transitioning to flee")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
         }
@@ -135,7 +141,8 @@ class WPTBrain: GKStateMachine {
 //        print("current state: \(self.currentBrainState.type)")
     }
     
-    func updateNothing(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
+    private func updateNothing(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
+        
         if healthLow && dist < outerRadiusOfObliviousness {
             if transition(WPTBrainStateType.FLEE) { return }
         }
@@ -144,7 +151,7 @@ class WPTBrain: GKStateMachine {
         }
     }
     
-    func updateOffense(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
+    private func updateOffense(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
         if healthLow && dist < radiusOfEngagement {
             if transition(WPTBrainStateType.DEFENSE) { return }
         }
@@ -156,7 +163,7 @@ class WPTBrain: GKStateMachine {
         }
     }
     
-    func updateDefense(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
+    private func updateDefense(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
         if !healthLow && dist < innerRadiusOfObliviousness {
             if transition(WPTBrainStateType.OFFENSE) { return }
         }
@@ -165,7 +172,7 @@ class WPTBrain: GKStateMachine {
         }
     }
     
-    func updateFlee(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
+    private func updateFlee(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
         if !healthLow && dist < outerRadiusOfObliviousness {
             if transition(WPTBrainStateType.OFFENSE) { return }
         }
