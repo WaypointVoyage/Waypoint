@@ -11,10 +11,19 @@
    {
       "name": "pirate_brain",
       "brainStates": {
-         "nothing": "WPTDoNothingBS",
+         "nothing": "WPTWanderBS",
          "offense": "WPTPursueBS",
          "defense": "",
          "flee": "WPTFleeBS",
       },
    },
+   {
+      "name": "marooner_brain",
+      "brainStates": {
+         "nothing": "WPTWanderBS",
+         "offense": "WPTFleeOffenseBS",
+         "defense": "",
+         "flee": "WPTFleeBS",
+      },
+   }
 ]

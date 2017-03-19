@@ -22,5 +22,17 @@
       "caution": 1,
       "triggerHappiness": 0.5,
       "items": [],
+   },
+   {
+      "name": "Marooner",
+      "ship": "Waypoint Ship",
+      "brain": "marooner_brain",
+      "terrainType": "_SEA",
+      "haste": 0.4,
+      "aggression": 0.6,
+      "awareness": 1.2,
+      "caution": 1.2,
+      "triggerHappiness": 0.5,
+      "items": [],
    }
 ]

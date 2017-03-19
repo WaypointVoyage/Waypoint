@@ -25,12 +25,27 @@
 			<key>flee</key>
 			<string>WPTFleeBS</string>
 			<key>nothing</key>
-			<string>WPTDoNothingBS</string>
+			<string>WPTWanderBS</string>
 			<key>offense</key>
 			<string>WPTPursueBS</string>
 		</dict>
 		<key>name</key>
 		<string>pirate_brain</string>
+	</dict>
+	<dict>
+		<key>brainStates</key>
+		<dict>
+			<key>defense</key>
+			<string></string>
+			<key>flee</key>
+			<string>WPTFleeBS</string>
+			<key>nothing</key>
+			<string>WPTWanderBS</string>
+			<key>offense</key>
+			<string>WPTFleeOffenseBS</string>
+		</dict>
+		<key>name</key>
+		<string>marooner_brain</string>
 	</dict>
 </array>
 </plist>

@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>imageName</key>
-		<string>cannon</string>
+		<string>cannon_item</string>
 		<key>multiplicity</key>
 		<integer>0</integer>
 		<key>name</key>
