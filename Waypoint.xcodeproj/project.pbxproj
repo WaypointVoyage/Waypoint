@@ -296,13 +296,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D1704351E6F66EB0000827E /* Obstacles */ = {
+		2D1704351E6F66EB0000827E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */,
+				2D1704481E70D23F0000827E /* WPTItemNode.swift */,
+				7EDAC9B51E71FAA9002CEC0F /* WPTDockNode.swift */,
+				7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */,
 				2D1704361E6F66FD0000827E /* WPTWhirlpoolNode.swift */,
 				2D1704381E6F670A0000827E /* WPTBoulderNode.swift */,
 			);
-			name = Obstacles;
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		2D8E804C1E3ADBAF00CB2E0B /* Models */ = {
@@ -517,6 +521,8 @@
 		7E5A6BEB1E5A0DA90067EAF3 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
+				7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */,
+				7E52C8591E61E72F004FDB27 /* WPTPlayerMovementNode.swift */,
 				7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */,
 				7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */,
 				7ED049DE1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift */,
@@ -530,17 +536,10 @@
 			isa = PBXGroup;
 			children = (
 				7EC222041E72F48500E98243 /* Components */,
-				2D1704351E6F66EB0000827E /* Obstacles */,
+				2D1704351E6F66EB0000827E /* Entities */,
 				7E5A6BEB1E5A0DA90067EAF3 /* Actors */,
 				7E6932981E53DFFB00AF7373 /* HUD */,
 				7E5242871E56331D00120002 /* WPTTerrainNode.swift */,
-				7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */,
-				7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */,
-				7E52C8591E61E72F004FDB27 /* WPTPlayerMovementNode.swift */,
-				7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */,
-				2D17043A1E6FF3CD0000827E /* WPTHealthNode.swift */,
-				2D1704481E70D23F0000827E /* WPTItemNode.swift */,
-				7EDAC9B51E71FAA9002CEC0F /* WPTDockNode.swift */,
 			);
 			name = Level;
 			sourceTree = "<group>";
@@ -548,6 +547,7 @@
 		7E6932981E53DFFB00AF7373 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				2D17043A1E6FF3CD0000827E /* WPTHealthNode.swift */,
 				7E6932991E53E08100AF7373 /* WPTHudNode.swift */,
 				7E69329B1E53E0B200AF7373 /* WPTHudTopNode.swift */,
 				7E69329D1E53E0D500AF7373 /* WPTHudBottomNode.swift */,
