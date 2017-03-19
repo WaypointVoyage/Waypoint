@@ -80,6 +80,7 @@ class WPTHealthNode: SKNode {
         self.shipHealthBar.texture = SKTexture(image: spriteImage!)
         self.shipHealthBar.size = barSize
         
+        // flash the health bar
         if flash && !persistent {
             shipHealthBar.removeAllActions()
             shipHealthBar.isHidden = false

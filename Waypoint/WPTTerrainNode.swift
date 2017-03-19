@@ -42,7 +42,7 @@ class WPTTerrainNode: SKNode {
             asShape.lineWidth = 5
             water = asShape
         }
-        water!.zPosition = -100
+        water!.zPosition = WPTValues.waterZPosition
         self.addChild(water!)
         
         // and the touch handler

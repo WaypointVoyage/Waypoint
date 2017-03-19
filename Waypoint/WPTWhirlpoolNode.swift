@@ -16,6 +16,7 @@ class WPTWhirlpoolNode: SKNode {
     
     override init() {
         super.init()
+        self.zPosition = WPTValues.waterZPosition + 1
         
         whirlImage.anchorPoint = CGPoint(x: CGFloat(0.5), y: CGFloat(0.5))
         whirlImage.size = CGSize(width: WPTWhirlpoolNode.whirlpoolRadius*2, height: WPTWhirlpoolNode.whirlpoolRadius*2)
