@@ -26,6 +26,9 @@ class WPTLevel {
     var whirlpoolLocations = [CGPoint]()
     let boulders: Int
     
+    // waves
+    public private(set) var waves = [WPTLevelWave]()
+    
     init(_ levelFileNamed: String) {
         let plistPath = Bundle.main.path(forResource: levelFileNamed, ofType: "plist")!
         let levelDict = NSDictionary(contentsOfFile: plistPath) as! [String: AnyObject]
@@ -66,6 +69,16 @@ class WPTLevel {
         } else {
             self.whirlpools = 0
             self.boulders = 0
+        }
+        
+        // waves
+        if let allWaveDicts = levelDict["waves"] as? [[String:AnyObject]] {
+            for waveDict in allWaveDicts {
+                self.waves.append(WPTLevelWave(waveDict))
+            }
+            for i in 0..<(self.waves.count-1) {
+                self.waves[i].next = self.waves[i + 1]
+            }
         }
     }
 }

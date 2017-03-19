@@ -110,7 +110,7 @@ class WPTBrain: GKStateMachine {
     
     override func update(deltaTime sec: TimeInterval) {
         if let curState = self.currentState {
-            curState.update(deltaTime: sec)
+            curState.update(deltaTime: sec) // TODO: call as super instead? 
         }
         
         let healthLow = enemy.currentHealth < healthCutoff * enemy.enemy.ship.health
