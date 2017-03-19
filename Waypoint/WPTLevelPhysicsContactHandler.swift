@@ -37,14 +37,6 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
                 cannonBall.removeFromParent()
                 boulder.processHealthStatus(-20.0)
             }
-        } else if collisionBetween(WPTValues.actorCbm, WPTValues.itemCbm) {
-            if let player = firstBody.node as? WPTLevelActorNode,
-                let item = secondBody.node as? WPTItemNode {
-                if (item.tier.rawValue == "CURRENCY") {
-                    player.actor.doubloons += item.value
-                    self.scene.hud.top.updateMoney()
-                    self.scene.hud.destroyMenu.updateMoney()
-                    item.removeFromParent()
         }
             
         else if collisionBetween(WPTValues.actorCbm, WPTValues.projectileCbm) {

@@ -26,6 +26,8 @@ class WPTLevel {
     var whirlpoolLocations = [CGPoint]()
     let boulders: Int
     
+    let hasTutorial: Bool = true
+    
     init(_ levelFileNamed: String) {
         let plistPath = Bundle.main.path(forResource: levelFileNamed, ofType: "plist")!
         let levelDict = NSDictionary(contentsOfFile: plistPath) as! [String: AnyObject]
