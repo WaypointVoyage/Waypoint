@@ -104,22 +104,35 @@ class WPTLevelScene: WPTScene {
         /* TEMPORARY */
         
         // catapult
-        var enemy = WPTEnemyCatalog.enemiesByName["Catapult"]!
-        let catapult = WPTLevelEnemyNode(enemy: enemy, player: self.player)
-        var onLand: Bool? = enemy.terrainType == WPTEnemyTerrainType.sea ? false : enemy.terrainType == WPTEnemyTerrainType.land ? true : nil
-        var point = self.terrain.randomPoint(borderWidth: catapult.sprite.size.width / 2.0, onLand: onLand)
-        catapult.position = point
-        self.enemies.append(catapult)
-        self.terrain.addEnemy(catapult)
+//        var enemy = WPTEnemyCatalog.enemiesByName["Catapult"]!
+//        let catapult = WPTLevelEnemyNode(enemy: enemy, player: self.player)
+//        var onLand: Bool? = enemy.terrainType == WPTEnemyTerrainType.sea ? false : enemy.terrainType == WPTEnemyTerrainType.land ? true : nil
+//        var point = self.terrain.randomPoint(borderWidth: catapult.sprite.size.width / 2.0, onLand: onLand)
+//        catapult.position = point
+//        self.enemies.append(catapult)
+//        self.terrain.addEnemy(catapult)
+//        
+//        // pirate
+//        enemy = WPTEnemyCatalog.enemiesByName["Pirate"]!
+//        let pirate = WPTLevelEnemyNode(enemy: enemy, player: self.player)
+//        onLand = enemy.terrainType == WPTEnemyTerrainType.sea ? false : enemy.terrainType == WPTEnemyTerrainType.land ? true : nil
+//        point = self.terrain.randomPoint(borderWidth: pirate.sprite.size.width / 2.0, onLand: onLand)
+//        pirate.position = point
+//        self.enemies.append(pirate)
+//        self.terrain.addEnemy(pirate)
         
-        // pirate
-        enemy = WPTEnemyCatalog.enemiesByName["Pirate"]!
-        let pirate = WPTLevelEnemyNode(enemy: enemy, player: self.player)
-        onLand = enemy.terrainType == WPTEnemyTerrainType.sea ? false : enemy.terrainType == WPTEnemyTerrainType.land ? true : nil
-        point = self.terrain.randomPoint(borderWidth: pirate.sprite.size.width / 2.0, onLand: onLand)
-        pirate.position = point
-        self.enemies.append(pirate)
-        self.terrain.addEnemy(pirate)
+        // items
+//        for item in WPTItemCatalog.statModifierItems {
+//            let itemNode = WPTItemNode(item)
+//            itemNode.position = terrain.randomPoint(borderWidth: 0, onLand: false)
+//            self.items.addChild(itemNode)
+//        }
+        
+        // cannon
+        let cannonItem = WPTItemCatalog.itemsByName["Cannon"]!
+        let cannonNode = WPTItemNode(cannonItem)
+        cannonNode.position = terrain.randomPoint(borderWidth: 0, onLand: false)
+        self.items.addChild(cannonNode)
     }
     
     private func loadLevel() {

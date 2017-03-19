@@ -1,1 +1,85 @@
-plutil -convert xml1 in.json -o out.plist
+
+crew members. special skills, can make them walk the plank, they take a cut of the money.
+
+---
+
+contact damage
+shotgun shots
+scurvy
+hostages
+ring
+fools gold
+
+---
+
+Oars: more speed
+
+Gun Powder: shot speed
+spiked cannon balls: more damage
+Motor: speed
+Rudder: better turn rate
+sail: speed
+telescope: range
+ship's wheel: steering
+hook hand: reduces fire rate, more damage
+eyepatch: range down, fire rate up
+pile of cannon balls: increased fire rate
+rum: slower, damage up, shot speed up
+scimitar: damage up
+battle drum: bigger, range
+pirate flag: range up
+mermaid figure: fire rate up, turn rate up
+long barrel cannon: shot speed up, range up
+bandana: fire rate
+rope: turn rate up
+barrel: speed down, health up
+blunderbuss: damage up, shot speed up
+life ring: health up
+
+stranded sailor: all stats up
+ship in a bottle: decrease size
+chain: turn rate up
+palm leaves: speed up
+goblet: money up
+grenade: damage up
+inactive grenade: damage down (same sprite as grenade)
+lamp: range up
+rations: health up
+shackles: fire rate down, speed down
+whip: all stats up
+pearl: money up
+driftwood: health down, speed up
+
+crossbow:
+crystal skull:
+wooden teeth:
+sea shell:
+fishnet:
+sword grip:
+fish bones:
+skull:
+crossbones:
+sundial:
+quill:
+message in a bottle:
+fish hook:
+fishing rod:
+harpoon:
+poison vile:
+dagger:
+silverware:
+underwater mines:
+bomb:
+shotgun:
+pistol:
+parrot:
+compass:
+map:
+pirate hat:
+guitar:
+peglep:
+treasure:
+
+Materials:
+   iron: slower, better health
+   titanium: slower, better health

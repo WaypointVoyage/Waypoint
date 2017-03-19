@@ -40,6 +40,10 @@ class WPTValues {
     static let waterLinearDampening: CGFloat = 1.0
     static let waterAngularDampening: CGFloat = 0.9
     
+    // team bitmasks
+    static let playerTbm: UInt32 = 1 << 0
+    static let enemyTbm: UInt32 = 1 << 1
+    
     // collision bitmasks
     static let actorCbm: UInt32 = 1 << 0
     static let projectileCbm: UInt32 = 1 << 1

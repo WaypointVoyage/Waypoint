@@ -49,6 +49,8 @@
 		7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E16B8651E2D580600933E24 /* Assets.xcassets */; };
 		7E16B8741E2D580600933E24 /* WaypointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8731E2D580600933E24 /* WaypointTests.swift */; };
 		7E16B87F1E2D580600933E24 /* WaypointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B87E1E2D580600933E24 /* WaypointUITests.swift */; };
+		7E3EF6E81E7522E50036A895 /* the_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E3EF6E71E7522E50036A895 /* the_ships.plist */; };
+		7E3EF6EA1E7532EB0036A895 /* WPTBrainRadiiNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3EF6E91E7532EB0036A895 /* WPTBrainRadiiNode.swift */; };
 		7E4215F81E5A6916004ADBD7 /* WPTCannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215F71E5A6916004ADBD7 /* WPTCannon.swift */; };
 		7E4215FC1E5A6F23004ADBD7 /* WPTCannonBallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */; };
 		7E4215FE1E5A716E004ADBD7 /* WPTCannonBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215FD1E5A716E004ADBD7 /* WPTCannonBall.swift */; };
@@ -82,7 +84,6 @@
 		7EC222061E72F49D00E98243 /* WPTWhirlpoolHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222051E72F49D00E98243 /* WPTWhirlpoolHandler.swift */; };
 		7EC222081E72F54A00E98243 /* WPTPortDockingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */; };
 		7EC2220A1E73037300E98243 /* WPTDoNothingBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222091E73037300E98243 /* WPTDoNothingBS.swift */; };
-		7EC222121E73058900E98243 /* the_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EC222101E73058900E98243 /* the_ships.plist */; };
 		7EC222161E730D1900E98243 /* WPTBrainTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */; };
 		7ECB5A001E74586E00A05563 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ECB59FF1E74586E00A05563 /* 0_setting_sail.plist */; };
 		7ECB5A021E745CA500A05563 /* WPTPursueBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */; };
@@ -98,11 +99,11 @@
 		7ED739011E44EBF500122903 /* WPTWorldMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED739001E44EBF500122903 /* WPTWorldMapNode.swift */; };
 		7ED739031E44F3B600122903 /* WPTActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED739021E44F3B600122903 /* WPTActor.swift */; };
 		7ED739051E44F9E100122903 /* WPTItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED739041E44F9E100122903 /* WPTItem.swift */; };
+		7ED9632F1E7DD8E700B58C1C /* stat_modifier_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ED9632E1E7DD8E700B58C1C /* stat_modifier_items.plist */; };
 		7EDAC9B41E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAC9B31E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift */; };
 		7EDAC9B61E71FAA9002CEC0F /* WPTDockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAC9B51E71FAA9002CEC0F /* WPTDockNode.swift */; };
 		7EDD063A1E4A1C750054EB7E /* WPTTrailMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */; };
 		7EE57D3C1E69DAF20020693B /* repair_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D391E69DAF20020693B /* repair_items.plist */; };
-		7EE57D3D1E69DAF20020693B /* stat_modifier_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D3A1E69DAF20020693B /* stat_modifier_items.plist */; };
 		7EE57D471E69E19D0020693B /* other_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D461E69E19D0020693B /* other_items.plist */; };
 		7EE57D491E69E20C0020693B /* currency_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D481E69E20C0020693B /* currency_items.plist */; };
 		7EE7981B1E523030006D683B /* WPTPlayerProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */; };
@@ -191,6 +192,8 @@
 		7E16B87A1E2D580600933E24 /* WaypointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaypointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E16B87E1E2D580600933E24 /* WaypointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointUITests.swift; sourceTree = "<group>"; };
 		7E16B8801E2D580600933E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E3EF6E71E7522E50036A895 /* the_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_ships.plist; sourceTree = "<group>"; };
+		7E3EF6E91E7532EB0036A895 /* WPTBrainRadiiNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainRadiiNode.swift; sourceTree = "<group>"; };
 		7E4215F71E5A6916004ADBD7 /* WPTCannon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannon.swift; sourceTree = "<group>"; };
 		7E4215FB1E5A6F23004ADBD7 /* WPTCannonBallNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonBallNode.swift; sourceTree = "<group>"; };
 		7E4215FD1E5A716E004ADBD7 /* WPTCannonBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonBall.swift; sourceTree = "<group>"; };
@@ -224,7 +227,6 @@
 		7EC222051E72F49D00E98243 /* WPTWhirlpoolHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWhirlpoolHandler.swift; sourceTree = "<group>"; };
 		7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPortDockingHandler.swift; sourceTree = "<group>"; };
 		7EC222091E73037300E98243 /* WPTDoNothingBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDoNothingBS.swift; sourceTree = "<group>"; };
-		7EC222101E73058900E98243 /* the_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_ships.plist; sourceTree = "<group>"; };
 		7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainTemplate.swift; sourceTree = "<group>"; };
 		7ECB59FF1E74586E00A05563 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
 		7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPursueBS.swift; sourceTree = "<group>"; };
@@ -240,11 +242,11 @@
 		7ED739001E44EBF500122903 /* WPTWorldMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWorldMapNode.swift; sourceTree = "<group>"; };
 		7ED739021E44F3B600122903 /* WPTActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTActor.swift; sourceTree = "<group>"; };
 		7ED739041E44F9E100122903 /* WPTItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItem.swift; sourceTree = "<group>"; };
+		7ED9632E1E7DD8E700B58C1C /* stat_modifier_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stat_modifier_items.plist; sourceTree = "<group>"; };
 		7EDAC9B31E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelPhysicsContactHandler.swift; sourceTree = "<group>"; };
 		7EDAC9B51E71FAA9002CEC0F /* WPTDockNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDockNode.swift; sourceTree = "<group>"; };
 		7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailMapNode.swift; sourceTree = "<group>"; };
 		7EE57D391E69DAF20020693B /* repair_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = repair_items.plist; sourceTree = "<group>"; };
-		7EE57D3A1E69DAF20020693B /* stat_modifier_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stat_modifier_items.plist; sourceTree = "<group>"; };
 		7EE57D461E69E19D0020693B /* other_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = other_items.plist; sourceTree = "<group>"; };
 		7EE57D481E69E20C0020693B /* currency_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = currency_items.plist; sourceTree = "<group>"; };
 		7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayerProgress.swift; sourceTree = "<group>"; };
@@ -503,7 +505,7 @@
 				7EE57D481E69E20C0020693B /* currency_items.plist */,
 				7EE57D461E69E19D0020693B /* other_items.plist */,
 				7EE57D391E69DAF20020693B /* repair_items.plist */,
-				7EE57D3A1E69DAF20020693B /* stat_modifier_items.plist */,
+				7ED9632E1E7DD8E700B58C1C /* stat_modifier_items.plist */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -515,6 +517,7 @@
 				7E6932961E53B55C00AF7373 /* WPTLevelActorNode.swift */,
 				7ED049DE1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift */,
 				7ED049E01E6F6D4200CD69E1 /* WPTCatapultNode.swift */,
+				7E3EF6E91E7532EB0036A895 /* WPTBrainRadiiNode.swift */,
 			);
 			name = Actors;
 			sourceTree = "<group>";
@@ -629,10 +632,10 @@
 				7E575DD91E69CBA4004D92BF /* Items */,
 				7E6932A41E54117900AF7373 /* Levels */,
 				7E43CC761E54B844009367BC /* trail_map.plist */,
-				7EC222101E73058900E98243 /* the_ships.plist */,
 				7ECB5A051E745E6D00A05563 /* brains.plist */,
 				7E4A23971E74A182006E9E5D /* enemies.plist */,
 				7E0C78921E73C2C2006C79C3 /* the_enemy_ships.plist */,
+				7E3EF6E71E7522E50036A895 /* the_ships.plist */,
 				2D1703D61E590F8C0000827E /* random_ship_names.plist */,
 			);
 			name = Data;
@@ -780,8 +783,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E16B8641E2D580600933E24 /* Main.storyboard in Resources */,
-				7EC222121E73058900E98243 /* the_ships.plist in Resources */,
 				7E0C78931E73C2C2006C79C3 /* the_enemy_ships.plist in Resources */,
+				7E3EF6E81E7522E50036A895 /* the_ships.plist in Resources */,
 				7EE8A9221E6FDD7100C119B9 /* 3_cutlass_careen.plist in Resources */,
 				7EE8A9271E6FDD7100C119B9 /* 8_give_no_quarter.plist in Resources */,
 				7E5242901E56440900120002 /* water.fsh in Resources */,
@@ -793,6 +796,7 @@
 				7EE8A9231E6FDD7100C119B9 /* 4_fire_in_the_hole.plist in Resources */,
 				7EE8A92A1E6FDD7100C119B9 /* 11_shiver_me_timbers.plist in Resources */,
 				7ECB5A001E74586E00A05563 /* 0_setting_sail.plist in Resources */,
+				7ED9632F1E7DD8E700B58C1C /* stat_modifier_items.plist in Resources */,
 				7EE8A9241E6FDD7100C119B9 /* 5_dead_men_tell_no_tales.plist in Resources */,
 				7E4A23981E74A182006E9E5D /* enemies.plist in Resources */,
 				7EE8A9281E6FDD7100C119B9 /* 9_boom_about.plist in Resources */,
@@ -817,7 +821,6 @@
 				7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */,
 				7EE57D491E69E20C0020693B /* currency_items.plist in Resources */,
 				7EE8A9261E6FDD7100C119B9 /* 7_letter_of_marque.plist in Resources */,
-				7EE57D3D1E69DAF20020693B /* stat_modifier_items.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +906,7 @@
 				7E1472821E71A784005E5A4C /* WPTBrainState.swift in Sources */,
 				7ECB5A041E745CD000A05563 /* WPTFleeBS.swift in Sources */,
 				7E5A6BF01E5A0E200067EAF3 /* WPTCannonSet.swift in Sources */,
+				7E3EF6EA1E7532EB0036A895 /* WPTBrainRadiiNode.swift in Sources */,
 				7E4215FC1E5A6F23004ADBD7 /* WPTCannonBallNode.swift in Sources */,
 				2D8E804E1E3ADBC400CB2E0B /* WPTShip.swift in Sources */,
 				7EF76AAA1E52DB7E003BFCD1 /* WPTWorldPlayerNode.swift in Sources */,

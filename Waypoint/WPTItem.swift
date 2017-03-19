@@ -17,6 +17,24 @@ class WPTItem {
     let value: Int          // value in doubloons
     let prevalence: Int     // how common is this item? > 0, relative to other items
     
+    // stat modifiers (added to ship stat scales)
+    public private(set) var speedModifier: CGFloat?
+    public private(set) var damageModifier: CGFloat?
+    public private(set) var healthModifier: CGFloat?
+    public private(set) var rangeModifier: CGFloat?
+    public private(set) var shotSpeedModifier: CGFloat?
+    public private(set) var sizeModifier: CGFloat?
+    public private(set) var turnRateModifier: CGFloat?
+    public private(set) var fireRateModifier: CGFloat?
+    
+    // healing/money modifiers
+    public private(set) var repair: CGFloat?        // on pickup, gain this much health
+    public private(set) var doubloons: Int?     // on pickup, gain this many doubloons
+    
+    // other modifiers
+    public private(set) var cannonBallImage: String? = nil // replaces the current cannon ball image
+    
+    // raw values initialization
     init(name: String, imageName: String, tier: WPTItemTier, multiplicity: Int?, value: Int, prevalence: Int) {
         self.name = name
         self.imageName = imageName
@@ -26,6 +44,7 @@ class WPTItem {
         self.prevalence = prevalence
     }
     
+    // initialize from a dictionary
     init(_ itemDict: [String:AnyObject]) {
         self.name = itemDict["name"] as! String
         self.imageName = itemDict["imageName"] as! String
@@ -33,8 +52,10 @@ class WPTItem {
         self.multiplicity = itemDict["multiplicity"] as? Int
         self.value = itemDict["value"] as! Int
         self.prevalence = itemDict["prevalence"] as! Int
+        self.cannonBallImage = itemDict["cannonBallImage"] as? String
     }
     
+    // initialize as currency
     init(asCurrency itemDict: [String:AnyObject]) {
         self.name = itemDict["name"] as! String
         self.imageName = itemDict["imageName"] as! String
@@ -42,8 +63,11 @@ class WPTItem {
         self.multiplicity = nil
         self.value = itemDict["value"] as! Int
         self.prevalence = itemDict["prevalence"] as! Int
+        
+        self.doubloons = self.value // same for currency
     }
     
+    // initialize as a repair item
     init(asRepair itemDict: [String:AnyObject]) {
         self.name = itemDict["name"] as! String
         self.imageName = itemDict["imageName"] as! String
@@ -51,8 +75,11 @@ class WPTItem {
         self.multiplicity = nil
         self.value = -1
         self.prevalence = itemDict["prevalence"] as! Int
+        let repairVal = itemDict["repair"] as! CGFloat
+        self.repair = repairVal
     }
     
+    // initialize as a stat modifier
     init(asStatModifier itemDict: [String:AnyObject]) {
         self.name = itemDict["name"] as! String
         self.imageName = itemDict["imageName"] as! String
@@ -60,6 +87,28 @@ class WPTItem {
         self.multiplicity = itemDict["multiplicity"] as? Int
         self.value = itemDict["value"] as! Int
         self.prevalence = itemDict["prevalence"] as! Int
+        self.cannonBallImage = itemDict["cannonBallImage"] as? String
+        initStatModifiers(itemDict)
+    }
+    
+    private func initStatModifiers(_ dict: [String:AnyObject]) {
+        self.speedModifier = getStatModifier(from: dict, name: "speed")
+        self.damageModifier = getStatModifier(from: dict, name: "damage")
+        self.healthModifier = getStatModifier(from: dict, name: "health")
+        self.rangeModifier = getStatModifier(from: dict, name: "range")
+        self.shotSpeedModifier = getStatModifier(from: dict, name: "shotSpeed")
+        self.sizeModifier = getStatModifier(from: dict, name: "size")
+        self.turnRateModifier = getStatModifier(from: dict, name: "turnRate")
+        self.fireRateModifier = getStatModifier(from: dict, name: "fireRate")
+        
+        self.repair = dict["repair"] as? CGFloat
+        self.doubloons = dict["doubloons"] as? Int
+    }
+    
+    private func getStatModifier(from dict: [String:AnyObject], name: String) -> CGFloat? {
+        if let modifiers = dict["modifiers"] as? [String:CGFloat] {
+            return modifiers[name]
+        } else { return nil; }
     }
 }
 

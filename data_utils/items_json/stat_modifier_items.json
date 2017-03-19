@@ -1,3 +1,63 @@
 [
-   
+   {
+      "name": "Oar",
+      "imageName": "oar",
+      "multiplicity": 0,
+      "value": 20,
+      "prevalence": 100,
+      "modifiers": {
+         "speed": 0.1,
+      },
+   },
+   {
+      "name": "Gun Powder",
+      "imageName": "gunpowder",
+      "multiplicity": 0,
+      "value": 18,
+      "prevalence": 75,
+      "modifiers": {
+         "shotSpeed": 0.1,
+      },
+   },
+   {
+      "name": "Spiked Cannon Ball",
+      "imageName": "spiked_cannon_ball",
+      "multiplicity": 1,
+      "value": 35,
+      "prevalence": 15,
+      "modifiers": {
+         "damage": 1.5,
+      },
+      "cannonBallImage": "spiked_cannon_ball",
+   },
+   {
+      "name": "Propeller",
+      "imageName": "propeller_silver",
+      "multiplicity": 3,
+      "value": 30,
+      "prevalence": 25,
+      "modifiers": {
+         "speed": 0.33,
+      }
+   },
+   {
+      "name": "Rudder",
+      "imageName": "rudder",
+      "multiplicity": 1,
+      "value": 25,
+      "prevalence": 40,
+      "modifiers": {
+         "turnRate": 0.5,
+      },
+   },
+   {
+      "name": "Sail",
+      "imageName": "sail",
+      "multiplicity": 5,
+      "value": 25,
+      "prevalence": 80,
+      "modifiers": {
+         "speed": 0.2,
+      },
+   },
 ]

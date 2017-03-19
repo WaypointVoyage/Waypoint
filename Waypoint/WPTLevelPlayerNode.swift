@@ -14,7 +14,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     var portHandler: WPTPortDockingHandler! = nil
     
     init(player: WPTPlayer) {
-        super.init(actor: player)
+        super.init(actor: player, teamBitMask: WPTValues.playerTbm)
         self.isUserInteractionEnabled = true
         self.zPosition = WPTValues.movementHandlerZPosition + 1
         
@@ -44,5 +44,6 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
             self.anchored = !self.anchored
         }
     }
+    
     
 }

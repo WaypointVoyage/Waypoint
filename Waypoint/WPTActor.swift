@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTActor {
     var ship: WPTShip;
-    var cannonBall: WPTCannonBall = WPTCannonBall() // TODO: rethink this?
+    let cannonBall: WPTCannonBall = WPTCannonBall()
     
     // currency
     var doubloons: Int = 0 {
@@ -51,6 +51,7 @@ class WPTActor {
         // add it to the item array
         if canAdd {
             self.items.append(item)
+            ship.upgrade(with: item)
         }
     }
 }

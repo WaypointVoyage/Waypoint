@@ -15,7 +15,10 @@ class WPTShipCatalog {
         for shipSet in [("the_ships", true), ("the_enemy_ships", false)] {
             let path = Bundle.main.path(forResource: shipSet.0, ofType: "plist")!
             for ship in NSArray(contentsOfFile: path) as! [[String:AnyObject]] {
-                ships.append(WPTShip(dict: ship, playable: shipSet.1))
+                let testShip: Bool = (ship["testing"] as? Bool) ?? false
+                if WPTConfig.values.testing || !testShip {
+                    ships.append(WPTShip(dict: ship, playable: shipSet.1))
+                }
             }
         }
         
