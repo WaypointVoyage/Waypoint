@@ -60,4 +60,173 @@
          "speed": 0.2,
       },
    },
+   {
+      "name": "Telescope",
+      "imageName": "telescope",
+      "multiplicity": 0,
+      "value": 25,
+      "prevalence": 60,
+      "modifiers": {
+         "range": 2.0,
+      },
+   },
+   {
+      "name": "Ship's Wheel",
+      "imageName": "ships_wheel",
+      "multiplicity": 1,
+      "value": 25,
+      "prevalence": 40,
+      "modifiers": {
+         "turnRate": 0.6,
+      },
+   },
+   {
+      "name": "Hook Hand",
+      "imageName": "hook_hand",
+      "multiplicity": 2,
+      "value": 30,
+      "prevalence": 60,
+      "modifiers": {
+         "fireRate": -0.3,
+         "damage": 1.2,
+      },
+   },
+   {
+      "name": "Eyepatch",
+      "imageName": "eyepatch",
+      "multiplicity": 2,
+      "value": 10,
+      "prevalence": 70,
+      "modifiers": {
+         "range": -1,
+         "fireRate": 1.6,
+      },
+   },
+   {
+      "name": "Pile of Cannon Balls",
+      "imageName": "pile_of_cannon_balls",
+      "multiplicity": 0,
+      "value": 50,
+      "prevalence": 20,
+      "modifiers": {
+         "fireRate": 2.5,
+      },
+   },
+   {
+      "name": "Rum",
+      "imageName": "rum",
+      "multiplicity": 0,
+      "value": 20,
+      "prevalence": 65,
+      "modifiers": {
+         "speed": -0.8,
+         "damage": 2.8,
+         "shotSpeed": -1,
+      },
+   },
+   {
+      "name": "Scimitar",
+      "imageName": "scimitar",
+      "multiplicity": 0,
+      "value": 35,
+      "prevalence": 55,
+      "modifiers": {
+         "damage": 1.5,
+      },
+   },
+   {
+      "name": "Drum",
+      "imageName": "drum",
+      "multiplicity": 0,
+      "value": 45,
+      "prevalence": 20,
+      "modifiers": {
+         "size": 0.2,
+         "range": 1.5,
+      },
+   },
+   {
+      "name": "Pirate Flag",
+      "imageName": "pirate_flag",
+      "multiplicity": 3,
+      "value": 30,
+      "prevalence": 75,
+      "modifiers": {
+         "range": 2.5,
+      }
+   },
+   {
+      "name": "Mermaid Figure",
+      "imageName": "mermaid",
+      "multiplicity": 0,
+      "value": 65,
+      "prevalence": 10,
+      "modifiers": {
+         "fireRate": 2.2,
+         "turnRate": 1.4,
+      },
+   },
+   {
+      "name": "Long Barrel Cannon",
+      "imageName": "long_barrel_cannon",
+      "multiplicity": 0,
+      "value": 40,
+      "prevalence": 30,
+      "modifiers": {
+         "shotSpeed": 1.0,
+         "range": 2.0,
+      }
+   },
+   {
+      "name": "Bandana",
+      "imageName": "bandana",
+      "multiplicity": 1,
+      "value": 15,
+      "prevalence": 25,
+      "modifiers": {
+         "fireRate": 1.1,
+      }
+   },
+   {
+      "name": "Rope",
+      "imageName": "rope",
+      "multiplicity": 0,
+      "value": 10,
+      "prevalence": 80,
+      "modifiers": {
+         "turnRate": 0.4,
+      },
+   },
+   {
+      "name": "Barrel",
+      "imageName": "barrel",
+      "multiplicity": 0,
+      "value": 15,
+      "prevalence": 75,
+      "modifiers": {
+         "speed": -0.4,
+         "health": 2.5,
+      }
+   },
+   {
+      "name": "Blunderbuss",
+      "imageName": "blunderbuss",
+      "multiplicity": 0,
+      "value": 25,
+      "prevalence": 45,
+      "modifiers": {
+         "damage": 1.0,
+         "shotSpeed": 0.3,
+      }
+   },
+   {
+      "name": "Life Ring",
+      "imageName": "life_ring",
+      "multiplicity": 0,
+      "value": 35,
+      "prevalence": 70,
+      "modifiers": {
+         "health": 3.5,
+      }
+   }
 ]
