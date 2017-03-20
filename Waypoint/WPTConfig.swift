@@ -15,7 +15,8 @@ class WPTConfig {
     var testing = true
     var allUnlocked = true
     var showBrainRadii = false
-    var showPhysics = false
+    var showPhysics = true
+    var showSpawnVolumesOnMinimap = false
     
     // singleton instance
     static let values: WPTConfig = {

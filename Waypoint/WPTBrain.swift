@@ -33,6 +33,10 @@ class WPTBrain: GKStateMachine {
     var radiusOfSafety: CGFloat! = nil
     var healthCutoff: CGFloat! = nil
     
+    var started: Bool {
+        return self.currentState != nil
+    }
+    
     init(_ template: WPTBrainTemplate, player: WPTLevelPlayerNode) {
         self.template = template
         self.player = player

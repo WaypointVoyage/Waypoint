@@ -26,12 +26,13 @@ class WPTMapView: SKNode {
     
     private var player: SKShapeNode! = nil
     private var enemies = SKNode()
+    private let offset: CGPoint
     
     init(terrain: WPTTerrainNode) {
         self.terrain = terrain
+        offset = CGPoint(x: -terrain.size.width / 2, y: -terrain.size.height / 2)
         super.init()
         
-        let offset = CGPoint(x: -terrain.size.width / 2, y: -terrain.size.height / 2)
         
         // border
         let border = SKShapeNode(rectOf: terrain.size)
@@ -55,6 +56,17 @@ class WPTMapView: SKNode {
         self.addChild(player)
         
         self.addChild(enemies)
+    }
+    
+    func drawSpawnVolumes(_ volumes: [CGRect]) {
+        for sv in volumes {
+            let svn = SKShapeNode(rect: sv)
+            svn.fillColor = UIColor(red: 0, green: 0, blue: 1, alpha: 0.4)
+            svn.strokeColor = .blue
+            svn.lineWidth = WPTMapView.lineWidth
+            svn.position = offset
+            self.addChild(svn)
+        }
     }
     
     func updateActorPositions() {

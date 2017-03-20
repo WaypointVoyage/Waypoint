@@ -59,7 +59,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         self.physics.linearDamping = WPTValues.waterLinearDampening
         self.physics.angularDamping = WPTValues.waterAngularDampening
         self.physics.categoryBitMask = WPTValues.actorCbm
-        self.physics.collisionBitMask = WPTValues.actorCbm | WPTValues.terrainCbm | WPTValues.boundaryCbm | WPTValues.boulderCbm
+        self.physics.collisionBitMask = WPTValues.actorCbm | WPTValues.terrainCbm | WPTValues.boulderCbm
         
         // set starting position in the world
         self.zRotation += CGFloat(M_PI) / 2.0
@@ -131,7 +131,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         // create the cannon balls
         let time = actor.ship.range / actor.ship.shotSpeed
         for cannonNode in self.cannonNodes {
-            let ball = WPTCannonBallNode(self.actor.cannonBall)
+            let ball = WPTCannonBallNode(self.actor.cannonBall, damage: self.actor.ship.damage)
             ball.teamBitMask = self.teamBitMask
             ball.position = self.convert(cannonNode.cannonBallSpawnPoint, to: projectileNode)
             ball.physics.velocity = getCannonVelocity(cannonNode)
@@ -168,6 +168,10 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             if item.name == "Cannon" { addCannon() }
         default: break
         }
+    }
+    
+    func doDamage(_ damage: CGFloat) {
+        currentHealth += damage
     }
     
     private func addCannon() {

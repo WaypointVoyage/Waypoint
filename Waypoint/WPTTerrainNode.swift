@@ -62,6 +62,16 @@ class WPTTerrainNode: SKNode {
         self.enemies.append(enemy)
     }
     
+    func removeEnemy(_ enemy: WPTLevelEnemyNode) {
+        enemy.removeFromParent()
+        for i in 0..<enemies.count {
+            if enemies[i] == enemy {
+                enemies.remove(at: i)
+                return
+            }
+        }
+    }
+    
     private func loadTerrain() {
         // if there is a terrain file, show it
         if let terrainImg = level.terrainImage {

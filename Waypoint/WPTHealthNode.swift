@@ -54,7 +54,15 @@ class WPTHealthNode: SKNode {
     func updateHealthBar(_ currentHealth: CGFloat, flash: Bool = true) {
         let barSize = CGSize(width: healthBarWidth, height: healthBarHeight);
         
-        let fillColor = UIColor(red: 51.0/255, green: 255.0/255, blue: 51.0/255, alpha:1)
+        var fillColor: UIColor! = nil
+        let healthProp = currentHealth / maxHealth
+        if healthProp > 0.5 {
+            fillColor = UIColor(red: 51.0/255, green: 255.0/255, blue: 51.0/255, alpha:1)
+        } else if healthProp > 0.25 {
+            fillColor = UIColor(red: 1.0, green: 0.8, blue: 0.2, alpha: 1)
+        } else {
+            fillColor = UIColor(red: 1.0, green: 0.2, blue: 0.0, alpha: 1)
+        }
         let borderColor = UIColor(red: 35.0/255, green: 28.0/255, blue: 40.0/255, alpha:1)
         
         // create drawing context

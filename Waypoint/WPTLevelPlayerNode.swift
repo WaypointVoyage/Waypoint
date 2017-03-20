@@ -14,7 +14,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     var portHandler: WPTPortDockingHandler! = nil
     
     init(player: WPTPlayer) {
-        super.init(actor: player, teamBitMask: WPTValues.playerTbm)
+        super.init(actor: player, teamBitMask: WPTConfig.values.testing ? 0 : WPTValues.playerTbm)
         self.isUserInteractionEnabled = true
         self.zPosition = WPTValues.movementHandlerZPosition + 1
         
@@ -23,6 +23,8 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         // components
         portHandler = WPTPortDockingHandler(self)
         self.addChild(self.portHandler)
+        
+        self.physics.collisionBitMask |= WPTValues.boundaryCbm
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,5 +47,10 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         }
     }
     
-    
+    override func doDamage(_ damage: CGFloat) {
+        super.doDamage(damage)
+        if let hud = (self.scene as? WPTLevelScene)?.hud {
+            let _ = hud.top.shipHealth.updateHealth(damage) // TODO: handle death
+        }
+    }
 }

@@ -573,13 +573,33 @@
 	<array>
 		<dict>
 			<key>maxx</key>
-			<integer>1</integer>
+			<integer>2160</integer>
 			<key>maxy</key>
-			<integer>1</integer>
+			<integer>-10</integer>
 			<key>minx</key>
-			<integer>0</integer>
+			<integer>712</integer>
+			<key>miny</key>
+			<integer>-200</integer>
+		</dict>
+		<dict>
+			<key>maxx</key>
+			<integer>2360</integer>
+			<key>maxy</key>
+			<integer>2160</integer>
+			<key>minx</key>
+			<integer>2170</integer>
 			<key>miny</key>
 			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>maxx</key>
+			<integer>2160</integer>
+			<key>maxy</key>
+			<integer>2360</integer>
+			<key>minx</key>
+			<integer>900</integer>
+			<key>miny</key>
+			<integer>2170</integer>
 		</dict>
 	</array>
 	<key>terrain</key>

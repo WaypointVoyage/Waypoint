@@ -23,7 +23,6 @@ class WPTLevelScene: WPTScene {
     let projectiles: SKNode
     let items: SKNode
     let port: WPTPortNode?
-    var enemies: [WPTLevelEnemyNode] = [WPTLevelEnemyNode]()
     
     var contactDelegate: WPTLevelPhysicsContactHandler! = nil
     
@@ -89,6 +88,11 @@ class WPTLevelScene: WPTScene {
         // setup the puppet master
         self.puppetMaster!.setStage(levelBeaten: player.player.progress.completedLevels.contains(level.name))
         
+        // add spawn volumes?
+        if WPTConfig.values.showSpawnVolumesOnMinimap {
+            hud.pauseMenu.map.drawSpawnVolumes(self.level.spawnVolumes)
+        }
+        
         // breif flash of level name
         let levelName = WPTLabelNode(text: self.level.name, fontSize: WPTValues.fontSizeLarge)
         levelName.name = WPTLevelScene.levelNameTag
@@ -114,7 +118,7 @@ class WPTLevelScene: WPTScene {
         
         // actors
         self.player.update(currentTime, deltaTime)
-        for enemy in self.enemies {
+        for enemy in self.terrain.enemies {
             enemy.update(currentTime, deltaTime)
         }
         

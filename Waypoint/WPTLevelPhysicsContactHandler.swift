@@ -35,7 +35,7 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
             if let cannonBall = firstBody.node as? WPTCannonBallNode,
                 let boulder = secondBody.node as? WPTBoulderNode {
                 cannonBall.removeFromParent()
-                boulder.processHealthStatus(-20.0)
+                boulder.processHealthStatus(-cannonBall.damage)
             }
         }
             
