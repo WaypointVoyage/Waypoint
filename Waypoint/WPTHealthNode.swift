@@ -18,9 +18,10 @@ class WPTHealthNode: SKNode {
     var curHealth: CGFloat
     
     var shipHealthBar = SKSpriteNode()
+    let persistent: Bool
     
-    init(maxHealth: CGFloat) {
-        
+    init(maxHealth: CGFloat, persistent: Bool) {
+        self.persistent = persistent
         self.maxHealth = maxHealth
         self.curHealth = maxHealth
         
@@ -28,7 +29,12 @@ class WPTHealthNode: SKNode {
         
         self.addChild(shipHealthBar)
         
-        updateHealthBar(maxHealth)
+        if !persistent {
+            shipHealthBar.isHidden = true
+            shipHealthBar.alpha = 0
+        }
+        
+        updateHealthBar(maxHealth, flash: false)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,11 +51,18 @@ class WPTHealthNode: SKNode {
     }
     
     
-    func updateHealthBar(_ currentHealth: CGFloat) {
-        
+    func updateHealthBar(_ currentHealth: CGFloat, flash: Bool = true) {
         let barSize = CGSize(width: healthBarWidth, height: healthBarHeight);
         
-        let fillColor = UIColor(red: 51.0/255, green: 255.0/255, blue: 51.0/255, alpha:1)
+        var fillColor: UIColor! = nil
+        let healthProp = currentHealth / maxHealth
+        if healthProp > 0.5 {
+            fillColor = UIColor(red: 51.0/255, green: 255.0/255, blue: 51.0/255, alpha:1)
+        } else if healthProp > 0.25 {
+            fillColor = UIColor(red: 1.0, green: 0.8, blue: 0.2, alpha: 1)
+        } else {
+            fillColor = UIColor(red: 1.0, green: 0.2, blue: 0.0, alpha: 1)
+        }
         let borderColor = UIColor(red: 35.0/255, green: 28.0/255, blue: 40.0/255, alpha:1)
         
         // create drawing context
@@ -74,6 +87,19 @@ class WPTHealthNode: SKNode {
         // set sprite texture and size
         self.shipHealthBar.texture = SKTexture(image: spriteImage!)
         self.shipHealthBar.size = barSize
+        
+        // flash the health bar
+        if flash && !persistent {
+            shipHealthBar.removeAllActions()
+            shipHealthBar.isHidden = false
+            shipHealthBar.alpha = 1.0
+            shipHealthBar.run(SKAction.wait(forDuration: 1.4)) {
+                self.shipHealthBar.run(SKAction.fadeOut(withDuration: 0.4)) {
+                    self.shipHealthBar.isHidden = true
+                    self.shipHealthBar.alpha = 0
+                }
+            }
+        }
     }
     
 }

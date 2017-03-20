@@ -32,11 +32,7 @@ class WPTWhirlpoolHandler: SKNode {
     func enterWhirlpool() {
         self.canEnterWhirlpool = false
         self.actor.run(WPTWhirlpoolHandler.spin)
-        if let hud = (self.scene as? WPTLevelScene)?.hud {
-            let oldHealth = actor.currentHealth
-            actor.currentHealth -= WPTWhirlpoolHandler.whirlpoolDamage
-            hud.processShipHealthStatus(actor.currentHealth - oldHealth)
-        }
+        self.actor.doDamage(WPTWhirlpoolHandler.whirlpoolDamage)
     }
     
     func exitWhirlpool() {

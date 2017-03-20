@@ -30,10 +30,22 @@
    },
    "spawnVolumes": [
       {
-         "minx": 0,
-         "maxx": 1,
+         "minx": 712,
+         "maxx": 2160,
+         "miny": -200,
+         "maxy": -10,
+      },
+      {
+         "minx": 2170,
+         "maxx": 2360,
          "miny": 0,
-         "maxy": 1,
+         "maxy": 2160,
+      },
+      {
+         "minx": 900,
+         "maxx": 2160,
+         "miny": 2170,
+         "maxy": 2360,
       },
    ],
    "waves": [

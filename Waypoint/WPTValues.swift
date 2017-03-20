@@ -34,6 +34,7 @@ class WPTValues {
     static var actorDefaultSizeScale: CGFloat = 0.3
     static let pauseShroudZPosition: CGFloat = 100
     static let movementHandlerZPosition: CGFloat = 20
+    static let waterZPosition: CGFloat = -100
     
     // physics behavior
     static let actorMass: CGFloat = 17

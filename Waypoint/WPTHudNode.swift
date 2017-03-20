@@ -102,19 +102,6 @@ class WPTHudNode: SKNode, WPTUpdatable {
         }
     }
     
-    func processShipHealthStatus(_ healthPoints: CGFloat) {
-        let scene = self.scene as? WPTLevelScene
-        let alive = self.top.shipHealth.updateHealth(healthPoints)
-        if (!alive) {
-            scene!.contactDelegate = nil
-            scene!.levelPaused = true
-            self.top.pause.isHidden = true
-            self.bottom.hideBorder()
-            self.addChild(self.pauseShroud)
-            self.addChild(self.destroyMenu)
-        }
-    }
-    
     func addAudioNode() {
         
         let backgroundMusic = SKAudioNode(fileNamed: "distance.m4a")

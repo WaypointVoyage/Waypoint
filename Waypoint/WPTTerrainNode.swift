@@ -42,7 +42,7 @@ class WPTTerrainNode: SKNode {
             asShape.lineWidth = 5
             water = asShape
         }
-        water!.zPosition = -100
+        water!.zPosition = WPTValues.waterZPosition
         self.addChild(water!)
         
         // and the touch handler
@@ -60,6 +60,16 @@ class WPTTerrainNode: SKNode {
     func addEnemy(_ enemy: WPTLevelEnemyNode) {
         self.addChild(enemy)
         self.enemies.append(enemy)
+    }
+    
+    func removeEnemy(_ enemy: WPTLevelEnemyNode) {
+        enemy.removeFromParent()
+        for i in 0..<enemies.count {
+            if enemies[i] == enemy {
+                enemies.remove(at: i)
+                return
+            }
+        }
     }
     
     private func loadTerrain() {

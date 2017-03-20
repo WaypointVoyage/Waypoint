@@ -3,6 +3,8 @@ crew members. special skills, can make them walk the plank, they take a cut of t
 
 ---
 
+# Ideas
+
 contact damage
 shotgun shots
 scurvy
@@ -12,8 +14,9 @@ fools gold
 
 ---
 
-Oars: more speed
+# Implemented Items
 
+Oars: more speed
 Gun Powder: shot speed
 spiked cannon balls: more damage
 Motor: speed
@@ -35,6 +38,10 @@ rope: turn rate up
 barrel: speed down, health up
 blunderbuss: damage up, shot speed up
 life ring: health up
+
+---
+
+# Item Ideas
 
 stranded sailor: all stats up
 ship in a bottle: decrease size
