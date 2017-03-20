@@ -7,14 +7,55 @@
 //
 
 import SpriteKit
+
+class WPTPlayerProgress: NSCoding {
+    // player stuff
+    let shipName: String
+    let health: CGFloat
+    let completedLevels: [String]
     
-class WPTPlayerProgress {
-    var completedLevels = [String]()
-    var currentHealth: CGFloat? = nil
+    // actor stuff
+    let ship: String
+    let cannonBallImage: String
+    let doubloons: Int
+    let items: [String]
+    let cannonSet: [Int:Bool]
     
-    init(completedLevels: [String]?) {
-        if let cp = completedLevels {
-            self.completedLevels = cp
+    init(player: WPTPlayer) {
+        shipName = player.shipName
+        health = player.health!
+        completedLevels = player.completedLevels
+        ship = player.ship.name
+        cannonBallImage = player.cannonBall.image
+        doubloons = player.doubloons
+        items = player.items.map { (item) -> String in return item.name }
+        var cannonSetDict = [Int:Bool]()
+        for i in 0..<player.ship.cannonSet.cannons.count {
+            let cannon = player.ship.cannonSet.cannons[i]
+            cannonSetDict[i] = cannon.hasCannon
         }
+        cannonSet = cannonSetDict
+    }
+    
+    required init(coder: NSCoder) {
+        shipName = coder.decodeObject(forKey: "shipName") as! String
+        health = coder.decodeObject(forKey: "health") as! CGFloat
+        completedLevels = coder.decodeObject(forKey: "completedLevels") as! [String]
+        ship = coder.decodeObject(forKey: "ship") as! String
+        cannonBallImage = coder.decodeObject(forKey: "cannonBallImage") as! String
+        doubloons = coder.decodeInteger(forKey: "doubloons")
+        items = coder.decodeObject(forKey: "items") as! [String]
+        cannonSet = coder.decodeObject(forKey: "cannonSet") as! [Int:Bool]
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(shipName, forKey: "shipName")
+        aCoder.encode(health, forKey: "health")
+        aCoder.encode(completedLevels, forKey: "completedLevels")
+        aCoder.encode(ship, forKey: "ship")
+        aCoder.encode(cannonBallImage, forKey: "cannonBallImage")
+        aCoder.encode(doubloons, forKey: "doubloons")
+        aCoder.encode(items, forKey: "items")
+        aCoder.encode(cannonSet, forKey: "cannonSet")
     }
 }
