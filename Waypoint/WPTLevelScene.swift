@@ -89,7 +89,20 @@ class WPTLevelScene: WPTScene {
         // setup the puppet master
         self.puppetMaster!.setStage(levelBeaten: player.player.progress.completedLevels.contains(level.name))
         
-        // breif flash of level name
+        if (level.hasTutorial) {
+            self.levelPaused = true
+            let tutorial = WPTTutorialNode(onComplete: {
+                self.levelPaused = false
+                self.levelNameDisplay()
+            })
+            cam.addChild(tutorial)
+        } else {
+            levelNameDisplay()
+        }
+    }
+    
+    private func levelNameDisplay() {
+        // brief flash of level name
         let levelName = WPTLabelNode(text: self.level.name, fontSize: WPTValues.fontSizeLarge)
         levelName.name = WPTLevelScene.levelNameTag
         levelName.zPosition = WPTValues.movementHandlerZPosition - 1
