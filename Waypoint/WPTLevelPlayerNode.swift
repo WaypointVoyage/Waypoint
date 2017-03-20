@@ -49,8 +49,17 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     
     override func doDamage(_ damage: CGFloat) {
         super.doDamage(damage)
-        if let hud = (self.scene as? WPTLevelScene)?.hud {
-            let _ = hud.top.shipHealth.updateHealth(damage) // TODO: handle death
+        if let scene = (self.scene as? WPTLevelScene) {
+            let alive = scene.hud.top.shipHealth.updateHealth(damage)
+            if !alive {
+                scene.contactDelegate = nil
+                scene.levelPaused = true
+                scene.hud.top.pause.isHidden = true
+                scene.hud.bottom.hideBorder()
+                scene.hud.addChild(scene.hud.pauseShroud)
+                scene.hud.destroyMenu.updateMoney()
+                scene.hud.addChild(scene.hud.destroyMenu)
+            }
         }
     }
 }

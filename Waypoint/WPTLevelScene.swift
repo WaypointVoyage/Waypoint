@@ -93,6 +93,19 @@ class WPTLevelScene: WPTScene {
             hud.pauseMenu.map.drawSpawnVolumes(self.level.spawnVolumes)
         }
         
+        if (level.hasTutorial && !WPTConfig.values.testing) {
+            self.levelPaused = true
+            let tutorial = WPTTutorialNode(onComplete: {
+                self.levelPaused = false
+                self.levelNameDisplay()
+            })
+            cam.addChild(tutorial)
+        } else {
+            levelNameDisplay()
+        }
+    }
+    
+    private func levelNameDisplay() {
         // breif flash of level name
         let levelName = WPTLabelNode(text: self.level.name, fontSize: WPTValues.fontSizeLarge)
         levelName.name = WPTLevelScene.levelNameTag

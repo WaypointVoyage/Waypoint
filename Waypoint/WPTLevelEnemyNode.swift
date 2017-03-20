@@ -9,6 +9,7 @@
 import SpriteKit
 
 class WPTLevelEnemyNode: WPTLevelActorNode {
+    
     let enemy: WPTEnemy
     let player: WPTLevelPlayerNode
     
@@ -80,9 +81,46 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         super.doDamage(damage)
         let alive = healthBar.updateHealth(damage)
         if !alive {
+            destroyEnemy()
+        }
+    }
+    
+    private func destroyEnemy() {
+        let emitterNode = SKEmitterNode(fileNamed: "explosion.sks")
+        emitterNode?.particlePosition = self.sprite.position
+        emitterNode?.particleSize = CGSize(width: self.sprite.size.width * 2, height: self.sprite.size.height * 2)
+        self.addChild(emitterNode!)
+        self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
+        // Don't forget to remove the emitter node after the explosion
+        self.run(SKAction.wait(forDuration: 0.5), completion: {
+            self.generateCoins()
             if let scene = (self.scene as? WPTLevelScene) {
                 scene.terrain.removeEnemy(self)
             }
+        })
+    }
+    
+    func generateCoins() {
+        guard let itemNode = (self.scene as? WPTLevelScene)?.items else { return }
+        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+        for _ in 0..<Int(rand*7) {
+            let randomMoney = WPTItemCatalog.randomCurrency()
+            let moneyNode = WPTItemNode(randomMoney)
+            moneyNode.position = getRandomPosition()
+            itemNode.addChild(moneyNode)
         }
+    }
+    
+    func getRandomPosition() -> CGPoint {
+        let minWidth = self.position.x - WPTBoulderNode.boulderRadius * 2
+        let maxWidth = self.position.x + WPTBoulderNode.boulderRadius * 2
+        let minHeight = self.position.y - WPTBoulderNode.boulderRadius * 2
+        let maxHeight = self.position.y + WPTBoulderNode.boulderRadius * 2
+        
+        var rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+        let xPos = CGFloat(maxWidth - minWidth) * rand + CGFloat(minWidth)
+        rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+        let yPos = CGFloat(maxHeight - minHeight) * rand + CGFloat(minHeight)
+        return CGPoint(x: xPos, y: yPos)
     }
 }
