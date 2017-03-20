@@ -24,7 +24,7 @@ class WPTTrailMap {
         return 1 + self.points.count
     }
     
-    init(mapSize: CGSize, progress: WPTPlayerProgress) {
+    init(mapSize: CGSize, completedLevels: [String]) {
         /* load the path information */
         let plistPath = Bundle.main.path(forResource: "trail_map", ofType: "plist")!
         let trailMapDict = NSDictionary(contentsOfFile: plistPath) as! [String: Any]
@@ -72,7 +72,7 @@ class WPTTrailMap {
         
         /* load player progress */
         var statusStop: WPTTrailStop? = self.startPoint
-        while statusStop != nil && (progress.completedLevels.contains(statusStop!.level!.name) || WPTConfig.values.allUnlocked) {
+        while statusStop != nil && (completedLevels.contains(statusStop!.level!.name) || WPTConfig.values.allUnlocked) {
             statusStop!.completed = true
             statusStop!.unlocked = true
             statusStop = statusStop!.next

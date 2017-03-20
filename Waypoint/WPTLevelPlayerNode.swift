@@ -18,7 +18,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         self.isUserInteractionEnabled = true
         self.zPosition = WPTValues.movementHandlerZPosition + 1
         
-        currentHealth = player.progress.currentHealth ?? player.ship.health
+        currentHealth = player.health ?? player.ship.health
         
         // components
         portHandler = WPTPortDockingHandler(self)

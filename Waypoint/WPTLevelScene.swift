@@ -86,7 +86,7 @@ class WPTLevelScene: WPTScene {
         self.addChild(self.terrain)
         
         // setup the puppet master
-        self.puppetMaster!.setStage(levelBeaten: player.player.progress.completedLevels.contains(level.name))
+        self.puppetMaster!.setStage(levelBeaten: player.player.completedLevels.contains(level.name))
         
         // add spawn volumes?
         if WPTConfig.values.showSpawnVolumesOnMinimap {

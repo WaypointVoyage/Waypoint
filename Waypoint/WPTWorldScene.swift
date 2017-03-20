@@ -21,7 +21,7 @@ class WPTWorldScene: WPTScene {
     private var currentStop: Int = -1
     
     init(player: WPTPlayer) {
-        self.trailMap = WPTTrailMapNode(progress: player.progress)
+        self.trailMap = WPTTrailMapNode(completedLevels: player.completedLevels)
         self.player = WPTWorldPlayerNode(player)
         super.init(size: CGSize(width: 0, height: 0))
         self.isUserInteractionEnabled = true

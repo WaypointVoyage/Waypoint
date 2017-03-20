@@ -13,7 +13,7 @@ import GameplayKit
 class WPTTrailMapNode: SKNode {
     
     var trailMap: WPTTrailMap?
-    private let progress: WPTPlayerProgress
+    private let completedLevels: [String]
     
     let trailShader = SKShader(fileNamed: "trail_shader.fsh")
     let unlockedMarkerTexture = SKTexture(imageNamed: "blue_circle")
@@ -23,8 +23,8 @@ class WPTTrailMapNode: SKNode {
     
     private var markers = [SKSpriteNode]()
     
-    init(progress: WPTPlayerProgress) {
-        self.progress = progress
+    init(completedLevels: [String]) {
+        self.completedLevels = completedLevels
         super.init()
     }
     
@@ -39,7 +39,7 @@ class WPTTrailMapNode: SKNode {
         let ymin = (scene.frame.height - h) / 2.0;
         self.position = CGPoint(x: 0, y: ymin)
         
-        self.trailMap = WPTTrailMap(mapSize: CGSize(width: scene.frame.width, height: h), progress: self.progress)
+        self.trailMap = WPTTrailMap(mapSize: CGSize(width: scene.frame.width, height: h), completedLevels: completedLevels)
         let trail = SKShapeNode(path: self.trailMap!.toCGPath())
         trail.lineWidth = 2.5
         trail.strokeColor = .clear

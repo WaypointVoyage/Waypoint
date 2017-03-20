@@ -6,15 +6,18 @@
 //  Copyright © 2017 cpe436group. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
 
 class WPTPlayer: WPTActor {
     let shipName: String
-    let progress: WPTPlayerProgress
     
-    init(ship: WPTShip, shipName: String, _ progress: WPTPlayerProgress? = nil) {
+    // save data
+    var health: CGFloat? = nil
+    var completedLevels: [String]
+    
+    init(ship: WPTShip, shipName: String, completedLevels: [String]? = nil) {
         self.shipName = shipName
-        self.progress = progress == nil ? WPTPlayerProgress(completedLevels: nil) : progress!
+        self.completedLevels = completedLevels ?? [String]()
         super.init(ship: ship)
     }
 }

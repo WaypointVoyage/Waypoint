@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-
+    
 class WPTPlayerProgress {
     var completedLevels = [String]()
     var currentHealth: CGFloat? = nil
