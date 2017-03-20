@@ -80,7 +80,7 @@ class WPTDestroyMenuNode: SKNode {
         doubloons.zPosition = WPTValues.pauseShroudZPosition + 2
         doubloons.fontColor = UIColor.black
         doubloons.position.y -= 0.04 * background.size.height
-        doubloons.position.x += 0.35 * background.size.height
+        doubloons.position.x += 0.32 * background.size.height
         self.addChild(doubloons)
         
         continueLabel.zPosition = WPTValues.pauseShroudZPosition + 2

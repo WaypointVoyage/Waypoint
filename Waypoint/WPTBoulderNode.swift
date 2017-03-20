@@ -76,7 +76,8 @@ class WPTBoulderNode: SKNode {
     
     func generateCoins() {
         guard let itemNode = (self.scene as? WPTLevelScene)?.items else { return }
-        for _ in 0..<6 {
+        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+        for _ in 0..<Int(rand*7) {
             let randomMoney = WPTItemCatalog.randomCurrency()
             let moneyNode = WPTItemNode(randomMoney)
             moneyNode.position = getRandomPosition()
