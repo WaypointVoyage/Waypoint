@@ -16,6 +16,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
     let pauseShroud: SKShapeNode
     let pauseMenu: WPTPauseMenuNode
     let destroyMenu: WPTDestroyMenuNode
+    let dockMenu: WPTDockMenuNode
     let backgroundMusic = SKAudioNode(fileNamed: "windWaker.mp3")
     
     init(player: WPTLevelPlayerNode, terrain: WPTTerrainNode) {
@@ -25,6 +26,8 @@ class WPTHudNode: SKNode, WPTUpdatable {
         self.pauseShroud = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: WPTValues.screenSize))
         self.pauseMenu = WPTPauseMenuNode(terrain: terrain)
         self.destroyMenu = WPTDestroyMenuNode(player: player.player)
+        self.dockMenu = WPTDockMenuNode(player: player.player)
+        
         super.init()
         self.isUserInteractionEnabled = true
         
@@ -46,6 +49,10 @@ class WPTHudNode: SKNode, WPTUpdatable {
         // destroy menu
         self.destroyMenu.zPosition = WPTValues.pauseShroudZPosition + 1
         self.destroyMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
+        
+        // dock menu
+        self.dockMenu.zPosition = WPTValues.pauseShroudZPosition + 1
+        self.dockMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
         
         //audio
         self.scene?.listener = player
@@ -74,7 +81,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
             paused = scene!.levelPaused
         }
         
-        if paused && self.destroyMenu.parent == nil {
+        if paused && self.destroyMenu.parent == nil && self.dockMenu.parent == nil {
             if !self.pauseMenu.contains(touchPos) {
                 // the background was touched, unpause
                 scene?.levelPaused = false

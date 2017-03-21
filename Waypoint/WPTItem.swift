@@ -10,6 +10,7 @@ import SpriteKit
 
 class WPTItem {
     let name: String        // unique item name
+    let description: String = "[placeholder]" // a short description of the item
     let imageName: String   // the name of the image file (without extension)
     
     let tier: WPTItemTier   // the item type
