@@ -11,7 +11,7 @@ import SpriteKit
 class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     let actor: WPTActor
-    let physics: SKPhysicsBody!
+    var physics: SKPhysicsBody?
     var currentHealth: CGFloat
     var teamBitMask: UInt32
     
@@ -54,12 +54,12 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         
         // configure physics behavior
         self.physicsBody = physics
-        self.physics.allowsRotation = false
-        self.physics.mass = WPTValues.actorMass
-        self.physics.linearDamping = WPTValues.waterLinearDampening
-        self.physics.angularDamping = WPTValues.waterAngularDampening
-        self.physics.categoryBitMask = WPTValues.actorCbm
-        self.physics.collisionBitMask = WPTValues.actorCbm | WPTValues.terrainCbm | WPTValues.boulderCbm
+        self.physics!.allowsRotation = false
+        self.physics!.mass = WPTValues.actorMass
+        self.physics!.linearDamping = WPTValues.waterLinearDampening
+        self.physics!.angularDamping = WPTValues.waterAngularDampening
+        self.physics!.categoryBitMask = WPTValues.actorCbm
+        self.physics!.collisionBitMask = WPTValues.actorCbm | WPTValues.terrainCbm | WPTValues.boulderCbm
         
         // set starting position in the world
         self.zRotation += CGFloat(M_PI) / 2.0
@@ -107,7 +107,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             } else {
                 force = actor.ship.speed * self.forward
             }
-            self.physics.applyForce(force!)
+            self.physics?.applyForce(force!)
         }
     }
     

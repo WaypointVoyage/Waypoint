@@ -46,9 +46,16 @@ class WPTWorldScene: WPTScene {
         trailMap.position(for: self)
         self.addChild(trailMap)
         
-        self.player.position = self.trailMap.trailMap!.startLocation
         self.player.zPosition = 10
+        self.player.position = self.trailMap.trailMap!.startLocation
         self.updatePlayerStopLocation(0)
+        self.trailMap.trailMap!.traversePoints({
+            (index, point, isUnlocked, isCompleted) in
+            if isUnlocked && !isCompleted {
+                self.player.position = point + WPTValues.heightShift
+                self.updatePlayerStopLocation(index)
+            }
+        })
         self.addChild(self.player)
         
         let back = WPTHomeScene.getBack(frame: self.frame)
@@ -102,8 +109,6 @@ class WPTWorldScene: WPTScene {
     func updatePlayerStopLocation(_ stopIndex: Int) {
         self.currentStop = stopIndex
         let stop = self.trailMap.trailMap![stopIndex]
-        
-        // TODO: actions to update the UI to start a specific level
         self.levelName.text = stop.level?.name
     }
 }

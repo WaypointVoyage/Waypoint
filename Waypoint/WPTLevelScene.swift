@@ -43,7 +43,6 @@ class WPTLevelScene: WPTScene {
             self.port = nil
         }
         super.init(size: CGSize(width: 0, height: 0))
-        self.puppetMaster = WPTPuppetMaster(self)
         
         self.listener = self.player
         self.scene?.backgroundColor = UIColor.black
@@ -86,6 +85,7 @@ class WPTLevelScene: WPTScene {
         self.addChild(self.terrain)
         
         // setup the puppet master
+        self.puppetMaster = WPTPuppetMaster(self)
         self.puppetMaster!.setStage(levelBeaten: player.player.completedLevels.contains(level.name))
         
         // add spawn volumes?

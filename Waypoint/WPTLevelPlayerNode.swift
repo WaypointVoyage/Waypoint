@@ -24,7 +24,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         portHandler = WPTPortDockingHandler(self)
         self.addChild(self.portHandler)
         
-        self.physics.collisionBitMask |= WPTValues.boundaryCbm
+        self.physics!.collisionBitMask |= WPTValues.boundaryCbm
     }
     
     required init?(coder aDecoder: NSCoder) {

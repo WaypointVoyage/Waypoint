@@ -64,14 +64,16 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         healthBar.zRotation = -self.zRotation
         
         // once the enemy is inside the boundary, they will collide with it
-        if self.physics.collisionBitMask & WPTValues.boundaryCbm == 0 {
-            if let scene = self.scene as? WPTLevelScene {
-                let terrainBox = CGRect(origin: CGPoint.zero, size: scene.terrain.size)
-                let enemyBoxOrigin = CGPoint(x: self.position.x - self.sprite.frame.width / 2, y: self.position.y - self.sprite.frame.height / 2)
-                let enemyBox = CGRect(origin: enemyBoxOrigin, size: self.sprite.frame.size)
-                if terrainBox.contains(enemyBox) {
-                    self.physics.collisionBitMask |= WPTValues.boundaryCbm
-                    self.brain.start()
+        if let phys = self.physics {
+            if phys.collisionBitMask & WPTValues.boundaryCbm == 0 {
+                if let scene = self.scene as? WPTLevelScene {
+                    let terrainBox = CGRect(origin: CGPoint.zero, size: scene.terrain.size)
+                    let enemyBoxOrigin = CGPoint(x: self.position.x - self.sprite.frame.width / 2, y: self.position.y - self.sprite.frame.height / 2)
+                    let enemyBox = CGRect(origin: enemyBoxOrigin, size: self.sprite.frame.size)
+                    if terrainBox.contains(enemyBox) {
+                        self.physics?.collisionBitMask |= WPTValues.boundaryCbm
+                        self.brain.start()
+                    }
                 }
             }
         }
@@ -80,12 +82,13 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     override func doDamage(_ damage: CGFloat) {
         super.doDamage(damage)
         let alive = healthBar.updateHealth(damage)
-        if !alive {
+        if !alive && self.physics != nil {
             destroyEnemy()
         }
     }
     
     private func destroyEnemy() {
+        self.physics = nil // at this point on, there are is no more world interaction
         let emitterNode = SKEmitterNode(fileNamed: "explosion.sks")
         emitterNode?.particlePosition = self.sprite.position
         emitterNode?.particleSize = CGSize(width: self.sprite.size.width * 2, height: self.sprite.size.height * 2)
