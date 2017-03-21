@@ -23,6 +23,9 @@ class WPTHighScoresScene: WPTScene {
         let storage = WPTStorage()
         let scores = storage.loadHighScores(count: nil)
         print("found \(scores.count) scores")
+        for score in scores {
+            print("\t - \(score.shipName): \(score.doubloons) at \(score.date)")
+        }
     }
     
 }

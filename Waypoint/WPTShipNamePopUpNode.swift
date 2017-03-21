@@ -76,13 +76,24 @@ class WPTShipNamePopUpNode: SKNode {
         let touch = touches.first!
         self.inputField?.resignFirstResponder()
         if self.startLevel.contains(touch.location(in: self)) && self.startLevel.alpha == 1.0 {
+            
             let shipName = self.inputField?.text
             self.inputField?.removeFromSuperview()
             let player = WPTPlayer(ship: (self.shipPicker?.currentShip)!, shipName: shipName!)
-            let transition = SKTransition.reveal(with: .left, duration: 1.5)
-            transition.pausesOutgoingScene = true;
-            transition.pausesIncomingScene = false;
-            self.scene?.view?.presentScene(WPTWorldScene(player: player), transition: transition)
+            
+            // wipe the old save with the new one
+            let storage = WPTStorage()
+            storage.savePlayerProgress(player.progress!)
+            
+            // the transition
+            if WPTConfig.values.testing {
+                self.scene!.view!.presentScene(WPTWorldScene(player: player))
+            } else {
+                let transition = SKTransition.reveal(with: .left, duration: 1.5)
+                transition.pausesOutgoingScene = true;
+                transition.pausesIncomingScene = false;
+                self.scene!.view!.presentScene(WPTWorldScene(player: player), transition: transition)
+            }
         }
         else if (self.randomIcon?.contains(touch.location(in: self)))! {
             let plistNames = Bundle.main.path(forResource: "random_ship_names", ofType: "plist")!

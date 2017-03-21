@@ -12,7 +12,7 @@ class WPTDockMenuNode: SKNode {
     
     let background: SKSpriteNode
     let dockShroud: SKShapeNode
-    let player: WPTPlayer
+    let player: WPTLevelPlayerNode
     var itemPicker: WPTItemPickerNode? = nil
     
     var itemNameLabel = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeSmall)
@@ -23,7 +23,7 @@ class WPTDockMenuNode: SKNode {
     var purchaseLabel = WPTLabelNode(text: "Purchase", fontSize: WPTValues.fontSizeSmall)
     let wahm = WPTLabelNode(text: "Sail >", fontSize: WPTValues.fontSizeSmall)
     
-    init(player: WPTPlayer) {
+    init(player: WPTLevelPlayerNode) {
         
         self.player = player
         self.background = SKSpriteNode(imageNamed: "pause_scroll")
@@ -118,7 +118,7 @@ class WPTDockMenuNode: SKNode {
     }
     
     func updateDoubloons() {
-        self.doubloonsLabel.text = String(player.doubloons)
+        self.doubloonsLabel.text = String(player.player.doubloons)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -133,7 +133,19 @@ class WPTDockMenuNode: SKNode {
         } else if self.purchaseLabel.contains(touchPos) {
             purchaseItem()
         } else if self.wahm.contains(touchPos) {
-            self.scene!.view?.presentScene(WPTWorldScene(player: player))
+            // update the player's progress
+            player.player.health = player.currentHealth
+            if let scene = self.scene as? WPTLevelScene {
+                player.player.completedLevels.append(scene.level.name)
+            }
+            
+            // save the progress
+            player.player.progress = WPTPlayerProgress(player: player.player)
+            let storage = WPTStorage()
+            storage.savePlayerProgress(player.player.progress!)
+            
+            // move to the world scene
+            self.scene!.view?.presentScene(WPTWorldScene(player: player.player))
         }
     }
     

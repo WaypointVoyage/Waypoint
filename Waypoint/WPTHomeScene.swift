@@ -11,13 +11,33 @@ import SpriteKit
 class WPTHomeScene: WPTScene {
     
     let newGame = WPTSceneLabelNode(text: "New Game", next: WPTNewGameScene())
+    var continueLbl: WPTSceneLabelNode?
     let highScores = WPTSceneLabelNode(text: "High Scores", next: WPTHighScoresScene())
     let settings = WPTSceneLabelNode(text: "Settings", next: WPTSettingsScene())
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
-        var labels = [newGame, highScores, settings]
+        // is there saved data?
+        let storage = WPTStorage()
+        if let progress = storage.loadPlayerProgress() {
+            NSLog("Found player progress for: \(progress.shipName)")
+            let player = WPTPlayer(playerProgress: progress)
+            let scene = WPTWorldScene(player: player)
+            continueLbl = WPTSceneLabelNode(text: "Continue", next: scene)
+        } else {
+            NSLog("No previous player progress was found")
+            continueLbl = nil
+        }
+        
+        // the labels to show
+        var labels = [newGame]
+        if let continueLbl = continueLbl {
+            labels.append(continueLbl)
+        }
+        labels.append(highScores)
+        labels.append(settings)
+        
         let spacing = WPTValues.fontSizeMiniscule + WPTSceneLabelNode.fontSize
         let h = CGFloat(labels.count) * spacing
         let top = self.frame.midY + (h / 2) - WPTValues.fontSizeMiniscule

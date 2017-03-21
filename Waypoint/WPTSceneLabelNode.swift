@@ -15,8 +15,6 @@ class WPTSceneLabelNode: WPTLabelNode {
     var nextScene: SKScene?
     var useSound = true
     
-//    let soundEffect = SKAction.playSoundFileNamed("sword1.caf", waitForCompletion: false)
-    
     override init() {
         super.init()
     }
@@ -33,10 +31,6 @@ class WPTSceneLabelNode: WPTLabelNode {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if self.useSound && WPTConfig.values.playSoundEffects {
-//            print("running sound effect")
-//            self.run(soundEffect)
-        }
         self.scene?.view?.presentScene(nextScene)
     }
 }

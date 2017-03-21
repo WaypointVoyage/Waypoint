@@ -51,17 +51,7 @@
    "waves": [
       {
          "enemies": {
-            "Catapult": 2,
-         },
-      },
-      {
-         "enemies": {
             "Pirate": 2,
-         },
-      },
-      {
-         "enemies": {
-            "Marooner": 1,
          },
       },
    ],

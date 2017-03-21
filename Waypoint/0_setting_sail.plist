@@ -982,5 +982,15 @@
 		<key>waterImage</key>
 		<string>setting_sail_water</string>
 	</dict>
+	<key>waves</key>
+	<array>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Pirate</key>
+				<integer>2</integer>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

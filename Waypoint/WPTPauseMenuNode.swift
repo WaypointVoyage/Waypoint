@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTPauseMenuNode: SKNode {
     
-    private let exit = WPTLabelNode(text: "Exit", fontSize: WPTValues.fontSizeSmall)
+    private let exit = WPTLabelNode(text: "Quit", fontSize: WPTValues.fontSizeSmall)
     private let reset = WPTLabelNode(text: "Reset Level", fontSize: WPTValues.fontSizeSmall)
     var map: WPTMapView
     private var background: SKSpriteNode! = nil
@@ -83,6 +83,10 @@ class WPTPauseMenuNode: SKNode {
         let touchPos = touches.first!.location(in: self)
         
         if self.exit.contains(touchPos) {
+            // erase save data
+            let storage = WPTStorage()
+            storage.clearPlayerProgress()
+            
             self.scene?.view?.presentScene(WPTHomeScene())
         } else if self.reset.contains(touchPos) {
             if let scene = self.scene as? WPTLevelScene {

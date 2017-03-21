@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class WPTLootSummary: NSCoding, Comparable {
+class WPTLootSummary: NSObject, NSCoding, Comparable {
     
     let shipName: String
     let doubloons: Int

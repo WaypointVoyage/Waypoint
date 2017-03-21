@@ -10,31 +10,35 @@ import SpriteKit
 
 class WPTPlayer: WPTActor {
     let shipName: String
-    var health: CGFloat? = nil
+    var health: CGFloat
     var completedLevels: [String]
+    var progress: WPTPlayerProgress? = nil
     
     init(ship: WPTShip, shipName: String, completedLevels: [String]? = nil) {
         self.shipName = shipName
         self.completedLevels = completedLevels ?? [String]()
+        self.health = ship.health
         super.init(ship: ship)
+        
+        progress = WPTPlayerProgress(player: self)
     }
     
-    init(playerPorgress: WPTPlayerProgress) {
-        shipName = playerPorgress.shipName
-        health = playerPorgress.health
-        completedLevels = playerPorgress.completedLevels
+    init(playerProgress: WPTPlayerProgress) {
+        shipName = playerProgress.shipName
+        health = playerProgress.health
+        completedLevels = playerProgress.completedLevels
         
-        let ship = WPTShipCatalog.shipsByName[playerPorgress.ship]!
+        let ship = WPTShipCatalog.shipsByName[playerProgress.ship]!
         for i in 0..<ship.cannonSet.cannons.count {
             let cannon = ship.cannonSet.cannons[i]
-            cannon.hasCannon = playerPorgress.cannonSet[i]!
+            cannon.hasCannon = playerProgress.cannonSet[i]!
         }
         super.init(ship: ship)
         
-        self.cannonBall.image = playerPorgress.cannonBallImage
-        self.doubloons = playerPorgress.doubloons
+        self.cannonBall.image = playerProgress.cannonBallImage
+        self.doubloons = playerProgress.doubloons
         
-        for itemName in playerPorgress.items {
+        for itemName in playerProgress.items {
             self.apply(item: WPTItemCatalog.itemsByName[itemName]!)
         }
     }

@@ -93,7 +93,6 @@
 		7EC222081E72F54A00E98243 /* WPTPortDockingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */; };
 		7EC2220A1E73037300E98243 /* WPTDoNothingBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222091E73037300E98243 /* WPTDoNothingBS.swift */; };
 		7EC222161E730D1900E98243 /* WPTBrainTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */; };
-		7EC9879D1E7F67F600626C60 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EC9879C1E7F67F600626C60 /* 0_setting_sail.plist */; };
 		7EC9879F1E7F905100626C60 /* stat_modifier_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EC9879E1E7F905100626C60 /* stat_modifier_items.plist */; };
 		7EC987A21E7F9FD600626C60 /* WPTStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC987A11E7F9FD600626C60 /* WPTStorage.swift */; };
 		7EC987A41E7FA20800626C60 /* WPTLootSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC987A31E7FA20800626C60 /* WPTLootSummary.swift */; };
@@ -121,6 +120,8 @@
 		7EE57D491E69E20C0020693B /* currency_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D481E69E20C0020693B /* currency_items.plist */; };
 		7EE7981B1E523030006D683B /* WPTPlayerProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */; };
 		7EE7981D1E5234A3006D683B /* WPTLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981C1E5234A3006D683B /* WPTLevel.swift */; };
+		7EE7C4191E81C13B0019B0D4 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE7C4181E81C13B0019B0D4 /* 0_setting_sail.plist */; };
+		7EE7C41B1E81C84B0019B0D4 /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7C41A1E81C84B0019B0D4 /* StorageTests.swift */; };
 		7EE8A8C81E6F779700C119B9 /* WPTShipCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8A8C71E6F779700C119B9 /* WPTShipCatalog.swift */; };
 		7EE8A8F41E6FA4A500C119B9 /* WPTEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8A8F31E6FA4A500C119B9 /* WPTEnemy.swift */; };
 		7EE8A9121E6FD07F00C119B9 /* WPTPortNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */; };
@@ -249,7 +250,6 @@
 		7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPortDockingHandler.swift; sourceTree = "<group>"; };
 		7EC222091E73037300E98243 /* WPTDoNothingBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDoNothingBS.swift; sourceTree = "<group>"; };
 		7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainTemplate.swift; sourceTree = "<group>"; };
-		7EC9879C1E7F67F600626C60 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
 		7EC9879E1E7F905100626C60 /* stat_modifier_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stat_modifier_items.plist; sourceTree = "<group>"; };
 		7EC987A11E7F9FD600626C60 /* WPTStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTStorage.swift; sourceTree = "<group>"; };
 		7EC987A31E7FA20800626C60 /* WPTLootSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLootSummary.swift; sourceTree = "<group>"; };
@@ -277,6 +277,8 @@
 		7EE57D481E69E20C0020693B /* currency_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = currency_items.plist; sourceTree = "<group>"; };
 		7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayerProgress.swift; sourceTree = "<group>"; };
 		7EE7981C1E5234A3006D683B /* WPTLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevel.swift; sourceTree = "<group>"; };
+		7EE7C4181E81C13B0019B0D4 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
+		7EE7C41A1E81C84B0019B0D4 /* StorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
 		7EE8A8C71E6F779700C119B9 /* WPTShipCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipCatalog.swift; sourceTree = "<group>"; };
 		7EE8A8F31E6FA4A500C119B9 /* WPTEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTEnemy.swift; sourceTree = "<group>"; };
 		7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPortNode.swift; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				7E16B8731E2D580600933E24 /* WaypointTests.swift */,
 				7E16B8751E2D580600933E24 /* Info.plist */,
 				7E13F6221E48E22900B5D2FD /* ActorTests.swift */,
+				7EE7C41A1E81C84B0019B0D4 /* StorageTests.swift */,
 			);
 			path = WaypointTests;
 			sourceTree = "<group>";
@@ -615,7 +618,7 @@
 		7E6932A41E54117900AF7373 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				7EC9879C1E7F67F600626C60 /* 0_setting_sail.plist */,
+				7EE7C4181E81C13B0019B0D4 /* 0_setting_sail.plist */,
 				7EE8A9141E6FDD7100C119B9 /* 1_sea_legs.plist */,
 				7EE8A9151E6FDD7100C119B9 /* 2_pegleg_plunder.plist */,
 				7EE8A9161E6FDD7100C119B9 /* 3_cutlass_careen.plist */,
@@ -797,7 +800,7 @@
 				TargetAttributes = {
 					7E16B8541E2D580600933E24 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3GEHA95597;
+						DevelopmentTeam = 66743KUV39;
 						ProvisioningStyle = Automatic;
 					};
 					7E16B86E1E2D580600933E24 = {
@@ -851,8 +854,8 @@
 				2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */,
 				7EE8A9231E6FDD7100C119B9 /* 4_fire_in_the_hole.plist in Resources */,
 				7EE8A92A1E6FDD7100C119B9 /* 11_shiver_me_timbers.plist in Resources */,
+				7EE7C4191E81C13B0019B0D4 /* 0_setting_sail.plist in Resources */,
 				7EC9879F1E7F905100626C60 /* stat_modifier_items.plist in Resources */,
-				7EC9879D1E7F67F600626C60 /* 0_setting_sail.plist in Resources */,
 				7ED963391E7DF18000B58C1C /* enemies.plist in Resources */,
 				7EE8A9241E6FDD7100C119B9 /* 5_dead_men_tell_no_tales.plist in Resources */,
 				7EE8A9281E6FDD7100C119B9 /* 9_boom_about.plist in Resources */,
@@ -995,6 +998,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE7C41B1E81C84B0019B0D4 /* StorageTests.swift in Sources */,
 				7E16B8741E2D580600933E24 /* WaypointTests.swift in Sources */,
 				7E13F6231E48E22900B5D2FD /* ActorTests.swift in Sources */,
 			);
@@ -1132,10 +1136,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3GEHA95597;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 66743KUV39;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hils124;
+				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1146,10 +1151,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3GEHA95597;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 66743KUV39;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hils124;
+				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
