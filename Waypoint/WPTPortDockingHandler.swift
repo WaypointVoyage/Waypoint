@@ -40,6 +40,10 @@ class WPTPortDockingHandler: SKNode {
         let rotation = SKAction.rotate(toAngle: (port?.zRotation)!, duration: 1)
         self.actor.run(position) {
             self.dockPos = theDockPos
+            if let hud = (self.scene as? WPTLevelScene)?.hud {
+                hud.dockMenu.updateDoubloons()
+                hud.addChild(hud.dockMenu)
+            }
         }
         self.actor.run(rotation)
     }

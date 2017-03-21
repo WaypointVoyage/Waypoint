@@ -51,7 +51,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         super.doDamage(damage)
         if let scene = (self.scene as? WPTLevelScene) {
             let alive = scene.hud.top.shipHealth.updateHealth(damage)
-            if !alive {
+            if !alive && !WPTConfig.values.invincible {
                 scene.contactDelegate = nil
                 scene.levelPaused = true
                 scene.hud.top.pause.isHidden = true

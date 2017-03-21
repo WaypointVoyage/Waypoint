@@ -22,6 +22,8 @@
 		2D17044B1E7103D70000827E /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044A1E7103D70000827E /* explosion.mp3 */; };
 		2D17044D1E7104090000827E /* cannon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044C1E7104090000827E /* cannon.mp3 */; };
 		2D17044F1E7105940000827E /* coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044E1E7105940000827E /* coin.mp3 */; };
+		2D1EF1051E806FF700F527B7 /* WPTDockMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EF1041E806FF700F527B7 /* WPTDockMenuNode.swift */; };
+		2D1EF1071E807C3100F527B7 /* WPTItemPickerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EF1061E807C3100F527B7 /* WPTItemPickerNode.swift */; };
 		2D2C8B581E727D1A00B1D862 /* WPTDestroyMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */; };
 		2D2C8B5C1E7F3D5A00B1D862 /* WPTTutorialNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */; };
 		2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */; };
@@ -168,6 +170,8 @@
 		2D17044A1E7103D70000827E /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
 		2D17044C1E7104090000827E /* cannon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cannon.mp3; sourceTree = "<group>"; };
 		2D17044E1E7105940000827E /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
+		2D1EF1041E806FF700F527B7 /* WPTDockMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDockMenuNode.swift; sourceTree = "<group>"; };
+		2D1EF1061E807C3100F527B7 /* WPTItemPickerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItemPickerNode.swift; sourceTree = "<group>"; };
 		2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDestroyMenuNode.swift; sourceTree = "<group>"; };
 		2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTutorialNode.swift; sourceTree = "<group>"; };
 		2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOOTERFZ.ttf; sourceTree = "<group>"; };
@@ -586,6 +590,7 @@
 				2D1703DA1E601E180000827E /* WPTMapView.swift */,
 				2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */,
 				2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */,
+				2D1EF1041E806FF700F527B7 /* WPTDockMenuNode.swift */,
 			);
 			name = HUD;
 			sourceTree = "<group>";
@@ -695,6 +700,7 @@
 				7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */,
 				7EF61E8B1E3B057900CB4CAB /* WPTShipPickerNode.swift */,
 				7EBF5E6C1E4E218200F81982 /* WPTStatBarNode.swift */,
+				2D1EF1061E807C3100F527B7 /* WPTItemPickerNode.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -906,6 +912,7 @@
 				7ED963371E7DEB5A00B58C1C /* WPTFleeOffenseBS.swift in Sources */,
 				7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */,
 				2D1704391E6F670A0000827E /* WPTBoulderNode.swift in Sources */,
+				2D1EF1071E807C3100F527B7 /* WPTItemPickerNode.swift in Sources */,
 				7E69329A1E53E08100AF7373 /* WPTHudNode.swift in Sources */,
 				7E5F06561E438A2300EAC166 /* WPTScene.swift in Sources */,
 				7E5DB72A1E7ED233000B1307 /* WPTPlayerPrepPMS.swift in Sources */,
@@ -927,6 +934,7 @@
 				7EC2220A1E73037300E98243 /* WPTDoNothingBS.swift in Sources */,
 				7ED049DD1E6F6A4600CD69E1 /* WPTBrain.swift in Sources */,
 				7E4182C91E7ECA7100FCEBD8 /* WPTPuppetMaster.swift in Sources */,
+				2D1EF1051E806FF700F527B7 /* WPTDockMenuNode.swift in Sources */,
 				7E13F6341E48F8B900B5D2FD /* WPTPlayer.swift in Sources */,
 				7E13F6321E48F53200B5D2FD /* WPTLevelScene.swift in Sources */,
 				7E5242881E56331D00120002 /* WPTTerrainNode.swift in Sources */,
