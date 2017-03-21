@@ -26,7 +26,7 @@ class WPTDestroyMenuNode: SKNode {
         self.doubloons = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)
         
         //may need to change later once player progress is implemented
-        self.level = WPTLabelNode(text: String(player.progress.completedLevels.count + 1), fontSize: WPTValues.fontSizeSmall)
+        self.level = WPTLabelNode(text: String(player.completedLevels.count + 1), fontSize: WPTValues.fontSizeSmall)
         
         super.init()
         self.isUserInteractionEnabled = true
@@ -104,7 +104,11 @@ class WPTDestroyMenuNode: SKNode {
         let touch = touches.first!
         
         if self.continueLabel.contains(touch.location(in: self)) {
-            self.scene?.view?.presentScene(WPTHomeScene())
+            let lootSummary = WPTLootSummary(player: self.player)
+            let storage = WPTStorage()
+            storage.submitScore(lootSummary)
+            
+            self.scene?.view?.presentScene(WPTHighScoresScene())
         }
     }
 }

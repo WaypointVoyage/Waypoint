@@ -19,6 +19,10 @@ class WPTHighScoresScene: WPTScene {
         addChild(titleLabel)
         
         addChild(WPTHomeScene.getBack(frame: frame))
+        
+        let storage = WPTStorage()
+        let scores = storage.loadHighScores(count: nil)
+        print("found \(scores.count) scores")
     }
     
 }

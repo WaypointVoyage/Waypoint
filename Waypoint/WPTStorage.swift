@@ -9,8 +9,14 @@
 import Foundation
 
 class WPTStorage {
+    
+    let highScorePath: URL
+    
     init() {
-        
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+        let documentsDirectory = paths[0] as! String
+        highScorePath = NSURL(fileURLWithPath: documentsDirectory).appendingPathComponent("high_scores.plist")!
+        print("highScorePath: \(highScorePath)")
     }
     
     func savePlayerProgress(_ progress: WPTPlayerProgress) {
@@ -26,12 +32,13 @@ class WPTStorage {
         return nil
     }
     
-    func loadHighScores(count: Int) -> [WPTLootSummary] {
-        // TODO: implement
-        return [WPTLootSummary]()
+    func loadHighScores(count: Int?) -> [WPTLootSummary] {
+        return (NSKeyedUnarchiver.unarchiveObject(withFile: highScorePath.absoluteString) as? [WPTLootSummary]) ?? [WPTLootSummary]()
     }
     
     func submitScore(_ score: WPTLootSummary) {
-        // TODO: implement
+        var scores = self.loadHighScores(count: nil)
+        scores.append(score)
+        NSKeyedArchiver.archiveRootObject(scores, toFile: highScorePath.absoluteString)
     }
 }
