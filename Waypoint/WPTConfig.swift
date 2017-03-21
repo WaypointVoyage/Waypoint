@@ -14,7 +14,7 @@ class WPTConfig {
     var playSoundEffects = true
     var testing = true
     var allUnlocked = true
-    var invincible = true
+    var invincible = false
     var showBrainRadii = false
     var showPhysics = false
     var showSpawnVolumesOnMinimap = false

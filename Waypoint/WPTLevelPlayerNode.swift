@@ -59,6 +59,10 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
                 scene.hud.addChild(scene.hud.pauseShroud)
                 scene.hud.destroyMenu.updateMoney()
                 scene.hud.addChild(scene.hud.destroyMenu)
+                
+                // delete save data
+                let storage = WPTStorage()
+                storage.clearPlayerProgress()
             }
         }
     }
