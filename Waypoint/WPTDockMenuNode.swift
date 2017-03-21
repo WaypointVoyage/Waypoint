@@ -51,7 +51,7 @@ class WPTDockMenuNode: SKNode {
         let titleLabel = WPTLabelNode(text: "Port Stop", fontSize: WPTValues.fontSizeMedium)
         titleLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
         titleLabel.fontColor = UIColor.black
-        titleLabel.position = CGPoint(x: 2.5, y: 105)
+        titleLabel.position = CGPoint(x: 0, y: 0.30 * dockShroud.frame.height)
         self.addChild(titleLabel)
         
         var items: [WPTItem] = []
@@ -61,49 +61,49 @@ class WPTDockMenuNode: SKNode {
         }
         
         itemPicker = WPTItemPickerNode(items: items, onChange: updateStats)
-        itemPicker!.position = CGPoint(x: -80, y: -20)
+        itemPicker!.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: 0)
         itemPicker!.zPosition = WPTValues.pauseShroudZPosition * 2 + 1
-        itemPicker!.setSize(width: background.size.width, height: background.size.height)
+        itemPicker!.setSize(width: 0.7 * background.size.width, height: background.size.height)
         self.addChild(itemPicker!)
         
         itemNameLabel.horizontalAlignmentMode = .center
-        itemNameLabel.position = CGPoint(x: -80, y: 55)
+        itemNameLabel.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: 0.2 * dockShroud.frame.height)
         itemNameLabel.fontColor = UIColor.black
         itemNameLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
         self.addChild(itemNameLabel)
         
         doubloonsLabel.horizontalAlignmentMode = .center
-        descriptionLabel.position = CGPoint(x: -80, y: -105)
+        descriptionLabel.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: -0.25 * dockShroud.frame.height)
         descriptionLabel.fontColor = UIColor.black
         descriptionLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 3
         self.addChild(descriptionLabel)
         
         let moneyImgSize = 1.8 * WPTValues.fontSizeSmall
         self.moneyImage.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
-        self.moneyImage.position = CGPoint(x: 85, y: 60)
+        self.moneyImage.position = CGPoint(x: 0.17 * dockShroud.frame.width, y: 0.15 * dockShroud.frame.height)
         self.moneyImage.size = CGSize(width: moneyImgSize, height: moneyImgSize)
         self.addChild(self.moneyImage)
         
         doubloonsLabel.horizontalAlignmentMode = .left
-        doubloonsLabel.position = CGPoint(x: 120, y: 55)
+        doubloonsLabel.position = CGPoint(x: 0.21 * dockShroud.frame.width, y: 0.12 * dockShroud.frame.height)
         doubloonsLabel.fontColor = UIColor.black
         doubloonsLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
         self.addChild(doubloonsLabel)
         
         priceLabel.horizontalAlignmentMode = .left
-        priceLabel.position = CGPoint(x: 70, y: -5)
+        priceLabel.position = CGPoint(x: 0.14 * dockShroud.frame.width, y: 0)
         priceLabel.fontColor = UIColor.black
         priceLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
         self.addChild(priceLabel)
         
         purchaseLabel.horizontalAlignmentMode = .left
-        purchaseLabel.position = CGPoint(x: 70, y: -42.5)
+        purchaseLabel.position = CGPoint(x: 0.14 * dockShroud.frame.width, y: -0.12 * dockShroud.frame.height)
         purchaseLabel.fontColor = UIColor.black
         purchaseLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
         self.addChild(purchaseLabel)
         
-        wahm.horizontalAlignmentMode = .left
-        wahm.position = CGPoint(x: 135, y: -130)
+        wahm.horizontalAlignmentMode = .right
+        wahm.position = CGPoint(x: 0.3 * dockShroud.frame.size.width, y: -0.35 * dockShroud.frame.size.height)
         wahm.fontColor = UIColor.black
         wahm.zPosition = WPTValues.pauseShroudZPosition * 2 + 3
         self.addChild(wahm)

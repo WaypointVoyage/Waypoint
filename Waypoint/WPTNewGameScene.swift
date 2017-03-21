@@ -32,8 +32,8 @@ class WPTNewGameScene: WPTScene {
         addChild(headerLabel)
         
         shipPicker = WPTShipPickerNode(ships: WPTShipCatalog.playableShips, onChange: updateStats)
-        shipPicker!.position = CGPoint(x: 0.25 * frame.width, y: frame.midY)
-        shipPicker!.setSize(width: 0.6 * frame.width, height: 0.6 * frame.height)
+        shipPicker!.position = CGPoint(x: 0.3 * frame.width, y: frame.midY)
+        shipPicker!.setSize(width: 0.5 * frame.width, height: 0.6 * frame.height)
         addChild(shipPicker!)
 
         // ship stats

@@ -17,8 +17,8 @@ class WPTShipPickerNode: SKNode {
     
     var onChange: (WPTShip) -> Void
     
-    let leftArrow = SKSpriteNode(imageNamed: "chevron")
-    let rightArrow = SKSpriteNode(imageNamed: "chevron")
+    let leftArrow = SKSpriteNode(imageNamed: "plank_arrow")
+    let rightArrow = SKSpriteNode(imageNamed: "plank_arrow")
     var shipImage = SKSpriteNode(imageNamed: "box")
     
     var width: CGFloat?
@@ -45,12 +45,12 @@ class WPTShipPickerNode: SKNode {
         
         // setup the arrows
         if (self.ships.count > 1) {
-            rightArrow.zRotation = CGFloat.pi
+            leftArrow.zRotation = CGFloat.pi
             let arrowSize = 0.08 * WPTValues.screenSize.width
             leftArrow.size = CGSize(width: arrowSize, height: arrowSize)
             rightArrow.size = leftArrow.size
-            leftArrow.anchorPoint = CGPoint(x: -1, y: 0.5)
-            rightArrow.anchorPoint = CGPoint(x: -1, y: 0.5)
+            leftArrow.anchorPoint = CGPoint(x: 1, y: 0.5)
+            rightArrow.anchorPoint = CGPoint(x: 1, y: 0.5)
             addChild(leftArrow)
             addChild(rightArrow)
         }
