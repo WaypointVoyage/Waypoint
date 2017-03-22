@@ -47,7 +47,6 @@ class WPTTreasureWave: WPTLevelWave {
         if treasureChest.closed {
             if let player = self.player {
                 let dist = CGVector(start: treasureChest.position, end: player.position).magnitude()
-                print("the distance: \(dist)")
                 if dist < treasureChest.activationDistance {
                     treasureChest.open()
                 }
