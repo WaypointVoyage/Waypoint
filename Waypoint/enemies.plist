@@ -26,6 +26,30 @@
 	</dict>
 	<dict>
 		<key>aggression</key>
+		<real>1.3</real>
+		<key>awareness</key>
+		<real>0.59999999999999998</real>
+		<key>brain</key>
+		<string>stand_and_shoot</string>
+		<key>caution</key>
+		<real>0.5</real>
+		<key>haste</key>
+		<real>1.3</real>
+		<key>items</key>
+		<array>
+			<string>Long Barrel Cannon</string>
+		</array>
+		<key>name</key>
+		<string>Trebuchet</string>
+		<key>ship</key>
+		<string>Catapult</string>
+		<key>terrainType</key>
+		<string>_LAND</string>
+		<key>triggerHappiness</key>
+		<real>0.10000000000000001</real>
+	</dict>
+	<dict>
+		<key>aggression</key>
 		<integer>1</integer>
 		<key>awareness</key>
 		<integer>1</integer>
@@ -67,6 +91,26 @@
 		<string>_SEA</string>
 		<key>triggerHappiness</key>
 		<real>0.5</real>
+	</dict>
+	<dict>
+		<key>aggression</key>
+		<real>0.20000000000000001</real>
+		<key>awareness</key>
+		<real>1.2</real>
+		<key>brain</key>
+		<string>pirate_brain</string>
+		<key>caution</key>
+		<integer>1</integer>
+		<key>haste</key>
+		<integer>2</integer>
+		<key>name</key>
+		<string>Viking</string>
+		<key>ship</key>
+		<string>Longship</string>
+		<key>terrainType</key>
+		<string>_SEA</string>
+		<key>triggerHappiness</key>
+		<real>0.29999999999999999</real>
 	</dict>
 </array>
 </plist>

@@ -104,17 +104,6 @@ class WPTLevelScene: WPTScene {
         } else {
             levelNameDisplay()
         }
-        
-        /* TESTING */
-        let health = WPTItemCatalog.itemsByName["Ship Maintenance"]!
-        let healthNode = WPTItemNode(health)
-        healthNode.position = self.terrain.randomPoint(borderWidth: 0, onLand: false)
-        self.items.addChild(healthNode)
-        
-        let stat = WPTItemCatalog.randomStatModifier()
-        let statNode = WPTItemNode(stat)
-        statNode.position = self.terrain.randomPoint(borderWidth: 0, onLand: false)
-        self.items.addChild(statNode)
     }
     
     private func levelNameDisplay() {

@@ -23,7 +23,6 @@ class WPTLevel {
     
     // obstacles
     let whirlpools: Int
-    var whirlpoolLocations = [CGPoint]()
     let boulders: Int
     
     let hasTutorial: Bool
@@ -72,9 +71,6 @@ class WPTLevel {
         if let obstaclesDict = levelDict["entities"] as? [String:AnyObject] {
             self.whirlpools = obstaclesDict["whirlpools"] as! Int
             self.boulders = obstaclesDict["boulders"] as! Int
-            for point in obstaclesDict["whirlpoolLocations"] as! [[CGFloat]] {
-                whirlpoolLocations.append(CGPoint(x: point[0], y: point[1]))
-            }
         } else {
             self.whirlpools = 0
             self.boulders = 0

@@ -9,6 +9,8 @@
 import SpriteKit
 
 class WPTPlayer: WPTActor {
+    static let playerHealthScale: CGFloat = 12
+    
     let shipName: String
     var health: CGFloat
     var completedLevels: [String]
@@ -17,7 +19,7 @@ class WPTPlayer: WPTActor {
     init(ship: WPTShip, shipName: String, completedLevels: [String]? = nil) {
         self.shipName = shipName
         self.completedLevels = completedLevels ?? [String]()
-        self.health = ship.health
+        self.health = WPTPlayer.playerHealthScale * ship.health
         super.init(ship: ship)
         
         progress = WPTPlayerProgress(player: self)

@@ -12,6 +12,20 @@
       "items": [],
    },
    {
+      "name": "Trebuchet",
+      "ship": "Catapult",
+      "brain": "stand_and_shoot",
+      "terrainType": "_LAND",
+      "haste": 1.3,
+      "aggression": 1.3,
+      "awareness": 0.6,
+      "caution": 0.5,
+      "triggerHappiness": 0.1,
+      "items": [
+         "Long Barrel Cannon"
+      ],
+   },
+   {
       "name": "Pirate",
       "ship": "Waypoint Ship",
       "brain": "pirate_brain",
@@ -34,5 +48,16 @@
       "caution": 1.2,
       "triggerHappiness": 0.5,
       "items": [],
-   }
+   },
+   {
+      "name": "Viking",
+      "ship": "Longship",
+      "brain": "pirate_brain",
+      "terrainType": "_SEA",
+      "haste": 2,
+      "aggression": 0.2,
+      "awareness": 1.2,
+      "caution": 1,
+      "triggerHappiness": 0.3,
+   },
 ]
