@@ -11,11 +11,11 @@ import SpriteKit
 
 class WPTItemPickerNode: SKNode {
     
-    let items: [WPTItem]
+    let items: [ItemWrapper]
     var itemTextures = [SKTexture]()
     var index = 0
     
-    var onChange: (WPTItem) -> Void
+    var onChange: (ItemWrapper) -> Void
     
     let leftArrow = SKSpriteNode(imageNamed: "plank_arrow")
     let rightArrow = SKSpriteNode(imageNamed: "plank_arrow")
@@ -24,7 +24,7 @@ class WPTItemPickerNode: SKNode {
     var width: CGFloat?
     var height: CGFloat?
     
-    var currentItem: WPTItem {
+    var currentItem: ItemWrapper {
         get {
             return items[index]
         }
@@ -36,8 +36,10 @@ class WPTItemPickerNode: SKNode {
         }
     }
     
-    init(items: [WPTItem], onChange: @escaping (WPTItem) -> Void) {
-        self.items = items
+    init(items: [WPTItem], onChange: @escaping (ItemWrapper) -> Void) {
+        self.items = items.map({
+            ItemWrapper(item: $0)
+        })
         self.onChange = onChange
         super.init()
         assert(self.items.count >= 1, "At least one item is required!")
@@ -57,7 +59,7 @@ class WPTItemPickerNode: SKNode {
         
         // setup the ship image
         for item in self.items {
-            itemTextures.append(SKTexture(imageNamed: item.imageName))
+            itemTextures.append(SKTexture(imageNamed: item.item.imageName))
         }
         itemImage.texture = currentItemTexture
         itemImage.position = CGPoint.zero
@@ -98,5 +100,14 @@ class WPTItemPickerNode: SKNode {
         }
         itemImage.texture = currentItemTexture
         self.onChange(self.currentItem)
+    }
+}
+
+class ItemWrapper {
+    let item: WPTItem
+    var purchased: Bool = false
+    
+    init(item: WPTItem) {
+        self.item = item
     }
 }

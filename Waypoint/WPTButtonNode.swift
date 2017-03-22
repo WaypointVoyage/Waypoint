@@ -14,7 +14,7 @@ class WPTButtonNode: SKNode {
     var background =  SKSpriteNode(imageNamed: "plank")
     var disabled: Bool {
         get {
-            return label.alpha == 0.6
+            return label.alpha < 0.7
         }
         set(disable) {
             if (disable) {

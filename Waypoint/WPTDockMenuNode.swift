@@ -107,10 +107,10 @@ class WPTDockMenuNode: SKNode {
         updateStats(item: (itemPicker?.currentItem)!)
     }
     
-    func updateStats(item: WPTItem) {
-        self.itemNameLabel.text = item.name
-        self.descriptionLabel.text = item.description
-        if (player.player.doubloons < item.value || item.purchased) {
+    func updateStats(item: ItemWrapper) {
+        self.itemNameLabel.text = item.item.name
+        self.descriptionLabel.text = item.item.description
+        if (player.player.doubloons < item.item.value || item.purchased) {
             self.purchaseLabel.disabled = true
         } else {
             self.purchaseLabel.disabled = false
@@ -119,7 +119,7 @@ class WPTDockMenuNode: SKNode {
             self.priceLabel.text = "Price: Bought"
             self.itemPicker!.itemImage.alpha = 0.5
         } else {
-            self.priceLabel.text = "Price: \(item.value)"
+            self.priceLabel.text = "Price: \(item.item.value)"
             self.itemPicker!.itemImage.alpha = 1.0
         }
     }
@@ -137,7 +137,7 @@ class WPTDockMenuNode: SKNode {
         
         if !self.background.contains(touchPos) {
             self.removeFromParent()
-        } else if self.purchaseLabel.contains(touchPos) && self.purchaseLabel.disabled == false {
+        } else if self.purchaseLabel.contains(touchPos) && !self.purchaseLabel.disabled {
             purchaseItem()
         } else if self.wahm.contains(touchPos) {
             // update the player's progress
@@ -157,7 +157,7 @@ class WPTDockMenuNode: SKNode {
     }
     
     private func purchaseItem() {
-        player.player.doubloons -= itemPicker!.currentItem.value
+        player.player.doubloons -= itemPicker!.currentItem.item.value
         updateDoubloons()
         if let hud = (self.scene as? WPTLevelScene)?.hud {
             hud.top.updateMoney()
@@ -166,6 +166,6 @@ class WPTDockMenuNode: SKNode {
         self.priceLabel.text = "Price: Bought"
         self.purchaseLabel.disabled = true
         itemPicker!.currentItem.purchased = true
-        player.give(item: itemPicker!.currentItem)
+        player.give(item: itemPicker!.currentItem.item)
     }
 }
