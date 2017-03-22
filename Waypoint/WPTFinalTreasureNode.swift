@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTFinalTreasureNode: SKNode {
     
-    let activationDistance: CGFloat = 500
+    let activationDistance: CGFloat = 600
     
     public private(set) var closed = true
     
