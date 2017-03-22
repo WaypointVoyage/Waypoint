@@ -47,7 +47,7 @@ class WPTShipNamePopUpNode: SKNode {
         randomIcon?.zPosition = WPTValues.pauseShroudZPosition + 2
         let size = CGSize(width: WPTValues.fontSizeSmall, height: WPTValues.fontSizeSmall)
         randomIcon?.size = size
-        randomIcon?.position.y += 60
+        randomIcon?.position.y = 0.135 * background.frame.height
         randomIcon?.position.x += 100
         self.addChild(randomIcon!)
         
