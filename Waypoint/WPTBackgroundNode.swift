@@ -26,6 +26,14 @@ class WPTBackgroundNode: SKSpriteNode {
     
     func position(for scene: WPTScene) {
         self.position = CGPoint(x: scene.frame.midX, y: scene.frame.midY)
-        self.setScale(scene.frame.width / self.backgroundTexture.size().width)
+        
+        let sceneAr = scene.frame.width / scene.frame.height
+        let bgAr = self.backgroundTexture.size().width / self.backgroundTexture.size().height
+        
+        if sceneAr > bgAr {
+            self.setScale(scene.frame.width / self.backgroundTexture.size().width)
+        } else {
+            self.setScale(scene.frame.height / self.backgroundTexture.size().height)
+        }
     }
 }
