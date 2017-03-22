@@ -12,20 +12,8 @@
       "position": {
          "x": 508,
          "y": 996,
-         "angle": -1.5707963267948966, 
+         "angle": -1.5707963267948966,
       },
-      "inventory": [
-         {
-            "item": "ITEM_NAME",
-            "price": 10,
-            "inStock": true
-         },
-         {
-            "item": "ITEM NAME",
-            "price": 10,
-            "inStock": true
-         }
-      ]
    },
    "entities": {
       "whirlpools": 0,

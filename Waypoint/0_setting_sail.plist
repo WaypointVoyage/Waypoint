@@ -526,25 +526,6 @@
 	<string>Setting Sail</string>
 	<key>port</key>
 	<dict>
-		<key>inventory</key>
-		<array>
-			<dict>
-				<key>inStock</key>
-				<true/>
-				<key>item</key>
-				<string>ITEM_NAME</string>
-				<key>price</key>
-				<integer>10</integer>
-			</dict>
-			<dict>
-				<key>inStock</key>
-				<true/>
-				<key>item</key>
-				<string>ITEM NAME</string>
-				<key>price</key>
-				<integer>10</integer>
-			</dict>
-		</array>
 		<key>position</key>
 		<dict>
 			<key>angle</key>

@@ -13,6 +13,11 @@ class WPTLevelBeatenPMS: GKState {
     override func didEnter(from previousState: GKState?) {
         print("Started WPTLevelBeatenPMS")
         
+        if let puppetMaster = self.stateMachine as? WPTPuppetMaster {
+            puppetMaster.scene.port?.active = true
+            puppetMaster.scene.alert(header: "Level Complete", desc: "Dock at the port to continue.")
+        }
+        
         // allow the player to dock at the port
         if let port = (self.stateMachine as? WPTPuppetMaster)?.scene.port {
             port.active = true

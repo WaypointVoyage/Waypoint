@@ -23,6 +23,7 @@ class WPTValues {
     static var fontSizeTitle = CGFloat(100)
     static var fontSizeLarge = CGFloat(70)
     static var fontSizeMedium = CGFloat(50)
+    static var fontSizeKindaSmall = CGFloat(40)
     static var fontSizeSmall = CGFloat(30)
     static var fontSizeTiny = CGFloat(22)
     static var fontSizeMiniscule = CGFloat(14)
@@ -73,6 +74,7 @@ class WPTValues {
         WPTValues.fontSizeTitle = 0.25 * usableScreenHeight
         WPTValues.fontSizeLarge = 0.175 * usableScreenHeight
         WPTValues.fontSizeMedium = 0.125 * usableScreenHeight
+        WPTValues.fontSizeKindaSmall = 0.1 * usableScreenHeight
         WPTValues.fontSizeSmall = 0.075 * usableScreenHeight
         WPTValues.fontSizeMiniscule = 0.035 * usableScreenHeight
         WPTValues.em = WPTValues.fontSizeSmall

@@ -15,8 +15,6 @@
 	<string>Cutlass Careen</string>
 	<key>port</key>
 	<dict>
-		<key>inventory</key>
-		<array/>
 		<key>position</key>
 		<dict>
 			<key>angle</key>

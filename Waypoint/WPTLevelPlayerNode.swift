@@ -73,8 +73,20 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
                 scene.hud.addChild(scene.hud.destroyMenu)
                 
                 // delete save data
-                let storage = WPTStorage()
-                storage.clearPlayerProgress()
+                OperationQueue().addOperation {
+                    let storage = WPTStorage()
+                    storage.clearPlayerProgress()
+                }
+            }
+        }
+    }
+    
+    override func give(item: WPTItem) {
+        super.give(item: item)
+        
+        if let desc = item.description {
+            if let scene = self.scene as? WPTLevelScene {
+               scene.alert(header: item.name, desc: desc)
             }
         }
     }

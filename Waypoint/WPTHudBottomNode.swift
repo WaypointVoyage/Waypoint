@@ -13,6 +13,7 @@ class WPTHudBottomNode: SKNode {
     private let rightFire: WPTFireButtonNode
     let leftBorder = SKSpriteNode(imageNamed: "levelBorder")
     let rightBorder = SKSpriteNode(imageNamed: "levelBorder")
+    let alert = WPTAlertNode()
     
     private var pressed: Bool = false
     
@@ -44,8 +45,9 @@ class WPTHudBottomNode: SKNode {
         self.rightBorder.position = CGPoint(x: WPTValues.screenSize.width - (offset*1.2), y: offset)
         self.addChild(rightBorder)
         
-        
-        
+        alert.position = CGPoint(x: WPTValues.screenSize.width * 0.5, y: 10)
+        alert.zPosition = WPTValues.movementHandlerZPosition - 10
+        self.addChild(alert)
     }
     
     required init?(coder aDecoder: NSCoder) {

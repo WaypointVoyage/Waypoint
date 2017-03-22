@@ -1,3 +1,9 @@
 [
-   
+   {
+      "name": "Ship Maintenance",
+      "imageName": "repair_0",
+      "prevalence": 100,
+      "repair": 0.5,
+      "repairProportionally": true,
+   },
 ]

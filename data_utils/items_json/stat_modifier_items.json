@@ -1,6 +1,7 @@
 [
    {
       "name": "Oar",
+      "description": "OAR DESCRIPTION",
       "imageName": "oar",
       "multiplicity": 0,
       "value": 20,
@@ -11,6 +12,7 @@
    },
    {
       "name": "Gun Powder",
+      "description": "GUN POWDER DESCRIPTION",
       "imageName": "gunpowder",
       "multiplicity": 0,
       "value": 18,
@@ -21,6 +23,7 @@
    },
    {
       "name": "Spiked Cannon Ball",
+      "description": "SPIKED CANNON BALL DESCRIPTION",
       "imageName": "spiked_cannon_ball",
       "multiplicity": 1,
       "value": 35,
@@ -32,6 +35,7 @@
    },
    {
       "name": "Propeller",
+      "description": "PROPELLER DESCRIPTION",
       "imageName": "propeller_silver",
       "multiplicity": 3,
       "value": 30,
@@ -42,6 +46,7 @@
    },
    {
       "name": "Rudder",
+      "description": "RUDDER DESCRIPTION",
       "imageName": "rudder",
       "multiplicity": 1,
       "value": 25,
@@ -52,6 +57,7 @@
    },
    {
       "name": "Sail",
+      "description": "SAIL DESCRIPTION",
       "imageName": "sail",
       "multiplicity": 5,
       "value": 25,
@@ -62,6 +68,7 @@
    },
    {
       "name": "Telescope",
+      "description": "TELESCOPE DESCRIPTION",
       "imageName": "telescope",
       "multiplicity": 0,
       "value": 25,
@@ -72,6 +79,7 @@
    },
    {
       "name": "Ship's Wheel",
+      "description": "SHIPS WHEEL DESCRIPTION",
       "imageName": "ships_wheel",
       "multiplicity": 1,
       "value": 25,
@@ -82,6 +90,7 @@
    },
    {
       "name": "Hook Hand",
+      "description": "HOOK HAND DESCRIPTION",
       "imageName": "hook_hand",
       "multiplicity": 2,
       "value": 30,
@@ -93,6 +102,7 @@
    },
    {
       "name": "Eyepatch",
+      "description": "EYEPATCH DESCRIPTION",
       "imageName": "eyepatch",
       "multiplicity": 2,
       "value": 10,
@@ -104,6 +114,7 @@
    },
    {
       "name": "Pile of Cannon Balls",
+      "description": "PILE OF CANNON BALLS DESCRIPTION",
       "imageName": "pile_of_cannon_balls",
       "multiplicity": 0,
       "value": 50,
@@ -114,6 +125,7 @@
    },
    {
       "name": "Rum",
+      "description": "RUM DESCRIPTION",
       "imageName": "rum",
       "multiplicity": 0,
       "value": 20,
@@ -126,6 +138,7 @@
    },
    {
       "name": "Scimitar",
+      "description": "SCIMITAR DESCRIPTION",
       "imageName": "scimitar",
       "multiplicity": 0,
       "value": 35,
@@ -136,6 +149,7 @@
    },
    {
       "name": "Drum",
+      "description": "DRUM DESCRIPTION",
       "imageName": "drum",
       "multiplicity": 0,
       "value": 45,
@@ -147,6 +161,7 @@
    },
    {
       "name": "Pirate Flag",
+      "description": "PIRATE FLAG DESCRIPTION",
       "imageName": "pirate_flag",
       "multiplicity": 3,
       "value": 30,
@@ -157,6 +172,7 @@
    },
    {
       "name": "Mermaid Figure",
+      "description": "MERMAID FIGURE DESCRIPTION",
       "imageName": "mermaid",
       "multiplicity": 0,
       "value": 65,
@@ -168,6 +184,7 @@
    },
    {
       "name": "Long Barrel Cannon",
+      "description": "LONG BARREL CANNON DESCRIPTION",
       "imageName": "long_barrel_cannon",
       "multiplicity": 0,
       "value": 40,
@@ -179,6 +196,7 @@
    },
    {
       "name": "Bandana",
+      "description": "BANDANA DESCRIPTION",
       "imageName": "bandana",
       "multiplicity": 1,
       "value": 15,
@@ -189,6 +207,7 @@
    },
    {
       "name": "Rope",
+      "description": "ROPE DESCRIPTION",
       "imageName": "rope",
       "multiplicity": 0,
       "value": 10,
@@ -199,6 +218,7 @@
    },
    {
       "name": "Barrel",
+      "description": "BARREL DESCRIPTION",
       "imageName": "barrel",
       "multiplicity": 0,
       "value": 15,
@@ -210,6 +230,7 @@
    },
    {
       "name": "Blunderbuss",
+      "description": "BLUNDERBUSS DESCRIPTION",
       "imageName": "blunderbuss",
       "multiplicity": 0,
       "value": 25,
@@ -221,6 +242,7 @@
    },
    {
       "name": "Life Ring",
+      "description": "LIFE RING DESCRIPTION",
       "imageName": "life_ring",
       "multiplicity": 0,
       "value": 35,
