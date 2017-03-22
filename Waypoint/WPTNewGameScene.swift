@@ -11,8 +11,9 @@ import SpriteKit
 
 class WPTNewGameScene: WPTScene {
     
+    let background = WPTBackgroundNode(image: "ocean3")
     let headerLabel = WPTLabelNode(text: "New Game", fontSize: WPTValues.fontSizeLarge)
-    var startLabel = WPTLabelNode(text: "Start", fontSize: WPTValues.fontSizeMedium)
+    var startLabel = WPTButtonNode(text: "Start", fontSize: WPTValues.fontSizeMedium)
     
     let healthLabel = WPTStatBarNode("Health")
     let speedLabel = WPTStatBarNode("Speed")
@@ -29,10 +30,11 @@ class WPTNewGameScene: WPTScene {
         super.didMove(to: view)
         
         headerLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
+        headerLabel.fontColor = UIColor.black
         addChild(headerLabel)
         
         shipPicker = WPTShipPickerNode(ships: WPTShipCatalog.playableShips, onChange: updateStats)
-        shipPicker!.position = CGPoint(x: 0.3 * frame.width, y: frame.midY)
+        shipPicker!.position = CGPoint(x: 0.3 * frame.width, y: frame.midY / 1.05)
         shipPicker!.setSize(width: 0.5 * frame.width, height: 0.6 * frame.height)
         addChild(shipPicker!)
 
@@ -44,13 +46,20 @@ class WPTNewGameScene: WPTScene {
         let top = self.frame.midY + (h / 2) - WPTValues.fontSizeMiniscule
         for i in 0..<labels.count {
             let label = labels[i]
+            label.label.fontColor = UIColor.black
             label.position = CGPoint(x: 0.70 * self.frame.width, y: top - CGFloat(i) * spacing)
             label.setWidth(width)
             self.addChild(label)
         }
         updateStats(ship: (shipPicker?.currentShip)!)
+        
+        // add background
+        background.position(for: self)
+        addChild(background)
 
         startLabel.position = CGPoint(x: frame.midX, y: 0.1 * frame.height)
+        startLabel.label.zPosition = 2
+        startLabel.background.zPosition = 1
         addChild(startLabel)
         
         self.shipInputField = UITextField()
@@ -93,9 +102,9 @@ class WPTNewGameScene: WPTScene {
     
     func textFieldDidChange(_ textField: UITextField) {
         if (textField.text != "") {
-            self.shipPop!.startLevel.alpha = 1.0
+            self.shipPop!.startLevel.disabled = false
         } else {
-            self.shipPop!.startLevel.alpha = 0.4
+            self.shipPop!.startLevel.disabled = true
         }
     }
     

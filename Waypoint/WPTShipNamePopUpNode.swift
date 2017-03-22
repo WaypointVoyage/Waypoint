@@ -12,7 +12,7 @@ import SpriteKit
 class WPTShipNamePopUpNode: SKNode {
     
     let shipName = WPTLabelNode(text: "Ship Name", fontSize: WPTValues.fontSizeSmall)
-    let startLevel = WPTLabelNode(text: "Start >", fontSize: WPTValues.fontSizeSmall)
+    let startLevel = WPTButtonNode(text: "Start >", fontSize: WPTValues.fontSizeSmall)
     let background = SKSpriteNode(imageNamed: "pause_scroll")
     var inputField: UITextField?
     var randomIcon: SKSpriteNode?
@@ -52,10 +52,9 @@ class WPTShipNamePopUpNode: SKNode {
         self.addChild(randomIcon!)
         
         startLevel.zPosition = WPTValues.pauseShroudZPosition + 2
-        startLevel.position.y -= 90
-        startLevel.position.x += 80
-        startLevel.alpha = 0.4
-        startLevel.fontColor = UIColor.black
+        startLevel.position.y -= 73
+        startLevel.position.x += 88
+        startLevel.disabled = true
         self.addChild(startLevel)
         
         shipName.zPosition = WPTValues.pauseShroudZPosition + 2
@@ -75,7 +74,7 @@ class WPTShipNamePopUpNode: SKNode {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         self.inputField?.resignFirstResponder()
-        if self.startLevel.contains(touch.location(in: self)) && self.startLevel.alpha == 1.0 {
+        if self.startLevel.contains(touch.location(in: self)) && self.startLevel.disabled == false {
             
             let shipName = self.inputField?.text
             self.inputField?.removeFromSuperview()
@@ -100,7 +99,7 @@ class WPTShipNamePopUpNode: SKNode {
             let shipNames = NSArray(contentsOfFile: plistNames) as! [String]
             let randomName = shipNames[Int(arc4random_uniform(UInt32(shipNames.count)))]
             self.inputField?.text = randomName
-            self.startLevel.alpha = 1.0
+            self.startLevel.disabled = false
         }
         else if !self.background.contains(touch.location(in: self)) {
             self.inputField?.removeFromSuperview()

@@ -8,22 +8,19 @@
 
 import SpriteKit
 
-class WPTSceneLabelNode: WPTLabelNode {
+class WPTSceneLabelNode: WPTButtonNode {
     
     static let fontSize = WPTValues.fontSizeMedium
     
     var nextScene: SKScene?
     var useSound = true
     
-    override init() {
-        super.init()
-    }
-    
     init(text: String, next: SKScene) {
         super.init(text: text, fontSize: WPTSceneLabelNode.fontSize)
         self.nextScene = next
         self.isUserInteractionEnabled = true
-        self.verticalAlignmentMode = .top
+        self.label.zPosition = 2
+        self.background.zPosition = 1
     }
     
     required init?(coder aDecoder: NSCoder) {

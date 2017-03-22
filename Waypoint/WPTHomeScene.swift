@@ -10,6 +10,9 @@ import SpriteKit
 
 class WPTHomeScene: WPTScene {
     
+    let background = WPTBackgroundNode(image: "ocean3")
+    let title = WPTLabelNode(text: "Waypoint", fontSize: WPTValues.fontSizeMedium)
+    let treasureChest = SKSpriteNode(imageNamed: "treasure")
     let newGame = WPTSceneLabelNode(text: "New Game", next: WPTNewGameScene())
     var continueLbl: WPTSceneLabelNode?
     let highScores = WPTSceneLabelNode(text: "High Scores", next: WPTHighScoresScene())
@@ -38,17 +41,29 @@ class WPTHomeScene: WPTScene {
         labels.append(highScores)
         labels.append(settings)
         
-        let spacing = WPTValues.fontSizeMiniscule + WPTSceneLabelNode.fontSize
+        let spacing = WPTValues.fontSizeSmall + WPTSceneLabelNode.fontSize
         let h = CGFloat(labels.count) * spacing
-        let top = self.frame.midY + (h / 2) - WPTValues.fontSizeMiniscule
+        let top = self.frame.midY + (h / 2) - WPTValues.fontSizeMedium
         for i in 0..<labels.count {
             let label = labels[i]
             label.position = CGPoint(x: self.frame.midX, y: top - CGFloat(i) * spacing)
             self.addChild(label)
         }
+        
+        // add background
+        background.position(for: self)
+        addChild(background)
+        
+        title.position = CGPoint(x: self.frame.midX / 3.5, y: self.frame.midY * 1.77)
+        title.fontColor = UIColor.black
+        addChild(title)
+        
+        treasureChest.position = CGPoint(x: self.frame.midX / 3.0, y: self.frame.midY / 2.2)
+        treasureChest.setScale(0.042)
+        addChild(treasureChest)
     }
     
-    static func getBack(frame: CGRect) -> SKLabelNode {
+    static func getBack(frame: CGRect) -> WPTButtonNode {
         let back = WPTSceneLabelNode(text: "< Back", next: WPTHomeScene())
         back.position = CGPoint(x: 0.15 * frame.width, y: 0.15 * frame.height)
         return back

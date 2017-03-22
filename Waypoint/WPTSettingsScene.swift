@@ -10,14 +10,20 @@ import SpriteKit
 
 class WPTSettingsScene: WPTScene {
     
+    let background = WPTBackgroundNode(image: "ocean3")
     let headerLabel = WPTLabelNode(text: "Settings", fontSize: WPTValues.fontSizeLarge)
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
         headerLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
+        headerLabel.fontColor = UIColor.black
         addChild(headerLabel)
         
         addChild(WPTHomeScene.getBack(frame: frame))
+        
+        // add background
+        background.position(for: self)
+        addChild(background)
     }
 }

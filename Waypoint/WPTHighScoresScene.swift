@@ -10,12 +10,14 @@ import SpriteKit
 
 class WPTHighScoresScene: WPTScene {
     
+    let background = WPTBackgroundNode(image: "ocean3")
     let titleLabel = WPTLabelNode(text: "High Scores", fontSize: WPTValues.fontSizeLarge)
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
         titleLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
+        titleLabel.fontColor = UIColor.black
         addChild(titleLabel)
         
         addChild(WPTHomeScene.getBack(frame: frame))
@@ -26,6 +28,10 @@ class WPTHighScoresScene: WPTScene {
         for score in scores {
             print("\t - \(score.shipName): \(score.doubloons) at \(score.date)")
         }
+        
+        // add background
+        background.position(for: self)
+        addChild(background)
     }
     
 }

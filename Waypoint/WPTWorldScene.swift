@@ -16,7 +16,7 @@ class WPTWorldScene: WPTScene {
     let player: WPTWorldPlayerNode
     
     let levelName = WPTLabelNode(text: "Level", fontSize: WPTValues.fontSizeMedium)
-    let startLevel = WPTLabelNode(text: "Start", fontSize: WPTValues.fontSizeMedium)
+    let startLevel = WPTButtonNode(text: "Start", fontSize: WPTValues.fontSizeMedium)
     
     private var currentStop: Int = -1
     
@@ -59,14 +59,15 @@ class WPTWorldScene: WPTScene {
         self.addChild(self.player)
         
         let back = WPTHomeScene.getBack(frame: self.frame)
-        back.position.x = 0.4 * self.frame.width
-        back.fontColor = UIColor.black
-        back.text = "Exit"
+        back.position.y -= 15
+        back.position.x = 0.41 * self.frame.width
+        back.label.text = "Exit"
+        back.background.size.width *= 0.75
+        back.setScale(0.8)
         self.addChild(back)
     
-        self.startLevel.verticalAlignmentMode = .top
-        self.startLevel.fontColor = UIColor.black
-        self.startLevel.position = CGPoint(x: 0.6 * self.frame.width, y: back.position.y)
+        self.startLevel.position = CGPoint(x: 0.59 * self.frame.width, y: back.position.y)
+        self.startLevel.setScale(0.8)
         self.addChild(self.startLevel)
     }
     

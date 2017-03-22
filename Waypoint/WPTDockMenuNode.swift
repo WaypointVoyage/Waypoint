@@ -20,8 +20,8 @@ class WPTDockMenuNode: SKNode {
     let moneyImage = SKSpriteNode(imageNamed: "doubloons")
     var priceLabel = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeSmall)
     var descriptionLabel = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeTiny)
-    var purchaseLabel = WPTLabelNode(text: "Purchase", fontSize: WPTValues.fontSizeSmall)
-    let wahm = WPTLabelNode(text: "Sail >", fontSize: WPTValues.fontSizeSmall)
+    var purchaseLabel = WPTButtonNode(text: "Purchase", fontSize: WPTValues.fontSizeSmall)
+    let wahm = WPTButtonNode(text: "Sail >", fontSize: WPTValues.fontSizeSmall)
     
     init(player: WPTLevelPlayerNode) {
         
@@ -60,51 +60,47 @@ class WPTDockMenuNode: SKNode {
             items.append(WPTItemCatalog.randomStatModifier())
         }
         
-        itemPicker = WPTItemPickerNode(items: items, onChange: updateStats)
-        itemPicker!.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: 0)
-        itemPicker!.zPosition = WPTValues.pauseShroudZPosition * 2 + 1
-        itemPicker!.setSize(width: 0.7 * background.size.width, height: background.size.height)
-        self.addChild(itemPicker!)
-        
         itemNameLabel.horizontalAlignmentMode = .center
-        itemNameLabel.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: 0.2 * dockShroud.frame.height)
+        itemNameLabel.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: 0.15 * dockShroud.frame.height)
         itemNameLabel.fontColor = UIColor.black
         itemNameLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
         self.addChild(itemNameLabel)
         
-        doubloonsLabel.horizontalAlignmentMode = .center
-        descriptionLabel.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: -0.25 * dockShroud.frame.height)
+        itemPicker = WPTItemPickerNode(items: items, onChange: updateStats)
+        itemPicker!.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: -0.05 * dockShroud.frame.height)
+        itemPicker!.zPosition = WPTValues.pauseShroudZPosition * 2 + 1
+        itemPicker!.setSize(width: 0.7 * background.size.width, height: background.size.height)
+        self.addChild(itemPicker!)
+        
+        descriptionLabel.horizontalAlignmentMode = .center
+        descriptionLabel.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: -0.29 * dockShroud.frame.height)
         descriptionLabel.fontColor = UIColor.black
         descriptionLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 3
         self.addChild(descriptionLabel)
         
         let moneyImgSize = 1.8 * WPTValues.fontSizeSmall
         self.moneyImage.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
-        self.moneyImage.position = CGPoint(x: 0.17 * dockShroud.frame.width, y: 0.15 * dockShroud.frame.height)
+        self.moneyImage.position = CGPoint(x: 0.13 * dockShroud.frame.width, y: 0.17 * dockShroud.frame.height)
         self.moneyImage.size = CGSize(width: moneyImgSize, height: moneyImgSize)
         self.addChild(self.moneyImage)
         
         doubloonsLabel.horizontalAlignmentMode = .left
-        doubloonsLabel.position = CGPoint(x: 0.21 * dockShroud.frame.width, y: 0.12 * dockShroud.frame.height)
+        doubloonsLabel.position = CGPoint(x: 0.17 * dockShroud.frame.width, y: 0.14 * dockShroud.frame.height)
         doubloonsLabel.fontColor = UIColor.black
         doubloonsLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
         self.addChild(doubloonsLabel)
         
         priceLabel.horizontalAlignmentMode = .left
-        priceLabel.position = CGPoint(x: 0.14 * dockShroud.frame.width, y: 0)
+        priceLabel.position = CGPoint(x: 0.10 * dockShroud.frame.width, y: 0)
         priceLabel.fontColor = UIColor.black
         priceLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
         self.addChild(priceLabel)
         
-        purchaseLabel.horizontalAlignmentMode = .left
-        purchaseLabel.position = CGPoint(x: 0.14 * dockShroud.frame.width, y: -0.12 * dockShroud.frame.height)
-        purchaseLabel.fontColor = UIColor.black
+        purchaseLabel.position = CGPoint(x: 0.185 * dockShroud.frame.width, y: -0.12 * dockShroud.frame.height)
         purchaseLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
         self.addChild(purchaseLabel)
         
-        wahm.horizontalAlignmentMode = .right
-        wahm.position = CGPoint(x: 0.3 * dockShroud.frame.size.width, y: -0.35 * dockShroud.frame.size.height)
-        wahm.fontColor = UIColor.black
+        wahm.position = CGPoint(x: 0.22 * dockShroud.frame.size.width, y: -0.31 * dockShroud.frame.size.height)
         wahm.zPosition = WPTValues.pauseShroudZPosition * 2 + 3
         self.addChild(wahm)
         
@@ -113,8 +109,19 @@ class WPTDockMenuNode: SKNode {
     
     func updateStats(item: WPTItem) {
         self.itemNameLabel.text = item.name
-        self.priceLabel.text = "Price: \(item.value)"
         self.descriptionLabel.text = item.description
+        if (player.player.doubloons < item.value || item.purchased) {
+            self.purchaseLabel.disabled = true
+        } else {
+            self.purchaseLabel.disabled = false
+        }
+        if (item.purchased) {
+            self.priceLabel.text = "Price: Bought"
+            self.itemPicker!.itemImage.alpha = 0.5
+        } else {
+            self.priceLabel.text = "Price: \(item.value)"
+            self.itemPicker!.itemImage.alpha = 1.0
+        }
     }
     
     func updateDoubloons() {
@@ -130,7 +137,7 @@ class WPTDockMenuNode: SKNode {
         
         if !self.background.contains(touchPos) {
             self.removeFromParent()
-        } else if self.purchaseLabel.contains(touchPos) {
+        } else if self.purchaseLabel.contains(touchPos) && self.purchaseLabel.disabled == false {
             purchaseItem()
         } else if self.wahm.contains(touchPos) {
             // update the player's progress
@@ -150,6 +157,15 @@ class WPTDockMenuNode: SKNode {
     }
     
     private func purchaseItem() {
-        
+        player.player.doubloons -= itemPicker!.currentItem.value
+        updateDoubloons()
+        if let hud = (self.scene as? WPTLevelScene)?.hud {
+            hud.top.updateMoney()
+        }
+        self.itemPicker!.itemImage.alpha = 0.5
+        self.priceLabel.text = "Price: Bought"
+        self.purchaseLabel.disabled = true
+        itemPicker!.currentItem.purchased = true
+        player.give(item: itemPicker!.currentItem)
     }
 }
