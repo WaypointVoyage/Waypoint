@@ -21,14 +21,18 @@ class WPTStorage {
         playerProgressPath = documentsDirectory.appendingPathComponent("player_progress.plist")
     }
     
-    func seedHighScores() {
+    func deleteHighScores() {
+        NSLog("deleting high scores...")
         do {
             try FileManager.default.removeItem(atPath: highScorePath)
         } catch let error as NSError {
             NSLog("WARN: Could not delete high scores")
             NSLog(error.debugDescription)
         }
-        
+    }
+    
+    func seedHighScores() {
+        deleteHighScores()
         for i in 0..<WPTValues.maxHighScores {
             let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
             let ship = WPTShipCatalog.playableShips[Int(rand * CGFloat(WPTShipCatalog.playableShips.count))]

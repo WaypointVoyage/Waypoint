@@ -15,6 +15,32 @@
          "angle": -0.39269908169872414,
       },
    },
+   "spawnVolumes": [
+      {
+         "minx": -200,
+         "maxx": -10,
+         "miny": 540,
+         "maxy": 2160,
+      },
+      {
+         "minx": 0,
+         "maxx": 2160,
+         "miny": 2170,
+         "maxy": 2360,
+      },
+      {
+         "minx": 2170,
+         "maxx": 2360,
+         "miny": 0,
+         "maxy": 2160,
+      },
+      {
+         "minx": 1080,
+         "maxx": 2160,
+         "miny": -200,
+         "maxy": -10
+      }
+   ],
    "entities": {
       "whirlpools": 0,
       "whirlpoolLocations": [],

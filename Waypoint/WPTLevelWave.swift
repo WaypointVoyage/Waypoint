@@ -22,4 +22,21 @@ class WPTLevelWave {
             }
         }
     }
+    
+    // Override for special setup
+    //      called after all of the enemies have been placed in the scene.
+    func setup(scene: WPTLevelScene) {}
+    
+    // Override to check if the level is complete
+    //      default is when all of the enemies have been killed
+    func isComplete(scene: WPTLevelScene) -> Bool {
+        return scene.terrain.enemies.count <= 0
+    }
+    
+    // Override for special teardown
+    //      called after the wave is considered complete and 
+    //      finishes asynchronously before the next wave starts
+    func teardown(scene: WPTLevelScene) {}
+    
+    func update(_ deltaTime: TimeInterval) {}
 }

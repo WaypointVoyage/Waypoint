@@ -34,6 +34,9 @@ class WPTLevel {
     // waves
     public private(set) var waves = [WPTLevelWave]()
     
+    // special values for special waves
+    var xMarksTheSpot: CGPoint? = nil
+    
     init(_ levelFileNamed: String) {
         let plistPath = Bundle.main.path(forResource: levelFileNamed, ofType: "plist")!
         let levelDict = NSDictionary(contentsOfFile: plistPath) as! [String: AnyObject]
@@ -92,9 +95,26 @@ class WPTLevel {
         
         // waves
         if let allWaveDicts = levelDict["waves"] as? [[String:AnyObject]] {
+            // build all the waves
             for waveDict in allWaveDicts {
-                self.waves.append(WPTLevelWave(waveDict))
+                if let special = waveDict["special"] as? String {
+                    switch (special) {
+                    case String(describing: WPTKrakenWave.self):
+                        self.waves.append(WPTKrakenWave())
+                    case String(describing: WPTTreasureWave.self):
+                        assert(xMarksTheSpot == nil, "Can only have one treasure wave per level")
+                        self.waves.append(WPTTreasureWave())
+                        let spot = waveDict["xMarksTheSpot"] as! [String:CGFloat]
+                        xMarksTheSpot = CGPoint(x: spot["x"]!, y: spot["y"]!)
+                    default:
+                        assert(false, "Could not identify the special wave: \(special).")
+                    }
+                } else {
+                    self.waves.append(WPTLevelWave(waveDict))
+                }
             }
+            
+            // hook up the linked list structure
             for i in 0..<(self.waves.count-1) {
                 self.waves[i].next = self.waves[i + 1]
             }

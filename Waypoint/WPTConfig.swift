@@ -13,11 +13,12 @@ class WPTConfig {
     var playMusic = true
     var playSoundEffects = true
     var testing = true
-    var allUnlocked = false
+    var allUnlocked = true
     var invincible = true
     var showBrainRadii = false
     var showPhysics = true
-    var showSpawnVolumesOnMinimap = false
+    var showSpawnVolumesOnMinimap = true
+    var clearHighScoresOnLoad = false
     
     // singleton instance
     static let values: WPTConfig = {

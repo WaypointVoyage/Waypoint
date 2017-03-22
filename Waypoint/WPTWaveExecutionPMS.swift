@@ -12,19 +12,31 @@ import GameplayKit
 class WPTWaveExecutionPMS: GKState {
     public private(set) var wave: WPTLevelWave? = nil
     
+    private var finishing = false
+    
     override func didEnter(from previousState: GKState?) {
         print("Started WPTWaveExecutionPMS")
         if let prev = previousState as? WPTWaveCreationPMS {
             wave = prev.wave
         }
+        finishing = false
         assert(wave != nil, "Cannot use WPTWaveExecutionPMS with nil wave")
     }
     
     override func update(deltaTime seconds: TimeInterval) {
+        guard !finishing else { return }
+        
+        wave!.update(seconds)
         if let pm = self.stateMachine as? WPTPuppetMaster {
-            if pm.scene.terrain.enemies.count <= 0 {
-                if !pm.enter(wave!.next == nil ? WPTLevelBeatenPMS.self : WPTWaveCreationPMS.self) {
-                    NSLog("ERROR: Could not transition out of WPTWaveExecutionPMS")
+            if wave!.isComplete(scene: pm.scene) {
+                finishing = true
+                OperationQueue().addOperation {
+                    self.wave!.teardown(scene: pm.scene)
+                    OperationQueue.main.addOperation {
+                        if !pm.enter(self.wave!.next == nil ? WPTLevelBeatenPMS.self : WPTWaveCreationPMS.self) {
+                            NSLog("ERROR: Could not transition out of WPTWaveExecutionPMS")
+                        }
+                    }
                 }
             }
         }

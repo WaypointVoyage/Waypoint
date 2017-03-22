@@ -39,6 +39,49 @@
 		<key>y</key>
 		<integer>1880</integer>
 	</dict>
+	<key>spawnVolumes</key>
+	<array>
+		<dict>
+			<key>maxx</key>
+			<integer>-10</integer>
+			<key>maxy</key>
+			<integer>2160</integer>
+			<key>minx</key>
+			<integer>-200</integer>
+			<key>miny</key>
+			<integer>540</integer>
+		</dict>
+		<dict>
+			<key>maxx</key>
+			<integer>2160</integer>
+			<key>maxy</key>
+			<integer>2360</integer>
+			<key>minx</key>
+			<integer>0</integer>
+			<key>miny</key>
+			<integer>2170</integer>
+		</dict>
+		<dict>
+			<key>maxx</key>
+			<integer>2360</integer>
+			<key>maxy</key>
+			<integer>2160</integer>
+			<key>minx</key>
+			<integer>2170</integer>
+			<key>miny</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>maxx</key>
+			<integer>2160</integer>
+			<key>maxy</key>
+			<integer>-10</integer>
+			<key>minx</key>
+			<integer>1080</integer>
+			<key>miny</key>
+			<integer>-200</integer>
+		</dict>
+	</array>
 	<key>terrain</key>
 	<dict>
 		<key>bodies</key>

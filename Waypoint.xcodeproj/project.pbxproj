@@ -88,17 +88,6 @@
 		7EAE35CF1E81FC7500F42904 /* WPTReticleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE35CE1E81FC7500F42904 /* WPTReticleNode.swift */; };
 		7EAE35D11E82153500F42904 /* WPTAlertNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE35D01E82153500F42904 /* WPTAlertNode.swift */; };
 		7EAE35DE1E822CCA00F42904 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35D21E822CCA00F42904 /* 0_setting_sail.plist */; };
-		7EAE35DF1E822CCA00F42904 /* 1_sea_legs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35D31E822CCA00F42904 /* 1_sea_legs.plist */; };
-		7EAE35E01E822CCA00F42904 /* 2_pegleg_plunder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35D41E822CCA00F42904 /* 2_pegleg_plunder.plist */; };
-		7EAE35E11E822CCA00F42904 /* 3_cutlass_careen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35D51E822CCA00F42904 /* 3_cutlass_careen.plist */; };
-		7EAE35E21E822CCA00F42904 /* 4_fire_in_the_hole.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35D61E822CCA00F42904 /* 4_fire_in_the_hole.plist */; };
-		7EAE35E31E822CCA00F42904 /* 5_dead_men_tell_no_tales.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35D71E822CCA00F42904 /* 5_dead_men_tell_no_tales.plist */; };
-		7EAE35E41E822CCA00F42904 /* 6_davy_jones_locker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35D81E822CCA00F42904 /* 6_davy_jones_locker.plist */; };
-		7EAE35E51E822CCA00F42904 /* 7_letter_of_marque.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35D91E822CCA00F42904 /* 7_letter_of_marque.plist */; };
-		7EAE35E61E822CCA00F42904 /* 8_give_no_quarter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35DA1E822CCA00F42904 /* 8_give_no_quarter.plist */; };
-		7EAE35E71E822CCA00F42904 /* 9_boom_about.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35DB1E822CCA00F42904 /* 9_boom_about.plist */; };
-		7EAE35E81E822CCA00F42904 /* 10_high_seas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35DC1E822CCA00F42904 /* 10_high_seas.plist */; };
-		7EAE35E91E822CCA00F42904 /* 11_shiver_me_timbers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35DD1E822CCA00F42904 /* 11_shiver_me_timbers.plist */; };
 		7EAE35EC1E82324300F42904 /* repair_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35EA1E82324300F42904 /* repair_items.plist */; };
 		7EAE35ED1E82324300F42904 /* stat_modifier_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE35EB1E82324300F42904 /* stat_modifier_items.plist */; };
 		7EBF5E231E4D06D200F81982 /* WPTTrailStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */; };
@@ -139,6 +128,21 @@
 		7EE8A9121E6FD07F00C119B9 /* WPTPortNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */; };
 		7EF61E8C1E3B057900CB4CAB /* WPTShipPickerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF61E8B1E3B057900CB4CAB /* WPTShipPickerNode.swift */; };
 		7EF76AAA1E52DB7E003BFCD1 /* WPTWorldPlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF76AA91E52DB7E003BFCD1 /* WPTWorldPlayerNode.swift */; };
+		7EF866811E82BC6C0012F2C7 /* WPTTreasureWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866801E82BC6C0012F2C7 /* WPTTreasureWave.swift */; };
+		7EF866831E82BCDA0012F2C7 /* WPTKrakenWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866821E82BCDA0012F2C7 /* WPTKrakenWave.swift */; };
+		7EF866881E82C3280012F2C7 /* WPTFinalTreasureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866871E82C3280012F2C7 /* WPTFinalTreasureNode.swift */; };
+		7EF8668A1E82C3630012F2C7 /* WPTKrakenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866891E82C3630012F2C7 /* WPTKrakenNode.swift */; };
+		7EF8668E1E82E25C0012F2C7 /* 1_sea_legs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF8668D1E82E25C0012F2C7 /* 1_sea_legs.plist */; };
+		7EF866901E82E3520012F2C7 /* 2_pegleg_plunder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF8668F1E82E3520012F2C7 /* 2_pegleg_plunder.plist */; };
+		7EF866921E82E4F30012F2C7 /* 3_cutlass_careen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866911E82E4F30012F2C7 /* 3_cutlass_careen.plist */; };
+		7EF866941E82E5CB0012F2C7 /* 4_fire_in_the_hole.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866931E82E5CB0012F2C7 /* 4_fire_in_the_hole.plist */; };
+		7EF866961E82E6780012F2C7 /* 5_dead_men_tell_no_tales.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866951E82E6780012F2C7 /* 5_dead_men_tell_no_tales.plist */; };
+		7EF866981E82E75D0012F2C7 /* 6_davy_jones_locker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866971E82E75D0012F2C7 /* 6_davy_jones_locker.plist */; };
+		7EF8669A1E82E7D20012F2C7 /* 7_letter_of_marque.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866991E82E7D20012F2C7 /* 7_letter_of_marque.plist */; };
+		7EF8669C1E82E8770012F2C7 /* 8_give_no_quarter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF8669B1E82E8770012F2C7 /* 8_give_no_quarter.plist */; };
+		7EF8669E1E82E9160012F2C7 /* 9_boom_about.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF8669D1E82E9160012F2C7 /* 9_boom_about.plist */; };
+		7EF866A01E82E9AA0012F2C7 /* 10_high_seas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF8669F1E82E9AA0012F2C7 /* 10_high_seas.plist */; };
+		7EF866A21E82EA3A0012F2C7 /* 11_shiver_me_timbers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866A11E82EA3A0012F2C7 /* 11_shiver_me_timbers.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,17 +250,6 @@
 		7EAE35CE1E81FC7500F42904 /* WPTReticleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTReticleNode.swift; sourceTree = "<group>"; };
 		7EAE35D01E82153500F42904 /* WPTAlertNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTAlertNode.swift; sourceTree = "<group>"; };
 		7EAE35D21E822CCA00F42904 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
-		7EAE35D31E822CCA00F42904 /* 1_sea_legs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_sea_legs.plist; sourceTree = "<group>"; };
-		7EAE35D41E822CCA00F42904 /* 2_pegleg_plunder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 2_pegleg_plunder.plist; sourceTree = "<group>"; };
-		7EAE35D51E822CCA00F42904 /* 3_cutlass_careen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 3_cutlass_careen.plist; sourceTree = "<group>"; };
-		7EAE35D61E822CCA00F42904 /* 4_fire_in_the_hole.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 4_fire_in_the_hole.plist; sourceTree = "<group>"; };
-		7EAE35D71E822CCA00F42904 /* 5_dead_men_tell_no_tales.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 5_dead_men_tell_no_tales.plist; sourceTree = "<group>"; };
-		7EAE35D81E822CCA00F42904 /* 6_davy_jones_locker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 6_davy_jones_locker.plist; sourceTree = "<group>"; };
-		7EAE35D91E822CCA00F42904 /* 7_letter_of_marque.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 7_letter_of_marque.plist; sourceTree = "<group>"; };
-		7EAE35DA1E822CCA00F42904 /* 8_give_no_quarter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 8_give_no_quarter.plist; sourceTree = "<group>"; };
-		7EAE35DB1E822CCA00F42904 /* 9_boom_about.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 9_boom_about.plist; sourceTree = "<group>"; };
-		7EAE35DC1E822CCA00F42904 /* 10_high_seas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 10_high_seas.plist; sourceTree = "<group>"; };
-		7EAE35DD1E822CCA00F42904 /* 11_shiver_me_timbers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 11_shiver_me_timbers.plist; sourceTree = "<group>"; };
 		7EAE35EA1E82324300F42904 /* repair_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = repair_items.plist; sourceTree = "<group>"; };
 		7EAE35EB1E82324300F42904 /* stat_modifier_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stat_modifier_items.plist; sourceTree = "<group>"; };
 		7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailStop.swift; sourceTree = "<group>"; };
@@ -297,6 +290,21 @@
 		7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPortNode.swift; sourceTree = "<group>"; };
 		7EF61E8B1E3B057900CB4CAB /* WPTShipPickerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipPickerNode.swift; sourceTree = "<group>"; };
 		7EF76AA91E52DB7E003BFCD1 /* WPTWorldPlayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWorldPlayerNode.swift; sourceTree = "<group>"; };
+		7EF866801E82BC6C0012F2C7 /* WPTTreasureWave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTreasureWave.swift; sourceTree = "<group>"; };
+		7EF866821E82BCDA0012F2C7 /* WPTKrakenWave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTKrakenWave.swift; sourceTree = "<group>"; };
+		7EF866871E82C3280012F2C7 /* WPTFinalTreasureNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTFinalTreasureNode.swift; sourceTree = "<group>"; };
+		7EF866891E82C3630012F2C7 /* WPTKrakenNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTKrakenNode.swift; sourceTree = "<group>"; };
+		7EF8668D1E82E25C0012F2C7 /* 1_sea_legs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_sea_legs.plist; sourceTree = "<group>"; };
+		7EF8668F1E82E3520012F2C7 /* 2_pegleg_plunder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 2_pegleg_plunder.plist; sourceTree = "<group>"; };
+		7EF866911E82E4F30012F2C7 /* 3_cutlass_careen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 3_cutlass_careen.plist; sourceTree = "<group>"; };
+		7EF866931E82E5CB0012F2C7 /* 4_fire_in_the_hole.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 4_fire_in_the_hole.plist; sourceTree = "<group>"; };
+		7EF866951E82E6780012F2C7 /* 5_dead_men_tell_no_tales.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 5_dead_men_tell_no_tales.plist; sourceTree = "<group>"; };
+		7EF866971E82E75D0012F2C7 /* 6_davy_jones_locker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 6_davy_jones_locker.plist; sourceTree = "<group>"; };
+		7EF866991E82E7D20012F2C7 /* 7_letter_of_marque.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 7_letter_of_marque.plist; sourceTree = "<group>"; };
+		7EF8669B1E82E8770012F2C7 /* 8_give_no_quarter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 8_give_no_quarter.plist; sourceTree = "<group>"; };
+		7EF8669D1E82E9160012F2C7 /* 9_boom_about.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 9_boom_about.plist; sourceTree = "<group>"; };
+		7EF8669F1E82E9AA0012F2C7 /* 10_high_seas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 10_high_seas.plist; sourceTree = "<group>"; };
+		7EF866A11E82EA3A0012F2C7 /* 11_shiver_me_timbers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 11_shiver_me_timbers.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,9 +551,9 @@
 		7E575DD41E69C18B004D92BF /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				7EF8667F1E82BC4E0012F2C7 /* Waves */,
 				7EE7981C1E5234A3006D683B /* WPTLevel.swift */,
 				7E575DD51E69C1D2004D92BF /* WPTPort.swift */,
-				7E5DB7311E7EE2AA000B1307 /* WPTLevelWave.swift */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -577,6 +585,7 @@
 		7E6932931E53B47700AF7373 /* Level */ = {
 			isa = PBXGroup;
 			children = (
+				7EF866861E82C30F0012F2C7 /* Special */,
 				7EC222041E72F48500E98243 /* Components */,
 				2D1704351E6F66EB0000827E /* Entities */,
 				7E5A6BEB1E5A0DA90067EAF3 /* Actors */,
@@ -622,17 +631,17 @@
 			isa = PBXGroup;
 			children = (
 				7EAE35D21E822CCA00F42904 /* 0_setting_sail.plist */,
-				7EAE35D31E822CCA00F42904 /* 1_sea_legs.plist */,
-				7EAE35D41E822CCA00F42904 /* 2_pegleg_plunder.plist */,
-				7EAE35D51E822CCA00F42904 /* 3_cutlass_careen.plist */,
-				7EAE35D61E822CCA00F42904 /* 4_fire_in_the_hole.plist */,
-				7EAE35D71E822CCA00F42904 /* 5_dead_men_tell_no_tales.plist */,
-				7EAE35D81E822CCA00F42904 /* 6_davy_jones_locker.plist */,
-				7EAE35D91E822CCA00F42904 /* 7_letter_of_marque.plist */,
-				7EAE35DA1E822CCA00F42904 /* 8_give_no_quarter.plist */,
-				7EAE35DB1E822CCA00F42904 /* 9_boom_about.plist */,
-				7EAE35DC1E822CCA00F42904 /* 10_high_seas.plist */,
-				7EAE35DD1E822CCA00F42904 /* 11_shiver_me_timbers.plist */,
+				7EF8668D1E82E25C0012F2C7 /* 1_sea_legs.plist */,
+				7EF8668F1E82E3520012F2C7 /* 2_pegleg_plunder.plist */,
+				7EF866911E82E4F30012F2C7 /* 3_cutlass_careen.plist */,
+				7EF866931E82E5CB0012F2C7 /* 4_fire_in_the_hole.plist */,
+				7EF866951E82E6780012F2C7 /* 5_dead_men_tell_no_tales.plist */,
+				7EF866971E82E75D0012F2C7 /* 6_davy_jones_locker.plist */,
+				7EF866991E82E7D20012F2C7 /* 7_letter_of_marque.plist */,
+				7EF8669B1E82E8770012F2C7 /* 8_give_no_quarter.plist */,
+				7EF8669D1E82E9160012F2C7 /* 9_boom_about.plist */,
+				7EF8669F1E82E9AA0012F2C7 /* 10_high_seas.plist */,
+				7EF866A11E82EA3A0012F2C7 /* 11_shiver_me_timbers.plist */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -733,6 +742,25 @@
 				7EF76AA91E52DB7E003BFCD1 /* WPTWorldPlayerNode.swift */,
 			);
 			name = World;
+			sourceTree = "<group>";
+		};
+		7EF8667F1E82BC4E0012F2C7 /* Waves */ = {
+			isa = PBXGroup;
+			children = (
+				7E5DB7311E7EE2AA000B1307 /* WPTLevelWave.swift */,
+				7EF866801E82BC6C0012F2C7 /* WPTTreasureWave.swift */,
+				7EF866821E82BCDA0012F2C7 /* WPTKrakenWave.swift */,
+			);
+			name = Waves;
+			sourceTree = "<group>";
+		};
+		7EF866861E82C30F0012F2C7 /* Special */ = {
+			isa = PBXGroup;
+			children = (
+				7EF866871E82C3280012F2C7 /* WPTFinalTreasureNode.swift */,
+				7EF866891E82C3630012F2C7 /* WPTKrakenNode.swift */,
+			);
+			name = Special;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -843,44 +871,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EAE35E11E822CCA00F42904 /* 3_cutlass_careen.plist in Resources */,
 				7E16B8641E2D580600933E24 /* Main.storyboard in Resources */,
 				7E0C78931E73C2C2006C79C3 /* the_enemy_ships.plist in Resources */,
 				7E3EF6E81E7522E50036A895 /* the_ships.plist in Resources */,
-				7EAE35E71E822CCA00F42904 /* 9_boom_about.plist in Resources */,
+				7EF8669A1E82E7D20012F2C7 /* 7_letter_of_marque.plist in Resources */,
 				7E5242901E56440900120002 /* water.fsh in Resources */,
 				2D17044B1E7103D70000827E /* explosion.mp3 in Resources */,
-				7EAE35E91E822CCA00F42904 /* 11_shiver_me_timbers.plist in Resources */,
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
-				7EAE35E21E822CCA00F42904 /* 4_fire_in_the_hole.plist in Resources */,
+				7EF866A21E82EA3A0012F2C7 /* 11_shiver_me_timbers.plist in Resources */,
+				7EF866981E82E75D0012F2C7 /* 6_davy_jones_locker.plist in Resources */,
+				7EF866941E82E5CB0012F2C7 /* 4_fire_in_the_hole.plist in Resources */,
 				7ED963311E7DE57700B58C1C /* other_items.plist in Resources */,
 				2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */,
 				7ED963391E7DF18000B58C1C /* enemies.plist in Resources */,
 				7EBF5E6B1E4E213A00F81982 /* stat_bar.fsh in Resources */,
 				7EAE35ED1E82324300F42904 /* stat_modifier_items.plist in Resources */,
-				7EAE35DF1E822CCA00F42904 /* 1_sea_legs.plist in Resources */,
 				7ED963341E7DEA4900B58C1C /* brains.plist in Resources */,
 				2D1703E11E6266440000827E /* howToTrainYourDragon.m4a in Resources */,
 				7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */,
 				7EAE35EC1E82324300F42904 /* repair_items.plist in Resources */,
+				7EF8669C1E82E8770012F2C7 /* 8_give_no_quarter.plist in Resources */,
 				7EAE35DE1E822CCA00F42904 /* 0_setting_sail.plist in Resources */,
 				2D1703DF1E6264200000827E /* dragonRoost.m4a in Resources */,
 				2D1703E31E62665B0000827E /* windWaker.mp3 in Resources */,
 				2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */,
+				7EF866A01E82E9AA0012F2C7 /* 10_high_seas.plist in Resources */,
 				2D17044F1E7105940000827E /* coin.mp3 in Resources */,
 				7E43CC771E54B844009367BC /* trail_map.plist in Resources */,
+				7EF866961E82E6780012F2C7 /* 5_dead_men_tell_no_tales.plist in Resources */,
+				7EF8669E1E82E9160012F2C7 /* 9_boom_about.plist in Resources */,
 				2D1704471E7009890000827E /* explosion.sks in Resources */,
 				2D17044D1E7104090000827E /* cannon.mp3 in Resources */,
-				7EAE35E61E822CCA00F42904 /* 8_give_no_quarter.plist in Resources */,
 				7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */,
-				7EAE35E81E822CCA00F42904 /* 10_high_seas.plist in Resources */,
-				7EAE35E31E822CCA00F42904 /* 5_dead_men_tell_no_tales.plist in Resources */,
+				7EF866921E82E4F30012F2C7 /* 3_cutlass_careen.plist in Resources */,
 				2D17043F1E7005170000827E /* fire.sks in Resources */,
-				7EAE35E01E822CCA00F42904 /* 2_pegleg_plunder.plist in Resources */,
 				2D1703DD1E625F1E0000827E /* distance.m4a in Resources */,
-				7EAE35E41E822CCA00F42904 /* 6_davy_jones_locker.plist in Resources */,
+				7EF8668E1E82E25C0012F2C7 /* 1_sea_legs.plist in Resources */,
+				7EF866901E82E3520012F2C7 /* 2_pegleg_plunder.plist in Resources */,
 				7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */,
-				7EAE35E51E822CCA00F42904 /* 7_letter_of_marque.plist in Resources */,
 				7EE57D491E69E20C0020693B /* currency_items.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -909,6 +937,7 @@
 				7EF61E8C1E3B057900CB4CAB /* WPTShipPickerNode.swift in Sources */,
 				7EE7981B1E523030006D683B /* WPTPlayerProgress.swift in Sources */,
 				7E43CC791E54CB50009367BC /* WPTPauseMenuNode.swift in Sources */,
+				7EF8668A1E82C3630012F2C7 /* WPTKrakenNode.swift in Sources */,
 				7EBF5E6D1E4E218200F81982 /* WPTStatBarNode.swift in Sources */,
 				7ED3775C1E4ABE8800DB1EA2 /* WPTTrailMap.swift in Sources */,
 				7EC222061E72F49D00E98243 /* WPTWhirlpoolHandler.swift in Sources */,
@@ -922,6 +951,7 @@
 				2D2C8B5C1E7F3D5A00B1D862 /* WPTTutorialNode.swift in Sources */,
 				7E69329C1E53E0B200AF7373 /* WPTHudTopNode.swift in Sources */,
 				7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */,
+				7EF866831E82BCDA0012F2C7 /* WPTKrakenWave.swift in Sources */,
 				7E6932A21E53ECF500AF7373 /* WPTUpdatable.swift in Sources */,
 				7E6932A01E53E2D500AF7373 /* WPTFireButtonNode.swift in Sources */,
 				7EDAC9B41E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift in Sources */,
@@ -944,6 +974,7 @@
 				7ED2206D1E37215F00D2AA68 /* WPTSecretMessage.swift in Sources */,
 				7EE8A8C81E6F779700C119B9 /* WPTShipCatalog.swift in Sources */,
 				2D17043B1E6FF3CD0000827E /* WPTHealthNode.swift in Sources */,
+				7EF866881E82C3280012F2C7 /* WPTFinalTreasureNode.swift in Sources */,
 				7E4215FE1E5A716E004ADBD7 /* WPTCannonBall.swift in Sources */,
 				7E0C78971E73D224006C79C3 /* WPTLine.swift in Sources */,
 				2D1704491E70D23F0000827E /* WPTItemNode.swift in Sources */,
@@ -993,6 +1024,7 @@
 				7ED739011E44EBF500122903 /* WPTWorldMapNode.swift in Sources */,
 				2D1703DB1E601E180000827E /* WPTMapView.swift in Sources */,
 				7EC222081E72F54A00E98243 /* WPTPortDockingHandler.swift in Sources */,
+				7EF866811E82BC6C0012F2C7 /* WPTTreasureWave.swift in Sources */,
 				7ED049E31E6F6DE900CD69E1 /* WPTEnemyCatalog.swift in Sources */,
 				7E1472861E71ACB4005E5A4C /* WPTStandAndShootBS.swift in Sources */,
 			);
