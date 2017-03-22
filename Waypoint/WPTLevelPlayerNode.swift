@@ -13,6 +13,8 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     var player: WPTPlayer { return self.actor as! WPTPlayer }
     var portHandler: WPTPortDockingHandler! = nil
     
+    let reticle = WPTReticleNode()
+    
     init(player: WPTPlayer) {
         super.init(actor: player, teamBitMask: WPTConfig.values.testing ? 0 : WPTValues.playerTbm)
         self.isUserInteractionEnabled = true
@@ -32,6 +34,16 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     }
     
     override func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
+        if let targetActor = self.targetActor {
+            self.aimCannons(actor: targetActor)
+        } else if reticle.attached {
+            self.reticle.remove()
+        }
+        
+        if reticle.attached {
+            reticle.update(currentTime, deltaTime)
+        }
+        
         if !portHandler.docked {
             super.update(currentTime, deltaTime)
         } else if let dockPos = portHandler.dockPos {
@@ -65,5 +77,10 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
                 storage.clearPlayerProgress()
             }
         }
+    }
+    
+    override func aimAt(actor target: WPTLevelActorNode) {
+        super.aimAt(actor: target)
+        self.reticle.track(actor: target)
     }
 }

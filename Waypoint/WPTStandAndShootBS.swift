@@ -17,7 +17,7 @@ class WPTStandAndShootBS: WPTBrainState {
     
     override func update(deltaTime seconds: TimeInterval) {
         // handle behavior
-        self.aimAtPlayer()
+        self.enemy.aimCannons(actor: self.player)
         self.tryShoot()
     }
 }

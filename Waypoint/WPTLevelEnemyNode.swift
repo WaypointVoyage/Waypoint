@@ -23,6 +23,8 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         self.brain = WPTBrain(self.enemy.brainTemplate, player: self.player)
         self.healthBar = WPTHealthNode(maxHealth: enemy.ship.health, persistent: false)
         super.init(actor: enemy, teamBitMask: WPTValues.enemyTbm)
+        self.zPosition = WPTValues.movementHandlerZPosition + 1
+        self.isUserInteractionEnabled = true
         
         // brain
         self.brain.enemy = self
@@ -89,11 +91,18 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     
     private func destroyEnemy() {
         self.physics = nil // at this point on, there are is no more world interaction
+        
+        if player.targetActor === self {
+            player.targetActor = nil
+        }
+        
         let emitterNode = SKEmitterNode(fileNamed: "explosion.sks")
         emitterNode?.particlePosition = self.sprite.position
         emitterNode?.particleSize = CGSize(width: self.sprite.size.width * 2, height: self.sprite.size.height * 2)
         self.addChild(emitterNode!)
+        
         self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
+        
         // Don't forget to remove the emitter node after the explosion
         self.run(SKAction.wait(forDuration: 0.5), completion: {
             self.generateCoins()
@@ -125,5 +134,9 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
         let yPos = CGFloat(maxHeight - minHeight) * rand + CGFloat(minHeight)
         return CGPoint(x: xPos, y: yPos)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        player.aimAt(actor: self)
     }
 }

@@ -19,6 +19,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     var forward: CGVector { return CGVector(dx: cos(zRotation), dy: sin(zRotation)) }
     var targetRot: CGFloat? = nil
     var anchored: Bool = true
+    var targetActor: WPTLevelActorNode? = nil
     
     // child nodes
     let sprite: SKSpriteNode
@@ -142,8 +143,34 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         fireRateMgr.registerFire()
     }
     
+    func aimAt(actor target: WPTLevelActorNode) {
+        self.targetActor = target
+        self.targetRot = nil
+    }
+    
+    func aimCannons(actor target: WPTLevelActorNode) {
+        let toTarget = CGVector(start: position, end: target.position)
+        
+        var closestCannon: WPTCannonNode? = nil
+        var bestDot: CGFloat? = nil
+        for cannon in cannonNodes {
+            let angle = zRotation + cannon.zRotation
+            let forward = CGVector(dx: cos(angle), dy: sin(angle))
+            let dot = forward.dot(toTarget)
+            if closestCannon == nil || dot > bestDot! {
+                closestCannon = cannon
+                bestDot = dot
+            }
+        }
+        
+        if let cannon = closestCannon {
+            targetRot = toTarget.angle() - cannon.zRotation
+        }
+    }
+    
     func facePoint(_ target: CGPoint) {
         self.targetRot = CGVector(start: self.position, end: target).angle()
+        self.targetActor = nil
     }
     
     func give(item: WPTItem) {
