@@ -8,11 +8,30 @@
       "x": 1080,
       "y": 1080,
    },
+   "spawnVolumes": [
+      {
+         "minx": -200,
+         "maxx": -10,
+         "miny": 0,
+         "maxy": 2880,
+      },
+      {
+         "minx": 0,
+         "maxx": 4320,
+         "miny": -200,
+         "maxy": -10,
+      },
+      {
+         "minx": 4330,
+         "maxx": 4520,
+         "miny": 0,
+         "maxy": 2560,
+      }
+   ],
    "port": {
       "position": {
          "x": 1789, "y": 1346, "angle": 1.5707963267948966,
       },
-      "inventory": [],
    },
    "entities": {
       "whirlpools": 0,

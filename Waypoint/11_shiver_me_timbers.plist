@@ -27,6 +27,39 @@
 		<key>y</key>
 		<integer>2160</integer>
 	</dict>
+	<key>spawnVolumes</key>
+	<array>
+		<dict>
+			<key>maxx</key>
+			<integer>-10</integer>
+			<key>maxy</key>
+			<integer>4320</integer>
+			<key>minx</key>
+			<integer>-200</integer>
+			<key>miny</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>maxx</key>
+			<integer>4320</integer>
+			<key>maxy</key>
+			<integer>-10</integer>
+			<key>minx</key>
+			<integer>0</integer>
+			<key>miny</key>
+			<integer>-200</integer>
+		</dict>
+		<dict>
+			<key>maxx</key>
+			<integer>4520</integer>
+			<key>maxy</key>
+			<integer>4320</integer>
+			<key>minx</key>
+			<integer>4330</integer>
+			<key>miny</key>
+			<integer>0</integer>
+		</dict>
+	</array>
 	<key>terrain</key>
 	<dict>
 		<key>bodies</key>
@@ -361,5 +394,23 @@
 		<key>waterImage</key>
 		<string>shiver_me_timbers_water</string>
 	</dict>
+	<key>waves</key>
+	<array>
+		<dict>
+			<key>special</key>
+			<string>WPTKrakenWave</string>
+		</dict>
+		<dict>
+			<key>special</key>
+			<string>WPTTreasureWave</string>
+			<key>xMarksTheSpot</key>
+			<dict>
+				<key>x</key>
+				<integer>2050</integer>
+				<key>y</key>
+				<integer>1440</integer>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -12,8 +12,39 @@
       "position": {
          "x": 1456, "y": 175, "angle": 2.0943951023931953,
       },
-      "inventory": [],
    },
+   "spawnVolumes": [
+      {
+         "minx": -200,
+         "maxx": -10,
+         "miny": 420,
+         "maxy": 2800,
+      },
+      {
+         "minx": 0,
+         "maxx": 4320,
+         "miny": 2810,
+         "maxy": 3000,
+      },
+      {
+         "minx": 4330,
+         "maxx": 4520,
+         "miny": 2100,
+         "maxy": 2800,
+      },
+      {
+         "minx": 4330,
+         "maxx": 4520,
+         "miny": 0,
+         "maxy": 1260,
+      },
+      {
+         "minx": 1080,
+         "maxx": 1944,
+         "miny": -200,
+         "maxy": -10,
+      }
+   ],
    "entities": {
       "whirlpools": 0,
       "whirlpoolLocations": [],

@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTItem {
     let name: String        // unique item name
-    let description: String = "[placeholder]" // a short description of the item
+    let description: String?
     let imageName: String   // the name of the image file (without extension)
     
     let tier: WPTItemTier   // the item type
@@ -29,7 +29,8 @@ class WPTItem {
     public private(set) var fireRateModifier: CGFloat?
     
     // healing/money modifiers
-    public private(set) var repair: CGFloat?        // on pickup, gain this much health
+    public private(set) var repairProportionally: Bool = false // if true, the repair value represents a proportion of health instead of a flat value
+    public private(set) var repair: CGFloat?    // on pickup, gain this much health
     public private(set) var doubloons: Int?     // on pickup, gain this many doubloons
     
     // other modifiers
@@ -43,6 +44,7 @@ class WPTItem {
         self.multiplicity = multiplicity
         self.value = value
         self.prevalence = prevalence
+        self.description = nil
     }
     
     // initialize from a dictionary
@@ -54,6 +56,7 @@ class WPTItem {
         self.value = itemDict["value"] as! Int
         self.prevalence = itemDict["prevalence"] as! Int
         self.cannonBallImage = itemDict["cannonBallImage"] as? String
+        self.description = itemDict["description"] as? String
     }
     
     // initialize as currency
@@ -66,6 +69,7 @@ class WPTItem {
         self.prevalence = itemDict["prevalence"] as! Int
         
         self.doubloons = self.value // same for currency
+        self.description = nil
     }
     
     // initialize as a repair item
@@ -78,6 +82,9 @@ class WPTItem {
         self.prevalence = itemDict["prevalence"] as! Int
         let repairVal = itemDict["repair"] as! CGFloat
         self.repair = repairVal
+        let repProp = itemDict["repairProportionally"] as! Bool
+        self.repairProportionally = repProp
+        self.description = nil
     }
     
     // initialize as a stat modifier
@@ -89,6 +96,9 @@ class WPTItem {
         self.value = itemDict["value"] as! Int
         self.prevalence = itemDict["prevalence"] as! Int
         self.cannonBallImage = itemDict["cannonBallImage"] as? String
+        let desc = itemDict["description"] as! String
+        self.description = desc
+        
         initStatModifiers(itemDict)
     }
     

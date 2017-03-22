@@ -62,10 +62,13 @@ class WPTNewGameScene: WPTScene {
         startLabel.background.zPosition = 1
         addChild(startLabel)
         
+        self.shipPop = WPTShipNamePopUpNode()
+        self.shipPop?.position = CGPoint(x: frame.midX, y: frame.midY)
+        
         self.shipInputField = UITextField()
         shipInputField?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         shipInputField?.addTarget(self, action: #selector(textFieldShouldReturn(textField:)), for: .editingDidEndOnExit)
-        shipInputField?.frame = CGRect(x: 0.79*frame.midX, y: 0.4 * frame.height, width: 158, height: 30)
+        shipInputField?.frame = CGRect(x: 0.79*frame.midX, y: self.shipPop!.position.y - 0.2 * self.shipPop!.background.frame.height, width: 158, height: 30)
         shipInputField?.placeholder = "Enter ship name..."
         shipInputField?.font = UIFont(name: WPTValues.booter, size: WPTValues.fontSizeTiny)
         shipInputField?.backgroundColor = UIColor.white
@@ -74,8 +77,6 @@ class WPTNewGameScene: WPTScene {
         shipInputField?.layer.borderWidth = 1.0
         shipInputField?.textAlignment = .center
         
-        self.shipPop = WPTShipNamePopUpNode()
-        self.shipPop?.position = CGPoint(x: frame.midX, y: frame.midY)
         self.shipPop!.setInputField(inputField: self.shipInputField!)
         self.shipPop!.setShipPicker(shipPicker: self.shipPicker!)
         

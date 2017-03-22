@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array/>
+<array>
+	<dict>
+		<key>imageName</key>
+		<string>repair_0</string>
+		<key>name</key>
+		<string>Ship Maintenance</string>
+		<key>prevalence</key>
+		<integer>100</integer>
+		<key>repair</key>
+		<real>0.5</real>
+		<key>repairProportionally</key>
+		<true/>
+	</dict>
+</array>
 </plist>

@@ -59,6 +59,8 @@ class WPTWaveCreationPMS: GKState {
                 scene.terrain.addEnemy(enemyNode)
             }
         }
+        
+        self.wave!.setup(scene: scene)
     }
     
     override func update(deltaTime seconds: TimeInterval) {

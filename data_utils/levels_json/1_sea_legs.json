@@ -12,21 +12,29 @@
       "position": {
          "x": 508,
          "y": 996,
-         "angle": -1.5707963267948966, 
+         "angle": -1.5707963267948966,
       },
-      "inventory": [
-         {
-            "item": "ITEM_NAME",
-            "price": 10,
-            "inStock": true
-         },
-         {
-            "item": "ITEM NAME",
-            "price": 10,
-            "inStock": true
-         }
-      ]
    },
+   "spawnVolumes": [
+      {
+         "minx": -200,
+         "maxx": -10,
+         "miny": 0,
+         "maxy": 972,
+      },
+      {
+         "minx": 0,
+         "maxx": 2160,
+         "miny": -200,
+         "maxy": -10,
+      },
+      {
+         "minx": 2170,
+         "maxx": 2360,
+         "miny": 0,
+         "maxy": 2160,
+      }
+   ],
    "entities": {
       "whirlpools": 0,
       "whirlpoolLocations": [],

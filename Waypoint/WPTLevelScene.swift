@@ -93,6 +93,7 @@ class WPTLevelScene: WPTScene {
             hud.pauseMenu.map.drawSpawnVolumes(self.level.spawnVolumes)
         }
         
+        // show the tutorial (if there is one)
         if (level.hasTutorial && !WPTConfig.values.testing) {
             self.levelPaused = true
             let tutorial = WPTTutorialNode(onComplete: {
@@ -103,6 +104,17 @@ class WPTLevelScene: WPTScene {
         } else {
             levelNameDisplay()
         }
+        
+        /* TESTING */
+        let health = WPTItemCatalog.itemsByName["Ship Maintenance"]!
+        let healthNode = WPTItemNode(health)
+        healthNode.position = self.terrain.randomPoint(borderWidth: 0, onLand: false)
+        self.items.addChild(healthNode)
+        
+        let stat = WPTItemCatalog.randomStatModifier()
+        let statNode = WPTItemNode(stat)
+        statNode.position = self.terrain.randomPoint(borderWidth: 0, onLand: false)
+        self.items.addChild(statNode)
     }
     
     private func levelNameDisplay() {
@@ -172,5 +184,9 @@ class WPTLevelScene: WPTScene {
             levelName.isPaused = self.levelPaused
         }
         self.physicsWorld.speed = self.levelPaused ? 0.0 : 1.0 // pause physics simulation
+    }
+    
+    func alert(header: String, desc: String) {
+        self.hud.bottom.alert.show(header: header, desc: desc)
     }
 }

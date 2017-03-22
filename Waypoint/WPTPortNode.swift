@@ -50,6 +50,15 @@ class WPTPortNode: SKNode {
             self.addChild(dock)
         }
         docks[1].position.y *= -1
+        
+        let endDock = WPTDockNode(self, rotation: self.zRotation + CG_PI/2)
+        let endDockSize = CGSize(width: 0.2 * self.sprite.size.width, height: self.sprite.size.height)
+        endDock.physicsBody = SKPhysicsBody(rectangleOf: endDockSize)
+        endDock.physicsBody!.isDynamic = false
+        endDock.physicsBody!.categoryBitMask = WPTValues.dockCbm
+        endDock.physicsBody!.contactTestBitMask = WPTValues.actorCbm
+        endDock.position.x += 0.9 * self.sprite.size.width
+        self.addChild(endDock)
     }
     
     required init?(coder aDecoder: NSCoder) {

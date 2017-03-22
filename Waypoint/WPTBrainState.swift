@@ -45,26 +45,6 @@ class WPTBrainState: GKState {
             }
         }
     }
-    
-    func aimAtPlayer() {
-        let toPlayer = CGVector(start: enemy.position, end: player.position)
-        
-        var closestCannon: WPTCannonNode? = nil
-        var bestDot: CGFloat? = nil
-        for cannon in enemy.cannonNodes {
-            let angle = enemy.zRotation + cannon.zRotation
-            let forward = CGVector(dx: cos(angle), dy: sin(angle))
-            let dot = forward.dot(toPlayer)
-            if closestCannon == nil || dot > bestDot! {
-                closestCannon = cannon
-                bestDot = dot
-            }
-        }
-        
-        if let cannon = closestCannon {
-            enemy.targetRot = toPlayer.angle() - cannon.zRotation
-        }
-    }
 }
 
 enum WPTBrainStateType: String {

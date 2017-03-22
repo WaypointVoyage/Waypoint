@@ -14,15 +14,18 @@ class WPTValues {
     static let booter = "Booter - Five Zero"
     static let statFormat = "%.2f"
     static let maxAspectRatio: CGFloat = 16.0 / 9.0
+    static let maxHighScores: Int = 25
     
     // values that are screen-size dependent (default values provided here, configured in initValues)
     static var screenSize = CGSize(width: 1920, height: 1080)
     static var srceenAspectRatio: CGFloat = 16.0 / 9.0
     static var usableScreenHeight: CGFloat = 1080
     static var heightShift = CGPoint.zero
+    static var fontSizeMassive = CGFloat(200)
     static var fontSizeTitle = CGFloat(100)
     static var fontSizeLarge = CGFloat(70)
     static var fontSizeMedium = CGFloat(50)
+    static var fontSizeKindaSmall = CGFloat(40)
     static var fontSizeSmall = CGFloat(30)
     static var fontSizeTiny = CGFloat(22)
     static var fontSizeMiniscule = CGFloat(14)
@@ -70,9 +73,11 @@ class WPTValues {
         WPTValues.heightShift = CGPoint(x: 0, y: (screenSize.height - usableScreenHeight) / 2.0)
         WPTValues.levelSceneScale = usableScreenHeight / 1080.0
         
+        WPTValues.fontSizeMassive = 0.5 * usableScreenHeight
         WPTValues.fontSizeTitle = 0.25 * usableScreenHeight
         WPTValues.fontSizeLarge = 0.175 * usableScreenHeight
         WPTValues.fontSizeMedium = 0.125 * usableScreenHeight
+        WPTValues.fontSizeKindaSmall = 0.1 * usableScreenHeight
         WPTValues.fontSizeSmall = 0.075 * usableScreenHeight
         WPTValues.fontSizeMiniscule = 0.035 * usableScreenHeight
         WPTValues.em = WPTValues.fontSizeSmall

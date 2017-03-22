@@ -13,6 +13,8 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     var player: WPTPlayer { return self.actor as! WPTPlayer }
     var portHandler: WPTPortDockingHandler! = nil
     
+    let reticle = WPTReticleNode()
+    
     init(player: WPTPlayer) {
         super.init(actor: player, teamBitMask: WPTConfig.values.testing ? 0 : WPTValues.playerTbm)
         self.isUserInteractionEnabled = true
@@ -32,6 +34,16 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     }
     
     override func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
+        if let targetActor = self.targetActor {
+            self.aimCannons(actor: targetActor)
+        } else if reticle.attached {
+            self.reticle.remove()
+        }
+        
+        if reticle.attached {
+            reticle.update(currentTime, deltaTime)
+        }
+        
         if !portHandler.docked {
             super.update(currentTime, deltaTime)
         } else if let dockPos = portHandler.dockPos {
@@ -60,10 +72,28 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
                 scene.hud.destroyMenu.updateMoney()
                 scene.hud.addChild(scene.hud.destroyMenu)
                 
-                // delete save data
-                let storage = WPTStorage()
-                storage.clearPlayerProgress()
+                OperationQueue().addOperation {
+                    let storage = WPTStorage()
+                    
+                    // clear progress
+                    storage.clearPlayerProgress()
+                }
             }
         }
+    }
+    
+    override func give(item: WPTItem) {
+        super.give(item: item)
+        
+        if let desc = item.description {
+            if let scene = self.scene as? WPTLevelScene {
+               scene.alert(header: item.name, desc: desc)
+            }
+        }
+    }
+    
+    override func aimAt(actor target: WPTLevelActorNode) {
+        super.aimAt(actor: target)
+        self.reticle.track(actor: target)
     }
 }

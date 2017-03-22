@@ -11,8 +11,11 @@ import SpriteKit
 class WPTDockNode: SKNode {
     weak var port: WPTPortNode?
     
-    init(_ port: WPTPortNode) {
+    let rotation: CGFloat
+    
+    init(_ port: WPTPortNode, rotation: CGFloat? = nil) {
         self.port = port
+        self.rotation = rotation ?? port.zRotation
         super.init()
     }
     

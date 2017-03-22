@@ -15,8 +15,6 @@
 	<string>Dead Men Tell No Tales</string>
 	<key>port</key>
 	<dict>
-		<key>inventory</key>
-		<array/>
 		<key>position</key>
 		<dict>
 			<key>angle</key>
@@ -41,6 +39,39 @@
 		<key>y</key>
 		<integer>1080</integer>
 	</dict>
+	<key>spawnVolumes</key>
+	<array>
+		<dict>
+			<key>maxx</key>
+			<integer>-10</integer>
+			<key>maxy</key>
+			<integer>1960</integer>
+			<key>minx</key>
+			<integer>-200</integer>
+			<key>miny</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>maxx</key>
+			<integer>3360</integer>
+			<key>maxy</key>
+			<integer>-10</integer>
+			<key>minx</key>
+			<integer>0</integer>
+			<key>miny</key>
+			<integer>-200</integer>
+		</dict>
+		<dict>
+			<key>maxx</key>
+			<integer>3560</integer>
+			<key>maxy</key>
+			<integer>2082</integer>
+			<key>minx</key>
+			<integer>3370</integer>
+			<key>miny</key>
+			<integer>0</integer>
+		</dict>
+	</array>
 	<key>terrain</key>
 	<dict>
 		<key>bodies</key>

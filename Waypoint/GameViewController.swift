@@ -31,6 +31,10 @@ class GameViewController: UIViewController {
             if WPTConfig.values.showPhysics {
                 view.showsPhysics = true
             }
+            if WPTConfig.values.clearHighScoresOnLoad {
+                let storage = WPTStorage()
+                storage.deleteHighScores()
+            }
         }
     }
     

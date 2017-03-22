@@ -8,6 +8,38 @@
       "x": 2160,
       "y": 2160,
    },
+   "spawnVolumes": [
+      {
+         "minx": -200,
+         "maxx": -10,
+         "miny": 0,
+         "maxy": 4320,
+      },
+      {
+         "minx": 0,
+         "maxx": 4320,
+         "miny": -200,
+         "maxy": -10,
+      },
+      {
+         "minx": 4330,
+         "maxx": 4520,
+         "miny": 0,
+         "maxy": 4320,
+      },
+   ],
+   "waves": [
+      {
+         "special": "WPTKrakenWave",
+      },
+      {
+         "special": "WPTTreasureWave",
+         "xMarksTheSpot": {
+            "x": 2050,
+            "y": 1440,
+         }
+      },
+   ],
    "entities": {
       "whirlpools": 0,
       "whirlpoolLocations": [],

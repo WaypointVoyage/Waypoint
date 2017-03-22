@@ -37,7 +37,7 @@ class WPTPortDockingHandler: SKNode {
         
         let theDockPos = self.scene!.convert(dock.position, from: self.port!)
         let position = SKAction.move(to: theDockPos, duration: 1)
-        let rotation = SKAction.rotate(toAngle: (port?.zRotation)!, duration: 1)
+        let rotation = SKAction.rotate(toAngle: dock.rotation, duration: 1)
         self.actor.run(position) {
             self.dockPos = theDockPos
             if let hud = (self.scene as? WPTLevelScene)?.hud {

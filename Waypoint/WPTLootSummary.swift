@@ -15,6 +15,13 @@ class WPTLootSummary: NSObject, NSCoding, Comparable {
     let date: Date
     let items: [String]
     
+    init(shipName: String, doubloons: Int, date: Date, items: [String]) {
+        self.shipName = shipName
+        self.doubloons = doubloons
+        self.date = date
+        self.items = items
+    }
+    
     init(player: WPTPlayer) {
         self.shipName = player.shipName
         self.doubloons = player.doubloons
@@ -42,6 +49,6 @@ class WPTLootSummary: NSObject, NSCoding, Comparable {
     }
     
     static func <(lhs: WPTLootSummary, rhs: WPTLootSummary) -> Bool {
-        return lhs.doubloons < rhs.doubloons
+        return lhs.doubloons > rhs.doubloons
     }
 }
