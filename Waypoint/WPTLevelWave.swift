@@ -36,7 +36,10 @@ class WPTLevelWave {
     // Override for special teardown
     //      called after the wave is considered complete and 
     //      finishes asynchronously before the next wave starts
-    func teardown(scene: WPTLevelScene) {}
+    //      returning false means that the level beaten stage doesn't happen
+    func teardown(scene: WPTLevelScene) -> Bool {
+        return true
+    }
     
     func update(_ deltaTime: TimeInterval) {}
 }

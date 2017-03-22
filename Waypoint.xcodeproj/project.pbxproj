@@ -143,6 +143,7 @@
 		7EF8669E1E82E9160012F2C7 /* 9_boom_about.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF8669D1E82E9160012F2C7 /* 9_boom_about.plist */; };
 		7EF866A01E82E9AA0012F2C7 /* 10_high_seas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF8669F1E82E9AA0012F2C7 /* 10_high_seas.plist */; };
 		7EF866A21E82EA3A0012F2C7 /* 11_shiver_me_timbers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866A11E82EA3A0012F2C7 /* 11_shiver_me_timbers.plist */; };
+		7EF866A41E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866A31E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -305,6 +306,7 @@
 		7EF8669D1E82E9160012F2C7 /* 9_boom_about.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 9_boom_about.plist; sourceTree = "<group>"; };
 		7EF8669F1E82E9AA0012F2C7 /* 10_high_seas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 10_high_seas.plist; sourceTree = "<group>"; };
 		7EF866A11E82EA3A0012F2C7 /* 11_shiver_me_timbers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 11_shiver_me_timbers.plist; sourceTree = "<group>"; };
+		7EF866A31E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTreasureTimerNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -610,6 +612,7 @@
 				2D1EF1041E806FF700F527B7 /* WPTDockMenuNode.swift */,
 				7EAE35CE1E81FC7500F42904 /* WPTReticleNode.swift */,
 				7EAE35D01E82153500F42904 /* WPTAlertNode.swift */,
+				7EF866A31E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift */,
 			);
 			name = HUD;
 			sourceTree = "<group>";
@@ -980,6 +983,7 @@
 				2D1704491E70D23F0000827E /* WPTItemNode.swift in Sources */,
 				7E52C85A1E61E72F004FDB27 /* WPTPlayerMovementNode.swift in Sources */,
 				7E575DD61E69C1D2004D92BF /* WPTPort.swift in Sources */,
+				7EF866A41E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift in Sources */,
 				7ED9633B1E7DF1D400B58C1C /* WPTWanderBS.swift in Sources */,
 				7EDAC9B61E71FAA9002CEC0F /* WPTDockNode.swift in Sources */,
 				7EC2220A1E73037300E98243 /* WPTDoNothingBS.swift in Sources */,

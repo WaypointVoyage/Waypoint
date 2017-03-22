@@ -77,7 +77,7 @@ class WPTStorage {
     
     func submitScore(_ score: WPTLootSummary) {
         var scores = self.loadHighScores()
-        if scores.count <= 0 || score > scores.last! {
+        if scores.count <= WPTValues.maxHighScores || score.doubloons > scores.last!.doubloons {
             scores.append(score)
             let extra = scores.count - WPTValues.maxHighScores
             if extra > 0 {

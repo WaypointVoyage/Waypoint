@@ -31,10 +31,11 @@ class WPTWaveExecutionPMS: GKState {
             if wave!.isComplete(scene: pm.scene) {
                 finishing = true
                 OperationQueue().addOperation {
-                    self.wave!.teardown(scene: pm.scene)
-                    OperationQueue.main.addOperation {
-                        if !pm.enter(self.wave!.next == nil ? WPTLevelBeatenPMS.self : WPTWaveCreationPMS.self) {
-                            NSLog("ERROR: Could not transition out of WPTWaveExecutionPMS")
+                    if self.wave!.teardown(scene: pm.scene) {
+                        OperationQueue.main.addOperation {
+                            if !pm.enter(self.wave!.next == nil ? WPTLevelBeatenPMS.self : WPTWaveCreationPMS.self) {
+                                NSLog("ERROR: Could not transition out of WPTWaveExecutionPMS")
+                            }
                         }
                     }
                 }
