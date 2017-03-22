@@ -81,8 +81,12 @@ class WPTTreasureWave: WPTLevelWave {
             moneyNode.zPosition = treasureChest.zPosition + 1
             moneyNode.position = treasureChest.position
             
-            let move = SKAction.move(to: target, duration: 2)
-            moneyNode.run(move)
+            let hold = moneyNode.physicsBody
+            moneyNode.physicsBody = nil
+            let move = SKAction.move(to: target, duration: 2) 
+            moneyNode.run(move) {
+                moneyNode.physicsBody = hold
+            }
             scene.items.addChild(moneyNode)
         }
         coinFrames -= 1
