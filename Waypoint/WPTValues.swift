@@ -14,6 +14,7 @@ class WPTValues {
     static let booter = "Booter - Five Zero"
     static let statFormat = "%.2f"
     static let maxAspectRatio: CGFloat = 16.0 / 9.0
+    static let maxHighScores: Int = 25
     
     // values that are screen-size dependent (default values provided here, configured in initValues)
     static var screenSize = CGSize(width: 1920, height: 1080)

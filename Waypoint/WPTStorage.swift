@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import SpriteKit
 
 class WPTStorage {
-    // TODO: test
     
     let highScorePath: String
     let playerProgressPath: String
@@ -19,6 +19,22 @@ class WPTStorage {
         let documentsDirectory = paths[0] as! NSString
         highScorePath = documentsDirectory.appendingPathComponent("high_scores.plist")
         playerProgressPath = documentsDirectory.appendingPathComponent("player_progress.plist")
+    }
+    
+    func seedHighScores() {
+        do {
+            try FileManager.default.removeItem(atPath: highScorePath)
+        } catch let error as NSError {
+            NSLog("WARN: Could not delete high scores")
+            NSLog(error.debugDescription)
+        }
+        
+        for i in 0..<WPTValues.maxHighScores {
+            let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+            let ship = WPTShipCatalog.playableShips[Int(rand * CGFloat(WPTShipCatalog.playableShips.count))]
+            let loot = WPTLootSummary(shipName: ship.name, doubloons: 500 - 5 * i, date: Date(), items: [])
+            self.submitScore(loot)
+        }
     }
     
     func savePlayerProgress(_ progress: WPTPlayerProgress) {
@@ -46,18 +62,24 @@ class WPTStorage {
         return nil
     }
     
-    func loadHighScores(count: Int?) -> [WPTLootSummary] {
+    func loadHighScores() -> [WPTLootSummary] {
         if let unarchivedThing = NSKeyedUnarchiver.unarchiveObject(withFile: highScorePath) {
             if let asArray = unarchivedThing as? [WPTLootSummary] {
-                return asArray
+                return asArray.sorted()
             }
         }
         return [WPTLootSummary]()
     }
     
     func submitScore(_ score: WPTLootSummary) {
-        var scores = self.loadHighScores(count: nil)
-        scores.append(score)
-        NSKeyedArchiver.archiveRootObject(scores, toFile: highScorePath)
+        var scores = self.loadHighScores()
+        if scores.count <= 0 || score > scores.last! {
+            scores.append(score)
+            let extra = scores.count - WPTValues.maxHighScores
+            if extra > 0 {
+                scores.removeLast(extra)
+            }
+            NSKeyedArchiver.archiveRootObject(scores, toFile: highScorePath)
+        }
     }
 }

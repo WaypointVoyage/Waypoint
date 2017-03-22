@@ -241,7 +241,7 @@
    },
    {
       "testing": true,
-      "name": "",
+      "name": "Worst Ship",
       "previewImage": "worst_ship",
       "inGameImage": "worst_ship_top_down",
       "cannonSet": [
