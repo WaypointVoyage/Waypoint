@@ -16,7 +16,7 @@ class WPTConfig {
     var allUnlocked = false
     var invincible = true
     var showBrainRadii = false
-    var showPhysics = false
+    var showPhysics = true
     var showSpawnVolumesOnMinimap = false
     
     // singleton instance
