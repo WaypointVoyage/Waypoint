@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>description</key>
-		<string>OAR DESCRIPTION</string>
+		<string>Row Faster, Oar Else!</string>
 		<key>imageName</key>
 		<string>oar</string>
 		<key>modifiers</key>
@@ -23,7 +23,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>GUN POWDER DESCRIPTION</string>
+		<string>Thar She Blows!</string>
 		<key>imageName</key>
 		<string>gunpowder</string>
 		<key>modifiers</key>
@@ -44,7 +44,7 @@
 		<key>cannonBallImage</key>
 		<string>spiked_cannon_ball</string>
 		<key>description</key>
-		<string>SPIKED CANNON BALL DESCRIPTION</string>
+		<string>Ouch, Spikey!</string>
 		<key>imageName</key>
 		<string>spiked_cannon_ball</string>
 		<key>modifiers</key>
@@ -63,7 +63,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>PROPELLER DESCRIPTION</string>
+		<string>Rev the Motor!</string>
 		<key>imageName</key>
 		<string>propeller_silver</string>
 		<key>modifiers</key>
@@ -82,7 +82,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>RUDDER DESCRIPTION</string>
+		<string>Turn Faster!</string>
 		<key>imageName</key>
 		<string>rudder</string>
 		<key>modifiers</key>
@@ -101,7 +101,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>SAIL DESCRIPTION</string>
+		<string>Hoist the Mizzen!</string>
 		<key>imageName</key>
 		<string>sail</string>
 		<key>modifiers</key>
@@ -120,7 +120,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>TELESCOPE DESCRIPTION</string>
+		<string>To the Crow's Nest!</string>
 		<key>imageName</key>
 		<string>telescope</string>
 		<key>modifiers</key>
@@ -139,7 +139,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>SHIPS WHEEL DESCRIPTION</string>
+		<string>Steer Straight!</string>
 		<key>imageName</key>
 		<string>ships_wheel</string>
 		<key>modifiers</key>
@@ -158,7 +158,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>HOOK HAND DESCRIPTION</string>
+		<string>All... Hooks?.. On Deck!</string>
 		<key>imageName</key>
 		<string>hook_hand</string>
 		<key>modifiers</key>
@@ -179,7 +179,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>EYEPATCH DESCRIPTION</string>
+		<string>Eye Can't See!</string>
 		<key>imageName</key>
 		<string>eyepatch</string>
 		<key>modifiers</key>
@@ -200,7 +200,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>PILE OF CANNON BALLS DESCRIPTION</string>
+		<string>Lightning Cannon Rate!</string>
 		<key>imageName</key>
 		<string>pile_of_cannon_balls</string>
 		<key>modifiers</key>
@@ -219,7 +219,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>RUM DESCRIPTION</string>
+		<string>Bottoms Up!</string>
 		<key>imageName</key>
 		<string>rum</string>
 		<key>modifiers</key>
@@ -242,7 +242,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>SCIMITAR DESCRIPTION</string>
+		<string>Boost Your Damage!</string>
 		<key>imageName</key>
 		<string>scimitar</string>
 		<key>modifiers</key>
@@ -261,7 +261,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>DRUM DESCRIPTION</string>
+		<string>Drum Roll Please!</string>
 		<key>imageName</key>
 		<string>drum</string>
 		<key>modifiers</key>
@@ -282,7 +282,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>PIRATE FLAG DESCRIPTION</string>
+		<string>Boost Cannon Range!</string>
 		<key>imageName</key>
 		<string>pirate_flag</string>
 		<key>modifiers</key>
@@ -301,7 +301,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>MERMAID FIGURE DESCRIPTION</string>
+		<string>Mermaid For Each Other!</string>
 		<key>imageName</key>
 		<string>mermaid</string>
 		<key>modifiers</key>
@@ -322,7 +322,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>LONG BARREL CANNON DESCRIPTION</string>
+		<string>Boost Cannon Speed &amp; Range!</string>
 		<key>imageName</key>
 		<string>long_barrel_cannon</string>
 		<key>modifiers</key>
@@ -343,7 +343,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>BANDANA DESCRIPTION</string>
+		<string>Boost Fire Rate!</string>
 		<key>imageName</key>
 		<string>bandana</string>
 		<key>modifiers</key>
@@ -362,7 +362,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>ROPE DESCRIPTION</string>
+		<string>Belay That, Matey!</string>
 		<key>imageName</key>
 		<string>rope</string>
 		<key>modifiers</key>
@@ -381,7 +381,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>BARREL DESCRIPTION</string>
+		<string>Stop, Drop, and Barrel Roll!</string>
 		<key>imageName</key>
 		<string>barrel</string>
 		<key>modifiers</key>
@@ -402,7 +402,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>BLUNDERBUSS DESCRIPTION</string>
+		<string>Me Hearties Yo Ho!</string>
 		<key>imageName</key>
 		<string>blunderbuss</string>
 		<key>modifiers</key>
@@ -423,7 +423,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>LIFE RING DESCRIPTION</string>
+		<string>Boost Max Health!</string>
 		<key>imageName</key>
 		<string>life_ring</string>
 		<key>modifiers</key>

@@ -12,21 +12,16 @@ class WPTDestroyMenuNode: SKNode {
     
     //Thar She Blows
     private let gameOver = WPTLabelNode(text: "Game Over Matey!", fontSize: WPTValues.fontSizeMedium)
-    private let levelLabel = WPTLabelNode(text: "Level", fontSize: WPTValues.fontSizeSmall)
+    private let shipName = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeSmall)
     private let doubloonLabel = WPTLabelNode(text: "Doubloons", fontSize: WPTValues.fontSizeSmall)
-    private let continueLabel = WPTLabelNode(text: "Continue >", fontSize: WPTValues.fontSizeSmall)
-    private var levelNameNode: WPTLabelNode? = nil
+    private let continueLabel = WPTButtonNode(text: "Continue >", fontSize: WPTValues.fontSizeSmall)
     private var doubloons: WPTLabelNode
-    private var level: WPTLabelNode
     private var player: WPTPlayer
     
     init(player: WPTPlayer) {
         
         self.player = player
         self.doubloons = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)
-        
-        //may need to change later once player progress is implemented
-        self.level = WPTLabelNode(text: String(player.completedLevels.count + 1), fontSize: WPTValues.fontSizeSmall)
         
         super.init()
         self.isUserInteractionEnabled = true
@@ -57,35 +52,29 @@ class WPTDestroyMenuNode: SKNode {
         self.addChild(gameOver)
         
         // levelLabel
-        levelLabel.zPosition = WPTValues.pauseShroudZPosition + 2
-        levelLabel.fontColor = UIColor.black
-        levelLabel.position.y += 0.05 * background.size.height
-        levelLabel.position.x += 0.1 * background.size.height
-        self.addChild(levelLabel)
-        
-        // level
-        level.zPosition = WPTValues.pauseShroudZPosition + 2
-        level.fontColor = UIColor.black
-        level.position.y += 0.35 * background.size.height
-        level.position.x += 0.1 * background.size.height
-        self.addChild(level)
+        shipName.horizontalAlignmentMode = .left
+        shipName.zPosition = WPTValues.pauseShroudZPosition + 2
+        shipName.fontColor = UIColor.black
+        shipName.text = player.shipName
+        shipName.position.y += 0.05 * background.size.height
+        shipName.position.x -= 0.01 * background.size.height
+        self.addChild(shipName)
         
         // doubloonLabel
         doubloonLabel.zPosition = WPTValues.pauseShroudZPosition + 2
         doubloonLabel.fontColor = UIColor.black
         doubloonLabel.position.y -= 0.04 * background.size.height
-        doubloonLabel.position.x += 0.15 * background.size.height
+        doubloonLabel.position.x += 0.1 * background.size.height
         self.addChild(doubloonLabel)
         
         doubloons.zPosition = WPTValues.pauseShroudZPosition + 2
         doubloons.fontColor = UIColor.black
         doubloons.position.y -= 0.04 * background.size.height
-        doubloons.position.x += 0.32 * background.size.height
+        doubloons.position.x += 0.27 * background.size.height
         self.addChild(doubloons)
         
         continueLabel.zPosition = WPTValues.pauseShroudZPosition + 2
-        continueLabel.fontColor = UIColor.black
-        continueLabel.position.y -= 0.25 * background.size.height
+        continueLabel.position.y -= 0.22 * background.size.height
         continueLabel.position.x += 0.25 * background.size.height
         self.addChild(continueLabel)
         

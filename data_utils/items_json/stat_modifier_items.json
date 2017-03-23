@@ -1,18 +1,18 @@
 [
    {
       "name": "Oar",
-      "description": "OAR DESCRIPTION",
+      "description": "Row Faster, Oar Else!",
       "imageName": "oar",
       "multiplicity": 0,
       "value": 20,
       "prevalence": 100,
       "modifiers": {
          "speed": 0.1,
-      },
+      }
    },
    {
       "name": "Gun Powder",
-      "description": "GUN POWDER DESCRIPTION",
+      "description": "Thar She Blows!",
       "imageName": "gunpowder",
       "multiplicity": 0,
       "value": 18,
@@ -23,7 +23,7 @@
    },
    {
       "name": "Spiked Cannon Ball",
-      "description": "SPIKED CANNON BALL DESCRIPTION",
+      "description": "Ouch, Spikey!",
       "imageName": "spiked_cannon_ball",
       "multiplicity": 1,
       "value": 35,
@@ -35,7 +35,7 @@
    },
    {
       "name": "Propeller",
-      "description": "PROPELLER DESCRIPTION",
+      "description": "Rev the Motor!",
       "imageName": "propeller_silver",
       "multiplicity": 3,
       "value": 30,
@@ -46,7 +46,7 @@
    },
    {
       "name": "Rudder",
-      "description": "RUDDER DESCRIPTION",
+      "description": "Turn Faster!",
       "imageName": "rudder",
       "multiplicity": 1,
       "value": 25,
@@ -57,7 +57,7 @@
    },
    {
       "name": "Sail",
-      "description": "SAIL DESCRIPTION",
+      "description": "Hoist the Mizzen!",
       "imageName": "sail",
       "multiplicity": 5,
       "value": 25,
@@ -68,7 +68,7 @@
    },
    {
       "name": "Telescope",
-      "description": "TELESCOPE DESCRIPTION",
+      "description": "To the Crow's Nest!",
       "imageName": "telescope",
       "multiplicity": 0,
       "value": 25,
@@ -79,7 +79,7 @@
    },
    {
       "name": "Ship's Wheel",
-      "description": "SHIPS WHEEL DESCRIPTION",
+      "description": "Steer Straight!",
       "imageName": "ships_wheel",
       "multiplicity": 1,
       "value": 25,
@@ -90,7 +90,7 @@
    },
    {
       "name": "Hook Hand",
-      "description": "HOOK HAND DESCRIPTION",
+      "description": "All... Hooks?.. On Deck!",
       "imageName": "hook_hand",
       "multiplicity": 2,
       "value": 30,
@@ -102,7 +102,7 @@
    },
    {
       "name": "Eyepatch",
-      "description": "EYEPATCH DESCRIPTION",
+      "description": "Eye Can't See!",
       "imageName": "eyepatch",
       "multiplicity": 2,
       "value": 10,
@@ -114,7 +114,7 @@
    },
    {
       "name": "Pile of Cannon Balls",
-      "description": "PILE OF CANNON BALLS DESCRIPTION",
+      "description": "Lightning Cannon Rate!",
       "imageName": "pile_of_cannon_balls",
       "multiplicity": 0,
       "value": 50,
@@ -125,7 +125,7 @@
    },
    {
       "name": "Rum",
-      "description": "RUM DESCRIPTION",
+      "description": "Bottoms Up!",
       "imageName": "rum",
       "multiplicity": 0,
       "value": 20,
@@ -138,7 +138,7 @@
    },
    {
       "name": "Scimitar",
-      "description": "SCIMITAR DESCRIPTION",
+      "description": "Boost Your Damage!",
       "imageName": "scimitar",
       "multiplicity": 0,
       "value": 35,
@@ -149,7 +149,7 @@
    },
    {
       "name": "Drum",
-      "description": "DRUM DESCRIPTION",
+      "description": "Drum Roll Please!",
       "imageName": "drum",
       "multiplicity": 0,
       "value": 45,
@@ -161,7 +161,7 @@
    },
    {
       "name": "Pirate Flag",
-      "description": "PIRATE FLAG DESCRIPTION",
+      "description": "Boost Cannon Range!",
       "imageName": "pirate_flag",
       "multiplicity": 3,
       "value": 30,
@@ -172,7 +172,7 @@
    },
    {
       "name": "Mermaid Figure",
-      "description": "MERMAID FIGURE DESCRIPTION",
+      "description": "Mermaid For Each Other!",
       "imageName": "mermaid",
       "multiplicity": 0,
       "value": 65,
@@ -184,7 +184,7 @@
    },
    {
       "name": "Long Barrel Cannon",
-      "description": "LONG BARREL CANNON DESCRIPTION",
+      "description": "Boost Cannon Speed & Range!",
       "imageName": "long_barrel_cannon",
       "multiplicity": 0,
       "value": 40,
@@ -196,7 +196,7 @@
    },
    {
       "name": "Bandana",
-      "description": "BANDANA DESCRIPTION",
+      "description": "Boost Fire Rate!",
       "imageName": "bandana",
       "multiplicity": 1,
       "value": 15,
@@ -207,7 +207,7 @@
    },
    {
       "name": "Rope",
-      "description": "ROPE DESCRIPTION",
+      "description": "Belay That, Matey!",
       "imageName": "rope",
       "multiplicity": 0,
       "value": 10,
@@ -218,7 +218,7 @@
    },
    {
       "name": "Barrel",
-      "description": "BARREL DESCRIPTION",
+      "description": "Stop, Drop, and Barrel Roll!",
       "imageName": "barrel",
       "multiplicity": 0,
       "value": 15,
@@ -230,7 +230,7 @@
    },
    {
       "name": "Blunderbuss",
-      "description": "BLUNDERBUSS DESCRIPTION",
+      "description": "Me Hearties Yo Ho!",
       "imageName": "blunderbuss",
       "multiplicity": 0,
       "value": 25,
@@ -242,7 +242,7 @@
    },
    {
       "name": "Life Ring",
-      "description": "LIFE RING DESCRIPTION",
+      "description": "Boost Max Health!",
       "imageName": "life_ring",
       "multiplicity": 0,
       "value": 35,
