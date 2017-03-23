@@ -42,6 +42,7 @@ class WPTPortDockingHandler: SKNode {
             self.dockPos = theDockPos
             if let hud = (self.scene as? WPTLevelScene)?.hud {
                 hud.dockMenu.updateDoubloons()
+                hud.dockMenu.updateStats(item: (hud.dockMenu.itemPicker?.currentItem)!)
                 hud.addChild(hud.dockMenu)
             }
         }

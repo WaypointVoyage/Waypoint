@@ -94,7 +94,7 @@ class WPTLevelScene: WPTScene {
         }
         
         // show the tutorial (if there is one)
-        if (level.hasTutorial || WPTConfig.values.showTutorial) {
+        if (level.hasTutorial) {
             self.levelPaused = true
             let tutorial = WPTTutorialNode(onComplete: {
                 self.levelPaused = false
