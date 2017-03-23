@@ -34,6 +34,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         }
         if WPTConfig.values.showBrainRadii {
             self.brainRadii = WPTBrainRadiiNode(brain: self.brain)
+            self.brainRadii?.zPosition = WPTValues.movementHandlerZPosition - 1
             self.brainRadii?.setScale(1.0 / enemy.ship.size) // have to invert enemy scaling to get appropriate sizes
             self.addChild(brainRadii!);
         }
@@ -137,6 +138,10 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        player.aimAt(actor: self)
+        let touch = touches.first!
+        
+        if self.sprite.contains(touch.location(in: self)) {
+            player.aimAt(actor: self)
+        }
     }
 }

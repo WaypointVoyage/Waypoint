@@ -9,15 +9,12 @@
 import SpriteKit
 
 class WPTBrainRadiiNode: SKNode, WPTUpdatable {
-    let brain: WPTBrain
-    
     private let engagement: SKShapeNode
     private let innerOblivious: SKShapeNode
     private let outerOblivious: SKShapeNode
     private let safety: SKShapeNode
     
     init(brain: WPTBrain) {
-        self.brain = brain
         engagement = SKShapeNode(circleOfRadius: brain.radiusOfEngagement)
         innerOblivious = SKShapeNode(circleOfRadius: brain.innerRadiusOfObliviousness)
         outerOblivious = SKShapeNode(circleOfRadius: brain.outerRadiusOfObliviousness)

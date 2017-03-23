@@ -18,4 +18,10 @@ class WPTCannon {
         self.position = CGPoint(x: dict["x"] as! CGFloat, y: dict["y"] as! CGFloat)
         self.angle = dict["angle"] as! CGFloat
     }
+    
+    init(hasCannon: Bool, position: CGPoint, angle: CGFloat) {
+        self.hasCannon = hasCannon
+        self.position = position
+        self.angle = angle
+    }
 }

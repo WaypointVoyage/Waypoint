@@ -16,4 +16,10 @@ class WPTCannonSet {
             self.cannons.append(WPTCannon(cannonJson))
         }
     }
+    
+    init(other: WPTCannonSet) {
+        for cannon in other.cannons {
+            self.cannons.append(WPTCannon(hasCannon: cannon.hasCannon, position: cannon.position, angle: cannon.angle))
+        }
+    }
 }

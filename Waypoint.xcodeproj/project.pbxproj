@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D03BB921E8337C0003A53F6 /* stat_modifier_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D03BB911E8337C0003A53F6 /* stat_modifier_items.plist */; };
 		2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703D61E590F8C0000827E /* random_ship_names.plist */; };
 		2D1703DB1E601E180000827E /* WPTMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1703DA1E601E180000827E /* WPTMapView.swift */; };
 		2D1703DD1E625F1E0000827E /* distance.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703DC1E625F1E0000827E /* distance.m4a */; };
@@ -47,6 +46,10 @@
 		7E1472821E71A784005E5A4C /* WPTBrainState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1472811E71A784005E5A4C /* WPTBrainState.swift */; };
 		7E1472841E71AA8F005E5A4C /* WPTBrainStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1472831E71AA8F005E5A4C /* WPTBrainStateFactory.swift */; };
 		7E1472861E71ACB4005E5A4C /* WPTStandAndShootBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1472851E71ACB4005E5A4C /* WPTStandAndShootBS.swift */; };
+		7E15B66B1E83922E00A9B1DC /* currency_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E15B6671E83922E00A9B1DC /* currency_items.plist */; };
+		7E15B66C1E83922E00A9B1DC /* other_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E15B6681E83922E00A9B1DC /* other_items.plist */; };
+		7E15B66D1E83922E00A9B1DC /* repair_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E15B6691E83922E00A9B1DC /* repair_items.plist */; };
+		7E15B66E1E83922E00A9B1DC /* stat_modifier_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E15B66A1E83922E00A9B1DC /* stat_modifier_items.plist */; };
 		7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8581E2D580600933E24 /* AppDelegate.swift */; };
 		7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B85E1E2D580600933E24 /* WPTSplashScene.swift */; };
 		7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8601E2D580600933E24 /* GameViewController.swift */; };
@@ -115,7 +118,6 @@
 		7EDAC9B41E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAC9B31E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift */; };
 		7EDAC9B61E71FAA9002CEC0F /* WPTDockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAC9B51E71FAA9002CEC0F /* WPTDockNode.swift */; };
 		7EDD063A1E4A1C750054EB7E /* WPTTrailMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */; };
-		7EE57D491E69E20C0020693B /* currency_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EE57D481E69E20C0020693B /* currency_items.plist */; };
 		7EE7981B1E523030006D683B /* WPTPlayerProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */; };
 		7EE7981D1E5234A3006D683B /* WPTLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981C1E5234A3006D683B /* WPTLevel.swift */; };
 		7EE7C41B1E81C84B0019B0D4 /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7C41A1E81C84B0019B0D4 /* StorageTests.swift */; };
@@ -129,8 +131,6 @@
 		7EF866881E82C3280012F2C7 /* WPTFinalTreasureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866871E82C3280012F2C7 /* WPTFinalTreasureNode.swift */; };
 		7EF8668A1E82C3630012F2C7 /* WPTKrakenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866891E82C3630012F2C7 /* WPTKrakenNode.swift */; };
 		7EF866A41E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866A31E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift */; };
-		7EF866B71E8338EA0012F2C7 /* other_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866B51E8338EA0012F2C7 /* other_items.plist */; };
-		7EF866B81E8338EA0012F2C7 /* repair_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866B61E8338EA0012F2C7 /* repair_items.plist */; };
 		7EF866BB1E833BFA0012F2C7 /* the_enemy_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866B91E833BFA0012F2C7 /* the_enemy_ships.plist */; };
 		7EF866BC1E833BFA0012F2C7 /* the_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866BA1E833BFA0012F2C7 /* the_ships.plist */; };
 		7EF866BE1E833C020012F2C7 /* enemies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866BD1E833C020012F2C7 /* enemies.plist */; };
@@ -166,7 +166,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D03BB911E8337C0003A53F6 /* stat_modifier_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stat_modifier_items.plist; sourceTree = "<group>"; };
 		2D1703D61E590F8C0000827E /* random_ship_names.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = random_ship_names.plist; sourceTree = "<group>"; };
 		2D1703DA1E601E180000827E /* WPTMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTMapView.swift; sourceTree = "<group>"; };
 		2D1703DC1E625F1E0000827E /* distance.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = distance.m4a; sourceTree = "<group>"; };
@@ -206,6 +205,10 @@
 		7E1472811E71A784005E5A4C /* WPTBrainState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainState.swift; sourceTree = "<group>"; };
 		7E1472831E71AA8F005E5A4C /* WPTBrainStateFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainStateFactory.swift; sourceTree = "<group>"; };
 		7E1472851E71ACB4005E5A4C /* WPTStandAndShootBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTStandAndShootBS.swift; sourceTree = "<group>"; };
+		7E15B6671E83922E00A9B1DC /* currency_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = currency_items.plist; sourceTree = "<group>"; };
+		7E15B6681E83922E00A9B1DC /* other_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = other_items.plist; sourceTree = "<group>"; };
+		7E15B6691E83922E00A9B1DC /* repair_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = repair_items.plist; sourceTree = "<group>"; };
+		7E15B66A1E83922E00A9B1DC /* stat_modifier_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stat_modifier_items.plist; sourceTree = "<group>"; };
 		7E16B8551E2D580600933E24 /* Waypoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waypoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E16B8581E2D580600933E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E16B85E1E2D580600933E24 /* WPTSplashScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSplashScene.swift; sourceTree = "<group>"; };
@@ -253,8 +256,6 @@
 		7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSceneLabelNode.swift; sourceTree = "<group>"; };
 		7EAE35CE1E81FC7500F42904 /* WPTReticleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTReticleNode.swift; sourceTree = "<group>"; };
 		7EAE35D01E82153500F42904 /* WPTAlertNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTAlertNode.swift; sourceTree = "<group>"; };
-		7EAE35EA1E82324300F42904 /* repair_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = repair_items.plist; sourceTree = "<group>"; };
-		7EAE35EB1E82324300F42904 /* stat_modifier_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stat_modifier_items.plist; sourceTree = "<group>"; };
 		7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailStop.swift; sourceTree = "<group>"; };
 		7EBF5E681E4E1B4000F81982 /* WPTUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTUtils.swift; sourceTree = "<group>"; };
 		7EBF5E6A1E4E213A00F81982 /* stat_bar.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = stat_bar.fsh; sourceTree = "<group>"; };
@@ -282,7 +283,6 @@
 		7EDAC9B31E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelPhysicsContactHandler.swift; sourceTree = "<group>"; };
 		7EDAC9B51E71FAA9002CEC0F /* WPTDockNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDockNode.swift; sourceTree = "<group>"; };
 		7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailMapNode.swift; sourceTree = "<group>"; };
-		7EE57D481E69E20C0020693B /* currency_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = currency_items.plist; sourceTree = "<group>"; };
 		7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayerProgress.swift; sourceTree = "<group>"; };
 		7EE7981C1E5234A3006D683B /* WPTLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevel.swift; sourceTree = "<group>"; };
 		7EE7C41A1E81C84B0019B0D4 /* StorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
@@ -296,8 +296,6 @@
 		7EF866871E82C3280012F2C7 /* WPTFinalTreasureNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTFinalTreasureNode.swift; sourceTree = "<group>"; };
 		7EF866891E82C3630012F2C7 /* WPTKrakenNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTKrakenNode.swift; sourceTree = "<group>"; };
 		7EF866A31E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTreasureTimerNode.swift; sourceTree = "<group>"; };
-		7EF866B51E8338EA0012F2C7 /* other_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = other_items.plist; sourceTree = "<group>"; };
-		7EF866B61E8338EA0012F2C7 /* repair_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = repair_items.plist; sourceTree = "<group>"; };
 		7EF866B91E833BFA0012F2C7 /* the_enemy_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_enemy_ships.plist; sourceTree = "<group>"; };
 		7EF866BA1E833BFA0012F2C7 /* the_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_ships.plist; sourceTree = "<group>"; };
 		7EF866BD1E833C020012F2C7 /* enemies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enemies.plist; sourceTree = "<group>"; };
@@ -569,12 +567,10 @@
 		7E575DD91E69CBA4004D92BF /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				2D03BB911E8337C0003A53F6 /* stat_modifier_items.plist */,
-				7EE57D481E69E20C0020693B /* currency_items.plist */,
-				7EAE35EA1E82324300F42904 /* repair_items.plist */,
-				7EF866B51E8338EA0012F2C7 /* other_items.plist */,
-				7EF866B61E8338EA0012F2C7 /* repair_items.plist */,
-				7EAE35EB1E82324300F42904 /* stat_modifier_items.plist */,
+				7E15B6671E83922E00A9B1DC /* currency_items.plist */,
+				7E15B6681E83922E00A9B1DC /* other_items.plist */,
+				7E15B6691E83922E00A9B1DC /* repair_items.plist */,
+				7E15B66A1E83922E00A9B1DC /* stat_modifier_items.plist */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -844,7 +840,7 @@
 				TargetAttributes = {
 					7E16B8541E2D580600933E24 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3GEHA95597;
+						DevelopmentTeam = 66743KUV39;
 						ProvisioningStyle = Automatic;
 					};
 					7E16B86E1E2D580600933E24 = {
@@ -895,34 +891,34 @@
 				7EF866BB1E833BFA0012F2C7 /* the_enemy_ships.plist in Resources */,
 				7EBF5E6B1E4E213A00F81982 /* stat_bar.fsh in Resources */,
 				7EF866CF1E83556D0012F2C7 /* 4_fire_in_the_hole.plist in Resources */,
-				2D03BB921E8337C0003A53F6 /* stat_modifier_items.plist in Resources */,
 				7ED963341E7DEA4900B58C1C /* brains.plist in Resources */,
 				7EF866BE1E833C020012F2C7 /* enemies.plist in Resources */,
 				2D1703E11E6266440000827E /* howToTrainYourDragon.m4a in Resources */,
+				7E15B66E1E83922E00A9B1DC /* stat_modifier_items.plist in Resources */,
 				7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */,
 				7EF866CC1E83556D0012F2C7 /* 1_sea_legs.plist in Resources */,
 				2D1703DF1E6264200000827E /* dragonRoost.m4a in Resources */,
 				2D1703E31E62665B0000827E /* windWaker.mp3 in Resources */,
+				7E15B66D1E83922E00A9B1DC /* repair_items.plist in Resources */,
 				2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */,
 				7EF866CB1E83556D0012F2C7 /* 0_setting_sail.plist in Resources */,
 				2D17044F1E7105940000827E /* coin.mp3 in Resources */,
+				7E15B66C1E83922E00A9B1DC /* other_items.plist in Resources */,
 				7E43CC771E54B844009367BC /* trail_map.plist in Resources */,
+				7E15B66B1E83922E00A9B1DC /* currency_items.plist in Resources */,
 				7EF866BC1E833BFA0012F2C7 /* the_ships.plist in Resources */,
 				2D1704471E7009890000827E /* explosion.sks in Resources */,
-				7EF866B81E8338EA0012F2C7 /* repair_items.plist in Resources */,
 				2D17044D1E7104090000827E /* cannon.mp3 in Resources */,
 				7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */,
 				7EF866D31E83556D0012F2C7 /* 8_give_no_quarter.plist in Resources */,
 				2D17043F1E7005170000827E /* fire.sks in Resources */,
 				7EF866D51E83556D0012F2C7 /* 10_high_seas.plist in Resources */,
 				7EF866D01E83556D0012F2C7 /* 5_dead_men_tell_no_tales.plist in Resources */,
-				7EF866B71E8338EA0012F2C7 /* other_items.plist in Resources */,
 				7EF866CD1E83556D0012F2C7 /* 2_pegleg_plunder.plist in Resources */,
 				2D1703DD1E625F1E0000827E /* distance.m4a in Resources */,
 				7EF866D11E83556D0012F2C7 /* 6_davy_jones_locker.plist in Resources */,
 				7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */,
 				7EF866D21E83556D0012F2C7 /* 7_letter_of_marque.plist in Resources */,
-				7EE57D491E69E20C0020693B /* currency_items.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1189,10 +1185,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3GEHA95597;
+				DEVELOPMENT_TEAM = 66743KUV39;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hils124;
+				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1204,10 +1200,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3GEHA95597;
+				DEVELOPMENT_TEAM = 66743KUV39;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hils124;
+				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

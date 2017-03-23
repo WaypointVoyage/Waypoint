@@ -11,10 +11,10 @@ import GameplayKit
 
 class WPTBrain: GKStateMachine {
     // these stack onto eachother, see the state diagram for clarification
-    static let baseRadiusOfEngagement: CGFloat = 700
-    static let baseInnerRadiusOfObliviousness: CGFloat = 400
-    static let baseOuterRadiusOfObliviousness: CGFloat = 400
-    static let baseRadiusOfSafety: CGFloat = 600
+    static let baseRadiusOfEngagement: CGFloat = 250
+    static let baseInnerRadiusOfObliviousness: CGFloat = 250
+    static let baseOuterRadiusOfObliviousness: CGFloat = 250
+    static let baseRadiusOfSafety: CGFloat = 250
     
     let template: WPTBrainTemplate
     weak var enemy: WPTLevelEnemyNode! = nil

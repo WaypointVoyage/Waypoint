@@ -57,9 +57,12 @@ class WPTTerrainNode: SKNode {
         boundary.collisionBitMask = WPTValues.actorCbm
     }
     
-    func addEnemy(_ enemy: WPTLevelEnemyNode) {
-        self.addChild(enemy)
-        self.enemies.append(enemy)
+    func addEnemy(_ enemy: WPTLevelEnemyNode?) {
+        if let enemy = enemy {
+            enemy.removeFromParent()
+            self.addChild(enemy)
+            self.enemies.append(enemy)
+        }
     }
     
     func removeEnemy(_ enemy: WPTLevelEnemyNode) {
