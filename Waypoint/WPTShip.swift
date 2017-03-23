@@ -132,7 +132,7 @@ class WPTShip {
         self.previewImage = other.previewImage
         self.inGameImage = other.inGameImage
         self.cannonSet = WPTCannonSet(other: other.cannonSet)
-        self.initStats(speedScale: other.speedScale, damageScale: other.damage, healthScale: other.healthScale, rangeScale: other.rangeScale, shotSpeedScale: other.shotSpeedScale, sizeScale: other.sizeScale, turnRateScale: other.turnRateScale)
+        self.initStats(speedScale: other.speedScale, damageScale: other.damageScale, healthScale: other.healthScale, rangeScale: other.rangeScale, shotSpeedScale: other.shotSpeedScale, sizeScale: other.sizeScale, turnRateScale: other.turnRateScale)
     }
     
     func initStats(speedScale: CGFloat = 1.0, damageScale: CGFloat = 1.0, healthScale: CGFloat = 1.0, rangeScale: CGFloat = 1.0, shotSpeedScale: CGFloat = 1.0, sizeScale: CGFloat = 1.0, turnRateScale: CGFloat = 1.0, fireRateScale: CGFloat = 1.0) {

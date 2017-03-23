@@ -85,6 +85,21 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     override func give(item: WPTItem) {
         super.give(item: item)
         
+        // update doubloons at the top
+        if let _ = item.doubloons, let top = (self.scene as? WPTLevelScene)?.hud.top {
+            top.updateMoney()
+        }
+        
+        // update the health bar
+        if let repair = item.repair {
+            if item.repairProportionally {
+                self.doDamage(repair * self.player.ship.health)
+            } else {
+                self.doDamage(repair)
+            }
+        }
+        
+        // show description
         if let desc = item.description {
             if let scene = self.scene as? WPTLevelScene {
                scene.alert(header: item.name, desc: desc)

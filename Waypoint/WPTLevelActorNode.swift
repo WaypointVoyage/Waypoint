@@ -177,8 +177,14 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         // all items have the potential to give money
         if let doubloons = item.doubloons {
             actor.doubloons += doubloons
-            if let top = (self.scene as? WPTLevelScene)?.hud.top {
-                top.updateMoney()
+        }
+        
+        // all items have the potential to do repairs
+        if let repair = item.repair {
+            if item.repairProportionally {
+                self.currentHealth += repair * self.actor.ship.health
+            } else {
+                self.currentHealth += repair
             }
         }
         
@@ -199,6 +205,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     func doDamage(_ damage: CGFloat) {
         currentHealth += damage
+        currentHealth = currentHealth > actor.ship.health ? actor.ship.health : currentHealth // clamp
     }
     
     private func addCannon() {

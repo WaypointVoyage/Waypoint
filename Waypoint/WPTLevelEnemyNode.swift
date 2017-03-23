@@ -83,6 +83,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     }
     
     override func doDamage(_ damage: CGFloat) {
+        print("doing \(damage) damage to a \(self.enemy.name)")
         super.doDamage(damage)
         let alive = healthBar.updateHealth(damage)
         if !alive && self.physics != nil {

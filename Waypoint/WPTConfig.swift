@@ -12,11 +12,11 @@ class WPTConfig {
     
     var playMusic = true
     var playSoundEffects = true
-    var testing = true
-    var allUnlocked = true
+    var testing = false
+    var allUnlocked = false
     var invincible = true
     var showBrainRadii = false // kinda buggy, use with caution... need to address this. 
-    var showPhysics = true
+    var showPhysics = false
     var showSpawnVolumesOnMinimap = false
     var clearHighScoresOnLoad = false
     var showTutorial = true

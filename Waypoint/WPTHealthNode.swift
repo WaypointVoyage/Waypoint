@@ -50,7 +50,6 @@ class WPTHealthNode: SKNode {
         return true
     }
     
-    
     func updateHealthBar(_ currentHealth: CGFloat, flash: Bool = true) {
         let barSize = CGSize(width: healthBarWidth, height: healthBarHeight);
         
