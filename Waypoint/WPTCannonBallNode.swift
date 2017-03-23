@@ -42,8 +42,6 @@ class WPTCannonBallNode: SKNode {
     
     func collide(with actor: WPTLevelActorNode) {
         
-        print("damaging!")
-        
         actor.doDamage(-self.damage)
         
         // TODO: apply damage/update health bars/explosion?

@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>imageName</key>
-		<string>doubloon</string>
+		<string>coin</string>
 		<key>name</key>
 		<string>One Doubloon</string>
 		<key>prevalence</key>
@@ -14,7 +14,7 @@
 	</dict>
 	<dict>
 		<key>imageName</key>
-		<string>some_doubloons</string>
+		<string>ruby</string>
 		<key>name</key>
 		<string>Some Doubloons</string>
 		<key>prevalence</key>
@@ -24,7 +24,7 @@
 	</dict>
 	<dict>
 		<key>imageName</key>
-		<string>a_bunch_of_doubloons</string>
+		<string>purpleDiamond</string>
 		<key>name</key>
 		<string>A Bunch Of Doubloons</string>
 		<key>prevalence</key>

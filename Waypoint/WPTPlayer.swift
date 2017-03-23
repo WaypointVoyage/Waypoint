@@ -29,7 +29,7 @@ class WPTPlayer: WPTActor {
         health = playerProgress.health
         completedLevels = playerProgress.completedLevels
         
-        let ship = WPTShipCatalog.shipsByName[playerProgress.ship]!
+        let ship = WPTShip(other: WPTShipCatalog.shipsByName[playerProgress.ship]!)
         for i in 0..<ship.cannonSet.cannons.count {
             let cannon = ship.cannonSet.cannons[i]
             cannon.hasCannon = playerProgress.cannonSet[i]!

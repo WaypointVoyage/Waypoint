@@ -1,19 +1,19 @@
 [
    {
       "name": "One Doubloon",
-      "imageName": "doubloon",
+      "imageName": "coin",
       "value": 1,
       "prevalence": 100
    },
    {
       "name": "Some Doubloons",
-      "imageName": "some_doubloons",
+      "imageName": "ruby",
       "value": 10,
       "prevalence": 20
    },
    {
       "name": "A Bunch Of Doubloons",
-      "imageName": "a_bunch_of_doubloons",
+      "imageName": "purpleDiamond",
       "value": 20,
       "prevalence": 5
    }

@@ -159,6 +159,7 @@ class WPTDockMenuNode: SKNode {
     
     private func purchaseItem() {
         player.player.doubloons -= itemPicker!.currentItem.item.value
+        assert(player.player.doubloons >= 0)
         updateDoubloons()
         if let hud = (self.scene as? WPTLevelScene)?.hud {
             hud.top.updateMoney()

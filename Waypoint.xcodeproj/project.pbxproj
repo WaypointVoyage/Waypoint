@@ -46,10 +46,10 @@
 		7E1472821E71A784005E5A4C /* WPTBrainState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1472811E71A784005E5A4C /* WPTBrainState.swift */; };
 		7E1472841E71AA8F005E5A4C /* WPTBrainStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1472831E71AA8F005E5A4C /* WPTBrainStateFactory.swift */; };
 		7E1472861E71ACB4005E5A4C /* WPTStandAndShootBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1472851E71ACB4005E5A4C /* WPTStandAndShootBS.swift */; };
-		7E15B66B1E83922E00A9B1DC /* currency_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E15B6671E83922E00A9B1DC /* currency_items.plist */; };
 		7E15B66C1E83922E00A9B1DC /* other_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E15B6681E83922E00A9B1DC /* other_items.plist */; };
 		7E15B66D1E83922E00A9B1DC /* repair_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E15B6691E83922E00A9B1DC /* repair_items.plist */; };
 		7E15B66E1E83922E00A9B1DC /* stat_modifier_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E15B66A1E83922E00A9B1DC /* stat_modifier_items.plist */; };
+		7E15B6701E83952400A9B1DC /* currency_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E15B66F1E83952400A9B1DC /* currency_items.plist */; };
 		7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8581E2D580600933E24 /* AppDelegate.swift */; };
 		7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B85E1E2D580600933E24 /* WPTSplashScene.swift */; };
 		7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8601E2D580600933E24 /* GameViewController.swift */; };
@@ -205,10 +205,10 @@
 		7E1472811E71A784005E5A4C /* WPTBrainState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainState.swift; sourceTree = "<group>"; };
 		7E1472831E71AA8F005E5A4C /* WPTBrainStateFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainStateFactory.swift; sourceTree = "<group>"; };
 		7E1472851E71ACB4005E5A4C /* WPTStandAndShootBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTStandAndShootBS.swift; sourceTree = "<group>"; };
-		7E15B6671E83922E00A9B1DC /* currency_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = currency_items.plist; sourceTree = "<group>"; };
 		7E15B6681E83922E00A9B1DC /* other_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = other_items.plist; sourceTree = "<group>"; };
 		7E15B6691E83922E00A9B1DC /* repair_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = repair_items.plist; sourceTree = "<group>"; };
 		7E15B66A1E83922E00A9B1DC /* stat_modifier_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stat_modifier_items.plist; sourceTree = "<group>"; };
+		7E15B66F1E83952400A9B1DC /* currency_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = currency_items.plist; sourceTree = "<group>"; };
 		7E16B8551E2D580600933E24 /* Waypoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waypoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E16B8581E2D580600933E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E16B85E1E2D580600933E24 /* WPTSplashScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSplashScene.swift; sourceTree = "<group>"; };
@@ -567,7 +567,7 @@
 		7E575DD91E69CBA4004D92BF /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				7E15B6671E83922E00A9B1DC /* currency_items.plist */,
+				7E15B66F1E83952400A9B1DC /* currency_items.plist */,
 				7E15B6681E83922E00A9B1DC /* other_items.plist */,
 				7E15B6691E83922E00A9B1DC /* repair_items.plist */,
 				7E15B66A1E83922E00A9B1DC /* stat_modifier_items.plist */,
@@ -905,13 +905,13 @@
 				2D17044F1E7105940000827E /* coin.mp3 in Resources */,
 				7E15B66C1E83922E00A9B1DC /* other_items.plist in Resources */,
 				7E43CC771E54B844009367BC /* trail_map.plist in Resources */,
-				7E15B66B1E83922E00A9B1DC /* currency_items.plist in Resources */,
 				7EF866BC1E833BFA0012F2C7 /* the_ships.plist in Resources */,
 				2D1704471E7009890000827E /* explosion.sks in Resources */,
 				2D17044D1E7104090000827E /* cannon.mp3 in Resources */,
 				7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */,
 				7EF866D31E83556D0012F2C7 /* 8_give_no_quarter.plist in Resources */,
 				2D17043F1E7005170000827E /* fire.sks in Resources */,
+				7E15B6701E83952400A9B1DC /* currency_items.plist in Resources */,
 				7EF866D51E83556D0012F2C7 /* 10_high_seas.plist in Resources */,
 				7EF866D01E83556D0012F2C7 /* 5_dead_men_tell_no_tales.plist in Resources */,
 				7EF866CD1E83556D0012F2C7 /* 2_pegleg_plunder.plist in Resources */,
