@@ -5,14 +5,12 @@
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
-		<integer>0</integer>
-		<key>whirlpoolLocations</key>
-		<array/>
+		<integer>12</integer>
 		<key>whirlpools</key>
-		<integer>0</integer>
+		<integer>8</integer>
 	</dict>
 	<key>name</key>
-	<string>Davy Jones' Locker</string>
+	<string>Shiver Me Timbers</string>
 	<key>port</key>
 	<dict>
 		<key>position</key>
@@ -844,5 +842,22 @@
 		<key>waterImage</key>
 		<string>davy_jones_locker_water</string>
 	</dict>
+	<key>waves</key>
+	<array>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Viking</key>
+				<integer>25</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Viking</key>
+				<integer>1</integer>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

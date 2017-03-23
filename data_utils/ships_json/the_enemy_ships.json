@@ -12,8 +12,8 @@
       "stats": {
          "speedScale": 0.0,
          "damageScale": 1.0,
-         "healthScale": 2.3,
-         "rangeScale": 2.0,
+         "healthScale": 0.8,
+         "rangeScale": 1.0,
          "shotSpeedScale": 1.1,
          "sizeScale": 1.3,
          "turnRateScale": 0.55,

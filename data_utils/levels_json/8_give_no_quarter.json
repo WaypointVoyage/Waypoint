@@ -33,10 +33,35 @@
          "maxy": 3200,
       }
    ],
+   "waves": [
+      {
+         "enemies": {
+            "Trebuchet": 2,
+            "Viking": 5,
+            "Marooner": 3,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 12,
+            "Viking": 1,
+         },
+      },
+      {
+         "enemies": {
+            "Viking": 12,
+            "Pirate": 1,
+         },
+      },
+      {
+         "enemies": {
+            "Marooner": 20,
+         },
+      }
+   ],
    "entities": {
-      "whirlpools": 0,
-      "whirlpoolLocations": [],
-      "boulders": 0,
+      "whirlpools": 4,
+      "boulders": 12,
    },
    "terrain": {
       "image": "give_no_quarter_terrain",

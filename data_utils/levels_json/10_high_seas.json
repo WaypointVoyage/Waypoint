@@ -39,10 +39,33 @@
          "maxy": 3200,
       },
    ],
+   "waves": [
+      {
+         "enemies": {
+            "Pirate": 15,
+            "Marooner": 15,
+            "Viking": 15,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 50,
+         },
+      },
+      {
+         "enemies": {
+            "Marooner": 50,
+         },
+      },
+      {
+         "enemies": {
+            "Viking": 50,
+         },
+      },
+   ],
    "entities": {
-      "whirlpools": 0,
-      "whirlpoolLocations": [],
-      "boulders": 0,
+      "whirlpools": 3,
+      "boulders": 12,
    },
    "terrain": {
       "image": "high_seas_terrain",

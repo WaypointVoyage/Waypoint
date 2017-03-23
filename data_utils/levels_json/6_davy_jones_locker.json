@@ -1,5 +1,5 @@
 {
-   "name": "Davy Jones' Locker",
+   "name": "Shiver Me Timbers",
    "size": {
       "width": 3360,
       "height": 3360,
@@ -39,10 +39,21 @@
          "x": 1163, "y": 1221, "angle": 3.141592653589793,
       },
    },
+   "waves": [
+      {
+         "enemies": {
+            "Viking": 25
+         },
+      },
+      {
+         "enemies": {
+            "Viking": 1
+         }
+      }
+   ],
    "entities": {
-      "whirlpools": 0,
-      "whirlpoolLocations": [],
-      "boulders": 0,
+      "whirlpools": 8,
+      "boulders": 12,
    },
    "terrain": {
       "image": "davy_jones_locker_terrain",

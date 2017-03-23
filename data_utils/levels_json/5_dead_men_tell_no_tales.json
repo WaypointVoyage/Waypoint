@@ -33,10 +33,34 @@
          "maxy": 2082,
       }
    ],
+   "waves": [
+      {
+         "enemies": {
+           "Pirate": 10
+         }
+      },
+      {
+         "enemies": {
+            "Catapult": 7,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 12,
+            "Marooner": 3
+         }
+      },
+      {
+         "enemies": {
+            "Trebuchet": 3,
+            "Pirate": 3,
+            "Marooner": 3
+         }
+      }
+   ],
    "entities": {
       "whirlpools": 0,
-      "whirlpoolLocations": [],
-      "boulders": 0,
+      "boulders": 6,
    },
    "terrain": {
       "image": "dead_men_tell_no_tales_terrain",

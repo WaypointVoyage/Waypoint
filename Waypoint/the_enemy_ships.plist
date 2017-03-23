@@ -29,9 +29,9 @@
 			<key>fireRateScale</key>
 			<real>0.5</real>
 			<key>healthScale</key>
-			<real>2.2999999999999998</real>
+			<real>0.80000000000000004</real>
 			<key>rangeScale</key>
-			<real>2</real>
+			<real>1</real>
 			<key>shotSpeedScale</key>
 			<real>1.1000000000000001</real>
 			<key>sizeScale</key>

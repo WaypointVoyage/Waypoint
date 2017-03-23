@@ -171,11 +171,11 @@ extension WPTShip {
     static let baseSpeed: CGFloat = 3500.0
     
     static let minDamageScale: CGFloat = 0.5
-    static let maxDamageScale: CGFloat = 500.0
+    static let maxDamageScale: CGFloat = 20.0
     static let baseDamage: CGFloat = 20.0
     
     static let minHealthScale: CGFloat = 0.5
-    static let maxHealthScale: CGFloat = 500.0
+    static let maxHealthScale: CGFloat = 50.0
     static let baseHealth: CGFloat = 100
     
     static let minRangeScale: CGFloat = 0.2

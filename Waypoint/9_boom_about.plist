@@ -5,9 +5,7 @@
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
-		<integer>0</integer>
-		<key>whirlpoolLocations</key>
-		<array/>
+		<integer>40</integer>
 		<key>whirlpools</key>
 		<integer>0</integer>
 	</dict>
@@ -526,5 +524,26 @@
 		<key>waterImage</key>
 		<string>boom_about_water</string>
 	</dict>
+	<key>waves</key>
+	<array>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Catapult</key>
+				<integer>15</integer>
+				<key>Trebuchet</key>
+				<integer>7</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Catapult</key>
+				<integer>30</integer>
+				<key>Trebuchet</key>
+				<integer>1</integer>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

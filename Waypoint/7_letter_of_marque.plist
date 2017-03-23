@@ -5,14 +5,12 @@
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
-		<integer>0</integer>
-		<key>whirlpoolLocations</key>
-		<array/>
+		<integer>16</integer>
 		<key>whirlpools</key>
-		<integer>0</integer>
+		<integer>3</integer>
 	</dict>
 	<key>name</key>
-	<string>Letter of Marque</string>
+	<string>All Hands On Deck</string>
 	<key>port</key>
 	<dict>
 		<key>position</key>
@@ -818,5 +816,65 @@
 		<key>waterImage</key>
 		<string>letter_of_marque_water</string>
 	</dict>
+	<key>waves</key>
+	<array>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Catapult</key>
+				<integer>3</integer>
+				<key>Marooner</key>
+				<integer>3</integer>
+				<key>Pirate</key>
+				<integer>3</integer>
+				<key>Trebuchet</key>
+				<integer>3</integer>
+				<key>Viking</key>
+				<integer>3</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Viking</key>
+				<integer>15</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Catapult</key>
+				<integer>15</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Trebuchet</key>
+				<integer>15</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Pirate</key>
+				<integer>15</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Marooner</key>
+				<integer>15</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Viking</key>
+				<integer>1</integer>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

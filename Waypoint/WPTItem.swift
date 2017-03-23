@@ -84,7 +84,7 @@ class WPTItem {
         self.repair = repairVal
         let repProp = itemDict["repairProportionally"] as! Bool
         self.repairProportionally = repProp
-        let desc = itemDict["descriptio"] as! String
+        let desc = itemDict["description"] as! String
         self.description = desc
     }
     

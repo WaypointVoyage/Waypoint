@@ -1,5 +1,5 @@
 {
-   "name": "Letter of Marque",
+   "name": "All Hands On Deck",
    "size": {
       "width": 4000,
       "height": 4000,
@@ -27,10 +27,50 @@
          "maxy": 4000,
       }
    ],
+   "waves": [
+      {
+         "enemies": {
+            "Catapult": 3,
+            "Trebuchet": 3,
+            "Pirate": 3,
+            "Marooner": 3,
+            "Viking": 3,
+         },
+      },
+      {
+         "enemies": {
+            "Viking": 15,
+         },
+      },
+      {
+         "enemies": {
+            "Catapult": 15,
+         },
+      },
+      {
+         "enemies": {
+            "Trebuchet": 15,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 15,
+         },
+      },
+      {
+         "enemies": {
+            "Marooner": 15,
+         },
+      },
+      {
+         "enemies": {
+            "Viking": 1,
+         },
+      }
+   ],
    "entities": {
-      "whirlpools": 0,
-      "whirlpoolLocations": [],
-      "boulders": 0,
+      "whirlpools": 3,
+      "boulders": 16,
    },
    "terrain": {
       "image": "letter_of_marque_terrain",

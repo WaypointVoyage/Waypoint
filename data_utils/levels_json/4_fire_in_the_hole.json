@@ -33,10 +33,47 @@
          "maxy": 3456,
       },
    ],
+   "waves": [
+      {
+         "enemies": {
+            "Pirate": 1,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 1,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 1,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 1,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 1,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 1,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 25,
+            "Marooner": 14,
+         },
+      },
+   ],
    "entities": {
-      "whirlpools": 0,
-      "whirlpoolLocations": [],
-      "boulders": 0,
+      "whirlpools": 2,
+      "boulders": 8,
    },
    "terrain": {
       "image": "fire_in_the_hole_terrain",

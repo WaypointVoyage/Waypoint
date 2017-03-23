@@ -5,11 +5,9 @@
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
-		<integer>0</integer>
-		<key>whirlpoolLocations</key>
-		<array/>
+		<integer>12</integer>
 		<key>whirlpools</key>
-		<integer>0</integer>
+		<integer>3</integer>
 	</dict>
 	<key>name</key>
 	<string>High Seas</string>
@@ -812,5 +810,40 @@
 		<key>waterImage</key>
 		<string>high_seas_water</string>
 	</dict>
+	<key>waves</key>
+	<array>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Marooner</key>
+				<integer>15</integer>
+				<key>Pirate</key>
+				<integer>15</integer>
+				<key>Viking</key>
+				<integer>15</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Pirate</key>
+				<integer>50</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Marooner</key>
+				<integer>50</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Viking</key>
+				<integer>50</integer>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>
