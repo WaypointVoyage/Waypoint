@@ -78,13 +78,14 @@ class WPTItem {
         self.imageName = itemDict["imageName"] as! String
         self.tier = WPTItemTier.repair
         self.multiplicity = nil
-        self.value = -1
+        self.value = itemDict["value"] as! Int
         self.prevalence = itemDict["prevalence"] as! Int
         let repairVal = itemDict["repair"] as! CGFloat
         self.repair = repairVal
         let repProp = itemDict["repairProportionally"] as! Bool
         self.repairProportionally = repProp
-        self.description = nil
+        let desc = itemDict["description"] as! String
+        self.description = desc
     }
     
     // initialize as a stat modifier

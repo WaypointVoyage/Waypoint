@@ -12,8 +12,8 @@ class WPTConfig {
     
     var playMusic = true
     var playSoundEffects = true
-    var testing = true
-    var allUnlocked = true
+    var testing = false
+    var allUnlocked = false
     var invincible = false
     var showBrainRadii = false
     var showPhysics = false

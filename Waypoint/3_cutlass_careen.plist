@@ -5,11 +5,9 @@
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
-		<integer>0</integer>
-		<key>whirlpoolLocations</key>
-		<array/>
+		<integer>10</integer>
 		<key>whirlpools</key>
-		<integer>0</integer>
+		<integer>4</integer>
 	</dict>
 	<key>name</key>
 	<string>Cutlass Careen</string>
@@ -1292,5 +1290,43 @@
 		<key>waterImage</key>
 		<string>cutlass_careen_water</string>
 	</dict>
+	<key>waves</key>
+	<array>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Pirate</key>
+				<integer>7</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Pirate</key>
+				<integer>6</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Pirate</key>
+				<integer>5</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Pirate</key>
+				<integer>4</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Marooner</key>
+				<integer>7</integer>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

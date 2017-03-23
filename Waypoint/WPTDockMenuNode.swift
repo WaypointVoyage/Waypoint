@@ -48,13 +48,14 @@ class WPTDockMenuNode: SKNode {
         background.zRotation = CGFloat(M_PI) / 2.0
         self.addChild(background)
         
-        let titleLabel = WPTLabelNode(text: "Port Stop", fontSize: WPTValues.fontSizeMedium)
+        let titleLabel = WPTLabelNode(text: "Port Shop", fontSize: WPTValues.fontSizeMedium)
         titleLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
         titleLabel.fontColor = UIColor.black
         titleLabel.position = CGPoint(x: 0, y: 0.30 * dockShroud.frame.height)
         self.addChild(titleLabel)
         
         var items: [WPTItem] = []
+        items.append(WPTItemCatalog.itemsByName["Ship Maintenance"]!)
         items.append(WPTItemCatalog.itemsByName["Cannon"]!)
         for _ in 0..<3 {
             items.append(WPTItemCatalog.randomStatModifier())

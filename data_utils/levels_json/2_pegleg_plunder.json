@@ -41,10 +41,33 @@
          "maxy": -10
       }
    ],
+   "waves": [
+      {
+         "enemies": {
+            "Catapult": 5,
+         },
+      },
+      {
+         "enemies": {
+            "Trebuchet": 2,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 4,
+            "Marooner": 1,
+         },
+      },
+      {
+         "enemies": {
+            "Marooner": 4,
+            "Pirate": 1,
+         },
+      },
+   ],
    "entities": {
-      "whirlpools": 0,
-      "whirlpoolLocations": [],
-      "boulders": 0
+      "whirlpools": 3,
+      "boulders": 4,
    },
    "terrain": {
       "image": "pegleg_plunder_terrain",

@@ -45,10 +45,36 @@
          "maxy": -10,
       }
    ],
+   "waves": [
+      {
+         "enemies": {
+            "Pirate": 7,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 6,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 5,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 4,
+         },
+      },
+      {
+         "enemies": {
+            "Marooner": 7,
+         },
+      },
+   ],
    "entities": {
-      "whirlpools": 0,
-      "whirlpoolLocations": [],
-      "boulders": 0,
+      "whirlpools": 4,
+      "boulders": 10,
    },
    "terrain": {
       "image": "cutlass_careen_terrain",

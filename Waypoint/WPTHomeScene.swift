@@ -58,7 +58,7 @@ class WPTHomeScene: WPTScene {
         title.fontColor = UIColor.black
         addChild(title)
         
-        treasureChest.position = CGPoint(x: self.frame.midX / 3.0, y: self.frame.midY / 2.2)
+        treasureChest.position = CGPoint(x: 0.15 * self.frame.width, y: 0.15 * self.frame.height)
         treasureChest.setScale(0.042)
         addChild(treasureChest)
     }

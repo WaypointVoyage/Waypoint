@@ -5,11 +5,9 @@
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
-		<integer>0</integer>
-		<key>whirlpoolLocations</key>
-		<array/>
+		<integer>4</integer>
 		<key>whirlpools</key>
-		<integer>0</integer>
+		<integer>3</integer>
 	</dict>
 	<key>name</key>
 	<string>Pegleg Plunder</string>
@@ -508,5 +506,40 @@
 		<key>waterImage</key>
 		<string>pegleg_plunder_water</string>
 	</dict>
+	<key>waves</key>
+	<array>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Catapult</key>
+				<integer>5</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Trebuchet</key>
+				<integer>2</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Marooner</key>
+				<integer>1</integer>
+				<key>Pirate</key>
+				<integer>4</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Marooner</key>
+				<integer>4</integer>
+				<key>Pirate</key>
+				<integer>1</integer>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

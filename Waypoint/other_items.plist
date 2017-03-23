@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>description</key>
+		<string>Extra Cannon</string>
 		<key>imageName</key>
 		<string>cannon_item</string>
 		<key>multiplicity</key>

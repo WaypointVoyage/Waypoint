@@ -49,9 +49,10 @@ class WPTPuppetMaster: GKStateMachine {
     }
     
     private func placeWhirlpool(_ whirlpool: WPTWhirlpoolNode) {
-        let whirlpools = self.scene.level.whirlpoolLocations
-        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-        let index = CGFloat(whirlpools.count - 1) * rand
-        whirlpool.position = CGPoint(x: whirlpools[Int(index)].x * 2, y: whirlpools[Int(index)].y * 2)
+//        let whirlpools = self.scene.level.whirlpoolLocations
+//        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+//        let index = CGFloat(whirlpools.count - 1) * rand
+//        whirlpool.position = CGPoint(x: whirlpools[Int(index)].x * 2, y: whirlpools[Int(index)].y * 2)
+        whirlpool.position = scene.terrain.randomPoint(borderWidth: WPTWhirlpoolNode.whirlpoolRadius, onLand: false)
     }
 }

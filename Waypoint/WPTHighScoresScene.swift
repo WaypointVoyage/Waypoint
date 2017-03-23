@@ -35,9 +35,9 @@ class WPTHighScoresScene: WPTScene {
         scoresTable.removeAllChildren()
         scoresTable.position = CGPoint(x: 0.5 * WPTValues.screenSize.width, y: 0.75 * WPTValues.screenSize.height)
         let fontSize = 0.06 * WPTValues.screenSize.height
-        let rankX: CGFloat = -0.25 * WPTValues.screenSize.width
-        let shipNameX: CGFloat = -0.2 * WPTValues.screenSize.width
-        let doubloonsX: CGFloat = 0.2 * WPTValues.screenSize.width
+        let rankX: CGFloat = -0.2 * WPTValues.screenSize.width
+        let shipNameX: CGFloat = -0.15 * WPTValues.screenSize.width
+        let doubloonsX: CGFloat = 0.15 * WPTValues.screenSize.width
         
         // add the rows to the table
         for i in 0..<scores.count {
@@ -52,11 +52,13 @@ class WPTHighScoresScene: WPTScene {
             let rank = WPTLabelNode(text: String(i + 1), fontSize: fontSize)
             rank.horizontalAlignmentMode = .right
             rank.position.x = rankX
+            rank.fontColor = .black
             scoreRow.addChild(rank)
             
             // ship name
             let shipName = WPTLabelNode(text: score.shipName, fontSize: fontSize)
             shipName.horizontalAlignmentMode = .left
+            shipName.fontColor = .black
             shipName.position.x = shipNameX
             scoreRow.addChild(shipName)
             
@@ -64,6 +66,7 @@ class WPTHighScoresScene: WPTScene {
             let doubloons = WPTLabelNode(text: String(score.doubloons), fontSize: fontSize)
             doubloons.horizontalAlignmentMode = .left
             doubloons.position.x = doubloonsX
+            doubloons.fontColor = .black
             scoreRow.addChild(doubloons)
         }
         

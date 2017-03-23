@@ -36,10 +36,29 @@
       }
    ],
    "entities": {
-      "whirlpools": 0,
-      "whirlpoolLocations": [],
-      "boulders": 0
+      "whirlpools": 1,
+      "boulders": 6,
    },
+   "waves": [
+      {
+         "enemies": {
+            "Catapult": 3,
+            "Pirate": 2,
+         },
+      },
+      {
+         "enemies": {
+            "Trebuchet": 1,
+            "Pirate": 2,
+            "Marooner": 3,
+         },
+      },
+      {
+         "enemies": {
+            "Pirate": 3,
+         },
+      },
+   ],
    "terrain": {
       "image": "sea_legs_terrain",
       "waterImage": "sea_legs_water",

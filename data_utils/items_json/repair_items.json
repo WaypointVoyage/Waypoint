@@ -5,5 +5,7 @@
       "prevalence": 100,
       "repair": 0.5,
       "repairProportionally": true,
+      "value": 50,
+      "description": "+50% Health",
    },
 ]

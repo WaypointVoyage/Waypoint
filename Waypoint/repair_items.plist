@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>description</key>
+		<string>+50% Health</string>
 		<key>imageName</key>
 		<string>repair_0</string>
 		<key>name</key>
@@ -13,6 +15,8 @@
 		<real>0.5</real>
 		<key>repairProportionally</key>
 		<true/>
+		<key>value</key>
+		<integer>50</integer>
 	</dict>
 </array>
 </plist>
