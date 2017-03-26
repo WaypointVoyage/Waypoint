@@ -9,6 +9,8 @@
 import SpriteKit
 
 class WPTPortNode: SKNode {
+    static let nodeNameTag = "_PORT_NDOE"
+    
     let port: WPTPort
     var active: Bool
     

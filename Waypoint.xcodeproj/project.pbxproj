@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703D61E590F8C0000827E /* random_ship_names.plist */; };
-		2D1703DB1E601E180000827E /* WPTMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1703DA1E601E180000827E /* WPTMapView.swift */; };
+		2D1703DB1E601E180000827E /* WPTMapViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1703DA1E601E180000827E /* WPTMapViewNode.swift */; };
 		2D1703DD1E625F1E0000827E /* distance.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703DC1E625F1E0000827E /* distance.m4a */; };
 		2D1703DF1E6264200000827E /* dragonRoost.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703DE1E6264200000827E /* dragonRoost.m4a */; };
 		2D1703E11E6266440000827E /* howToTrainYourDragon.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703E01E6266440000827E /* howToTrainYourDragon.m4a */; };
@@ -167,7 +167,7 @@
 
 /* Begin PBXFileReference section */
 		2D1703D61E590F8C0000827E /* random_ship_names.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = random_ship_names.plist; sourceTree = "<group>"; };
-		2D1703DA1E601E180000827E /* WPTMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTMapView.swift; sourceTree = "<group>"; };
+		2D1703DA1E601E180000827E /* WPTMapViewNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTMapViewNode.swift; sourceTree = "<group>"; };
 		2D1703DC1E625F1E0000827E /* distance.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = distance.m4a; sourceTree = "<group>"; };
 		2D1703DE1E6264200000827E /* dragonRoost.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragonRoost.m4a; sourceTree = "<group>"; };
 		2D1703E01E6266440000827E /* howToTrainYourDragon.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToTrainYourDragon.m4a; sourceTree = "<group>"; };
@@ -610,7 +610,7 @@
 				7E69329D1E53E0D500AF7373 /* WPTHudBottomNode.swift */,
 				7E69329F1E53E2D500AF7373 /* WPTFireButtonNode.swift */,
 				7E43CC781E54CB50009367BC /* WPTPauseMenuNode.swift */,
-				2D1703DA1E601E180000827E /* WPTMapView.swift */,
+				2D1703DA1E601E180000827E /* WPTMapViewNode.swift */,
 				2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */,
 				2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */,
 				2D1EF1041E806FF700F527B7 /* WPTDockMenuNode.swift */,
@@ -1034,7 +1034,7 @@
 				2D7FD1811E5801A1001B6208 /* WPTShipNamePopUpNode.swift in Sources */,
 				7EBF5E691E4E1B4000F81982 /* WPTUtils.swift in Sources */,
 				7ED739011E44EBF500122903 /* WPTWorldMapNode.swift in Sources */,
-				2D1703DB1E601E180000827E /* WPTMapView.swift in Sources */,
+				2D1703DB1E601E180000827E /* WPTMapViewNode.swift in Sources */,
 				7EC222081E72F54A00E98243 /* WPTPortDockingHandler.swift in Sources */,
 				7EF866811E82BC6C0012F2C7 /* WPTTreasureWave.swift in Sources */,
 				7ED049E31E6F6DE900CD69E1 /* WPTEnemyCatalog.swift in Sources */,

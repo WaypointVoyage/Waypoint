@@ -12,7 +12,7 @@ class WPTPauseMenuNode: SKNode {
     
     private let exit = WPTLabelNode(text: "Quit", fontSize: WPTValues.fontSizeSmall)
     private let reset = WPTLabelNode(text: "Reset Level", fontSize: WPTValues.fontSizeSmall)
-    var map: WPTMapView
+    var map: WPTMapViewNode
     private var background: SKSpriteNode! = nil
     private var levelNameNode: WPTLabelNode? = nil
     var levelName: String? = nil {
@@ -20,7 +20,7 @@ class WPTPauseMenuNode: SKNode {
     }
     
     init(terrain: WPTTerrainNode) {
-        self.map = WPTMapView(terrain: terrain)
+        self.map = WPTMapViewNode(terrain: terrain)
         
         super.init()
         self.isUserInteractionEnabled = true

@@ -12,7 +12,6 @@ import AVFoundation
 class WPTLevelScene: WPTScene {
     static let levelNameTag = "_LEVEL"
     static let playerNameTag = "_PLAYER"
-    
     let level: WPTLevel
     public private(set) var puppetMaster: WPTPuppetMaster? = nil
     
@@ -39,6 +38,7 @@ class WPTLevelScene: WPTScene {
         self.items = SKNode()
         if let port = level.port {
             self.port = WPTPortNode(port: port)
+            self.port!.name = WPTPortNode.nodeNameTag
         } else {
             self.port = nil
         }
@@ -71,7 +71,7 @@ class WPTLevelScene: WPTScene {
         
         // setup the port
         if let port = self.port {
-            self.addChild(port)
+            terrain.addChild(port)
         }
         
         // setup the player

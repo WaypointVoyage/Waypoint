@@ -21,6 +21,10 @@ class WPTTerrainNode: SKNode {
     let player: WPTLevelPlayerNode
     var enemies = [WPTLevelEnemyNode]()
     
+    var port: WPTPortNode? {
+        return self.childNode(withName: WPTPortNode.nodeNameTag) as? WPTPortNode
+    }
+    
     init(level: WPTLevel, player: WPTLevelPlayerNode) {
         self.level = level
         self.size = level.size
