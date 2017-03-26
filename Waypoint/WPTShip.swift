@@ -74,14 +74,7 @@ class WPTShip {
     let previewImage: String
     let inGameImage: String
     let cannonSet: WPTCannonSet
-    
-    init(name: String, previewImage: String, inGameImage: String) {
-        self.name = name
-        self.previewImage = previewImage
-        self.inGameImage = inGameImage
-        self.cannonSet = WPTCannonSet([[String:AnyObject]]())
-        self.playable = false
-    }
+    let colliderPath: CGPath
     
     init(dict: [String:AnyObject], playable: Bool) {
         self.playable = playable
@@ -91,7 +84,22 @@ class WPTShip {
         self.inGameImage = dict["inGameImage"] as! String
         self.cannonSet = WPTCannonSet(dict["cannonSet"] as! [[String:AnyObject]])
         
+        // collider
+        let pathArr = dict["colliderPath"] as! [[CGFloat]]
+        let offsetDict = dict["colliderOffset"] as! [String:CGFloat]
+        let path = CGMutablePath()
+        if pathArr.count > 0 {
+            let offset = CGPoint(x: offsetDict["x"]!, y: offsetDict["y"]!)
+            path.move(to: CGPoint(x: 2 * pathArr[0][0], y: 2 * pathArr[0][1]) + offset)
+            for i in 1..<pathArr.count {
+                let point = pathArr[i]
+                path.addLine(to: CGPoint(x: 2 * point[0], y: 2 * point[1]) + offset)
+            }
+            path.closeSubpath()
+        }
+        colliderPath = path
         
+        // stats
         if let stats = dict["stats"] as? [String:CGFloat] {
             self.speedScale = stats["speedScale"]!
             self.damageScale = stats["damageScale"]!
@@ -132,6 +140,7 @@ class WPTShip {
         self.previewImage = other.previewImage
         self.inGameImage = other.inGameImage
         self.cannonSet = WPTCannonSet(other: other.cannonSet)
+        self.colliderPath = other.colliderPath
         self.initStats(speedScale: other.speedScale, damageScale: other.damageScale, healthScale: other.healthScale, rangeScale: other.rangeScale, shotSpeedScale: other.shotSpeedScale, sizeScale: other.sizeScale, turnRateScale: other.turnRateScale)
     }
     

@@ -16,10 +16,10 @@ class WPTConfig {
     var allUnlocked = true
     var invincible = true
     var showBrainRadii = false // kinda buggy, use with caution... need to address this. 
-    var showPhysics = false
+    var showPhysics = true
     var showSpawnVolumesOnMinimap = false
     var clearHighScoresOnLoad = false
-    var showTutorial = false
+    var showTutorial = false // this needs to be implemented properly
     
     // singleton instance
     static let values: WPTConfig = {

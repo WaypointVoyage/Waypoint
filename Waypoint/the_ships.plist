@@ -96,6 +96,44 @@
 				<integer>-50</integer>
 			</dict>
 		</array>
+		<key>colliderOffset</key>
+		<dict>
+			<key>x</key>
+			<integer>-256</integer>
+			<key>y</key>
+			<integer>-256</integer>
+		</dict>
+		<key>colliderPath</key>
+		<array>
+			<array>
+				<integer>8</integer>
+				<integer>188</integer>
+			</array>
+			<array>
+				<integer>111</integer>
+				<integer>194</integer>
+			</array>
+			<array>
+				<integer>195</integer>
+				<integer>181</integer>
+			</array>
+			<array>
+				<integer>255</integer>
+				<integer>133</integer>
+			</array>
+			<array>
+				<integer>206</integer>
+				<integer>85</integer>
+			</array>
+			<array>
+				<integer>108</integer>
+				<integer>66</integer>
+			</array>
+			<array>
+				<integer>5</integer>
+				<integer>71</integer>
+			</array>
+		</array>
 		<key>inGameImage</key>
 		<string>waypoint_ship_top_down</string>
 		<key>name</key>
@@ -165,6 +203,32 @@
 				<key>y</key>
 				<integer>-120</integer>
 			</dict>
+		</array>
+		<key>colliderOffset</key>
+		<dict>
+			<key>x</key>
+			<integer>-256</integer>
+			<key>y</key>
+			<integer>-256</integer>
+		</dict>
+		<key>colliderPath</key>
+		<array>
+			<array>
+				<integer>114</integer>
+				<integer>187</integer>
+			</array>
+			<array>
+				<integer>251</integer>
+				<integer>127</integer>
+			</array>
+			<array>
+				<integer>125</integer>
+				<integer>66</integer>
+			</array>
+			<array>
+				<integer>8</integer>
+				<integer>117</integer>
+			</array>
 		</array>
 		<key>inGameImage</key>
 		<string>paper_boat_top_down</string>
@@ -316,6 +380,40 @@
 				<integer>-50</integer>
 			</dict>
 		</array>
+		<key>colliderOffset</key>
+		<dict>
+			<key>x</key>
+			<integer>-256</integer>
+			<key>y</key>
+			<integer>-256</integer>
+		</dict>
+		<key>colliderPath</key>
+		<array>
+			<array>
+				<integer>31</integer>
+				<integer>148</integer>
+			</array>
+			<array>
+				<integer>221</integer>
+				<integer>151</integer>
+			</array>
+			<array>
+				<integer>255</integer>
+				<integer>122</integer>
+			</array>
+			<array>
+				<integer>225</integer>
+				<integer>96</integer>
+			</array>
+			<array>
+				<integer>30</integer>
+				<integer>95</integer>
+			</array>
+			<array>
+				<integer>3</integer>
+				<integer>122</integer>
+			</array>
+		</array>
 		<key>inGameImage</key>
 		<string>longship_top_down</string>
 		<key>name</key>
@@ -396,6 +494,40 @@
 				<integer>-100</integer>
 			</dict>
 		</array>
+		<key>colliderOffset</key>
+		<dict>
+			<key>x</key>
+			<integer>-256</integer>
+			<key>y</key>
+			<integer>-256</integer>
+		</dict>
+		<key>colliderPath</key>
+		<array>
+			<array>
+				<integer>1</integer>
+				<integer>226</integer>
+			</array>
+			<array>
+				<integer>170</integer>
+				<integer>225</integer>
+			</array>
+			<array>
+				<integer>254</integer>
+				<integer>127</integer>
+			</array>
+			<array>
+				<integer>171</integer>
+				<integer>31</integer>
+			</array>
+			<array>
+				<integer>1</integer>
+				<integer>31</integer>
+			</array>
+			<array>
+				<integer>86</integer>
+				<integer>127</integer>
+			</array>
+		</array>
 		<key>inGameImage</key>
 		<string>best_ship_top_down</string>
 		<key>name</key>
@@ -460,6 +592,40 @@
 				<key>y</key>
 				<integer>-100</integer>
 			</dict>
+		</array>
+		<key>colliderOffset</key>
+		<dict>
+			<key>x</key>
+			<integer>-256</integer>
+			<key>y</key>
+			<integer>-256</integer>
+		</dict>
+		<key>colliderPath</key>
+		<array>
+			<array>
+				<integer>1</integer>
+				<integer>226</integer>
+			</array>
+			<array>
+				<integer>170</integer>
+				<integer>225</integer>
+			</array>
+			<array>
+				<integer>254</integer>
+				<integer>127</integer>
+			</array>
+			<array>
+				<integer>171</integer>
+				<integer>31</integer>
+			</array>
+			<array>
+				<integer>1</integer>
+				<integer>31</integer>
+			</array>
+			<array>
+				<integer>86</integer>
+				<integer>127</integer>
+			</array>
 		</array>
 		<key>inGameImage</key>
 		<string>worst_ship_top_down</string>

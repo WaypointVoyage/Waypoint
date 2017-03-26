@@ -89,6 +89,8 @@
 		7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */; };
 		7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */; };
 		7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */; };
+		7E8BA2DC1E8877BC007A8A1B /* the_enemy_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E8BA2DA1E8877BC007A8A1B /* the_enemy_ships.plist */; };
+		7E8BA2DF1E88789B007A8A1B /* the_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E8BA2DE1E88789B007A8A1B /* the_ships.plist */; };
 		7EAE35CF1E81FC7500F42904 /* WPTReticleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE35CE1E81FC7500F42904 /* WPTReticleNode.swift */; };
 		7EAE35D11E82153500F42904 /* WPTAlertNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE35D01E82153500F42904 /* WPTAlertNode.swift */; };
 		7EBF5E231E4D06D200F81982 /* WPTTrailStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */; };
@@ -131,8 +133,6 @@
 		7EF866881E82C3280012F2C7 /* WPTFinalTreasureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866871E82C3280012F2C7 /* WPTFinalTreasureNode.swift */; };
 		7EF8668A1E82C3630012F2C7 /* WPTKrakenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866891E82C3630012F2C7 /* WPTKrakenNode.swift */; };
 		7EF866A41E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866A31E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift */; };
-		7EF866BB1E833BFA0012F2C7 /* the_enemy_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866B91E833BFA0012F2C7 /* the_enemy_ships.plist */; };
-		7EF866BC1E833BFA0012F2C7 /* the_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866BA1E833BFA0012F2C7 /* the_ships.plist */; };
 		7EF866BE1E833C020012F2C7 /* enemies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866BD1E833C020012F2C7 /* enemies.plist */; };
 		7EF866CB1E83556D0012F2C7 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866BF1E83556D0012F2C7 /* 0_setting_sail.plist */; };
 		7EF866CC1E83556D0012F2C7 /* 1_sea_legs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C01E83556D0012F2C7 /* 1_sea_legs.plist */; };
@@ -254,6 +254,8 @@
 		7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTNewGameScene.swift; sourceTree = "<group>"; };
 		7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLabelNode.swift; sourceTree = "<group>"; };
 		7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSceneLabelNode.swift; sourceTree = "<group>"; };
+		7E8BA2DA1E8877BC007A8A1B /* the_enemy_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_enemy_ships.plist; sourceTree = "<group>"; };
+		7E8BA2DE1E88789B007A8A1B /* the_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_ships.plist; sourceTree = "<group>"; };
 		7EAE35CE1E81FC7500F42904 /* WPTReticleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTReticleNode.swift; sourceTree = "<group>"; };
 		7EAE35D01E82153500F42904 /* WPTAlertNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTAlertNode.swift; sourceTree = "<group>"; };
 		7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailStop.swift; sourceTree = "<group>"; };
@@ -296,8 +298,6 @@
 		7EF866871E82C3280012F2C7 /* WPTFinalTreasureNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTFinalTreasureNode.swift; sourceTree = "<group>"; };
 		7EF866891E82C3630012F2C7 /* WPTKrakenNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTKrakenNode.swift; sourceTree = "<group>"; };
 		7EF866A31E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTreasureTimerNode.swift; sourceTree = "<group>"; };
-		7EF866B91E833BFA0012F2C7 /* the_enemy_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_enemy_ships.plist; sourceTree = "<group>"; };
-		7EF866BA1E833BFA0012F2C7 /* the_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_ships.plist; sourceTree = "<group>"; };
 		7EF866BD1E833C020012F2C7 /* enemies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enemies.plist; sourceTree = "<group>"; };
 		7EF866BF1E83556D0012F2C7 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
 		7EF866C01E83556D0012F2C7 /* 1_sea_legs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1_sea_legs.plist; sourceTree = "<group>"; };
@@ -710,9 +710,9 @@
 				7E43CC761E54B844009367BC /* trail_map.plist */,
 				7ED963321E7DEA4900B58C1C /* brains.plist */,
 				7EF866BD1E833C020012F2C7 /* enemies.plist */,
-				7EF866B91E833BFA0012F2C7 /* the_enemy_ships.plist */,
-				7EF866BA1E833BFA0012F2C7 /* the_ships.plist */,
 				2D1703D61E590F8C0000827E /* random_ship_names.plist */,
+				7E8BA2DA1E8877BC007A8A1B /* the_enemy_ships.plist */,
+				7E8BA2DE1E88789B007A8A1B /* the_ships.plist */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -881,6 +881,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EF866CE1E83556D0012F2C7 /* 3_cutlass_careen.plist in Resources */,
+				7E8BA2DC1E8877BC007A8A1B /* the_enemy_ships.plist in Resources */,
+				7E8BA2DF1E88789B007A8A1B /* the_ships.plist in Resources */,
 				7E16B8641E2D580600933E24 /* Main.storyboard in Resources */,
 				7E5242901E56440900120002 /* water.fsh in Resources */,
 				2D17044B1E7103D70000827E /* explosion.mp3 in Resources */,
@@ -888,7 +890,6 @@
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
 				2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */,
 				7EF866D61E83556D0012F2C7 /* 11_shiver_me_timbers.plist in Resources */,
-				7EF866BB1E833BFA0012F2C7 /* the_enemy_ships.plist in Resources */,
 				7EBF5E6B1E4E213A00F81982 /* stat_bar.fsh in Resources */,
 				7EF866CF1E83556D0012F2C7 /* 4_fire_in_the_hole.plist in Resources */,
 				7ED963341E7DEA4900B58C1C /* brains.plist in Resources */,
@@ -905,7 +906,6 @@
 				2D17044F1E7105940000827E /* coin.mp3 in Resources */,
 				7E15B66C1E83922E00A9B1DC /* other_items.plist in Resources */,
 				7E43CC771E54B844009367BC /* trail_map.plist in Resources */,
-				7EF866BC1E833BFA0012F2C7 /* the_ships.plist in Resources */,
 				2D1704471E7009890000827E /* explosion.sks in Resources */,
 				2D17044D1E7104090000827E /* cannon.mp3 in Resources */,
 				7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */,

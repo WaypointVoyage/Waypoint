@@ -35,7 +35,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         self.actor = actor
         self.currentHealth = actor.ship.health
         self.sprite = SKSpriteNode(imageNamed: actor.ship.inGameImage)
-        self.physics = SKPhysicsBody(circleOfRadius: 0.4 / actor.ship.sizeScale * self.sprite.frame.width)
+        self.physics = SKPhysicsBody(polygonFrom: actor.ship.colliderPath)
         self.fireRateMgr = WPTFireRateManager(actor.ship)
         self.teamBitMask = tbm
         super.init()
