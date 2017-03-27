@@ -17,8 +17,6 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     
     init(player: WPTPlayer) {
         super.init(actor: player, teamBitMask: WPTConfig.values.testing ? 0 : WPTValues.playerTbm)
-        self.isUserInteractionEnabled = true
-        self.zPosition = WPTValues.movementHandlerZPosition + 1
         
         currentHealth = player.health
         
@@ -51,7 +49,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         }
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    func touched() {
         if portHandler.docked {
             self.portHandler.undock()
         } else {

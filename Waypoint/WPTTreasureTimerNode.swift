@@ -20,6 +20,7 @@ class WPTTreasureTimerNode: SKNode {
     
     override init() {
         super.init()
+        self.zPosition = 1
         
         time.isHidden = true
         time.alpha = 0

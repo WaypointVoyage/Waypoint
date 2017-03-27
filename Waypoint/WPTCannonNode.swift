@@ -26,7 +26,7 @@ class WPTCannonNode: SKNode {
         self.sprite.yScale = 0.5
         self.addChild(sprite)
         
-        self.zPosition = WPTValues.actorZPosition + 4
+        self.zPosition = 1
         self.position = cannon.position
         self.zRotation = cannon.angle
         self.cannonBallSpawnPoint += self.position

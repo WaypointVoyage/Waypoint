@@ -33,17 +33,14 @@ class WPTButtonNode: SKNode {
         label.verticalAlignmentMode = .center
         
         super.init()
+        self.zPosition = WPTZPositions.hud + 1
         
-//        background.size = CGSize(width: fontSize*5, height: fontSize*1.5)
         let height = 1.5 * fontSize
         let width = label.frame.width + fontSize
         background.size = CGSize(width: width, height: height)
-       // background.position = CGPoint(CGPoint.zero)
-        background.zPosition = WPTValues.pauseShroudZPosition * 2 + 3
         self.addChild(background)
         
-        //label.position = CGPoint(CGPoint.zero)
-        label.zPosition = WPTValues.pauseShroudZPosition * 2 + 4
+        self.label.zPosition = 1
         self.addChild(label)
     }
     

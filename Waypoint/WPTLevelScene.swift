@@ -35,7 +35,9 @@ class WPTLevelScene: WPTScene {
         self.terrain = WPTTerrainNode(level: level, player: self.player)
         self.hud = WPTHudNode(player: self.player, terrain: self.terrain)
         self.projectiles = SKNode()
+        self.projectiles.zPosition = WPTZPositions.actors
         self.items = SKNode()
+        self.items.zPosition = WPTZPositions.actors
         if let port = level.port {
             self.port = WPTPortNode(port: port)
             self.port!.name = WPTPortNode.nodeNameTag
@@ -88,6 +90,9 @@ class WPTLevelScene: WPTScene {
         self.puppetMaster = WPTPuppetMaster(self)
         self.puppetMaster!.setStage(levelBeaten: player.player.completedLevels.contains(level.name))
         
+        // touch handler
+        self.addChild(WPTLevelTouchHandlerNode(self))
+        
         // add spawn volumes?
         if WPTConfig.values.showSpawnVolumesOnMinimap {
             hud.pauseMenu.map.drawSpawnVolumes(self.level.spawnVolumes)
@@ -110,7 +115,7 @@ class WPTLevelScene: WPTScene {
         // breif flash of level name
         let levelName = WPTLabelNode(text: self.level.name, fontSize: WPTValues.fontSizeLarge)
         levelName.name = WPTLevelScene.levelNameTag
-        levelName.zPosition = WPTValues.movementHandlerZPosition - 1
+        levelName.zPosition = WPTZPositions.touchHandler - 1
         levelName.position.y += 0.2 * WPTValues.screenSize.height
         levelName.alpha = 0
         levelName.fontColor = UIColor.black

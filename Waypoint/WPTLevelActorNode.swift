@@ -41,7 +41,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         super.init()
         
         // sprite
-        self.zPosition = WPTValues.actorZPosition
+        self.zPosition = WPTZPositions.actors - WPTZPositions.terrain
         self.addChild(self.sprite)
         
         // cannons

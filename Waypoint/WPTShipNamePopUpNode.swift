@@ -31,12 +31,12 @@ class WPTShipNamePopUpNode: SKNode {
         self.pauseShroud.fillColor = UIColor.black
         self.pauseShroud.strokeColor = UIColor.black
         self.pauseShroud.position = CGPoint(x: -WPTValues.screenSize.width/2, y: -WPTValues.screenSize.height/2)
-        self.pauseShroud.zPosition = WPTValues.pauseShroudZPosition
+        self.pauseShroud.zPosition = WPTZPositions.shrouds
         self.pauseShroud.alpha = 0.6
         self.addChild(pauseShroud)
 
         background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        background.zPosition = WPTValues.pauseShroudZPosition + 1
+        background.zPosition = self.pauseShroud.zPosition + 1
         let width = 0.9 * WPTValues.screenSize.height
         let height = 0.6 * WPTValues.screenSize.height
         background.size = CGSize(width: height, height: width)
@@ -44,20 +44,20 @@ class WPTShipNamePopUpNode: SKNode {
         self.addChild(background)
         
         randomIcon = SKSpriteNode(imageNamed: "random_icon")
-        randomIcon?.zPosition = WPTValues.pauseShroudZPosition + 2
+        randomIcon!.zPosition = background.zPosition + 1
         let size = CGSize(width: WPTValues.fontSizeSmall, height: WPTValues.fontSizeSmall)
         randomIcon?.size = size
         randomIcon?.position.y = 0.135 * background.frame.height
         randomIcon?.position.x += 100
         self.addChild(randomIcon!)
         
-        startLevel.zPosition = WPTValues.pauseShroudZPosition + 2
+        startLevel.zPosition = background.zPosition + 1
         startLevel.position.y -= 73
         startLevel.position.x += 88
         startLevel.disabled = true
         self.addChild(startLevel)
         
-        shipName.zPosition = WPTValues.pauseShroudZPosition + 2
+        shipName.zPosition = background.zPosition + 1
         shipName.fontColor = UIColor.black
         shipName.position.y += 0.23 * background.size.height
         self.addChild(shipName)

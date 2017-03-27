@@ -28,7 +28,7 @@ class WPTPauseMenuNode: SKNode {
         // background
         background = SKSpriteNode(imageNamed: "pause_scroll")
         background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        background.zPosition = WPTValues.pauseShroudZPosition + 1
+        background.zPosition = WPTZPositions.shrouds + 1
         let width = 0.9 * WPTValues.screenSize.height
         let scale = width / (background.texture?.size().width)!
         background.size = CGSize(width: width, height: scale * background.texture!.size().height)
@@ -37,24 +37,24 @@ class WPTPauseMenuNode: SKNode {
         
         // level name
         self.levelNameNode = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeSmall)
-        levelNameNode!.zPosition = WPTValues.pauseShroudZPosition + 2
+        levelNameNode!.zPosition = background.zPosition + 1
         levelNameNode!.fontColor = UIColor.black
         levelNameNode!.position.y += 0.5 * background.size.height
         self.addChild(levelNameNode!)
         
         //map
-        self.map.zPosition = WPTValues.pauseShroudZPosition + 2
+        self.map.zPosition = background.zPosition + 1
         scaleMap()
         self.addChild(map)
         
         // reset
-        reset.zPosition = WPTValues.pauseShroudZPosition + 2
+        reset.zPosition = background.zPosition + 1
         reset.fontColor = UIColor.black
         reset.position.y -= 0.4 * background.size.height
         if WPTConfig.values.testing { self.addChild(self.reset) }
         
         // exit
-        exit.zPosition = WPTValues.pauseShroudZPosition + 2
+        exit.zPosition = background.zPosition + 1
         exit.fontColor = UIColor.black
         exit.position.y -= 0.5 * background.size.height
         self.addChild(exit)

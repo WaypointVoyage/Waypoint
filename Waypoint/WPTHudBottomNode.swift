@@ -36,17 +36,16 @@ class WPTHudBottomNode: SKNode {
         
         self.leftBorder.position = CGPoint(x: offset*1.2, y: offset)
         self.leftBorder.size = CGSize(width: WPTValues.fontSizeLarge*2, height: WPTValues.fontSizeLarge*2)
-        self.leftBorder.zPosition = WPTValues.pauseShroudZPosition + 4
+        self.leftBorder.zPosition = WPTZPositions.touchHandler + 1 - WPTZPositions.hud
         self.addChild(leftBorder)
         
         self.rightBorder.xScale =  -1 * self.rightBorder.xScale
+        self.rightBorder.zPosition = self.leftBorder.zPosition
         self.rightBorder.size = CGSize(width: WPTValues.fontSizeLarge*2, height: WPTValues.fontSizeLarge*2)
-        self.rightBorder.zPosition = WPTValues.pauseShroudZPosition + 4
         self.rightBorder.position = CGPoint(x: WPTValues.screenSize.width - (offset*1.2), y: offset)
         self.addChild(rightBorder)
         
         alert.position = CGPoint(x: WPTValues.screenSize.width * 0.5, y: 10)
-        alert.zPosition = WPTValues.movementHandlerZPosition - 10
         self.addChild(alert)
     }
     

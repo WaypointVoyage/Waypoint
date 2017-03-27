@@ -35,13 +35,13 @@ class WPTDockMenuNode: SKNode {
         // shroud
         self.dockShroud.fillColor = UIColor.black
         self.dockShroud.strokeColor = UIColor.black
-        self.dockShroud.zPosition = WPTValues.pauseShroudZPosition * 2
+        self.doubloonsLabel.zPosition = WPTZPositions.shrouds + 10
         self.dockShroud.alpha = 0.6
         self.addChild(self.dockShroud)
         
         // background
         background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        background.zPosition = WPTValues.pauseShroudZPosition * 2
+        background.zPosition = dockShroud.zPosition + 1
         let width = 0.9 * WPTValues.screenSize.height
         let scale = width / (background.texture?.size().width)!
         background.size = CGSize(width: width, height: 2 * scale * background.texture!.size().height)
@@ -49,7 +49,7 @@ class WPTDockMenuNode: SKNode {
         self.addChild(background)
         
         let titleLabel = WPTLabelNode(text: "Port Shop", fontSize: WPTValues.fontSizeMedium)
-        titleLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
+        titleLabel.zPosition = background.zPosition + 1
         titleLabel.fontColor = UIColor.black
         titleLabel.position = CGPoint(x: 0, y: 0.30 * dockShroud.frame.height)
         self.addChild(titleLabel)
@@ -64,23 +64,23 @@ class WPTDockMenuNode: SKNode {
         itemNameLabel.horizontalAlignmentMode = .center
         itemNameLabel.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: 0.15 * dockShroud.frame.height)
         itemNameLabel.fontColor = UIColor.black
-        itemNameLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
+        itemNameLabel.zPosition = background.zPosition + 1
         self.addChild(itemNameLabel)
         
         itemPicker = WPTItemPickerNode(items: items, onChange: updateStats)
         itemPicker!.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: -0.05 * dockShroud.frame.height)
-        itemPicker!.zPosition = WPTValues.pauseShroudZPosition * 2 + 1
+        itemPicker!.zPosition = background.zPosition + 1
         itemPicker!.setSize(width: 0.7 * background.size.width, height: background.size.height)
         self.addChild(itemPicker!)
         
         descriptionLabel.horizontalAlignmentMode = .center
         descriptionLabel.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: -0.29 * dockShroud.frame.height)
         descriptionLabel.fontColor = UIColor.black
-        descriptionLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 3
+        descriptionLabel.zPosition = background.zPosition + 1
         self.addChild(descriptionLabel)
         
         let moneyImgSize = 1.8 * WPTValues.fontSizeSmall
-        self.moneyImage.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
+        self.moneyImage.zPosition = background.zPosition + 1
         self.moneyImage.position = CGPoint(x: 0.13 * dockShroud.frame.width, y: 0.17 * dockShroud.frame.height)
         self.moneyImage.size = CGSize(width: moneyImgSize, height: moneyImgSize)
         self.addChild(self.moneyImage)
@@ -88,21 +88,21 @@ class WPTDockMenuNode: SKNode {
         doubloonsLabel.horizontalAlignmentMode = .left
         doubloonsLabel.position = CGPoint(x: 0.17 * dockShroud.frame.width, y: 0.14 * dockShroud.frame.height)
         doubloonsLabel.fontColor = UIColor.black
-        doubloonsLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
+        doubloonsLabel.zPosition = background.zPosition + 1
         self.addChild(doubloonsLabel)
         
         priceLabel.horizontalAlignmentMode = .left
         priceLabel.position = CGPoint(x: 0.10 * dockShroud.frame.width, y: 0)
         priceLabel.fontColor = UIColor.black
-        priceLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
+        priceLabel.zPosition = background.zPosition + 1
         self.addChild(priceLabel)
         
         purchaseLabel.position = CGPoint(x: 0.185 * dockShroud.frame.width, y: -0.12 * dockShroud.frame.height)
-        purchaseLabel.zPosition = WPTValues.pauseShroudZPosition * 2 + 2
+        purchaseLabel.zPosition = background.zPosition + 1
         self.addChild(purchaseLabel)
         
         wahm.position = CGPoint(x: 0.22 * dockShroud.frame.size.width, y: -0.31 * dockShroud.frame.size.height)
-        wahm.zPosition = WPTValues.pauseShroudZPosition * 2 + 3
+        wahm.zPosition = background.zPosition + 1
         self.addChild(wahm)
         
         updateStats(item: (itemPicker?.currentItem)!)

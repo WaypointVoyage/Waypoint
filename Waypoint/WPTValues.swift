@@ -31,13 +31,7 @@ class WPTValues {
     static var fontSizeMiniscule = CGFloat(14)
     static var em = CGFloat(30)
     static var levelSceneScale: CGFloat = 1
-    
-    // in-game positioning and configuration
-    static let actorZPosition: CGFloat = 10
     static var actorDefaultSizeScale: CGFloat = 0.3
-    static let pauseShroudZPosition: CGFloat = 100
-    static let movementHandlerZPosition: CGFloat = 20
-    static let waterZPosition: CGFloat = -100
     
     // physics behavior
     static let actorMass: CGFloat = 17
@@ -82,4 +76,13 @@ class WPTValues {
         WPTValues.fontSizeMiniscule = 0.035 * usableScreenHeight
         WPTValues.em = WPTValues.fontSizeSmall
     }
+}
+
+class WPTZPositions {
+    static let water: CGFloat = 0
+    static let terrain: CGFloat = 10
+    static let actors: CGFloat = 100
+    static let hud: CGFloat = 200
+    static let touchHandler: CGFloat = 250
+    static let shrouds: CGFloat = 500
 }

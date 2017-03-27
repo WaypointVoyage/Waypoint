@@ -19,12 +19,12 @@ class WPTAlertNode: SKNode {
         super.init()
         self.alpha = 0
         self.isHidden = true
+        self.zPosition = WPTZPositions.hud
         
         for label in [header, desc] {
             label.verticalAlignmentMode = .center
             label.horizontalAlignmentMode = .center
             label.fontColor = .black
-            label.zPosition = WPTValues.movementHandlerZPosition + 10
             self.addChild(label)
         }
         

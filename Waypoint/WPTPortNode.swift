@@ -26,7 +26,7 @@ class WPTPortNode: SKNode {
         self.position = 2 * port.position
         self.xScale = scale
         self.yScale = scale
-        self.zPosition = WPTValues.actorZPosition - 1
+        self.zPosition = 1
         
         sprite.anchorPoint = CGPoint(x: 0.2, y: 0.5)
         self.addChild(sprite)

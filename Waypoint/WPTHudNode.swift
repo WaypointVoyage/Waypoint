@@ -30,6 +30,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
         
         super.init()
         self.isUserInteractionEnabled = true
+        self.zPosition = WPTZPositions.hud
         
         // top/bottom nodes
         self.addChild(top)
@@ -39,19 +40,19 @@ class WPTHudNode: SKNode, WPTUpdatable {
         // shroud
         self.pauseShroud.fillColor = UIColor.black
         self.pauseShroud.strokeColor = UIColor.black
-        self.pauseShroud.zPosition = WPTValues.pauseShroudZPosition
+        self.pauseShroud.zPosition = WPTZPositions.shrouds - WPTZPositions.hud
         self.pauseShroud.alpha = 0.6
         
         // pause menu
-        self.pauseMenu.zPosition = WPTValues.pauseShroudZPosition + 1
+        self.pauseMenu.zPosition = pauseShroud.zPosition + 1
         self.pauseMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
         
         // destroy menu
-        self.destroyMenu.zPosition = WPTValues.pauseShroudZPosition + 1
+        self.destroyMenu.zPosition = pauseShroud.zPosition + 1
         self.destroyMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
         
         // dock menu
-        self.dockMenu.zPosition = WPTValues.pauseShroudZPosition + 1
+        self.dockMenu.zPosition = pauseShroud.zPosition + 1
         self.dockMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
         
         //audio

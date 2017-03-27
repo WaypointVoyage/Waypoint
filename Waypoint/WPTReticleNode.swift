@@ -29,11 +29,11 @@ class WPTReticleNode: SKNode, WPTUpdatable {
         right = SKSpriteNode(texture: texture)
         super.init()
         self.name = WPTReticleNode._name
+        self.zPosition = WPTZPositions.hud - 1
         
         for sprite in [top, bottom, left, right] {
             sprite!.anchorPoint = CGPoint(x: 0.5, y: 0)
             self.addChild(sprite!)
-            sprite!.zPosition = WPTValues.movementHandlerZPosition + 20
         }
         
         bottom.zRotation = CG_PI

@@ -20,6 +20,7 @@ class WPTConfig {
     var showSpawnVolumesOnMinimap = false
     var clearHighScoresOnLoad = false
     var showTutorial = false // this needs to be implemented properly
+    var showTouchHandler = false
     
     // singleton instance
     static let values: WPTConfig = {

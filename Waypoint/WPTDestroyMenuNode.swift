@@ -25,12 +25,11 @@ class WPTDestroyMenuNode: SKNode {
         
         super.init()
         self.isUserInteractionEnabled = true
-        
+        self.zPosition = WPTZPositions.shrouds + 1
         
         // background
         let background = SKSpriteNode(imageNamed: "pause_scroll")
         background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        background.zPosition = WPTValues.pauseShroudZPosition + 1
         let width = 0.9 * WPTValues.screenSize.height
         let scale = width / (background.texture?.size().width)!
         background.size = CGSize(width: width, height: 2 * scale * background.texture!.size().height)
@@ -42,18 +41,18 @@ class WPTDestroyMenuNode: SKNode {
         shipImage.position.x -= background.size.width * 0.3
         let shipImgSize = 0.25 * WPTValues.screenSize.width
         shipImage.size = CGSize(width: shipImgSize, height: shipImgSize)
-        shipImage.zPosition = WPTValues.pauseShroudZPosition + 2
+        shipImage.zPosition = 1
         self.addChild(shipImage)
         
         // game over
-        gameOver.zPosition = WPTValues.pauseShroudZPosition + 2
+        gameOver.zPosition = 1
         gameOver.fontColor = UIColor.black
         gameOver.position.y += 0.2 * background.size.height
         self.addChild(gameOver)
         
         // levelLabel
         shipName.horizontalAlignmentMode = .left
-        shipName.zPosition = WPTValues.pauseShroudZPosition + 2
+        shipName.zPosition = 1
         shipName.fontColor = UIColor.black
         shipName.text = player.shipName
         shipName.position.y += 0.05 * background.size.height
@@ -61,19 +60,19 @@ class WPTDestroyMenuNode: SKNode {
         self.addChild(shipName)
         
         // doubloonLabel
-        doubloonLabel.zPosition = WPTValues.pauseShroudZPosition + 2
+        doubloonLabel.zPosition = 1
         doubloonLabel.fontColor = UIColor.black
         doubloonLabel.position.y -= 0.04 * background.size.height
         doubloonLabel.position.x += 0.1 * background.size.height
         self.addChild(doubloonLabel)
         
-        doubloons.zPosition = WPTValues.pauseShroudZPosition + 2
+        doubloons.zPosition = 1
         doubloons.fontColor = UIColor.black
         doubloons.position.y -= 0.04 * background.size.height
         doubloons.position.x += 0.27 * background.size.height
         self.addChild(doubloons)
         
-        continueLabel.zPosition = WPTValues.pauseShroudZPosition + 2
+        continueLabel.zPosition = 1
         continueLabel.position.y -= 0.22 * background.size.height
         continueLabel.position.x += 0.25 * background.size.height
         self.addChild(continueLabel)

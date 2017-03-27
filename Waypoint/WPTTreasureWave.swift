@@ -93,7 +93,6 @@ class WPTTreasureWave: WPTLevelWave {
         // start the timer!!!
         if coinFrames <= 0 {
             self.timer = WPTTreasureTimerNode()
-            self.timer!.zPosition = WPTValues.movementHandlerZPosition - 5
             self.timer?.position.y += 0.25 * WPTValues.screenSize.height
             scene.camera!.addChild(timer!)
             self.timer!.show(timeVal: String(20))
@@ -106,7 +105,7 @@ class WPTTreasureWave: WPTLevelWave {
         let shroud = SKShapeNode(rectOf: WPTValues.screenSize)
         shroud.fillColor = .black
         shroud.alpha = 0
-        shroud.zPosition = 2 * WPTValues.pauseShroudZPosition
+        shroud.zPosition = 2 * WPTZPositions.shrouds
         scene.camera!.addChild(shroud)
         
         let fadeIn = SKAction.fadeIn(withDuration: 8)

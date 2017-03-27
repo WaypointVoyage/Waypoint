@@ -63,7 +63,6 @@ class WPTItemPickerNode: SKNode {
         }
         itemImage.texture = currentItemTexture
         itemImage.position = CGPoint.zero
-        itemImage.zPosition = WPTValues.pauseShroudZPosition * 2 + 4
         let itemImgSize = 0.2 * WPTValues.screenSize.width
         itemImage.size = CGSize(width: itemImgSize, height: itemImgSize)
         addChild(itemImage)

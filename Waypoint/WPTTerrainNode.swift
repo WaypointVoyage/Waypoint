@@ -32,6 +32,7 @@ class WPTTerrainNode: SKNode {
         self.boundary = nil
         self.player = player
         super.init()
+        self.zPosition = WPTZPositions.terrain
         
         // setup the water backdrop
         var water: SKNode? = nil
@@ -46,11 +47,8 @@ class WPTTerrainNode: SKNode {
             asShape.lineWidth = 5
             water = asShape
         }
-        water!.zPosition = WPTValues.waterZPosition
+        water!.zPosition = WPTZPositions.water - WPTZPositions.terrain
         self.addChild(water!)
-        
-        // and the touch handler
-        self.addChild(WPTPlayerMovementNode(self.size, player))
         
         loadTerrain()
         
@@ -84,7 +82,6 @@ class WPTTerrainNode: SKNode {
         if let terrainImg = level.terrainImage {
             let terrain = SKSpriteNode(imageNamed: terrainImg)
             terrain.anchorPoint = CGPoint.zero
-            terrain.zPosition = -98
 
             // handle the terrain bodies
             if let bodies = level.terrainBodies {

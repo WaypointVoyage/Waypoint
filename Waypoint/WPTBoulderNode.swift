@@ -18,11 +18,9 @@ class WPTBoulderNode: SKNode {
     var health: WPTHealthNode
     
     override init() {
-        
         self.health = WPTHealthNode(maxHealth: WPTBoulderNode.maxBoulderHealth, persistent: false)
-        
         super.init()
-        self.zPosition = WPTValues.waterZPosition + 5
+        self.zPosition = 1
         
         boulderImage.anchorPoint = CGPoint(x: CGFloat(0.5), y: CGFloat(0.5))
         boulderImage.size = CGSize(width: WPTBoulderNode.boulderRadius*2, height: WPTBoulderNode.boulderRadius*2)

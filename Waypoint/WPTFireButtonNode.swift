@@ -19,8 +19,8 @@ class WPTFireButtonNode: SKNode {
         self.button = SKSpriteNode(texture: unpressedTex)
         self.button.size = size
         super.init()
+        self.zPosition = WPTZPositions.touchHandler + 2 - WPTZPositions.hud
         
-        self.zPosition = WPTValues.pauseShroudZPosition + 5
         self.addChild(button)
     }
     

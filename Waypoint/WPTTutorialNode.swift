@@ -22,11 +22,11 @@ class WPTTutorialNode: SKNode {
         
         super.init()
         self.isUserInteractionEnabled = true
+        self.zPosition = WPTZPositions.shrouds
         
         // shroud
         self.pauseShroud.fillColor = UIColor.black
         self.pauseShroud.strokeColor = UIColor.black
-        self.pauseShroud.zPosition = WPTValues.pauseShroudZPosition * 2
         self.pauseShroud.alpha = 0.6
         self.addChild(self.pauseShroud)
         
@@ -42,7 +42,7 @@ class WPTTutorialNode: SKNode {
         tutorialImages.append(image5)
         
         for image in tutorialImages {
-            image.zPosition = WPTValues.pauseShroudZPosition * 2
+            image.zPosition = 1
             image.anchorPoint = CGPoint(x: 0.5, y: 0.55)
         }
         

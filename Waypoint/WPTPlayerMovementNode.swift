@@ -8,21 +8,22 @@
 
 import SpriteKit
 
-class WPTPlayerMovementNode: SKNode {
+class WPTLevelTouchHandlerNode: SKNode {
     
     private let player: WPTLevelPlayerNode
-    private let showShroud = false
+    private let levelScene: WPTLevelScene
     
-    init(_ size: CGSize, _ player: WPTLevelPlayerNode) {
-        self.player = player
+    init(_ levelScene: WPTLevelScene) {
+        self.levelScene = levelScene
+        self.player = levelScene.player
         super.init()
+        self.zPosition = WPTZPositions.touchHandler
         self.isUserInteractionEnabled = true
         
-        let handler = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: size))
-        if showShroud {
-            handler.fillColor = UIColor(colorLiteralRed: 1, green: 0, blue: 0, alpha: 0.6)
+        let handler = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: levelScene.level.size))
+        if WPTConfig.values.showTouchHandler {
+            handler.fillColor = UIColor(colorLiteralRed: 1, green: 0, blue: 0, alpha: 0.3)
         }
-        handler.zPosition = WPTValues.movementHandlerZPosition
         self.addChild(handler)
     }
     
@@ -31,8 +32,24 @@ class WPTPlayerMovementNode: SKNode {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let target = touches.first?.location(in: self) {
-            player.facePoint(target)
+        guard let touch = touches.first else { return }
+        let sceneLoc = touch.location(in: levelScene)
+        
+        // a touch on the player
+        if levelScene.player.contains(sceneLoc) {
+            levelScene.player.touched()
+            return
         }
+            
+        // a touch on an enemy?
+        for enemy in levelScene.terrain.enemies {
+            if enemy.contains(sceneLoc) {
+                levelScene.player.aimAt(actor: enemy)
+                return 
+            }
+        }
+            
+        // face an arbitrary point
+        player.facePoint(touch.location(in: self))
     }
 }
