@@ -15,11 +15,11 @@ class WPTConfig {
     var testing = true
     var allUnlocked = true
     var invincible = true
-    var showBrainRadii = true 
+    var showBrainRadii = false
     var showPhysics = false
     var showSpawnVolumesOnMinimap = false
     var clearHighScoresOnLoad = false
-    var showTutorial = false // this needs to be implemented properly
+    var showTutorial = true
     var showTouchHandler = false
     
     // singleton instance
