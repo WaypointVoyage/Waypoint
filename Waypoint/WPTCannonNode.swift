@@ -18,7 +18,7 @@ class WPTCannonNode: SKNode {
     
     init(_ cannon: WPTCannon) {
         self.cannon = cannon
-        self.cannonBallSpawnPoint = 170 * CGPoint(x: cos(cannon.angle), y: sin(cannon.angle))
+        self.cannonBallSpawnPoint = 100 * CGPoint(x: cos(cannon.angle), y: sin(cannon.angle))
         super.init()
         
         self.sprite.anchorPoint = CGPoint(x: 0.25, y: 0.5)
