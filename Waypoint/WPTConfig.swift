@@ -15,8 +15,8 @@ class WPTConfig {
     var testing = true
     var allUnlocked = true
     var invincible = true
-    var showBrainRadii = false // kinda buggy, use with caution... need to address this. 
-    var showPhysics = true
+    var showBrainRadii = true 
+    var showPhysics = false
     var showSpawnVolumesOnMinimap = false
     var clearHighScoresOnLoad = false
     var showTutorial = false // this needs to be implemented properly

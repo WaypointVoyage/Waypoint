@@ -43,9 +43,10 @@ class WPTLevelTouchHandlerNode: SKNode {
             
         // a touch on an enemy?
         for enemy in levelScene.terrain.enemies {
-            if enemy.contains(sceneLoc) {
+            let enemyLoc = touch.location(in: enemy)
+            if enemy.sprite.contains(enemyLoc) {
                 levelScene.player.aimAt(actor: enemy)
-                return 
+                return
             }
         }
             
