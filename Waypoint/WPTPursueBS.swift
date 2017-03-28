@@ -16,20 +16,20 @@ class WPTPursueBS: WPTBrainState {
         super.init(name: String(describing: WPTPursueBS.self), type: WPTPursueBS.type)
     }
     
-    override func update(deltaTime seconds: TimeInterval) {
-        let dist = self.enemy.distance(to: player)
+    override func update(deltaTime sec: TimeInterval, healthLow: Bool, distToPlayer: CGFloat) {
+        self.update(deltaTime: sec)
         self.tryShoot()
         
         if enemy.anchored {
             // priority on firing at the player
             self.enemy.aimCannons(actor: self.player)
-            if dist > brain.radiusOfEngagement {
+            if distToPlayer > brain.radiusOfEngagement {
                 enemy.anchored = false
             }
         } else {
             // priority on approaching the player
             enemy.facePoint(player.position)
-            if dist < brain.radiusOfEngagement {
+            if distToPlayer < brain.radiusOfEngagement {
                 enemy.anchored = true
             }
         }

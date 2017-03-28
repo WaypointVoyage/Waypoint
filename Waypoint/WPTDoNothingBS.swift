@@ -16,7 +16,8 @@ class WPTDoNothingBS: WPTBrainState {
         super.init(name: String(describing: WPTDoNothingBS.self), type: WPTDoNothingBS.type)
     }
     
-    override func update(deltaTime seconds: TimeInterval) {
+    override func update(deltaTime sec: TimeInterval, healthLow: Bool, distToPlayer: CGFloat) {
+        self.update(deltaTime: sec)
         enemy.anchored = true
         enemy.targetRot = nil
     }

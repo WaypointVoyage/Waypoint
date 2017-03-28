@@ -15,10 +15,10 @@ class WPTFleeOffenseBS: WPTBrainState {
         super.init(name: String(describing: WPTFleeOffenseBS.self), type: WPTFleeOffenseBS.type)
     }
     
-    override func update(deltaTime seconds: TimeInterval) {
-        let dist = self.enemy.distance(to: player);
+    override func update(deltaTime sec: TimeInterval, healthLow: Bool, distToPlayer: CGFloat) {
+        self.update(deltaTime: sec)
         
-        if dist < brain.radiusOfEngagement {
+        if distToPlayer < brain.radiusOfEngagement {
             // attack
             enemy.anchored = true
             self.enemy.aimCannons(actor: self.player)

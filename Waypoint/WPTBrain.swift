@@ -113,12 +113,10 @@ class WPTBrain: GKStateMachine {
     }
     
     override func update(deltaTime sec: TimeInterval) {
-        if let curState = self.currentState {
-            curState.update(deltaTime: sec) // TODO: call as super instead? 
-        }
-        
         let healthLow = enemy.currentHealth < healthCutoff * enemy.enemy.ship.health
         let dist = CGVector(start: enemy.position, end: player.position).magnitude()
+        self.currentBrainState.update(deltaTime: sec, healthLow: healthLow, distToPlayer: dist)
+        
 //        if dist < radiusOfEngagement {
 //            print("ROE")
 //        } else if dist < innerRadiusOfObliviousness {

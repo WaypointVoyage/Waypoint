@@ -20,16 +20,18 @@ class WPTWanderBS: WPTBrainState {
         super.init(name: String(describing: WPTWanderBS.self), type: WPTWanderBS.type)
     }
     
-    override func update(deltaTime seconds: TimeInterval) {
+    override func update(deltaTime sec: TimeInterval, healthLow: Bool, distToPlayer: CGFloat) {
+        self.update(deltaTime: sec)
+        
         if lollygagging {
-            timeLollygagging += seconds
+            timeLollygagging += sec
             if timeLollygagging > maxTimeLollygagging {
                 stopLollygagging()
             }
         } else {
             if target == nil { setNewTarget() }
-            let dist = CGVector(start: enemy.position, end: target!).magnitude()
-            if dist < brain.radiusOfEngagement / 2 {
+            let distToPlayer = CGVector(start: enemy.position, end: target!).magnitude()
+            if distToPlayer < brain.radiusOfEngagement / 2 {
                 startLollygagging()
             } else {
                 enemy.anchored = false

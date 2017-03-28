@@ -15,7 +15,9 @@ class WPTStandAndShootBS: WPTBrainState {
         super.init(name: String(describing: WPTStandAndShootBS.self), type: WPTStandAndShootBS.type)
     }
     
-    override func update(deltaTime seconds: TimeInterval) {
+    override func update(deltaTime sec: TimeInterval, healthLow: Bool, distToPlayer: CGFloat) {
+        self.update(deltaTime: sec)
+        
         // handle behavior
         self.enemy.aimCannons(actor: self.player)
         self.tryShoot()

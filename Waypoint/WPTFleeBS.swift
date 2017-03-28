@@ -16,7 +16,8 @@ class WPTFleeBS: WPTBrainState {
         super.init(name: String(describing: WPTFleeBS.self), type: WPTFleeBS.type)
     }
     
-    override func update(deltaTime seconds: TimeInterval) {
+    override func update(deltaTime sec: TimeInterval, healthLow: Bool, distToPlayer: CGFloat) {
+        self.update(deltaTime: sec)
         enemy.anchored = false
         let towardsPlayer = CGVector(dx: player.position.x - enemy.position.x, dy: player.position.y - enemy.position.y)
         let target = CGPoint(x: enemy.position.x - towardsPlayer.dx, y: enemy.position.y - towardsPlayer.dy)

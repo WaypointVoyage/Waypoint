@@ -45,6 +45,10 @@ class WPTBrainState: GKState {
             }
         }
     }
+    
+    func update(deltaTime sec: TimeInterval, healthLow: Bool, distToPlayer: CGFloat) {
+        super.update(deltaTime: sec)
+    }
 }
 
 enum WPTBrainStateType: String {
