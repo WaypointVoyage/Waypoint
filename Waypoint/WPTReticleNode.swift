@@ -10,7 +10,9 @@ import SpriteKit
 
 class WPTReticleNode: SKNode, WPTUpdatable {
     static let _name = "_RETICLE"
-    var actor: WPTLevelActorNode? = nil
+    static let scale: CGFloat = 0.4
+    
+    var target: SKNode? = nil
     
     let texture = SKTexture(imageNamed: "reticle_arrow")
     var top: SKSpriteNode!
@@ -19,7 +21,7 @@ class WPTReticleNode: SKNode, WPTUpdatable {
     var right: SKSpriteNode!
     
     var attached: Bool {
-        return actor != nil
+        return target != nil
     }
     
     override init() {
@@ -53,14 +55,16 @@ class WPTReticleNode: SKNode, WPTUpdatable {
         right.position.x = offset
     }
     
-    func track(actor: WPTLevelActorNode) {
-        self.actor = actor
+    func track(node: SKNode) {
+        self.target = node
+        self.xScale = WPTReticleNode.scale / node.xScale
+        self.yScale = WPTReticleNode.scale / node.yScale
         self.removeFromParent()
-        self.actor?.addChild(self)
+        self.target?.addChild(self)
     }
     
     func remove() {
-        self.actor = nil
+        self.target = nil
         self.removeFromParent()
     }
 }

@@ -19,7 +19,7 @@ class WPTStandAndShootBS: WPTBrainState {
         self.update(deltaTime: sec)
         
         // handle behavior
-        self.enemy.aimCannons(actor: self.player)
+        self.enemy.aimCannons(node: self.player)
         self.tryShoot()
     }
 }

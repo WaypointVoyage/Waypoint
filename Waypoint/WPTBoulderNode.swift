@@ -9,6 +9,7 @@
 import SpriteKit
 
 class WPTBoulderNode: SKNode {
+    static let nodeNameTag: String = "_BOULDER"
     
     static let boulderRadius: CGFloat = 80.0
     static let maxBoulderHealth: CGFloat = 100.0
@@ -20,6 +21,7 @@ class WPTBoulderNode: SKNode {
     override init() {
         self.health = WPTHealthNode(maxHealth: WPTBoulderNode.maxBoulderHealth, persistent: false)
         super.init()
+        self.name = WPTBoulderNode.nodeNameTag
         self.zPosition = 1
         
         boulderImage.anchorPoint = CGPoint(x: CGFloat(0.5), y: CGFloat(0.5))

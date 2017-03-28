@@ -45,7 +45,15 @@ class WPTLevelTouchHandlerNode: SKNode {
         for enemy in levelScene.terrain.enemies {
             let enemyLoc = touch.location(in: enemy)
             if enemy.sprite.contains(enemyLoc) {
-                levelScene.player.aimAt(actor: enemy)
+                levelScene.player.aimAt(node: enemy)
+                return
+            }
+        }
+        
+        // perhaps a rock?
+        for boulder in levelScene.terrain.children.filter({ $0.name == WPTBoulderNode.nodeNameTag }) {
+            if boulder.contains(sceneLoc) {
+                levelScene.player.aimAt(node: boulder)
                 return
             }
         }

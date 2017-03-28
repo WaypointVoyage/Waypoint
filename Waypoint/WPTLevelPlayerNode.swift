@@ -32,8 +32,8 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     }
     
     override func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
-        if let targetActor = self.targetActor {
-            self.aimCannons(actor: targetActor)
+        if let targetNode = self.targetNode {
+            self.aimCannons(node: targetNode)
         } else if reticle.attached {
             self.reticle.remove()
         }
@@ -105,8 +105,8 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         }
     }
     
-    override func aimAt(actor target: WPTLevelActorNode) {
-        super.aimAt(actor: target)
-        self.reticle.track(actor: target)
+    override func aimAt(node target: SKNode) {
+        super.aimAt(node: target)
+        self.reticle.track(node: target)
     }
 }

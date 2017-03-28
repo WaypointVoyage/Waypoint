@@ -91,8 +91,8 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     private func destroyEnemy() {
         self.physics = nil // at this point on, there are is no more world interaction
         
-        if player.targetActor === self {
-            player.targetActor = nil
+        if player.targetNode === self {
+            player.targetNode = nil
         }
         
         let emitterNode = SKEmitterNode(fileNamed: "explosion.sks")

@@ -21,7 +21,7 @@ class WPTFleeOffenseBS: WPTBrainState {
         if distToPlayer < brain.radiusOfEngagement {
             // attack
             enemy.anchored = true
-            self.enemy.aimCannons(actor: self.player)
+            self.enemy.aimCannons(node: self.player)
             self.tryShoot()
         }
         else {

@@ -22,7 +22,7 @@ class WPTPursueBS: WPTBrainState {
         
         if enemy.anchored {
             // priority on firing at the player
-            self.enemy.aimCannons(actor: self.player)
+            self.enemy.aimCannons(node: self.player)
             if distToPlayer > brain.radiusOfEngagement {
                 enemy.anchored = false
             }
