@@ -72,6 +72,8 @@
 			<real>0.5</real>
 			<key>healthScale</key>
 			<real>0.80000000000000004</real>
+			<key>itemRadiusScale</key>
+			<real>1</real>
 			<key>rangeScale</key>
 			<real>1</real>
 			<key>shotSpeedScale</key>

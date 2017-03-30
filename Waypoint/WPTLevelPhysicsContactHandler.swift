@@ -46,7 +46,13 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
                 }
             }
         }
-        
+            
+        else if collisionBetween(WPTValues.itemCbm, WPTValues.itemCollectionCbm) {
+            if let itemRad = secondBody.node as? WPTItemCollectorNode, let item = firstBody.node as? WPTItemNode {
+                itemRad.items.insert(item)
+            }
+        }
+            
         else if collisionBetween(WPTValues.actorCbm, WPTValues.itemCbm) {
             if let player = firstBody.node as? WPTLevelPlayerNode, let item = secondBody.node as? WPTItemNode {
                 player.give(item: item.item);
@@ -93,9 +99,16 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
                 dockHandler.leaveDock()
             }
         }
+        
+        else if collisionBetween(WPTValues.itemCbm, WPTValues.itemCollectionCbm) {
+            if let itemRad = secondBody.node as? WPTItemCollectorNode, let item = firstBody.node as? WPTItemNode {
+                itemRad.items.remove(item)
+            }
+        }
     }
     
     private func collisionBetween(_ first: UInt32, _ second: UInt32) -> Bool {
+        assert(first <= second, "The first collision mask must be less than the second, consider switching their order.")
         return firstBody.categoryBitMask & first != 0 && secondBody.categoryBitMask & second != 0
     }
 }

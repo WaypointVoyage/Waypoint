@@ -27,6 +27,7 @@ class WPTItem {
     public private(set) var sizeModifier: CGFloat?
     public private(set) var turnRateModifier: CGFloat?
     public private(set) var fireRateModifier: CGFloat?
+    public private(set) var itemRadiusModifier: CGFloat?
     
     // healing/money modifiers
     public private(set) var repairProportionally: Bool = false // if true, the repair value represents a proportion of health instead of a flat value
@@ -112,6 +113,7 @@ class WPTItem {
         self.sizeModifier = getStatModifier(from: dict, name: "size")
         self.turnRateModifier = getStatModifier(from: dict, name: "turnRate")
         self.fireRateModifier = getStatModifier(from: dict, name: "fireRate")
+        self.itemRadiusModifier = getStatModifier(from: dict, name: "itemRadius")
         
         self.repair = dict["repair"] as? CGFloat
         self.doubloons = dict["doubloons"] as? Int

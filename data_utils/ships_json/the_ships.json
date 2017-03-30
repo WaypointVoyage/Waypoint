@@ -78,6 +78,7 @@
          "sizeScale": 1.0,
          "turnRateScale": 1.0,
          "fireRateScale": 1.0,
+         "itemRadiusScale": 1.0,
       },
    },
    {
@@ -126,6 +127,7 @@
          "sizeScale": 0.8,
          "turnRateScale": 2.4,
          "fireRateScale": 3.0,
+         "itemRadiusScale": 1.0,
       },
    },
    {
@@ -224,6 +226,7 @@
          "sizeScale": 1.6,
          "turnRateScale": 0.8,
          "fireRateScale": 0.8,
+         "itemRadiusScale": 1.0,
       },
    },
    {

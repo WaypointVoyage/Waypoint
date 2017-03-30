@@ -44,8 +44,8 @@ class WPTPuppetMaster: GKStateMachine {
         boulder.position = self.scene.terrain.randomPoint(borderWidth: WPTBoulderNode.boulderRadius)
         
         let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-        boulder.boulderImage.zRotation = CGFloat(M_PI)/rand
-        boulder.crackedImage.zRotation = CGFloat(M_PI)/rand
+        boulder.boulderImage.zRotation = CG_PI/rand
+        boulder.crackedImage.zRotation = CG_PI/rand
     }
     
     private func placeWhirlpool(_ whirlpool: WPTWhirlpoolNode) {

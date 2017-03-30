@@ -51,6 +51,7 @@ class WPTValues {
     static let boulderCbm: UInt32 = 1 << 5
     static let itemCbm: UInt32 = 1 << 6
     static let dockCbm: UInt32 = 1 << 7
+    static let itemCollectionCbm: UInt32 = 1 << 8
     
     // level bahaviors
     static let playerPrepTime: TimeInterval = 4

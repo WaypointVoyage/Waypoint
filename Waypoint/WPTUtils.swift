@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-let CG_PI = CGFloat(M_PI)
+let CG_PI: CGFloat = CGFloat(Double.pi)
 
 func clamp<T: Comparable>(_ value: inout T, min: T, max: T) {
     value = value < min ? min : value > max ? max : value

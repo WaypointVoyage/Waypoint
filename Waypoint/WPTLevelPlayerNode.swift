@@ -14,6 +14,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     var portHandler: WPTPortDockingHandler! = nil
     
     let reticle = WPTReticleNode()
+    var itemRad: WPTItemCollectorNode! = nil
     
     init(player: WPTPlayer) {
         super.init(actor: player, teamBitMask: WPTConfig.values.testing ? 0 : WPTValues.playerTbm)
@@ -23,6 +24,11 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         // components
         portHandler = WPTPortDockingHandler(self)
         self.addChild(self.portHandler)
+        
+        // item collection radius
+        itemRad = WPTItemCollectorNode(target: self, radius: player.ship.itemRadius)
+        itemRad.setScale(1 / player.ship.size)
+        self.addChild(itemRad)
         
         self.physics!.collisionBitMask |= WPTValues.boundaryCbm
     }
@@ -41,6 +47,8 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         if reticle.attached {
             reticle.update(currentTime, deltaTime)
         }
+        
+        itemRad.update(currentTime, deltaTime)
         
         if !portHandler.docked {
             super.update(currentTime, deltaTime)

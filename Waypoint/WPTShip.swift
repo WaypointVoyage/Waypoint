@@ -71,6 +71,13 @@ class WPTShip {
         get { return fireRateScale * WPTShip.baseFireRate }
     }
     
+    var itemRadiusScale: CGFloat = 1.0 {
+        didSet { clamp(&itemRadiusScale, min: WPTShip.minItemRadiusScale, max: WPTShip.maxItemRadiusScale) }
+    }
+    var itemRadius: CGFloat {
+        get { return itemRadiusScale * WPTShip.baseItemRadius; }
+    }
+    
     let previewImage: String
     let inGameImage: String
     let cannonSet: WPTCannonSet
@@ -109,6 +116,7 @@ class WPTShip {
             self.sizeScale = stats["sizeScale"]!
             self.turnRateScale = stats["turnRateScale"]!
             self.fireRateScale = stats["fireRateScale"]!
+            self.itemRadiusScale = stats["itemRadiusScale"]!
         }
         else if let stats = dict["stats"] as? String {
             if stats == "max" {
@@ -120,6 +128,7 @@ class WPTShip {
                 self.sizeScale = WPTShip.maxSizeScale
                 self.turnRateScale = WPTShip.maxTurnRateScale
                 self.fireRateScale = WPTShip.maxFireRateScale
+                self.itemRadiusScale = WPTShip.maxItemRadiusScale
             }
             else if stats == "min" {
                 self.speedScale = WPTShip.minSpeedScale
@@ -130,6 +139,7 @@ class WPTShip {
                 self.sizeScale = WPTShip.minSizeScale
                 self.turnRateScale = WPTShip.minTurnRateScale
                 self.fireRateScale = WPTShip.minFireRateScale
+                self.itemRadiusScale = WPTShip.minItemRadiusScale
             }
         }
     }
@@ -141,10 +151,10 @@ class WPTShip {
         self.inGameImage = other.inGameImage
         self.cannonSet = WPTCannonSet(other: other.cannonSet)
         self.colliderPath = other.colliderPath
-        self.initStats(speedScale: other.speedScale, damageScale: other.damageScale, healthScale: other.healthScale, rangeScale: other.rangeScale, shotSpeedScale: other.shotSpeedScale, sizeScale: other.sizeScale, turnRateScale: other.turnRateScale)
+        self.initStats(speedScale: other.speedScale, damageScale: other.damageScale, healthScale: other.healthScale, rangeScale: other.rangeScale, shotSpeedScale: other.shotSpeedScale, sizeScale: other.sizeScale, turnRateScale: other.turnRateScale, itemRadiusScale: other.itemRadiusScale)
     }
     
-    func initStats(speedScale: CGFloat = 1.0, damageScale: CGFloat = 1.0, healthScale: CGFloat = 1.0, rangeScale: CGFloat = 1.0, shotSpeedScale: CGFloat = 1.0, sizeScale: CGFloat = 1.0, turnRateScale: CGFloat = 1.0, fireRateScale: CGFloat = 1.0) {
+    func initStats(speedScale: CGFloat = 1.0, damageScale: CGFloat = 1.0, healthScale: CGFloat = 1.0, rangeScale: CGFloat = 1.0, shotSpeedScale: CGFloat = 1.0, sizeScale: CGFloat = 1.0, turnRateScale: CGFloat = 1.0, fireRateScale: CGFloat = 1.0, itemRadiusScale: CGFloat = 1.0) {
         self.speedScale = speedScale
         self.damageScale = damageScale
         self.healthScale = healthScale
@@ -153,6 +163,7 @@ class WPTShip {
         self.sizeScale = sizeScale
         self.turnRateScale = turnRateScale
         self.fireRateScale = fireRateScale
+        self.itemRadiusScale = itemRadiusScale
     }
     
     func shuffleStats() {
@@ -164,6 +175,7 @@ class WPTShip {
         self.sizeScale = WPTShip.randStat(min: WPTShip.minSizeScale, max: WPTShip.maxSizeScale)
         self.turnRateScale = WPTShip.randStat(min: WPTShip.minTurnRateScale, max: WPTShip.maxTurnRateScale)
         self.fireRateScale = WPTShip.randStat(min: WPTShip.minFireRateScale, max: WPTShip.maxFireRateScale)
+        self.itemRadiusScale = WPTShip.randStat(min: WPTShip.minItemRadiusScale, max: WPTShip.maxItemRadiusScale)
     }
     
     static func randStat(min: CGFloat, max: CGFloat) -> CGFloat {
@@ -180,6 +192,7 @@ class WPTShip {
         self.sizeScale += item.sizeModifier ?? 0
         self.turnRateScale += item.turnRateModifier ?? 0
         self.fireRateScale += item.fireRateModifier ?? 0
+        self.itemRadiusScale += item.itemRadiusModifier ?? 0
     }
 }
 
@@ -215,4 +228,8 @@ extension WPTShip {
     static let minFireRateScale: CGFloat = 0.2
     static let maxFireRateScale: CGFloat = 10
     static let baseFireRate: CGFloat = 2
+    
+    static let minItemRadiusScale: CGFloat = 1.0
+    static let maxItemRadiusScale: CGFloat = 100.0
+    static let baseItemRadius: CGFloat = 250
 }

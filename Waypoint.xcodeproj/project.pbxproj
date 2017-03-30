@@ -70,6 +70,9 @@
 		7E52C85A1E61E72F004FDB27 /* WPTLevelTouchHandlerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52C8591E61E72F004FDB27 /* WPTLevelTouchHandlerNode.swift */; };
 		7E575DD61E69C1D2004D92BF /* WPTPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E575DD51E69C1D2004D92BF /* WPTPort.swift */; };
 		7E575DD81E69C3C7004D92BF /* WPTItemCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E575DD71E69C3C7004D92BF /* WPTItemCatalog.swift */; };
+		7E581C2F1E8B78BF008F8222 /* the_enemy_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E581C2D1E8B78BF008F8222 /* the_enemy_ships.plist */; };
+		7E581C301E8B78BF008F8222 /* the_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E581C2E1E8B78BF008F8222 /* the_ships.plist */; };
+		7E581C341E8DA01A008F8222 /* WPTItemCollectorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E581C331E8DA01A008F8222 /* WPTItemCollectorNode.swift */; };
 		7E5A6BEE1E5A0E070067EAF3 /* WPTCannonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */; };
 		7E5A6BF01E5A0E200067EAF3 /* WPTCannonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A6BEF1E5A0E200067EAF3 /* WPTCannonSet.swift */; };
 		7E5DB72A1E7ED233000B1307 /* WPTPlayerPrepPMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DB7291E7ED233000B1307 /* WPTPlayerPrepPMS.swift */; };
@@ -89,8 +92,6 @@
 		7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */; };
 		7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */; };
 		7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */; };
-		7E8BA2DC1E8877BC007A8A1B /* the_enemy_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E8BA2DA1E8877BC007A8A1B /* the_enemy_ships.plist */; };
-		7E8BA2DF1E88789B007A8A1B /* the_ships.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E8BA2DE1E88789B007A8A1B /* the_ships.plist */; };
 		7EAE35CF1E81FC7500F42904 /* WPTReticleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE35CE1E81FC7500F42904 /* WPTReticleNode.swift */; };
 		7EAE35D11E82153500F42904 /* WPTAlertNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE35D01E82153500F42904 /* WPTAlertNode.swift */; };
 		7EBF5E231E4D06D200F81982 /* WPTTrailStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */; };
@@ -235,6 +236,9 @@
 		7E52C8591E61E72F004FDB27 /* WPTLevelTouchHandlerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelTouchHandlerNode.swift; sourceTree = "<group>"; };
 		7E575DD51E69C1D2004D92BF /* WPTPort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPort.swift; sourceTree = "<group>"; };
 		7E575DD71E69C3C7004D92BF /* WPTItemCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItemCatalog.swift; sourceTree = "<group>"; };
+		7E581C2D1E8B78BF008F8222 /* the_enemy_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_enemy_ships.plist; sourceTree = "<group>"; };
+		7E581C2E1E8B78BF008F8222 /* the_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_ships.plist; sourceTree = "<group>"; };
+		7E581C331E8DA01A008F8222 /* WPTItemCollectorNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItemCollectorNode.swift; sourceTree = "<group>"; };
 		7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonNode.swift; sourceTree = "<group>"; };
 		7E5A6BEF1E5A0E200067EAF3 /* WPTCannonSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonSet.swift; sourceTree = "<group>"; };
 		7E5DB7291E7ED233000B1307 /* WPTPlayerPrepPMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayerPrepPMS.swift; sourceTree = "<group>"; };
@@ -254,8 +258,6 @@
 		7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTNewGameScene.swift; sourceTree = "<group>"; };
 		7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLabelNode.swift; sourceTree = "<group>"; };
 		7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSceneLabelNode.swift; sourceTree = "<group>"; };
-		7E8BA2DA1E8877BC007A8A1B /* the_enemy_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_enemy_ships.plist; sourceTree = "<group>"; };
-		7E8BA2DE1E88789B007A8A1B /* the_ships.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = the_ships.plist; sourceTree = "<group>"; };
 		7EAE35CE1E81FC7500F42904 /* WPTReticleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTReticleNode.swift; sourceTree = "<group>"; };
 		7EAE35D01E82153500F42904 /* WPTAlertNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTAlertNode.swift; sourceTree = "<group>"; };
 		7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailStop.swift; sourceTree = "<group>"; };
@@ -677,6 +679,7 @@
 			children = (
 				7EC222051E72F49D00E98243 /* WPTWhirlpoolHandler.swift */,
 				7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */,
+				7E581C331E8DA01A008F8222 /* WPTItemCollectorNode.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -710,9 +713,9 @@
 				7E43CC761E54B844009367BC /* trail_map.plist */,
 				7ED963321E7DEA4900B58C1C /* brains.plist */,
 				7EF866BD1E833C020012F2C7 /* enemies.plist */,
+				7E581C2D1E8B78BF008F8222 /* the_enemy_ships.plist */,
+				7E581C2E1E8B78BF008F8222 /* the_ships.plist */,
 				2D1703D61E590F8C0000827E /* random_ship_names.plist */,
-				7E8BA2DA1E8877BC007A8A1B /* the_enemy_ships.plist */,
-				7E8BA2DE1E88789B007A8A1B /* the_ships.plist */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -881,8 +884,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EF866CE1E83556D0012F2C7 /* 3_cutlass_careen.plist in Resources */,
-				7E8BA2DC1E8877BC007A8A1B /* the_enemy_ships.plist in Resources */,
-				7E8BA2DF1E88789B007A8A1B /* the_ships.plist in Resources */,
+				7E581C2F1E8B78BF008F8222 /* the_enemy_ships.plist in Resources */,
+				7E581C301E8B78BF008F8222 /* the_ships.plist in Resources */,
 				7E16B8641E2D580600933E24 /* Main.storyboard in Resources */,
 				7E5242901E56440900120002 /* water.fsh in Resources */,
 				2D17044B1E7103D70000827E /* explosion.mp3 in Resources */,
@@ -956,6 +959,7 @@
 				7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */,
 				7E6932951E53B48800AF7373 /* WPTLevelPlayerNode.swift in Sources */,
 				7ED739031E44F3B600122903 /* WPTActor.swift in Sources */,
+				7E581C341E8DA01A008F8222 /* WPTItemCollectorNode.swift in Sources */,
 				7ED739051E44F9E100122903 /* WPTItem.swift in Sources */,
 				7ED049DF1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift in Sources */,
 				2D2C8B5C1E7F3D5A00B1D862 /* WPTTutorialNode.swift in Sources */,

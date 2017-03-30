@@ -36,7 +36,8 @@ class WPTLevelTouchHandlerNode: SKNode {
         let sceneLoc = touch.location(in: levelScene)
         
         // a touch on the player
-        if levelScene.player.contains(sceneLoc) {
+        let playerLoc = touch.location(in: levelScene.player)
+        if levelScene.player.sprite.contains(playerLoc) {
             levelScene.player.touched()
             return
         }

@@ -63,7 +63,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         self.physics!.collisionBitMask = WPTValues.actorCbm | WPTValues.terrainCbm | WPTValues.boulderCbm
         
         // set starting position in the world
-        self.zRotation += CGFloat(M_PI) / 2.0
+        self.zRotation += CG_PI / 2.0
         self.setScale(actor.ship.size)
         
         // components

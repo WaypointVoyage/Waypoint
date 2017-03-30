@@ -25,10 +25,10 @@ class WPTItemNode: SKNode {
         self.physicsBody = SKPhysicsBody(circleOfRadius: size / 2)
         itemImage.scale(to: CGSize(width: size, height: size))
         self.addChild(itemImage)
-        self.physicsBody!.isDynamic = false
         self.physicsBody!.categoryBitMask = WPTValues.itemCbm
-        self.physicsBody!.collisionBitMask = WPTValues.actorCbm
-        self.physicsBody!.contactTestBitMask = WPTValues.actorCbm
+        self.physicsBody!.contactTestBitMask = WPTValues.actorCbm | WPTValues.itemCollectionCbm
+        self.physicsBody!.collisionBitMask = 0
+        self.physicsBody!.allowsRotation = false
     }
     
     required init?(coder aDecoder: NSCoder) {

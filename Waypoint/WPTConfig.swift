@@ -10,22 +10,24 @@ import Foundation
 
 class WPTConfig {
     
-    var playMusic = true
-    var playSoundEffects = true
-    var testing = true
-    var allUnlocked = true
-    var invincible = true
-    var showBrainRadii = false
-    var showPhysics = false
-    var showSpawnVolumesOnMinimap = false
-    var clearHighScoresOnLoad = false
-    var showTutorial = true
-    var showTouchHandler = false
+    // audio
+    var playMusic = true            // toggle music
+    var playSoundEffects = true     // toggle sound effects
+    
+    // testing
+    var testing = true                  // toggles general testing features
+    var allUnlocked = true              // determines if all of the levels on the world map are unlocked and beaten
+    var invincible = true               // if true, the player is invincible
+    var clearHighScoresOnLoad = false   // if true, all of the high scores are cleared when the app is loaded
+    var showTutorial = false            // if false, the tutorial will never be shown
+    
+    // visual debugging
+    var showPhysics = false                 // shows physics bodies
+    var showBrainRadii = false              // shows the brain radius for each enemy
+    var showSpawnVolumesOnMinimap = false   // shows the spawn volume areas as rectangles on the level minimap
+    var showTouchHandler = false            // shows a transparent shroud on the touch handler
     
     // singleton instance
-    static let values: WPTConfig = {
-        let instance = WPTConfig()
-        
-        return instance
-    }()
+    private init() {}
+    static let values: WPTConfig = WPTConfig()
 }

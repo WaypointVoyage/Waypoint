@@ -33,7 +33,7 @@ class WPTDestroyMenuNode: SKNode {
         let width = 0.9 * WPTValues.screenSize.height
         let scale = width / (background.texture?.size().width)!
         background.size = CGSize(width: width, height: 2 * scale * background.texture!.size().height)
-        background.zRotation = CGFloat(M_PI) / 2.0
+        background.zRotation = CG_PI / 2.0
         self.addChild(background)
         
         //ship image
