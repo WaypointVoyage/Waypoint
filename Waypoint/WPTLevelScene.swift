@@ -17,6 +17,7 @@ class WPTLevelScene: WPTScene {
     
     let terrain: WPTTerrainNode
     let player: WPTLevelPlayerNode
+    var touchHandler: WPTLevelTouchHandlerNode! = nil
     var hud: WPTHudNode
     var cam: SKCameraNode!
     let projectiles: SKNode
@@ -45,6 +46,7 @@ class WPTLevelScene: WPTScene {
             self.port = nil
         }
         super.init(size: CGSize(width: 0, height: 0))
+        self.touchHandler = WPTLevelTouchHandlerNode(self)
         
         self.listener = self.player
         self.scene?.backgroundColor = UIColor.black
@@ -91,7 +93,7 @@ class WPTLevelScene: WPTScene {
         self.puppetMaster!.setStage(levelBeaten: player.player.completedLevels.contains(level.name))
         
         // touch handler
-        self.addChild(WPTLevelTouchHandlerNode(self))
+        self.addChild(self.touchHandler)
         
         // add spawn volumes?
         if WPTConfig.values.showSpawnVolumesOnMinimap {
@@ -136,6 +138,7 @@ class WPTLevelScene: WPTScene {
         self.puppetMaster?.update(deltaTime: deltaTime)
         
         // actors
+        self.touchHandler.update(currentTime, deltaTime)
         self.player.update(currentTime, deltaTime)
         for enemy in self.terrain.enemies {
             enemy.update(currentTime, deltaTime)

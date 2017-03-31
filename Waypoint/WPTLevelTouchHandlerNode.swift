@@ -8,10 +8,12 @@
 
 import SpriteKit
 
-class WPTLevelTouchHandlerNode: SKNode {
+class WPTLevelTouchHandlerNode: SKNode, WPTUpdatable {
     
     private let player: WPTLevelPlayerNode
     private let levelScene: WPTLevelScene
+    
+    private var moveTouch: UITouch? = nil
     
     init(_ levelScene: WPTLevelScene) {
         self.levelScene = levelScene
@@ -27,11 +29,17 @@ class WPTLevelTouchHandlerNode: SKNode {
         self.addChild(handler)
     }
     
+    func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
+        if let moveTouch = self.moveTouch {
+            player.facePoint(moveTouch.location(in: self))
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let sceneLoc = touch.location(in: levelScene)
         
@@ -59,7 +67,15 @@ class WPTLevelTouchHandlerNode: SKNode {
             }
         }
             
-        // face an arbitrary point
-        player.facePoint(touch.location(in: self))
+        // I guess the enemy has a new target point then
+        moveTouch = touch
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        
+        if self.moveTouch === touch {
+            self.moveTouch = nil
+        }
     }
 }
