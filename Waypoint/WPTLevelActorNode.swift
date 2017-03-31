@@ -47,7 +47,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         // cannons
         for cannon in self.actor.ship.cannonSet.cannons {
             if cannon.hasCannon {
-                let cannonNode = WPTCannonNode(cannon)
+                let cannonNode = WPTCannonNode(cannon, actor: self)
                 self.cannonNodes.append(cannonNode)
                 self.addChild(cannonNode)
             }
@@ -118,27 +118,13 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         return CGFloat(sqrt(deltaX * deltaX + deltaY * deltaY))
     }
     
-    func getCannonVelocity(_ cannonNode: WPTCannonNode) -> CGVector {
-        let rot = self.zRotation + cannonNode.zRotation
-        let direction = CGVector(dx: cos(rot), dy: sin(rot))
-        return actor.ship.shotSpeed * direction
-    }
-    
     func fireCannons() {
         // make sure we can handle the cannon balls
         guard fireRateMgr.canFire else { return }
-        guard let projectileNode = (self.scene as? WPTLevelScene)?.projectiles else { return }
         
         // create the cannon balls
-        let time = actor.ship.range / actor.ship.shotSpeed
         for cannonNode in self.cannonNodes {
-            let ball = WPTCannonBallNode(self.actor.cannonBall, damage: self.actor.ship.damage)
-            ball.teamBitMask = self.teamBitMask
-            ball.position = self.convert(cannonNode.cannonBallSpawnPoint, to: projectileNode)
-            ball.physics.velocity = getCannonVelocity(cannonNode)
-            projectileNode.addChild(ball)
-            ball.run(SKAction.wait(forDuration: Double(time)), completion: { ball.collideWithGround() })
-            self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
+            cannonNode.fire()
         }
         fireRateMgr.registerFire()
     }
@@ -212,7 +198,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         for cannon in self.actor.ship.cannonSet.cannons {
             if !cannon.hasCannon {
                 cannon.hasCannon = true
-                let cannonNode = WPTCannonNode(cannon)
+                let cannonNode = WPTCannonNode(cannon, actor: self)
                 self.cannonNodes.append(cannonNode)
                 self.addChild(cannonNode)
                 return
