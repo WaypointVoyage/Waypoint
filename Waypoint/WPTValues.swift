@@ -34,7 +34,7 @@ class WPTValues {
     static var actorDefaultSizeScale: CGFloat = 0.3
     
     // physics behavior
-    static let actorMass: CGFloat = 17
+    static let actorBaseMass: CGFloat = 17
     static let waterLinearDampening: CGFloat = 1.0
     static let waterAngularDampening: CGFloat = 0.9
     

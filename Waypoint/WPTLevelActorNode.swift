@@ -56,7 +56,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         // configure physics behavior
         self.physicsBody = physics
         self.physics!.allowsRotation = false
-        self.physics!.mass = WPTValues.actorMass
+        self.physics!.mass = WPTValues.actorBaseMass * actor.ship.sizeScale
         self.physics!.linearDamping = WPTValues.waterLinearDampening
         self.physics!.angularDamping = WPTValues.waterAngularDampening
         self.physics!.categoryBitMask = WPTValues.actorCbm
