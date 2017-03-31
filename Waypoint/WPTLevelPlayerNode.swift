@@ -57,6 +57,16 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         }
     }
     
+    override func getShipSpeed() -> CGFloat {
+        if let moveTouchDist = (self.scene as? WPTLevelScene)?.touchHandler.moveTouchDist {
+            var fraction = moveTouchDist / 350 // TODO: make sure this is working ok for different screen sizes
+            clamp(&fraction, min: 0.1, max: 1)
+            return fraction * player.ship.speed
+        }
+        
+        return player.ship.speed
+    }
+    
     func touched() {
         if portHandler.docked {
             self.portHandler.undock()

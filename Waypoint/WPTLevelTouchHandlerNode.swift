@@ -14,6 +14,12 @@ class WPTLevelTouchHandlerNode: SKNode, WPTUpdatable {
     private let levelScene: WPTLevelScene
     
     private var moveTouch: UITouch? = nil
+    var moveTouchDist: CGFloat? {
+        if let target = moveTouch?.location(in: self) {
+            return CGVector(start: player.position, end: target).magnitude()
+        }
+        return nil
+    }
     
     init(_ levelScene: WPTLevelScene) {
         self.levelScene = levelScene
@@ -76,6 +82,11 @@ class WPTLevelTouchHandlerNode: SKNode, WPTUpdatable {
         
         if self.moveTouch === touch {
             self.moveTouch = nil
+            
+            let playerLoc = touch.location(in: player)
+            if player.sprite.contains(playerLoc) {
+                player.anchored = true
+            }
         }
     }
 }

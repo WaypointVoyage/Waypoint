@@ -103,13 +103,17 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             var force: CGVector? = nil
             if let turnVector = turnVector {
                 let dot = forward.dot(turnVector)
-                let speed: CGFloat = dot < 0 ? 0 : dot * actor.ship.speed
+                let speed: CGFloat = dot < 0 ? 0 : dot * getShipSpeed()
                 force = speed * turnVector
             } else {
-                force = actor.ship.speed * self.forward
+                force = getShipSpeed() * self.forward
             }
             self.physics?.applyForce(force!)
         }
+    }
+    
+    func getShipSpeed() -> CGFloat {
+        return actor.ship.speed
     }
     
     func distance(to actor: WPTLevelActorNode) -> CGFloat {
