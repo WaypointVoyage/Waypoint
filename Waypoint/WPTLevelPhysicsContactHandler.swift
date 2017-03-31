@@ -49,7 +49,7 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
             
         else if collisionBetween(WPTValues.itemCbm, WPTValues.itemCollectionCbm) {
             if let itemRad = secondBody.node as? WPTItemCollectorNode, let item = firstBody.node as? WPTItemNode {
-                itemRad.items.insert(item)
+                itemRad.collect(item: item)
             }
         }
             
@@ -102,7 +102,7 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
         
         else if collisionBetween(WPTValues.itemCbm, WPTValues.itemCollectionCbm) {
             if let itemRad = secondBody.node as? WPTItemCollectorNode, let item = firstBody.node as? WPTItemNode {
-                itemRad.items.remove(item)
+                itemRad.dontCollect(item: item)
             }
         }
     }

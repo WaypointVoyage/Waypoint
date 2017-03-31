@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class WPTHudBottomNode: SKNode {
+class WPTHudBottomNode: SKNode, WPTUpdatable {
     private let leftFire: WPTFireButtonNode
     private let rightFire: WPTFireButtonNode
     let leftBorder = SKSpriteNode(imageNamed: "levelBorder")
@@ -16,9 +16,6 @@ class WPTHudBottomNode: SKNode {
     let alert = WPTAlertNode()
     
     private var pressed: Bool = false
-    
-    var onStartPress: (() -> Void)?
-    var onEndPress: (() -> Void)?
     
     override init() {
         self.leftFire = WPTFireButtonNode()
@@ -53,6 +50,17 @@ class WPTHudBottomNode: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
+        
+        // continuously try to fire the cannons when pressed
+        if pressed {
+            if let player = (self.scene as? WPTLevelScene)?.player {
+                player.fireCannons()
+            }
+        }
+        
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !pressed {
             let location = touches.first!.location(in: self)
@@ -60,7 +68,6 @@ class WPTHudBottomNode: SKNode {
                 self.leftFire.startPress()
                 self.rightFire.startPress()
                 self.pressed = true
-                self.onStartPress?()
             }
         }
     }
@@ -70,7 +77,6 @@ class WPTHudBottomNode: SKNode {
             self.leftFire.endPress()
             self.rightFire.endPress()
             self.pressed = false
-            self.onEndPress?()
         }
     }
     

@@ -15,7 +15,7 @@ class WPTItemCollectorNode: SKNode, WPTUpdatable {
     weak var target: SKNode?
     var offset: CGPoint = CGPoint.zero
     
-    var items = Set<WPTItemNode>()
+    private var items = Set<WPTItemNode>()
     
     init(target: SKNode, radius: CGFloat, strength: CGFloat = 0.2) {
         self.radius = radius
@@ -43,7 +43,9 @@ class WPTItemCollectorNode: SKNode, WPTUpdatable {
                 if let itemPhys = item.physicsBody {
                     let offset = CGVector(start: item.position, end: target.position)
                     let dist = offset.magnitude()
-                    let force = strength * (radius - dist) * offset.normalized()
+                    var mag = strength * (radius - dist)
+                    clamp(&mag, min: 0, max: strength * radius)
+                    let force = mag * offset.normalized()
                     itemPhys.applyForce(force)
                 } else {
                     print("no physics...")
@@ -51,4 +53,16 @@ class WPTItemCollectorNode: SKNode, WPTUpdatable {
             }
         }
     }
+    
+    func collect(item: WPTItemNode) {
+        self.items.insert(item)
+    }
+    
+    func dontCollect(item: WPTItemNode) {
+        if items.contains(item) {
+            self.items.remove(item)
+            item.physicsBody?.velocity = CGVector.zero
+        }
+    }
 }
+

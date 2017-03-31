@@ -34,7 +34,6 @@ class WPTHudNode: SKNode, WPTUpdatable {
         
         // top/bottom nodes
         self.addChild(top)
-        self.bottom.onStartPress = player.fireCannons
         self.addChild(bottom)
         
         // shroud
@@ -70,6 +69,8 @@ class WPTHudNode: SKNode, WPTUpdatable {
     
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
         self.top.update(currentTime, deltaTime)
+        self.bottom.update(currentTime, deltaTime)
+        
         self.backgroundMusic.position = CGPoint(x: self.player.position.x, y: self.player.position.y)
     }
     
