@@ -75,6 +75,13 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         }
     }
     
+    override var anchored: Bool {
+        didSet {
+            guard let scene = self.scene as? WPTLevelScene else { return; }
+            scene.hud.top.anchoredIndicator.setAnchored(self.anchored)
+        }
+    }
+    
     override func doDamage(_ damage: CGFloat) {
         super.doDamage(damage)
         if let scene = (self.scene as? WPTLevelScene) {

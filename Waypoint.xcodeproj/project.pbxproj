@@ -92,6 +92,8 @@
 		7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */; };
 		7E7C240F1E37124500E10E7A /* WPTLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */; };
 		7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */; };
+		7E93E91B1E985A8B002CF452 /* anchored_indicator.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E93E91A1E985A8B002CF452 /* anchored_indicator.fsh */; };
+		7E93E91D1E985BAF002CF452 /* WPTAchoredIndicatorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E93E91C1E985BAF002CF452 /* WPTAchoredIndicatorNode.swift */; };
 		7EAE35CF1E81FC7500F42904 /* WPTReticleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE35CE1E81FC7500F42904 /* WPTReticleNode.swift */; };
 		7EAE35D11E82153500F42904 /* WPTAlertNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE35D01E82153500F42904 /* WPTAlertNode.swift */; };
 		7EBF5E231E4D06D200F81982 /* WPTTrailStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */; };
@@ -258,6 +260,8 @@
 		7E7C240B1E370FF500E10E7A /* WPTNewGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTNewGameScene.swift; sourceTree = "<group>"; };
 		7E7C240E1E37124500E10E7A /* WPTLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLabelNode.swift; sourceTree = "<group>"; };
 		7E7C24101E37169A00E10E7A /* WPTSceneLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSceneLabelNode.swift; sourceTree = "<group>"; };
+		7E93E91A1E985A8B002CF452 /* anchored_indicator.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = anchored_indicator.fsh; sourceTree = "<group>"; };
+		7E93E91C1E985BAF002CF452 /* WPTAchoredIndicatorNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTAchoredIndicatorNode.swift; sourceTree = "<group>"; };
 		7EAE35CE1E81FC7500F42904 /* WPTReticleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTReticleNode.swift; sourceTree = "<group>"; };
 		7EAE35D01E82153500F42904 /* WPTAlertNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTAlertNode.swift; sourceTree = "<group>"; };
 		7EBF5E221E4D06D200F81982 /* WPTTrailStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailStop.swift; sourceTree = "<group>"; };
@@ -552,6 +556,7 @@
 			isa = PBXGroup;
 			children = (
 				7E52428F1E56440900120002 /* water.fsh */,
+				7E93E91A1E985A8B002CF452 /* anchored_indicator.fsh */,
 			);
 			name = Level;
 			sourceTree = "<group>";
@@ -619,6 +624,7 @@
 				7EAE35CE1E81FC7500F42904 /* WPTReticleNode.swift */,
 				7EAE35D01E82153500F42904 /* WPTAlertNode.swift */,
 				7EF866A31E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift */,
+				7E93E91C1E985BAF002CF452 /* WPTAchoredIndicatorNode.swift */,
 			);
 			name = HUD;
 			sourceTree = "<group>";
@@ -917,6 +923,7 @@
 				7E15B6701E83952400A9B1DC /* currency_items.plist in Resources */,
 				7EF866D51E83556D0012F2C7 /* 10_high_seas.plist in Resources */,
 				7EF866D01E83556D0012F2C7 /* 5_dead_men_tell_no_tales.plist in Resources */,
+				7E93E91B1E985A8B002CF452 /* anchored_indicator.fsh in Resources */,
 				7EF866CD1E83556D0012F2C7 /* 2_pegleg_plunder.plist in Resources */,
 				2D1703DD1E625F1E0000827E /* distance.m4a in Resources */,
 				7EF866D11E83556D0012F2C7 /* 6_davy_jones_locker.plist in Resources */,
@@ -982,6 +989,7 @@
 				7E5F06561E438A2300EAC166 /* WPTScene.swift in Sources */,
 				7E5DB72A1E7ED233000B1307 /* WPTPlayerPrepPMS.swift in Sources */,
 				7E0C78951E73D1DD006C79C3 /* WPTCircle.swift in Sources */,
+				7E93E91D1E985BAF002CF452 /* WPTAchoredIndicatorNode.swift in Sources */,
 				7ECB5A021E745CA500A05563 /* WPTPursueBS.swift in Sources */,
 				2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */,
 				7EC222161E730D1900E98243 /* WPTBrainTemplate.swift in Sources */,

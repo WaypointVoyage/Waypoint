@@ -18,6 +18,7 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
     var moneyCount: WPTLabelNode
     var shipHealth: WPTHealthNode
     var shipImage: SKSpriteNode
+    var anchoredIndicator = WPTAnchoredIndicatorNode()
     
     init(player: WPTPlayer) {
         self.player = player
@@ -41,12 +42,15 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         
         self.moneyCount = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)
         
+        self.anchoredIndicator.position = CGPoint(x: shipOffset, y: WPTValues.screenSize.height - 2.5 * shipOffset)
+        
         super.init()
         
         self.addChild(shipName)
         self.addChild(shipImage)
         self.addChild(shipHealth)
         self.addChild(moneyCount)
+        self.addChild(anchoredIndicator)
         
         let moneyImgSize = 1.15 * WPTValues.fontSizeSmall
         let moneyOffset = 1.4 * moneyImgSize
