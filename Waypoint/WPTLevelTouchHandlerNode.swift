@@ -30,7 +30,7 @@ class WPTLevelTouchHandlerNode: SKNode, WPTUpdatable {
         
         let handler = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: levelScene.level.size))
         if WPTConfig.values.showTouchHandler {
-            handler.fillColor = UIColor(colorLiteralRed: 1, green: 0, blue: 0, alpha: 0.3)
+            handler.fillColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.3)
         }
         self.addChild(handler)
     }

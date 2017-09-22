@@ -37,7 +37,6 @@
 		7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62021E36650B009C8516 /* WPTHomeScene.swift */; };
 		7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */; };
 		7E0D62111E366F5F009C8516 /* WPTValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62101E366F5F009C8516 /* WPTValues.swift */; };
-		7E13F6231E48E22900B5D2FD /* ActorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13F6221E48E22900B5D2FD /* ActorTests.swift */; };
 		7E13F6251E48E51000B5D2FD /* WPTConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13F6241E48E51000B5D2FD /* WPTConfig.swift */; };
 		7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 7E13F62D1E48ECAD00B5D2FD /* sword1.caf */; };
 		7E13F6301E48F50200B5D2FD /* WPTWorldScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13F62F1E48F50200B5D2FD /* WPTWorldScene.swift */; };
@@ -55,8 +54,6 @@
 		7E16B8611E2D580600933E24 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8601E2D580600933E24 /* GameViewController.swift */; };
 		7E16B8641E2D580600933E24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E16B8621E2D580600933E24 /* Main.storyboard */; };
 		7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E16B8651E2D580600933E24 /* Assets.xcassets */; };
-		7E16B8741E2D580600933E24 /* WaypointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B8731E2D580600933E24 /* WaypointTests.swift */; };
-		7E16B87F1E2D580600933E24 /* WaypointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16B87E1E2D580600933E24 /* WaypointUITests.swift */; };
 		7E3EF6EA1E7532EB0036A895 /* WPTBrainRadiiNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3EF6E91E7532EB0036A895 /* WPTBrainRadiiNode.swift */; };
 		7E4182C91E7ECA7100FCEBD8 /* WPTPuppetMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4182C81E7ECA7100FCEBD8 /* WPTPuppetMaster.swift */; };
 		7E4215F81E5A6916004ADBD7 /* WPTCannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4215F71E5A6916004ADBD7 /* WPTCannon.swift */; };
@@ -125,7 +122,6 @@
 		7EDD063A1E4A1C750054EB7E /* WPTTrailMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */; };
 		7EE7981B1E523030006D683B /* WPTPlayerProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */; };
 		7EE7981D1E5234A3006D683B /* WPTLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7981C1E5234A3006D683B /* WPTLevel.swift */; };
-		7EE7C41B1E81C84B0019B0D4 /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7C41A1E81C84B0019B0D4 /* StorageTests.swift */; };
 		7EE8A8C81E6F779700C119B9 /* WPTShipCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8A8C71E6F779700C119B9 /* WPTShipCatalog.swift */; };
 		7EE8A8F41E6FA4A500C119B9 /* WPTEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8A8F31E6FA4A500C119B9 /* WPTEnemy.swift */; };
 		7EE8A9121E6FD07F00C119B9 /* WPTPortNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */; };
@@ -150,23 +146,6 @@
 		7EF866D51E83556D0012F2C7 /* 10_high_seas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C91E83556D0012F2C7 /* 10_high_seas.plist */; };
 		7EF866D61E83556D0012F2C7 /* 11_shiver_me_timbers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866CA1E83556D0012F2C7 /* 11_shiver_me_timbers.plist */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		7E16B8701E2D580600933E24 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E16B84D1E2D580600933E24 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E16B8541E2D580600933E24;
-			remoteInfo = Waypoint;
-		};
-		7E16B87B1E2D580600933E24 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E16B84D1E2D580600933E24 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E16B8541E2D580600933E24;
-			remoteInfo = Waypoint;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2D1703D61E590F8C0000827E /* random_ship_names.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = random_ship_names.plist; sourceTree = "<group>"; };
@@ -199,7 +178,6 @@
 		7E0D62021E36650B009C8516 /* WPTHomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHomeScene.swift; sourceTree = "<group>"; };
 		7E0D620E1E366EE3009C8516 /* TradeWinds-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TradeWinds-Regular.ttf"; sourceTree = "<group>"; };
 		7E0D62101E366F5F009C8516 /* WPTValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTValues.swift; sourceTree = "<group>"; };
-		7E13F6221E48E22900B5D2FD /* ActorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorTests.swift; sourceTree = "<group>"; };
 		7E13F6241E48E51000B5D2FD /* WPTConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTConfig.swift; sourceTree = "<group>"; };
 		7E13F62D1E48ECAD00B5D2FD /* sword1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sword1.caf; sourceTree = "<group>"; };
 		7E13F62F1E48F50200B5D2FD /* WPTWorldScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWorldScene.swift; sourceTree = "<group>"; };
@@ -219,12 +197,6 @@
 		7E16B8631E2D580600933E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E16B8651E2D580600933E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E16B86A1E2D580600933E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E16B86F1E2D580600933E24 /* WaypointTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaypointTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E16B8731E2D580600933E24 /* WaypointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointTests.swift; sourceTree = "<group>"; };
-		7E16B8751E2D580600933E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E16B87A1E2D580600933E24 /* WaypointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaypointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E16B87E1E2D580600933E24 /* WaypointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointUITests.swift; sourceTree = "<group>"; };
-		7E16B8801E2D580600933E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E3EF6E91E7532EB0036A895 /* WPTBrainRadiiNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainRadiiNode.swift; sourceTree = "<group>"; };
 		7E4182C81E7ECA7100FCEBD8 /* WPTPuppetMaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPuppetMaster.swift; sourceTree = "<group>"; };
 		7E4215F71E5A6916004ADBD7 /* WPTCannon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannon.swift; sourceTree = "<group>"; };
@@ -293,7 +265,6 @@
 		7EDD06391E4A1C750054EB7E /* WPTTrailMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTrailMapNode.swift; sourceTree = "<group>"; };
 		7EE7981A1E523030006D683B /* WPTPlayerProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayerProgress.swift; sourceTree = "<group>"; };
 		7EE7981C1E5234A3006D683B /* WPTLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevel.swift; sourceTree = "<group>"; };
-		7EE7C41A1E81C84B0019B0D4 /* StorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
 		7EE8A8C71E6F779700C119B9 /* WPTShipCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipCatalog.swift; sourceTree = "<group>"; };
 		7EE8A8F31E6FA4A500C119B9 /* WPTEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTEnemy.swift; sourceTree = "<group>"; };
 		7EE8A9111E6FD07F00C119B9 /* WPTPortNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPortNode.swift; sourceTree = "<group>"; };
@@ -321,20 +292,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		7E16B8521E2D580600933E24 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E16B86C1E2D580600933E24 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E16B8771E2D580600933E24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -451,8 +408,6 @@
 			isa = PBXGroup;
 			children = (
 				7E16B8571E2D580600933E24 /* Waypoint */,
-				7E16B8721E2D580600933E24 /* WaypointTests */,
-				7E16B87D1E2D580600933E24 /* WaypointUITests */,
 				7E16B8561E2D580600933E24 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -461,8 +416,6 @@
 			isa = PBXGroup;
 			children = (
 				7E16B8551E2D580600933E24 /* Waypoint.app */,
-				7E16B86F1E2D580600933E24 /* WaypointTests.xctest */,
-				7E16B87A1E2D580600933E24 /* WaypointUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -484,26 +437,6 @@
 				7E13F6241E48E51000B5D2FD /* WPTConfig.swift */,
 			);
 			path = Waypoint;
-			sourceTree = "<group>";
-		};
-		7E16B8721E2D580600933E24 /* WaypointTests */ = {
-			isa = PBXGroup;
-			children = (
-				7E16B8731E2D580600933E24 /* WaypointTests.swift */,
-				7E16B8751E2D580600933E24 /* Info.plist */,
-				7E13F6221E48E22900B5D2FD /* ActorTests.swift */,
-				7EE7C41A1E81C84B0019B0D4 /* StorageTests.swift */,
-			);
-			path = WaypointTests;
-			sourceTree = "<group>";
-		};
-		7E16B87D1E2D580600933E24 /* WaypointUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7E16B87E1E2D580600933E24 /* WaypointUITests.swift */,
-				7E16B8801E2D580600933E24 /* Info.plist */,
-			);
-			path = WaypointUITests;
 			sourceTree = "<group>";
 		};
 		7E4182C71E7EC9C900FCEBD8 /* PuppetMaster */ = {
@@ -801,42 +734,6 @@
 			productReference = 7E16B8551E2D580600933E24 /* Waypoint.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7E16B86E1E2D580600933E24 /* WaypointTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7E16B8861E2D580600933E24 /* Build configuration list for PBXNativeTarget "WaypointTests" */;
-			buildPhases = (
-				7E16B86B1E2D580600933E24 /* Sources */,
-				7E16B86C1E2D580600933E24 /* Frameworks */,
-				7E16B86D1E2D580600933E24 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7E16B8711E2D580600933E24 /* PBXTargetDependency */,
-			);
-			name = WaypointTests;
-			productName = WaypointTests;
-			productReference = 7E16B86F1E2D580600933E24 /* WaypointTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		7E16B8791E2D580600933E24 /* WaypointUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7E16B8891E2D580600933E24 /* Build configuration list for PBXNativeTarget "WaypointUITests" */;
-			buildPhases = (
-				7E16B8761E2D580600933E24 /* Sources */,
-				7E16B8771E2D580600933E24 /* Frameworks */,
-				7E16B8781E2D580600933E24 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7E16B87C1E2D580600933E24 /* PBXTargetDependency */,
-			);
-			name = WaypointUITests;
-			productName = WaypointUITests;
-			productReference = 7E16B87A1E2D580600933E24 /* WaypointUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -844,23 +741,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = cpe436group;
 				TargetAttributes = {
 					7E16B8541E2D580600933E24 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 66743KUV39;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
-					};
-					7E16B86E1E2D580600933E24 = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 7E16B8541E2D580600933E24;
-					};
-					7E16B8791E2D580600933E24 = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 7E16B8541E2D580600933E24;
 					};
 				};
 			};
@@ -878,8 +766,6 @@
 			projectRoot = "";
 			targets = (
 				7E16B8541E2D580600933E24 /* Waypoint */,
-				7E16B86E1E2D580600933E24 /* WaypointTests */,
-				7E16B8791E2D580600933E24 /* WaypointUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -929,20 +815,6 @@
 				7EF866D11E83556D0012F2C7 /* 6_davy_jones_locker.plist in Resources */,
 				7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */,
 				7EF866D21E83556D0012F2C7 /* 7_letter_of_marque.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E16B86D1E2D580600933E24 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E16B8781E2D580600933E24 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1054,38 +926,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E16B86B1E2D580600933E24 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7EE7C41B1E81C84B0019B0D4 /* StorageTests.swift in Sources */,
-				7E16B8741E2D580600933E24 /* WaypointTests.swift in Sources */,
-				7E13F6231E48E22900B5D2FD /* ActorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E16B8761E2D580600933E24 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E16B87F1E2D580600933E24 /* WaypointUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7E16B8711E2D580600933E24 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7E16B8541E2D580600933E24 /* Waypoint */;
-			targetProxy = 7E16B8701E2D580600933E24 /* PBXContainerItemProxy */;
-		};
-		7E16B87C1E2D580600933E24 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7E16B8541E2D580600933E24 /* Waypoint */;
-			targetProxy = 7E16B87B1E2D580600933E24 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7E16B8621E2D580600933E24 /* Main.storyboard */ = {
@@ -1108,7 +949,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1116,7 +959,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1158,7 +1005,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1166,7 +1015,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1202,7 +1055,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1217,62 +1071,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		7E16B8871E2D580600933E24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WaypointTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.WaypointTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waypoint.app/Waypoint";
-			};
-			name = Debug;
-		};
-		7E16B8881E2D580600933E24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WaypointTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.WaypointTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waypoint.app/Waypoint";
-			};
-			name = Release;
-		};
-		7E16B88A1E2D580600933E24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = WaypointUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.WaypointUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Waypoint;
-			};
-			name = Debug;
-		};
-		7E16B88B1E2D580600933E24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = WaypointUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.WaypointUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Waypoint;
 			};
 			name = Release;
 		};
@@ -1293,24 +1094,6 @@
 			buildConfigurations = (
 				7E16B8841E2D580600933E24 /* Debug */,
 				7E16B8851E2D580600933E24 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7E16B8861E2D580600933E24 /* Build configuration list for PBXNativeTarget "WaypointTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E16B8871E2D580600933E24 /* Debug */,
-				7E16B8881E2D580600933E24 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7E16B8891E2D580600933E24 /* Build configuration list for PBXNativeTarget "WaypointUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E16B88A1E2D580600933E24 /* Debug */,
-				7E16B88B1E2D580600933E24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class WPTNewGameScene: WPTScene {
+class WPTNewGameScene: WPTScene, UITextFieldDelegate {
     
     let background = WPTBackgroundNode(image: "ocean3")
     let headerLabel = WPTLabelNode(text: "New Game", fontSize: WPTValues.fontSizeLarge)
@@ -66,8 +66,7 @@ class WPTNewGameScene: WPTScene {
         self.shipPop?.position = CGPoint(x: frame.midX, y: frame.midY)
         
         self.shipInputField = UITextField()
-        shipInputField?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        shipInputField?.addTarget(self, action: #selector(textFieldShouldReturn(textField:)), for: .editingDidEndOnExit)
+        shipInputField?.delegate = self
         shipInputField?.frame = CGRect(x: 0.79*frame.midX, y: self.shipPop!.position.y - 0.2 * self.shipPop!.background.frame.height, width: 158, height: 30)
         shipInputField?.placeholder = "Enter ship name..."
         shipInputField?.font = UIFont(name: WPTValues.booter, size: WPTValues.fontSizeTiny)
@@ -109,7 +108,7 @@ class WPTNewGameScene: WPTScene {
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Populates the SKLabelNode
         textField.resignFirstResponder()
         return true
