@@ -27,9 +27,15 @@
 		2D2C8B581E727D1A00B1D862 /* WPTDestroyMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */; };
 		2D2C8B5C1E7F3D5A00B1D862 /* WPTTutorialNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */; };
 		2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */; };
+		2D7B92391F75A32F001F3E1F /* WPTKrakenIntroWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B92381F75A32F001F3E1F /* WPTKrakenIntroWave.swift */; };
+		2D7B923B1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B923A1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift */; };
+		2D7B923D1F75A3C0001F3E1F /* WPTTentacle1Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B923C1F75A3C0001F3E1F /* WPTTentacle1Wave.swift */; };
+		2D7B923F1F75A3D0001F3E1F /* WPTTentacle2Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B923E1F75A3D0001F3E1F /* WPTTentacle2Wave.swift */; };
+		2D7B92411F75A3ED001F3E1F /* WPTTreasureReturnsWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B92401F75A3ED001F3E1F /* WPTTreasureReturnsWave.swift */; };
 		2D7DCFF11E81FAA6003BCE30 /* WPTButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DCFF01E81FAA6003BCE30 /* WPTButtonNode.swift */; };
 		2D7DCFF31E826C55003BCE30 /* WPTBackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DCFF21E826C55003BCE30 /* WPTBackgroundNode.swift */; };
 		2D7FD1811E5801A1001B6208 /* WPTShipNamePopUpNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */; };
+		2D826C531F7594E4000D6FAC /* WPTWiggleBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D826C521F7594E4000D6FAC /* WPTWiggleBS.swift */; };
 		2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */; };
 		2D8E804E1E3ADBC400CB2E0B /* WPTShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */; };
 		7E0C78951E73D1DD006C79C3 /* WPTCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */; };
@@ -130,7 +136,6 @@
 		7EF866811E82BC6C0012F2C7 /* WPTTreasureWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866801E82BC6C0012F2C7 /* WPTTreasureWave.swift */; };
 		7EF866831E82BCDA0012F2C7 /* WPTKrakenWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866821E82BCDA0012F2C7 /* WPTKrakenWave.swift */; };
 		7EF866881E82C3280012F2C7 /* WPTFinalTreasureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866871E82C3280012F2C7 /* WPTFinalTreasureNode.swift */; };
-		7EF8668A1E82C3630012F2C7 /* WPTKrakenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866891E82C3630012F2C7 /* WPTKrakenNode.swift */; };
 		7EF866A41E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF866A31E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift */; };
 		7EF866BE1E833C020012F2C7 /* enemies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866BD1E833C020012F2C7 /* enemies.plist */; };
 		7EF866CB1E83556D0012F2C7 /* 0_setting_sail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866BF1E83556D0012F2C7 /* 0_setting_sail.plist */; };
@@ -168,9 +173,15 @@
 		2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDestroyMenuNode.swift; sourceTree = "<group>"; };
 		2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTutorialNode.swift; sourceTree = "<group>"; };
 		2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOOTERFZ.ttf; sourceTree = "<group>"; };
+		2D7B92381F75A32F001F3E1F /* WPTKrakenIntroWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTKrakenIntroWave.swift; sourceTree = "<group>"; };
+		2D7B923A1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTKrakenChestStealWave.swift; sourceTree = "<group>"; };
+		2D7B923C1F75A3C0001F3E1F /* WPTTentacle1Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTTentacle1Wave.swift; sourceTree = "<group>"; };
+		2D7B923E1F75A3D0001F3E1F /* WPTTentacle2Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTTentacle2Wave.swift; sourceTree = "<group>"; };
+		2D7B92401F75A3ED001F3E1F /* WPTTreasureReturnsWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTTreasureReturnsWave.swift; sourceTree = "<group>"; };
 		2D7DCFF01E81FAA6003BCE30 /* WPTButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTButtonNode.swift; sourceTree = "<group>"; };
 		2D7DCFF21E826C55003BCE30 /* WPTBackgroundNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBackgroundNode.swift; sourceTree = "<group>"; };
 		2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipNamePopUpNode.swift; sourceTree = "<group>"; };
+		2D826C521F7594E4000D6FAC /* WPTWiggleBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTWiggleBS.swift; sourceTree = "<group>"; };
 		2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSettingsScene.swift; sourceTree = "<group>"; };
 		2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShip.swift; sourceTree = "<group>"; };
 		7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCircle.swift; sourceTree = "<group>"; };
@@ -273,7 +284,6 @@
 		7EF866801E82BC6C0012F2C7 /* WPTTreasureWave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTreasureWave.swift; sourceTree = "<group>"; };
 		7EF866821E82BCDA0012F2C7 /* WPTKrakenWave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTKrakenWave.swift; sourceTree = "<group>"; };
 		7EF866871E82C3280012F2C7 /* WPTFinalTreasureNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTFinalTreasureNode.swift; sourceTree = "<group>"; };
-		7EF866891E82C3630012F2C7 /* WPTKrakenNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTKrakenNode.swift; sourceTree = "<group>"; };
 		7EF866A31E82EF7F0012F2C7 /* WPTTreasureTimerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTreasureTimerNode.swift; sourceTree = "<group>"; };
 		7EF866BD1E833C020012F2C7 /* enemies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enemies.plist; sourceTree = "<group>"; };
 		7EF866BF1E83556D0012F2C7 /* 0_setting_sail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 0_setting_sail.plist; sourceTree = "<group>"; };
@@ -323,6 +333,20 @@
 				7EDAC9B31E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift */,
 			);
 			name = Level;
+			sourceTree = "<group>";
+		};
+		2D826C511F758D1A000D6FAC /* Final Boss */ = {
+			isa = PBXGroup;
+			children = (
+				7EF866821E82BCDA0012F2C7 /* WPTKrakenWave.swift */,
+				7EF866801E82BC6C0012F2C7 /* WPTTreasureWave.swift */,
+				2D7B92381F75A32F001F3E1F /* WPTKrakenIntroWave.swift */,
+				2D7B923A1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift */,
+				2D7B923C1F75A3C0001F3E1F /* WPTTentacle1Wave.swift */,
+				2D7B923E1F75A3D0001F3E1F /* WPTTentacle2Wave.swift */,
+				2D7B92401F75A3ED001F3E1F /* WPTTreasureReturnsWave.swift */,
+			);
+			name = "Final Boss";
 			sourceTree = "<group>";
 		};
 		2D8E804C1E3ADBAF00CB2E0B /* Models */ = {
@@ -411,6 +435,7 @@
 				7ECB5A031E745CD000A05563 /* WPTFleeBS.swift */,
 				7ED963361E7DEB5A00B58C1C /* WPTFleeOffenseBS.swift */,
 				7ED9633A1E7DF1D400B58C1C /* WPTWanderBS.swift */,
+				2D826C521F7594E4000D6FAC /* WPTWiggleBS.swift */,
 			);
 			name = States;
 			sourceTree = "<group>";
@@ -706,9 +731,8 @@
 		7EF8667F1E82BC4E0012F2C7 /* Waves */ = {
 			isa = PBXGroup;
 			children = (
+				2D826C511F758D1A000D6FAC /* Final Boss */,
 				7E5DB7311E7EE2AA000B1307 /* WPTLevelWave.swift */,
-				7EF866801E82BC6C0012F2C7 /* WPTTreasureWave.swift */,
-				7EF866821E82BCDA0012F2C7 /* WPTKrakenWave.swift */,
 			);
 			name = Waves;
 			sourceTree = "<group>";
@@ -717,7 +741,6 @@
 			isa = PBXGroup;
 			children = (
 				7EF866871E82C3280012F2C7 /* WPTFinalTreasureNode.swift */,
-				7EF866891E82C3630012F2C7 /* WPTKrakenNode.swift */,
 			);
 			name = Special;
 			sourceTree = "<group>";
@@ -834,15 +857,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EF61E8C1E3B057900CB4CAB /* WPTShipPickerNode.swift in Sources */,
+				2D7B923B1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift in Sources */,
 				2D7DCFF31E826C55003BCE30 /* WPTBackgroundNode.swift in Sources */,
 				7EE7981B1E523030006D683B /* WPTPlayerProgress.swift in Sources */,
 				7E43CC791E54CB50009367BC /* WPTPauseMenuNode.swift in Sources */,
-				7EF8668A1E82C3630012F2C7 /* WPTKrakenNode.swift in Sources */,
 				7EBF5E6D1E4E218200F81982 /* WPTStatBarNode.swift in Sources */,
 				7ED3775C1E4ABE8800DB1EA2 /* WPTTrailMap.swift in Sources */,
 				7EC222061E72F49D00E98243 /* WPTWhirlpoolHandler.swift in Sources */,
 				7E5DB7301E7ED324000B1307 /* WPTLevelBeatenPMS.swift in Sources */,
 				7E5DB72E1E7ED2A1000B1307 /* WPTWaveExecutionPMS.swift in Sources */,
+				2D7B92411F75A3ED001F3E1F /* WPTTreasureReturnsWave.swift in Sources */,
 				7E16B85F1E2D580600933E24 /* WPTSplashScene.swift in Sources */,
 				7E6932951E53B48800AF7373 /* WPTLevelPlayerNode.swift in Sources */,
 				7ED739031E44F3B600122903 /* WPTActor.swift in Sources */,
@@ -874,7 +898,10 @@
 				2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */,
 				7EC222161E730D1900E98243 /* WPTBrainTemplate.swift in Sources */,
 				2D1704371E6F66FD0000827E /* WPTWhirlpoolNode.swift in Sources */,
+				2D7B923F1F75A3D0001F3E1F /* WPTTentacle2Wave.swift in Sources */,
 				7ED2206D1E37215F00D2AA68 /* WPTSecretMessage.swift in Sources */,
+				2D7B92391F75A32F001F3E1F /* WPTKrakenIntroWave.swift in Sources */,
+				2D7B923D1F75A3C0001F3E1F /* WPTTentacle1Wave.swift in Sources */,
 				7EE8A8C81E6F779700C119B9 /* WPTShipCatalog.swift in Sources */,
 				2D17043B1E6FF3CD0000827E /* WPTHealthNode.swift in Sources */,
 				7EF866881E82C3280012F2C7 /* WPTFinalTreasureNode.swift in Sources */,
@@ -910,6 +937,7 @@
 				7E16B8591E2D580600933E24 /* AppDelegate.swift in Sources */,
 				7E1472841E71AA8F005E5A4C /* WPTBrainStateFactory.swift in Sources */,
 				7EBF5E231E4D06D200F81982 /* WPTTrailStop.swift in Sources */,
+				2D826C531F7594E4000D6FAC /* WPTWiggleBS.swift in Sources */,
 				7E7C240C1E370FF500E10E7A /* WPTNewGameScene.swift in Sources */,
 				7E13F6251E48E51000B5D2FD /* WPTConfig.swift in Sources */,
 				7EC987A41E7FA20800626C60 /* WPTLootSummary.swift in Sources */,

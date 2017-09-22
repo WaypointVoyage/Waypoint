@@ -1,14 +1,14 @@
 //
-//  WPTKrakenWave.swift
+//  WPTKrakenIntro.swift
 //  Waypoint
 //
-//  Created by Cameron Taylor on 3/22/17.
+//  Created by Hilary Schulz on 9/22/17.
 //  Copyright © 2017 cpe436group. All rights reserved.
 //
 
 import SpriteKit
 
-class WPTKrakenWave: WPTLevelWave {
+class WPTKrakenIntroWave: WPTLevelWave {
     
     init() {
         super.init([:])
@@ -20,7 +20,8 @@ class WPTKrakenWave: WPTLevelWave {
     
     override func isComplete(scene: WPTLevelScene) -> Bool {
         // determine if the kraken is beaten
-        print("Kraken Full")
+        print("Kraken Intro")
         return true
     }
 }
+

@@ -8,6 +8,50 @@
 		<key>awareness</key>
 		<integer>1</integer>
 		<key>brain</key>
+		<string>dynamic_tentacle_brain</string>
+		<key>caution</key>
+		<integer>1</integer>
+		<key>haste</key>
+		<integer>1</integer>
+		<key>items</key>
+		<array/>
+		<key>ship</key>
+		<string>Tentacle</string>
+		<key>terrainType</key>
+		<string>_SEA</string>
+		<key>triggerHappiness</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>dynamic_tentacle</string>
+	</dict>
+	<dict>
+		<key>aggression</key>
+		<integer>1</integer>
+		<key>awareness</key>
+		<integer>1</integer>
+		<key>brain</key>
+		<string>static_tentacle_brain</string>
+		<key>caution</key>
+		<integer>1</integer>
+		<key>haste</key>
+		<integer>1</integer>
+		<key>items</key>
+		<array/>
+		<key>ship</key>
+		<string>Tentacle</string>
+		<key>terrainType</key>
+		<string>_SEA</string>
+		<key>triggerHappiness</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>static_tentacle</string>
+	</dict>
+	<dict>
+		<key>aggression</key>
+		<integer>1</integer>
+		<key>awareness</key>
+		<integer>1</integer>
+		<key>brain</key>
 		<string>stand_and_shoot</string>
 		<key>caution</key>
 		<integer>1</integer>
@@ -28,7 +72,7 @@
 		<key>aggression</key>
 		<real>1.3</real>
 		<key>awareness</key>
-		<real>0.59999999999999998</real>
+		<real>0.6</real>
 		<key>brain</key>
 		<string>stand_and_shoot</string>
 		<key>caution</key>
@@ -46,7 +90,7 @@
 		<key>terrainType</key>
 		<string>_LAND</string>
 		<key>triggerHappiness</key>
-		<real>0.10000000000000001</real>
+		<real>0.1</real>
 	</dict>
 	<dict>
 		<key>aggression</key>
@@ -72,7 +116,7 @@
 	</dict>
 	<dict>
 		<key>aggression</key>
-		<real>0.59999999999999998</real>
+		<real>0.6</real>
 		<key>awareness</key>
 		<real>1.2</real>
 		<key>brain</key>
@@ -80,7 +124,7 @@
 		<key>caution</key>
 		<real>1.2</real>
 		<key>haste</key>
-		<real>0.40000000000000002</real>
+		<real>0.4</real>
 		<key>items</key>
 		<array/>
 		<key>name</key>
@@ -94,7 +138,7 @@
 	</dict>
 	<dict>
 		<key>aggression</key>
-		<real>0.20000000000000001</real>
+		<real>0.2</real>
 		<key>awareness</key>
 		<real>1.2</real>
 		<key>brain</key>
@@ -110,7 +154,7 @@
 		<key>terrainType</key>
 		<string>_SEA</string>
 		<key>triggerHappiness</key>
-		<real>0.29999999999999999</real>
+		<real>0.3</real>
 	</dict>
 </array>
 </plist>
