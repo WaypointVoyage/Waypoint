@@ -86,7 +86,7 @@ class WPTShip {
     
     init(dict: [String:AnyObject], playable: Bool) {
         self.playable = playable
-        self.turnToFace = dict["turnWhenFacing"] as! Bool
+        self.turnWhenFacing = dict["turnWhenFacing"] as! Bool
         
         self.name = dict["name"] as! String
         self.previewImage = dict["previewImage"] as! String

@@ -39,6 +39,9 @@ class WPTWaveCreationPMS: GKState {
         print("setting up the wave")
         guard let scene = (self.stateMachine as? WPTPuppetMaster)?.scene else { return; }
         
+        print("calling specialized wave setup")
+        self.wave!.setup(scene: scene)
+        
         for (enemy, quantity) in wave!.enemies {
             for _ in 0..<quantity {
                 print("creating a \(enemy)")
@@ -48,9 +51,6 @@ class WPTWaveCreationPMS: GKState {
                 scene.terrain.addEnemy(enemyNode)
             }
         }
-        
-        print("calling specialized wave setup")
-        self.wave!.setup(scene: scene)
     }
     
     override func update(deltaTime seconds: TimeInterval) {

@@ -95,7 +95,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             
             // apply the rotation
             let rate = CGFloat(deltaTime) * actor.ship.turnRate
-            applyRotation(delta: delta, rate: rate)
+            applyRotation(target: target, delta: delta, rate: rate)
         }
         
         // move foreward if not anchored
@@ -112,7 +112,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         }
     }
     
-    private func applyRotation(delta: CGFloat, rate: CGFloat) {
+    private func applyRotation(target: CGFloat, delta: CGFloat, rate: CGFloat) {
         if abs(delta) < rate + 0.005 {
             
             self.targetRot = nil
