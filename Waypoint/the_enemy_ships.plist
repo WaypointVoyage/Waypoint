@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>turnWhenFacing</key>
+		<false/>
 		<key>cannonSet</key>
 		<array/>
 		<key>colliderOffset</key>
@@ -60,6 +62,8 @@
 		<string>Tentacle</string>
 	</dict>
 	<dict>
+		<key>turnWhenFacing</key>
+		<true/>
 		<key>cannonSet</key>
 		<array>
 			<dict>

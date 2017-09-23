@@ -12,6 +12,7 @@ class WPTShip {
     
     let name: String
     let playable: Bool
+    let turnWhenFacing: Bool
     
     /* All stats are multipliers of base values and clamped between min/max values. */
     
@@ -85,6 +86,7 @@ class WPTShip {
     
     init(dict: [String:AnyObject], playable: Bool) {
         self.playable = playable
+        self.turnToFace = dict["turnWhenFacing"] as! Bool
         
         self.name = dict["name"] as! String
         self.previewImage = dict["previewImage"] as! String
@@ -147,6 +149,7 @@ class WPTShip {
     init(other: WPTShip) {
         self.name = other.name
         self.playable = other.playable
+        self.turnWhenFacing = other.turnWhenFacing
         self.previewImage = other.previewImage
         self.inGameImage = other.inGameImage
         self.cannonSet = WPTCannonSet(other: other.cannonSet)
