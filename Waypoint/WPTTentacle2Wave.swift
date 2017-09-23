@@ -20,7 +20,7 @@ class WPTTentacle2Wave: WPTLevelWave {
     
     override func isComplete(scene: WPTLevelScene) -> Bool {
         // determine if the kraken is beaten
-        print("Kraken Tentacle 2")
+        print("Kraken Intro")
         return true
     }
 }

@@ -413,6 +413,11 @@
 			<string>WPTTentacle2Wave</string>
 		</dict>
 		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Dynamic Tentacle</key>
+				<integer>8</integer>
+			</dict>
 			<key>special</key>
 			<string>WPTKrakenWave</string>
 		</dict>

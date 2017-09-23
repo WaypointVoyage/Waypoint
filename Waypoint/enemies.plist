@@ -22,7 +22,7 @@
 		<key>triggerHappiness</key>
 		<integer>1</integer>
 		<key>name</key>
-		<string>dynamic_tentacle</string>
+		<string>Dynamic Tentacle</string>
 	</dict>
 	<dict>
 		<key>aggression</key>
@@ -44,7 +44,7 @@
 		<key>triggerHappiness</key>
 		<integer>1</integer>
 		<key>name</key>
-		<string>static_tentacle</string>
+		<string>Static Tentacle</string>
 	</dict>
 	<dict>
 		<key>aggression</key>

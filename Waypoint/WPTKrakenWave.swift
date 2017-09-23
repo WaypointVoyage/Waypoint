@@ -10,17 +10,7 @@ import SpriteKit
 
 class WPTKrakenWave: WPTLevelWave {
     
-    init() {
-        super.init([:])
-    }
-    
-    override func setup(scene: WPTLevelScene) {
-        
-    }
-    
-    override func isComplete(scene: WPTLevelScene) -> Bool {
-        // determine if the kraken is beaten
-        print("Kraken Full")
-        return true
+    override init(_ waveDict: [String: AnyObject]) {
+        super.init(waveDict)
     }
 }

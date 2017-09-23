@@ -338,13 +338,13 @@
 		2D826C511F758D1A000D6FAC /* Final Boss */ = {
 			isa = PBXGroup;
 			children = (
-				7EF866821E82BCDA0012F2C7 /* WPTKrakenWave.swift */,
-				7EF866801E82BC6C0012F2C7 /* WPTTreasureWave.swift */,
 				2D7B92381F75A32F001F3E1F /* WPTKrakenIntroWave.swift */,
 				2D7B923A1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift */,
 				2D7B923C1F75A3C0001F3E1F /* WPTTentacle1Wave.swift */,
 				2D7B923E1F75A3D0001F3E1F /* WPTTentacle2Wave.swift */,
+				7EF866821E82BCDA0012F2C7 /* WPTKrakenWave.swift */,
 				2D7B92401F75A3ED001F3E1F /* WPTTreasureReturnsWave.swift */,
+				7EF866801E82BC6C0012F2C7 /* WPTTreasureWave.swift */,
 			);
 			name = "Final Boss";
 			sourceTree = "<group>";
