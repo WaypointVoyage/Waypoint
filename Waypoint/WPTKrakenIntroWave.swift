@@ -8,6 +8,7 @@
 
 import SpriteKit
 
+// Wave 1 in the final boss
 class WPTKrakenIntroWave: WPTLevelWave {
     
     init() {
@@ -15,7 +16,7 @@ class WPTKrakenIntroWave: WPTLevelWave {
     }
     
     override func setup(scene: WPTLevelScene) {
-        
+        super.setup(scene: scene)
     }
     
     override func isComplete(scene: WPTLevelScene) -> Bool {
