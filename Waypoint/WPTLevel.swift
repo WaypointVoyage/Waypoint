@@ -100,7 +100,7 @@ class WPTLevel {
                     case String(describing: WPTKrakenChestStealWave.self):
                         self.waves.append(WPTKrakenChestStealWave())
                     case String(describing: WPTTentacle1Wave.self):
-                        self.waves.append(WPTTentacle1Wave())
+                        self.waves.append(WPTTentacle1Wave(waveDict))
                     case String(describing: WPTTentacle2Wave.self):
                         self.waves.append(WPTTentacle2Wave())
                     case String(describing: WPTKrakenWave.self):

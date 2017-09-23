@@ -405,6 +405,11 @@
 			<string>WPTKrakenChestStealWave</string>
 		</dict>
 		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Static Tentacle</key>
+				<integer>8</integer>
+			</dict>
 			<key>special</key>
 			<string>WPTTentacle1Wave</string>
 		</dict>

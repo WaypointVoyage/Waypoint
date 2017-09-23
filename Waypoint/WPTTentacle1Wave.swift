@@ -11,28 +11,21 @@ import SpriteKit
 // wave 3 in the final boss
 class WPTTentacle1Wave: WPTLevelWave {
     
-    init() {
-        super.init([:])
+    override init(_ waveDict: [String: AnyObject]) {
+        super.init(waveDict)
     }
     
     override func setup(scene: WPTLevelScene) {
         super.setup(scene: scene)
     }
     
-    override func isComplete(scene: WPTLevelScene) -> Bool {
-        // determine if the kraken is beaten
-        print("Kraken Tentacle 1")
-        return true
-    }
-    
     override func enemySpawnPosition(_ enemy: WPTLevelEnemyNode) -> CGPoint? {
         if let pos = super.enemySpawnPosition(enemy) {
             return pos
         }
-        
         // Hilary
         // Here is a good point to hook in custom spawning for the tentacles
         
-        return nil
+        return enemy.player.position
     }
 }
