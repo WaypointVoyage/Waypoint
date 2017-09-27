@@ -29,36 +29,6 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7E16B86E1E2D580600933E24"
-               BuildableName = "WaypointTests.xctest"
-               BlueprintName = "WaypointTests"
-               ReferencedContainer = "container:Waypoint.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7E16B8791E2D580600933E24"
-               BuildableName = "WaypointUITests.xctest"
-               BlueprintName = "WaypointUITests"
-               ReferencedContainer = "container:Waypoint.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7EB7B7111F7B1C7B00DB49A7"
-               BuildableName = "WaypointContentTests.xctest"
-               BlueprintName = "WaypointContentTests"
-               ReferencedContainer = "container:Waypoint.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

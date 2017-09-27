@@ -113,6 +113,7 @@
 		7EC987A41E7FA20800626C60 /* WPTLootSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC987A31E7FA20800626C60 /* WPTLootSummary.swift */; };
 		7ECB5A021E745CA500A05563 /* WPTPursueBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */; };
 		7ECB5A041E745CD000A05563 /* WPTFleeBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5A031E745CD000A05563 /* WPTFleeBS.swift */; };
+		7ECF7C2F1F7BF7AD00E01940 /* WPTStaticTentacleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECF7C2E1F7BF7AD00E01940 /* WPTStaticTentacleNode.swift */; };
 		7ED049DD1E6F6A4600CD69E1 /* WPTBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED049DC1E6F6A4600CD69E1 /* WPTBrain.swift */; };
 		7ED049DF1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED049DE1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift */; };
 		7ED049E31E6F6DE900CD69E1 /* WPTEnemyCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED049E21E6F6DE900CD69E1 /* WPTEnemyCatalog.swift */; };
@@ -275,6 +276,7 @@
 		7EC987A31E7FA20800626C60 /* WPTLootSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLootSummary.swift; sourceTree = "<group>"; };
 		7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPursueBS.swift; sourceTree = "<group>"; };
 		7ECB5A031E745CD000A05563 /* WPTFleeBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTFleeBS.swift; sourceTree = "<group>"; };
+		7ECF7C2E1F7BF7AD00E01940 /* WPTStaticTentacleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTStaticTentacleNode.swift; sourceTree = "<group>"; };
 		7ED049DC1E6F6A4600CD69E1 /* WPTBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrain.swift; sourceTree = "<group>"; };
 		7ED049DE1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelEnemyNode.swift; sourceTree = "<group>"; };
 		7ED049E21E6F6DE900CD69E1 /* WPTEnemyCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTEnemyCatalog.swift; sourceTree = "<group>"; };
@@ -575,6 +577,7 @@
 		7E5A6BEB1E5A0DA90067EAF3 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
+				7ECF7C2E1F7BF7AD00E01940 /* WPTStaticTentacleNode.swift */,
 				7E4216031E5B56BF004ADBD7 /* WPTFireRateManager.swift */,
 				7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */,
 				7E52C8591E61E72F004FDB27 /* WPTLevelTouchHandlerNode.swift */,
@@ -1010,6 +1013,7 @@
 				7EC987A41E7FA20800626C60 /* WPTLootSummary.swift in Sources */,
 				7E1472821E71A784005E5A4C /* WPTBrainState.swift in Sources */,
 				7EAE35CF1E81FC7500F42904 /* WPTReticleNode.swift in Sources */,
+				7ECF7C2F1F7BF7AD00E01940 /* WPTStaticTentacleNode.swift in Sources */,
 				7ECB5A041E745CD000A05563 /* WPTFleeBS.swift in Sources */,
 				7E5A6BF01E5A0E200067EAF3 /* WPTCannonSet.swift in Sources */,
 				7E3EF6EA1E7532EB0036A895 /* WPTBrainRadiiNode.swift in Sources */,
