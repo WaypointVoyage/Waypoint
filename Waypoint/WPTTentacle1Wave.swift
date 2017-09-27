@@ -11,21 +11,70 @@ import SpriteKit
 // wave 3 in the final boss
 class WPTTentacle1Wave: WPTLevelWave {
     
+    private var currTentacle: Tentacle? = nil
+    private var prevTentacle: Tentacle? = nil
+    var currLevelNode: WPTStaticTentacleNode? = nil
+    var tentacleDuration: TimeInterval
+    var timeCount: TimeInterval = 0.0
+    var tentacleCount: Int
+    
+    private class Tentacle {
+        
+        var health: CGFloat
+        var next: Tentacle! = nil
+        
+        init() {
+            health = WPTShipCatalog.shipsByName["Tentacle"]!.health
+        }
+    }
+    
     override init(_ waveDict: [String: AnyObject]) {
+        tentacleCount = waveDict["tentacleCount"] as! Int
+        tentacleDuration = waveDict["tentacleDuration"] as! TimeInterval
         super.init(waveDict)
     }
     
     override func setup(scene: WPTLevelScene) {
         super.setup(scene: scene)
+        
+        let head = Tentacle()
+        currTentacle = head
+        for _ in 0..<tentacleCount - 1 {
+            let tentacleNode = Tentacle()
+            self.prevTentacle = currTentacle
+            self.currTentacle!.next = tentacleNode
+            self.currTentacle = tentacleNode
+        }
+        currTentacle!.next = head
     }
     
-    override func enemySpawnPosition(_ enemy: WPTLevelEnemyNode) -> CGPoint? {
-        if let pos = super.enemySpawnPosition(enemy) {
-            return pos
+    override func isComplete(scene: WPTLevelScene) -> Bool {
+        return currTentacle == nil
+    }
+    
+    override func update(_ deltaTime: TimeInterval) {
+        timeCount += deltaTime
+        if currLevelNode != nil && currLevelNode!.isDead {
+            tentacleTakedown()
         }
-        // Hilary
-        // Here is a good point to hook in custom spawning for the tentacles
+        if (timeCount >= tentacleDuration) {
+            timeCount = 0.0
+            spawnTentacle()
+            prevTentacle = currTentacle
+            currTentacle = currTentacle?.next
+        }
         
-        return enemy.player.position
+    }
+    
+    func spawnTentacle() {
+        currLevelNode = WPTStaticTentacleNode(player: scene.player, health: currTentacle!.health)
+        currLevelNode!.setUp()
+        scene.terrain.addEnemy(currLevelNode)
+    }
+    
+    func tentacleTakedown() {
+        prevTentacle?.next = currTentacle?.next
+        currTentacle = currTentacle?.next
     }
 }
+
