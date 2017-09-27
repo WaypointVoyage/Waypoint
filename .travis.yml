@@ -13,3 +13,6 @@ before_install:
    - brew update
    - brew outdated xctool || brew upgrade xctool
 
+script:
+   - xcodebuild clean build test -project Waypoint.xcodeproj -scheme WaypointTravisCI -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.0'
+
