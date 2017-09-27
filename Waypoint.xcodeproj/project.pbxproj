@@ -517,7 +517,6 @@
 			children = (
 				7E4C88C81E72ED0600760EDA /* Catalogs */,
 				7EBF5E681E4E1B4000F81982 /* WPTUtils.swift */,
-				7E4216031E5B56BF004ADBD7 /* WPTFireRateManager.swift */,
 				7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */,
 				7E0C78961E73D224006C79C3 /* WPTLine.swift */,
 			);
@@ -576,6 +575,7 @@
 		7E5A6BEB1E5A0DA90067EAF3 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
+				7E4216031E5B56BF004ADBD7 /* WPTFireRateManager.swift */,
 				7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */,
 				7E52C8591E61E72F004FDB27 /* WPTLevelTouchHandlerNode.swift */,
 				7E6932941E53B48800AF7373 /* WPTLevelPlayerNode.swift */,

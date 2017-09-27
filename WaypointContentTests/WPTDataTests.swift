@@ -31,6 +31,9 @@ class WPTDataTests: XCTestCase {
         }
     }
     
+    // Verifies the contents of the various level plist files
+    // many points should be restricted to within the level's size
+    // and certain values should exist and not be nil
     func testLevelPlists() {
         let trailMapPlist = Bundle.main.path(forResource: "trail_map", ofType:"plist")!
         let trailMap = NSDictionary(contentsOfFile: trailMapPlist) as! [String:Any]
