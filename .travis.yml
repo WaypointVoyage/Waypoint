@@ -1,3 +1,4 @@
+os: osx
 language: objective-c
 osx_image: xcode9
 xcode_project: Waypoint.xcodeproj
@@ -10,5 +11,5 @@ notifications:
 
 before_install:
    - brew update
-   - brew install xctool
+   - brew outdated xctool || brew upgrade xctool
 
