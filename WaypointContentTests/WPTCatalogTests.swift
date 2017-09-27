@@ -42,8 +42,4 @@ class WPTCatalogTests: XCTestCase {
         let _ = WPTShipCatalog.shipsByName
     }
     
-    func testFailingATest() {
-        XCTFail()
-    }
-    
 }
