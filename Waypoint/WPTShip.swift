@@ -10,6 +10,8 @@ import SpriteKit
 
 class WPTShip {
     
+    public static var MAX_SHIP_NAME_LENGTH: Int = 64 // TODO: verify this when picking a name
+    
     let name: String
     let playable: Bool
     let turnWhenFacing: Bool

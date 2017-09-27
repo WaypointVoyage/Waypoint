@@ -9,6 +9,8 @@
 import SpriteKit
 
 class WPTValues {
+    
+    // Metadata
     static let gameName = "Waypoint"
     static let tradeWinds = "Trade Winds"
     static let booter = "Booter - Five Zero"

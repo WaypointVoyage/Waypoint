@@ -16,7 +16,7 @@
 		<key>position</key>
 		<dict>
 			<key>angle</key>
-			<real>3.9269908169872414</real>
+			<real>3.926990816987241</real>
 			<key>x</key>
 			<integer>1923</integer>
 			<key>y</key>
@@ -576,8 +576,8 @@
 					<integer>2160</integer>
 				</array>
 				<array>
-					<integer>-1</integer>
-					<integer>2160</integer>
+					<integer>0</integer>
+					<real>2160</real>
 				</array>
 			</array>
 			<array>
