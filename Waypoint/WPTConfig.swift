@@ -12,7 +12,7 @@ import SpriteKit
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.WORLDMAP // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
