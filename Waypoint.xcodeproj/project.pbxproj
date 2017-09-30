@@ -80,6 +80,7 @@
 		7E581C341E8DA01A008F8222 /* WPTItemCollectorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E581C331E8DA01A008F8222 /* WPTItemCollectorNode.swift */; };
 		7E5A6BEE1E5A0E070067EAF3 /* WPTCannonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */; };
 		7E5A6BF01E5A0E200067EAF3 /* WPTCannonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A6BEF1E5A0E200067EAF3 /* WPTCannonSet.swift */; };
+		7E5C49881F7FE7C600DEF4D7 /* WPTConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C49871F7FE7C600DEF4D7 /* WPTConfigTest.swift */; };
 		7E5DB72A1E7ED233000B1307 /* WPTPlayerPrepPMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DB7291E7ED233000B1307 /* WPTPlayerPrepPMS.swift */; };
 		7E5DB72C1E7ED271000B1307 /* WPTWaveCreationPMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DB72B1E7ED271000B1307 /* WPTWaveCreationPMS.swift */; };
 		7E5DB72E1E7ED2A1000B1307 /* WPTWaveExecutionPMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DB72D1E7ED2A1000B1307 /* WPTWaveExecutionPMS.swift */; };
@@ -241,6 +242,7 @@
 		7E581C331E8DA01A008F8222 /* WPTItemCollectorNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItemCollectorNode.swift; sourceTree = "<group>"; };
 		7E5A6BED1E5A0E070067EAF3 /* WPTCannonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonNode.swift; sourceTree = "<group>"; };
 		7E5A6BEF1E5A0E200067EAF3 /* WPTCannonSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCannonSet.swift; sourceTree = "<group>"; };
+		7E5C49871F7FE7C600DEF4D7 /* WPTConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTConfigTest.swift; sourceTree = "<group>"; };
 		7E5DB7291E7ED233000B1307 /* WPTPlayerPrepPMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPlayerPrepPMS.swift; sourceTree = "<group>"; };
 		7E5DB72B1E7ED271000B1307 /* WPTWaveCreationPMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWaveCreationPMS.swift; sourceTree = "<group>"; };
 		7E5DB72D1E7ED2A1000B1307 /* WPTWaveExecutionPMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWaveExecutionPMS.swift; sourceTree = "<group>"; };
@@ -668,6 +670,7 @@
 		7EB7B7131F7B1C7B00DB49A7 /* WaypointContentTests */ = {
 			isa = PBXGroup;
 			children = (
+				7E5C49871F7FE7C600DEF4D7 /* WPTConfigTest.swift */,
 				7E1997631F7B262300166735 /* WPTDataTests.swift */,
 				7E1997611F7B241300166735 /* WPTCatalogTests.swift */,
 				7EB7B7161F7B1C7B00DB49A7 /* Info.plist */,
@@ -1037,6 +1040,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5C49881F7FE7C600DEF4D7 /* WPTConfigTest.swift in Sources */,
 				7E1997621F7B241300166735 /* WPTCatalogTests.swift in Sources */,
 				7E1997641F7B262300166735 /* WPTDataTests.swift in Sources */,
 			);
