@@ -24,15 +24,15 @@ class WPTStaticTentacleNode: WPTLevelEnemyNode {
     
     func setUp() {
         // make the bubbles
-        let emitterNode = SKEmitterNode(fileNamed: "magic.sks")
+//        let emitterNode = SKEmitterNode(fileNamed: "magic.sks")
         self.position = player.position
-        emitterNode!.particlePosition = CGPoint(x: self.position.x - self.sprite.size.width, y: self.position.y - self.sprite.size.height)
-        emitterNode!.particleSize = CGSize(width: self.sprite.size.width / 5, height: self.sprite.size.height / 5)
-        self.addChild(emitterNode!)
-        
-        // Don't forget to remove the emitter node after the explosion
-        self.run(SKAction.wait(forDuration: 6.5), completion: {
-        })
+//        emitterNode!.particlePosition = CGPoint(x: self.position.x - self.sprite.size.width, y: self.position.y - self.sprite.size.height)
+//        emitterNode!.particleSize = CGSize(width: self.sprite.size.width / 5, height: self.sprite.size.height / 5)
+//        self.addChild(emitterNode!)
+//
+//        // Don't forget to remove the emitter node after the explosion
+//        self.run(SKAction.wait(forDuration: 6.5), completion: {
+//        })
         // add to the scene
     }
     
