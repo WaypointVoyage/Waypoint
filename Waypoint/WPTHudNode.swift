@@ -17,7 +17,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
     let pauseMenu: WPTPauseMenuNode
     let destroyMenu: WPTDestroyMenuNode
     let dockMenu: WPTDockMenuNode
-    let backgroundMusic = SKAudioNode(fileNamed: "windWaker.mp3")
+    var backgroundMusic = SKAudioNode(fileNamed: "waypoint.mp3")
     
     init(player: WPTLevelPlayerNode, terrain: WPTTerrainNode) {
         self.player = player
@@ -55,12 +55,13 @@ class WPTHudNode: SKNode, WPTUpdatable {
         self.dockMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
         
         //audio
-        self.scene?.listener = player
-        backgroundMusic.isPositional = false
-        backgroundMusic.position = CGPoint(x: self.player.position.x, y: self.player.position.y)
-        backgroundMusic.autoplayLooped = true
+//        self.scene?.listener = player
+//        backgroundMusic.isPositional = false
+//        backgroundMusic.position = CGPoint(x: self.player.position.x, y: self.player.position.y)
+//        backgroundMusic.autoplayLooped = true
+//        self.addChild(backgroundMusic)
+        print("YES!")
         self.addChild(backgroundMusic)
-
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -71,7 +72,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
         self.top.update(currentTime, deltaTime)
         self.bottom.update(currentTime, deltaTime)
         
-        self.backgroundMusic.position = CGPoint(x: self.player.position.x, y: self.player.position.y)
+        //self.backgroundMusic.position = CGPoint(x: self.player.position.x, y: self.player.position.y)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
