@@ -99,12 +99,6 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
                 dockHandler.leaveDock()
             }
         }
-        
-        else if collisionBetween(WPTValues.itemCbm, WPTValues.itemCollectionCbm) {
-            if let itemRad = secondBody.node as? WPTItemCollectorNode, let item = firstBody.node as? WPTItemNode {
-                itemRad.dontCollect(item: item)
-            }
-        }
     }
     
     private func collisionBetween(_ first: UInt32, _ second: UInt32) -> Bool {
