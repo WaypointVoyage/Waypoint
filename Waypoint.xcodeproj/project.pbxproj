@@ -25,8 +25,8 @@
 		2D1EF1071E807C3100F527B7 /* WPTItemPickerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EF1061E807C3100F527B7 /* WPTItemPickerNode.swift */; };
 		2D2C8B581E727D1A00B1D862 /* WPTDestroyMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */; };
 		2D2C8B5C1E7F3D5A00B1D862 /* WPTTutorialNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */; };
-		2D60680B1F8BDAD00017B72E /* waypoint.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068071F8BD6E90017B72E /* waypoint.mp3 */; };
 		2D6068191F8BDF380017B72E /* cannon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068181F8BDF310017B72E /* cannon.mp3 */; };
+		2D60681B1F8EAB280017B72E /* waypoint.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D60681A1F8EAB230017B72E /* waypoint.mp3 */; };
 		2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */; };
 		2D7DCFF11E81FAA6003BCE30 /* WPTButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DCFF01E81FAA6003BCE30 /* WPTButtonNode.swift */; };
 		2D7DCFF31E826C55003BCE30 /* WPTBackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DCFF21E826C55003BCE30 /* WPTBackgroundNode.swift */; };
@@ -167,8 +167,8 @@
 		2D1EF1061E807C3100F527B7 /* WPTItemPickerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItemPickerNode.swift; sourceTree = "<group>"; };
 		2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDestroyMenuNode.swift; sourceTree = "<group>"; };
 		2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTutorialNode.swift; sourceTree = "<group>"; };
-		2D6068071F8BD6E90017B72E /* waypoint.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = waypoint.mp3; path = ../../Downloads/waypoint.mp3; sourceTree = "<group>"; };
 		2D6068181F8BDF310017B72E /* cannon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cannon.mp3; sourceTree = "<group>"; };
+		2D60681A1F8EAB230017B72E /* waypoint.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = waypoint.mp3; path = Resources/Music/waypoint.mp3; sourceTree = "<group>"; };
 		2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOOTERFZ.ttf; sourceTree = "<group>"; };
 		2D7DCFF01E81FAA6003BCE30 /* WPTButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTButtonNode.swift; sourceTree = "<group>"; };
 		2D7DCFF21E826C55003BCE30 /* WPTBackgroundNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBackgroundNode.swift; sourceTree = "<group>"; };
@@ -398,7 +398,7 @@
 			children = (
 				2D1703E21E62665B0000827E /* windWaker.mp3 */,
 				2D1703E01E6266440000827E /* howToTrainYourDragon.m4a */,
-				2D6068071F8BD6E90017B72E /* waypoint.mp3 */,
+				2D60681A1F8EAB230017B72E /* waypoint.mp3 */,
 				2D1703DE1E6264200000827E /* dragonRoost.m4a */,
 				2D1703DC1E625F1E0000827E /* distance.m4a */,
 			);
@@ -801,8 +801,8 @@
 				7ED963341E7DEA4900B58C1C /* brains.plist in Resources */,
 				7EF866BE1E833C020012F2C7 /* enemies.plist in Resources */,
 				2D1703E11E6266440000827E /* howToTrainYourDragon.m4a in Resources */,
-				2D60680B1F8BDAD00017B72E /* waypoint.mp3 in Resources */,
 				7E15B66E1E83922E00A9B1DC /* stat_modifier_items.plist in Resources */,
+				2D60681B1F8EAB280017B72E /* waypoint.mp3 in Resources */,
 				7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */,
 				7EF866CC1E83556D0012F2C7 /* 1_sea_legs.plist in Resources */,
 				2D1703DF1E6264200000827E /* dragonRoost.m4a in Resources */,
