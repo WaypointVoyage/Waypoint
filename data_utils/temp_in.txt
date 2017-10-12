@@ -1,6 +1,4 @@
-CGPathMoveToPoint(path, NULL, 31 - offsetX, 148 - offsetY);
-CGPathAddLineToPoint(path, NULL, 221 - offsetX, 151 - offsetY);
-CGPathAddLineToPoint(path, NULL, 255 - offsetX, 122 - offsetY);
-CGPathAddLineToPoint(path, NULL, 225 - offsetX, 96 - offsetY);
-CGPathAddLineToPoint(path, NULL, 30 - offsetX, 95 - offsetY);
-CGPathAddLineToPoint(path, NULL, 3 - offsetX, 122 - offsetY);
+CGPathMoveToPoint(path, NULL, 14 - offsetX, 931 - offsetY);
+CGPathAddLineToPoint(path, NULL, 348 - offsetX, 929 - offsetY);
+CGPathAddLineToPoint(path, NULL, 374 - offsetX, 365 - offsetY);
+CGPathAddLineToPoint(path, NULL, 8 - offsetX, 362 - offsetY);

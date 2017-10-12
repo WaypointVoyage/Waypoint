@@ -8,6 +8,7 @@
 
 import SpriteKit
 
+// wave 7 in the final boss
 class WPTTreasureWave: WPTLevelWave {
     
     static let totalTimeTime = 61 // 1 minute
@@ -15,8 +16,6 @@ class WPTTreasureWave: WPTLevelWave {
     let treasureChest: WPTFinalTreasureNode = WPTFinalTreasureNode()
     var player: WPTLevelPlayerNode? = nil
     var timer: WPTTreasureTimerNode? = nil
-    
-    private var scene: WPTLevelScene? = nil
     
     private var coinFrames: Int = 100
     private var treasureCollectingTime: TimeInterval = TimeInterval(WPTTreasureWave.totalTimeTime)
@@ -27,7 +26,7 @@ class WPTTreasureWave: WPTLevelWave {
     }
     
     override func setup(scene: WPTLevelScene) {
-        self.scene = scene
+        super.setup(scene: scene)
         scene.alert(header: "Shiver Me Timbers!", desc: "Collect the treasure!")
         
         treasureChest.position = scene.level.xMarksTheSpot!
@@ -72,10 +71,10 @@ class WPTTreasureWave: WPTLevelWave {
     }
     
     private func makeCoinSet() {
-        guard let scene = self.scene else { return }
+        guard let theScene = self.scene else { return }
         
         for _ in 0..<10 {
-            let target = scene.terrain.randomPoint(borderWidth: 0, onLand: false)
+            let target = theScene.terrain.randomPoint(borderWidth: 0, onLand: false)
             let moneyNode = WPTItemNode(WPTItemCatalog.randomCurrency())
             moneyNode.zPosition = treasureChest.zPosition + 1
             moneyNode.position = treasureChest.position
@@ -86,7 +85,7 @@ class WPTTreasureWave: WPTLevelWave {
             moneyNode.run(move) {
                 moneyNode.physicsBody = hold
             }
-            scene.items.addChild(moneyNode)
+            theScene.items.addChild(moneyNode)
         }
         coinFrames -= 1
         
@@ -94,7 +93,7 @@ class WPTTreasureWave: WPTLevelWave {
         if coinFrames <= 0 {
             self.timer = WPTTreasureTimerNode()
             self.timer?.position.y += 0.25 * WPTValues.screenSize.height
-            scene.camera!.addChild(timer!)
+            theScene.camera!.addChild(timer!)
             self.timer!.show(timeVal: String(20))
         }
     }

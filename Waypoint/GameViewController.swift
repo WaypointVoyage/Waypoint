@@ -17,9 +17,7 @@ class GameViewController: UIViewController {
         WPTValues.initValues(deviceScreenSize: self.view.frame.size)
         
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            let scene = WPTSplashScene()
-            view.presentScene(scene)
+            view.presentScene(getSceneToLoad())
             
             // set up the view
             view.ignoresSiblingOrder = true
@@ -35,6 +33,24 @@ class GameViewController: UIViewController {
                 let storage = WPTStorage()
                 storage.deleteHighScores()
             }
+        }
+    }
+    
+    func getSceneToLoad() -> SKScene {
+        switch (WPTConfig.values.mode) {
+            
+        case WPTAppMode.NORMAL:
+            return WPTSplashScene()
+            
+        case WPTAppMode.LEVEL:
+            let level = WPTLevel(WPTLevelModeConfig.values.levelFileName)
+            let player = WPTPlayer(playerProgress: getPreconfiguredPlayerProgress())
+            return WPTLevelScene(player: player, level: level)
+            
+        case WPTAppMode.WORLDMAP:
+            let player = WPTPlayer(playerProgress: getPreconfiguredPlayerProgress())
+            return WPTWorldScene(player: player)
+            
         }
     }
     

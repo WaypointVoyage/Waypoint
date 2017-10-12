@@ -95,8 +95,18 @@ class WPTLevel {
             for waveDict in allWaveDicts {
                 if let special = waveDict["special"] as? String {
                     switch (special) {
+                    case String(describing: WPTKrakenIntroWave.self):
+                        self.waves.append(WPTKrakenIntroWave())
+                    case String(describing: WPTKrakenChestStealWave.self):
+                        self.waves.append(WPTKrakenChestStealWave())
+                    case String(describing: WPTTentacle1Wave.self):
+                        self.waves.append(WPTTentacle1Wave(waveDict))
+                    case String(describing: WPTTentacle2Wave.self):
+                        self.waves.append(WPTTentacle2Wave())
                     case String(describing: WPTKrakenWave.self):
-                        self.waves.append(WPTKrakenWave())
+                        self.waves.append(WPTKrakenWave(waveDict))
+                    case String(describing: WPTTreasureReturnsWave.self):
+                        self.waves.append(WPTTreasureReturnsWave())
                     case String(describing: WPTTreasureWave.self):
                         assert(xMarksTheSpot == nil, "Can only have one treasure wave per level")
                         self.waves.append(WPTTreasureWave())

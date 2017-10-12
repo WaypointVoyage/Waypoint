@@ -3,11 +3,13 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>turnWhenFacing</key>
+		<true/>
 		<key>cannonSet</key>
 		<array>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -17,7 +19,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -27,7 +29,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -37,7 +39,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -57,7 +59,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>3.9269908169872414</real>
+				<real>3.926990816987241</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -67,7 +69,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>2.3561944901923448</real>
+				<real>2.356194490192345</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -77,7 +79,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>0.78539816339744828</real>
+				<real>0.7853981633974483</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -163,6 +165,8 @@
 		</dict>
 	</dict>
 	<dict>
+		<key>turnWhenFacing</key>
+		<true/>
 		<key>cannonSet</key>
 		<array>
 			<dict>
@@ -177,7 +181,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>3.1415926535897931</real>
+				<real>3.141592653589793</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -187,7 +191,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -197,7 +201,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -253,19 +257,21 @@
 			<key>shotSpeedScale</key>
 			<real>1.2</real>
 			<key>sizeScale</key>
-			<real>0.80000000000000004</real>
+			<real>0.8</real>
 			<key>speedScale</key>
 			<real>2</real>
 			<key>turnRateScale</key>
-			<real>2.3999999999999999</real>
+			<real>2.4</real>
 		</dict>
 	</dict>
 	<dict>
+		<key>turnWhenFacing</key>
+		<true/>
 		<key>cannonSet</key>
 		<array>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -275,7 +281,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -285,7 +291,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -295,7 +301,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -305,7 +311,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -315,7 +321,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -325,7 +331,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -335,7 +341,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -345,7 +351,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -355,7 +361,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -365,7 +371,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -375,7 +381,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -429,7 +435,7 @@
 			<key>damageScale</key>
 			<real>1</real>
 			<key>fireRateScale</key>
-			<real>0.80000000000000004</real>
+			<real>0.8</real>
 			<key>healthScale</key>
 			<real>1</real>
 			<key>itemRadiusScale</key>
@@ -439,14 +445,16 @@
 			<key>shotSpeedScale</key>
 			<real>1</real>
 			<key>sizeScale</key>
-			<real>1.6000000000000001</real>
+			<real>1.6</real>
 			<key>speedScale</key>
-			<real>2.2999999999999998</real>
+			<real>2.3</real>
 			<key>turnRateScale</key>
-			<real>0.80000000000000004</real>
+			<real>0.8</real>
 		</dict>
 	</dict>
 	<dict>
+		<key>turnWhenFacing</key>
+		<true/>
 		<key>cannonSet</key>
 		<array>
 			<dict>
@@ -461,7 +469,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -471,7 +479,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -481,7 +489,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>0.78539816339744828</real>
+				<real>0.7853981633974483</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -491,7 +499,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-0.78539816339744828</real>
+				<real>-0.7853981633974483</real>
 				<key>hasCannon</key>
 				<true/>
 				<key>x</key>
@@ -546,6 +554,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>turnWhenFacing</key>
+		<true/>
 		<key>cannonSet</key>
 		<array>
 			<dict>
@@ -560,7 +570,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>1.5707963267948966</real>
+				<real>1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -570,7 +580,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-1.5707963267948966</real>
+				<real>-1.570796326794897</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -580,7 +590,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>0.78539816339744828</real>
+				<real>0.7853981633974483</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
@@ -590,7 +600,7 @@
 			</dict>
 			<dict>
 				<key>angle</key>
-				<real>-0.78539816339744828</real>
+				<real>-0.7853981633974483</real>
 				<key>hasCannon</key>
 				<false/>
 				<key>x</key>
