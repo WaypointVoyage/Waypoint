@@ -398,36 +398,7 @@
 	<array>
 		<dict>
 			<key>special</key>
-			<string>WPTKrakenIntroWave</string>
-		</dict>
-		<dict>
-			<key>special</key>
-			<string>WPTKrakenChestStealWave</string>
-		</dict>
-		<dict>
-			<key>tentacleDuration</key>
-			<integer>10</integer>
-			<key>tentacleCount</key>
-			<integer>8</integer>
-			<key>special</key>
-			<string>WPTTentacle1Wave</string>
-		</dict>
-		<dict>
-			<key>special</key>
-			<string>WPTTentacle2Wave</string>
-		</dict>
-		<dict>
-			<key>enemies</key>
-			<dict>
-				<key>Dynamic Tentacle</key>
-				<integer>8</integer>
-			</dict>
-			<key>special</key>
 			<string>WPTKrakenWave</string>
-		</dict>
-		<dict>
-			<key>special</key>
-			<string>WPTTreasureReturnsWave</string>
 		</dict>
 		<dict>
 			<key>special</key>
