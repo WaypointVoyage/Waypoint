@@ -12,7 +12,7 @@ import SpriteKit
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
@@ -23,9 +23,9 @@ class WPTConfig {
     // testing
     var testing = false                  // toggles general testing features
     var allUnlocked = false              // determines if all of the levels on the world map are unlocked and beaten
-    var invincible = true               // if true, the player is invincible
+    var invincible = false               // if true, the player is invincible
     var clearHighScoresOnLoad = false    // if true, all of the high scores are cleared when the app is loaded
-    var showTutorial = false              // if false, the tutorial will never be shown
+    var showTutorial = true              // if false, the tutorial will never be shown
     
     // visual debugging
     let showPhysics = false                 // shows physics bodies
@@ -64,7 +64,7 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
 
 class WPTLevelModeConfig {
     
-    let levelFileName: String = "0_setting_sail"  // the name of the level file to load
+    let levelFileName: String = "11_shiver_me_timbers"  // the name of the level file to load
     
     // singleton instance
     private init() {}
