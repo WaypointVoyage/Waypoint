@@ -24,6 +24,14 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     var targetRot: CGFloat? = nil
     var anchored: Bool = true
     var targetNode: SKNode? = nil
+    var portSide: CGVector {
+        let forward = self.forward
+        return CGVector(dx: -forward.dy, dy: forward.dx) // TODO: verify
+    }
+    var starboardSide: CGVector {
+        let forward = self.forward
+        return CGVector(dx: forward.dy, dy: -forward.dx) // TODO: verify
+    }
     
     // child nodes
     let sprite: SKSpriteNode

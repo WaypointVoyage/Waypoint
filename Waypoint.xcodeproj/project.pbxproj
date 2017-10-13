@@ -111,6 +111,12 @@
 		7EC222081E72F54A00E98243 /* WPTPortDockingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */; };
 		7EC2220A1E73037300E98243 /* WPTDoNothingBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222091E73037300E98243 /* WPTDoNothingBS.swift */; };
 		7EC222161E730D1900E98243 /* WPTBrainTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */; };
+		7EC7F1371F90456A007530F8 /* WPTWakeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7F1361F90456A007530F8 /* WPTWakeManager.swift */; };
+		7EC7F1391F904668007530F8 /* WPTWakeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7F1381F904668007530F8 /* WPTWakeNode.swift */; };
+		7EC7F13B1F906993007530F8 /* wake_fill.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7EC7F13A1F906993007530F8 /* wake_fill.fsh */; };
+		7EC7F13D1F9069B4007530F8 /* wake_edge.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7EC7F13C1F9069B4007530F8 /* wake_edge.fsh */; };
+		7EC7F1401F906E03007530F8 /* WPTQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7F13F1F906E03007530F8 /* WPTQueue.swift */; };
+		7EC7F1421F906EE8007530F8 /* WPTStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7F1411F906EE8007530F8 /* WPTStack.swift */; };
 		7EC987A21E7F9FD600626C60 /* WPTStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC987A11E7F9FD600626C60 /* WPTStorage.swift */; };
 		7EC987A41E7FA20800626C60 /* WPTLootSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC987A31E7FA20800626C60 /* WPTLootSummary.swift */; };
 		7ECB5A021E745CA500A05563 /* WPTPursueBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */; };
@@ -277,6 +283,12 @@
 		7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPortDockingHandler.swift; sourceTree = "<group>"; };
 		7EC222091E73037300E98243 /* WPTDoNothingBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDoNothingBS.swift; sourceTree = "<group>"; };
 		7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainTemplate.swift; sourceTree = "<group>"; };
+		7EC7F1361F90456A007530F8 /* WPTWakeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTWakeManager.swift; sourceTree = "<group>"; };
+		7EC7F1381F904668007530F8 /* WPTWakeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTWakeNode.swift; sourceTree = "<group>"; };
+		7EC7F13A1F906993007530F8 /* wake_fill.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = wake_fill.fsh; sourceTree = "<group>"; };
+		7EC7F13C1F9069B4007530F8 /* wake_edge.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = wake_edge.fsh; sourceTree = "<group>"; };
+		7EC7F13F1F906E03007530F8 /* WPTQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTQueue.swift; sourceTree = "<group>"; };
+		7EC7F1411F906EE8007530F8 /* WPTStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTStack.swift; sourceTree = "<group>"; };
 		7EC987A11E7F9FD600626C60 /* WPTStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTStorage.swift; sourceTree = "<group>"; };
 		7EC987A31E7FA20800626C60 /* WPTLootSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLootSummary.swift; sourceTree = "<group>"; };
 		7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPursueBS.swift; sourceTree = "<group>"; };
@@ -524,6 +536,7 @@
 		7E4216021E5B56A8004ADBD7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7EC7F13E1F906DEE007530F8 /* DataStructures */,
 				7E4C88C81E72ED0600760EDA /* Catalogs */,
 				7EBF5E681E4E1B4000F81982 /* WPTUtils.swift */,
 				7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */,
@@ -556,6 +569,8 @@
 			children = (
 				7E52428F1E56440900120002 /* water.fsh */,
 				7E93E91A1E985A8B002CF452 /* anchored_indicator.fsh */,
+				7EC7F13A1F906993007530F8 /* wake_fill.fsh */,
+				7EC7F13C1F9069B4007530F8 /* wake_edge.fsh */,
 			);
 			name = Level;
 			sourceTree = "<group>";
@@ -599,12 +614,12 @@
 		7E6932931E53B47700AF7373 /* Level */ = {
 			isa = PBXGroup;
 			children = (
+				7EC7F1351F904519007530F8 /* Terrain */,
 				7EF866861E82C30F0012F2C7 /* Special */,
 				7EC222041E72F48500E98243 /* Components */,
 				2D1704351E6F66EB0000827E /* Entities */,
 				7E5A6BEB1E5A0DA90067EAF3 /* Actors */,
 				7E6932981E53DFFB00AF7373 /* HUD */,
-				7E5242871E56331D00120002 /* WPTTerrainNode.swift */,
 			);
 			name = Level;
 			sourceTree = "<group>";
@@ -700,6 +715,25 @@
 				7E581C331E8DA01A008F8222 /* WPTItemCollectorNode.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		7EC7F1351F904519007530F8 /* Terrain */ = {
+			isa = PBXGroup;
+			children = (
+				7E5242871E56331D00120002 /* WPTTerrainNode.swift */,
+				7EC7F1361F90456A007530F8 /* WPTWakeManager.swift */,
+				7EC7F1381F904668007530F8 /* WPTWakeNode.swift */,
+			);
+			name = Terrain;
+			sourceTree = "<group>";
+		};
+		7EC7F13E1F906DEE007530F8 /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				7EC7F13F1F906E03007530F8 /* WPTQueue.swift */,
+				7EC7F1411F906EE8007530F8 /* WPTStack.swift */,
+			);
+			name = DataStructures;
 			sourceTree = "<group>";
 		};
 		7EC987A01E7F9FC300626C60 /* Storage */ = {
@@ -841,7 +875,7 @@
 				TargetAttributes = {
 					7E16B8541E2D580600933E24 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3GEHA95597;
+						DevelopmentTeam = 66743KUV39;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -903,11 +937,13 @@
 				7EF866CB1E83556D0012F2C7 /* 0_setting_sail.plist in Resources */,
 				2D17044F1E7105940000827E /* coin.mp3 in Resources */,
 				7E15B66C1E83922E00A9B1DC /* other_items.plist in Resources */,
+				7EC7F13B1F906993007530F8 /* wake_fill.fsh in Resources */,
 				7E43CC771E54B844009367BC /* trail_map.plist in Resources */,
 				2D1704471E7009890000827E /* explosion.sks in Resources */,
 				7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */,
 				7EF866D31E83556D0012F2C7 /* 8_give_no_quarter.plist in Resources */,
 				2D17043F1E7005170000827E /* fire.sks in Resources */,
+				7EC7F13D1F9069B4007530F8 /* wake_edge.fsh in Resources */,
 				7E15B6701E83952400A9B1DC /* currency_items.plist in Resources */,
 				7EF866D51E83556D0012F2C7 /* 10_high_seas.plist in Resources */,
 				7EF866D01E83556D0012F2C7 /* 5_dead_men_tell_no_tales.plist in Resources */,
@@ -954,8 +990,10 @@
 				7ED049DF1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift in Sources */,
 				2D2C8B5C1E7F3D5A00B1D862 /* WPTTutorialNode.swift in Sources */,
 				7E69329C1E53E0B200AF7373 /* WPTHudTopNode.swift in Sources */,
+				7EC7F1401F906E03007530F8 /* WPTQueue.swift in Sources */,
 				7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */,
 				7EF866831E82BCDA0012F2C7 /* WPTKrakenWave.swift in Sources */,
+				7EC7F1421F906EE8007530F8 /* WPTStack.swift in Sources */,
 				7E6932A21E53ECF500AF7373 /* WPTUpdatable.swift in Sources */,
 				7E6932A01E53E2D500AF7373 /* WPTFireButtonNode.swift in Sources */,
 				7EDAC9B41E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift in Sources */,
@@ -998,6 +1036,7 @@
 				2D1EF1051E806FF700F527B7 /* WPTDockMenuNode.swift in Sources */,
 				7E13F6341E48F8B900B5D2FD /* WPTPlayer.swift in Sources */,
 				7E13F6321E48F53200B5D2FD /* WPTLevelScene.swift in Sources */,
+				7EC7F1371F90456A007530F8 /* WPTWakeManager.swift in Sources */,
 				7E5242881E56331D00120002 /* WPTTerrainNode.swift in Sources */,
 				7E5A6BEE1E5A0E070067EAF3 /* WPTCannonNode.swift in Sources */,
 				7E69329E1E53E0D500AF7373 /* WPTHudBottomNode.swift in Sources */,
@@ -1035,6 +1074,7 @@
 				7EBF5E691E4E1B4000F81982 /* WPTUtils.swift in Sources */,
 				7ED739011E44EBF500122903 /* WPTWorldMapNode.swift in Sources */,
 				2D1703DB1E601E180000827E /* WPTMapViewNode.swift in Sources */,
+				7EC7F1391F904668007530F8 /* WPTWakeNode.swift in Sources */,
 				7EC222081E72F54A00E98243 /* WPTPortDockingHandler.swift in Sources */,
 				7EF866811E82BC6C0012F2C7 /* WPTTreasureWave.swift in Sources */,
 				7ED049E31E6F6DE900CD69E1 /* WPTEnemyCatalog.swift in Sources */,
@@ -1184,10 +1224,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3GEHA95597;
+				DEVELOPMENT_TEAM = 66743KUV39;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hils124;
+				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1201,10 +1241,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3GEHA95597;
+				DEVELOPMENT_TEAM = 66743KUV39;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hils124;
+				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;

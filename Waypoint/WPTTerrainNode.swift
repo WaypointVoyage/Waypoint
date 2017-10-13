@@ -18,6 +18,8 @@ class WPTTerrainNode: SKNode {
     
     var boundary: SKPhysicsBody!
     
+    public private(set) var wakeManager: WPTWakeManager! = nil
+    
     let player: WPTLevelPlayerNode
     var enemies = [WPTLevelEnemyNode]()
     
@@ -75,12 +77,14 @@ class WPTTerrainNode: SKNode {
                 return
             }
         }
+        self.wakeManager.remove(actor: enemy)
     }
     
     private func loadTerrain() {
         // if there is a terrain file, show it
         if let terrainImg = level.terrainImage {
             let terrain = SKSpriteNode(imageNamed: terrainImg)
+            terrain.zPosition = 2
             terrain.anchorPoint = CGPoint.zero
 
             // handle the terrain bodies
@@ -107,6 +111,8 @@ class WPTTerrainNode: SKNode {
             
             self.addChild(terrain)
         }
+        
+        self.wakeManager = WPTWakeManager(self)
     }
     
     public func randomPoint(borderWidth: CGFloat, onLand: Bool? = nil, inCameraView: Bool? = nil) -> CGPoint {

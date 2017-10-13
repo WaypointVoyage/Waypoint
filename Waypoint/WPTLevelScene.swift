@@ -143,6 +143,7 @@ class WPTLevelScene: WPTScene {
         for enemy in self.terrain.enemies {
             enemy.update(currentTime, deltaTime)
         }
+        self.terrain.wakeManager.update(currentTime, deltaTime)
         
         // HUD
         self.hud.update(currentTime, deltaTime)

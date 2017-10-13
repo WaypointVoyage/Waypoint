@@ -205,36 +205,54 @@ extension WPTShip {
     static let minSpeedScale: CGFloat = 0.4
     static let maxSpeedScale: CGFloat = 10.0
     static let baseSpeed: CGFloat = 3500.0
+    static let minSpeed: CGFloat = WPTShip.baseSpeed * WPTShip.minSpeedScale
+    static let maxSpeed: CGFloat = WPTShip.baseSpeed * WPTShip.maxSpeedScale
     
     static let minDamageScale: CGFloat = 0.5
     static let maxDamageScale: CGFloat = 20.0
     static let baseDamage: CGFloat = 20.0
+    static let minDamage: CGFloat = WPTShip.baseDamage * WPTShip.minDamageScale
+    static let maxDamage: CGFloat = WPTShip.baseDamage * WPTShip.maxDamageScale
     
     static let minHealthScale: CGFloat = 0.5
     static let maxHealthScale: CGFloat = 50.0
     static let baseHealth: CGFloat = 100
+    static let minHealth: CGFloat = WPTShip.baseHealth * WPTShip.minHealthScale
+    static let maxHealth: CGFloat = WPTShip.baseHealth * WPTShip.maxHealthScale
     
     static let minRangeScale: CGFloat = 0.2
     static let maxRangeScale: CGFloat = 50.0
     static let baseRange: CGFloat = 350
+    static let minRange: CGFloat = WPTShip.baseRange * WPTShip.minRangeScale
+    static let maxRange: CGFloat = WPTShip.baseRange * WPTShip.maxRangeScale
     
     static let minShotSpeedScale: CGFloat = 0.1
     static let maxShotSpeedScale: CGFloat = 5.0
     static let baseShotSpeed: CGFloat = 1000.0
+    static let minShotSpeed: CGFloat = WPTShip.baseShotSpeed * WPTShip.minShotSpeedScale
+    static let maxShotSpeed: CGFloat = WPTShip.baseShotSpeed * WPTShip.maxShotSpeedScale
     
     static let minSizeScale: CGFloat = 0.5
     static let maxSizeScale: CGFloat = 2.5
     static let baseSize: CGFloat = 0.3
+    static let minSize: CGFloat = WPTShip.baseSize * WPTShip.minSizeScale
+    static let maxSize: CGFloat = WPTShip.baseSize * WPTShip.maxSizeScale
     
     static let minTurnRateScale: CGFloat = 0.4
     static let maxTurnRateScale: CGFloat = 10
     static let baseTurnRate: CGFloat = 1.0
+    static let minTurnRate: CGFloat = WPTShip.baseTurnRate * WPTShip.minTurnRateScale
+    static let maxTurnRate: CGFloat = WPTShip.baseTurnRate * WPTShip.maxTurnRateScale
     
     static let minFireRateScale: CGFloat = 0.2
     static let maxFireRateScale: CGFloat = 10
     static let baseFireRate: CGFloat = 2
+    static let minFireRate: CGFloat = WPTShip.baseFireRate * WPTShip.minFireRateScale
+    static let maxFireRate: CGFloat = WPTShip.baseFireRate * WPTShip.maxFireRateScale
     
     static let minItemRadiusScale: CGFloat = 1.0
     static let maxItemRadiusScale: CGFloat = 100.0
     static let baseItemRadius: CGFloat = 250
+    static let minItemRadius: CGFloat = WPTShip.baseItemRadius * WPTShip.minItemRadiusScale
+    static let maxItemRadius: CGFloat = WPTShip.baseItemRadius * WPTShip.maxItemRadiusScale
 }
