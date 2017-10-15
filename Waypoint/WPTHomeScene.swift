@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTHomeScene: WPTScene {
     
-    let background = WPTBackgroundNode(image: "beach_scene")
+    let background = WPTBackgroundNode(image: "beach_scene_test")
     let title = WPTLabelNode(text: "Waypoint", fontSize: WPTValues.fontSizeMedium)
     let treasureChest = SKSpriteNode(imageNamed: "treasure_closed")
     let newGame = WPTSceneLabelNode(text: "New Game", next: WPTNewGameScene())

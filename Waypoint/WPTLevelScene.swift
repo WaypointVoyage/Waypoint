@@ -113,6 +113,10 @@ class WPTLevelScene: WPTScene {
         }
     }
     
+    override func getSong() -> String {
+        return "waypoint.mp3"
+    }
+    
     private func levelNameDisplay() {
         // breif flash of level name
         let levelName = WPTLabelNode(text: self.level.name, fontSize: WPTValues.fontSizeLarge)

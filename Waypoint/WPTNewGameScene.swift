@@ -11,7 +11,7 @@ import SpriteKit
 
 class WPTNewGameScene: WPTScene, UITextFieldDelegate {
     
-    let background = WPTBackgroundNode(image: "ocean3")
+    let background = WPTBackgroundNode(image: "beach_scene_test")
     let headerLabel = WPTLabelNode(text: "New Game", fontSize: WPTValues.fontSizeLarge)
     var startLabel = WPTButtonNode(text: "Start", fontSize: WPTValues.fontSizeMedium)
     
