@@ -30,6 +30,9 @@ class WPTBrainStateFactory {
         case String(describing: WPTWanderBS.self):
             return WPTWanderBS()
             
+        case String(describing: WPTWiggleBS.self):
+            return WPTWiggleBS()
+            
         default:
             if !state.isEmpty {
                 print("WARNING: unknown brain state: \(state), Perhaps it was just added? If so, create a new WPTBrainStateFactory.get case!!!")

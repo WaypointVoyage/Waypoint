@@ -10,12 +10,12 @@ import SpriteKit
 
 class WPTPlayerProgress: NSObject, NSCoding {
     // player stuff
-    let shipName: String
+    let shipName: String            // think of this as a name a person would give their ship
     let health: CGFloat
     let completedLevels: [String]
     
     // actor stuff
-    let ship: String
+    let ship: String                // think of this as the 'make and model' of ship that is used
     let cannonBallImage: String
     let doubloons: Int
     let items: [String]
@@ -35,6 +35,35 @@ class WPTPlayerProgress: NSObject, NSCoding {
             cannonSetDict[i] = cannon.hasCannon
         }
         cannonSet = cannonSetDict
+    }
+    
+    init(shipName: String, ship: String, health: CGFloat? = nil, completedLevels: [String]? = nil, cannonBallImage: String? = nil, doubloons: Int = 0, items: [String]? = nil, cannonSet: [Int:Bool]?) {
+        self.shipName = shipName
+        self.ship = ship
+        
+        let shipModel = WPTShipCatalog.shipsByName[ship]!
+        if let givenHealth: CGFloat = health {
+            assert(givenHealth <= shipModel.health, "Invalid health was given")
+            self.health = givenHealth
+        } else {
+            self.health = shipModel.health
+        }
+        
+        self.completedLevels = completedLevels == nil ? [String]() : completedLevels!
+        
+        self.cannonBallImage = cannonBallImage == nil ? WPTCannonBall.DEFAULT_IMAGE_NAME : cannonBallImage!
+        self.doubloons = doubloons
+        self.items = items == nil ? [String]() : items!
+        
+        var tmpCannonSet = [Int:Bool]()
+        if let givenCannons: [Int:Bool] = cannonSet {
+            tmpCannonSet = givenCannons
+        } else {
+            for i in 0..<shipModel.cannonSet.cannons.count {
+                tmpCannonSet[i] = shipModel.cannonSet.cannons[i].hasCannon
+            }
+        }
+        self.cannonSet = tmpCannonSet
     }
     
     required init?(coder aDecoder: NSCoder) {

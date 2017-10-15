@@ -1,18 +1,18 @@
 //
-//  WPTKrakenWave.swift
+//  WPTTentacle2Wave.swift
 //  Waypoint
 //
-//  Created by Cameron Taylor on 3/22/17.
+//  Created by Hilary Schulz on 9/22/17.
 //  Copyright © 2017 cpe436group. All rights reserved.
 //
 
 import SpriteKit
 
-// wave 5 in the final boss
-class WPTKrakenWave: WPTLevelWave {
+// wave 4 in the final boss
+class WPTTentacle2Wave: WPTLevelWave {
     
-    override init(_ waveDict: [String: AnyObject]) {
-        super.init(waveDict)
+    init() {
+        super.init([:])
     }
     
     override func setup(scene: WPTLevelScene) {
@@ -21,7 +21,7 @@ class WPTKrakenWave: WPTLevelWave {
     
     override func isComplete(scene: WPTLevelScene) -> Bool {
         // determine if the kraken is beaten
-        print("Kraken Full")
+        print("Kraken Intro")
         return true
     }
     
@@ -31,7 +31,7 @@ class WPTKrakenWave: WPTLevelWave {
         }
         
         // Hilary
-        // spawn kraken head here
+        // Here is a good point to hook in custom spawning for the tentacles
         
         return nil
     }

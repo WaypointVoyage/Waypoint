@@ -3,6 +3,67 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>turnWhenFacing</key>
+		<false/>
+		<key>cannonSet</key>
+		<array/>
+		<key>colliderOffset</key>
+		<dict>
+			<key>x</key>
+			<integer>-256</integer>
+			<key>y</key>
+			<integer>-256</integer>
+		</dict>
+		<key>colliderPath</key>
+		<array>
+			<array>
+				<integer>14</integer>
+				<integer>931</integer>
+			</array>
+			<array>
+				<integer>348</integer>
+				<integer>929</integer>
+			</array>
+			<array>
+				<integer>374</integer>
+				<integer>365</integer>
+			</array>
+			<array>
+				<integer>8</integer>
+				<integer>362</integer>
+			</array>
+		</array>
+		<key>inGameImage</key>
+		<string>tentacle</string>
+		<key>stats</key>
+		<dict>
+			<key>damageScale</key>
+			<integer>1</integer>
+			<key>fireRateScale</key>
+			<integer>1</integer>
+			<key>healthScale</key>
+			<integer>1</integer>
+			<key>itemRadiusScale</key>
+			<integer>1</integer>
+			<key>rangeScale</key>
+			<integer>1</integer>
+			<key>shotSpeedScale</key>
+			<integer>1</integer>
+			<key>sizeScale</key>
+			<integer>1</integer>
+			<key>speedScale</key>
+			<integer>1</integer>
+			<key>turnRateScale</key>
+			<integer>1</integer>
+		</dict>
+		<key>previewImage</key>
+		<string></string>
+		<key>name</key>
+		<string>Tentacle</string>
+	</dict>
+	<dict>
+		<key>turnWhenFacing</key>
+		<true/>
 		<key>cannonSet</key>
 		<array>
 			<dict>
@@ -71,19 +132,19 @@
 			<key>fireRateScale</key>
 			<real>0.5</real>
 			<key>healthScale</key>
-			<real>0.80000000000000004</real>
+			<real>0.8</real>
 			<key>itemRadiusScale</key>
 			<real>1</real>
 			<key>rangeScale</key>
 			<real>1</real>
 			<key>shotSpeedScale</key>
-			<real>1.1000000000000001</real>
+			<real>1.1</real>
 			<key>sizeScale</key>
 			<real>1.3</real>
 			<key>speedScale</key>
-			<real>0.0</real>
+			<real>0</real>
 			<key>turnRateScale</key>
-			<real>0.55000000000000004</real>
+			<real>0.55</real>
 		</dict>
 	</dict>
 </array>

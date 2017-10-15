@@ -39,34 +39,18 @@ class WPTWaveCreationPMS: GKState {
         print("setting up the wave")
         guard let scene = (self.stateMachine as? WPTPuppetMaster)?.scene else { return; }
         
+        print("calling specialized wave setup")
+        self.wave!.setup(scene: scene)
+        
         for (enemy, quantity) in wave!.enemies {
             for _ in 0..<quantity {
                 print("creating a \(enemy)")
                 let enemyNode = WPTLevelEnemyNode(enemy: enemy, player: scene.player)
-                var pos: CGPoint! = nil
-                
-                if enemy.terrainType == WPTEnemyTerrainType.land {
-                    print("placing the enemy on land")
-                    pos = scene.terrain.randomPoint(borderWidth: enemyNode.sprite.frame.width / 2, onLand: true)
-                } else {
-                    print("placing the enemy in water")
-                    assert(scene.level.spawnVolumes.count > 0, "Cannot place water based enemies without a spawn volume!")
-                    let spawnVol = scene.level.randomSpawnVolume()
-                    var rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-                    let xpos = spawnVol.minX + rand * (spawnVol.width)
-                    rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-                    let ypos = spawnVol.minY + rand * (spawnVol.height)
-                    pos = CGPoint(x: xpos, y: ypos)
-                }
-                
-                enemyNode.position = pos
+                enemyNode.position = self.wave!.enemySpawnPosition(enemyNode)!
                 print("adding the enemy to the terrain")
                 scene.terrain.addEnemy(enemyNode)
             }
         }
-        
-        print("calling specialized wave setup")
-        self.wave!.setup(scene: scene)
     }
     
     override func update(deltaTime seconds: TimeInterval) {

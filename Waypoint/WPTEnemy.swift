@@ -54,4 +54,5 @@ enum WPTEnemyTerrainType: String {
     case land = "_LAND"
     case sea = "_SEA"
     case both = "_BOTH"
+    case under_player = "_UNDER_PLAYER"
 }

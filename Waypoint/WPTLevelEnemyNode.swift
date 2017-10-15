@@ -17,11 +17,14 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     var brainRadii: WPTBrainRadiiNode? = nil
     let healthBar: WPTHealthNode
     
-    init(enemy: WPTEnemy, player: WPTLevelPlayerNode, startBrain: Bool = false) {
+    var isDead: Bool = false
+    
+    init(enemy: WPTEnemy, player: WPTLevelPlayerNode, startBrain: Bool = false, health: CGFloat? = nil) {
         self.enemy = enemy
         self.player = player
         self.brain = WPTBrain(self.enemy.brainTemplate, player: self.player)
-        self.healthBar = WPTHealthNode(maxHealth: enemy.ship.health, persistent: false)
+        let startHealth = health == nil ? enemy.ship.health : health
+        self.healthBar = WPTHealthNode(maxHealth: startHealth!, persistent: false)
         super.init(actor: enemy, teamBitMask: WPTValues.enemyTbm)
         
         // brain
@@ -90,6 +93,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     
     private func destroyEnemy() {
         self.physics = nil // at this point on, there are is no more world interaction
+        self.isDead = true
         
         if player.targetNode === self {
             player.targetNode = nil

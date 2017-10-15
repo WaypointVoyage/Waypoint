@@ -16,10 +16,22 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     var teamBitMask: UInt32
     
     // movement
-    var forward: CGVector { return CGVector(dx: cos(zRotation), dy: sin(zRotation)) }
+    private var facingZRotation: CGFloat = 0
+    var forward: CGVector {
+        let zRot = self.actor.ship.turnWhenFacing ? zRotation : facingZRotation
+        return CGVector(dx: cos(zRot), dy: sin(zRot))
+    }
     var targetRot: CGFloat? = nil
     var anchored: Bool = true
     var targetNode: SKNode? = nil
+    var portSide: CGVector {
+        let forward = self.forward
+        return CGVector(dx: -forward.dy, dy: forward.dx) // TODO: verify
+    }
+    var starboardSide: CGVector {
+        let forward = self.forward
+        return CGVector(dx: forward.dy, dy: -forward.dx) // TODO: verify
+    }
     
     // child nodes
     let sprite: SKSpriteNode
@@ -64,6 +76,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         
         // set starting position in the world
         self.zRotation += CG_PI / 2.0
+        self.facingZRotation = zRotation
         self.setScale(actor.ship.size)
         
         // components
@@ -90,12 +103,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             
             // apply the rotation
             let rate = CGFloat(deltaTime) * actor.ship.turnRate
-            if abs(delta) < rate + 0.005 {
-                self.zRotation = target
-                self.targetRot = nil
-            } else {
-                self.zRotation += (delta > 0 ? 1 : -1) * rate
-            }
+            applyRotation(target: target, delta: delta, rate: rate)
         }
         
         // move foreward if not anchored
@@ -109,6 +117,30 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
                 force = getShipSpeed() * self.forward
             }
             self.physics?.applyForce(force!)
+        }
+    }
+    
+    private func applyRotation(target: CGFloat, delta: CGFloat, rate: CGFloat) {
+        if abs(delta) < rate + 0.005 {
+            
+            self.targetRot = nil
+            
+            if self.actor.ship.turnWhenFacing {
+                self.zRotation = target
+            } else {
+                self.facingZRotation = target
+            }
+            
+        } else {
+            
+            let deltaRot = (delta > 0 ? 1 : -1) * rate
+            
+            if self.actor.ship.turnWhenFacing {
+                self.zRotation += deltaRot
+            } else {
+                self.facingZRotation += deltaRot
+            }
+            
         }
     }
     
