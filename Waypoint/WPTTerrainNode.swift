@@ -74,7 +74,7 @@ class WPTTerrainNode: SKNode {
         for i in 0..<enemies.count {
             if enemies[i] == enemy {
                 enemies.remove(at: i)
-                return
+                break
             }
         }
         self.wakeManager.remove(actor: enemy)

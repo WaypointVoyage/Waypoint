@@ -15,6 +15,9 @@ class WPTWakeNode: SKNode, WPTUpdatable {
     public weak var actor: WPTLevelActorNode?
     private var frames = [WPTWakeFrame]()
     private var framesPath: [CGPoint] = [CGPoint]()
+    public var done: Bool {
+        return frames.isEmpty
+    }
     
     private var shapeNode: SKShapeNode! = nil
     
@@ -36,28 +39,41 @@ class WPTWakeNode: SKNode, WPTUpdatable {
         self.addChild(shapeNode)
     }
     
+    private func actorAlive() -> Bool {
+        if let actor = self.actor {
+            if actor.isPlayer && WPTConfig.values.invincible {
+                return true
+            }
+            return actor.currentHealth > 0
+        }
+        return false
+    }
+    
     private var frameCounter: TimeInterval = 0.0
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
         
-        // update the direction
-        let forward = self.actor!.forward
-        self.shapeNode.fillShader!.uniformNamed("u_actor_dir_x")!.floatValue = Float(forward.dx)
-        self.shapeNode.fillShader!.uniformNamed("u_actor_dir_y")!.floatValue = Float(forward.dy)
-        
+        if self.actorAlive() {
+            // update the direction
+            let forward = self.actor!.forward
+            self.shapeNode.fillShader!.uniformNamed("u_actor_dir_x")!.floatValue = Float(forward.dx)
+            self.shapeNode.fillShader!.uniformNamed("u_actor_dir_y")!.floatValue = Float(forward.dy)
+        }
+
         // check if we need to shift the points
         self.frameCounter += deltaTime
         if self.frameCounter > WPTWakeNode.WAKE_FRAME_TIME_DELTA {
             self.frameCounter = 0.0
-            
-            // add the new frame/points
-            let newFrame = WPTWakeFrame(actor!)
-            self.frames.append(newFrame)
-            let middle = self.framesPath.count / 2
-            self.framesPath.insert(newFrame.portPoint, at: middle)
-            self.framesPath.insert(newFrame.starboardPoint, at: middle)
 
-            
-            if self.frames.count > WPTWakeNode.WAKE_FRAME_COUNT {
+            if self.actorAlive() {
+                // add the new frame/points
+                let newFrame = WPTWakeFrame(actor!)
+                self.frames.append(newFrame)
+                let middle = self.framesPath.count / 2
+                self.framesPath.insert(newFrame.portPoint, at: middle)
+                self.framesPath.insert(newFrame.starboardPoint, at: middle)
+            }
+
+            if self.frames.count > WPTWakeNode.WAKE_FRAME_COUNT || !self.actorAlive() {
                 // remove the oldest frame/points
                 self.frames.removeFirst()
                 self.framesPath.removeFirst()
