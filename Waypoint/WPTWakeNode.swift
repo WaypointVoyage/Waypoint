@@ -29,23 +29,27 @@ class WPTWakeNode: SKNode, WPTUpdatable {
         
         self.shapeNode = SKShapeNode.init(splinePoints: &framesPath, count: framesPath.count)
         self.shapeNode.lineWidth = 8
-        self.shapeNode.glowWidth = 5
-        self.shapeNode.strokeColor = .clear
-        self.shapeNode.fillColor = .clear
         self.shapeNode.strokeShader = SKShader(fileNamed: "wake_edge.fsh")
         self.shapeNode.fillShader = SKShader(fileNamed: "wake_fill.fsh")
+        self.shapeNode.fillShader!.addUniform(SKUniform(name: "u_actor_dir_x", float: 0.0))
+        self.shapeNode.fillShader!.addUniform(SKUniform(name: "u_actor_dir_y", float: 1.0))
         self.addChild(shapeNode)
     }
     
     private var frameCounter: TimeInterval = 0.0
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
         
+        // update the direction
+        let forward = self.actor!.forward
+        self.shapeNode.fillShader!.uniformNamed("u_actor_dir_x")!.floatValue = Float(forward.dx)
+        self.shapeNode.fillShader!.uniformNamed("u_actor_dir_y")!.floatValue = Float(forward.dy)
+        
         // check if we need to shift the points
         self.frameCounter += deltaTime
         if self.frameCounter > WPTWakeNode.WAKE_FRAME_TIME_DELTA {
             self.frameCounter = 0.0
             
-                // add the new frame/points
+            // add the new frame/points
             let newFrame = WPTWakeFrame(actor!)
             self.frames.append(newFrame)
             let middle = self.framesPath.count / 2
@@ -90,7 +94,7 @@ class WPTWakeNode: SKNode, WPTUpdatable {
         let ship = actor.actor.ship
         let sizeFraction: CGFloat = (ship.size - WPTShip.minSize) / (WPTShip.maxSize - WPTShip.minSize)
         let curSpeedFraction: CGFloat = atan(0.0005 * (actor.physics?.velocity.magnitude() ?? 0.0)) / CGFloat(.pi / 2.0)
-        var result: CGFloat = sizeFraction * curSpeedFraction
+        var result: CGFloat = pow(sizeFraction, 4.0) * curSpeedFraction
         clamp(&result, min: 0.0, max: 1.0)
         return result
     }
