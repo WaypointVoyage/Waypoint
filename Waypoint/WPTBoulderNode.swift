@@ -65,6 +65,7 @@ class WPTBoulderNode: SKNode {
         let explosionNode = SKSpriteNode(imageNamed: "explode")
         explosionNode.position = self.crackedImage.position
         explosionNode.size = CGSize(width: self.crackedImage.size.width, height: self.crackedImage.size.height)
+        explosionNode.zPosition = self.crackedImage.zPosition + WPTValues.fontSizeSmall
         self.addChild(explosionNode)
         self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
         // Don't forget to remove the emitter node after the explosion
