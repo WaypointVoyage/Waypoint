@@ -97,10 +97,14 @@ extension CGVector {
 extension CGPath {
     static func fromPoints(_ points: [CGPoint]) -> CGPath {
         let result = UIBezierPath()
-        result.move(to: points[0])
-        for i in 1..<points.count {
-            result.addLine(to: points[i])
+        
+        if !points.isEmpty {
+            result.move(to: points[0])
+            for i in 1..<points.count {
+                result.addLine(to: points[i])
+            }
         }
+        
         return result.cgPath
     }
 }

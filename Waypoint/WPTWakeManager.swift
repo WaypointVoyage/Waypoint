@@ -11,13 +11,16 @@ import SpriteKit
 class WPTWakeManager: WPTUpdatable {
     
     private weak var terrain: WPTTerrainNode?
+    
     private var wakes = [WPTLevelActorNode:WPTWakeNode]()
+    private var retiringWakes = Set<WPTWakeNode>()
     
     init(_ terrain: WPTTerrainNode) {
         self.terrain = terrain
     }
     
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
+        
         if let terrain = self.terrain {
             self.updateForActor(terrain.player, currentTime, deltaTime)
             for enemy in terrain.enemies {
@@ -26,11 +29,20 @@ class WPTWakeManager: WPTUpdatable {
                 }
             }
         }
+
+        for wake in self.retiringWakes {
+            wake.update(currentTime, deltaTime)
+            if wake.done {
+                self.retiringWakes.remove(wake)
+            }
+        }
     }
     
     public func remove(actor: WPTLevelActorNode) {
-        // TODO: maintain existing wakes when removed, right now, they just stay frozen
-        self.wakes.removeValue(forKey: actor)
+        let wake = self.wakes.removeValue(forKey: actor)
+        if let oldWake = wake {
+            self.retiringWakes.insert(oldWake)
+        }
     }
     
     private func updateForActor(_ actor: WPTLevelActorNode, _ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
