@@ -22,7 +22,7 @@ class WPTBoulderNode: SKNode {
         self.health = WPTHealthNode(maxHealth: WPTBoulderNode.maxBoulderHealth, persistent: false)
         super.init()
         self.name = WPTBoulderNode.nodeNameTag
-        self.zPosition = 1
+        self.zPosition = 4
         
         boulderImage.anchorPoint = CGPoint(x: CGFloat(0.5), y: CGFloat(0.5))
         boulderImage.size = CGSize(width: WPTBoulderNode.boulderRadius*2, height: WPTBoulderNode.boulderRadius*2)
