@@ -20,8 +20,16 @@ extension CGPoint {
         return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
     }
     
+    static func + (lhs: CGPoint, rhs: CGVector) -> CGPoint {
+        return CGPoint(x: lhs.x + rhs.dx, y: lhs.y + rhs.dy)
+    }
+    
     static func - (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
         return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
+    }
+    
+    static func - (lhs: CGPoint, rhs: CGVector) -> CGPoint {
+        return CGPoint(x: lhs.x - rhs.dx, y: lhs.y - rhs.dy)
     }
     
     static func * (lhs: CGFloat, rhs: CGPoint) -> CGPoint {
@@ -83,5 +91,20 @@ extension CGVector {
             angle += 2 * (CG_PI - angle)
         }
         return angle
+    }
+}
+
+extension CGPath {
+    static func fromPoints(_ points: [CGPoint]) -> CGPath {
+        let result = UIBezierPath()
+        
+        if !points.isEmpty {
+            result.move(to: points[0])
+            for i in 1..<points.count {
+                result.addLine(to: points[i])
+            }
+        }
+        
+        return result.cgPath
     }
 }

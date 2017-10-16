@@ -16,9 +16,9 @@ class WPTTrailMapNode: SKNode {
     private let completedLevels: [String]
     
     let trailShader = SKShader(fileNamed: "trail_shader.fsh")
-    let unlockedMarkerTexture = SKTexture(imageNamed: "blue_circle")
-    let lockedMarkerTexture = SKTexture(imageNamed: "red_circle")
-    let completedMarkerTexture = SKTexture(imageNamed: "green_circle")
+    let unlockedMarkerTexture = SKTexture(imageNamed: "blue_flag")
+    let lockedMarkerTexture = SKTexture(imageNamed: "black_flag")
+    let completedMarkerTexture = SKTexture(imageNamed: "green_flag")
     let treasureMarkerTexture = SKTexture(imageNamed: "x_marks_the_spot")
     
     private var markers = [SKSpriteNode]()
@@ -56,14 +56,14 @@ class WPTTrailMapNode: SKNode {
             var scale: CGSize?
             switch (index) {
             case 0:
-                let scaleSize = 0.06 * WPTValues.usableScreenHeight
+                let scaleSize = 0.1 * WPTValues.usableScreenHeight
                 scale = CGSize(width: scaleSize, height: scaleSize)
             case self.trailMap!.stopCount - 1:
                 let scaleSize = 0.15 * WPTValues.usableScreenHeight
                 scale = CGSize(width: scaleSize, height: scaleSize)
                 texture = treasureMarkerTexture
             default:
-                let scaleSize = 0.06 * WPTValues.usableScreenHeight
+                let scaleSize = 0.1 * WPTValues.usableScreenHeight
                 scale = CGSize(width: scaleSize, height: scaleSize)
             }
             

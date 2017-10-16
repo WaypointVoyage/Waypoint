@@ -99,16 +99,18 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
             player.targetNode = nil
         }
         
-        let emitterNode = SKEmitterNode(fileNamed: "explosion.sks")
-        emitterNode?.particlePosition = self.sprite.position
-        emitterNode?.particleSize = CGSize(width: self.sprite.size.width * 2, height: self.sprite.size.height * 2)
-        self.addChild(emitterNode!)
+        let explosionNode = SKSpriteNode(imageNamed: "explode")
+        explosionNode.position = self.sprite.position
+        explosionNode.size = CGSize(width: self.sprite.size.width, height: self.sprite.size.height)
+        explosionNode.zPosition = self.sprite.zPosition + WPTValues.fontSizeSmall
+        self.addChild(explosionNode)
         
         self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
         
         // Don't forget to remove the emitter node after the explosion
         self.run(SKAction.wait(forDuration: 0.5), completion: {
             self.generateCoins()
+            explosionNode.removeFromParent()
             if let scene = (self.scene as? WPTLevelScene) {
                 scene.terrain.removeEnemy(self)
             }

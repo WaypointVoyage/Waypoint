@@ -86,7 +86,6 @@ class WPTPauseMenuNode: SKNode {
             // erase save data
             let storage = WPTStorage()
             storage.clearPlayerProgress()
-            
             self.scene?.view?.presentScene(WPTHomeScene())
         } else if self.reset.contains(touchPos) {
             if let scene = self.scene as? WPTLevelScene {

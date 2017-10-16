@@ -22,7 +22,7 @@ class WPTBoulderNode: SKNode {
         self.health = WPTHealthNode(maxHealth: WPTBoulderNode.maxBoulderHealth, persistent: false)
         super.init()
         self.name = WPTBoulderNode.nodeNameTag
-        self.zPosition = 1
+        self.zPosition = 4
         
         boulderImage.anchorPoint = CGPoint(x: CGFloat(0.5), y: CGFloat(0.5))
         boulderImage.size = CGSize(width: WPTBoulderNode.boulderRadius*2, height: WPTBoulderNode.boulderRadius*2)
@@ -62,14 +62,16 @@ class WPTBoulderNode: SKNode {
     
     func destroyBoulder() {
         self.health.removeFromParent()
-        let emitterNode = SKEmitterNode(fileNamed: "explosion.sks")
-        emitterNode?.particlePosition = self.crackedImage.position
-        emitterNode?.particleSize = CGSize(width: self.crackedImage.size.width * 2, height: self.crackedImage.size.height * 2)
-        self.addChild(emitterNode!)
+        let explosionNode = SKSpriteNode(imageNamed: "explode")
+        explosionNode.position = self.crackedImage.position
+        explosionNode.size = CGSize(width: self.crackedImage.size.width, height: self.crackedImage.size.height)
+        explosionNode.zPosition = self.crackedImage.zPosition + WPTValues.fontSizeSmall
+        self.addChild(explosionNode)
         self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
         // Don't forget to remove the emitter node after the explosion
         self.run(SKAction.wait(forDuration: 0.5), completion: {
             self.generateCoins()
+            explosionNode.removeFromParent()
             self.removeFromParent()
         })
     }

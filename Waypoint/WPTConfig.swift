@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import AVFoundation
 
 class WPTConfig {
     
@@ -21,11 +22,11 @@ class WPTConfig {
     let playSoundEffects = true     // toggle sound effects
     
     // testing
-    let testing = true                  // toggles general testing features
-    let allUnlocked = true              // determines if all of the levels on the world map are unlocked and beaten
-    let invincible = true               // if true, the player is invincible
-    let clearHighScoresOnLoad = false   // if true, all of the high scores are cleared when the app is loaded
-    let showTutorial = false            // if false, the tutorial will never be shown
+    var testing = false                  // toggles general testing features
+    var allUnlocked = false              // determines if all of the levels on the world map are unlocked and beaten
+    var invincible = false               // if true, the player is invincible
+    var clearHighScoresOnLoad = false    // if true, all of the high scores are cleared when the app is loaded
+    var showTutorial = true              // if false, the tutorial will never be shown
     
     // visual debugging
     let showPhysics = false                 // shows physics bodies

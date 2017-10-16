@@ -15,7 +15,7 @@ class WPTItemCollectorNode: SKNode, WPTUpdatable {
     weak var target: SKNode?
     var offset: CGPoint = CGPoint.zero
     
-    private var items = Set<WPTItemNode>()
+    private var items = Set<WPTFoundItemEntry>()
     
     init(target: SKNode, radius: CGFloat, strength: CGFloat = 0.2) {
         self.radius = radius
@@ -40,28 +40,42 @@ class WPTItemCollectorNode: SKNode, WPTUpdatable {
         
         if let target = target {
             for item in items {
-                if let itemPhys = item.physicsBody {
-                    let offset = CGVector(start: item.position, end: target.position)
+                if let itemPhys = item.item.physicsBody {
+                    let offset = CGVector(start: item.item.position, end: target.position)
                     let dist = offset.magnitude()
+                    
                     var mag = strength * (radius - dist)
                     clamp(&mag, min: 0, max: strength * radius)
-                    let force = mag * offset.normalized()
-                    itemPhys.applyForce(force)
+                    mag += pow(item.duration, 3.0) * radius
+                    
+                    let vel = mag * offset.normalized()
+                    itemPhys.velocity = vel
                 } else {
                     print("no physics...")
                 }
+                
+                item.duration += CGFloat(deltaTime)
             }
         }
     }
     
     func collect(item: WPTItemNode) {
-        self.items.insert(item)
+        self.items.insert(WPTFoundItemEntry(item))
     }
     
-    func dontCollect(item: WPTItemNode) {
-        if items.contains(item) {
-            self.items.remove(item)
-            item.physicsBody?.velocity = CGVector.zero
+    private class WPTFoundItemEntry: Hashable {
+        var hashValue: Int
+        
+        static func ==(lhs: WPTItemCollectorNode.WPTFoundItemEntry, rhs: WPTItemCollectorNode.WPTFoundItemEntry) -> Bool {
+            return lhs.hashValue == rhs.hashValue
+        }
+        
+        public let item: WPTItemNode
+        public var duration: CGFloat = 0
+        
+        init(_ item: WPTItemNode) {
+            self.item = item
+            self.hashValue = item.hashValue
         }
     }
 }

@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTSettingsScene: WPTScene {
     
-    let background = WPTBackgroundNode(image: "ocean3")
+    let background = WPTBackgroundNode(image: "beach_scene_test")
     let headerLabel = WPTLabelNode(text: "Settings", fontSize: WPTValues.fontSizeLarge)
     
     override func didMove(to view: SKView) {

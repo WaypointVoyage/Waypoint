@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703D61E590F8C0000827E /* random_ship_names.plist */; };
 		2D1703DB1E601E180000827E /* WPTMapViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1703DA1E601E180000827E /* WPTMapViewNode.swift */; };
-		2D1703DD1E625F1E0000827E /* distance.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703DC1E625F1E0000827E /* distance.m4a */; };
-		2D1703DF1E6264200000827E /* dragonRoost.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703DE1E6264200000827E /* dragonRoost.m4a */; };
-		2D1703E11E6266440000827E /* howToTrainYourDragon.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703E01E6266440000827E /* howToTrainYourDragon.m4a */; };
-		2D1703E31E62665B0000827E /* windWaker.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D1703E21E62665B0000827E /* windWaker.mp3 */; };
 		2D1704371E6F66FD0000827E /* WPTWhirlpoolNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1704361E6F66FD0000827E /* WPTWhirlpoolNode.swift */; };
 		2D1704391E6F670A0000827E /* WPTBoulderNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1704381E6F670A0000827E /* WPTBoulderNode.swift */; };
 		2D17043B1E6FF3CD0000827E /* WPTHealthNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D17043A1E6FF3CD0000827E /* WPTHealthNode.swift */; };
@@ -20,12 +16,16 @@
 		2D1704471E7009890000827E /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2D1704461E7009890000827E /* explosion.sks */; };
 		2D1704491E70D23F0000827E /* WPTItemNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1704481E70D23F0000827E /* WPTItemNode.swift */; };
 		2D17044B1E7103D70000827E /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044A1E7103D70000827E /* explosion.mp3 */; };
-		2D17044D1E7104090000827E /* cannon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044C1E7104090000827E /* cannon.mp3 */; };
 		2D17044F1E7105940000827E /* coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D17044E1E7105940000827E /* coin.mp3 */; };
 		2D1EF1051E806FF700F527B7 /* WPTDockMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EF1041E806FF700F527B7 /* WPTDockMenuNode.swift */; };
 		2D1EF1071E807C3100F527B7 /* WPTItemPickerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EF1061E807C3100F527B7 /* WPTItemPickerNode.swift */; };
 		2D2C8B581E727D1A00B1D862 /* WPTDestroyMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */; };
 		2D2C8B5C1E7F3D5A00B1D862 /* WPTTutorialNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */; };
+		2D6068191F8BDF380017B72E /* cannon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068181F8BDF310017B72E /* cannon.mp3 */; };
+		2D6068221F93324C0017B72E /* waypoint.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068211F93324A0017B72E /* waypoint.mp3 */; };
+		2D6068241F933DBE0017B72E /* WPTAudioMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6068231F933DBE0017B72E /* WPTAudioMusic.swift */; };
+		2D6068261F93435B0017B72E /* main_menu_theme.MP3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068251F93435A0017B72E /* main_menu_theme.MP3 */; };
+		2D6068281F934A090017B72E /* level_map_theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068271F934A080017B72E /* level_map_theme.mp3 */; };
 		2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */; };
 		2D7B92391F75A32F001F3E1F /* WPTKrakenIntroWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B92381F75A32F001F3E1F /* WPTKrakenIntroWave.swift */; };
 		2D7B923B1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B923A1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift */; };
@@ -110,6 +110,12 @@
 		7EC222081E72F54A00E98243 /* WPTPortDockingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */; };
 		7EC2220A1E73037300E98243 /* WPTDoNothingBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222091E73037300E98243 /* WPTDoNothingBS.swift */; };
 		7EC222161E730D1900E98243 /* WPTBrainTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */; };
+		7EC7F1371F90456A007530F8 /* WPTWakeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7F1361F90456A007530F8 /* WPTWakeManager.swift */; };
+		7EC7F1391F904668007530F8 /* WPTWakeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7F1381F904668007530F8 /* WPTWakeNode.swift */; };
+		7EC7F13B1F906993007530F8 /* wake_fill.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7EC7F13A1F906993007530F8 /* wake_fill.fsh */; };
+		7EC7F13D1F9069B4007530F8 /* wake_edge.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7EC7F13C1F9069B4007530F8 /* wake_edge.fsh */; };
+		7EC7F1401F906E03007530F8 /* WPTQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7F13F1F906E03007530F8 /* WPTQueue.swift */; };
+		7EC7F1421F906EE8007530F8 /* WPTStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7F1411F906EE8007530F8 /* WPTStack.swift */; };
 		7EC987A21E7F9FD600626C60 /* WPTStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC987A11E7F9FD600626C60 /* WPTStorage.swift */; };
 		7EC987A41E7FA20800626C60 /* WPTLootSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC987A31E7FA20800626C60 /* WPTLootSummary.swift */; };
 		7ECB5A021E745CA500A05563 /* WPTPursueBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */; };
@@ -169,10 +175,6 @@
 /* Begin PBXFileReference section */
 		2D1703D61E590F8C0000827E /* random_ship_names.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = random_ship_names.plist; sourceTree = "<group>"; };
 		2D1703DA1E601E180000827E /* WPTMapViewNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTMapViewNode.swift; sourceTree = "<group>"; };
-		2D1703DC1E625F1E0000827E /* distance.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = distance.m4a; sourceTree = "<group>"; };
-		2D1703DE1E6264200000827E /* dragonRoost.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragonRoost.m4a; sourceTree = "<group>"; };
-		2D1703E01E6266440000827E /* howToTrainYourDragon.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToTrainYourDragon.m4a; sourceTree = "<group>"; };
-		2D1703E21E62665B0000827E /* windWaker.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = windWaker.mp3; sourceTree = "<group>"; };
 		2D1704361E6F66FD0000827E /* WPTWhirlpoolNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWhirlpoolNode.swift; sourceTree = "<group>"; };
 		2D1704381E6F670A0000827E /* WPTBoulderNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBoulderNode.swift; sourceTree = "<group>"; };
 		2D17043A1E6FF3CD0000827E /* WPTHealthNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHealthNode.swift; sourceTree = "<group>"; };
@@ -180,12 +182,16 @@
 		2D1704461E7009890000827E /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 		2D1704481E70D23F0000827E /* WPTItemNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItemNode.swift; sourceTree = "<group>"; };
 		2D17044A1E7103D70000827E /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
-		2D17044C1E7104090000827E /* cannon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cannon.mp3; sourceTree = "<group>"; };
 		2D17044E1E7105940000827E /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
 		2D1EF1041E806FF700F527B7 /* WPTDockMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDockMenuNode.swift; sourceTree = "<group>"; };
 		2D1EF1061E807C3100F527B7 /* WPTItemPickerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTItemPickerNode.swift; sourceTree = "<group>"; };
 		2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDestroyMenuNode.swift; sourceTree = "<group>"; };
 		2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTutorialNode.swift; sourceTree = "<group>"; };
+		2D6068181F8BDF310017B72E /* cannon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cannon.mp3; sourceTree = "<group>"; };
+		2D6068211F93324A0017B72E /* waypoint.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = waypoint.mp3; path = Resources/Music/waypoint.mp3; sourceTree = SOURCE_ROOT; };
+		2D6068231F933DBE0017B72E /* WPTAudioMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTAudioMusic.swift; sourceTree = "<group>"; };
+		2D6068251F93435A0017B72E /* main_menu_theme.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = main_menu_theme.MP3; path = Resources/Music/main_menu_theme.MP3; sourceTree = "<group>"; };
+		2D6068271F934A080017B72E /* level_map_theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = level_map_theme.mp3; path = Resources/Music/level_map_theme.mp3; sourceTree = "<group>"; };
 		2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOOTERFZ.ttf; sourceTree = "<group>"; };
 		2D7B92381F75A32F001F3E1F /* WPTKrakenIntroWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTKrakenIntroWave.swift; sourceTree = "<group>"; };
 		2D7B923A1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTKrakenChestStealWave.swift; sourceTree = "<group>"; };
@@ -198,7 +204,6 @@
 		2D826C521F7594E4000D6FAC /* WPTWiggleBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTWiggleBS.swift; sourceTree = "<group>"; };
 		2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSettingsScene.swift; sourceTree = "<group>"; };
 		2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShip.swift; sourceTree = "<group>"; };
-		2DCA23691F85807B00FEB0C9 /* alibi_dangerous_territory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alibi_dangerous_territory.mp3; sourceTree = "<group>"; };
 		7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCircle.swift; sourceTree = "<group>"; };
 		7E0C78961E73D224006C79C3 /* WPTLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLine.swift; sourceTree = "<group>"; };
 		7E0D62021E36650B009C8516 /* WPTHomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHomeScene.swift; sourceTree = "<group>"; };
@@ -275,6 +280,12 @@
 		7EC222071E72F54A00E98243 /* WPTPortDockingHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPortDockingHandler.swift; sourceTree = "<group>"; };
 		7EC222091E73037300E98243 /* WPTDoNothingBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDoNothingBS.swift; sourceTree = "<group>"; };
 		7EC222151E730D1900E98243 /* WPTBrainTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrainTemplate.swift; sourceTree = "<group>"; };
+		7EC7F1361F90456A007530F8 /* WPTWakeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTWakeManager.swift; sourceTree = "<group>"; };
+		7EC7F1381F904668007530F8 /* WPTWakeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTWakeNode.swift; sourceTree = "<group>"; };
+		7EC7F13A1F906993007530F8 /* wake_fill.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = wake_fill.fsh; sourceTree = "<group>"; };
+		7EC7F13C1F9069B4007530F8 /* wake_edge.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = wake_edge.fsh; sourceTree = "<group>"; };
+		7EC7F13F1F906E03007530F8 /* WPTQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTQueue.swift; sourceTree = "<group>"; };
+		7EC7F1411F906EE8007530F8 /* WPTStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTStack.swift; sourceTree = "<group>"; };
 		7EC987A11E7F9FD600626C60 /* WPTStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTStorage.swift; sourceTree = "<group>"; };
 		7EC987A31E7FA20800626C60 /* WPTLootSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLootSummary.swift; sourceTree = "<group>"; };
 		7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPursueBS.swift; sourceTree = "<group>"; };
@@ -436,8 +447,8 @@
 			isa = PBXGroup;
 			children = (
 				2D17044E1E7105940000827E /* coin.mp3 */,
-				2D17044C1E7104090000827E /* cannon.mp3 */,
 				2D17044A1E7103D70000827E /* explosion.mp3 */,
+				2D6068181F8BDF310017B72E /* cannon.mp3 */,
 				7E13F62D1E48ECAD00B5D2FD /* sword1.caf */,
 			);
 			name = Effects;
@@ -446,11 +457,9 @@
 		7E13F62A1E48EA7E00B5D2FD /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				2D1703E21E62665B0000827E /* windWaker.mp3 */,
-				2D1703E01E6266440000827E /* howToTrainYourDragon.m4a */,
-				2D1703DE1E6264200000827E /* dragonRoost.m4a */,
-				2DCA23691F85807B00FEB0C9 /* alibi_dangerous_territory.mp3 */,
-				2D1703DC1E625F1E0000827E /* distance.m4a */,
+				2D6068271F934A080017B72E /* level_map_theme.mp3 */,
+				2D6068251F93435A0017B72E /* main_menu_theme.MP3 */,
+				2D6068211F93324A0017B72E /* waypoint.mp3 */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -500,6 +509,7 @@
 				7E16B8621E2D580600933E24 /* Main.storyboard */,
 				7E16B8651E2D580600933E24 /* Assets.xcassets */,
 				7E16B86A1E2D580600933E24 /* Info.plist */,
+				2D6068231F933DBE0017B72E /* WPTAudioMusic.swift */,
 				7E0D62101E366F5F009C8516 /* WPTValues.swift */,
 				7E13F6241E48E51000B5D2FD /* WPTConfig.swift */,
 			);
@@ -521,6 +531,7 @@
 		7E4216021E5B56A8004ADBD7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7EC7F13E1F906DEE007530F8 /* DataStructures */,
 				7E4C88C81E72ED0600760EDA /* Catalogs */,
 				7EBF5E681E4E1B4000F81982 /* WPTUtils.swift */,
 				7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */,
@@ -553,6 +564,8 @@
 			children = (
 				7E52428F1E56440900120002 /* water.fsh */,
 				7E93E91A1E985A8B002CF452 /* anchored_indicator.fsh */,
+				7EC7F13A1F906993007530F8 /* wake_fill.fsh */,
+				7EC7F13C1F9069B4007530F8 /* wake_edge.fsh */,
 			);
 			name = Level;
 			sourceTree = "<group>";
@@ -596,12 +609,12 @@
 		7E6932931E53B47700AF7373 /* Level */ = {
 			isa = PBXGroup;
 			children = (
+				7EC7F1351F904519007530F8 /* Terrain */,
 				7EF866861E82C30F0012F2C7 /* Special */,
 				7EC222041E72F48500E98243 /* Components */,
 				2D1704351E6F66EB0000827E /* Entities */,
 				7E5A6BEB1E5A0DA90067EAF3 /* Actors */,
 				7E6932981E53DFFB00AF7373 /* HUD */,
-				7E5242871E56331D00120002 /* WPTTerrainNode.swift */,
 			);
 			name = Level;
 			sourceTree = "<group>";
@@ -697,6 +710,25 @@
 				7E581C331E8DA01A008F8222 /* WPTItemCollectorNode.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		7EC7F1351F904519007530F8 /* Terrain */ = {
+			isa = PBXGroup;
+			children = (
+				7E5242871E56331D00120002 /* WPTTerrainNode.swift */,
+				7EC7F1361F90456A007530F8 /* WPTWakeManager.swift */,
+				7EC7F1381F904668007530F8 /* WPTWakeNode.swift */,
+			);
+			name = Terrain;
+			sourceTree = "<group>";
+		};
+		7EC7F13E1F906DEE007530F8 /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				7EC7F13F1F906E03007530F8 /* WPTQueue.swift */,
+				7EC7F1411F906EE8007530F8 /* WPTStack.swift */,
+			);
+			name = DataStructures;
 			sourceTree = "<group>";
 		};
 		7EC987A01E7F9FC300626C60 /* Storage */ = {
@@ -884,35 +916,36 @@
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
 				2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */,
 				7EF866D61E83556D0012F2C7 /* 11_shiver_me_timbers.plist in Resources */,
+				2D6068281F934A090017B72E /* level_map_theme.mp3 in Resources */,
 				7EBF5E6B1E4E213A00F81982 /* stat_bar.fsh in Resources */,
 				7EF866CF1E83556D0012F2C7 /* 4_fire_in_the_hole.plist in Resources */,
 				7ED963341E7DEA4900B58C1C /* brains.plist in Resources */,
 				7EF866BE1E833C020012F2C7 /* enemies.plist in Resources */,
-				2D1703E11E6266440000827E /* howToTrainYourDragon.m4a in Resources */,
 				7E15B66E1E83922E00A9B1DC /* stat_modifier_items.plist in Resources */,
+				2D6068261F93435B0017B72E /* main_menu_theme.MP3 in Resources */,
 				7E0D620F1E366EE3009C8516 /* TradeWinds-Regular.ttf in Resources */,
 				7EF866CC1E83556D0012F2C7 /* 1_sea_legs.plist in Resources */,
-				2D1703DF1E6264200000827E /* dragonRoost.m4a in Resources */,
-				2D1703E31E62665B0000827E /* windWaker.mp3 in Resources */,
 				7E15B66D1E83922E00A9B1DC /* repair_items.plist in Resources */,
 				2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */,
 				7EF866CB1E83556D0012F2C7 /* 0_setting_sail.plist in Resources */,
 				2D17044F1E7105940000827E /* coin.mp3 in Resources */,
 				7E15B66C1E83922E00A9B1DC /* other_items.plist in Resources */,
+				7EC7F13B1F906993007530F8 /* wake_fill.fsh in Resources */,
 				7E43CC771E54B844009367BC /* trail_map.plist in Resources */,
 				2D1704471E7009890000827E /* explosion.sks in Resources */,
-				2D17044D1E7104090000827E /* cannon.mp3 in Resources */,
 				7E13F62E1E48ECF500B5D2FD /* sword1.caf in Resources */,
 				7EF866D31E83556D0012F2C7 /* 8_give_no_quarter.plist in Resources */,
 				2D17043F1E7005170000827E /* fire.sks in Resources */,
+				7EC7F13D1F9069B4007530F8 /* wake_edge.fsh in Resources */,
 				7E15B6701E83952400A9B1DC /* currency_items.plist in Resources */,
 				7EF866D51E83556D0012F2C7 /* 10_high_seas.plist in Resources */,
 				7EF866D01E83556D0012F2C7 /* 5_dead_men_tell_no_tales.plist in Resources */,
 				7E93E91B1E985A8B002CF452 /* anchored_indicator.fsh in Resources */,
 				7EF866CD1E83556D0012F2C7 /* 2_pegleg_plunder.plist in Resources */,
-				2D1703DD1E625F1E0000827E /* distance.m4a in Resources */,
 				7EF866D11E83556D0012F2C7 /* 6_davy_jones_locker.plist in Resources */,
 				7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */,
+				2D6068191F8BDF380017B72E /* cannon.mp3 in Resources */,
+				2D6068221F93324C0017B72E /* waypoint.mp3 in Resources */,
 				7EF866D21E83556D0012F2C7 /* 7_letter_of_marque.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -950,8 +983,10 @@
 				7ED049DF1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift in Sources */,
 				2D2C8B5C1E7F3D5A00B1D862 /* WPTTutorialNode.swift in Sources */,
 				7E69329C1E53E0B200AF7373 /* WPTHudTopNode.swift in Sources */,
+				7EC7F1401F906E03007530F8 /* WPTQueue.swift in Sources */,
 				7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */,
 				7EF866831E82BCDA0012F2C7 /* WPTKrakenWave.swift in Sources */,
+				7EC7F1421F906EE8007530F8 /* WPTStack.swift in Sources */,
 				7E6932A21E53ECF500AF7373 /* WPTUpdatable.swift in Sources */,
 				7E6932A01E53E2D500AF7373 /* WPTFireButtonNode.swift in Sources */,
 				7EDAC9B41E71F101002CEC0F /* WPTLevelPhysicsContactHandler.swift in Sources */,
@@ -994,6 +1029,7 @@
 				2D1EF1051E806FF700F527B7 /* WPTDockMenuNode.swift in Sources */,
 				7E13F6341E48F8B900B5D2FD /* WPTPlayer.swift in Sources */,
 				7E13F6321E48F53200B5D2FD /* WPTLevelScene.swift in Sources */,
+				7EC7F1371F90456A007530F8 /* WPTWakeManager.swift in Sources */,
 				7E5242881E56331D00120002 /* WPTTerrainNode.swift in Sources */,
 				7E5A6BEE1E5A0E070067EAF3 /* WPTCannonNode.swift in Sources */,
 				7E69329E1E53E0D500AF7373 /* WPTHudBottomNode.swift in Sources */,
@@ -1018,6 +1054,7 @@
 				7EC987A41E7FA20800626C60 /* WPTLootSummary.swift in Sources */,
 				7E1472821E71A784005E5A4C /* WPTBrainState.swift in Sources */,
 				7EAE35CF1E81FC7500F42904 /* WPTReticleNode.swift in Sources */,
+				2D6068241F933DBE0017B72E /* WPTAudioMusic.swift in Sources */,
 				7ECF7C2F1F7BF7AD00E01940 /* WPTStaticTentacleNode.swift in Sources */,
 				7ECB5A041E745CD000A05563 /* WPTFleeBS.swift in Sources */,
 				7E5A6BF01E5A0E200067EAF3 /* WPTCannonSet.swift in Sources */,
@@ -1031,6 +1068,7 @@
 				7EBF5E691E4E1B4000F81982 /* WPTUtils.swift in Sources */,
 				7ED739011E44EBF500122903 /* WPTWorldMapNode.swift in Sources */,
 				2D1703DB1E601E180000827E /* WPTMapViewNode.swift in Sources */,
+				7EC7F1391F904668007530F8 /* WPTWakeNode.swift in Sources */,
 				7EC222081E72F54A00E98243 /* WPTPortDockingHandler.swift in Sources */,
 				7EF866811E82BC6C0012F2C7 /* WPTTreasureWave.swift in Sources */,
 				7ED049E31E6F6DE900CD69E1 /* WPTEnemyCatalog.swift in Sources */,

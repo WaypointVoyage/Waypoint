@@ -17,7 +17,6 @@ class WPTHudNode: SKNode, WPTUpdatable {
     let pauseMenu: WPTPauseMenuNode
     let destroyMenu: WPTDestroyMenuNode
     let dockMenu: WPTDockMenuNode
-    let backgroundMusic = SKAudioNode(fileNamed: "windWaker.mp3")
     
     init(player: WPTLevelPlayerNode, terrain: WPTTerrainNode) {
         self.player = player
@@ -53,14 +52,6 @@ class WPTHudNode: SKNode, WPTUpdatable {
         // dock menu
         self.dockMenu.zPosition = pauseShroud.zPosition + 1
         self.dockMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
-        
-        //audio
-        self.scene?.listener = player
-        backgroundMusic.isPositional = false
-        backgroundMusic.position = CGPoint(x: self.player.position.x, y: self.player.position.y)
-        backgroundMusic.autoplayLooped = true
-        self.addChild(backgroundMusic)
-
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,8 +61,6 @@ class WPTHudNode: SKNode, WPTUpdatable {
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
         self.top.update(currentTime, deltaTime)
         self.bottom.update(currentTime, deltaTime)
-        
-        self.backgroundMusic.position = CGPoint(x: self.player.position.x, y: self.player.position.y)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -101,22 +90,14 @@ class WPTHudNode: SKNode, WPTUpdatable {
     private func toggleShroud(_ isPaused: Bool) {
         if isPaused {
             self.pauseMenu.levelName = (self.scene as! WPTLevelScene).level.name
-            backgroundMusic.run(SKAction.pause())
+            WPTAudioMusic.music.pause()
             self.addChild(self.pauseShroud)
             self.addChild(self.pauseMenu)
         } else {
-            backgroundMusic.run(SKAction.play())
+            WPTAudioMusic.music.play()
             self.pauseShroud.removeFromParent()
             self.pauseMenu.removeFromParent()
         }
-    }
-    
-    func addAudioNode() {
-        
-        let backgroundMusic = SKAudioNode(fileNamed: "distance.m4a")
-        backgroundMusic.isPositional = false
-        
-        self.addChild(backgroundMusic)
     }
 }
 
