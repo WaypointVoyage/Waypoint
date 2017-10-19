@@ -96,20 +96,20 @@ class WPTLevel {
                 if let special = waveDict["special"] as? String {
                     switch (special) {
                     case String(describing: WPTKrakenIntroWave.self):
-                        self.waves.append(WPTKrakenIntroWave())
+                        self.waves.append(WPTKrakenIntroWave(waveDict))
                     case String(describing: WPTKrakenChestStealWave.self):
-                        self.waves.append(WPTKrakenChestStealWave())
+                        self.waves.append(WPTKrakenChestStealWave(waveDict))
                     case String(describing: WPTTentacle1Wave.self):
                         self.waves.append(WPTTentacle1Wave(waveDict))
                     case String(describing: WPTTentacle2Wave.self):
-                        self.waves.append(WPTTentacle2Wave())
+                        self.waves.append(WPTTentacle2Wave(waveDict))
                     case String(describing: WPTKrakenWave.self):
                         self.waves.append(WPTKrakenWave(waveDict))
                     case String(describing: WPTTreasureReturnsWave.self):
-                        self.waves.append(WPTTreasureReturnsWave())
+                        self.waves.append(WPTTreasureReturnsWave(waveDict))
                     case String(describing: WPTTreasureWave.self):
                         assert(xMarksTheSpot == nil, "Can only have one treasure wave per level")
-                        self.waves.append(WPTTreasureWave())
+                        self.waves.append(WPTTreasureWave(waveDict))
                         let spot = waveDict["xMarksTheSpot"] as! [String:CGFloat]
                         xMarksTheSpot = CGPoint(x: spot["x"]!, y: spot["y"]!)
                     default:

@@ -21,8 +21,8 @@ class WPTTreasureWave: WPTLevelWave {
     private var treasureCollectingTime: TimeInterval = TimeInterval(WPTTreasureWave.totalTimeTime)
     private var lastShownTime: Int = WPTTreasureWave.totalTimeTime
     
-    init() {
-        super.init([:])
+    override init(_ waveDict: [String:AnyObject]) {
+        super.init(waveDict)
     }
     
     override func setup(scene: WPTLevelScene) {

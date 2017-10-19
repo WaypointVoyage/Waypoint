@@ -17,22 +17,11 @@ class WPTKrakenWave: WPTLevelWave {
     
     override func setup(scene: WPTLevelScene) {
         super.setup(scene: scene)
+        print("SETUP - WPTKrakenWave (5)")
     }
     
     override func isComplete(scene: WPTLevelScene) -> Bool {
-        // determine if the kraken is beaten
-        print("Kraken Full")
+        print("FINISH - WPTKrakenWave (5)")
         return true
-    }
-    
-    override func enemySpawnPosition(_ enemy: WPTLevelEnemyNode) -> CGPoint? {
-        if let pos = super.enemySpawnPosition(enemy) {
-            return pos
-        }
-        
-        // Hilary
-        // spawn kraken head here
-        
-        return nil
     }
 }

@@ -45,6 +45,13 @@ class WPTLevelTouchHandlerNode: SKNode, WPTUpdatable {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func setInteraction(_ value: Bool) {
+        self.isUserInteractionEnabled = value
+        if !value {
+            self.moveTouch = nil
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let sceneLoc = touch.location(in: levelScene)

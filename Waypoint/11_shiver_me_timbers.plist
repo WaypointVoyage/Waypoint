@@ -397,6 +397,57 @@
 	<key>waves</key>
 	<array>
 		<dict>
+			<key>healthPickups</key>
+			<array>
+				<dict>
+					<key>x</key>
+					<integer>2160</integer>
+					<key>y</key>
+					<integer>500</integer>
+				</dict>
+				<dict>
+					<key>x</key>
+					<integer>2160</integer>
+					<key>y</key>
+					<real>3400</real>
+				</dict>
+				<dict>
+					<key>x</key>
+					<integer>500</integer>
+					<key>y</key>
+					<integer>2160</integer>
+				</dict>
+				<dict>
+					<key>x</key>
+					<integer>3820</integer>
+					<key>y</key>
+					<integer>2160</integer>
+				</dict>
+				<dict>
+					<key>x</key>
+					<integer>500</integer>
+					<key>y</key>
+					<integer>500</integer>
+				</dict>
+				<dict>
+					<key>x</key>
+					<integer>500</integer>
+					<key>y</key>
+					<integer>3820</integer>
+				</dict>
+				<dict>
+					<key>x</key>
+					<integer>3820</integer>
+					<key>y</key>
+					<integer>500</integer>
+				</dict>
+				<dict>
+					<key>x</key>
+					<integer>3820</integer>
+					<key>y</key>
+					<integer>3820</integer>
+				</dict>
+			</array>
 			<key>special</key>
 			<string>WPTKrakenIntroWave</string>
 		</dict>
@@ -405,10 +456,6 @@
 			<string>WPTKrakenChestStealWave</string>
 		</dict>
 		<dict>
-			<key>tentacleDuration</key>
-			<integer>10</integer>
-			<key>tentacleCount</key>
-			<integer>8</integer>
 			<key>special</key>
 			<string>WPTTentacle1Wave</string>
 		</dict>
@@ -417,11 +464,6 @@
 			<string>WPTTentacle2Wave</string>
 		</dict>
 		<dict>
-			<key>enemies</key>
-			<dict>
-				<key>Dynamic Tentacle</key>
-				<integer>8</integer>
-			</dict>
 			<key>special</key>
 			<string>WPTKrakenWave</string>
 		</dict>

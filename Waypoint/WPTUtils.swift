@@ -11,6 +11,11 @@ import SpriteKit
 
 let CG_PI: CGFloat = CGFloat(Double.pi)
 
+func randomNumber(min: CGFloat, max: CGFloat) -> CGFloat {
+    let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+    return min + rand * (max - min)
+}
+
 func clamp<T: Comparable>(_ value: inout T, min: T, max: T) {
     value = value < min ? min : value > max ? max : value
 }

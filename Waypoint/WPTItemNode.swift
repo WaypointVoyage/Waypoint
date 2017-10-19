@@ -29,6 +29,8 @@ class WPTItemNode: SKNode {
         self.physicsBody!.contactTestBitMask = WPTValues.actorCbm | WPTValues.itemCollectionCbm
         self.physicsBody!.collisionBitMask = 0
         self.physicsBody!.allowsRotation = false
+        
+        self.zPosition = WPTZPositions.actors - WPTZPositions.terrain
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -19,10 +19,13 @@ class WPTLevelScene: WPTScene {
     let player: WPTLevelPlayerNode
     var touchHandler: WPTLevelTouchHandlerNode! = nil
     var hud: WPTHudNode
-    var cam: SKCameraNode!
     let projectiles: SKNode
     let items: SKNode
     let port: WPTPortNode?
+    
+    // Camera stuff
+    var cam: SKCameraNode!
+    private var camFollowPlayer: Bool = true
     
     var contactDelegate: WPTLevelPhysicsContactHandler! = nil
     
@@ -178,7 +181,18 @@ class WPTLevelScene: WPTScene {
         }
         
         // apply the camera position
-        self.cam.position = target
+        if self.camFollowPlayer {
+            self.cam.position = target
+        }
+    }
+    
+    public func setCameraPosition(_ position: CGPoint? = nil, duration: TimeInterval, then: @escaping () -> Void = {}) {
+        if position == nil {
+            self.camFollowPlayer = true
+        } else {
+            self.camFollowPlayer = false
+            self.cam.run(SKAction.move(to: position!, duration: duration), completion: then)
+        }
     }
         
     private func pauseChanged() {

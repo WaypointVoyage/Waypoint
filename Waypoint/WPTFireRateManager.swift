@@ -14,10 +14,13 @@ class WPTFireRateManager: WPTUpdatable {
     private var lastFireTime: TimeInterval? = nil
     private var currentTime: TimeInterval? = nil
     
+    private var enabled: Bool = true
+    
     var modifier: CGFloat = 1
     
     var canFire: Bool {
         get {
+            guard self.enabled else { return false }
             guard let curT = currentTime else { return false }
             guard let lastT = lastFireTime else { return true }
             return (curT - lastT) > (1.0 / Double(modifier * ship.fireRate))
@@ -34,5 +37,13 @@ class WPTFireRateManager: WPTUpdatable {
     
     func registerFire() {
         self.lastFireTime = self.currentTime
+    }
+    
+    public func enable() {
+        self.enabled = true
+    }
+    
+    public func disable() {
+        self.enabled = false
     }
 }
