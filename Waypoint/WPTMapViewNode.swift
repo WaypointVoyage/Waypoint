@@ -94,8 +94,6 @@ class WPTMapViewNode: SKNode {
                 self.port!.position = portNode.position + offset
                 self.port!.zRotation = portNode.zRotation
                 self.addChild(self.port!)
-            } else {
-                print("huh...")
             }
         }
     }

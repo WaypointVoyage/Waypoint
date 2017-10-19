@@ -8,6 +8,28 @@
 		<key>awareness</key>
 		<integer>1</integer>
 		<key>brain</key>
+		<string>kraken_brain</string>
+		<key>caution</key>
+		<integer>1</integer>
+		<key>haste</key>
+		<integer>1</integer>
+		<key>items</key>
+		<array/>
+		<key>ship</key>
+		<string>Kraken</string>
+		<key>terrainType</key>
+		<string>_KRAKEN</string>
+		<key>triggerHappiness</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>Kraken</string>
+	</dict>
+	<dict>
+		<key>aggression</key>
+		<integer>1</integer>
+		<key>awareness</key>
+		<integer>1</integer>
+		<key>brain</key>
 		<string>dynamic_tentacle_brain</string>
 		<key>caution</key>
 		<integer>1</integer>

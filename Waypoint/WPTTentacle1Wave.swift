@@ -42,7 +42,7 @@ class WPTTentacle1Wave: WPTTentacleWave {
     
     private func startTentacleCycle() {
         self.moveToNextTentacleIndex()
-        guard self.curTentacle.currentHealth > 0 else {
+        guard self.tentacleCount > 0 && self.curTentacle.currentHealth > 0 else {
             print("NO MORE TENTACLES")
             return
         }

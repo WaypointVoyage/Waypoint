@@ -3,6 +3,65 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>stats</key>
+		<dict>
+			<key>damageScale</key>
+			<integer>1</integer>
+			<key>fireRateScale</key>
+			<integer>1</integer>
+			<key>healthScale</key>
+			<integer>1</integer>
+			<key>itemRadiusScale</key>
+			<integer>1</integer>
+			<key>rangeScale</key>
+			<integer>1</integer>
+			<key>shotSpeedScale</key>
+			<integer>1</integer>
+			<key>sizeScale</key>
+			<integer>1</integer>
+			<key>speedScale</key>
+			<integer>1</integer>
+			<key>turnRateScale</key>
+			<integer>1</integer>
+		</dict>
+		<key>previewImage</key>
+		<string></string>
+		<key>name</key>
+		<string>Kraken</string>
+		<key>inGameImage</key>
+		<string>kraken</string>
+		<key>colliderPath</key>
+		<array>
+			<array>
+				<integer>14</integer>
+				<integer>931</integer>
+			</array>
+			<array>
+				<integer>348</integer>
+				<integer>929</integer>
+			</array>
+			<array>
+				<integer>374</integer>
+				<integer>365</integer>
+			</array>
+			<array>
+				<integer>8</integer>
+				<integer>362</integer>
+			</array>
+		</array>
+		<key>colliderOffset</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+		</dict>
+		<key>cannonSet</key>
+		<array/>
+		<key>turnWhenFacing</key>
+		<false/>
+	</dict>
+	<dict>
 		<key>turnWhenFacing</key>
 		<false/>
 		<key>cannonSet</key>
