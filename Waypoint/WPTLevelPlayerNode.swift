@@ -70,15 +70,6 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     func touched() {
         if portHandler.docked {
             self.portHandler.undock()
-        } else {
-            self.anchored = !self.anchored
-        }
-    }
-    
-    override var anchored: Bool {
-        didSet {
-            guard let scene = self.scene as? WPTLevelScene else { return; }
-            scene.hud.top.anchoredIndicator.setAnchored(self.anchored)
         }
     }
     

@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "cannonButton.png",
+      "filename" : "anchor_button.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "cannonButton@2x.png",
       "scale" : "2x"
     },
     {

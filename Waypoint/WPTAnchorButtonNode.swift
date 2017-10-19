@@ -1,21 +1,21 @@
 //
-//  WPTFireButtonNode.swift
+//  WPTAnchorButtonNode.swift
 //  Waypoint
 //
-//  Created by Cameron Taylor on 2/14/17.
+//  Created by Hilary Schulz on 10/18/17.
 //  Copyright © 2017 cpe436group. All rights reserved.
 //
 
 import SpriteKit
 
-class WPTFireButtonNode: SKNode {
+class WPTAnchorButtonNode: SKNode {
     
-    private let pressedTex = SKTexture(imageNamed: "pressed_cannon_button")
-    private let unpressedTex = SKTexture(imageNamed: "cannon_button")
+    private let pressedTex = SKTexture(imageNamed: "pressed_anchor_button")
+    private let unpressedTex = SKTexture(imageNamed: "anchor_button")
     private let button: SKSpriteNode
     
     override init() {
-        let size = CGSize(width: WPTValues.fontSizeMedium*1.73, height: WPTValues.fontSizeMedium*1.73)
+        let size = CGSize(width: WPTValues.fontSizeMedium*1.2, height: WPTValues.fontSizeMedium*1.2)
         self.button = SKSpriteNode(texture: unpressedTex)
         self.button.size = size
         super.init()
@@ -36,3 +36,4 @@ class WPTFireButtonNode: SKNode {
         self.button.texture = self.unpressedTex
     }
 }
+
