@@ -53,6 +53,7 @@ class WPTKrakenChestStealWave: WPTLevelWave {
             
             // give the player their controls back
             self.scene.player.setUserInteraction(true)
+            self.scene.setCameraPosition(duration: 0)
         }
     }
     

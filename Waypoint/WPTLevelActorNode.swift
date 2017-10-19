@@ -37,6 +37,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     let sprite: SKSpriteNode
     var cannonNodes = [WPTCannonNode]()
     
+    // death watchers
+    public private(set) var deathObservers: [() -> Void] = [() -> Void]()
+    
     let fireRateMgr: WPTFireRateManager
     
     public var isPlayer: Bool {
@@ -240,5 +243,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
                 return
             }
         }
+    }
+    
+    public func onDeath(_ action: @escaping () -> Void) {
+        self.deathObservers.append(action)
     }
 }

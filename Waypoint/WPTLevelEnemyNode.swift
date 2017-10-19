@@ -115,6 +115,11 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
                 scene.terrain.removeEnemy(self)
             }
         })
+        
+        // actions for observers
+        for action in self.deathObservers {
+            action()
+        }
     }
     
     func generateCoins() {

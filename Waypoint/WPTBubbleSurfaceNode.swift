@@ -21,15 +21,21 @@ class WPTBubbleSurfaceNode: SKNode {
     private let deltaWidth: CGFloat
     private let deltaHeight: CGFloat
     private let period: SKAction
-    private var stopped: Bool = false
+    private var stopped: Bool = true
     
     init(width: CGFloat, height: CGFloat, frequency: CGFloat = 2.0) {
         self.deltaWidth = width / 2.0
         self.deltaHeight = height / 2.0
         self.period = SKAction.wait(forDuration: TimeInterval(1.0 / frequency))
         super.init()
-        
-        self.runBubbles()
+        self.zPosition = 1
+    }
+    
+    public func start() {
+        if self.stopped {
+            self.stopped = false
+            self.runBubbles()
+        }
     }
     
     public func stop() {
@@ -38,6 +44,7 @@ class WPTBubbleSurfaceNode: SKNode {
     
     private func runBubbles() {
         if !self.stopped {
+            self.spawnBubbles()
             self.run(self.period, completion: {
                 self.runBubbles()
             })
