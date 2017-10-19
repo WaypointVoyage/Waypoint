@@ -16,6 +16,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     let brain: WPTBrain
     var brainRadii: WPTBrainRadiiNode? = nil
     let healthBar: WPTHealthNode
+    let explosionEffect = WPTAudioNode(effect: "cannon.mp3")
     
     var isDead: Bool = false
     
@@ -45,6 +46,8 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         )
         healthBar.setScale(1 / enemy.ship.size)
         self.addChild(healthBar)
+        
+        self.addChild(explosionEffect)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -105,16 +108,15 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         explosionNode.zPosition = self.sprite.zPosition + WPTValues.fontSizeSmall
         self.addChild(explosionNode)
         
-        self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
-        
-        // Don't forget to remove the emitter node after the explosion
-        self.run(SKAction.wait(forDuration: 0.5), completion: {
-            self.generateCoins()
-            explosionNode.removeFromParent()
-            if let scene = (self.scene as? WPTLevelScene) {
-                scene.terrain.removeEnemy(self)
+        self.explosionEffect.playEffect() {
+            self.run(SKAction.wait(forDuration: 0.5)) {
+                self.generateCoins()
+                explosionNode.removeFromParent()
+                if let scene = (self.scene as? WPTLevelScene) {
+                    scene.terrain.removeEnemy(self)
+                }
             }
-        })
+        }
     }
     
     func generateCoins() {

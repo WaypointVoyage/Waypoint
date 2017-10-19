@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTHighScoresScene: WPTScene {
     
-    let background = WPTBackgroundNode(image: "beach_scene_test")
+    let background = WPTBackgroundNode(image: "beach_scene")
     let titleLabel = WPTLabelNode(text: "High Scores", fontSize: WPTValues.fontSizeLarge)
     
     let scoresTable = SKNode()
