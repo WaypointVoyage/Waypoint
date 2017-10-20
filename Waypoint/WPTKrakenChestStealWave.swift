@@ -31,7 +31,7 @@ class WPTKrakenChestStealWave: WPTLevelWave {
         // anchor the player and disable their controls
         self.scene.player.anchored = true
         self.scene.player.setUserInteraction(false)
-        self.scene.player.physics?.velocity = CGVector.zero
+        self.scene.player.physicsBody?.velocity = CGVector.zero
         
         // move the camera to the treasure chest
         self.scene.setCameraPosition(self.scene.level.xMarksTheSpot!, duration: 1.5, then: then)

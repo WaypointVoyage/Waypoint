@@ -16,6 +16,7 @@ class WPTBoulderNode: SKNode {
     
     let boulderImage = SKSpriteNode(imageNamed: "boulder")
     let crackedImage = SKSpriteNode(imageNamed: "crackedBoulder")
+    let boulderEffect = WPTAudioNode(effect: "coin.mp3")
     var health: WPTHealthNode
     
     override init() {
@@ -35,6 +36,7 @@ class WPTBoulderNode: SKNode {
         self.physicsBody!.contactTestBitMask = WPTValues.actorCbm | WPTValues.projectileCbm
  
         self.addChild(boulderImage)
+        self.addChild(boulderEffect)
         
         self.health.position = CGPoint(
             x: self.position.x,
@@ -67,13 +69,14 @@ class WPTBoulderNode: SKNode {
         explosionNode.size = CGSize(width: self.crackedImage.size.width, height: self.crackedImage.size.height)
         explosionNode.zPosition = self.crackedImage.zPosition + WPTValues.fontSizeSmall
         self.addChild(explosionNode)
-        self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
-        // Don't forget to remove the emitter node after the explosion
-        self.run(SKAction.wait(forDuration: 0.5), completion: {
-            self.generateCoins()
-            explosionNode.removeFromParent()
-            self.removeFromParent()
-        })
+        
+        self.boulderEffect.playEffect() {
+            self.run(SKAction.wait(forDuration: 0.5)) {
+                self.generateCoins()
+                explosionNode.removeFromParent()
+                self.removeFromParent()
+            }
+        }
     }
     
     func generateCoins() {

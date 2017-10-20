@@ -18,7 +18,7 @@ class WPTTentacle2Wave: WPTTentacleWave {
     private let surroundPlayerRadius: CGFloat
     
     private var curTentacleIndex: Int = -1
-    private var curTentacle: WPTLevelEnemyNode {
+    private var curTentacle: WPTLevelTentacleNode {
         return self.tentacles[self.curTentacleIndex]
     }
     
@@ -43,20 +43,21 @@ class WPTTentacle2Wave: WPTTentacleWave {
         }
     }
     
-    private func spawnTentacle(position: CGPoint, bubbleDuraiton: TimeInterval, tentacle: WPTLevelEnemyNode, tentacleDuration: TimeInterval, then: @escaping () -> Void) {
-        let bubbles = self.makeTentacleBubbles()
-        bubbles.position = position
-        bubbles.start()
+    private func spawnTentacle(position: CGPoint, bubbleDuraiton: TimeInterval, tentacle: WPTLevelTentacleNode, tentacleDuration: TimeInterval, then: @escaping () -> Void) {
+
+        tentacle.position = position
+        tentacle.submerge()
+        tentacle.setBubbles(true)
+        self.scene.terrain.addEnemy(tentacle)
         
-        bubbles.run(SKAction.wait(forDuration: bubbleDuraiton)) {
-            tentacle.position = position
-            self.scene.terrain.addEnemy(tentacle)
-            
+        tentacle.run(SKAction.wait(forDuration: bubbleDuraiton)) {
+            tentacle.surface()
             tentacle.run(SKAction.wait(forDuration: tentacleDuration)) {
-                self.scene.terrain.removeEnemy(tentacle)
-                bubbles.removeFromParent()
-                
-                then()
+                tentacle.submerge() {
+                    self.scene.terrain.removeEnemy(tentacle)
+                    tentacle.setBubbles(false)
+                    then()
+                }
             }
         }
     }

@@ -14,8 +14,6 @@ class WPTKrakenIntroWave: WPTLevelWave {
     private var healthLocations: [CGPoint] = [CGPoint]()
     private let treasureChest: WPTFinalTreasureNode = WPTFinalTreasureNode()
     
-    private var waveDone: Bool = false
-    
     override init(_ waveDict: [String:AnyObject]) {
         
         let healthPickupsArray = waveDict["healthPickups"] as! [[String:Int]]
@@ -49,17 +47,9 @@ class WPTKrakenIntroWave: WPTLevelWave {
         }
     }
     
-    override func update(_ deltaTime: TimeInterval) {
-        // check if close to the treasure
-        let player = self.scene.player
-        let dist = CGVector(start: treasureChest.position, end: player.position).magnitude()
-        if dist < self.treasureChest.activationDistance {
-            self.waveDone = true
-        }
-    }
-    
     override func isComplete(scene: WPTLevelScene) -> Bool {
-        return self.waveDone
+        let dist = CGVector(start: self.treasureChest.position, end: self.scene.player.position).magnitude()
+        return dist < self.treasureChest.activationDistance
     }
 }
 

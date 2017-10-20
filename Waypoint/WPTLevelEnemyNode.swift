@@ -16,6 +16,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     let brain: WPTBrain
     var brainRadii: WPTBrainRadiiNode? = nil
     let healthBar: WPTHealthNode
+    let explosionEffect = WPTAudioNode(effect: "cannon.mp3")
     
     var isDead: Bool = false
     
@@ -45,6 +46,8 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         )
         healthBar.setScale(1 / enemy.ship.size)
         self.addChild(healthBar)
+        
+        self.addChild(explosionEffect)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,14 +70,14 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         healthBar.zRotation = -self.zRotation
         
         // once the enemy is inside the boundary, they will collide with it
-        if let phys = self.physics {
+        if let phys = self.physicsBody {
             if phys.collisionBitMask & WPTValues.boundaryCbm == 0 {
                 if let scene = self.scene as? WPTLevelScene {
                     let terrainBox = CGRect(origin: CGPoint.zero, size: scene.terrain.size)
                     let enemyBoxOrigin = CGPoint(x: self.position.x - self.sprite.frame.width / 2, y: self.position.y - self.sprite.frame.height / 2)
                     let enemyBox = CGRect(origin: enemyBoxOrigin, size: self.sprite.frame.size)
                     if terrainBox.contains(enemyBox) {
-                        self.physics?.collisionBitMask |= WPTValues.boundaryCbm
+                        self.physicsBody?.collisionBitMask |= WPTValues.boundaryCbm
                         self.brain.start()
                     }
                 }
@@ -86,13 +89,13 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         print("doing \(damage) damage to a \(self.enemy.name)")
         super.doDamage(damage)
         let alive = healthBar.updateHealth(damage)
-        if !alive && self.physics != nil {
+        if !alive && self.physicsBody != nil {
             destroyEnemy()
         }
     }
     
     private func destroyEnemy() {
-        self.physics = nil // at this point on, there are is no more world interaction
+        self.physicsBody = nil // at this point on, there are is no more world interaction
         self.isDead = true
         
         if player.targetNode === self {
@@ -105,16 +108,15 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         explosionNode.zPosition = self.sprite.zPosition + WPTValues.fontSizeSmall
         self.addChild(explosionNode)
         
-        self.run(SKAction.playSoundFileNamed("cannon.mp3", waitForCompletion: false))
-        
-        // Don't forget to remove the emitter node after the explosion
-        self.run(SKAction.wait(forDuration: 0.5), completion: {
-            self.generateCoins()
-            explosionNode.removeFromParent()
-            if let scene = (self.scene as? WPTLevelScene) {
-                scene.terrain.removeEnemy(self)
+        self.explosionEffect.playEffect() {
+            self.run(SKAction.wait(forDuration: 0.5)) {
+                self.generateCoins()
+                explosionNode.removeFromParent()
+                if let scene = (self.scene as? WPTLevelScene) {
+                    scene.terrain.removeEnemy(self)
+                }
             }
-        })
+        }
         
         // actions for observers
         for action in self.deathObservers {

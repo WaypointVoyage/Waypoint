@@ -13,11 +13,10 @@ class WPTTentacle1Wave: WPTTentacleWave {
     
     private let tentacleDuration: TimeInterval
     private var curTentacleIndex: Int = -1
-    private var curTentacle: WPTLevelEnemyNode {
+    private var curTentacle: WPTLevelTentacleNode {
         return self.tentacles[self.curTentacleIndex]
     }
     
-    private var bubbles: WPTBubbleSurfaceNode? = nil
     private let bubbleDuraiton: TimeInterval
     
     override init(_ waveDict: [String:AnyObject]) {
@@ -43,10 +42,8 @@ class WPTTentacle1Wave: WPTTentacleWave {
     private func startTentacleCycle() {
         self.moveToNextTentacleIndex()
         guard self.tentacleCount > 0 && self.curTentacle.currentHealth > 0 else {
-            print("NO MORE TENTACLES")
             return
         }
-        print("Next tentacle")
         
         let pos = self.scene.player.position
         self.bubbleForABit(pos: pos) {
@@ -55,39 +52,36 @@ class WPTTentacle1Wave: WPTTentacleWave {
     }
     
     public func bubbleForABit(pos: CGPoint, then: @escaping () -> Void) {
-        self.bubbles = self.makeTentacleBubbles()
-        self.bubbles!.position = pos
-        bubbles!.start()
-        bubbles!.run(SKAction.wait(forDuration: self.bubbleDuraiton)) {
-            self.curTentacle.position = pos
-            self.scene.terrain.addEnemy(self.curTentacle)
+        self.curTentacle.position = pos
+        self.curTentacle.submerge()
+        self.curTentacle.setBubbles(true)
+        self.scene.terrain.addEnemy(self.curTentacle)
+        
+        self.curTentacle.run(SKAction.wait(forDuration: self.bubbleDuraiton)) {
             then()
         }
     }
     
     private func spawnTentacle() {
+        self.curTentacle.surface()
         self.curTentacle.run(SKAction.wait(forDuration: self.tentacleDuration)) {
-            self.scene.terrain.removeEnemy(self.curTentacle)
-            self.restartTentacleCycle()
+            self.curTentacle.submerge() {
+                self.scene.terrain.removeEnemy(self.curTentacle)
+                self.curTentacle.setBubbles(false)
+                self.startTentacleCycle()
+            }
         }
     }
     
-    private func restartTentacleCycle() {
-        self.bubbles?.removeFromParent()
-        self.bubbles = nil
-        self.startTentacleCycle()
-    }
-    
     override func onTentacleDead() {
-        self.restartTentacleCycle()
+        self.startTentacleCycle()
     }
 
 }
 
 class WPTTentacleWave: WPTLevelWave {
     internal let tentacleCount: Int
-    internal let tentacleEnemy: WPTEnemy = WPTEnemyCatalog.enemiesByName["Static Tentacle"]!
-    internal var tentacles: [WPTLevelEnemyNode] = [WPTLevelEnemyNode]()
+    internal var tentacles: [WPTLevelTentacleNode] = [WPTLevelTentacleNode]()
     internal var killedTentacles: Int = 0
     
     override init(_ waveDict: [String:AnyObject]) {
@@ -104,7 +98,7 @@ class WPTTentacleWave: WPTLevelWave {
             
             // TODO: find out why tentacles start to teleport after a while
             
-            let tentacle = WPTLevelEnemyNode(enemy: self.tentacleEnemy, player: scene.player)
+            let tentacle = WPTLevelTentacleNode(player: scene.player, submerged: true)
             tentacle.onDeath {
                 self.killedTentacles += 1
                 print("\(self.tentacleCount - self.killedTentacles) tentacles left!")
@@ -112,12 +106,6 @@ class WPTTentacleWave: WPTLevelWave {
             }
             self.tentacles.append(tentacle)
         }
-    }
-    
-    func makeTentacleBubbles() -> WPTBubbleSurfaceNode {
-        let bubbles = WPTBubbleSurfaceNode(width: 100, height: 100)
-        self.scene.terrain.addChild(bubbles)
-        return bubbles
     }
     
     func onTentacleDead() {

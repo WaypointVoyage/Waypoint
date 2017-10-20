@@ -15,7 +15,7 @@ class WPTFireButtonNode: SKNode {
     private let button: SKSpriteNode
     
     override init() {
-        let size = CGSize(width: WPTValues.fontSizeMedium*1.1, height: WPTValues.fontSizeMedium*1.1)
+        let size = CGSize(width: WPTValues.fontSizeMedium*1.73, height: WPTValues.fontSizeMedium*1.73)
         self.button = SKSpriteNode(texture: unpressedTex)
         self.button.size = size
         super.init()

@@ -138,6 +138,8 @@
 		</array>
 		<key>inGameImage</key>
 		<string>waypoint_ship_top_down</string>
+		<key>inGamePlayerImage</key>
+		<string>player_waypoint_ship_top_down</string>
 		<key>name</key>
 		<string>Waypoint Ship</string>
 		<key>previewImage</key>
@@ -237,6 +239,8 @@
 			</array>
 		</array>
 		<key>inGameImage</key>
+		<string>paper_boat_top_down</string>
+		<key>inGamePlayerImage</key>
 		<string>paper_boat_top_down</string>
 		<key>name</key>
 		<string>Paper Boat</string>
@@ -426,6 +430,8 @@
 		</array>
 		<key>inGameImage</key>
 		<string>longship_top_down</string>
+		<key>inGamePlayerImage</key>
+		<string>player_longship_top_down</string>
 		<key>name</key>
 		<string>Longship</string>
 		<key>previewImage</key>
@@ -544,6 +550,8 @@
 		</array>
 		<key>inGameImage</key>
 		<string>best_ship_top_down</string>
+		<key>inGamePlayerImage</key>
+		<string>best_ship_top_down</string>
 		<key>name</key>
 		<string>Best Ship</string>
 		<key>previewImage</key>
@@ -644,6 +652,8 @@
 			</array>
 		</array>
 		<key>inGameImage</key>
+		<string>worst_ship_top_down</string>
+		<key>inGamePlayerImage</key>
 		<string>worst_ship_top_down</string>
 		<key>name</key>
 		<string>Worst Ship</string>

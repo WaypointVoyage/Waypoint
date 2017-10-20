@@ -16,6 +16,12 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     let reticle = WPTReticleNode()
     var itemRad: WPTItemCollectorNode! = nil
     
+    public private(set) var interactionEnabled: Bool = true
+    
+    override var spriteImage: String {
+        return self.actor.ship.inGamePlayerImage!
+    }
+    
     init(player: WPTPlayer) {
         super.init(actor: player, teamBitMask: WPTConfig.values.testing ? 0 : WPTValues.playerTbm)
         
@@ -30,7 +36,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         itemRad.setScale(1 / player.ship.size)
         self.addChild(itemRad)
         
-        self.physics!.collisionBitMask |= WPTValues.boundaryCbm
+        self.physicsBody!.collisionBitMask |= WPTValues.boundaryCbm
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -58,6 +64,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     }
     
     public func setUserInteraction(_ value: Bool) {
+        self.interactionEnabled = value
         if let scene = self.scene as? WPTLevelScene {
             scene.touchHandler.setInteraction(value)
         }
@@ -81,15 +88,6 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     func touched() {
         if portHandler.docked {
             self.portHandler.undock()
-        } else {
-            self.anchored = !self.anchored
-        }
-    }
-    
-    override var anchored: Bool {
-        didSet {
-            guard let scene = self.scene as? WPTLevelScene else { return; }
-            scene.hud.top.anchoredIndicator.setAnchored(self.anchored)
         }
     }
     

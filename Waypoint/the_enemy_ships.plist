@@ -62,6 +62,13 @@
 		<false/>
 	</dict>
 	<dict>
+		<key>imageOffset</key>
+		<dict>
+			<key>x</key>
+			<real>1180</real>
+			<key>y</key>
+			<integer>0</integer>
+		</dict>
 		<key>turnWhenFacing</key>
 		<false/>
 		<key>cannonSet</key>
@@ -69,27 +76,27 @@
 		<key>colliderOffset</key>
 		<dict>
 			<key>x</key>
-			<integer>-256</integer>
+			<integer>-100</integer>
 			<key>y</key>
-			<integer>-256</integer>
+			<real>-1280</real>
 		</dict>
 		<key>colliderPath</key>
 		<array>
 			<array>
+				<integer>15</integer>
+				<integer>814</integer>
+			</array>
+			<array>
+				<integer>209</integer>
+				<integer>819</integer>
+			</array>
+			<array>
+				<integer>201</integer>
+				<integer>481</integer>
+			</array>
+			<array>
 				<integer>14</integer>
-				<integer>931</integer>
-			</array>
-			<array>
-				<integer>348</integer>
-				<integer>929</integer>
-			</array>
-			<array>
-				<integer>374</integer>
-				<integer>365</integer>
-			</array>
-			<array>
-				<integer>8</integer>
-				<integer>362</integer>
+				<integer>490</integer>
 			</array>
 		</array>
 		<key>inGameImage</key>

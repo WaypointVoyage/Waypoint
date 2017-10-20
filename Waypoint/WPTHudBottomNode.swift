@@ -11,36 +11,32 @@ import SpriteKit
 class WPTHudBottomNode: SKNode, WPTUpdatable {
     private let leftFire: WPTFireButtonNode
     private let rightFire: WPTFireButtonNode
-    let leftBorder = SKSpriteNode(imageNamed: "levelBorder")
-    let rightBorder = SKSpriteNode(imageNamed: "levelBorder")
+    private let leftAnchor: WPTAnchorButtonNode
+    private let rightAnchor: WPTAnchorButtonNode
     let alert = WPTAlertNode()
     
     private var pressed: Bool = false
+    private var anchored: Bool = true
     
     override init() {
         self.leftFire = WPTFireButtonNode()
         self.rightFire = WPTFireButtonNode()
+        self.leftAnchor = WPTAnchorButtonNode()
+        self.rightAnchor = WPTAnchorButtonNode()
         super.init()
         self.isUserInteractionEnabled = true
         
-        let offset = WPTValues.fontSizeMedium / 2 + WPTValues.fontSizeMiniscule
+        let offset = WPTValues.fontSizeMedium / 1.24 + WPTValues.fontSizeMiniscule
         leftFire.position = CGPoint(x: offset, y: offset)
+        leftAnchor.position = CGPoint(x: offset * 2.5, y: offset * 0.8)
         self.addChild(leftFire)
+        self.addChild(leftAnchor)
         
         rightFire.position = CGPoint(x: WPTValues.screenSize.width - offset, y: offset)
-        rightFire.xScale =  -1 * self.rightBorder.xScale
+        rightAnchor.position = CGPoint(x: WPTValues.screenSize.width - offset * 2.5, y: offset * 0.8)
+        rightFire.xScale =  -1 * self.leftFire.xScale
         self.addChild(rightFire)
-        
-        self.leftBorder.position = CGPoint(x: offset*1.2, y: offset)
-        self.leftBorder.size = CGSize(width: WPTValues.fontSizeLarge*2, height: WPTValues.fontSizeLarge*2)
-        self.leftBorder.zPosition = WPTZPositions.touchHandler + 1 - WPTZPositions.hud
-        self.addChild(leftBorder)
-        
-        self.rightBorder.xScale =  -1 * self.rightBorder.xScale
-        self.rightBorder.zPosition = self.leftBorder.zPosition
-        self.rightBorder.size = CGSize(width: WPTValues.fontSizeLarge*2, height: WPTValues.fontSizeLarge*2)
-        self.rightBorder.position = CGPoint(x: WPTValues.screenSize.width - (offset*1.2), y: offset)
-        self.addChild(rightBorder)
+        self.addChild(rightAnchor)
         
         alert.position = CGPoint(x: WPTValues.screenSize.width * 0.5, y: 10)
         self.addChild(alert)
@@ -58,16 +54,32 @@ class WPTHudBottomNode: SKNode, WPTUpdatable {
                 player.fireCannons()
             }
         }
+        if let player = (self.scene as? WPTLevelScene)?.player {
+            if player.anchored {
+                self.leftAnchor.startPress()
+                self.rightAnchor.startPress()
+            } else {
+                self.leftAnchor.endPress()
+                self.rightAnchor.endPress()
+            }
+        }
         
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let location = touches.first!.location(in: self)
         if !pressed {
-            let location = touches.first!.location(in: self)
             if self.leftFire.contains(location) || self.rightFire.contains(location) {
                 self.leftFire.startPress()
                 self.rightFire.startPress()
                 self.pressed = true
+            }
+        }
+        if self.leftAnchor.contains(location) || self.rightAnchor.contains(location) {
+            if let player = (self.scene as? WPTLevelScene)?.player {
+                if player.interactionEnabled {
+                    player.anchored = !player.anchored
+                }
             }
         }
     }
@@ -83,14 +95,14 @@ class WPTHudBottomNode: SKNode, WPTUpdatable {
     func hideBorder() {
         self.leftFire.isHidden = true
         self.rightFire.isHidden = true
-        self.leftBorder.isHidden = true
-        self.rightBorder.isHidden = true
+        self.leftAnchor.isHidden = true
+        self.rightAnchor.isHidden = true
     }
     
     func displayBorder() {
         self.leftFire.isHidden = false
         self.rightFire.isHidden = false
-        self.leftBorder.isHidden = false
-        self.rightBorder.isHidden = false
+        self.leftAnchor.isHidden = false
+        self.rightAnchor.isHidden = false
     }
 }
