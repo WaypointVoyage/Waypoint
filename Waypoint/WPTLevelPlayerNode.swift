@@ -16,6 +16,10 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     let reticle = WPTReticleNode()
     var itemRad: WPTItemCollectorNode! = nil
     
+    override var spriteImage: String {
+        return self.actor.ship.inGamePlayerImage!
+    }
+    
     init(player: WPTPlayer) {
         super.init(actor: player, teamBitMask: WPTConfig.values.testing ? 0 : WPTValues.playerTbm)
         

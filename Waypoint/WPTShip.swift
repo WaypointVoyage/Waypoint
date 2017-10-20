@@ -83,6 +83,7 @@ class WPTShip {
     
     let previewImage: String
     let inGameImage: String
+    let inGamePlayerImage: String?
     let cannonSet: WPTCannonSet
     let colliderPath: CGPath
     
@@ -93,6 +94,7 @@ class WPTShip {
         self.name = dict["name"] as! String
         self.previewImage = dict["previewImage"] as! String
         self.inGameImage = dict["inGameImage"] as! String
+        self.inGamePlayerImage = dict["inGamePlayerImage"] as? String
         self.cannonSet = WPTCannonSet(dict["cannonSet"] as! [[String:AnyObject]])
         
         // collider
@@ -154,6 +156,7 @@ class WPTShip {
         self.turnWhenFacing = other.turnWhenFacing
         self.previewImage = other.previewImage
         self.inGameImage = other.inGameImage
+        self.inGamePlayerImage = other.inGamePlayerImage
         self.cannonSet = WPTCannonSet(other: other.cannonSet)
         self.colliderPath = other.colliderPath
         self.initStats(speedScale: other.speedScale, damageScale: other.damageScale, healthScale: other.healthScale, rangeScale: other.rangeScale, shotSpeedScale: other.shotSpeedScale, sizeScale: other.sizeScale, turnRateScale: other.turnRateScale, itemRadiusScale: other.itemRadiusScale)

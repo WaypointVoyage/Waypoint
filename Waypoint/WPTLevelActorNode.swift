@@ -33,8 +33,12 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         return CGVector(dx: forward.dy, dy: -forward.dx) // TODO: verify
     }
     
+    var spriteImage: String {
+        return self.actor.ship.inGameImage
+    }
+    
     // child nodes
-    let sprite: SKSpriteNode
+    var sprite: SKSpriteNode! = nil
     var cannonNodes = [WPTCannonNode]()
     
     let fireRateMgr: WPTFireRateManager
@@ -46,11 +50,11 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     init(actor: WPTActor, teamBitMask tbm: UInt32) {
         self.actor = actor
         self.currentHealth = actor.ship.health
-        self.sprite = SKSpriteNode(imageNamed: actor.ship.inGameImage)
         self.physics = SKPhysicsBody(polygonFrom: actor.ship.colliderPath)
         self.fireRateMgr = WPTFireRateManager(actor.ship)
         self.teamBitMask = tbm
         super.init()
+        self.sprite = SKSpriteNode(imageNamed: self.spriteImage)
         
         // sprite
         self.zPosition = WPTZPositions.actors - WPTZPositions.terrain
