@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTLevelTentacleNode: WPTLevelEnemyNode {
     private let tentacleEnemy: WPTEnemy
-    private let riseShader: SKShader
+    private var cropNode: SKCropNode! = nil
     
     public let isStatic: Bool
     public private(set) var isSubmerged: Bool = false
@@ -18,16 +18,13 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     private let bubbles: WPTBubbleSurfaceNode
     private var holdPhysics: SKPhysicsBody? = nil
     
-    private var submergeOffset: CGFloat {
-        return self.sprite.size.width
-    }
+    private var surfaceSpritePos: CGPoint! = nil
+    private var submergedSpritePos: CGPoint! = nil
     
     init(isStatic: Bool = true, player: WPTLevelPlayerNode, submerged: Bool) {
         self.isStatic = isStatic
         let enemyName = isStatic ? "Static Tentacle" : "Dynamic Tentacle"
         self.tentacleEnemy = WPTEnemyCatalog.enemiesByName[enemyName]!
-        
-        self.riseShader = SKShader(fileNamed: "tentacle_rise.fsh")
         
         self.bubbles = WPTBubbleSurfaceNode(width: 100, height: 100, amount: 3)
         
@@ -38,7 +35,15 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         self.holdPhysics = self.physicsBody
         
         // sprite
-        self.sprite.shader = self.riseShader
+        self.cropNode = SKCropNode()
+        self.cropNode.maskNode = SKSpriteNode(imageNamed: "tentacle_crop")
+        self.cropNode.position = self.sprite.position
+        self.addChild(cropNode)
+        self.sprite.removeFromParent()
+        self.cropNode.addChild(self.sprite)
+        self.surfaceSpritePos = CGPoint.zero
+        self.submergedSpritePos = self.surfaceSpritePos - CGVector(dx: self.sprite.size.width, dy: 0)
+        self.sprite.position = self.submergedSpritePos
         
         // bubbles
         self.bubbles.zPosition = -1
@@ -63,14 +68,12 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         self.position = position
     }
     
-    func submerge(then: (() -> Void)? = nil) {
+    func submerge(duration: TimeInterval = 1.0, then: (() -> Void)? = nil) {
         guard !self.isSubmerged else { return }
-        // TODO: get fancy with falling into the water
-        self.sprite.removeFromParent()
         
         self.physicsBody = nil
         
-        self.run(SKAction.wait(forDuration: 1.0)) { // simulate a delay
+        self.sprite.run(SKAction.move(to: self.submergedSpritePos, duration: duration)) {
             self.isSubmerged = true
             if let then = then {
                 then()
@@ -78,14 +81,12 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         }
     }
     
-    func surface(then: (() -> Void)? = nil) {
+    func surface(duration: TimeInterval = 1.0, then: (() -> Void)? = nil) {
         guard self.isSubmerged else { return }
-        // TODO: get fancy with rising from the water
-        self.addChild(self.sprite)
         
         self.physicsBody = self.holdPhysics
         
-        self.run(SKAction.wait(forDuration: 1.0)) {
+        self.sprite.run(SKAction.move(to: self.surfaceSpritePos, duration: duration)) {
             self.isSubmerged = false
             if let then = then {
                 then()

@@ -57,7 +57,7 @@ class WPTTentacle1Wave: WPTTentacleWave {
     
     public func bubbleForABit(pos: CGPoint, then: @escaping () -> Void) {
         self.curTentacle.setPosition(pos)
-        self.curTentacle.submerge()
+        self.curTentacle.submerge(duration: 0)
         self.curTentacle.setBubbles(true)
         self.scene.terrain.addEnemy(self.curTentacle)
         

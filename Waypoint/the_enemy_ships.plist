@@ -65,7 +65,7 @@
 		<key>imageOffset</key>
 		<dict>
 			<key>x</key>
-			<integer>128</integer>
+			<integer>222</integer>
 			<key>y</key>
 			<integer>0</integer>
 		</dict>
@@ -76,7 +76,7 @@
 		<key>colliderOffset</key>
 		<dict>
 			<key>x</key>
-			<integer>-128</integer>
+			<integer>-64</integer>
 			<key>y</key>
 			<integer>-64</integer>
 		</dict>

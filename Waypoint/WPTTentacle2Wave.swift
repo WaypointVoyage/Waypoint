@@ -45,7 +45,7 @@ class WPTTentacle2Wave: WPTTentacleWave {
     
     private func spawnTentacle(position: CGPoint, bubbleDuraiton: TimeInterval, tentacle: WPTLevelTentacleNode, tentacleDuration: TimeInterval, then: @escaping () -> Void) {
 
-        tentacle.submerge()
+        tentacle.submerge(duration: 0)
         tentacle.setPosition(position)
         tentacle.setBubbles(true)
         self.scene.terrain.addEnemy(tentacle)
