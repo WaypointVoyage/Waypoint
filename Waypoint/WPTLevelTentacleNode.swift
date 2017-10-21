@@ -51,10 +51,12 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         self.addChild(bubbles)
         self.bubbles.start()
         
-        // config
+        // submerge
+        self.isSubmerged = !submerged
         if submerged {
-            self.submerge()
+            self.submerge(duration: 0.0)
         }
+        self.isSubmerged = submerged
     }
     
     func setBubbles(_ value: Bool) {

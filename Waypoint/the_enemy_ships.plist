@@ -116,7 +116,7 @@
 			<key>shotSpeedScale</key>
 			<integer>1</integer>
 			<key>sizeScale</key>
-			<integer>2</integer>
+			<integer>4</integer>
 			<key>speedScale</key>
 			<integer>1</integer>
 			<key>turnRateScale</key>

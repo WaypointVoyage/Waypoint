@@ -469,7 +469,7 @@
 			<key>chaseBubbleDuration</key>
 			<real>1.2</real>
 			<key>surroundPlayerRadius</key>
-			<integer>250</integer>
+			<integer>512</integer>
 			<key>tentacleCount</key>
 			<integer>8</integer>
 			<key>special</key>

@@ -98,10 +98,6 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         self.physicsBody = nil // at this point on, there are is no more world interaction
         self.isDead = true
         
-        if player.targetNode === self {
-            player.targetNode = nil
-        }
-        
         let explosionNode = SKSpriteNode(imageNamed: "explode")
         explosionNode.position = self.sprite.position
         explosionNode.size = CGSize(width: self.sprite.size.width, height: self.sprite.size.height)
