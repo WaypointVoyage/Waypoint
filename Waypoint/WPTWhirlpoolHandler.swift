@@ -29,10 +29,10 @@ class WPTWhirlpoolHandler: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func enterWhirlpool() {
+    func enterWhirlpool(damage: CGFloat = WPTWhirlpoolHandler.whirlpoolDamage) {
         self.canEnterWhirlpool = false
         self.actor.run(WPTWhirlpoolHandler.spin)
-        self.actor.doDamage(WPTWhirlpoolHandler.whirlpoolDamage)
+        self.actor.doDamage(damage)
     }
     
     func exitWhirlpool() {

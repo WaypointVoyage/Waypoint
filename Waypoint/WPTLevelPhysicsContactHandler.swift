@@ -39,10 +39,15 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
             }
         }
             
-        else if collisionBetween(WPTValues.actorCbm, WPTValues.projectileCbm) {
+        else if collisionBetween(WPTValues.actorCbm, WPTValues.projectileCbm) ||
+                collisionBetween(WPTValues.projectileCbm, WPTValues.damageActorCbm) {
             if let actor = firstBody.node as? WPTLevelActorNode, let projectile = secondBody.node as? WPTCannonBallNode {
                 if projectile.teamBitMask != actor.teamBitMask {
                     projectile.collide(with: actor);
+                }
+            } else if let projectile = firstBody.node as? WPTCannonBallNode, let actor = secondBody.node as? WPTLevelActorNode {
+                if projectile.teamBitMask != actor.teamBitMask {
+                    projectile.collide(with: actor)
                 }
             }
         }
@@ -83,6 +88,14 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
                 }
             }
         }
+        
+        else if collisionBetween(WPTValues.actorCbm, WPTValues.damageActorCbm) {
+            if let player = firstBody.node as? WPTLevelPlayerNode, let enemy = secondBody.node as? WPTLevelEnemyNode {
+                if let whirlpoolHandler = player.childNode(withName: WPTWhirlpoolHandler.nodeName) as? WPTWhirlpoolHandler {
+                    whirlpoolHandler.enterWhirlpool(damage: -enemy.actor.ship.damage)
+                }
+            }
+        }
     }
     
     func didEnd(_ contact: SKPhysicsContact) {
@@ -97,6 +110,14 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
         else if collisionBetween(WPTValues.actorCbm, WPTValues.dockCbm) {
             if let dockHandler = (firstBody.node as? WPTLevelPlayerNode)?.childNode(withName: WPTPortDockingHandler.nodeName) as? WPTPortDockingHandler, let _ = secondBody.node as? WPTDockNode {
                 dockHandler.leaveDock()
+            }
+        }
+        
+        else if collisionBetween(WPTValues.actorCbm, WPTValues.damageActorCbm) {
+            if let player = firstBody.node as? WPTLevelPlayerNode, let _ = secondBody.node as? WPTLevelEnemyNode {
+                if let whirlpoolHandler = player.childNode(withName: WPTWhirlpoolHandler.nodeName) as? WPTWhirlpoolHandler {
+                    whirlpoolHandler.exitWhirlpool()
+                }
             }
         }
     }

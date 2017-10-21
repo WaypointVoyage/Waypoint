@@ -33,7 +33,7 @@ class WPTCannonBallNode: SKNode {
         physics.friction = 0
         physics.categoryBitMask = WPTValues.projectileCbm
         physics.collisionBitMask = WPTValues.boulderCbm
-        physics.contactTestBitMask = WPTValues.actorCbm
+        physics.contactTestBitMask = WPTValues.actorCbm | WPTValues.damageActorCbm
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -32,6 +32,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         
         // physics
         self.physicsBody!.isDynamic = false
+        self.physicsBody!.categoryBitMask = WPTValues.damageActorCbm
         self.holdPhysics = self.physicsBody
         
         // sprite

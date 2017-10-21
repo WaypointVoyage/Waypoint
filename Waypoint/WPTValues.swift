@@ -54,6 +54,7 @@ class WPTValues {
     static let itemCbm: UInt32 = 1 << 6
     static let dockCbm: UInt32 = 1 << 7
     static let itemCollectionCbm: UInt32 = 1 << 8
+    static let damageActorCbm: UInt32 = 1 << 9
     
     // level bahaviors
     static let playerPrepTime: TimeInterval = 4
