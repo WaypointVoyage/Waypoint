@@ -9,37 +9,57 @@
 import SpriteKit
 
 class WPTHudBottomNode: SKNode, WPTUpdatable {
-    private let leftFire: WPTFireButtonNode
-    private let rightFire: WPTFireButtonNode
-    private let leftAnchor: WPTAnchorButtonNode
-    private let rightAnchor: WPTAnchorButtonNode
+    
+    private let fire: WPTFireButtonNode
+    private let anchor: WPTAnchorButtonNode
+    public let wheel: WPTShipWheelNode
+    
     let alert = WPTAlertNode()
     
     private var pressed: Bool = false
     private var anchored: Bool = true
     
-    override init() {
-        self.leftFire = WPTFireButtonNode()
-        self.rightFire = WPTFireButtonNode()
-        self.leftAnchor = WPTAnchorButtonNode()
-        self.rightAnchor = WPTAnchorButtonNode()
+    init(leftMode: Bool = false) {
+        self.wheel = WPTShipWheelNode()
+        
+        self.fire = WPTFireButtonNode()
+        self.anchor = WPTAnchorButtonNode()
         super.init()
         self.isUserInteractionEnabled = true
         
-        let offset = WPTValues.fontSizeMedium / 1.24 + WPTValues.fontSizeMiniscule
-        leftFire.position = CGPoint(x: offset, y: offset)
-        leftAnchor.position = CGPoint(x: offset * 2.5, y: offset * 0.8)
-        self.addChild(leftFire)
-        self.addChild(leftAnchor)
+        self.addChild(self.wheel)
+        self.addChild(fire)
+        self.addChild(anchor)
         
-        rightFire.position = CGPoint(x: WPTValues.screenSize.width - offset, y: offset)
-        rightAnchor.position = CGPoint(x: WPTValues.screenSize.width - offset * 2.5, y: offset * 0.8)
-        rightFire.xScale =  -1 * self.leftFire.xScale
-        self.addChild(rightFire)
-        self.addChild(rightAnchor)
+        let offset: CGFloat = WPTValues.fontSizeMedium / 1.24 + WPTValues.fontSizeMiniscule
+        if leftMode {
+            self.setupLeftHanded(offset)
+        } else {
+            self.setupRightHanded(offset)
+        }
         
         alert.position = CGPoint(x: WPTValues.screenSize.width * 0.5, y: 10)
         self.addChild(alert)
+    }
+    
+    private static let anchorXOffsetScale: CGFloat = 2.5
+    private static let anchorYOffsetScale: CGFloat = 0.8
+    
+    private static let wheelXOffsetScale: CGFloat = 1.5
+    private static let wheelYOffsetScale: CGFloat = 1.5
+    
+    private func setupRightHanded(_ offset: CGFloat) {
+        self.fire.position = CGPoint(x: WPTValues.screenSize.width - offset, y: offset)
+        self.fire.xScale = -1
+        self.anchor.position = CGPoint(x: WPTValues.screenSize.width - offset * WPTHudBottomNode.anchorXOffsetScale, y: offset * WPTHudBottomNode.anchorYOffsetScale)
+        self.wheel.position = CGPoint(x: offset * WPTHudBottomNode.wheelXOffsetScale, y: offset * WPTHudBottomNode.wheelYOffsetScale)
+    }
+    
+    private func setupLeftHanded(_ offset: CGFloat) {
+        self.fire.position = CGPoint(x: offset, y: offset)
+        self.fire.xScale = 1
+        self.anchor.position = CGPoint(x: offset * WPTHudBottomNode.anchorXOffsetScale, y: offset * WPTHudBottomNode.anchorYOffsetScale)
+        self.wheel.position = CGPoint(x: WPTValues.screenSize.width - offset * WPTHudBottomNode.wheelXOffsetScale, y: offset * WPTHudBottomNode.wheelYOffsetScale)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,6 +67,8 @@ class WPTHudBottomNode: SKNode, WPTUpdatable {
     }
     
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
+        
+        self.wheel.update(currentTime, deltaTime)
         
         // continuously try to fire the cannons when pressed
         if pressed {
@@ -56,11 +78,9 @@ class WPTHudBottomNode: SKNode, WPTUpdatable {
         }
         if let player = (self.scene as? WPTLevelScene)?.player {
             if player.anchored {
-                self.leftAnchor.startPress()
-                self.rightAnchor.startPress()
+                self.anchor.startPress()
             } else {
-                self.leftAnchor.endPress()
-                self.rightAnchor.endPress()
+                self.anchor.endPress()
             }
         }
         
@@ -69,40 +89,46 @@ class WPTHudBottomNode: SKNode, WPTUpdatable {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first!.location(in: self)
         if !pressed {
-            if self.leftFire.contains(location) || self.rightFire.contains(location) {
-                self.leftFire.startPress()
-                self.rightFire.startPress()
+            if self.fire.contains(location) {
+                self.fire.startPress()
                 self.pressed = true
+                return
             }
         }
-        if self.leftAnchor.contains(location) || self.rightAnchor.contains(location) {
+        
+        if self.anchor.contains(location) {
             if let player = (self.scene as? WPTLevelScene)?.player {
                 if player.interactionEnabled {
                     player.anchored = !player.anchored
                 }
             }
+            return
+        }
+        
+        if self.wheel.contains(location) {
+            self.wheel.setTouch(touches.first!)
+            return
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if self.wheel.getTouch() == touches.first! {
+            self.wheel.setTouch(nil)
+        }
+        
         if pressed {
-            self.leftFire.endPress()
-            self.rightFire.endPress()
+            self.fire.endPress()
             self.pressed = false
         }
     }
     
     func hideBorder() {
-        self.leftFire.isHidden = true
-        self.rightFire.isHidden = true
-        self.leftAnchor.isHidden = true
-        self.rightAnchor.isHidden = true
+        self.fire.isHidden = true
+        self.anchor.isHidden = true
     }
     
     func displayBorder() {
-        self.leftFire.isHidden = false
-        self.rightFire.isHidden = false
-        self.leftAnchor.isHidden = false
-        self.rightAnchor.isHidden = false
+        self.fire.isHidden = false
+        self.anchor.isHidden = false
     }
 }

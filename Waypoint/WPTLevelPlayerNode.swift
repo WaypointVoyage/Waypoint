@@ -65,9 +65,6 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     
     public func setUserInteraction(_ value: Bool) {
         self.interactionEnabled = value
-        if let scene = self.scene as? WPTLevelScene {
-            scene.touchHandler.setInteraction(value)
-        }
         if value {
             self.fireRateMgr.enable()
         } else {
@@ -76,10 +73,8 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     }
     
     override func getShipSpeed() -> CGFloat {
-        if let moveTouchDist = (self.scene as? WPTLevelScene)?.touchHandler.moveTouchDist {
-            var fraction = moveTouchDist / 350 // TODO: make sure this is working ok for different screen sizes
-            clamp(&fraction, min: 0.1, max: 1)
-            return fraction * player.ship.speed
+        if let moveTouchDist = (self.scene as? WPTLevelScene)?.hud.bottom.wheel.moveTouchDist {
+            return moveTouchDist * player.ship.speed
         }
         
         return player.ship.speed
