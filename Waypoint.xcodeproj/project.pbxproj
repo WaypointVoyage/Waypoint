@@ -122,6 +122,7 @@
 		7EC987A21E7F9FD600626C60 /* WPTStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC987A11E7F9FD600626C60 /* WPTStorage.swift */; };
 		7EC987A41E7FA20800626C60 /* WPTLootSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC987A31E7FA20800626C60 /* WPTLootSummary.swift */; };
 		7ECA72EA1F9A9DBD00CB70BB /* WPTLevelTentacleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECA72E91F9A9DBD00CB70BB /* WPTLevelTentacleNode.swift */; };
+		7ECA72ED1F9AC1DD00CB70BB /* tentacle_rise.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7ECA72EC1F9AC1DD00CB70BB /* tentacle_rise.fsh */; };
 		7ECB5A021E745CA500A05563 /* WPTPursueBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */; };
 		7ECB5A041E745CD000A05563 /* WPTFleeBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5A031E745CD000A05563 /* WPTFleeBS.swift */; };
 		7ED049DD1E6F6A4600CD69E1 /* WPTBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED049DC1E6F6A4600CD69E1 /* WPTBrain.swift */; };
@@ -295,6 +296,7 @@
 		7EC987A11E7F9FD600626C60 /* WPTStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTStorage.swift; sourceTree = "<group>"; };
 		7EC987A31E7FA20800626C60 /* WPTLootSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLootSummary.swift; sourceTree = "<group>"; };
 		7ECA72E91F9A9DBD00CB70BB /* WPTLevelTentacleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTLevelTentacleNode.swift; sourceTree = "<group>"; };
+		7ECA72EC1F9AC1DD00CB70BB /* tentacle_rise.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = tentacle_rise.fsh; sourceTree = "<group>"; };
 		7ECB5A011E745CA500A05563 /* WPTPursueBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPursueBS.swift; sourceTree = "<group>"; };
 		7ECB5A031E745CD000A05563 /* WPTFleeBS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTFleeBS.swift; sourceTree = "<group>"; };
 		7ED049DC1E6F6A4600CD69E1 /* WPTBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBrain.swift; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 		7E73A0A71E4A6EE3008F6DA8 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				7ECA72EB1F9AC1C800CB70BB /* Actors */,
 				7E52428E1E5643FB00120002 /* Level */,
 				7E52428D1E5643F300120002 /* UI */,
 			);
@@ -747,6 +750,14 @@
 				7EC987A31E7FA20800626C60 /* WPTLootSummary.swift */,
 			);
 			name = Storage;
+			sourceTree = "<group>";
+		};
+		7ECA72EB1F9AC1C800CB70BB /* Actors */ = {
+			isa = PBXGroup;
+			children = (
+				7ECA72EC1F9AC1DD00CB70BB /* tentacle_rise.fsh */,
+			);
+			name = Actors;
 			sourceTree = "<group>";
 		};
 		7ED049DB1E6F6A0D00CD69E1 /* Brains */ = {
@@ -923,6 +934,7 @@
 				2D17044B1E7103D70000827E /* explosion.mp3 in Resources */,
 				7EF866D41E83556D0012F2C7 /* 9_boom_about.plist in Resources */,
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
+				7ECA72ED1F9AC1DD00CB70BB /* tentacle_rise.fsh in Resources */,
 				2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */,
 				7EF866D61E83556D0012F2C7 /* 11_shiver_me_timbers.plist in Resources */,
 				2D6068281F934A090017B72E /* level_map_theme.mp3 in Resources */,

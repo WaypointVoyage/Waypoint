@@ -12,16 +12,20 @@ import SpriteKit
 class WPTTentacle1Wave: WPTTentacleWave {
     
     private let tentacleDuration: TimeInterval
+    private let tentacleWait: SKAction
     private var curTentacleIndex: Int = -1
     private var curTentacle: WPTLevelTentacleNode {
         return self.tentacles[self.curTentacleIndex]
     }
     
     private let bubbleDuraiton: TimeInterval
+    private let bubbleWait: SKAction
     
     override init(_ waveDict: [String:AnyObject]) {
         self.bubbleDuraiton = waveDict["bubbleDuration"] as! TimeInterval
+        self.bubbleWait = SKAction.wait(forDuration: self.bubbleDuraiton)
         self.tentacleDuration = waveDict["tentacleDuration"] as! TimeInterval
+        self.tentacleWait = SKAction.wait(forDuration: self.tentacleDuration)
         super.init(waveDict)
     }
     
@@ -52,19 +56,18 @@ class WPTTentacle1Wave: WPTTentacleWave {
     }
     
     public func bubbleForABit(pos: CGPoint, then: @escaping () -> Void) {
-        self.curTentacle.position = pos
+        self.curTentacle.setPosition(pos)
         self.curTentacle.submerge()
         self.curTentacle.setBubbles(true)
         self.scene.terrain.addEnemy(self.curTentacle)
         
-        self.curTentacle.run(SKAction.wait(forDuration: self.bubbleDuraiton)) {
-            then()
-        }
+        self.curTentacle.run(self.bubbleWait) { then() }
     }
     
     private func spawnTentacle() {
         self.curTentacle.surface()
-        self.curTentacle.run(SKAction.wait(forDuration: self.tentacleDuration)) {
+        
+        self.curTentacle.run(self.tentacleWait) {
             self.curTentacle.submerge() {
                 self.scene.terrain.removeEnemy(self.curTentacle)
                 self.curTentacle.setBubbles(false)

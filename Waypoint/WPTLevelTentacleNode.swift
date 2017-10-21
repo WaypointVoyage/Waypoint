@@ -10,6 +10,7 @@ import SpriteKit
 
 class WPTLevelTentacleNode: WPTLevelEnemyNode {
     private let tentacleEnemy: WPTEnemy
+    private let riseShader: SKShader
     
     public let isStatic: Bool
     public private(set) var isSubmerged: Bool = false
@@ -17,19 +18,34 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     private let bubbles: WPTBubbleSurfaceNode
     private var holdPhysics: SKPhysicsBody? = nil
     
+    private var submergeOffset: CGFloat {
+        return self.sprite.size.width
+    }
+    
     init(isStatic: Bool = true, player: WPTLevelPlayerNode, submerged: Bool) {
         self.isStatic = isStatic
         let enemyName = isStatic ? "Static Tentacle" : "Dynamic Tentacle"
         self.tentacleEnemy = WPTEnemyCatalog.enemiesByName[enemyName]!
         
-        self.bubbles = WPTBubbleSurfaceNode(width: 100, height: 100)
+        self.riseShader = SKShader(fileNamed: "tentacle_rise.fsh")
+        
+        self.bubbles = WPTBubbleSurfaceNode(width: 100, height: 100, amount: 3)
         
         super.init(enemy: self.tentacleEnemy, player: player)
+        
+        // physics
+        self.physicsBody!.isDynamic = false
         self.holdPhysics = self.physicsBody
         
+        // sprite
+        self.sprite.shader = self.riseShader
+        
+        // bubbles
+        self.bubbles.zPosition = -1
         self.addChild(bubbles)
         self.bubbles.start()
         
+        // config
         if submerged {
             self.submerge()
         }
@@ -41,6 +57,10 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         } else if !value && !self.bubbles.stopped {
             self.bubbles.stop()
         }
+    }
+    
+    func setPosition(_ position: CGPoint) {
+        self.position = position
     }
     
     func submerge(then: (() -> Void)? = nil) {

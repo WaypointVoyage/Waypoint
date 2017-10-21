@@ -49,11 +49,9 @@ class WPTBubbleSurfaceNode: SKNode {
     private func runBubbles() {
         if !self.stopped {
             self.spawnBubbles()
-            self.run(self.period, completion: {
+            self.run(self.period) {
                 self.runBubbles()
-            })
-        } else {
-            self.removeFromParent()
+            }
         }
     }
     

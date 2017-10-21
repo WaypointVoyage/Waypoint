@@ -45,8 +45,8 @@ class WPTTentacle2Wave: WPTTentacleWave {
     
     private func spawnTentacle(position: CGPoint, bubbleDuraiton: TimeInterval, tentacle: WPTLevelTentacleNode, tentacleDuration: TimeInterval, then: @escaping () -> Void) {
 
-        tentacle.position = position
         tentacle.submerge()
+        tentacle.setPosition(position)
         tentacle.setBubbles(true)
         self.scene.terrain.addEnemy(tentacle)
         
@@ -97,12 +97,14 @@ class WPTTentacle2Wave: WPTTentacleWave {
         self.moveToNextTentacle()
         var points = self.getPlayerSurroundingPoints()
         
+        var spawnedTentacles: Int = 0
         while self.curTentacleIndex < self.tentacleCount && points.count > 0 {
             let point = points.remove(at: 0)
+            spawnedTentacles += 1
             
             self.spawnTentacle(position: point, bubbleDuraiton: self.surroundBubbleDuration, tentacle: self.curTentacle, tentacleDuration: self.surroundTentacleDuration) {
                 self.surroundTentaclesDone += 1
-                if self.surroundTentaclesDone >= self.tentacleCount {
+                if self.surroundTentaclesDone >= spawnedTentacles {
                     self.finishSurroundTentacles()
                 }
             }

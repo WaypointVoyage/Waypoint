@@ -65,7 +65,7 @@
 		<key>imageOffset</key>
 		<dict>
 			<key>x</key>
-			<real>1180</real>
+			<integer>128</integer>
 			<key>y</key>
 			<integer>0</integer>
 		</dict>
@@ -76,27 +76,27 @@
 		<key>colliderOffset</key>
 		<dict>
 			<key>x</key>
-			<integer>-100</integer>
+			<integer>-128</integer>
 			<key>y</key>
-			<real>-1280</real>
+			<integer>-64</integer>
 		</dict>
 		<key>colliderPath</key>
 		<array>
 			<array>
-				<integer>15</integer>
-				<integer>814</integer>
+				<integer>3</integer>
+				<integer>78</integer>
 			</array>
 			<array>
-				<integer>209</integer>
-				<integer>819</integer>
+				<integer>54</integer>
+				<integer>77</integer>
 			</array>
 			<array>
-				<integer>201</integer>
-				<integer>481</integer>
+				<integer>51</integer>
+				<integer>0</integer>
 			</array>
 			<array>
-				<integer>14</integer>
-				<integer>490</integer>
+				<integer>5</integer>
+				<integer>1</integer>
 			</array>
 		</array>
 		<key>inGameImage</key>
@@ -116,7 +116,7 @@
 			<key>shotSpeedScale</key>
 			<integer>1</integer>
 			<key>sizeScale</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>speedScale</key>
 			<integer>1</integer>
 			<key>turnRateScale</key>
