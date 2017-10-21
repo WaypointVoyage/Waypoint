@@ -45,6 +45,7 @@ class WPTKrakenChestStealWave: WPTLevelWave {
         
         // make the tentacle
         let tentacle = WPTLevelTentacleNode(isStatic: true, player: self.scene.player, submerged: true)
+        tentacle.zRotation = CGVector(start: tentaclePos, end: self.scene.level.xMarksTheSpot!).angle()
         tentacle.position = tentaclePos
         self.scene.terrain.addEnemy(tentacle)
         
@@ -54,7 +55,9 @@ class WPTKrakenChestStealWave: WPTLevelWave {
                 let submergeTime: TimeInterval = 0.3
                 
                 let chest = self.scene.terrain.childNode(withName: WPTFinalTreasureNode.TREASURE_NODE_NAME)!
-                chest.run(SKAction.move(to: tentaclePos, duration: submergeTime))
+                chest.run(SKAction.move(to: tentaclePos, duration: submergeTime)) {
+                    chest.removeFromParent()
+                }
                 
                 tentacle.submerge(duration: submergeTime) {
                     self.scene.terrain.removeEnemy(tentacle)
@@ -66,8 +69,6 @@ class WPTKrakenChestStealWave: WPTLevelWave {
     
     private func recoverFromAnimation() {
         self.scene.setCameraPosition(self.scene.player.position, duration: 1.5) {
-            let chest = self.scene.terrain.childNode(withName: WPTFinalTreasureNode.TREASURE_NODE_NAME)!
-            chest.removeFromParent()
             self.treasureGone = true
             
             // give the player their controls back
