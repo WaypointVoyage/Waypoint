@@ -451,11 +451,11 @@
 		</dict>
 		<dict>
 			<key>tentacleDuration</key>
-			<integer>4</integer>
+			<integer>2</integer>
 			<key>bubbleDuration</key>
-			<real>2.5</real>
+			<integer>2</integer>
 			<key>tentacleCount</key>
-			<integer>8</integer>
+			<integer>3</integer>
 			<key>special</key>
 			<string>WPTTentacle1Wave</string>
 		</dict>

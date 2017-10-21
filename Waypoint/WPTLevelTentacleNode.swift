@@ -16,10 +16,12 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     public private(set) var isSubmerged: Bool = false
     
     private let bubbles: WPTBubbleSurfaceNode
-    private var holdPhysics: SKPhysicsBody? = nil
     
     private var surfaceSpritePos: CGPoint! = nil
     private var submergedSpritePos: CGPoint! = nil
+    
+    private var holdPhysics: SKPhysicsBody? = nil
+    private var physicsChild: SKNode? = nil
     
     init(isStatic: Bool = true, player: WPTLevelPlayerNode, submerged: Bool) {
         self.isStatic = isStatic
@@ -29,11 +31,13 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         self.bubbles = WPTBubbleSurfaceNode(width: 100, height: 100, amount: 3)
         
         super.init(enemy: self.tentacleEnemy, player: player)
+        self.zPosition = player.zPosition + 1
         
         // physics
         self.physicsBody!.isDynamic = false
         self.physicsBody!.categoryBitMask = WPTValues.damageActorCbm
         self.holdPhysics = self.physicsBody
+        self.physicsBody = nil
         
         // sprite
         self.cropNode = SKCropNode()
@@ -59,6 +63,10 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         self.isSubmerged = submerged
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func setBubbles(_ value: Bool) {
         if value && self.bubbles.stopped {
             self.bubbles.start()
@@ -74,7 +82,8 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     func submerge(duration: TimeInterval = 1.0, then: (() -> Void)? = nil) {
         guard !self.isSubmerged else { return }
         
-        self.physicsBody = nil
+        self.physicsChild?.removeFromParent()
+        self.physicsChild = nil
         
         self.sprite.run(SKAction.move(to: self.submergedSpritePos, duration: duration)) {
             self.isSubmerged = true
@@ -87,7 +96,9 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     func surface(duration: TimeInterval = 1.0, then: (() -> Void)? = nil) {
         guard self.isSubmerged else { return }
         
-        self.physicsBody = self.holdPhysics
+        self.physicsChild = SKNode()
+        self.physicsChild?.physicsBody = self.holdPhysics
+        self.addChild(self.physicsChild!)
         
         self.sprite.run(SKAction.move(to: self.surfaceSpritePos, duration: duration)) {
             self.isSubmerged = false
@@ -97,7 +108,16 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func doDamage(_ damage: CGFloat) {
+        super.doDamage(damage)
+        if self.healthBar.curHealth <= 0 {
+            self.destroyEnemy()
+        }
+    }
+    
+    override func destroyEnemy() {
+        super.destroyEnemy()
+        self.physicsChild?.removeFromParent()
+        self.physicsChild = nil
     }
 }

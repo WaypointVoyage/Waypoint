@@ -94,7 +94,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         }
     }
     
-    private func destroyEnemy() {
+    func destroyEnemy() {
         self.physicsBody = nil // at this point on, there are is no more world interaction
         self.isDead = true
         
