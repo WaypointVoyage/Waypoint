@@ -20,6 +20,14 @@ func clamp<T: Comparable>(_ value: inout T, min: T, max: T) {
     value = value < min ? min : value > max ? max : value
 }
 
+func zRotationToRadians(_ zRotation: CGFloat) -> CGFloat {
+    var zRot = zRotation
+    let twopi = 2 * CG_PI
+    while zRot < 0 { zRot += twopi }
+    while zRot >= twopi { zRot -= twopi }
+    return zRot
+}
+
 extension CGPoint {
     static func + (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
         return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)

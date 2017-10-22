@@ -55,7 +55,7 @@
 			<key>flee</key>
 			<string></string>
 			<key>nothing</key>
-			<string>WPTDoNothingBS</string>
+			<string>WPTFaceRandomDirectionsBS</string>
 			<key>offense</key>
 			<string>WPTStandAndShootBS</string>
 		</dict>

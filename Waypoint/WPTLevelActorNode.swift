@@ -202,6 +202,11 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         self.targetNode = nil
     }
     
+    func faceDirection(_ angle: CGFloat) {
+        let target = self.position + CGVector(radians: angle)
+        self.facePoint(target)
+    }
+    
     func give(item: WPTItem) {
         // all items have the potential to give money
         if let doubloons = item.doubloons {
