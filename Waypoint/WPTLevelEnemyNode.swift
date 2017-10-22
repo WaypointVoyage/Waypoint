@@ -125,7 +125,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
         for _ in 0..<Int(rand*7) {
             let randomMoney = WPTItemCatalog.randomCurrency()
-            let moneyNode = WPTItemNode(randomMoney)
+            let moneyNode = WPTItemNode(randomMoney, duration: 10.0)
             moneyNode.position = getRandomPosition()
             itemNode.addChild(moneyNode)
         }
