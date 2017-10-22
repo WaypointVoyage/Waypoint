@@ -41,6 +41,7 @@
 		2D826C531F7594E4000D6FAC /* WPTWiggleBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D826C521F7594E4000D6FAC /* WPTWiggleBS.swift */; };
 		2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */; };
 		2D8E804E1E3ADBC400CB2E0B /* WPTShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */; };
+		2DD77F161F99CC3300CCEF3E /* WPTSliderNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD77F151F99CC3300CCEF3E /* WPTSliderNode.swift */; };
 		7E0C78951E73D1DD006C79C3 /* WPTCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */; };
 		7E0C78971E73D224006C79C3 /* WPTLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C78961E73D224006C79C3 /* WPTLine.swift */; };
 		7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62021E36650B009C8516 /* WPTHomeScene.swift */; };
@@ -209,6 +210,7 @@
 		2D826C521F7594E4000D6FAC /* WPTWiggleBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTWiggleBS.swift; sourceTree = "<group>"; };
 		2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSettingsScene.swift; sourceTree = "<group>"; };
 		2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShip.swift; sourceTree = "<group>"; };
+		2DD77F151F99CC3300CCEF3E /* WPTSliderNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSliderNode.swift; sourceTree = "<group>"; };
 		7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCircle.swift; sourceTree = "<group>"; };
 		7E0C78961E73D224006C79C3 /* WPTLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLine.swift; sourceTree = "<group>"; };
 		7E0D62021E36650B009C8516 /* WPTHomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHomeScene.swift; sourceTree = "<group>"; };
@@ -794,6 +796,7 @@
 				7EBF5E6C1E4E218200F81982 /* WPTStatBarNode.swift */,
 				2D1EF1061E807C3100F527B7 /* WPTItemPickerNode.swift */,
 				2D7DCFF01E81FAA6003BCE30 /* WPTButtonNode.swift */,
+				2DD77F151F99CC3300CCEF3E /* WPTSliderNode.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -988,6 +991,7 @@
 				7ED739051E44F9E100122903 /* WPTItem.swift in Sources */,
 				7ED049DF1E6F6AA200CD69E1 /* WPTLevelEnemyNode.swift in Sources */,
 				2D2C8B5C1E7F3D5A00B1D862 /* WPTTutorialNode.swift in Sources */,
+				2DD77F161F99CC3300CCEF3E /* WPTSliderNode.swift in Sources */,
 				7E69329C1E53E0B200AF7373 /* WPTHudTopNode.swift in Sources */,
 				7EC7F1401F906E03007530F8 /* WPTQueue.swift in Sources */,
 				7E7C24111E37169A00E10E7A /* WPTSceneLabelNode.swift in Sources */,

@@ -12,6 +12,8 @@ class WPTSettingsScene: WPTScene {
     
     let background = WPTBackgroundNode(image: "beach_scene")
     let headerLabel = WPTLabelNode(text: "Settings", fontSize: WPTValues.fontSizeLarge)
+    let effectSlider = WPTSliderNode(title: "Effects", progress: "50%")
+    let musicSlider = WPTSliderNode(title: "Music", progress: "75%")
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -25,5 +27,11 @@ class WPTSettingsScene: WPTScene {
         // add background
         background.position(for: self)
         addChild(background)
+        
+        effectSlider.position = CGPoint(x: 0.3 * frame.width, y: frame.midY / 0.75)
+        musicSlider.position = CGPoint(x: 0.3 * frame.width, y: frame.midY / 1.10)
+        
+        addChild(effectSlider)
+        addChild(musicSlider)
     }
 }
