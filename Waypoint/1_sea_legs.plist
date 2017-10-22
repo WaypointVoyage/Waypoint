@@ -6,8 +6,8 @@
 	<dict>
 		<key>boulders</key>
 		<integer>6</integer>
-		<key>whirlpools</key>
-		<integer>1</integer>
+		<key>whirlpoolPeriod</key>
+		<integer>20</integer>
 	</dict>
 	<key>name</key>
 	<string>Sea Legs</string>

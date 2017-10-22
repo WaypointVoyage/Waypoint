@@ -22,8 +22,8 @@ class WPTLevel {
     let terrainBodies: [[[CGFloat]]]?
     
     // obstacles
-    let whirlpools: Int
     let boulders: Int
+    let whirlpoolPeriod: TimeInterval?
     
     let hasTutorial: Bool
     
@@ -69,11 +69,11 @@ class WPTLevel {
         
         // obstacles
         if let obstaclesDict = levelDict["entities"] as? [String:AnyObject] {
-            self.whirlpools = obstaclesDict["whirlpools"] as! Int
             self.boulders = obstaclesDict["boulders"] as! Int
+            self.whirlpoolPeriod = obstaclesDict["whirlpoolPeriod"] as? TimeInterval
         } else {
-            self.whirlpools = 0
             self.boulders = 0
+            self.whirlpoolPeriod = nil
         }
         
         // spawn volumes

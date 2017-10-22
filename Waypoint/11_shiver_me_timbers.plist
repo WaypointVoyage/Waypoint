@@ -6,10 +6,6 @@
 	<dict>
 		<key>boulders</key>
 		<integer>0</integer>
-		<key>whirlpoolLocations</key>
-		<array/>
-		<key>whirlpools</key>
-		<integer>0</integer>
 	</dict>
 	<key>name</key>
 	<string>X Marks The Spot</string>

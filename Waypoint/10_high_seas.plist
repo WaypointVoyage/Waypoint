@@ -6,8 +6,8 @@
 	<dict>
 		<key>boulders</key>
 		<integer>12</integer>
-		<key>whirlpools</key>
-		<integer>3</integer>
+		<key>whirlpoolPeriod</key>
+		<integer>10</integer>
 	</dict>
 	<key>name</key>
 	<string>High Seas</string>
@@ -16,7 +16,7 @@
 		<key>position</key>
 		<dict>
 			<key>angle</key>
-			<real>4.3196898986859651</real>
+			<real>4.319689898685965</real>
 			<key>x</key>
 			<integer>810</integer>
 			<key>y</key>

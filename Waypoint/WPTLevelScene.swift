@@ -33,6 +33,11 @@ class WPTLevelScene: WPTScene {
         didSet { self.pauseChanged() }
     }
     
+    var levelBeaten: Bool {
+        guard let progress = self.player.player.progress else { return false }
+        return progress.completedLevels.contains(self.level.name)
+    }
+    
     init(player: WPTPlayer, level: WPTLevel) {
         self.player = WPTLevelPlayerNode(player: player)
         self.level = level

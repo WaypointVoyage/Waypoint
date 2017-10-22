@@ -6,8 +6,8 @@
 	<dict>
 		<key>boulders</key>
 		<integer>4</integer>
-		<key>whirlpools</key>
-		<integer>3</integer>
+		<key>whirlpoolPeriod</key>
+		<integer>10</integer>
 	</dict>
 	<key>name</key>
 	<string>Pegleg Plunder</string>
@@ -16,7 +16,7 @@
 		<key>position</key>
 		<dict>
 			<key>angle</key>
-			<real>-0.39269908169872414</real>
+			<real>-0.3926990816987241</real>
 			<key>x</key>
 			<integer>621</integer>
 			<key>y</key>
