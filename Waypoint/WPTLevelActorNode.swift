@@ -49,6 +49,12 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         return self as? WPTLevelPlayerNode != nil;
     }
     
+    public var hasAllCannons: Bool {
+        return !self.actor.ship.cannonSet.cannons.contains(where: {
+            return !$0.hasCannon
+        })
+    }
+    
     init(actor: WPTActor, teamBitMask tbm: UInt32) {
         self.actor = actor
         self.currentHealth = actor.ship.health
