@@ -12,28 +12,23 @@ import SpriteKit
 class WPTTreasureWave: WPTLevelWave {
     
     static let totalTimeTime = 61 // 1 minute
-    
-    let treasureChest: WPTFinalTreasureNode = WPTFinalTreasureNode()
-    var player: WPTLevelPlayerNode? = nil
     var timer: WPTTreasureTimerNode? = nil
     
     private var coinFrames: Int = 100
     private var treasureCollectingTime: TimeInterval = TimeInterval(WPTTreasureWave.totalTimeTime)
     private var lastShownTime: Int = WPTTreasureWave.totalTimeTime
     
-    init() {
-        super.init([:])
+    private var treasureChest: WPTFinalTreasureNode {
+        return self.scene.terrain.childNode(withName: WPTFinalTreasureNode.TREASURE_NODE_NAME) as! WPTFinalTreasureNode
+    }
+    
+    override init(_ waveDict: [String:AnyObject]) {
+        super.init(waveDict)
     }
     
     override func setup(scene: WPTLevelScene) {
         super.setup(scene: scene)
         scene.alert(header: "Shiver Me Timbers!", desc: "Collect the treasure!")
-        
-        treasureChest.position = scene.level.xMarksTheSpot!
-        treasureChest.removeFromParent()
-        scene.terrain.addChild(treasureChest)
-        
-        player = scene.player
     }
     
     override func isComplete(scene: WPTLevelScene) -> Bool {
@@ -44,11 +39,9 @@ class WPTTreasureWave: WPTLevelWave {
     override func update(_ deltaTime: TimeInterval) {
         // the treasure will be closed for a bit
         if treasureChest.closed {
-            if let player = self.player {
-                let dist = CGVector(start: treasureChest.position, end: player.position).magnitude()
-                if dist < treasureChest.activationDistance {
-                    treasureChest.open()
-                }
+            let dist = CGVector(start: treasureChest.position, end: self.scene.player.position).magnitude()
+            if dist < treasureChest.activationDistance {
+                treasureChest.open()
             }
         }
         
@@ -99,7 +92,9 @@ class WPTTreasureWave: WPTLevelWave {
     }
     
     override func teardown(scene: WPTLevelScene) -> Bool {
-        scene.levelPaused = true
+        self.scene.player.anchored = true
+        self.scene.player.setUserInteraction(false)
+        self.scene.player.physicsBody?.velocity = CGVector.zero
         
         let shroud = SKShapeNode(rectOf: WPTValues.screenSize)
         shroud.fillColor = .black
@@ -107,9 +102,11 @@ class WPTTreasureWave: WPTLevelWave {
         shroud.zPosition = 2 * WPTZPositions.shrouds
         scene.camera!.addChild(shroud)
         
-        let fadeIn = SKAction.fadeIn(withDuration: 8)
-        let wait = SKAction.wait(forDuration: 3)
+        print("Done! Now fading out")
+        let fadeIn = SKAction.fadeIn(withDuration: 5)
+        let wait = SKAction.wait(forDuration: 2)
         shroud.run(SKAction.sequence([fadeIn, wait])) {
+            print("Going to high scored page")
             let storage = WPTStorage()
             
             // submit the score

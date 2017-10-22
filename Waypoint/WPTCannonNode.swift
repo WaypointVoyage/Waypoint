@@ -57,6 +57,6 @@ class WPTCannonNode: SKNode {
         let rot = actor.zRotation + self.zRotation
         let direction = CGVector(dx: cos(rot), dy: sin(rot))
         
-        return actor.actor.ship.shotSpeed * direction + (actor.physics?.velocity ?? CGVector.zero)
+        return actor.actor.ship.shotSpeed * direction + (actor.physicsBody?.velocity ?? CGVector.zero)
     }
 }

@@ -11,7 +11,6 @@ import SpriteKit
 class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     let actor: WPTActor
-    var physics: SKPhysicsBody?
     var currentHealth: CGFloat
     var teamBitMask: UInt32
     
@@ -41,23 +40,33 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     var sprite: SKSpriteNode! = nil
     var cannonNodes = [WPTCannonNode]()
     
+    // death watchers
+    public private(set) var deathObservers: [() -> Void] = [() -> Void]()
+    
     let fireRateMgr: WPTFireRateManager
     
     public var isPlayer: Bool {
         return self as? WPTLevelPlayerNode != nil;
     }
     
+    public var hasAllCannons: Bool {
+        return !self.actor.ship.cannonSet.cannons.contains(where: {
+            return !$0.hasCannon
+        })
+    }
+    
     init(actor: WPTActor, teamBitMask tbm: UInt32) {
         self.actor = actor
         self.currentHealth = actor.ship.health
-        self.physics = SKPhysicsBody(polygonFrom: actor.ship.colliderPath)
         self.fireRateMgr = WPTFireRateManager(actor.ship)
         self.teamBitMask = tbm
         super.init()
-        self.sprite = SKSpriteNode(imageNamed: self.spriteImage)
+        self.physicsBody = SKPhysicsBody(polygonFrom: actor.ship.colliderPath)
+        self.zPosition = WPTZPositions.actors - WPTZPositions.terrain
         
         // sprite
-        self.zPosition = WPTZPositions.actors - WPTZPositions.terrain
+        self.sprite = SKSpriteNode(imageNamed: self.spriteImage)
+        self.sprite.position = self.actor.ship.imageOffset
         self.addChild(self.sprite)
         
         // cannons
@@ -70,13 +79,13 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         }
         
         // configure physics behavior
-        self.physicsBody = physics
-        self.physics!.allowsRotation = false
-        self.physics!.mass = WPTValues.actorBaseMass * actor.ship.sizeScale
-        self.physics!.linearDamping = WPTValues.waterLinearDampening
-        self.physics!.angularDamping = WPTValues.waterAngularDampening
-        self.physics!.categoryBitMask = WPTValues.actorCbm
-        self.physics!.collisionBitMask = WPTValues.actorCbm | WPTValues.terrainCbm | WPTValues.boulderCbm
+        self.physicsBody!.allowsRotation = false
+        self.physicsBody!.mass = WPTValues.actorBaseMass * actor.ship.sizeScale
+        self.physicsBody!.linearDamping = WPTValues.waterLinearDampening
+        self.physicsBody!.angularDamping = WPTValues.waterAngularDampening
+        self.physicsBody!.categoryBitMask = WPTValues.actorCbm
+        self.physicsBody!.collisionBitMask = WPTValues.actorCbm | WPTValues.terrainCbm | WPTValues.boulderCbm
+        self.physicsBody!.contactTestBitMask = WPTValues.damageActorCbm
         
         // set starting position in the world
         self.zRotation += CG_PI / 2.0
@@ -120,7 +129,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             } else {
                 force = getShipSpeed() * self.forward
             }
-            self.physics?.applyForce(force!)
+            self.physicsBody?.applyForce(force!)
         }
     }
     
@@ -199,6 +208,11 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         self.targetNode = nil
     }
     
+    func faceDirection(_ angle: CGFloat) {
+        let target = self.position + CGVector(radians: angle)
+        self.facePoint(target)
+    }
+    
     func give(item: WPTItem) {
         // all items have the potential to give money
         if let doubloons = item.doubloons {
@@ -244,5 +258,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
                 return
             }
         }
+    }
+    
+    public func onDeath(_ action: @escaping () -> Void) {
+        self.deathObservers.append(action)
     }
 }

@@ -70,14 +70,14 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         healthBar.zRotation = -self.zRotation
         
         // once the enemy is inside the boundary, they will collide with it
-        if let phys = self.physics {
+        if let phys = self.physicsBody {
             if phys.collisionBitMask & WPTValues.boundaryCbm == 0 {
                 if let scene = self.scene as? WPTLevelScene {
                     let terrainBox = CGRect(origin: CGPoint.zero, size: scene.terrain.size)
                     let enemyBoxOrigin = CGPoint(x: self.position.x - self.sprite.frame.width / 2, y: self.position.y - self.sprite.frame.height / 2)
                     let enemyBox = CGRect(origin: enemyBoxOrigin, size: self.sprite.frame.size)
                     if terrainBox.contains(enemyBox) {
-                        self.physics?.collisionBitMask |= WPTValues.boundaryCbm
+                        self.physicsBody?.collisionBitMask |= WPTValues.boundaryCbm
                         self.brain.start()
                     }
                 }
@@ -89,18 +89,14 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         print("doing \(damage) damage to a \(self.enemy.name)")
         super.doDamage(damage)
         let alive = healthBar.updateHealth(damage)
-        if !alive && self.physics != nil {
+        if !alive && self.physicsBody != nil {
             destroyEnemy()
         }
     }
     
-    private func destroyEnemy() {
-        self.physics = nil // at this point on, there are is no more world interaction
+    func destroyEnemy() {
+        self.physicsBody = nil // at this point on, there are is no more world interaction
         self.isDead = true
-        
-        if player.targetNode === self {
-            player.targetNode = nil
-        }
         
         let explosionNode = SKSpriteNode(imageNamed: "explode")
         explosionNode.position = self.sprite.position
@@ -117,6 +113,11 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
                 }
             }
         }
+        
+        // actions for observers
+        for action in self.deathObservers {
+            action()
+        }
     }
     
     func generateCoins() {
@@ -124,7 +125,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
         for _ in 0..<Int(rand*7) {
             let randomMoney = WPTItemCatalog.randomCurrency()
-            let moneyNode = WPTItemNode(randomMoney)
+            let moneyNode = WPTItemNode(randomMoney, duration: 10.0)
             moneyNode.position = getRandomPosition()
             itemNode.addChild(moneyNode)
         }

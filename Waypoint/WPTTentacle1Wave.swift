@@ -9,72 +9,119 @@
 import SpriteKit
 
 // wave 3 in the final boss
-class WPTTentacle1Wave: WPTLevelWave {
+class WPTTentacle1Wave: WPTTentacleWave {
     
-    private var currTentacle: Tentacle? = nil
-    private var prevTentacle: Tentacle? = nil
-    var currLevelNode: WPTStaticTentacleNode? = nil
-    var tentacleDuration: TimeInterval
-    var timeCount: TimeInterval = 0.0
-    var tentacleCount: Int
-    
-    private class Tentacle {
-        
-        var health: CGFloat
-        var next: Tentacle! = nil
-        
-        init() {
-            health = WPTShipCatalog.shipsByName["Tentacle"]!.health
-        }
+    private let tentacleDuration: TimeInterval
+    private let tentacleWait: SKAction
+    private var curTentacleIndex: Int = -1
+    private var curTentacle: WPTLevelTentacleNode {
+        return self.tentacles[self.curTentacleIndex]
     }
     
-    override init(_ waveDict: [String: AnyObject]) {
-        tentacleCount = waveDict["tentacleCount"] as! Int
-        tentacleDuration = waveDict["tentacleDuration"] as! TimeInterval
+    private let bubbleDuraiton: TimeInterval
+    private let bubbleWait: SKAction
+    
+    override init(_ waveDict: [String:AnyObject]) {
+        self.bubbleDuraiton = waveDict["bubbleDuration"] as! TimeInterval
+        self.bubbleWait = SKAction.wait(forDuration: self.bubbleDuraiton)
+        self.tentacleDuration = waveDict["tentacleDuration"] as! TimeInterval
+        self.tentacleWait = SKAction.wait(forDuration: self.tentacleDuration)
         super.init(waveDict)
     }
     
     override func setup(scene: WPTLevelScene) {
+        super.setup(scene: scene, isStatic: true)
+        self.startTentacleCycle()
+    }
+    
+    private func moveToNextTentacleIndex() {
+        for _ in 0..<self.tentacleCount {
+            self.curTentacleIndex = (self.curTentacleIndex + 1) % self.tentacleCount
+            if self.curTentacle.currentHealth > 0 {
+                return
+            }
+        }
+    }
+    
+    private func startTentacleCycle() {
+        self.moveToNextTentacleIndex()
+        guard self.tentacleCount > 0 && self.curTentacle.currentHealth > 0 else {
+            return
+        }
+        
+        let pos = self.scene.player.position
+        self.bubbleForABit(pos: pos) {
+            self.spawnTentacle()
+        }
+    }
+    
+    public func bubbleForABit(pos: CGPoint, then: @escaping () -> Void) {
+        self.curTentacle.setPosition(pos)
+        self.curTentacle.submerge(duration: 0)
+        self.curTentacle.setBubbles(true)
+        self.scene.terrain.addEnemy(self.curTentacle)
+        
+        self.curTentacle.run(self.bubbleWait) { then() }
+    }
+    
+    private func spawnTentacle() {
+        self.curTentacle.surface()
+        
+        self.curTentacle.run(self.tentacleWait) {
+            self.curTentacle.submerge() {
+                self.scene.terrain.removeEnemy(self.curTentacle)
+                self.curTentacle.setBubbles(false)
+                self.startTentacleCycle()
+            }
+        }
+    }
+    
+    override func onTentacleDead() {
+        self.startTentacleCycle()
+    }
+
+}
+
+class WPTTentacleWave: WPTLevelWave {
+    internal let tentacleCount: Int
+    internal var tentacles: [WPTLevelTentacleNode] = [WPTLevelTentacleNode]()
+    internal var killedTentacles: Int = 0
+    
+    override init(_ waveDict: [String:AnyObject]) {
+        self.tentacleCount = waveDict["tentacleCount"] as! Int
+        super.init(waveDict)
+        
+        assert(self.tentacleCount >= 1)
+    }
+    
+    func setup(scene: WPTLevelScene, isStatic: Bool) {
         super.setup(scene: scene)
         
-        let head = Tentacle()
-        currTentacle = head
-        for _ in 0..<tentacleCount - 1 {
-            let tentacleNode = Tentacle()
-            self.prevTentacle = currTentacle
-            self.currTentacle!.next = tentacleNode
-            self.currTentacle = tentacleNode
+        for _ in 0..<self.tentacleCount {
+            let tentacle = WPTLevelTentacleNode(isStatic: isStatic, player: scene.player, submerged: true)
+            tentacle.onDeath {
+                self.killedTentacles += 1
+                print("\(self.tentacleCount - self.killedTentacles) tentacles left")
+                self.onTentacleDead()
+            }
+            self.tentacles.append(tentacle)
         }
-        currTentacle!.next = head
+    }
+    
+    func onTentacleDead() {
+        // override for special behavior
+    }
+    
+    public func allTentaclesDead() -> Bool {
+        for tentacle in self.tentacles {
+            if tentacle.currentHealth > 0 {
+                return false
+            }
+        }
+        return true
     }
     
     override func isComplete(scene: WPTLevelScene) -> Bool {
-        return currTentacle == nil
-    }
-    
-    override func update(_ deltaTime: TimeInterval) {
-        timeCount += deltaTime
-        if currLevelNode != nil && currLevelNode!.isDead {
-            tentacleTakedown()
-        }
-        if (timeCount >= tentacleDuration) {
-            timeCount = 0.0
-            spawnTentacle()
-            prevTentacle = currTentacle
-            currTentacle = currTentacle?.next
-        }
-        
-    }
-    
-    func spawnTentacle() {
-        currLevelNode = WPTStaticTentacleNode(player: scene.player, health: currTentacle!.health)
-        currLevelNode!.setUp()
-        scene.terrain.addEnemy(currLevelNode)
-    }
-    
-    func tentacleTakedown() {
-        prevTentacle?.next = currTentacle?.next
-        currTentacle = currTentacle?.next
+        return allTentaclesDead()
     }
 }
-

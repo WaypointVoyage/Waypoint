@@ -16,6 +16,8 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     let reticle = WPTReticleNode()
     var itemRad: WPTItemCollectorNode! = nil
     
+    public private(set) var interactionEnabled: Bool = true
+    
     override var spriteImage: String {
         return self.actor.ship.inGamePlayerImage!
     }
@@ -34,7 +36,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         itemRad.setScale(1 / player.ship.size)
         self.addChild(itemRad)
         
-        self.physics!.collisionBitMask |= WPTValues.boundaryCbm
+        self.physicsBody!.collisionBitMask |= WPTValues.boundaryCbm
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,11 +63,18 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         }
     }
     
+    public func setUserInteraction(_ value: Bool) {
+        self.interactionEnabled = value
+        if value {
+            self.fireRateMgr.enable()
+        } else {
+            self.fireRateMgr.disable()
+        }
+    }
+    
     override func getShipSpeed() -> CGFloat {
-        if let moveTouchDist = (self.scene as? WPTLevelScene)?.touchHandler.moveTouchDist {
-            var fraction = moveTouchDist / 350 // TODO: make sure this is working ok for different screen sizes
-            clamp(&fraction, min: 0.1, max: 1)
-            return fraction * player.ship.speed
+        if let moveTouchDist = (self.scene as? WPTLevelScene)?.hud.bottom.wheel.moveTouchDist {
+            return moveTouchDist * player.ship.speed
         }
         
         return player.ship.speed

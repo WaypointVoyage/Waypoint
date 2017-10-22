@@ -6,8 +6,6 @@
 	<dict>
 		<key>boulders</key>
 		<integer>6</integer>
-		<key>whirlpools</key>
-		<integer>0</integer>
 	</dict>
 	<key>name</key>
 	<string>Dead Men Tell No Tales</string>
@@ -16,7 +14,7 @@
 		<key>position</key>
 		<dict>
 			<key>angle</key>
-			<real>5.1050880620834143</real>
+			<real>5.105088062083414</real>
 			<key>x</key>
 			<integer>1065</integer>
 			<key>y</key>

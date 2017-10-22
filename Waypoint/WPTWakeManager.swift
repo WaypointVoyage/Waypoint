@@ -24,7 +24,7 @@ class WPTWakeManager: WPTUpdatable {
         if let terrain = self.terrain {
             self.updateForActor(terrain.player, currentTime, deltaTime)
             for enemy in terrain.enemies {
-                if enemy.enemy.terrainType != .land {
+                if enemy.enemy.terrainType == .sea {
                     self.updateForActor(enemy, currentTime, deltaTime)
                 }
             }

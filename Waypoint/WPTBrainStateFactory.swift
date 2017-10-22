@@ -30,6 +30,9 @@ class WPTBrainStateFactory {
         case String(describing: WPTWanderBS.self):
             return WPTWanderBS()
             
+        case String(describing: WPTFaceRandomDirectionsBS.self):
+            return WPTFaceRandomDirectionsBS()
+            
         case String(describing: WPTWiggleBS.self):
             return WPTWiggleBS()
             

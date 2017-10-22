@@ -44,7 +44,11 @@ class WPTLevelWave {
         return true
     }
     
+    // Override to implemente update behavior
     func update(_ deltaTime: TimeInterval) {}
+    
+    // Override for custom actions when the scene is paused
+    func pause(paused: Bool) {}
     
     // Determines the spawn point for an enemy in this wave.
     //      the default implementation supports standard waves.

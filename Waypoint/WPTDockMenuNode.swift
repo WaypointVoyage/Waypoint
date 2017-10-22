@@ -56,7 +56,9 @@ class WPTDockMenuNode: SKNode {
         
         var items: [WPTItem] = []
         items.append(WPTItemCatalog.itemsByName["Ship Maintenance"]!)
-        items.append(WPTItemCatalog.itemsByName["Cannon"]!)
+        if !self.player.hasAllCannons {
+            items.append(WPTItemCatalog.itemsByName["Cannon"]!)
+        }
         for _ in 0..<3 {
             items.append(WPTItemCatalog.randomStatModifier())
         }

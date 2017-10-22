@@ -11,8 +11,21 @@ import SpriteKit
 
 let CG_PI: CGFloat = CGFloat(Double.pi)
 
+func randomNumber(min: CGFloat, max: CGFloat) -> CGFloat {
+    let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
+    return min + rand * (max - min)
+}
+
 func clamp<T: Comparable>(_ value: inout T, min: T, max: T) {
     value = value < min ? min : value > max ? max : value
+}
+
+func zRotationToRadians(_ zRotation: CGFloat) -> CGFloat {
+    var zRot = zRotation
+    let twopi = 2 * CG_PI
+    while zRot < 0 { zRot += twopi }
+    while zRot >= twopi { zRot -= twopi }
+    return zRot
 }
 
 extension CGPoint {
@@ -66,6 +79,10 @@ extension CGVector {
     
     init(start: CGPoint, end: CGPoint) {
         self.init(dx: end.x - start.x, dy: end.y - start.y)
+    }
+    
+    init(radians angle: CGFloat) {
+        self.init(dx: cos(angle), dy: sin(angle))
     }
     
     func normalized() -> CGVector {

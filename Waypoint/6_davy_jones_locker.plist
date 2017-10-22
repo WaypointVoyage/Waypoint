@@ -6,8 +6,8 @@
 	<dict>
 		<key>boulders</key>
 		<integer>12</integer>
-		<key>whirlpools</key>
-		<integer>8</integer>
+		<key>whirlpoolPeriod</key>
+		<real>3.75</real>
 	</dict>
 	<key>name</key>
 	<string>Shiver Me Timbers</string>
@@ -16,7 +16,7 @@
 		<key>position</key>
 		<dict>
 			<key>angle</key>
-			<real>3.1415926535897931</real>
+			<real>3.141592653589793</real>
 			<key>x</key>
 			<integer>1163</integer>
 			<key>y</key>

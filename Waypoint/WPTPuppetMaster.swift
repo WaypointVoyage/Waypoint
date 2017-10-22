@@ -25,30 +25,35 @@ class WPTPuppetMaster: GKStateMachine {
             return
         }
         
-        // place whirlpools
-        for _ in 0..<self.scene.level.whirlpools {
-            let whirlpool = WPTWhirlpoolNode()
-            placeWhirlpool(whirlpool)
-            self.scene.terrain.addChild(whirlpool)
-        }
-        
         // place boulders
-        for _ in 0..<self.scene.level.boulders {
-            let boulder = WPTBoulderNode()
-            placeBoulder(boulder)
-            self.scene.terrain.addChild(boulder)
+        if !self.scene.levelBeaten {
+            for _ in 0..<self.scene.level.boulders {
+                let boulder = WPTBoulderNode()
+                placeBoulder(boulder)
+                self.scene.terrain.addChild(boulder)
+            }
         }
     }
     
     private func placeBoulder(_ boulder: WPTBoulderNode) {
-        boulder.position = self.scene.terrain.randomPoint(borderWidth: WPTBoulderNode.boulderRadius)
+        boulder.position = self.scene.terrain.randomPoint(borderWidth: WPTBoulderNode.boulderRadius, onLand: false)
         
         let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
         boulder.boulderImage.zRotation = CG_PI/rand
         boulder.crackedImage.zRotation = CG_PI/rand
     }
     
-    private func placeWhirlpool(_ whirlpool: WPTWhirlpoolNode) {
-        whirlpool.position = scene.terrain.randomPoint(borderWidth: WPTWhirlpoolNode.whirlpoolRadius, onLand: false)
+    override func update(deltaTime sec: TimeInterval) {
+        super.update(deltaTime: sec)
+        
+        if let period = self.scene.level.whirlpoolPeriod {
+            let rand = randomNumber(min: 0, max: CGFloat(period))
+            if rand < CGFloat(sec) {
+                let whirlpool = WPTWhirlpoolNode()
+                whirlpool.position = self.scene.terrain.randomPoint(borderWidth: WPTWhirlpoolNode.whirlpoolRadius, onLand: false)
+                self.scene.terrain.addChild(whirlpool)
+                whirlpool.start()
+            }
+        }
     }
 }

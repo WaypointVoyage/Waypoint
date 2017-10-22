@@ -17,17 +17,25 @@ class WPTLevelScene: WPTScene {
     
     let terrain: WPTTerrainNode
     let player: WPTLevelPlayerNode
-    var touchHandler: WPTLevelTouchHandlerNode! = nil
+//    var touchHandler: WPTLevelTouchHandlerNode! = nil
     var hud: WPTHudNode
-    var cam: SKCameraNode!
     let projectiles: SKNode
     let items: SKNode
     let port: WPTPortNode?
+    
+    // Camera stuff
+    var cam: SKCameraNode!
+    private var camFollowPlayer: Bool = true
     
     var contactDelegate: WPTLevelPhysicsContactHandler! = nil
     
     var levelPaused: Bool = false {
         didSet { self.pauseChanged() }
+    }
+    
+    var levelBeaten: Bool {
+        guard let progress = self.player.player.progress else { return false }
+        return progress.completedLevels.contains(self.level.name)
     }
     
     init(player: WPTPlayer, level: WPTLevel) {
@@ -46,7 +54,7 @@ class WPTLevelScene: WPTScene {
             self.port = nil
         }
         super.init(size: CGSize(width: 0, height: 0))
-        self.touchHandler = WPTLevelTouchHandlerNode(self)
+//        self.touchHandler = WPTLevelTouchHandlerNode(self)
         
         self.listener = self.player
         self.scene?.backgroundColor = UIColor.black
@@ -93,7 +101,7 @@ class WPTLevelScene: WPTScene {
         self.puppetMaster!.setStage(levelBeaten: player.player.completedLevels.contains(level.name))
         
         // touch handler
-        self.addChild(self.touchHandler)
+//        self.addChild(self.touchHandler)
         
         // add spawn volumes?
         if WPTConfig.values.showSpawnVolumesOnMinimap {
@@ -142,7 +150,7 @@ class WPTLevelScene: WPTScene {
         self.puppetMaster?.update(deltaTime: deltaTime)
         
         // actors
-        self.touchHandler.update(currentTime, deltaTime)
+//        self.touchHandler.update(currentTime, deltaTime)
         self.player.update(currentTime, deltaTime)
         for enemy in self.terrain.enemies {
             enemy.update(currentTime, deltaTime)
@@ -178,7 +186,18 @@ class WPTLevelScene: WPTScene {
         }
         
         // apply the camera position
-        self.cam.position = target
+        if self.camFollowPlayer {
+            self.cam.position = target
+        }
+    }
+    
+    public func setCameraPosition(_ position: CGPoint? = nil, duration: TimeInterval, then: @escaping () -> Void = {}) {
+        if position == nil {
+            self.camFollowPlayer = true
+        } else {
+            self.camFollowPlayer = false
+            self.cam.run(SKAction.move(to: position!, duration: duration), completion: then)
+        }
     }
         
     private func pauseChanged() {
@@ -186,6 +205,10 @@ class WPTLevelScene: WPTScene {
             levelName.isPaused = self.levelPaused
         }
         self.physicsWorld.speed = self.levelPaused ? 0.0 : 1.0 // pause physics simulation
+        self.isPaused = self.levelPaused // pause actions that may be running
+        if let wave = self.puppetMaster?.currentState as? WPTWaveExecutionPMS {
+            wave.wave?.pause(paused: self.levelPaused)
+        }
     }
     
     func alert(header: String, desc: String) {
