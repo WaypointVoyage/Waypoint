@@ -451,23 +451,23 @@
 		</dict>
 		<dict>
 			<key>tentacleDuration</key>
-			<integer>2</integer>
+			<integer>4</integer>
 			<key>bubbleDuration</key>
 			<integer>2</integer>
 			<key>tentacleCount</key>
-			<integer>3</integer>
+			<integer>8</integer>
 			<key>special</key>
 			<string>WPTTentacle1Wave</string>
 		</dict>
 		<dict>
 			<key>surroundTentacleDuration</key>
-			<integer>8</integer>
+			<integer>5</integer>
 			<key>surroundBubbleDuration</key>
 			<real>2.5</real>
 			<key>chaseTentacleDuration</key>
-			<integer>2</integer>
-			<key>chaseBubbleDuration</key>
 			<real>1.2</real>
+			<key>chaseBubbleDuration</key>
+			<real>0.8</real>
 			<key>surroundPlayerRadius</key>
 			<integer>512</integer>
 			<key>tentacleCount</key>
@@ -476,8 +476,14 @@
 			<string>WPTTentacle2Wave</string>
 		</dict>
 		<dict>
-			<key>bubbleDuration</key>
+			<key>tentacleBubbleDuration</key>
 			<integer>5</integer>
+			<key>tentacleSpawnRadius</key>
+			<integer>800</integer>
+			<key>tentacleCount</key>
+			<integer>8</integer>
+			<key>bubbleDuration</key>
+			<integer>3</integer>
 			<key>krakenLocation</key>
 			<dict>
 				<key>x</key>

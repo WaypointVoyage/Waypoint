@@ -73,6 +73,10 @@ extension CGVector {
         self.init(dx: end.x - start.x, dy: end.y - start.y)
     }
     
+    init(radians angle: CGFloat) {
+        self.init(dx: cos(angle), dy: sin(angle))
+    }
+    
     func normalized() -> CGVector {
         let length = self.magnitude()
         return CGVector(dx: self.dx / length, dy: self.dy / length)

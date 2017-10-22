@@ -25,7 +25,7 @@
 			<key>flee</key>
 			<string></string>
 			<key>nothing</key>
-			<string>WPTWiggleBS</string>
+			<string>WPTDoNothingBS</string>
 			<key>offense</key>
 			<string></string>
 		</dict>

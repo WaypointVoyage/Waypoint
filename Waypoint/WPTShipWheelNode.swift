@@ -16,7 +16,7 @@ class WPTShipWheelNode: SKNode, WPTUpdatable {
     var moveTouchDist: CGFloat? {
         if let target = self.touch?.location(in: self) {
             let mag = CGVector(start: CGPoint.zero, end: target).magnitude()
-            var fraction = mag / self.radius
+            var fraction = mag / (0.8 * self.radius)
             clamp(&fraction, min: 0.0, max: 1.0)
             return fraction
         }

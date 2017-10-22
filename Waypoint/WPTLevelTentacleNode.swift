@@ -28,7 +28,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         let enemyName = isStatic ? "Static Tentacle" : "Dynamic Tentacle"
         self.tentacleEnemy = WPTEnemyCatalog.enemiesByName[enemyName]!
         
-        self.bubbles = WPTBubbleSurfaceNode(width: 100, height: 100, amount: 3)
+        self.bubbles = WPTBubbleSquareSurfaceNode(width: 100, height: 100, amount: 3, time: 0.6)
         
         super.init(enemy: self.tentacleEnemy, player: player)
         self.zPosition = player.zPosition + 1

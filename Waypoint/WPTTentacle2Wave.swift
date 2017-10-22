@@ -16,6 +16,7 @@ class WPTTentacle2Wave: WPTTentacleWave {
     // TODO: find out why tentacles start to teleport after a while
     
     private let surroundPlayerRadius: CGFloat
+    private var chasing: Bool = false
     
     private var curTentacleIndex: Int = -1
     private var curTentacle: WPTLevelTentacleNode {
@@ -32,7 +33,7 @@ class WPTTentacle2Wave: WPTTentacleWave {
     }
     
     override func setup(scene: WPTLevelScene) {
-        super.setup(scene: scene)
+        super.setup(scene: scene, isStatic: true)
         self.startSurroundingPlayer()
     }
     
@@ -62,12 +63,25 @@ class WPTTentacle2Wave: WPTTentacleWave {
         }
     }
     
+    override func onTentacleDead() {
+        if self.chasing {
+            if !self.allTentaclesDead() {
+                self.moveToNextTentacle()
+                self.oneChaseTentacle()
+            }
+        } else {
+            self.surroundTentaclesCount -= 1
+        }
+    }
+    
     /////////////////////// CHASE THE PLAYER //////////////////////////
     
     private let chaseBubbleDuration: TimeInterval
     private let chaseTentacleDuration: TimeInterval
     
     private func startChasingPlayer() {
+        print("Starting the chase")
+        self.chasing = true
         self.curTentacleIndex = -1
         self.moveToNextTentacle()
         self.oneChaseTentacle()
@@ -89,23 +103,28 @@ class WPTTentacle2Wave: WPTTentacleWave {
     private let surroundBubbleDuration: TimeInterval
     private let surroundTentacleDuration: TimeInterval
     
-    private var surroundTentaclesDone: Int = 0
+    private var surroundTentaclesCount: Int = 0
     
     private func startSurroundingPlayer() {
+        print("Surround the player!")
+        self.chasing = false
         self.curTentacleIndex = -1
-        self.surroundTentaclesDone = 0
+        self.surroundTentaclesCount = 0
         self.moveToNextTentacle()
         var points = self.getPlayerSurroundingPoints()
         
-        var spawnedTentacles: Int = 0
         while self.curTentacleIndex < self.tentacleCount && points.count > 0 {
             let point = points.remove(at: 0)
-            spawnedTentacles += 1
+            self.surroundTentaclesCount += 1
             
             self.spawnTentacle(position: point, bubbleDuraiton: self.surroundBubbleDuration, tentacle: self.curTentacle, tentacleDuration: self.surroundTentacleDuration) {
-                self.surroundTentaclesDone += 1
-                if self.surroundTentaclesDone >= spawnedTentacles {
+                self.surroundTentaclesCount -= 1
+                
+                if self.surroundTentaclesCount <= 0 {
+                    print("done surrounding")
                     self.finishSurroundTentacles()
+                } else {
+                    print("... not done surrounding, \(self.surroundTentaclesCount) tentacles left")
                 }
             }
             

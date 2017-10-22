@@ -30,7 +30,7 @@ class WPTTentacle1Wave: WPTTentacleWave {
     }
     
     override func setup(scene: WPTLevelScene) {
-        super.setup(scene: scene)
+        super.setup(scene: scene, isStatic: true)
         self.startTentacleCycle()
     }
     
@@ -90,21 +90,18 @@ class WPTTentacleWave: WPTLevelWave {
     override init(_ waveDict: [String:AnyObject]) {
         self.tentacleCount = waveDict["tentacleCount"] as! Int
         super.init(waveDict)
+        
+        assert(self.tentacleCount >= 1)
     }
     
-    override func setup(scene: WPTLevelScene) {
+    func setup(scene: WPTLevelScene, isStatic: Bool) {
         super.setup(scene: scene)
         
         for _ in 0..<self.tentacleCount {
-            
-            // TODO: finish making the tentacle enemy...
-            
-            // TODO: find out why tentacles start to teleport after a while
-            
-            let tentacle = WPTLevelTentacleNode(player: scene.player, submerged: true)
+            let tentacle = WPTLevelTentacleNode(isStatic: isStatic, player: scene.player, submerged: true)
             tentacle.onDeath {
                 self.killedTentacles += 1
-                print("\(self.tentacleCount - self.killedTentacles) tentacles left!")
+                print("\(self.tentacleCount - self.killedTentacles) tentacles left")
                 self.onTentacleDead()
             }
             self.tentacles.append(tentacle)
