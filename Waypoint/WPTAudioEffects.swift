@@ -10,7 +10,7 @@ import Foundation
 
 class WPTAudioEffects {
     
-    public private(set) var volume: Float = WPTValues.initialVolume
+    public private(set) var volume: Float = Float(WPTValues.initialVolume)
     
     public static let instance = WPTAudioEffects()
     private init() {

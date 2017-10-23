@@ -12,6 +12,7 @@ class WPTAudioMusic {
     
     var backgroundMusic: AVAudioPlayer?
     var currentSong: String?
+    var currentVolume: Float? = 0.0
     
     private init() {
     }
@@ -29,6 +30,12 @@ class WPTAudioMusic {
         backgroundMusic?.play()
     }
     
+    func changeVolume(volume: Float) {
+        print(backgroundMusic!.volume)
+        backgroundMusic?.volume = volume
+        currentVolume = volume
+    }
+    
     func stop() {
         backgroundMusic?.stop()
     }
@@ -41,6 +48,7 @@ class WPTAudioMusic {
         if (backgroundMusic == nil || !(backgroundMusic?.isPlaying)! || currentSong != song) {
             do {
                 backgroundMusic = try AVAudioPlayer(contentsOf: getURL(song: song))
+                backgroundMusic?.volume = currentVolume!
             }
             catch {
                 print("file not found")
