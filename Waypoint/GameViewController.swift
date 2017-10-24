@@ -29,9 +29,13 @@ class GameViewController: UIViewController {
             if WPTConfig.values.showPhysics {
                 view.showsPhysics = true
             }
+            
+            let storage = WPTStorage()
             if WPTConfig.values.clearHighScoresOnLoad {
-                let storage = WPTStorage()
                 storage.deleteHighScores()
+            }
+            if let loadedThing = storage.loadGlobalSettings() {
+                WPTAudioConfig.setInstance(loadedThing)
             }
         }
     }

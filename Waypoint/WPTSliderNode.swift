@@ -14,13 +14,17 @@ class WPTSliderNode: SKNode {
     let background = SKSpriteNode(imageNamed: "slider_background")
     let slider = SKSpriteNode(imageNamed: "slider")
     let title: WPTLabelNode!
+    let onChange: (Float) -> Void
     let progress: WPTLabelNode?
     var minVal: CGFloat! = nil
     var maxVal: CGFloat! = nil
+    
+    var touch: UITouch? = nil
 
-    init(title: String, progress: String) {
+    init(title: String, progress: Float, onChange: @escaping (Float) -> Void) {
         self.title = WPTLabelNode(text: title, fontSize: WPTValues.fontSizeSmall)
-        self.progress = WPTLabelNode(text: "\(WPTValues.initialVolume)%", fontSize: WPTValues.fontSizeSmall)
+        self.progress = WPTLabelNode(text: "\(progress)%", fontSize: WPTValues.fontSizeSmall)
+        self.onChange = onChange
         super.init()
 
         let backgroundSize = 0.4 * WPTValues.screenSize.width
@@ -34,7 +38,8 @@ class WPTSliderNode: SKNode {
         minVal = slider.size.width / 1.05
         maxVal = background.size.width - slider.size.width / 1.05
         
-        slider.position = CGPoint(x: minVal, y: 0.0)
+        let startX = minVal + CGFloat(progress / 10.0) * (maxVal - minVal)
+        slider.position = CGPoint(x: startX, y: 0.0)
         slider.zPosition = 2.0
         self.addChild(slider)
 
@@ -57,24 +62,29 @@ class WPTSliderNode: SKNode {
         for touch in touches {
             var touchLocation = touch.location(in: self)
             if slider.contains(touchLocation) {
+                self.touch = touch
                 if (touchLocation.x > maxVal) {
                     touchLocation.x = maxVal
                 } else if (touchLocation.x < minVal) {
                     touchLocation.x = minVal
                 }
-                slider.position.x = (touchLocation.x)
+                slider.position.x = touchLocation.x
                 progress?.text = getPercent(touchLocation.x)
             }
         }
     }
     
-    func getPercent(_ x: CGFloat) -> String {
-        let progressVal = (x - minVal) * 100.0/(maxVal - minVal)
-        if title.text == "Music" {
-            WPTAudioMusic.music.changeVolume(volume: Float(progressVal))
-        } else {
-            WPTAudioEffects.instance.setVolume(Float(progressVal))
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            if touch == self.touch {
+                
+            }
         }
+    }
+    
+    func getPercent(_ x: CGFloat) -> String {
+        let progressVal = (x - minVal) * 10.0/(maxVal - minVal)
+        onChange(Float(progressVal))
         return String("\(Int(progressVal))%")
     }
 }

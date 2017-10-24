@@ -90,11 +90,11 @@ class WPTHudNode: SKNode, WPTUpdatable {
     private func toggleShroud(_ isPaused: Bool) {
         if isPaused {
             self.pauseMenu.levelName = (self.scene as! WPTLevelScene).level.name
-            WPTAudioMusic.music.pause()
+            WPTAudioConfig.audio.pause()
             self.addChild(self.pauseShroud)
             self.addChild(self.pauseMenu)
         } else {
-            WPTAudioMusic.music.play()
+            WPTAudioConfig.audio.play()
             self.pauseShroud.removeFromParent()
             self.pauseMenu.removeFromParent()
         }

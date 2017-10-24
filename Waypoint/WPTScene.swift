@@ -18,7 +18,7 @@ class WPTScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        WPTAudioMusic.music.playSong(song: getSong())
+        WPTAudioConfig.audio.playSong(song: getSong())
         self.scaleMode = SKSceneScaleMode.resizeFill
         self.size = view.frame.size
         
