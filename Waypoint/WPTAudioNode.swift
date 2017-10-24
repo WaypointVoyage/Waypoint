@@ -19,8 +19,8 @@ class WPTAudioNode : SKNode {
         super.init()
         
         audio.autoplayLooped = false
-        WPTAudioEffects.instance.onVolumeChange(self.onVolumeChange)
-        self.onVolumeChange(volume: WPTAudioEffects.instance.volume)
+        WPTAudioConfig.audio.onEffectsVolumeChange(self.onVolumeChange)
+        self.onVolumeChange(volume: WPTAudioConfig.audio.getCurrentEffectsVolume())
         self.addChild(audio)
     }
     

@@ -59,7 +59,8 @@ class WPTValues {
     // level bahaviors
     static let playerPrepTime: TimeInterval = 4
     
-    static let initialVolume: Int = 75
+    static let defaultMusicVolume: Float = 5.0
+    static let defaultEffectsVolume: Float = 5.0
     
     static func initValues(deviceScreenSize: CGSize) {
         let ar = deviceScreenSize.width / deviceScreenSize.height

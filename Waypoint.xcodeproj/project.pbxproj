@@ -23,12 +23,10 @@
 		2D2C8B5C1E7F3D5A00B1D862 /* WPTTutorialNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */; };
 		2D6068191F8BDF380017B72E /* cannon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068181F8BDF310017B72E /* cannon.mp3 */; };
 		2D6068221F93324C0017B72E /* waypoint.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068211F93324A0017B72E /* waypoint.mp3 */; };
-		2D6068241F933DBE0017B72E /* WPTAudioMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6068231F933DBE0017B72E /* WPTAudioMusic.swift */; };
 		2D6068261F93435B0017B72E /* main_menu_theme.MP3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068251F93435A0017B72E /* main_menu_theme.MP3 */; };
 		2D6068281F934A090017B72E /* level_map_theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068271F934A080017B72E /* level_map_theme.mp3 */; };
 		2D60682A1F9826F80017B72E /* WPTAnchorButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6068291F9826F80017B72E /* WPTAnchorButtonNode.swift */; };
 		2D60682E1F9955C10017B72E /* WPTAudioNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D60682D1F9955C10017B72E /* WPTAudioNode.swift */; };
-		2D6068301F995AB30017B72E /* WPTAudioEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D60682F1F995AB30017B72E /* WPTAudioEffects.swift */; };
 		2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */; };
 		2D7B92391F75A32F001F3E1F /* WPTKrakenIntroWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B92381F75A32F001F3E1F /* WPTKrakenIntroWave.swift */; };
 		2D7B923B1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B923A1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift */; };
@@ -74,6 +72,7 @@
 		7E4216041E5B56BF004ADBD7 /* WPTFireRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4216031E5B56BF004ADBD7 /* WPTFireRateManager.swift */; };
 		7E43CC771E54B844009367BC /* trail_map.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E43CC761E54B844009367BC /* trail_map.plist */; };
 		7E43CC791E54CB50009367BC /* WPTPauseMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E43CC781E54CB50009367BC /* WPTPauseMenuNode.swift */; };
+		7E4436B21F9EB9C7005B2092 /* WPTAudioConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4436B11F9EB9C7005B2092 /* WPTAudioConfig.swift */; };
 		7E5242881E56331D00120002 /* WPTTerrainNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5242871E56331D00120002 /* WPTTerrainNode.swift */; };
 		7E5242901E56440900120002 /* water.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E52428F1E56440900120002 /* water.fsh */; };
 		7E52C85A1E61E72F004FDB27 /* WPTLevelTouchHandlerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E52C8591E61E72F004FDB27 /* WPTLevelTouchHandlerNode.swift */; };
@@ -197,12 +196,10 @@
 		2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTutorialNode.swift; sourceTree = "<group>"; };
 		2D6068181F8BDF310017B72E /* cannon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cannon.mp3; sourceTree = "<group>"; };
 		2D6068211F93324A0017B72E /* waypoint.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = waypoint.mp3; path = Resources/Music/waypoint.mp3; sourceTree = SOURCE_ROOT; };
-		2D6068231F933DBE0017B72E /* WPTAudioMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTAudioMusic.swift; sourceTree = "<group>"; };
 		2D6068251F93435A0017B72E /* main_menu_theme.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = main_menu_theme.MP3; path = Resources/Music/main_menu_theme.MP3; sourceTree = "<group>"; };
 		2D6068271F934A080017B72E /* level_map_theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = level_map_theme.mp3; path = Resources/Music/level_map_theme.mp3; sourceTree = "<group>"; };
 		2D6068291F9826F80017B72E /* WPTAnchorButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTAnchorButtonNode.swift; sourceTree = "<group>"; };
 		2D60682D1F9955C10017B72E /* WPTAudioNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTAudioNode.swift; sourceTree = "<group>"; };
-		2D60682F1F995AB30017B72E /* WPTAudioEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTAudioEffects.swift; sourceTree = "<group>"; };
 		2D6D53721E36871C00AFF40E /* BOOTERFZ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BOOTERFZ.ttf; sourceTree = "<group>"; };
 		2D7B92381F75A32F001F3E1F /* WPTKrakenIntroWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTKrakenIntroWave.swift; sourceTree = "<group>"; };
 		2D7B923A1F75A3A0001F3E1F /* WPTKrakenChestStealWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTKrakenChestStealWave.swift; sourceTree = "<group>"; };
@@ -250,6 +247,7 @@
 		7E4216031E5B56BF004ADBD7 /* WPTFireRateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTFireRateManager.swift; sourceTree = "<group>"; };
 		7E43CC761E54B844009367BC /* trail_map.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = trail_map.plist; sourceTree = "<group>"; };
 		7E43CC781E54CB50009367BC /* WPTPauseMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTPauseMenuNode.swift; sourceTree = "<group>"; };
+		7E4436B11F9EB9C7005B2092 /* WPTAudioConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTAudioConfig.swift; sourceTree = "<group>"; };
 		7E5242871E56331D00120002 /* WPTTerrainNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTerrainNode.swift; sourceTree = "<group>"; };
 		7E52428F1E56440900120002 /* water.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = water.fsh; sourceTree = "<group>"; };
 		7E52C8591E61E72F004FDB27 /* WPTLevelTouchHandlerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLevelTouchHandlerNode.swift; sourceTree = "<group>"; };
@@ -526,10 +524,9 @@
 				7E16B8621E2D580600933E24 /* Main.storyboard */,
 				7E16B8651E2D580600933E24 /* Assets.xcassets */,
 				7E16B86A1E2D580600933E24 /* Info.plist */,
-				2D6068231F933DBE0017B72E /* WPTAudioMusic.swift */,
+				7E4436B11F9EB9C7005B2092 /* WPTAudioConfig.swift */,
 				7E0D62101E366F5F009C8516 /* WPTValues.swift */,
 				7E13F6241E48E51000B5D2FD /* WPTConfig.swift */,
-				2D60682F1F995AB30017B72E /* WPTAudioEffects.swift */,
 			);
 			path = Waypoint;
 			sourceTree = "<group>";
@@ -902,7 +899,7 @@
 				TargetAttributes = {
 					7E16B8541E2D580600933E24 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3GEHA95597;
+						DevelopmentTeam = 66743KUV39;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -1036,7 +1033,6 @@
 				2D7DCFF11E81FAA6003BCE30 /* WPTButtonNode.swift in Sources */,
 				2D60682E1F9955C10017B72E /* WPTAudioNode.swift in Sources */,
 				2D1EF1071E807C3100F527B7 /* WPTItemPickerNode.swift in Sources */,
-				2D6068301F995AB30017B72E /* WPTAudioEffects.swift in Sources */,
 				7E69329A1E53E08100AF7373 /* WPTHudNode.swift in Sources */,
 				7E5F06561E438A2300EAC166 /* WPTScene.swift in Sources */,
 				7E5DB72A1E7ED233000B1307 /* WPTPlayerPrepPMS.swift in Sources */,
@@ -1050,6 +1046,7 @@
 				2D7B92391F75A32F001F3E1F /* WPTKrakenIntroWave.swift in Sources */,
 				2D7B923D1F75A3C0001F3E1F /* WPTTentacle1Wave.swift in Sources */,
 				7EE8A8C81E6F779700C119B9 /* WPTShipCatalog.swift in Sources */,
+				7E4436B21F9EB9C7005B2092 /* WPTAudioConfig.swift in Sources */,
 				2D17043B1E6FF3CD0000827E /* WPTHealthNode.swift in Sources */,
 				7EF866881E82C3280012F2C7 /* WPTFinalTreasureNode.swift in Sources */,
 				7EB1BF9E1F9C51C000E84289 /* WPTLollygaggingBS.swift in Sources */,
@@ -1094,7 +1091,6 @@
 				7EC987A41E7FA20800626C60 /* WPTLootSummary.swift in Sources */,
 				7E1472821E71A784005E5A4C /* WPTBrainState.swift in Sources */,
 				7EAE35CF1E81FC7500F42904 /* WPTReticleNode.swift in Sources */,
-				2D6068241F933DBE0017B72E /* WPTAudioMusic.swift in Sources */,
 				7ECB5A041E745CD000A05563 /* WPTFleeBS.swift in Sources */,
 				7E5A6BF01E5A0E200067EAF3 /* WPTCannonSet.swift in Sources */,
 				7E3EF6EA1E7532EB0036A895 /* WPTBrainRadiiNode.swift in Sources */,
@@ -1258,10 +1254,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3GEHA95597;
+				DEVELOPMENT_TEAM = 66743KUV39;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hils124;
+				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1275,10 +1271,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3GEHA95597;
+				DEVELOPMENT_TEAM = 66743KUV39;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hils124;
+				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;

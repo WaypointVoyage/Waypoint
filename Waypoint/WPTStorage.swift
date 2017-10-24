@@ -13,12 +13,14 @@ class WPTStorage {
     
     let highScorePath: String
     let playerProgressPath: String
+    let globalSettingsPath: String
     
     init() {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
         let documentsDirectory = paths[0] as! NSString
         highScorePath = documentsDirectory.appendingPathComponent("high_scores.plist")
         playerProgressPath = documentsDirectory.appendingPathComponent("player_progress.plist")
+        globalSettingsPath = documentsDirectory.appendingPathComponent("global_settings.plist")
     }
     
     func deleteHighScores() {
@@ -61,6 +63,21 @@ class WPTStorage {
         if let unarchivedThing = NSKeyedUnarchiver.unarchiveObject(withFile: playerProgressPath) {
             if let asPlayerProgress = unarchivedThing as? WPTPlayerProgress {
                 return asPlayerProgress
+            }
+        }
+        return nil
+    }
+    
+    func saveGlobalSettings() {
+        NSLog("Saving global settings")
+        NSKeyedArchiver.archiveRootObject(WPTAudioConfig.audio, toFile: self.globalSettingsPath)
+    }
+    
+    func loadGlobalSettings() -> WPTAudioConfig? {
+        NSLog("Loading global settings")
+        if let unarchivedThing = NSKeyedUnarchiver.unarchiveObject(withFile: globalSettingsPath) {
+            if let asGlobalSettings = unarchivedThing as? WPTAudioConfig {
+                return asGlobalSettings
             }
         }
         return nil
