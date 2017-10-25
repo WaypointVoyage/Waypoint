@@ -45,8 +45,8 @@ class WPTHudBottomNode: SKNode, WPTUpdatable {
     private static let anchorXOffsetScale: CGFloat = 2.5
     private static let anchorYOffsetScale: CGFloat = 0.8
     
-    private static let wheelXOffsetScale: CGFloat = 1.5
-    private static let wheelYOffsetScale: CGFloat = 1.5
+    private static let wheelXOffsetScale: CGFloat = 1.6
+    private static let wheelYOffsetScale: CGFloat = 1.6
     
     private func setupRightHanded(_ offset: CGFloat) {
         self.fire.position = CGPoint(x: WPTValues.screenSize.width - offset, y: offset)
