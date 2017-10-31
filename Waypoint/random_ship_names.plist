@@ -7,27 +7,19 @@
 	<string>Yeah Buoy</string>
 	<string>Pier Pressure</string>
 	<string>Resting Beachface</string>
-	<string>Moana</string>
 	<string>Seas The Day</string>
 	<string>Aquaholic</string>
 	<string>Poly Pontoon</string>
-	<string>Sydney</string>
-	<string>Wallaby Way</string>
-	<string>42</string>
-	<string>P. Sherman</string>
 	<string>Theodore</string>
 	<string>Eagle&apos;s Shadow</string>
 	<string>Salty Sea Mare</string>
 	<string>Ship Happens</string>
 	<string>Mayflower</string>
 	<string>The Orca</string>
-	<string>S.S. Anne</string>
 	<string>Poseidon</string>
 	<string>Boaty McBoatface</string>
 	<string>Battered Booter</string>
 	<string>Baracuda</string>
-	<string>Chum Bucket</string>
-	<string>The Krusty Krab</string>
 	<string>Bilgeswill Rattlebones</string>
 	<string>Corky McSwaggers</string>
 	<string>The Waypoint</string>
@@ -38,7 +30,6 @@
 	<string>SLO Cruiser</string>
 	<string>The Swashbuckler</string>
 	<string>The Objective Sea</string>
-	<string>Titanic</string>
 	<string>Esperanza</string>
 	<string>The Randal Scovil</string>
 	<string>Zach The Horrible</string>
@@ -73,5 +64,8 @@
 	<string>Black Pearl</string>
 	<string>Midnight Sail</string>
 	<string>Blackwell</string>
+	<string>Sir Bradford</string>
+	<string>SS Taylor</string>
+	<string>SS Schulz</string>
 </array>
 </plist>

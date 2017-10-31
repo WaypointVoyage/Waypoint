@@ -122,7 +122,7 @@ class WPTLevelScene: WPTScene {
     }
     
     override func getSong() -> String {
-        return "waypoint.mp3"
+        return "waypoint.wav"
     }
     
     private func levelNameDisplay() {

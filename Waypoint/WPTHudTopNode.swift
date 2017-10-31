@@ -58,8 +58,8 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         self.moneyCount.fontColor = UIColor.black
         self.moneyCount.position = CGPoint(x: moneyOffset * 1.55, y: WPTValues.screenSize.height - moneyOffset * 1.85)
         
-        let pauseSize = 0.8 * WPTValues.fontSizeSmall
-        let pauseOffset = 1.25 * pauseSize
+        let pauseSize = 0.8 * WPTValues.fontSizeLarge
+        let pauseOffset = 0.7 * pauseSize
         self.pause.position = CGPoint(x: WPTValues.screenSize.width - pauseOffset, y: WPTValues.screenSize.height - pauseOffset)
         self.pause.size = CGSize(width: pauseSize, height: pauseSize)
         self.pause.zPosition = WPTZPositions.touchHandler + 1 - WPTZPositions.hud

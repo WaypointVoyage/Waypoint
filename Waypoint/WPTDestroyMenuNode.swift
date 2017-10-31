@@ -39,6 +39,7 @@ class WPTDestroyMenuNode: SKNode {
         //ship image
         let shipImage = SKSpriteNode(imageNamed: player.ship.previewImage)
         shipImage.position.x -= background.size.width * 0.3
+        shipImage.position.y -= 0.05 * background.size.height
         let shipImgSize = 0.25 * WPTValues.screenSize.width
         shipImage.size = CGSize(width: shipImgSize, height: shipImgSize)
         shipImage.zPosition = 1
@@ -51,12 +52,11 @@ class WPTDestroyMenuNode: SKNode {
         self.addChild(gameOver)
         
         // levelLabel
-        shipName.horizontalAlignmentMode = .left
+        shipName.horizontalAlignmentMode = .center
         shipName.zPosition = 1
         shipName.fontColor = UIColor.black
         shipName.text = player.shipName
-        shipName.position.y += 0.05 * background.size.height
-        shipName.position.x -= 0.01 * background.size.height
+        shipName.position.y += 0.14 * background.size.height
         self.addChild(shipName)
         
         // doubloonLabel

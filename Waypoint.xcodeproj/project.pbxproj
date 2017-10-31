@@ -22,7 +22,6 @@
 		2D2C8B581E727D1A00B1D862 /* WPTDestroyMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */; };
 		2D2C8B5C1E7F3D5A00B1D862 /* WPTTutorialNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */; };
 		2D6068191F8BDF380017B72E /* cannon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068181F8BDF310017B72E /* cannon.mp3 */; };
-		2D6068221F93324C0017B72E /* waypoint.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068211F93324A0017B72E /* waypoint.mp3 */; };
 		2D6068261F93435B0017B72E /* main_menu_theme.MP3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068251F93435A0017B72E /* main_menu_theme.MP3 */; };
 		2D6068281F934A090017B72E /* level_map_theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D6068271F934A080017B72E /* level_map_theme.mp3 */; };
 		2D60682A1F9826F80017B72E /* WPTAnchorButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6068291F9826F80017B72E /* WPTAnchorButtonNode.swift */; };
@@ -39,6 +38,7 @@
 		2D826C531F7594E4000D6FAC /* WPTWiggleBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D826C521F7594E4000D6FAC /* WPTWiggleBS.swift */; };
 		2D8E804B1E3AD6D000CB2E0B /* WPTSettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */; };
 		2D8E804E1E3ADBC400CB2E0B /* WPTShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */; };
+		2DACB90F1FA779B3006FBE1F /* waypoint.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2DACB90E1FA77987006FBE1F /* waypoint.wav */; };
 		2DD77F161F99CC3300CCEF3E /* WPTSliderNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD77F151F99CC3300CCEF3E /* WPTSliderNode.swift */; };
 		7E0C78951E73D1DD006C79C3 /* WPTCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */; };
 		7E0C78971E73D224006C79C3 /* WPTLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C78961E73D224006C79C3 /* WPTLine.swift */; };
@@ -195,7 +195,6 @@
 		2D2C8B571E727D1A00B1D862 /* WPTDestroyMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTDestroyMenuNode.swift; sourceTree = "<group>"; };
 		2D2C8B5B1E7F3D5A00B1D862 /* WPTTutorialNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTTutorialNode.swift; sourceTree = "<group>"; };
 		2D6068181F8BDF310017B72E /* cannon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cannon.mp3; sourceTree = "<group>"; };
-		2D6068211F93324A0017B72E /* waypoint.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = waypoint.mp3; path = Resources/Music/waypoint.mp3; sourceTree = SOURCE_ROOT; };
 		2D6068251F93435A0017B72E /* main_menu_theme.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = main_menu_theme.MP3; path = Resources/Music/main_menu_theme.MP3; sourceTree = "<group>"; };
 		2D6068271F934A080017B72E /* level_map_theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = level_map_theme.mp3; path = Resources/Music/level_map_theme.mp3; sourceTree = "<group>"; };
 		2D6068291F9826F80017B72E /* WPTAnchorButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTAnchorButtonNode.swift; sourceTree = "<group>"; };
@@ -212,6 +211,7 @@
 		2D826C521F7594E4000D6FAC /* WPTWiggleBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTWiggleBS.swift; sourceTree = "<group>"; };
 		2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSettingsScene.swift; sourceTree = "<group>"; };
 		2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShip.swift; sourceTree = "<group>"; };
+		2DACB90E1FA77987006FBE1F /* waypoint.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = waypoint.wav; path = Resources/Music/waypoint.wav; sourceTree = "<group>"; };
 		2DD77F151F99CC3300CCEF3E /* WPTSliderNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSliderNode.swift; sourceTree = "<group>"; };
 		7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCircle.swift; sourceTree = "<group>"; };
 		7E0C78961E73D224006C79C3 /* WPTLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLine.swift; sourceTree = "<group>"; };
@@ -470,9 +470,9 @@
 		7E13F62A1E48EA7E00B5D2FD /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				2DACB90E1FA77987006FBE1F /* waypoint.wav */,
 				2D6068271F934A080017B72E /* level_map_theme.mp3 */,
 				2D6068251F93435A0017B72E /* main_menu_theme.MP3 */,
-				2D6068211F93324A0017B72E /* waypoint.mp3 */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -975,8 +975,8 @@
 				7EF866D11E83556D0012F2C7 /* 6_davy_jones_locker.plist in Resources */,
 				7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */,
 				2D6068191F8BDF380017B72E /* cannon.mp3 in Resources */,
-				2D6068221F93324C0017B72E /* waypoint.mp3 in Resources */,
 				7EF866D21E83556D0012F2C7 /* 7_letter_of_marque.plist in Resources */,
+				2DACB90F1FA779B3006FBE1F /* waypoint.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@ import SpriteKit
 
 class WPTNewGameScene: WPTScene, UITextFieldDelegate {
     
-    let maxShipNameLength = 25
+    let maxShipNameLength = 22
     let background = WPTBackgroundNode(image: "beach_scene")
     let headerLabel = WPTLabelNode(text: "New Game", fontSize: WPTValues.fontSizeLarge)
     var startLabel = WPTButtonNode(text: "Start", fontSize: WPTValues.fontSizeMedium)
