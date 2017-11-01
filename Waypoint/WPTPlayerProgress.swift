@@ -14,6 +14,8 @@ class WPTPlayerProgress: NSObject, NSCoding {
     let health: CGFloat
     let completedLevels: [String]
     
+    var levelDockInventory: [String:[ItemWrapper]]
+    
     // actor stuff
     let ship: String                // think of this as the 'make and model' of ship that is used
     let cannonBallImage: String
@@ -35,9 +37,11 @@ class WPTPlayerProgress: NSObject, NSCoding {
             cannonSetDict[i] = cannon.hasCannon
         }
         cannonSet = cannonSetDict
+        
+        self.levelDockInventory = [String:[ItemWrapper]]()
     }
     
-    init(shipName: String, ship: String, health: CGFloat? = nil, completedLevels: [String]? = nil, cannonBallImage: String? = nil, doubloons: Int = 0, items: [String]? = nil, cannonSet: [Int:Bool]?) {
+    init(shipName: String, ship: String, health: CGFloat? = nil, completedLevels: [String]? = nil, cannonBallImage: String? = nil, doubloons: Int = 0, items: [String]? = nil, cannonSet: [Int:Bool]?, levelDockInventory: [String:[ItemWrapper]]? = nil) {
         self.shipName = shipName
         self.ship = ship
         
@@ -64,6 +68,12 @@ class WPTPlayerProgress: NSObject, NSCoding {
             }
         }
         self.cannonSet = tmpCannonSet
+        
+        if let givenInventory = levelDockInventory {
+            self.levelDockInventory = givenInventory
+        } else {
+            self.levelDockInventory = [String:[ItemWrapper]]()
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -75,6 +85,7 @@ class WPTPlayerProgress: NSObject, NSCoding {
         self.doubloons = aDecoder.decodeInteger(forKey: "doubloons")
         self.items = aDecoder.decodeObject(forKey: "items") as! [String]
         self.cannonSet = aDecoder.decodeObject(forKey: "cannonSet") as! [Int:Bool]
+        self.levelDockInventory = aDecoder.decodeObject(forKey: "levelDockInventory") as! [String:[ItemWrapper]]
     }
     
     func encode(with aCoder: NSCoder) {
@@ -86,5 +97,6 @@ class WPTPlayerProgress: NSObject, NSCoding {
         aCoder.encode(doubloons, forKey: "doubloons")
         aCoder.encode(items, forKey: "items")
         aCoder.encode(cannonSet, forKey: "cannonSet")
+        aCoder.encode(levelDockInventory, forKey: "levelDockInventory")
     }
 }

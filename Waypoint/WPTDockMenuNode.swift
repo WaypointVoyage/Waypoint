@@ -13,7 +13,9 @@ class WPTDockMenuNode: SKNode {
     let background: SKSpriteNode
     let dockShroud: SKShapeNode
     let player: WPTLevelPlayerNode
+    let level: WPTLevel
     var itemPicker: WPTItemPickerNode? = nil
+    var itemInventory: [ItemWrapper]! = nil
     
     var itemNameLabel = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeSmall)
     var doubloonsLabel = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeSmall)
@@ -23,11 +25,12 @@ class WPTDockMenuNode: SKNode {
     var purchaseLabel = WPTButtonNode(text: "Purchase", fontSize: WPTValues.fontSizeSmall)
     let wahm = WPTButtonNode(text: "Sail >", fontSize: WPTValues.fontSizeSmall)
     
-    init(player: WPTLevelPlayerNode) {
+    init(player: WPTLevelPlayerNode, level: WPTLevel) {
         
         self.player = player
         self.background = SKSpriteNode(imageNamed: "pause_scroll")
         self.dockShroud = SKShapeNode(rectOf: WPTValues.screenSize)
+        self.level = level
         
         super.init()
         self.isUserInteractionEnabled = true
@@ -54,22 +57,19 @@ class WPTDockMenuNode: SKNode {
         titleLabel.position = CGPoint(x: 0, y: 0.30 * dockShroud.frame.height)
         self.addChild(titleLabel)
         
-        var items: [WPTItem] = []
-        items.append(WPTItemCatalog.itemsByName["Ship Maintenance"]!)
-        if !self.player.hasAllCannons {
-            items.append(WPTItemCatalog.itemsByName["Cannon"]!)
-        }
-        for _ in 0..<3 {
-            items.append(WPTItemCatalog.randomStatModifier())
-        }
-        
         itemNameLabel.horizontalAlignmentMode = .center
         itemNameLabel.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: 0.15 * dockShroud.frame.height)
         itemNameLabel.fontColor = UIColor.black
         itemNameLabel.zPosition = background.zPosition + 1
         self.addChild(itemNameLabel)
         
-        itemPicker = WPTItemPickerNode(items: items, onChange: updateStats)
+        if (player.player.completedLevels.contains(level.name)) {
+            self.itemInventory = (player.player.progress!.levelDockInventory[level.name])!
+        } else {
+            self.itemInventory = getRandomItems(numItems: 3)
+        }
+        
+        itemPicker = WPTItemPickerNode(items: self.itemInventory, onChange: updateStats)
         itemPicker!.position = CGPoint(x: -0.12 * dockShroud.frame.size.width, y: -0.05 * dockShroud.frame.height)
         itemPicker!.zPosition = background.zPosition + 1
         itemPicker!.setSize(width: 0.7 * background.size.width, height: background.size.height)
@@ -152,11 +152,36 @@ class WPTDockMenuNode: SKNode {
             // save the progress
             player.player.progress = WPTPlayerProgress(player: player.player)
             let storage = WPTStorage()
+            player.player.progress!.levelDockInventory[level.name] = self.itemInventory
             storage.savePlayerProgress(player.player.progress!)
             
             // move to the world scene
             self.scene!.view?.presentScene(WPTWorldScene(player: player.player))
         }
+    }
+    
+    private func getRandomItems(numItems: Int) -> [ItemWrapper] {
+        var items: [ItemWrapper] = []
+        let shipMaintenance = WPTItemCatalog.itemsByName["Ship Maintenance"]!
+        items.append(ItemWrapper(name: shipMaintenance.name, price: shipMaintenance.value, purchased: false))
+        if !self.player.hasAllCannons {
+            let cannon = WPTItemCatalog.itemsByName["Cannon"]!
+            items.append(ItemWrapper(name: cannon.name, price: cannon.value, purchased: false))
+        }
+        for _ in 0..<numItems {
+            var found = false
+            while (!found) {
+                let randItem = WPTItemCatalog.randomStatModifier()
+                let duplicate = items.contains(where: { (item) -> Bool in
+                    item.itemName == randItem.name
+                })
+                if (!duplicate) {
+                    items.append(ItemWrapper(name: randItem.name, price: randItem.value, purchased: false))
+                    found = true
+                }
+            }
+        }
+        return items
     }
     
     private func purchaseItem() {
@@ -171,5 +196,15 @@ class WPTDockMenuNode: SKNode {
         self.purchaseLabel.disabled = true
         itemPicker!.currentItem.purchased = true
         player.give(item: itemPicker!.currentItem.item)
+        updateDock(item: itemPicker!.currentItem)
+    }
+    
+    private func updateDock(item: ItemWrapper) {
+        for i in self.itemInventory {
+            if i.itemName == item.itemName {
+                i.purchased = item.purchased
+                break
+            }
+        }
     }
 }

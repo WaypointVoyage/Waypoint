@@ -14,6 +14,7 @@ class WPTSettingsScene: WPTScene {
     let headerLabel = WPTLabelNode(text: "Settings", fontSize: WPTValues.fontSizeLarge)
     let effectSlider = WPTSliderNode(title: "Effects", progress: WPTAudioConfig.audio.getCurrentEffectsVolume(), onChange: WPTAudioConfig.audio.setEffectsVolume)
     let musicSlider = WPTSliderNode(title: "Music", progress: WPTAudioConfig.audio.getCurrentMusicVolume(), onChange: WPTAudioConfig.audio.setMusicVolume)
+    let leftySwitch = WPTSwitchNode(title: "Lefty Mode")
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -30,8 +31,10 @@ class WPTSettingsScene: WPTScene {
         
         effectSlider.position = CGPoint(x: 0.3 * frame.width, y: frame.midY / 0.75)
         musicSlider.position = CGPoint(x: 0.3 * frame.width, y: frame.midY / 1.10)
+        leftySwitch.position = CGPoint(x: 0.5 * frame.width, y: frame.midY / 1.90)
         
         addChild(effectSlider)
         addChild(musicSlider)
+        addChild(leftySwitch)
     }
 }

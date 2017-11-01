@@ -36,10 +36,8 @@ class WPTItemPickerNode: SKNode {
         }
     }
     
-    init(items: [WPTItem], onChange: @escaping (ItemWrapper) -> Void) {
-        self.items = items.map({
-            ItemWrapper(item: $0)
-        })
+    init(items: [ItemWrapper], onChange: @escaping (ItemWrapper) -> Void) {
+        self.items = items
         self.onChange = onChange
         super.init()
         assert(self.items.count >= 1, "At least one item is required!")
@@ -102,11 +100,31 @@ class WPTItemPickerNode: SKNode {
     }
 }
 
-class ItemWrapper {
-    let item: WPTItem
-    var purchased: Bool = false
+class ItemWrapper: NSObject, NSCoding {
+
+    var item: WPTItem
+    var itemName: String
     
-    init(item: WPTItem) {
-        self.item = item
+    var purchased: Bool = false
+    var price: Int
+    
+    init(name: String, price: Int, purchased: Bool) {
+        self.item = WPTItemCatalog.itemsByName[name]!
+        self.itemName = name
+        self.purchased = purchased
+        self.price = price
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.itemName = aDecoder.decodeObject(forKey: "itemName") as! String
+        self.item = WPTItemCatalog.itemsByName[self.itemName]!
+        self.purchased = aDecoder.decodeObject(forKey: "purchased") as! Bool
+        self.price = aDecoder.decodeObject(forKey: "price") as! Int
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(itemName, forKey: "itemName")
+        aCoder.encode(purchased, forKey: "purchased")
+        aCoder.encode(price, forKey: "price")
     }
 }

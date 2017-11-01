@@ -25,7 +25,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
         self.pauseShroud = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: WPTValues.screenSize))
         self.pauseMenu = WPTPauseMenuNode(terrain: terrain)
         self.destroyMenu = WPTDestroyMenuNode(player: player.player)
-        self.dockMenu = WPTDockMenuNode(player: player)
+        self.dockMenu = WPTDockMenuNode(player: player, level: terrain.level)
         
         super.init()
         self.isUserInteractionEnabled = true
