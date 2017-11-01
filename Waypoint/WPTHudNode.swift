@@ -21,7 +21,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
     init(player: WPTLevelPlayerNode, terrain: WPTTerrainNode) {
         self.player = player
         self.top = WPTHudTopNode(player: player.player)
-        self.bottom = WPTHudBottomNode()
+        self.bottom = WPTHudBottomNode(leftMode: WPTAudioConfig.audio.getLeftyControls())
         self.pauseShroud = SKShapeNode(rect: CGRect(origin: CGPoint.zero, size: WPTValues.screenSize))
         self.pauseMenu = WPTPauseMenuNode(terrain: terrain)
         self.destroyMenu = WPTDestroyMenuNode(player: player.player)

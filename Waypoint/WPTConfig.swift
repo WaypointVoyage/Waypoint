@@ -27,6 +27,7 @@ class WPTConfig {
     var invincible = false               // if true, the player is invincible
     var clearHighScoresOnLoad = false    // if true, all of the high scores are cleared when the app is loaded
     var showTutorial = true              // if false, the tutorial will never be shown
+    var clearPlayerProgress = true      // if true, all player progress will be cleared
     
     // visual debugging
     let showPhysics = false                 // shows physics bodies

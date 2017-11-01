@@ -12,6 +12,7 @@ class WPTAudioConfig: NSObject, NSCoding {
     
     var backgroundMusic: AVAudioPlayer?
     var currentSong: String?
+    var leftyControls: Bool? = nil
     private var currentMusicVolume: Float? = nil
     private var currentEffectsVolume: Float? = nil
     
@@ -41,6 +42,14 @@ class WPTAudioConfig: NSObject, NSCoding {
         return WPTValues.defaultEffectsVolume
     }
     
+    public func getLeftyControls() -> Bool {
+        if let leftyControls = self.leftyControls {
+            return leftyControls
+        }
+        self.leftyControls = WPTValues.defaultLeftyMode
+        return WPTValues.defaultLeftyMode
+    }
+    
     static var audio: WPTAudioConfig = WPTAudioConfig()
     
     func getURL(song: String) -> URL {
@@ -58,6 +67,10 @@ class WPTAudioConfig: NSObject, NSCoding {
         print(backgroundMusic!.volume)
         backgroundMusic?.volume = volume
         currentMusicVolume = volume
+    }
+    
+    func setLeftyControls() {
+        self.leftyControls = !(self.leftyControls!)
     }
     
     func stop() {
@@ -97,11 +110,13 @@ class WPTAudioConfig: NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.currentMusicVolume, forKey: "musicVolume")
         aCoder.encode(self.currentEffectsVolume, forKey: "effectsVolume")
+        aCoder.encode(self.leftyControls, forKey: "leftyControls")
     }
     
     required init?(coder aDecoder: NSCoder) {
         self.currentMusicVolume = aDecoder.decodeObject(forKey: "musicVolume") as? Float
         self.currentEffectsVolume = aDecoder.decodeObject(forKey: "effectsVolume") as? Float
+        self.leftyControls = aDecoder.decodeObject(forKey: "leftyControls") as? Bool
     }
 }
 

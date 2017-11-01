@@ -15,17 +15,19 @@ class WPTSwitchNode: SKNode {
     let switchOff = SKTexture(imageNamed: "switch_off")
     let switchButton: SKSpriteNode
     let title: WPTLabelNode!
+     let onChange: () -> Void
     
     var switchedOn = false
     
-    init(title: String, switchValue: Bool = false) {
+    init(title: String, switchValue: Bool, onChange: @escaping () -> Void) {
         self.switchButton = SKSpriteNode()
         
         self.title = WPTLabelNode(text: title, fontSize: WPTValues.fontSizeSmall)
         self.switchedOn = switchValue
+        self.onChange = onChange
         super.init()
         
-        makeSwitch()
+        setSwitchControls()
         
         self.title.fontColor = UIColor.black
         self.title.position = CGPoint(x: -self.title!.fontSize * 2.4, y: 0.5)
@@ -49,18 +51,20 @@ class WPTSwitchNode: SKNode {
         for touch in touches {
             let touchLocation = touch.location(in: self)
             if (switchButton.contains(touchLocation)) {
-                makeSwitch()
+                onChange()
+                self.switchedOn = !self.switchedOn
+                setSwitchControls()
+                let storage = WPTStorage()
+                storage.saveGlobalSettings()
             }
         }
     }
     
-    func makeSwitch() {
+    func setSwitchControls() {
         if (switchedOn) {
             switchButton.texture = switchOn
         } else {
-            print("yo")
             switchButton.texture = switchOff
         }
-        switchedOn = !switchedOn
     }
 }

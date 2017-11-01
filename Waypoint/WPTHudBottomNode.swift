@@ -19,7 +19,7 @@ class WPTHudBottomNode: SKNode, WPTUpdatable {
     private var pressed: Bool = false
     private var anchored: Bool = true
     
-    init(leftMode: Bool = false) {
+    init(leftMode: Bool) {
         self.wheel = WPTShipWheelNode()
         
         self.fire = WPTFireButtonNode()

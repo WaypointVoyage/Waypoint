@@ -61,6 +61,7 @@ class WPTValues {
     
     static let defaultMusicVolume: Float = 5.0
     static let defaultEffectsVolume: Float = 5.0
+    static let defaultLeftyMode: Bool = false
     
     static func initValues(deviceScreenSize: CGSize) {
         let ar = deviceScreenSize.width / deviceScreenSize.height

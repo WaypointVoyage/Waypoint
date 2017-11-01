@@ -48,6 +48,16 @@ class WPTStorage {
         NSKeyedArchiver.archiveRootObject(progress, toFile: self.playerProgressPath)
     }
     
+    func deletePlayerProgress() {
+        NSLog("deleting player progress...")
+        do {
+            try FileManager.default.removeItem(atPath: playerProgressPath)
+        } catch let error as NSError {
+            NSLog("WARN: Could not delete player progress")
+            NSLog(error.debugDescription)
+        }
+    }
+    
     func clearPlayerProgress() {
         NSLog("Clearing Player Progress")
         do {
