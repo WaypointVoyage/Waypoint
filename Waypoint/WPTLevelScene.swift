@@ -59,7 +59,7 @@ class WPTLevelScene: WPTScene {
         self.listener = self.player
         self.scene?.backgroundColor = UIColor.black
         
-        self.cam.position = self.terrain.position + self.level.spawnPoint
+//        self.cam.position = self.terrain.position + self.level.spawnPoint
         
         // setup the physics behavior
         self.physicsWorld.gravity = CGVector.zero
