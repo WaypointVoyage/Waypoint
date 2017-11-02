@@ -13,7 +13,7 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
@@ -28,11 +28,11 @@ class WPTConfig {
     var clearHighScoresOnLoad = false    // if true, all of the high scores are cleared when the app is loaded
 
     var showTutorial = true              // if false, the tutorial will never be shown
-    var clearPlayerProgress = true      // if true, all player progress will be cleared
+    var clearPlayerProgress = false      // if true, all player progress will be cleared
     
     // visual debugging
-    let showPhysics = true                 // shows physics bodies
-    let showBrainRadii = true              // shows the brain radius for each enemy
+    let showPhysics = false                 // shows physics bodies
+    let showBrainRadii = false              // shows the brain radius for each enemy
     let showSpawnVolumesOnMinimap = false   // shows the spawn volume areas as rectangles on the level minimap
     let showTouchHandler = false            // shows a transparent shroud on the touch handler
     
