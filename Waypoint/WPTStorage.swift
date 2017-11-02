@@ -106,6 +106,7 @@ class WPTStorage {
         var scores = self.loadHighScores()
         if scores.count <= WPTValues.maxHighScores || score.doubloons > scores.last!.doubloons {
             scores.append(score)
+            scores.sort()
             let extra = scores.count - WPTValues.maxHighScores
             if extra > 0 {
                 scores.removeLast(extra)
