@@ -20,6 +20,8 @@ class WPTEnemy: WPTActor, Hashable, Equatable {
     let caution: CGFloat          // radius of safety (>= 0)
     let triggerHappiness: CGFloat // modifies fire rate
     
+    let dropHealth: Bool          // whether or not the enemy can drop some health when destroyed
+    
     var hashValue: Int {
         return name.hashValue
     }
@@ -34,6 +36,7 @@ class WPTEnemy: WPTActor, Hashable, Equatable {
         brainTemplate = WPTEnemyCatalog.brainTemplatesByName[enemyDict["brain"] as! String]!
         let ship = WPTShipCatalog.shipsByName[enemyDict["ship"] as! String]!
         terrainType = WPTEnemyTerrainType.init(rawValue: enemyDict["terrainType"] as! String)!
+        self.dropHealth = enemyDict["dropHealth"] as! Bool
         super.init(ship: ship)
         
         assertBehaviors()

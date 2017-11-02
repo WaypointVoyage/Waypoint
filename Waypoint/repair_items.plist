@@ -4,6 +4,22 @@
 <array>
 	<dict>
 		<key>description</key>
+		<string>+5% Health</string>
+		<key>imageName</key>
+		<string>repair_0</string>
+		<key>name</key>
+		<string>Minor Ship Maintenance</string>
+		<key>prevalence</key>
+		<integer>100</integer>
+		<key>repair</key>
+		<real>0.05</real>
+		<key>repairProportionally</key>
+		<true/>
+		<key>value</key>
+		<integer>5</integer>
+	</dict>
+	<dict>
+		<key>description</key>
 		<string>+50% Health</string>
 		<key>imageName</key>
 		<string>repair_0</string>
