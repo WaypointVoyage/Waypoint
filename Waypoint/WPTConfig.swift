@@ -13,7 +13,7 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
@@ -67,7 +67,7 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
 
 class WPTLevelModeConfig {
     
-    let levelFileName: String = "0_setting_sail"  // the name of the level file to load
+    let levelFileName: String = "1_sea_legs"  // the name of the level file to load
     
     // singleton instance
     private init() {}
