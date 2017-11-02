@@ -15,7 +15,11 @@ class WPTLollygaggingBS: WPTBrainState {
     private var timeLollygagging: TimeInterval = 0
     private var maxTimeLollygagging: TimeInterval = 2
     
-    init(name: String) {
+    private var timeChasingObjective: TimeInterval = 0
+    private let objectiveTimeout: TimeInterval
+    
+    init(name: String, objectiveTimeout: TimeInterval = 3) {
+        self.objectiveTimeout = objectiveTimeout
         super.init(name: name, type: WPTLollygaggingBS.type)
     }
     
@@ -28,13 +32,14 @@ class WPTLollygaggingBS: WPTBrainState {
                 self.stopLollygagging()
             }
         } else {
+            timeChasingObjective += sec
             if self.needNewObjective() {
                 self.setObjective()
             }
             
             self.updateWithObjective(deltaTime: sec, healthLow: healthLow, distToPlayer: distToPlayer)
             
-            if self.objectiveSatisfied() {
+            if self.objectiveSatisfied() || self.timeChasingObjective > self.objectiveTimeout {
                 self.startLollygagging()
             }
         }
@@ -51,6 +56,7 @@ class WPTLollygaggingBS: WPTBrainState {
         self.lollygagging = false
         self.removeObjective()
         self.onStopLollygagging()
+        self.timeChasingObjective = 0
     }
     
     // override in child classes

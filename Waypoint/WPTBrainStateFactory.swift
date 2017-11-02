@@ -30,11 +30,17 @@ class WPTBrainStateFactory {
         case String(describing: WPTWanderBS.self):
             return WPTWanderBS()
             
+        case String(describing: WPTTentacleWanderBS.self):
+            return WPTTentacleWanderBS()
+            
         case String(describing: WPTFaceRandomDirectionsBS.self):
             return WPTFaceRandomDirectionsBS()
             
         case String(describing: WPTWiggleBS.self):
             return WPTWiggleBS()
+            
+        case String(describing: WPTTentacleAttackBS.self):
+            return WPTTentacleAttackBS()
             
         default:
             if !state.isEmpty {

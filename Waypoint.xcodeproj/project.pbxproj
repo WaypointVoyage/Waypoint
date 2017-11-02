@@ -41,6 +41,8 @@
 		2DACB90F1FA779B3006FBE1F /* waypoint.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2DACB90E1FA77987006FBE1F /* waypoint.wav */; };
 		2DACB9111FA8278C006FBE1F /* WPTSwitchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACB9101FA8278C006FBE1F /* WPTSwitchNode.swift */; };
 		2DD77F161F99CC3300CCEF3E /* WPTSliderNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD77F151F99CC3300CCEF3E /* WPTSliderNode.swift */; };
+		7E0901341FAAE280008B59CC /* WPTTentacleWanderBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0901331FAAE280008B59CC /* WPTTentacleWanderBS.swift */; };
+		7E0901361FAAEECC008B59CC /* WPTTentacleAttackBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0901351FAAEECC008B59CC /* WPTTentacleAttackBS.swift */; };
 		7E0C78951E73D1DD006C79C3 /* WPTCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */; };
 		7E0C78971E73D224006C79C3 /* WPTLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C78961E73D224006C79C3 /* WPTLine.swift */; };
 		7E0D62031E36650B009C8516 /* WPTHomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D62021E36650B009C8516 /* WPTHomeScene.swift */; };
@@ -215,6 +217,8 @@
 		2DACB90E1FA77987006FBE1F /* waypoint.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = waypoint.wav; path = Resources/Music/waypoint.wav; sourceTree = "<group>"; };
 		2DACB9101FA8278C006FBE1F /* WPTSwitchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSwitchNode.swift; sourceTree = "<group>"; };
 		2DD77F151F99CC3300CCEF3E /* WPTSliderNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSliderNode.swift; sourceTree = "<group>"; };
+		7E0901331FAAE280008B59CC /* WPTTentacleWanderBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTTentacleWanderBS.swift; sourceTree = "<group>"; };
+		7E0901351FAAEECC008B59CC /* WPTTentacleAttackBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTTentacleAttackBS.swift; sourceTree = "<group>"; };
 		7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCircle.swift; sourceTree = "<group>"; };
 		7E0C78961E73D224006C79C3 /* WPTLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTLine.swift; sourceTree = "<group>"; };
 		7E0D62021E36650B009C8516 /* WPTHomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTHomeScene.swift; sourceTree = "<group>"; };
@@ -491,6 +495,8 @@
 				2D826C521F7594E4000D6FAC /* WPTWiggleBS.swift */,
 				7EB1BF9B1F9C50B200E84289 /* WPTFaceRandomDirectionsBS.swift */,
 				7EB1BF9D1F9C51C000E84289 /* WPTLollygaggingBS.swift */,
+				7E0901331FAAE280008B59CC /* WPTTentacleWanderBS.swift */,
+				7E0901351FAAEECC008B59CC /* WPTTentacleAttackBS.swift */,
 			);
 			name = States;
 			sourceTree = "<group>";
@@ -1005,6 +1011,7 @@
 				7EBF5E6D1E4E218200F81982 /* WPTStatBarNode.swift in Sources */,
 				7ED3775C1E4ABE8800DB1EA2 /* WPTTrailMap.swift in Sources */,
 				7EC222061E72F49D00E98243 /* WPTWhirlpoolHandler.swift in Sources */,
+				7E0901361FAAEECC008B59CC /* WPTTentacleAttackBS.swift in Sources */,
 				7E5DB7301E7ED324000B1307 /* WPTLevelBeatenPMS.swift in Sources */,
 				7E5DB72E1E7ED2A1000B1307 /* WPTWaveExecutionPMS.swift in Sources */,
 				2D7B92411F75A3ED001F3E1F /* WPTTreasureReturnsWave.swift in Sources */,
@@ -1098,6 +1105,7 @@
 				7ECB5A041E745CD000A05563 /* WPTFleeBS.swift in Sources */,
 				7E5A6BF01E5A0E200067EAF3 /* WPTCannonSet.swift in Sources */,
 				7E3EF6EA1E7532EB0036A895 /* WPTBrainRadiiNode.swift in Sources */,
+				7E0901341FAAE280008B59CC /* WPTTentacleWanderBS.swift in Sources */,
 				7E4215FC1E5A6F23004ADBD7 /* WPTCannonBallNode.swift in Sources */,
 				2D8E804E1E3ADBC400CB2E0B /* WPTShip.swift in Sources */,
 				7EF76AAA1E52DB7E003BFCD1 /* WPTWorldPlayerNode.swift in Sources */,

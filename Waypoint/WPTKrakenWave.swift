@@ -46,7 +46,9 @@ class WPTKrakenWave: WPTTentacleWave {
             self.scene.terrain.addEnemy(self.tentacles[i])
             
             self.tentacles[i].run(wait) {
-                self.tentacles[i].surface(duration: 3.0)
+                self.tentacles[i].surface(duration: 3.0) {
+                    self.tentacles[i].brain.start()
+                }
             }
         }
     }

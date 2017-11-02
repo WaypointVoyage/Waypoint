@@ -34,7 +34,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         self.zPosition = player.zPosition + 1
         
         // physics
-        self.physicsBody!.isDynamic = false
+        self.physicsBody!.isDynamic = !isStatic
         self.physicsBody!.categoryBitMask = WPTValues.damageActorCbm
         self.holdPhysics = self.physicsBody
         self.physicsBody = nil
@@ -79,11 +79,21 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         self.position = position
     }
     
+    func handlePhysicsForSubmerge() {
+        if (self.isStatic) {
+            self.physicsChild?.removeFromParent()
+            self.physicsChild = nil
+        }
+        
+        else {
+            self.physicsBody = nil
+        }
+    }
+    
     func submerge(duration: TimeInterval = 1.0, then: (() -> Void)? = nil) {
         guard !self.isSubmerged else { return }
         
-        self.physicsChild?.removeFromParent()
-        self.physicsChild = nil
+        self.handlePhysicsForSubmerge()
         
         self.sprite.run(SKAction.move(to: self.submergedSpritePos, duration: duration)) {
             self.isSubmerged = true
@@ -93,12 +103,22 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         }
     }
     
+    func handlePhysicsForSurface() {
+        if self.isStatic {
+            self.physicsChild = SKNode()
+            self.physicsChild?.physicsBody = self.holdPhysics
+            self.addChild(self.physicsChild!)
+        }
+        
+        else {
+            self.physicsBody = self.holdPhysics
+        }
+    }
+    
     func surface(duration: TimeInterval = 1.0, then: (() -> Void)? = nil) {
         guard self.isSubmerged else { return }
         
-        self.physicsChild = SKNode()
-        self.physicsChild?.physicsBody = self.holdPhysics
-        self.addChild(self.physicsChild!)
+        self.handlePhysicsForSurface()
         
         self.sprite.run(SKAction.move(to: self.surfaceSpritePos, duration: duration)) {
             self.isSubmerged = false

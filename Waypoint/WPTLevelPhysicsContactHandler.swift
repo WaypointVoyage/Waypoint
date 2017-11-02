@@ -48,9 +48,15 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
         }
             
         else if collisionBetween(WPTValues.projectileCbm, WPTValues.damageActorCbm) {
-            if let projectile = firstBody.node as? WPTCannonBallNode, let actor = secondBody.node?.parent as? WPTLevelEnemyNode {
-                if projectile.teamBitMask != actor.teamBitMask {
-                    projectile.collide(with: actor);
+            if let projectile = firstBody.node as? WPTCannonBallNode {
+                if let actor = secondBody.node?.parent as? WPTLevelEnemyNode {
+                    if projectile.teamBitMask != actor.teamBitMask {
+                        projectile.collide(with: actor)
+                    }
+                } else if let actor = secondBody.node as? WPTLevelEnemyNode {
+                    if projectile.teamBitMask != actor.teamBitMask {
+                        projectile.collide(with: actor)
+                    }
                 }
             }
         }
@@ -93,9 +99,16 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
         }
         
         else if collisionBetween(WPTValues.actorCbm, WPTValues.damageActorCbm) {
-            if let player = firstBody.node as? WPTLevelPlayerNode, let enemy = secondBody.node?.parent as? WPTLevelEnemyNode {
-                if let whirlpoolHandler = player.childNode(withName: WPTWhirlpoolHandler.nodeName) as? WPTWhirlpoolHandler {
-                    whirlpoolHandler.enterWhirlpool(damage: -enemy.actor.ship.damage)
+            
+            if let player = firstBody.node as? WPTLevelPlayerNode {
+                if let enemy = secondBody.node?.parent as? WPTLevelEnemyNode {
+                    if let whirlpoolHandler = player.childNode(withName: WPTWhirlpoolHandler.nodeName) as? WPTWhirlpoolHandler {
+                        whirlpoolHandler.enterWhirlpool(damage: -enemy.actor.ship.damage)
+                    }
+                } else if let enemy = secondBody.node as? WPTLevelEnemyNode {
+                    if let whirlpoolHandler = player.childNode(withName: WPTWhirlpoolHandler.nodeName) as? WPTWhirlpoolHandler {
+                        whirlpoolHandler.enterWhirlpool(damage: -enemy.actor.ship.damage)
+                    }
                 }
             }
         }

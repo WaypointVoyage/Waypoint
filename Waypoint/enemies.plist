@@ -26,15 +26,15 @@
 	</dict>
 	<dict>
 		<key>aggression</key>
-		<integer>1</integer>
+		<integer>2</integer>
 		<key>awareness</key>
-		<integer>1</integer>
+		<real>0.1</real>
 		<key>brain</key>
 		<string>dynamic_tentacle_brain</string>
 		<key>caution</key>
-		<integer>1</integer>
+		<real>0.1</real>
 		<key>haste</key>
-		<integer>1</integer>
+		<real>0.1</real>
 		<key>items</key>
 		<array/>
 		<key>ship</key>

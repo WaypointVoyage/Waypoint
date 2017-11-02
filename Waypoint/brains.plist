@@ -40,9 +40,9 @@
 			<key>flee</key>
 			<string></string>
 			<key>nothing</key>
-			<string>WPTWanderBS</string>
+			<string>WPTTentacleWanderBS</string>
 			<key>offense</key>
-			<string></string>
+			<string>WPTTentacleAttackBS</string>
 		</dict>
 		<key>name</key>
 		<string>dynamic_tentacle_brain</string>
