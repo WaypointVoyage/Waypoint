@@ -31,7 +31,7 @@ class WPTPortDockingHandler: SKNode {
     
     func dockAt(dock: WPTDockNode) {
         self.port = dock.port
-        self.actor.anchored = false
+        self.actor.anchored = true
         self.canDock = false
         self.actor.targetRot = nil
         

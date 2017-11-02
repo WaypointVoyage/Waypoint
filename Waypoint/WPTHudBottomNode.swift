@@ -10,8 +10,8 @@ import SpriteKit
 
 class WPTHudBottomNode: SKNode, WPTUpdatable {
     
-    public private(set) let fire: WPTFireButtonNode
-    public private(set) let anchor: WPTAnchorButtonNode
+    public let fire: WPTFireButtonNode
+    public let anchor: WPTAnchorButtonNode
     public let wheel: WPTShipWheelNode
     
     let alert = WPTAlertNode()
@@ -102,7 +102,6 @@ class WPTHudBottomNode: SKNode, WPTUpdatable {
                     if (player.portHandler.docked) {
                         player.anchored = false
                         player.portHandler.undock()
-                        self.anchor.endPress()
                     } else {
                         player.anchored = !player.anchored
                     }
