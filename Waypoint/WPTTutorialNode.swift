@@ -35,11 +35,15 @@ class WPTTutorialNode: SKNode {
         let image3 = SKSpriteNode(imageNamed: "tutorial_3")
         let image4 = SKSpriteNode(imageNamed: "tutorial_4")
         let image5 = SKSpriteNode(imageNamed: "tutorial_5")
+        let image6 = SKSpriteNode(imageNamed: "tutorial_6")
+        let image7 = SKSpriteNode(imageNamed: "tutorial_7")
         tutorialImages.append(image1)
         tutorialImages.append(image2)
         tutorialImages.append(image3)
         tutorialImages.append(image4)
         tutorialImages.append(image5)
+        tutorialImages.append(image6)
+        tutorialImages.append(image7)
         
         for image in tutorialImages {
             image.zPosition = 1
@@ -55,7 +59,7 @@ class WPTTutorialNode: SKNode {
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if (tutorialIndex < 4) {
+        if (tutorialIndex < 6) {
             tutorialImages[tutorialIndex].removeFromParent()
             tutorialIndex += 1
             self.addChild(tutorialImages[tutorialIndex])
