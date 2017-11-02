@@ -56,7 +56,7 @@ class WPTSliderNode: SKNode {
         self.addChild(self.title!)
         
         self.progress!.position = CGPoint(x: background.size.width + self.title!.fontSize, y: 0.5)
-        self.progress?.text = "\(Int(self.getCurPercentage()))%"
+        self.progress?.text = "\(Int(self.getCurPercentage() * 100.0))%"
         self.addChild(self.progress!)
         
         self.isUserInteractionEnabled = true
@@ -88,7 +88,7 @@ class WPTSliderNode: SKNode {
                 slider.position.x = touchLocation.x
                 let newPercentage: CGFloat = (slider.position.x - self.minValXPos) / (self.maxValXPos - self.minValXPos)
                 self.val = Float(self.minVal) + Float(newPercentage) * Float(self.maxVal - self.minVal)
-                self.progress?.text = "\(Int(self.getCurPercentage()))%"
+                self.progress?.text = "\(Int(self.getCurPercentage() * 100.0))%"
                 onChange(self.val)
             }
         }
