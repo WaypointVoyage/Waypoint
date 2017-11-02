@@ -27,12 +27,8 @@ class WPTWaveCreationPMS: GKState {
         assert(wave != nil, "Cannot use WPTWaveCreationPMS with a nil wave")
         
         // allows the setup to happen in the background
-        OperationQueue().addOperation {
-            self.setupWave()
-            OperationQueue.main.addOperation {
-                self.ready = true
-            }
-        }
+        self.setupWave()
+        self.ready = true
     }
     
     private func setupWave() {
