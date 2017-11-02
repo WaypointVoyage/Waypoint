@@ -99,8 +99,14 @@ class WPTHudBottomNode: SKNode, WPTUpdatable {
         if self.anchor.contains(location) {
             if let player = (self.scene as? WPTLevelScene)?.player {
                 if player.interactionEnabled {
-                    player.anchored = !player.anchored
+                    if (player.portHandler.docked) {
+                        player.anchored = false
+                        player.portHandler.undock()
+                    } else {
+                        player.anchored = !player.anchored
+                    }
                 }
+                
             }
             return
         }

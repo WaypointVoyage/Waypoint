@@ -80,11 +80,11 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         return player.ship.speed
     }
     
-    func touched() {
-        if portHandler.docked {
-            self.portHandler.undock()
-        }
-    }
+//    func touched() {
+//        if portHandler.docked {
+//            self.portHandler.undock()
+//        }
+//    }
     
     override func doDamage(_ damage: CGFloat) {
         super.doDamage(damage)
