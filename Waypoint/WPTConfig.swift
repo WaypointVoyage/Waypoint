@@ -13,7 +13,7 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
@@ -27,7 +27,7 @@ class WPTConfig {
     var invincible = false               // if true, the player is invincible
     var clearHighScoresOnLoad = false    // if true, all of the high scores are cleared when the app is loaded
 
-    var showTutorial = false              // if false, the tutorial will never be shown
+    var showTutorial = true              // if false, the tutorial will never be shown
     var clearPlayerProgress = true      // if true, all player progress will be cleared
     
     // visual debugging
@@ -67,7 +67,7 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
 
 class WPTLevelModeConfig {
     
-    let levelFileName: String = "1_sea_legs"  // the name of the level file to load
+    let levelFileName: String = "0_setting_sail"  // the name of the level file to load
     
     // singleton instance
     private init() {}

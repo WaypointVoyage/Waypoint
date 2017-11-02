@@ -80,6 +80,7 @@ class WPTLevelScene: WPTScene {
         self.hud.position = CGPoint(x: -self.cam.frame.midX, y: -self.cam.frame.midY)
         self.cam.setScale(1.0 / WPTValues.levelSceneScale)
         cam.addChild(self.hud)
+        self.camera?.position = self.terrain.position + self.level.spawnPoint
         
         // setup the port
         if let port = self.port {
