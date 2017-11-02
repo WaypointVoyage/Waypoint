@@ -44,6 +44,7 @@ class WPTPortDockingHandler: SKNode {
                 hud.dockMenu.updateDoubloons()
                 hud.dockMenu.updateStats(item: (hud.dockMenu.itemPicker?.currentItem)!)
                 hud.addChild(hud.dockMenu)
+                hud.bottom.anchor.startPress()
             }
         }
         self.actor.run(rotation)
