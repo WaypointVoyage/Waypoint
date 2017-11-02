@@ -821,58 +821,35 @@
 		<dict>
 			<key>enemies</key>
 			<dict>
-				<key>Catapult</key>
-				<integer>3</integer>
 				<key>Marooner</key>
-				<integer>3</integer>
+				<integer>2</integer>
 				<key>Pirate</key>
-				<integer>3</integer>
+				<integer>2</integer>
 				<key>Trebuchet</key>
-				<integer>3</integer>
+				<integer>2</integer>
 				<key>Viking</key>
-				<integer>3</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>enemies</key>
-			<dict>
-				<key>Viking</key>
-				<integer>15</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>enemies</key>
-			<dict>
-				<key>Catapult</key>
-				<integer>15</integer>
+				<integer>2</integer>
 			</dict>
 		</dict>
 		<dict>
 			<key>enemies</key>
 			<dict>
 				<key>Trebuchet</key>
-				<integer>15</integer>
+				<integer>4</integer>
 			</dict>
 		</dict>
 		<dict>
 			<key>enemies</key>
 			<dict>
 				<key>Pirate</key>
-				<integer>15</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>enemies</key>
-			<dict>
-				<key>Marooner</key>
-				<integer>15</integer>
+				<integer>5</integer>
 			</dict>
 		</dict>
 		<dict>
 			<key>enemies</key>
 			<dict>
 				<key>Viking</key>
-				<integer>1</integer>
+				<integer>6</integer>
 			</dict>
 		</dict>
 	</array>

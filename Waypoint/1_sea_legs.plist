@@ -538,7 +538,7 @@
 			<key>enemies</key>
 			<dict>
 				<key>Catapult</key>
-				<integer>3</integer>
+				<integer>1</integer>
 				<key>Pirate</key>
 				<integer>2</integer>
 			</dict>
@@ -547,18 +547,18 @@
 			<key>enemies</key>
 			<dict>
 				<key>Marooner</key>
-				<integer>3</integer>
+				<integer>2</integer>
 				<key>Pirate</key>
 				<integer>2</integer>
-				<key>Trebuchet</key>
-				<integer>1</integer>
 			</dict>
 		</dict>
 		<dict>
 			<key>enemies</key>
 			<dict>
+				<key>Trebuchet</key>
+				<integer>1</integer>
 				<key>Pirate</key>
-				<integer>3</integer>
+				<integer>2</integer>
 			</dict>
 		</dict>
 	</array>

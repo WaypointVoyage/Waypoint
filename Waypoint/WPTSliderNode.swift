@@ -95,11 +95,10 @@ class WPTSliderNode: SKNode {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            if touch == self.touch {
-                let storage = WPTStorage()
-                storage.saveGlobalSettings()
-            }
+        guard let touch = touches.first else {return}
+        if touch == self.touch {
+            let storage = WPTStorage()
+            storage.saveGlobalSettings()
         }
     }
     

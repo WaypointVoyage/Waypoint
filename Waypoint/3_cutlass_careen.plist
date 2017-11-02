@@ -1296,14 +1296,7 @@
 			<key>enemies</key>
 			<dict>
 				<key>Pirate</key>
-				<integer>7</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>enemies</key>
-			<dict>
-				<key>Pirate</key>
-				<integer>6</integer>
+				<integer>4</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -1317,13 +1310,13 @@
 			<key>enemies</key>
 			<dict>
 				<key>Pirate</key>
-				<integer>4</integer>
+				<integer>6</integer>
 			</dict>
 		</dict>
 		<dict>
 			<key>enemies</key>
 			<dict>
-				<key>Marooner</key>
+				<key>Pirate</key>
 				<integer>7</integer>
 			</dict>
 		</dict>

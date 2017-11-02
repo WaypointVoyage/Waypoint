@@ -41,14 +41,6 @@ class GameViewController: UIViewController {
                 WPTAudioConfig.setInstance(loadedThing)
             }
             
-            // dummy scores
-            let name = "mmmmmmmmmmmmmmmmmmmmmm"
-            assert(name.count == 22)
-            for _ in 0..<10 {
-                let score = WPTLootSummary(shipName: name, doubloons: 100, date: Date(), items: [])
-                storage.submitScore(score)
-            }
-            
         }
     }
     

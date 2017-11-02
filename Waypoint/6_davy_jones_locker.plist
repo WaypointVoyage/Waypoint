@@ -848,7 +848,7 @@
 			<key>enemies</key>
 			<dict>
 				<key>Viking</key>
-				<integer>25</integer>
+				<integer>10</integer>
 			</dict>
 		</dict>
 		<dict>

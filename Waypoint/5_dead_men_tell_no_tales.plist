@@ -1451,24 +1451,19 @@
 		<dict>
 			<key>enemies</key>
 			<dict>
-				<key>Pirate</key>
-				<integer>10</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>enemies</key>
-			<dict>
-				<key>Catapult</key>
-				<integer>7</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>enemies</key>
-			<dict>
 				<key>Marooner</key>
-				<integer>3</integer>
+				<integer>5</integer>
 				<key>Pirate</key>
-				<integer>12</integer>
+				<integer>5</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Pirate</key>
+				<integer>3</integer>
+				<key>Trebuchet</key>
+				<integer>4</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -1479,6 +1474,13 @@
 				<key>Pirate</key>
 				<integer>3</integer>
 				<key>Trebuchet</key>
+				<integer>3</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>enemies</key>
+			<dict>
+				<key>Viking</key>
 				<integer>3</integer>
 			</dict>
 		</dict>

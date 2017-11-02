@@ -48,15 +48,13 @@ class WPTSwitchNode: SKNode {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let touchLocation = touch.location(in: self)
-            if (switchButton.contains(touchLocation)) {
-                onChange()
-                self.switchedOn = !self.switchedOn
-                setSwitchControls()
-                let storage = WPTStorage()
-                storage.saveGlobalSettings()
-            }
+        guard let touch = touches.first?.location(in: self) else {return}
+        if (switchButton.contains(touch)) {
+            onChange()
+            self.switchedOn = !self.switchedOn
+            setSwitchControls()
+            let storage = WPTStorage()
+            storage.saveGlobalSettings()
         }
     }
     

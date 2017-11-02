@@ -512,7 +512,7 @@
 			<key>enemies</key>
 			<dict>
 				<key>Catapult</key>
-				<integer>5</integer>
+				<integer>4</integer>
 			</dict>
 		</dict>
 		<dict>

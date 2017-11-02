@@ -4,9 +4,9 @@
 <array>
 	<dict>
 		<key>imageName</key>
-		<string>coin</string>
+		<string>bronze_coin</string>
 		<key>name</key>
-		<string>One Doubloon</string>
+		<string>Bronze Coin</string>
 		<key>prevalence</key>
 		<integer>100</integer>
 		<key>value</key>
@@ -14,23 +14,73 @@
 	</dict>
 	<dict>
 		<key>imageName</key>
-		<string>ruby</string>
+		<string>silver_coin</string>
 		<key>name</key>
-		<string>Some Doubloons</string>
+		<string>Silver Coin</string>
 		<key>prevalence</key>
-		<integer>20</integer>
+		<integer>75</integer>
+		<key>value</key>
+		<integer>5</integer>
+	</dict>
+	<dict>
+		<key>imageName</key>
+		<string>gold_coin</string>
+		<key>name</key>
+		<string>Gold Coin</string>
+		<key>prevalence</key>
+		<integer>50</integer>
 		<key>value</key>
 		<integer>10</integer>
 	</dict>
 	<dict>
 		<key>imageName</key>
-		<string>purpleDiamond</string>
+		<string>ruby</string>
 		<key>name</key>
-		<string>A Bunch Of Doubloons</string>
+		<string>Ruby</string>
+		<key>prevalence</key>
+		<integer>40</integer>
+		<key>value</key>
+		<integer>25</integer>
+	</dict>
+	<dict>
+		<key>imageName</key>
+		<string>emerald</string>
+		<key>name</key>
+		<string>Emerald</string>
+		<key>prevalence</key>
+		<integer>35</integer>
+		<key>value</key>
+		<integer>50</integer>
+	</dict>
+	<dict>
+		<key>imageName</key>
+		<string>sapphire</string>
+		<key>name</key>
+		<string>Sapphire</string>
+		<key>prevalence</key>
+		<integer>25</integer>
+		<key>value</key>
+		<integer>100</integer>
+	</dict>
+	<dict>
+		<key>imageName</key>
+		<string>diamond</string>
+		<key>name</key>
+		<string>Diamond</string>
+		<key>prevalence</key>
+		<integer>15</integer>
+		<key>value</key>
+		<integer>500</integer>
+	</dict>
+	<dict>
+		<key>imageName</key>
+		<string>pearls</string>
+		<key>name</key>
+		<string>Pearls</string>
 		<key>prevalence</key>
 		<integer>5</integer>
 		<key>value</key>
-		<integer>20</integer>
+		<integer>1000</integer>
 	</dict>
 </array>
 </plist>
