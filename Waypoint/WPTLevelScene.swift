@@ -108,11 +108,10 @@ class WPTLevelScene: WPTScene {
         if WPTConfig.values.showSpawnVolumesOnMinimap {
             hud.pauseMenu.map.drawSpawnVolumes(self.level.spawnVolumes)
         }
-        
         // show the tutorial (if there is one)
         if (level.hasTutorial && WPTConfig.values.showTutorial) {
             self.levelPaused = true
-            let tutorial = WPTTutorialNode(onComplete: {
+            let tutorial = WPTTutorialNode(hud: hud, onComplete: {
                 self.levelPaused = false
                 self.levelNameDisplay()
             })
