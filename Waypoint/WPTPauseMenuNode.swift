@@ -19,6 +19,17 @@ class WPTPauseMenuNode: SKNode {
         didSet { self.levelNameNode?.text = self.levelName }
     }
     
+    // stuff for confirming a quit
+    private var confirmingQuit: Bool = false
+    private let warning: [WPTLabelNode] = [
+        WPTLabelNode(text: "Quitting now will", fontSize: WPTValues.fontSizeSmall),
+        WPTLabelNode(text: "erase all progress!", fontSize: WPTValues.fontSizeSmall),
+        WPTLabelNode(text: "Are you sure you", fontSize: WPTValues.fontSizeSmall),
+        WPTLabelNode(text: "want to quit?", fontSize: WPTValues.fontSizeSmall),
+    ]
+    private let confirmQuit = WPTLabelNode(text: "Yes", fontSize: WPTValues.fontSizeSmall)
+    private let cancelQuit = WPTLabelNode(text: "Cancel", fontSize: WPTValues.fontSizeSmall)
+    
     init(terrain: WPTTerrainNode) {
         self.map = WPTMapViewNode(terrain: terrain)
         
@@ -58,6 +69,25 @@ class WPTPauseMenuNode: SKNode {
         exit.fontColor = UIColor.black
         exit.position.y -= 0.5 * background.size.height
         self.addChild(exit)
+        
+        /* Confirm Quit stuff */
+        
+        for i in 0..<self.warning.count {
+            let warn = self.warning[i]
+            warn.fontColor = .black
+            warn.position.y += background.size.height * 0.25 - CGFloat(i) * WPTValues.fontSizeSmall
+            warn.zPosition = background.zPosition + 1
+        }
+        
+        self.confirmQuit.zPosition = background.zPosition + 1
+        self.confirmQuit.fontColor = .black
+        self.confirmQuit.position.y -= 0.5 * background.size.height
+        self.confirmQuit.position.x -= 0.15 * background.size.width
+        
+        self.cancelQuit.zPosition = background.zPosition + 1
+        self.cancelQuit.fontColor = .black
+        self.cancelQuit.position.y -= 0.5 * background.size.height
+        self.cancelQuit.position.x += 0.15 * background.size.width
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -79,17 +109,69 @@ class WPTPauseMenuNode: SKNode {
         self.map.position.y += 0.05 * background.frame.height
     }
     
+    private func startConfirmQuit() {
+        guard !self.confirmingQuit else { return }
+        
+        // remove current UI stuff
+        self.levelNameNode?.removeFromParent()
+        self.map.removeFromParent()
+        self.exit.removeFromParent()
+        self.reset.removeFromParent()
+        
+        // add confirm UI stuff
+        self.addChild(self.confirmQuit)
+        self.addChild(self.cancelQuit)
+        for warn in self.warning {
+            self.addChild(warn)
+        }
+        
+        self.confirmingQuit = true
+    }
+    
+    func cancelConfirmQuit() {
+        guard self.confirmingQuit else { return }
+        
+        // remove confirm UI stuff
+        self.confirmQuit.removeFromParent()
+        self.cancelQuit.removeFromParent()
+        for warn in self.warning {
+            warn.removeFromParent()
+        }
+        
+        // put back normal UI stuff
+        self.addChild(self.levelNameNode!)
+        self.addChild(self.map)
+        self.addChild(self.exit)
+        if WPTConfig.values.testing { self.addChild(self.reset) }
+        
+        self.confirmingQuit = false
+    }
+    
+    private func actuallyQuit() {
+        // erase save data
+        let storage = WPTStorage()
+        storage.clearPlayerProgress()
+        self.scene?.view?.presentScene(WPTHomeScene())
+    }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touchPos = touches.first!.location(in: self)
         
-        if self.exit.contains(touchPos) {
-            // erase save data
-            let storage = WPTStorage()
-            storage.clearPlayerProgress()
-            self.scene?.view?.presentScene(WPTHomeScene())
-        } else if self.reset.contains(touchPos) {
-            if let scene = self.scene as? WPTLevelScene {
-                scene.view?.presentScene(WPTLevelScene(player: scene.player.player, level: scene.level))
+        if (self.confirmingQuit) {
+            if self.confirmQuit.contains(touchPos) {
+                self.actuallyQuit()
+            } else if self.cancelQuit.contains(touchPos) {
+                self.cancelConfirmQuit()
+            }
+        }
+        
+        else {
+            if self.exit.contains(touchPos) {
+                startConfirmQuit()
+            } else if self.reset.contains(touchPos) {
+                if let scene = self.scene as? WPTLevelScene {
+                    scene.view?.presentScene(WPTLevelScene(player: scene.player.player, level: scene.level))
+                }
             }
         }
     }

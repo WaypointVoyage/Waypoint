@@ -65,7 +65,7 @@ class WPTHomeScene: WPTScene {
     
     static func getBack(frame: CGRect) -> WPTButtonNode {
         let back = WPTSceneLabelNode(text: "< Back", next: WPTHomeScene())
-        back.position = CGPoint(x: 0.15 * frame.width, y: 0.15 * frame.height)
+        back.position = CGPoint(x: 0.15 * frame.width, y: 0.10 * frame.height)
         return back
     }
 }

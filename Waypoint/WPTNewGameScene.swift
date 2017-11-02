@@ -11,7 +11,7 @@ import SpriteKit
 
 class WPTNewGameScene: WPTScene, UITextFieldDelegate {
     
-    let maxShipNameLength = 22
+    
     let background = WPTBackgroundNode(image: "beach_scene")
     let headerLabel = WPTLabelNode(text: "New Game", fontSize: WPTValues.fontSizeLarge)
     var startLabel = WPTButtonNode(text: "Start", fontSize: WPTValues.fontSizeMedium)
@@ -86,8 +86,8 @@ class WPTNewGameScene: WPTScene, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = shipInputField?.text else { return true }
-        let newLength = text.characters.count + string.characters.count - range.length
-        return newLength <= maxShipNameLength
+        let newLength = text.count + string.count - range.length
+        return newLength <= WPTValues.maxShipNameLength
     }
     
     func updateStats(ship: WPTShip) {

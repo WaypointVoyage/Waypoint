@@ -34,10 +34,10 @@ class WPTHighScoresScene: WPTScene {
         // build the high scores table
         scoresTable.removeAllChildren()
         scoresTable.position = CGPoint(x: 0.5 * WPTValues.screenSize.width, y: 0.75 * WPTValues.screenSize.height)
-        let fontSize = 0.06 * WPTValues.screenSize.height
-        let rankX: CGFloat = -0.2 * WPTValues.screenSize.width
-        let shipNameX: CGFloat = -0.15 * WPTValues.screenSize.width
-        let doubloonsX: CGFloat = 0.15 * WPTValues.screenSize.width
+        let fontSize = (WPTValues.screenSize.height - WPTValues.fontSizeLarge - 2.9 * WPTValues.fontSizeMedium) / 10.0
+        let rankX: CGFloat = -0.45 * WPTValues.screenSize.width
+        let shipNameX: CGFloat = -0.38 * WPTValues.screenSize.width
+        let doubloonsX: CGFloat = 0.4 * WPTValues.screenSize.width
         
         // add the rows to the table
         for i in 0..<scores.count {

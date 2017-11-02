@@ -118,6 +118,33 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         for action in self.deathObservers {
             action()
         }
+        
+        // bubbles
+        if let scene = self.scene as? WPTLevelScene {
+            if !scene.terrain.pointOnLand(scenePoint: self.position) {
+                let bubbles = WPTBubbleSquareSurfaceNode(width: 60, height: 60, amount: 3, time: 0.6)
+                bubbles.position = self.position
+                scene.terrain.addChild(bubbles)
+                
+                bubbles.start()
+                bubbles.run(SKAction.wait(forDuration: 2.5)) {
+                    bubbles.stop()
+                    bubbles.removeFromParent()
+                }
+            }
+        }
+        
+        // a bit of health?
+        if self.enemy.dropHealth {
+            let chance = randomNumber(min: 0, max: 1)
+            if chance < 0.4 {
+                let repair = WPTItemCatalog.itemsByName["Minor Ship Maintenance"]!
+                let repairNode = WPTItemNode(repair, duration: 5.0)
+                repairNode.position = self.position
+                let itemNode = (self.scene as! WPTLevelScene).items
+                itemNode.addChild(repairNode)
+            }
+        }
     }
     
     func generateCoins() {

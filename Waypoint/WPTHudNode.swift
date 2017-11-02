@@ -90,6 +90,7 @@ class WPTHudNode: SKNode, WPTUpdatable {
     private func toggleShroud(_ isPaused: Bool) {
         if isPaused {
             self.pauseMenu.levelName = (self.scene as! WPTLevelScene).level.name
+            self.pauseMenu.cancelConfirmQuit()
             self.top.pause.texture = SKTexture(imageNamed: "pressed_pause")
             WPTAudioConfig.audio.pause()
             self.addChild(self.pauseShroud)

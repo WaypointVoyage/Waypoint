@@ -31,7 +31,7 @@ class WPTPortDockingHandler: SKNode {
     
     func dockAt(dock: WPTDockNode) {
         self.port = dock.port
-        self.actor.anchored = false
+        self.actor.anchored = true
         self.canDock = false
         self.actor.targetRot = nil
         
@@ -44,6 +44,7 @@ class WPTPortDockingHandler: SKNode {
                 hud.dockMenu.updateDoubloons()
                 hud.dockMenu.updateStats(item: (hud.dockMenu.itemPicker?.currentItem)!)
                 hud.addChild(hud.dockMenu)
+                hud.bottom.anchor.startPress()
             }
         }
         self.actor.run(rotation)

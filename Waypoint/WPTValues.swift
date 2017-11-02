@@ -63,6 +63,8 @@ class WPTValues {
     static let defaultEffectsVolume: Float = 5.0
     static let defaultLeftyMode: Bool = false
     
+    static let maxShipNameLength = 22
+    
     static func initValues(deviceScreenSize: CGSize) {
         let ar = deviceScreenSize.width / deviceScreenSize.height
         if (ar > WPTValues.maxAspectRatio) {

@@ -12,8 +12,8 @@ class WPTSettingsScene: WPTScene {
     
     let background = WPTBackgroundNode(image: "beach_scene")
     let headerLabel = WPTLabelNode(text: "Settings", fontSize: WPTValues.fontSizeLarge)
-    let effectSlider = WPTSliderNode(title: "Effects", progress: WPTAudioConfig.audio.getCurrentEffectsVolume(), onChange: WPTAudioConfig.audio.setEffectsVolume)
-    let musicSlider = WPTSliderNode(title: "Music", progress: WPTAudioConfig.audio.getCurrentMusicVolume(), onChange: WPTAudioConfig.audio.setMusicVolume)
+    let effectSlider = WPTSliderNode(title: "Effects", min: 0, max: 10, val: WPTAudioConfig.audio.getCurrentEffectsVolume(), onChange: WPTAudioConfig.audio.setEffectsVolume)
+    let musicSlider = WPTSliderNode(title: "Music", min: 0, max: 10, val: WPTAudioConfig.audio.getCurrentMusicVolume(), onChange: WPTAudioConfig.audio.setMusicVolume)
     let leftySwitch = WPTSwitchNode(title: "Lefty Mode", switchValue: WPTAudioConfig.audio.getLeftyControls(), onChange: WPTAudioConfig.audio.setLeftyControls)
     
     override func didMove(to view: SKView) {

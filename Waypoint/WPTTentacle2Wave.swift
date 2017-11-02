@@ -88,6 +88,8 @@ class WPTTentacle2Wave: WPTTentacleWave {
     }
     
     private func oneChaseTentacle() {
+        guard !self.allTentaclesDead() else { return }
+        
         self.spawnTentacle(position: self.scene.player.position, bubbleDuraiton: self.chaseBubbleDuration, tentacle: self.curTentacle, tentacleDuration: self.chaseTentacleDuration) {
             self.moveToNextTentacle()
             if self.curTentacleIndex < self.tentacleCount {
