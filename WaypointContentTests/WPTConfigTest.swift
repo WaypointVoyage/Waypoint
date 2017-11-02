@@ -27,6 +27,7 @@ class WPTConfigTest: XCTestCase {
         XCTAssertFalse(WPTConfig.values.invincible, "Please set invincible to false in WPTConfig")
         XCTAssertFalse(WPTConfig.values.clearHighScoresOnLoad, "Please set clearHighScoresOnLoad to false in WPTConfig")
         XCTAssertTrue(WPTConfig.values.showTutorial, "Please set showTutorial to true in WPTConfig")
+        XCTAssertFalse(WPTConfig.values.clearPlayerProgress, "Please set clearPlayerProgress to false in WPTConfig")
     }
     
     func testConfigVisualDebuggingSettings() {
