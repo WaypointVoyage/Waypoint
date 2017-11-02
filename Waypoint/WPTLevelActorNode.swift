@@ -13,6 +13,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     let actor: WPTActor
     var currentHealth: CGFloat
     var teamBitMask: UInt32
+    let cannonEffect = WPTAudioNode(effect: "cannon.mp3")
     
     // movement
     private var facingZRotation: CGFloat = 0
@@ -77,6 +78,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
                 self.addChild(cannonNode)
             }
         }
+        self.addChild(cannonEffect)
         
         // configure physics behavior
         self.physicsBody!.allowsRotation = false
@@ -176,6 +178,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             cannonNode.fire()
         }
         fireRateMgr.registerFire()
+        cannonEffect.playEffect()
     }
     
     func aimAt(node target: SKNode) {

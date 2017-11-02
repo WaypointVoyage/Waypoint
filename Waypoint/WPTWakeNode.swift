@@ -73,7 +73,7 @@ class WPTWakeNode: SKNode, WPTUpdatable {
                 self.framesPath.insert(newFrame.starboardPoint, at: middle)
             }
 
-            if self.frames.count > WPTWakeNode.WAKE_FRAME_COUNT || !self.actorAlive() {
+            if self.frames.count > 0 && (self.frames.count > WPTWakeNode.WAKE_FRAME_COUNT || !self.actorAlive()) {
                 // remove the oldest frame/points
                 self.frames.removeFirst()
                 self.framesPath.removeFirst()

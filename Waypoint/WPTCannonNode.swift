@@ -16,7 +16,6 @@ class WPTCannonNode: SKNode {
     public private(set) var cannonBallSpawnPoint: CGPoint
     
     let sprite = SKSpriteNode(imageNamed: "cannon")
-    let cannonEffect = WPTAudioNode(effect: "cannon.mp3")
     
     init(_ cannon: WPTCannon, actor: WPTLevelActorNode) {
         self.actor = actor
@@ -28,7 +27,6 @@ class WPTCannonNode: SKNode {
         self.sprite.xScale = 0.5
         self.sprite.yScale = 0.5
         self.addChild(sprite)
-        self.addChild(cannonEffect)
         
         self.zPosition = 1
         self.position = cannon.position
@@ -50,7 +48,6 @@ class WPTCannonNode: SKNode {
         ball.physics.velocity = getCannonVelocity()
         projectiles.addChild(ball)
         ball.run(SKAction.wait(forDuration: Double(time)), completion: { ball.collideWithGround() })
-        cannonEffect.playEffect()
     }
     
     private func getCannonVelocity() -> CGVector {
