@@ -10,8 +10,8 @@ import SpriteKit
 
 class WPTHudBottomNode: SKNode, WPTUpdatable {
     
-    private let fire: WPTFireButtonNode
-    private let anchor: WPTAnchorButtonNode
+    public let fire: WPTFireButtonNode
+    public let anchor: WPTAnchorButtonNode
     public let wheel: WPTShipWheelNode
     
     let alert = WPTAlertNode()
@@ -99,8 +99,14 @@ class WPTHudBottomNode: SKNode, WPTUpdatable {
         if self.anchor.contains(location) {
             if let player = (self.scene as? WPTLevelScene)?.player {
                 if player.interactionEnabled {
-                    player.anchored = !player.anchored
+                    if (player.portHandler.docked) {
+                        player.anchored = false
+                        player.portHandler.undock()
+                    } else {
+                        player.anchored = !player.anchored
+                    }
                 }
+                
             }
             return
         }
