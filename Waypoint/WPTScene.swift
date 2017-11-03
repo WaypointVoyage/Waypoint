@@ -13,7 +13,7 @@ class WPTScene: SKScene {
     var aspectRatio: CGFloat = 1.0
     
     func getSong() -> String {
-        return "main_menu_theme.MP3"
+        return "main_menu_theme.wav"
     }
     
     override func didMove(to view: SKView) {
