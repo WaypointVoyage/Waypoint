@@ -44,11 +44,9 @@ class WPTAudioConfig: NSObject, NSCoding {
     
     public func getLeftyControls() -> Bool {
         if let leftyControls = self.leftyControls {
-            print("Old lefty controls")
             return leftyControls
         }
         self.leftyControls = WPTValues.defaultLeftyMode
-        print("Default lefty controls")
         return WPTValues.defaultLeftyMode
     }
     

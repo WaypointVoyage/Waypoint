@@ -63,7 +63,7 @@ class WPTDockMenuNode: SKNode {
         itemNameLabel.zPosition = background.zPosition + 1
         self.addChild(itemNameLabel)
         
-        if (player.player.completedLevels.contains(level.name)) {
+        if (player.player.completedLevels.contains(level.name) && player.player.progress?.levelDockInventory[level.name] != nil) {
             self.itemInventory = (player.player.progress!.levelDockInventory[level.name])!
         } else {
             self.itemInventory = getRandomItems(numItems: 3)

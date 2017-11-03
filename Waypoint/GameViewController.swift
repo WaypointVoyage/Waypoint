@@ -35,7 +35,10 @@ class GameViewController: UIViewController {
                 storage.deleteHighScores()
             }
             if WPTConfig.values.clearPlayerProgress {
-                storage.deletePlayerProgress()
+                storage.clearPlayerProgress()
+            }
+            if WPTConfig.values.clearGlobalSettings {
+                storage.clearGlobalSettings()
             }
             if let loadedThing = storage.loadGlobalSettings() {
                 WPTAudioConfig.setInstance(loadedThing)

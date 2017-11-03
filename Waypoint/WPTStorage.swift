@@ -93,6 +93,16 @@ class WPTStorage {
         return nil
     }
     
+    func clearGlobalSettings() {
+        NSLog("Clearing Global Settings")
+        do {
+            try FileManager.default.removeItem(atPath: globalSettingsPath)
+        } catch let error as NSError {
+            NSLog("WARN: Could not delete global settings")
+            NSLog(error.debugDescription)
+        }
+    }
+    
     func loadHighScores() -> [WPTLootSummary] {
         if let unarchivedThing = NSKeyedUnarchiver.unarchiveObject(withFile: highScorePath) {
             if let asArray = unarchivedThing as? [WPTLootSummary] {

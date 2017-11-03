@@ -12,11 +12,16 @@ class WPTSettingsScene: WPTScene {
     
     let background = WPTBackgroundNode(image: "beach_scene")
     let headerLabel = WPTLabelNode(text: "Settings", fontSize: WPTValues.fontSizeLarge)
-    let effectSlider = WPTSliderNode(title: "Effects", min: 0, max: 10, val: WPTAudioConfig.audio.getCurrentEffectsVolume(), onChange: WPTAudioConfig.audio.setEffectsVolume)
-    let musicSlider = WPTSliderNode(title: "Music", min: 0, max: 10, val: WPTAudioConfig.audio.getCurrentMusicVolume(), onChange: WPTAudioConfig.audio.setMusicVolume)
-    let leftySwitch = WPTSwitchNode(title: "Lefty Mode", switchValue: WPTAudioConfig.audio.getLeftyControls(), onChange: WPTAudioConfig.audio.setLeftyControls)
+    var effectSlider: WPTSliderNode!
+    var musicSlider: WPTSliderNode!
+    var leftySwitch: WPTSwitchNode!
     
     override func didMove(to view: SKView) {
+        
+        effectSlider = WPTSliderNode(title: "Effects", min: 0, max: 10, val: WPTAudioConfig.audio.getCurrentEffectsVolume(), onChange: WPTAudioConfig.audio.setEffectsVolume)
+        musicSlider = WPTSliderNode(title: "Music", min: 0, max: 10, val: WPTAudioConfig.audio.getCurrentMusicVolume(), onChange: WPTAudioConfig.audio.setMusicVolume)
+        leftySwitch = WPTSwitchNode(title: "Lefty Mode", switchValue: WPTAudioConfig.audio.getLeftyControls(), onChange: WPTAudioConfig.audio.setLeftyControls)
+        
         super.didMove(to: view)
         
         headerLabel.position = CGPoint(x: frame.midX, y: 0.85 * frame.height)
