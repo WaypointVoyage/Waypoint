@@ -205,7 +205,7 @@ class WPTLevelScene: WPTScene {
             levelName.isPaused = self.levelPaused
         }
         self.physicsWorld.speed = self.levelPaused ? 0.0 : 1.0 // pause physics simulation
-        self.isPaused = self.levelPaused // pause actions that may be running
+        self.terrain.isPaused = self.levelPaused // pause actions that may be running
         if let wave = self.puppetMaster?.currentState as? WPTWaveExecutionPMS {
             wave.wave?.pause(paused: self.levelPaused)
         }
