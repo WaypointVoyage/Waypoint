@@ -14,6 +14,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     var currentHealth: CGFloat
     var teamBitMask: UInt32
     let cannonEffect = WPTAudioNode(effect: "cannon.mp3")
+    let currencyEffect = WPTAudioNode(effect: "currency.mp3")
+    let itemEffect = WPTAudioNode(effect: "item_collection.mp3")
+    let anchorEffect = WPTAudioNode(effect: "anchor.mp3")
     
     // movement
     private var facingZRotation: CGFloat = 0
@@ -79,6 +82,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             }
         }
         self.addChild(cannonEffect)
+        self.addChild(itemEffect)
+        self.addChild(currencyEffect)
+        self.addChild(anchorEffect)
         
         // configure physics behavior
         self.physicsBody!.allowsRotation = false
@@ -239,10 +245,14 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         // tier specific behavior
         switch (item.tier) {
         case WPTItemTier.statModifier:
+            itemEffect.playEffect()
             actor.apply(item: item)
+        case WPTItemTier.currency:
+            currencyEffect.playEffect()
+        case WPTItemTier.repair:
+            itemEffect.playEffect()
         case WPTItemTier.other:
             if item.name == "Cannon" { addCannon() }
-        default: break
         }
     }
     

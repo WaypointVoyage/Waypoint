@@ -16,7 +16,7 @@ class WPTBoulderNode: SKNode {
     
     let boulderImage = SKSpriteNode(imageNamed: "boulder")
     let crackedImage = SKSpriteNode(imageNamed: "crackedBoulder")
-    let boulderEffect = WPTAudioNode(effect: "coin.mp3")
+    let boulderEffect = WPTAudioNode(effect: "explosion.mp3")
     var health: WPTHealthNode
     
     override init() {
