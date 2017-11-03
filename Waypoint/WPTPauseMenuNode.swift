@@ -15,6 +15,7 @@ class WPTPauseMenuNode: SKNode {
     var map: WPTMapViewNode
     private var background: SKSpriteNode! = nil
     private var levelNameNode: WPTLabelNode? = nil
+    let pauseEffect = WPTAudioNode(effect: "map_scroll.mp3")
     var levelName: String? = nil {
         didSet { self.levelNameNode?.text = self.levelName }
     }
@@ -88,6 +89,8 @@ class WPTPauseMenuNode: SKNode {
         self.cancelQuit.fontColor = .black
         self.cancelQuit.position.y -= 0.5 * background.size.height
         self.cancelQuit.position.x += 0.15 * background.size.width
+        
+        self.addChild(pauseEffect)
     }
     
     required init?(coder aDecoder: NSCoder) {
