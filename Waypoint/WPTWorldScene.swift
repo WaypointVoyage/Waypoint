@@ -72,7 +72,7 @@ class WPTWorldScene: WPTScene {
     }
     
     override func getSong() -> String {
-        return "level_map_theme.mp3"
+        return "level_map_theme.wav"
     }
     
     private var lastCurrentTime: TimeInterval? = nil
