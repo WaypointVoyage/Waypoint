@@ -22,7 +22,6 @@ class WPTDestroyMenuNode: SKNode {
         
         self.player = player
         self.doubloons = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)
-        
         super.init()
         self.isUserInteractionEnabled = true
         self.zPosition = WPTZPositions.shrouds + 1
@@ -95,8 +94,9 @@ class WPTDestroyMenuNode: SKNode {
             let lootSummary = WPTLootSummary(player: self.player)
             let storage = WPTStorage()
             storage.submitScore(lootSummary)
-            
-            self.scene?.view?.presentScene(WPTHighScoresScene())
+            let highScores = WPTHighScoresScene()
+            highScores.song = "level_map_theme.wav"
+            self.scene?.view?.presentScene(highScores)
         }
     }
 }

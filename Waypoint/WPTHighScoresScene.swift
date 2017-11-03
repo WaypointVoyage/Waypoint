@@ -12,6 +12,7 @@ class WPTHighScoresScene: WPTScene {
     
     let background = WPTBackgroundNode(image: "beach_scene")
     let titleLabel = WPTLabelNode(text: "High Scores", fontSize: WPTValues.fontSizeLarge)
+    var song: String = "main_menu_theme.wav"
     
     let scoresTable = SKNode()
     
@@ -76,5 +77,10 @@ class WPTHighScoresScene: WPTScene {
        
        self.addChild(scoresTable)
     }
+    
+    override func getSong() -> String {
+        return self.song
+    }
+    
     
 }

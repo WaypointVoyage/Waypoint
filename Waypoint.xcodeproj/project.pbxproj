@@ -44,6 +44,7 @@
 		2DC5BD141FACFD6C00A51A4F /* level_map_theme.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2DC5BD121FACFD6700A51A4F /* level_map_theme.wav */; };
 		2DC5BD151FACFD6E00A51A4F /* waypoint.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2DC5BD101FACFD5B00A51A4F /* waypoint.wav */; };
 		2DC5BD171FAD07A800A51A4F /* anchor_up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2DC5BD161FAD07A400A51A4F /* anchor_up.wav */; };
+		2DC5BD191FAD0D7600A51A4F /* bubbles.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2DC5BD181FAD0D7300A51A4F /* bubbles.wav */; };
 		2DD77F161F99CC3300CCEF3E /* WPTSliderNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD77F151F99CC3300CCEF3E /* WPTSliderNode.swift */; };
 		7E0901341FAAE280008B59CC /* WPTTentacleWanderBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0901331FAAE280008B59CC /* WPTTentacleWanderBS.swift */; };
 		7E0901361FAAEECC008B59CC /* WPTTentacleAttackBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0901351FAAEECC008B59CC /* WPTTentacleAttackBS.swift */; };
@@ -225,6 +226,7 @@
 		2DC5BD111FACFD6100A51A4F /* main_menu_theme.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = main_menu_theme.wav; path = Resources/Music/main_menu_theme.wav; sourceTree = "<group>"; };
 		2DC5BD121FACFD6700A51A4F /* level_map_theme.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = level_map_theme.wav; path = Resources/Music/level_map_theme.wav; sourceTree = "<group>"; };
 		2DC5BD161FAD07A400A51A4F /* anchor_up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = anchor_up.wav; path = Resources/Music/Effects/anchor_up.wav; sourceTree = "<group>"; };
+		2DC5BD181FAD0D7300A51A4F /* bubbles.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bubbles.wav; path = Resources/Music/Effects/bubbles.wav; sourceTree = "<group>"; };
 		2DD77F151F99CC3300CCEF3E /* WPTSliderNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSliderNode.swift; sourceTree = "<group>"; };
 		7E0901331FAAE280008B59CC /* WPTTentacleWanderBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTTentacleWanderBS.swift; sourceTree = "<group>"; };
 		7E0901351FAAEECC008B59CC /* WPTTentacleAttackBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTTentacleAttackBS.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 				2DC5BD031FACDD3F00A51A4F /* cannon.mp3 */,
 				2DC5BD071FACDD4D00A51A4F /* item_collection.mp3 */,
 				2DC5BD161FAD07A400A51A4F /* anchor_up.wav */,
+				2DC5BD181FAD0D7300A51A4F /* bubbles.wav */,
 				2DC5BD0E1FACEC2A00A51A4F /* map_scroll.mp3 */,
 				2DC5BD051FACDD4D00A51A4F /* currency.mp3 */,
 				2DC5BD061FACDD4D00A51A4F /* explosion.mp3 */,
@@ -980,6 +983,7 @@
 				7E15B66D1E83922E00A9B1DC /* repair_items.plist in Resources */,
 				2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */,
 				7EF866CB1E83556D0012F2C7 /* 0_setting_sail.plist in Resources */,
+				2DC5BD191FAD0D7600A51A4F /* bubbles.wav in Resources */,
 				7E15B66C1E83922E00A9B1DC /* other_items.plist in Resources */,
 				2DC5BD0B1FACDD6200A51A4F /* currency.mp3 in Resources */,
 				7EC7F13B1F906993007530F8 /* wake_fill.fsh in Resources */,

@@ -262,8 +262,8 @@ extension WPTShip {
     static let maxFireRate: CGFloat = WPTShip.baseFireRate * WPTShip.maxFireRateScale
     
     static let minItemRadiusScale: CGFloat = 1.0
-    static let maxItemRadiusScale: CGFloat = 100.0
-    static let baseItemRadius: CGFloat = 250
+    static let maxItemRadiusScale: CGFloat = 2.0
+    static let baseItemRadius: CGFloat = 150
     static let minItemRadius: CGFloat = WPTShip.baseItemRadius * WPTShip.minItemRadiusScale
     static let maxItemRadius: CGFloat = WPTShip.baseItemRadius * WPTShip.maxItemRadiusScale
 }

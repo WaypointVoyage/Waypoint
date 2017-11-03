@@ -20,7 +20,7 @@ class WPTTreasureReturnsWave: WPTLevelWave {
     
     override func setup(scene: WPTLevelScene) {
         super.setup(scene: scene)
-        
+        WPTAudioConfig.audio.playSong(song: "level_map_theme.wav")
         self.prepareForAnimation {
             self.playAnimation {
                 self.recoverFromAnimation()

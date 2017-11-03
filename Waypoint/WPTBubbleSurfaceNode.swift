@@ -10,6 +10,7 @@ import SpriteKit
 
 class WPTBubbleSurfaceNode: SKNode {
     private static let bubbleTexture = SKTexture(imageNamed: "bubbles")
+    let bubbleEffect = WPTAudioNode(effect: "bubbles.wav")
     
     private var bubbles: [SKSpriteNode] = [SKSpriteNode]()
     
@@ -35,6 +36,9 @@ class WPTBubbleSurfaceNode: SKNode {
             self.bubbles.append(b)
             self.addChild(b)
         }
+        
+        self.bubbleEffect.setLoop(looped: true)
+        self.addChild(bubbleEffect)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,7 +51,7 @@ class WPTBubbleSurfaceNode: SKNode {
         for bubble in self.bubbles {
             self.kickoffBubbles(bubble)
         }
-        
+        self.bubbleEffect.playEffect()
         self.stopped = false
     }
     
@@ -57,7 +61,7 @@ class WPTBubbleSurfaceNode: SKNode {
         for bubble in self.bubbles {
             bubble.removeAllActions()
         }
-        
+        self.bubbleEffect.stopEffect()
         self.stopped = true
     }
     

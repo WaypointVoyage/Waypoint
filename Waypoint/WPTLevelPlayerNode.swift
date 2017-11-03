@@ -97,6 +97,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
                 scene.hud.bottom.hideBorder()
                 scene.hud.addChild(scene.hud.pauseShroud)
                 scene.hud.destroyMenu.updateMoney()
+                WPTAudioConfig.audio.playSong(song: "level_map_theme.wav")
                 scene.hud.addChild(scene.hud.destroyMenu)
                 
                 OperationQueue().addOperation {

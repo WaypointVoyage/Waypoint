@@ -37,6 +37,14 @@ class WPTAudioNode : SKNode {
         }
     }
     
+    func stopEffect() {
+        self.audio.run(SKAction.stop())
+    }
+    
+    func setLoop(looped: Bool) {
+        self.audio.autoplayLooped = looped
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

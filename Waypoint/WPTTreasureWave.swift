@@ -118,7 +118,9 @@ class WPTTreasureWave: WPTLevelWave {
             
             // go to high scores scene
             let transition = SKTransition.fade(withDuration: 1.5)
-            scene.view!.presentScene(WPTHighScoresScene(), transition: transition)
+            let highScores = WPTHighScoresScene()
+            highScores.song = "level_map_theme.wav"
+            scene.view!.presentScene(highScores, transition: transition)
         }
         
         return false
