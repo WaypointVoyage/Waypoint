@@ -16,7 +16,8 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     let cannonEffect = WPTAudioNode(effect: "cannon.mp3")
     let currencyEffect = WPTAudioNode(effect: "currency.mp3")
     let itemEffect = WPTAudioNode(effect: "item_collection.mp3")
-    let anchorEffect = WPTAudioNode(effect: "anchor.mp3")
+    let anchorDownEffect = WPTAudioNode(effect: "anchor.mp3")
+    let anchorUpEffect = WPTAudioNode(effect: "anchor_up.wav")
     
     // movement
     private var facingZRotation: CGFloat = 0
@@ -84,7 +85,8 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         self.addChild(cannonEffect)
         self.addChild(itemEffect)
         self.addChild(currencyEffect)
-        self.addChild(anchorEffect)
+        self.addChild(anchorUpEffect)
+        self.addChild(anchorDownEffect)
         
         // configure physics behavior
         self.physicsBody!.allowsRotation = false
