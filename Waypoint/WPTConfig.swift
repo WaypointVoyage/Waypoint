@@ -13,7 +13,7 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
@@ -29,6 +29,7 @@ class WPTConfig {
 
     var showTutorial = true              // if false, the tutorial will never be shown
     var clearPlayerProgress = false      // if true, all player progress will be cleared
+    var clearGlobalSettings = false      // if true, all global settings will be cleared
     
     // visual debugging
     let showPhysics = false                 // shows physics bodies
