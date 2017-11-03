@@ -84,11 +84,13 @@ class WPTTutorialNode: SKNode {
     }
     
     private func removeTutorialImage() {
-        let oldImage = tutorialImages[tutorialIndex]
-        oldImage.image.removeFromParent()
-        tutorialIndex += 1
-        if (oldImage.viewElement != nil) {
-            oldImage.viewElement?.zPosition = oldImage.zValue!
+        if (tutorialIndex <= 7) {
+            let oldImage = tutorialImages[tutorialIndex]
+            oldImage.image.removeFromParent()
+            tutorialIndex += 1
+            if (oldImage.viewElement != nil) {
+                oldImage.viewElement?.zPosition = oldImage.zValue!
+            }
         }
     }
     
