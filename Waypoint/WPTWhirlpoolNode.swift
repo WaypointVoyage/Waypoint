@@ -24,7 +24,7 @@ class WPTWhirlpoolNode: SKNode {
     }
     
     func start() {
-        self.physicsBody = SKPhysicsBody(circleOfRadius: WPTWhirlpoolNode.whirlpoolRadius/5)
+        self.physicsBody = SKPhysicsBody(circleOfRadius: WPTWhirlpoolNode.whirlpoolRadius/1.5)
         self.physicsBody!.isDynamic = false
         self.physicsBody!.categoryBitMask = WPTValues.whirlpoolCbm
         self.physicsBody!.collisionBitMask = WPTValues.actorCbm | WPTValues.terrainCbm

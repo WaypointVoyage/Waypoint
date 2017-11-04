@@ -51,7 +51,10 @@ class WPTBubbleSurfaceNode: SKNode {
         for bubble in self.bubbles {
             self.kickoffBubbles(bubble)
         }
-        self.bubbleEffect.playEffect()
+        let delay = randomNumber(min: 0.0, max: CGFloat(self.time))
+        self.run(SKAction.wait(forDuration: TimeInterval(delay))) {
+            self.bubbleEffect.playEffect()
+        }
         self.stopped = false
     }
     

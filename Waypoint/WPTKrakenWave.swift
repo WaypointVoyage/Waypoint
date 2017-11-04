@@ -47,7 +47,7 @@ class WPTKrakenWave: WPTTentacleWave {
             
             self.tentacles[i].run(wait) {
                 self.tentacles[i].surface(duration: 3.0) {
-                    self.tentacles[i].brain.start()
+                    self.tentacles[i].brain?.start()
                 }
             }
         }

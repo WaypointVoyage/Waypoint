@@ -119,6 +119,13 @@ class WPTLevelScene: WPTScene {
         } else {
             levelNameDisplay()
         }
+        
+        // treasure chest?
+        if let treasurePos = self.level.xMarksTheSpot {
+            let treasureNode = WPTFinalTreasureNode()
+            treasureNode.position = treasurePos
+            self.terrain.addChild(treasureNode)
+        }
     }
     
     override func getSong() -> String {

@@ -64,6 +64,7 @@ class WPTBoulderNode: SKNode {
     
     func destroyBoulder() {
         self.health.removeFromParent()
+        self.physicsBody = nil
         let explosionNode = SKSpriteNode(imageNamed: "explode")
         explosionNode.position = self.crackedImage.position
         explosionNode.size = CGSize(width: self.crackedImage.size.width, height: self.crackedImage.size.height)

@@ -13,7 +13,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     let enemy: WPTEnemy
     let player: WPTLevelPlayerNode
     
-    let brain: WPTBrain
+    public private(set) var brain: WPTBrain?
     var brainRadii: WPTBrainRadiiNode? = nil
     let healthBar: WPTHealthNode
     let explosionEffect = WPTAudioNode(effect: "explosion.mp3")
@@ -29,13 +29,13 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         super.init(actor: enemy, teamBitMask: WPTValues.enemyTbm)
         
         // brain
-        self.brain.enemy = self
-        self.brain.setBehavior()
+        self.brain!.enemy = self
+        self.brain!.setBehavior()
         if startBrain {
-            self.brain.start()
+            self.brain!.start()
         }
         if WPTConfig.values.showBrainRadii {
-            self.brainRadii = WPTBrainRadiiNode(brain: self.brain)
+            self.brainRadii = WPTBrainRadiiNode(brain: self.brain!)
             self.brainRadii?.setScale(1.0 / enemy.ship.size) // have to invert enemy scaling to get appropriate sizes
             self.addChild(brainRadii!);
         }
@@ -55,8 +55,8 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     }
     
     override func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
-        if brain.started {
-            brain.update(deltaTime: deltaTime)
+        if brain != nil && brain!.started {
+            brain!.update(deltaTime: deltaTime)
         } else {
             // until the brain is started, just move towards the player
             self.anchored = false
@@ -78,7 +78,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
                     let enemyBox = CGRect(origin: enemyBoxOrigin, size: self.sprite.frame.size)
                     if terrainBox.contains(enemyBox) {
                         self.physicsBody?.collisionBitMask |= WPTValues.boundaryCbm
-                        self.brain.start()
+                        self.brain?.start()
                     }
                 }
             }
@@ -97,6 +97,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     func destroyEnemy() {
         self.physicsBody = nil // at this point on, there are is no more world interaction
         self.isDead = true
+        self.brain = nil
         
         let explosionNode = SKSpriteNode(imageNamed: "explode")
         explosionNode.position = self.sprite.position

@@ -10,8 +10,8 @@ import SpriteKit
 
 // wave 2 in the final boss
 class WPTKrakenChestStealWave: WPTLevelWave {
-    
-    private var treasureGone: Bool = false
+
+    private var treasureGone = false
     
     override init(_ waveDict: [String:AnyObject]) {
         super.init(waveDict)

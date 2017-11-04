@@ -12,7 +12,9 @@ import SpriteKit
 class WPTKrakenIntroWave: WPTLevelWave {
     
     private var healthLocations: [CGPoint] = [CGPoint]()
-    private let treasureChest: WPTFinalTreasureNode = WPTFinalTreasureNode()
+    private var treasureChest: WPTFinalTreasureNode? {
+        return self.scene.terrain.childNode(withName: WPTFinalTreasureNode.TREASURE_NODE_NAME) as? WPTFinalTreasureNode
+    }
     
     override init(_ waveDict: [String:AnyObject]) {
         
@@ -26,15 +28,7 @@ class WPTKrakenIntroWave: WPTLevelWave {
     
     override func setup(scene: WPTLevelScene) {
         super.setup(scene: scene)
-        
-        self.spawnTreasureChest()
         self.setHealthPickups()
-    }
-    
-    private func spawnTreasureChest() {
-        self.treasureChest.position = scene.level.xMarksTheSpot!
-        self.treasureChest.removeFromParent()
-        self.scene.terrain.addChild(treasureChest)
     }
     
     private func setHealthPickups() {
@@ -48,8 +42,10 @@ class WPTKrakenIntroWave: WPTLevelWave {
     }
     
     override func isComplete(scene: WPTLevelScene) -> Bool {
-        let dist = CGVector(start: self.treasureChest.position, end: self.scene.player.position).magnitude()
-        return dist < self.treasureChest.activationDistance
+        let chest = self.treasureChest
+        guard chest != nil else { return false }
+        let dist = CGVector(start: chest!.position, end: self.scene.player.position).magnitude()
+        return dist < chest!.activationDistance
     }
 }
 

@@ -102,8 +102,6 @@ class WPTItemPickerNode: SKNode {
 
 class ItemWrapper: NSObject, NSCoding {
     
-    
-
     private let KEY = "some_real_stupid_shit"
     
     var item: WPTItem

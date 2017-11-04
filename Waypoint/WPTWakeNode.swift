@@ -9,6 +9,10 @@
 import SpriteKit
 
 class WPTWakeNode: SKNode, WPTUpdatable {
+    
+    private static let STROKE_SHADER = SKShader(fileNamed: "wake_edge.fsh")
+    private static let FILL_SHADER = SKShader(fileNamed: "wake_fill.fsh")
+    
     private static let WAKE_FRAME_COUNT: Int = 24
     private static let WAKE_FRAME_TIME_DELTA: TimeInterval = 0.05
     
@@ -32,8 +36,8 @@ class WPTWakeNode: SKNode, WPTUpdatable {
         
         self.shapeNode = SKShapeNode.init(splinePoints: &framesPath, count: framesPath.count)
         self.shapeNode.lineWidth = 8
-        self.shapeNode.strokeShader = SKShader(fileNamed: "wake_edge.fsh")
-        self.shapeNode.fillShader = SKShader(fileNamed: "wake_fill.fsh")
+        self.shapeNode.strokeShader = WPTWakeNode.STROKE_SHADER
+        self.shapeNode.fillShader = WPTWakeNode.FILL_SHADER
         self.shapeNode.fillShader!.addUniform(SKUniform(name: "u_actor_dir_x", float: 0.0))
         self.shapeNode.fillShader!.addUniform(SKUniform(name: "u_actor_dir_y", float: 1.0))
         self.addChild(shapeNode)
