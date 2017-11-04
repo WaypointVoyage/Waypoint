@@ -25,6 +25,7 @@ class WPTPlayer: WPTActor {
     }
     
     init(playerProgress: WPTPlayerProgress) {
+        self.progress = playerProgress
         shipName = playerProgress.shipName
         health = playerProgress.health
         completedLevels = playerProgress.completedLevels

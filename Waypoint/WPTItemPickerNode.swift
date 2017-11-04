@@ -101,10 +101,13 @@ class WPTItemPickerNode: SKNode {
 }
 
 class ItemWrapper: NSObject, NSCoding {
+    
+    
 
+    private let KEY = "some_real_stupid_shit"
+    
     var item: WPTItem
     var itemName: String
-    
     var purchased: Bool = false
     var price: Int
     
@@ -116,15 +119,16 @@ class ItemWrapper: NSObject, NSCoding {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.itemName = aDecoder.decodeObject(forKey: "itemName") as! String
+        let dumb = aDecoder.decodeObject(forKey: self.KEY) as! String
+        let piecesOfDumb = dumb.split { $0 == "💩" } .map(String.init)
+        self.itemName = piecesOfDumb[0]
         self.item = WPTItemCatalog.itemsByName[self.itemName]!
-        self.purchased = aDecoder.decodeObject(forKey: "purchased") as! Bool
-        self.price = aDecoder.decodeObject(forKey: "price") as! Int
+        self.purchased = piecesOfDumb[1] == "true"
+        self.price = Int(piecesOfDumb[2])!
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(itemName, forKey: "itemName")
-        aCoder.encode(purchased, forKey: "purchased")
-        aCoder.encode(price, forKey: "price")
+        let dumb = "\(self.itemName)💩\(self.purchased)💩\(self.price)"
+        aCoder.encode(dumb, forKey: self.KEY)
     }
 }
