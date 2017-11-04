@@ -113,7 +113,7 @@ class ItemWrapper: NSObject, NSCoding {
         self.item = WPTItemCatalog.itemsByName[name]!
         self.itemName = name
         self.purchased = purchased
-        self.price = price
+        self.price = WPTConfig.values.freeItems ? 0 : price
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -24,6 +24,7 @@ class WPTConfigTest: XCTestCase {
     func testConfigTestingSettings() {
         XCTAssertFalse(WPTConfig.values.testing, "Please set testing to false in WPTConfig")
         XCTAssertFalse(WPTConfig.values.allUnlocked, "Please set allUnlocked to false in WPTConfig")
+        XCTAssertFalse(WPTConfig.values.freeItems, "Please set freeItems to false in WPTConfig")
         XCTAssertFalse(WPTConfig.values.invincible, "Please set invincible to false in WPTConfig")
         XCTAssertFalse(WPTConfig.values.clearHighScoresOnLoad, "Please set clearHighScoresOnLoad to false in WPTConfig")
         XCTAssertTrue(WPTConfig.values.showTutorial, "Please set showTutorial to true in WPTConfig")
