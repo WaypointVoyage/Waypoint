@@ -222,7 +222,6 @@
 		2D8E804A1E3AD6D000CB2E0B /* WPTSettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTSettingsScene.swift; sourceTree = "<group>"; };
 		2D8E804D1E3ADBC400CB2E0B /* WPTShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShip.swift; sourceTree = "<group>"; };
 		2DACB9101FA8278C006FBE1F /* WPTSwitchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSwitchNode.swift; sourceTree = "<group>"; };
-		2DC5BD041FACDD4D00A51A4F /* WPTEntities.ai */ = {isa = PBXFileReference; lastKnownFileType = text; path = WPTEntities.ai; sourceTree = "<group>"; };
 		2DC5BD061FACDD4D00A51A4F /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = explosion.mp3; path = Resources/Music/Effects/explosion.mp3; sourceTree = "<group>"; };
 		2DC5BD071FACDD4D00A51A4F /* item_collection.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = item_collection.mp3; path = Resources/Music/Effects/item_collection.mp3; sourceTree = "<group>"; };
 		2DC5BD081FACDD4D00A51A4F /* anchor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = anchor.mp3; path = Resources/Music/Effects/anchor.mp3; sourceTree = "<group>"; };
@@ -505,7 +504,6 @@
 				2D7BCCC91FAFC9700013A9B3 /* cannon.wav */,
 				2D7BCCCB1FAFCC930013A9B3 /* currency.wav */,
 				2DC5BD081FACDD4D00A51A4F /* anchor.mp3 */,
-				2DC5BD041FACDD4D00A51A4F /* WPTEntities.ai */,
 				7E13F62D1E48ECAD00B5D2FD /* sword1.caf */,
 			);
 			name = Effects;
