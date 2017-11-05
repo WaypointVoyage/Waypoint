@@ -18,14 +18,11 @@ class WPTAudioNode : SKNode {
         audio = WPTSoundCatalog.soundsByName[effect]!
         super.init()
         
-//        audio.autoplayLooped = false
         WPTAudioConfig.audio.onEffectsVolumeChange(self.onVolumeChange)
         self.onVolumeChange(volume: WPTAudioConfig.audio.getCurrentEffectsVolume())
-//        self.addChild(audio)
     }
     
     private func onVolumeChange(volume: Float) {
-//        self.audio.run(SKAction.changeVolume(to: volume, duration: 0))
         audio.volume = volume
     }
     
@@ -37,10 +34,6 @@ class WPTAudioNode : SKNode {
     
     func stopEffect() {
         self.audio.stop()
-    }
-    
-    func setLoop(looped: Bool) {
-//        self.audio.autoplayLooped = looped
     }
     
     required init?(coder aDecoder: NSCoder) {

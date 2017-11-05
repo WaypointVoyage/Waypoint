@@ -23,9 +23,9 @@ class WPTConfig {
     
     // testing
     var testing = true                  // toggles general testing features
-    var allUnlocked = true              // determines if all of the levels on the world map are unlocked and beaten
+    var allUnlocked = false              // determines if all of the levels on the world map are unlocked and beaten
     var freeItems = false                // if true, all items are free
-    var invincible = true               // if true, the player is invincible
+    var invincible = false               // if true, the player is invincible
     var clearHighScoresOnLoad = false    // if true, all of the high scores are cleared when the app is loaded
 
     var showTutorial = true              // if false, the tutorial will never be shown

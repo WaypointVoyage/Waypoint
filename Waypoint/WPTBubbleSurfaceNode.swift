@@ -37,7 +37,6 @@ class WPTBubbleSurfaceNode: SKNode {
             self.addChild(b)
         }
         
-        self.bubbleEffect.setLoop(looped: true)
         self.addChild(bubbleEffect)
     }
     
