@@ -14,13 +14,13 @@ class WPTSoundCatalog {
         var sounds = [SoundWrapper]();
         
         let cannonEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "cannon.wav"))!, name: "cannon")
-        let itemCollectionEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "item_collection.mp3"))!, name: "item_collection")
+        let itemCollectionEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "item_collection.wav"))!, name: "item_collection")
         let anchorUpEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "anchor_up.wav"))!, name: "anchor_up")
         let bubblesEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "bubbles.wav"))!, name: "bubbles")
-        let mapScrollEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "map_scroll.mp3"))!, name: "map_scroll")
+        let mapScrollEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "map_scroll.wav"))!, name: "map_scroll")
         let currencyEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "currency.wav"))!, name: "currency")
-        let explosionEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "explosion.mp3"))!, name: "explosion")
-        let anchorEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "anchor.mp3"))!, name: "anchor_down")
+        let explosionEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "explosion.wav"))!, name: "explosion")
+        let anchorEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "anchor.wav"))!, name: "anchor_down")
         
         sounds.append(cannonEffect)
         sounds.append(itemCollectionEffect)
