@@ -31,29 +31,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2540C5FCFDBCDCE56EA8CD0A2231DF20 /* SwiftySound.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftySound.modulemap; sourceTree = "<group>"; };
+		2540C5FCFDBCDCE56EA8CD0A2231DF20 /* SwiftySound.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftySound.modulemap; sourceTree = "<group>"; };
 		2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		35F6FE6B1A35436154DA74D9C7D2A948 /* Pods-Waypoint-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Waypoint-acknowledgements.plist"; sourceTree = "<group>"; };
 		39B750F48FF13309FE143050A62FF3A7 /* Pods-WaypointContentTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WaypointContentTests-resources.sh"; sourceTree = "<group>"; };
 		3A61D1916160E80E190D3C1C9DD8BED5 /* SwiftySound-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftySound-umbrella.h"; sourceTree = "<group>"; };
 		3EC5187E48E402E042500FA349850F3D /* Pods-WaypointContentTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WaypointContentTests-frameworks.sh"; sourceTree = "<group>"; };
 		5F803A11E6E6B1A3F7787E22C6B61D03 /* Pods-Waypoint-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Waypoint-dummy.m"; sourceTree = "<group>"; };
-		5FBA8193947CBBAD833BA482E48EF2C2 /* SwiftySound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftySound.framework; path = SwiftySound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FBA8193947CBBAD833BA482E48EF2C2 /* SwiftySound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftySound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		601D92C382B1BAE61A00F564F91E9546 /* Pods-WaypointContentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WaypointContentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		618827CF74354907BED55A55F8959BC0 /* Pods-WaypointContentTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WaypointContentTests-dummy.m"; sourceTree = "<group>"; };
 		6B073FE94339EDCB83DBE95FBEAEC85E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		708BE1F1C04215FE3D41F460658CA4AC /* Pods_Waypoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Waypoint.framework; path = "Pods-Waypoint.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		708BE1F1C04215FE3D41F460658CA4AC /* Pods_Waypoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Waypoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		723E54E849D736D0A3879F0C3FA2588B /* Pods-Waypoint-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Waypoint-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7BD9F2780EE145614893E7D4B796376B /* Pods-Waypoint-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Waypoint-resources.sh"; sourceTree = "<group>"; };
 		840966EAD0718963750ABB9F4A6EB218 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		8FD3718067E9800E89454D53F0FE0D4E /* Pods-WaypointContentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WaypointContentTests.release.xcconfig"; sourceTree = "<group>"; };
 		90EB0078FCDF9A0EB67FAC05E36CD1F0 /* Pods-WaypointContentTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WaypointContentTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D71788283F663C3A5BC8A0E3554F419 /* Pods-Waypoint-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Waypoint-umbrella.h"; sourceTree = "<group>"; };
 		A5EE360C98331D5005E3D9B189CF0590 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA88844ECDFE237E8E09434E790359B0 /* SwiftySound-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftySound-dummy.m"; sourceTree = "<group>"; };
 		AD6F1879B11829EB41449F05FF04AE83 /* Pods-Waypoint-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Waypoint-frameworks.sh"; sourceTree = "<group>"; };
-		BDE3E80D8668DA3520ED586E98CF0398 /* Pods_WaypointContentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WaypointContentTests.framework; path = "Pods-WaypointContentTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDE3E80D8668DA3520ED586E98CF0398 /* Pods_WaypointContentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaypointContentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF601627044B479C543DB922F4763149 /* Pods-Waypoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Waypoint.debug.xcconfig"; sourceTree = "<group>"; };
 		C6FB45F6AF751F7BE5F2A747A25041BD /* Sound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = Sources/Sound.swift; sourceTree = "<group>"; };
 		D58312652A860528FA48A05D9AC8C991 /* Pods-WaypointContentTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WaypointContentTests-umbrella.h"; sourceTree = "<group>"; };
@@ -61,8 +61,8 @@
 		DAE10B344FA48CA596EFB216ECE53B8A /* Pods-Waypoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Waypoint.release.xcconfig"; sourceTree = "<group>"; };
 		E00D9F364D42A09593BF33A28E94F693 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0AE16727E409106BBD089FE1D0CB8F7 /* Pods-WaypointContentTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WaypointContentTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		ED34FD4AC833B5D66100C9E3A9D833D1 /* Pods-WaypointContentTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-WaypointContentTests.modulemap"; sourceTree = "<group>"; };
-		F8950D0C0178CB4D71ECDFF73F9D39B1 /* Pods-Waypoint.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Waypoint.modulemap"; sourceTree = "<group>"; };
+		ED34FD4AC833B5D66100C9E3A9D833D1 /* Pods-WaypointContentTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WaypointContentTests.modulemap"; sourceTree = "<group>"; };
+		F8950D0C0178CB4D71ECDFF73F9D39B1 /* Pods-Waypoint.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Waypoint.modulemap"; sourceTree = "<group>"; };
 		FB710C9845AA8C6218B43A494D87661C /* SwiftySound.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftySound.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,7 +178,6 @@
 				C6FB45F6AF751F7BE5F2A747A25041BD /* Sound.swift */,
 				179AFCB27188F317D0EC6EE75C4028AA /* Support Files */,
 			);
-			name = SwiftySound;
 			path = SwiftySound;
 			sourceTree = "<group>";
 		};
@@ -299,7 +298,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0900;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -477,6 +476,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
