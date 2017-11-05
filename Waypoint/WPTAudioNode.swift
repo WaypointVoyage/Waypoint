@@ -13,7 +13,6 @@ import AVFoundation
 class WPTAudioNode : SKNode {
     
     let audio: SKAudioNode
-    
     init(effect: String) {
         audio = SKAudioNode(fileNamed: effect)
         super.init()

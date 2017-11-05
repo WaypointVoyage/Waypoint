@@ -175,6 +175,8 @@
 		7EF866D41E83556D0012F2C7 /* 9_boom_about.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C81E83556D0012F2C7 /* 9_boom_about.plist */; };
 		7EF866D51E83556D0012F2C7 /* 10_high_seas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C91E83556D0012F2C7 /* 10_high_seas.plist */; };
 		7EF866D61E83556D0012F2C7 /* 11_shiver_me_timbers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866CA1E83556D0012F2C7 /* 11_shiver_me_timbers.plist */; };
+		D1A59AC5F61DA7F4238F2395 /* Pods_WaypointContentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E79E8B2ECCA8ADACECFD8E0 /* Pods_WaypointContentTests.framework */; };
+		F9E4069B75C814D21F31D326 /* Pods_Waypoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6401F9B4D802B65EE2CE6CD /* Pods_Waypoint.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +190,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29A149A7EDA21C2EA8E66BE2 /* Pods-Waypoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waypoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-Waypoint/Pods-Waypoint.release.xcconfig"; sourceTree = "<group>"; };
 		2D1703D61E590F8C0000827E /* random_ship_names.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = random_ship_names.plist; sourceTree = "<group>"; };
 		2D1703DA1E601E180000827E /* WPTMapViewNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTMapViewNode.swift; sourceTree = "<group>"; };
 		2D1704361E6F66FD0000827E /* WPTWhirlpoolNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTWhirlpoolNode.swift; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 		2DC5BD161FAD07A400A51A4F /* anchor_up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = anchor_up.wav; path = Resources/Music/Effects/anchor_up.wav; sourceTree = "<group>"; };
 		2DC5BD181FAD0D7300A51A4F /* bubbles.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bubbles.wav; path = Resources/Music/Effects/bubbles.wav; sourceTree = "<group>"; };
 		2DD77F151F99CC3300CCEF3E /* WPTSliderNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSliderNode.swift; sourceTree = "<group>"; };
+		4D5A59E69E892B4BB9503CC3 /* Pods-WaypointContentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaypointContentTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaypointContentTests/Pods-WaypointContentTests.release.xcconfig"; sourceTree = "<group>"; };
+		76F1841A4C6A8CF8DBC23516 /* Pods-Waypoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waypoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Waypoint/Pods-Waypoint.debug.xcconfig"; sourceTree = "<group>"; };
 		7E0901331FAAE280008B59CC /* WPTTentacleWanderBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTTentacleWanderBS.swift; sourceTree = "<group>"; };
 		7E0901351FAAEECC008B59CC /* WPTTentacleAttackBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTTentacleAttackBS.swift; sourceTree = "<group>"; };
 		7E0C78941E73D1DD006C79C3 /* WPTCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTCircle.swift; sourceTree = "<group>"; };
@@ -361,6 +366,9 @@
 		7EF866C81E83556D0012F2C7 /* 9_boom_about.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 9_boom_about.plist; sourceTree = "<group>"; };
 		7EF866C91E83556D0012F2C7 /* 10_high_seas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 10_high_seas.plist; sourceTree = "<group>"; };
 		7EF866CA1E83556D0012F2C7 /* 11_shiver_me_timbers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 11_shiver_me_timbers.plist; sourceTree = "<group>"; };
+		9E79E8B2ECCA8ADACECFD8E0 /* Pods_WaypointContentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaypointContentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EFB10BE7DE075DAA378CE83 /* Pods-WaypointContentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaypointContentTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaypointContentTests/Pods-WaypointContentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D6401F9B4D802B65EE2CE6CD /* Pods_Waypoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Waypoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +376,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E4069B75C814D21F31D326 /* Pods_Waypoint.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,12 +384,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A59AC5F61DA7F4238F2395 /* Pods_WaypointContentTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06BCDC975F22E615970F7AB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6401F9B4D802B65EE2CE6CD /* Pods_Waypoint.framework */,
+				9E79E8B2ECCA8ADACECFD8E0 /* Pods_WaypointContentTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2D1704351E6F66EB0000827E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +543,8 @@
 				7E16B8571E2D580600933E24 /* Waypoint */,
 				7EB7B7131F7B1C7B00DB49A7 /* WaypointContentTests */,
 				7E16B8561E2D580600933E24 /* Products */,
+				862A2CB6B6EF7E7DEB2B127B /* Pods */,
+				06BCDC975F22E615970F7AB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -875,6 +896,17 @@
 			name = Special;
 			sourceTree = "<group>";
 		};
+		862A2CB6B6EF7E7DEB2B127B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76F1841A4C6A8CF8DBC23516 /* Pods-Waypoint.debug.xcconfig */,
+				29A149A7EDA21C2EA8E66BE2 /* Pods-Waypoint.release.xcconfig */,
+				9EFB10BE7DE075DAA378CE83 /* Pods-WaypointContentTests.debug.xcconfig */,
+				4D5A59E69E892B4BB9503CC3 /* Pods-WaypointContentTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -882,9 +914,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E16B8831E2D580600933E24 /* Build configuration list for PBXNativeTarget "Waypoint" */;
 			buildPhases = (
+				04557D093B2C50AF3C62211B /* [CP] Check Pods Manifest.lock */,
 				7E16B8511E2D580600933E24 /* Sources */,
 				7E16B8521E2D580600933E24 /* Frameworks */,
 				7E16B8531E2D580600933E24 /* Resources */,
+				96A6D35DE32E4C921165AD0D /* [CP] Embed Pods Frameworks */,
+				6122C34B486F12CBB9197E2F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -899,9 +934,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EB7B7191F7B1C7B00DB49A7 /* Build configuration list for PBXNativeTarget "WaypointContentTests" */;
 			buildPhases = (
+				6F7AC3FACCE9B2D4740AEAE5 /* [CP] Check Pods Manifest.lock */,
 				7EB7B70E1F7B1C7B00DB49A7 /* Sources */,
 				7EB7B70F1F7B1C7B00DB49A7 /* Frameworks */,
 				7EB7B7101F7B1C7B00DB49A7 /* Resources */,
+				A355DD104548814988E1A315 /* [CP] Embed Pods Frameworks */,
+				41B953DDA2B290F276DE32A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -925,7 +963,7 @@
 				TargetAttributes = {
 					7E16B8541E2D580600933E24 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 66743KUV39;
+						DevelopmentTeam = 3GEHA95597;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -1019,6 +1057,108 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04557D093B2C50AF3C62211B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Waypoint-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41B953DDA2B290F276DE32A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaypointContentTests/Pods-WaypointContentTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6122C34B486F12CBB9197E2F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Waypoint/Pods-Waypoint-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F7AC3FACCE9B2D4740AEAE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaypointContentTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96A6D35DE32E4C921165AD0D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Waypoint/Pods-Waypoint-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Waypoint/Pods-Waypoint-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A355DD104548814988E1A315 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaypointContentTests/Pods-WaypointContentTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E16B8511E2D580600933E24 /* Sources */ = {
@@ -1285,13 +1425,14 @@
 		};
 		7E16B8841E2D580600933E24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76F1841A4C6A8CF8DBC23516 /* Pods-Waypoint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 66743KUV39;
+				DEVELOPMENT_TEAM = 3GEHA95597;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
+				PRODUCT_BUNDLE_IDENTIFIER = hils124;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1302,13 +1443,14 @@
 		};
 		7E16B8851E2D580600933E24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29A149A7EDA21C2EA8E66BE2 /* Pods-Waypoint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 66743KUV39;
+				DEVELOPMENT_TEAM = 3GEHA95597;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
+				PRODUCT_BUNDLE_IDENTIFIER = hils124;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1319,6 +1461,7 @@
 		};
 		7EB7B71A1F7B1C7B00DB49A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EFB10BE7DE075DAA378CE83 /* Pods-WaypointContentTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1344,6 +1487,7 @@
 		};
 		7EB7B71B1F7B1C7B00DB49A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D5A59E69E892B4BB9503CC3 /* Pods-WaypointContentTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
