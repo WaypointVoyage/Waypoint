@@ -13,11 +13,11 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     let actor: WPTActor
     var currentHealth: CGFloat
     var teamBitMask: UInt32
-    let cannonEffect = WPTAudioNode(effect: "cannon.mp3")
-    let currencyEffect = WPTAudioNode(effect: "currency.mp3")
-    let itemEffect = WPTAudioNode(effect: "item_collection.mp3")
-    let anchorDownEffect = WPTAudioNode(effect: "anchor.mp3")
-    let anchorUpEffect = WPTAudioNode(effect: "anchor_up.wav")
+    let cannonEffect = WPTAudioNode(effect: "cannon")
+    let currencyEffect = WPTAudioNode(effect: "currency")
+    let itemEffect = WPTAudioNode(effect: "item_collection")
+    let anchorDownEffect = WPTAudioNode(effect: "anchor_down")
+    let anchorUpEffect = WPTAudioNode(effect: "anchor_up")
     
     // movement
     private var facingZRotation: CGFloat = 0

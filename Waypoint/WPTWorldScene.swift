@@ -59,7 +59,6 @@ class WPTWorldScene: WPTScene {
         self.addChild(self.player)
         
         let back = WPTHomeScene.getBack(frame: self.frame)
-        back.position.y -= 15
         back.position.x = 0.41 * self.frame.width
         back.label.text = "Exit"
         back.background.size.width *= 0.75

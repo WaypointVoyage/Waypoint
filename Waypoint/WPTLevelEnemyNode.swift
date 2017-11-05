@@ -16,7 +16,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     public private(set) var brain: WPTBrain?
     var brainRadii: WPTBrainRadiiNode? = nil
     let healthBar: WPTHealthNode
-    let explosionEffect = WPTAudioNode(effect: "explosion.mp3")
+    let explosionEffect = WPTAudioNode(effect: "explosion")
     
     var isDead: Bool = false
     
@@ -105,13 +105,12 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         explosionNode.zPosition = self.sprite.zPosition + WPTValues.fontSizeSmall
         self.addChild(explosionNode)
         
-        self.explosionEffect.playEffect() {
-            self.run(SKAction.wait(forDuration: 0.5)) {
-                self.generateCoins()
-                explosionNode.removeFromParent()
-                if let scene = (self.scene as? WPTLevelScene) {
-                    scene.terrain.removeEnemy(self)
-                }
+        self.explosionEffect.playEffect()
+        self.run(SKAction.wait(forDuration: 0.5)) {
+            self.generateCoins()
+            explosionNode.removeFromParent()
+            if let scene = (self.scene as? WPTLevelScene) {
+                scene.terrain.removeEnemy(self)
             }
         }
         

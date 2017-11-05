@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTBubbleSurfaceNode: SKNode {
     private static let bubbleTexture = SKTexture(imageNamed: "bubbles")
-    let bubbleEffect = WPTAudioNode(effect: "bubbles.wav")
+    let bubbleEffect = WPTAudioNode(effect: "bubbles")
     
     private var bubbles: [SKSpriteNode] = [SKSpriteNode]()
     

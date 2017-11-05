@@ -9,39 +9,38 @@
 import Foundation
 import SpriteKit
 import AVFoundation
+import SwiftySound
 
 class WPTAudioNode : SKNode {
     
-    let audio: SKAudioNode
+    let audio: Sound
     init(effect: String) {
-        audio = SKAudioNode(fileNamed: effect)
+        audio = WPTSoundCatalog.soundsByName[effect]!
         super.init()
         
-        audio.autoplayLooped = false
+//        audio.autoplayLooped = false
         WPTAudioConfig.audio.onEffectsVolumeChange(self.onVolumeChange)
         self.onVolumeChange(volume: WPTAudioConfig.audio.getCurrentEffectsVolume())
-        self.addChild(audio)
+//        self.addChild(audio)
     }
     
     private func onVolumeChange(volume: Float) {
-        self.audio.run(SKAction.changeVolume(to: volume, duration: 0))
+//        self.audio.run(SKAction.changeVolume(to: volume, duration: 0))
+        audio.volume = volume
     }
     
-    func playEffect(completion: (() -> Void)? = nil) {
-        self.audio.run(SKAction.stop())
-        self.audio.run(SKAction.play()) {
-            if completion != nil {
-                completion!()
-            }
-        }
+    func playEffect() {
+        self.audio.stop()
+        self.audio.play(numberOfLoops: 0)
+        
     }
     
     func stopEffect() {
-        self.audio.run(SKAction.stop())
+        self.audio.stop()
     }
     
     func setLoop(looped: Bool) {
-        self.audio.autoplayLooped = looped
+//        self.audio.autoplayLooped = looped
     }
     
     required init?(coder aDecoder: NSCoder) {

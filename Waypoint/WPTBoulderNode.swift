@@ -16,7 +16,7 @@ class WPTBoulderNode: SKNode {
     
     let boulderImage = SKSpriteNode(imageNamed: "boulder")
     let crackedImage = SKSpriteNode(imageNamed: "crackedBoulder")
-    let boulderEffect = WPTAudioNode(effect: "explosion.mp3")
+    let boulderEffect = WPTAudioNode(effect: "explosion")
     var health: WPTHealthNode
     
     override init() {
@@ -71,12 +71,11 @@ class WPTBoulderNode: SKNode {
         explosionNode.zPosition = self.crackedImage.zPosition + WPTValues.fontSizeSmall
         self.addChild(explosionNode)
         
-        self.boulderEffect.playEffect() {
-            self.run(SKAction.wait(forDuration: 0.5)) {
-                self.generateCoins()
-                explosionNode.removeFromParent()
-                self.removeFromParent()
-            }
+        self.boulderEffect.playEffect()
+        self.run(SKAction.wait(forDuration: 0.5)) {
+            self.generateCoins()
+            explosionNode.removeFromParent()
+            self.removeFromParent()
         }
     }
     
