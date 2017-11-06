@@ -11,6 +11,7 @@ import SpriteKit
 class WPTPortDockingHandler: SKNode {
     public static let nodeName: String = "_PORT_DOCKING_HANDLER"
     private static let portDelay = SKAction.wait(forDuration: 5)
+    let mapScrollEffect = WPTAudioNode(effect: "map_scroll")
     
     weak var actor: WPTLevelActorNode!
     
@@ -23,6 +24,8 @@ class WPTPortDockingHandler: SKNode {
         self.actor = actor
         super.init()
         self.name = WPTPortDockingHandler.nodeName
+        
+        self.addChild(mapScrollEffect)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,6 +46,7 @@ class WPTPortDockingHandler: SKNode {
             if let hud = (self.scene as? WPTLevelScene)?.hud {
                 hud.dockMenu.updateDoubloons()
                 hud.dockMenu.updateStats(item: (hud.dockMenu.itemPicker?.currentItem)!)
+                self.mapScrollEffect.playEffect()
                 hud.addChild(hud.dockMenu)
                 hud.bottom.anchor.startPress()
             }
