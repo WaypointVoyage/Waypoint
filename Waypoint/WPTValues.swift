@@ -59,6 +59,7 @@ class WPTValues {
     // level bahaviors
     static let playerPrepTime: TimeInterval = 4
     
+    static let defaultDifficulty: CGFloat = 1.0
     static let defaultMusicVolume: Float = 5.0
     static let defaultEffectsVolume: Float = 5.0
     static let defaultLeftyMode: Bool = false

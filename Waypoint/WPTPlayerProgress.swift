@@ -12,6 +12,7 @@ class WPTPlayerProgress: NSObject, NSCoding {
     // player stuff
     let shipName: String            // think of this as a name a person would give their ship
     let health: CGFloat
+    let difficulty: CGFloat         // determines difficulty scaling, this changes when a level is earned
     let completedLevels: [String]
     
     var levelDockInventory: [String:[ItemWrapper]]
@@ -24,6 +25,7 @@ class WPTPlayerProgress: NSObject, NSCoding {
     let cannonSet: [Int:Bool]
     
     init(player: WPTPlayer) {
+        self.difficulty = player.difficulty
         shipName = player.shipName
         health = player.health
         completedLevels = player.completedLevels
@@ -41,9 +43,10 @@ class WPTPlayerProgress: NSObject, NSCoding {
         self.levelDockInventory = [String:[ItemWrapper]]()
     }
     
-    init(shipName: String, ship: String, health: CGFloat? = nil, completedLevels: [String]? = nil, cannonBallImage: String? = nil, doubloons: Int = 0, items: [String]? = nil, cannonSet: [Int:Bool]?, levelDockInventory: [String:[ItemWrapper]]? = nil) {
+    init(shipName: String, ship: String, health: CGFloat? = nil, difficulty: CGFloat = 1.0, completedLevels: [String]? = nil, cannonBallImage: String? = nil, doubloons: Int = 0, items: [String]? = nil, cannonSet: [Int:Bool]?, levelDockInventory: [String:[ItemWrapper]]? = nil) {
         self.shipName = shipName
         self.ship = ship
+        self.difficulty = difficulty
         
         let shipModel = WPTShipCatalog.shipsByName[ship]!
         if let givenHealth: CGFloat = health {
@@ -79,6 +82,7 @@ class WPTPlayerProgress: NSObject, NSCoding {
     required init?(coder aDecoder: NSCoder) {
         self.shipName = aDecoder.decodeObject(forKey: "shipName") as! String
         self.health = aDecoder.decodeObject(forKey: "health") as! CGFloat
+        self.difficulty = aDecoder.decodeObject(forKey: "difficulty") as! CGFloat
         self.completedLevels = aDecoder.decodeObject(forKey: "completedLevels") as! [String]
         self.ship = aDecoder.decodeObject(forKey: "ship") as! String
         self.cannonBallImage = aDecoder.decodeObject(forKey: "cannonBallImage") as! String
@@ -91,6 +95,7 @@ class WPTPlayerProgress: NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(shipName, forKey: "shipName")
         aCoder.encode(health, forKey: "health")
+        aCoder.encode(difficulty, forKey: "difficulty")
         aCoder.encode(completedLevels, forKey: "completedLevels")
         aCoder.encode(ship, forKey: "ship")
         aCoder.encode(cannonBallImage, forKey: "cannonBallImage")

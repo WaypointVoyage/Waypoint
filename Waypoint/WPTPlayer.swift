@@ -12,11 +12,13 @@ class WPTPlayer: WPTActor {
     
     let shipName: String
     var health: CGFloat
+    var difficulty: CGFloat
     var completedLevels: [String]
     var progress: WPTPlayerProgress? = nil
     
-    init(ship: WPTShip, shipName: String, completedLevels: [String]? = nil) {
+    init(ship: WPTShip, shipName: String, completedLevels: [String]? = nil, difficulty: CGFloat) {
         self.shipName = shipName
+        self.difficulty = difficulty
         self.completedLevels = completedLevels ?? [String]()
         self.health = ship.health
         super.init(ship: ship)
@@ -29,6 +31,7 @@ class WPTPlayer: WPTActor {
         shipName = playerProgress.shipName
         health = playerProgress.health
         completedLevels = playerProgress.completedLevels
+        self.difficulty = playerProgress.difficulty
         
         let ship = WPTShip(other: WPTShipCatalog.shipsByName[playerProgress.ship]!)
         for i in 0..<ship.cannonSet.cannons.count {
