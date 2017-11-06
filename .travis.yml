@@ -7,6 +7,9 @@ podfile: Podfile
 
 notifications:
    email:
+      recipients:
+         - axis7818@gmail.com
+         - hils124@yahoo.com
       on_success: never
       on_failure: always
 
