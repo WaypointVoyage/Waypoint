@@ -22,7 +22,7 @@ class WPTConfig {
     let playSoundEffects = true     // toggle sound effects
     
     // testing
-    var testing = true                  // toggles general testing features
+    var testing = false                  // toggles general testing features
     var allUnlocked = false              // determines if all of the levels on the world map are unlocked and beaten
     var freeItems = false                // if true, all items are free
     var invincible = false               // if true, the player is invincible
