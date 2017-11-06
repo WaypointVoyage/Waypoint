@@ -17,12 +17,16 @@ class WPTWhirlpoolHandler: SKNode {
     
     weak var actor: WPTLevelActorNode!
     
+    let whirlpoolEffect = WPTAudioNode(effect: "whirlpool")
+    
     public private(set) var canEnterWhirlpool = true
     
     init(_ actor: WPTLevelActorNode) {
         self.actor = actor
         super.init()
         self.name = WPTWhirlpoolHandler.nodeName
+        
+        self.addChild(whirlpoolEffect)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +35,7 @@ class WPTWhirlpoolHandler: SKNode {
     
     func enterWhirlpool(damage: CGFloat = WPTWhirlpoolHandler.whirlpoolDamage) {
         self.canEnterWhirlpool = false
+        self.whirlpoolEffect.playEffect()
         self.actor.run(WPTWhirlpoolHandler.spin)
         self.actor.doDamage(damage)
     }

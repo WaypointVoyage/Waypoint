@@ -29,11 +29,15 @@
 		2D7B92411F75A3ED001F3E1F /* WPTTreasureReturnsWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B92401F75A3ED001F3E1F /* WPTTreasureReturnsWave.swift */; };
 		2D7BCCC81FAFC1380013A9B3 /* WPTSoundCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7BCCC71FAFC1380013A9B3 /* WPTSoundCatalog.swift */; };
 		2D7BCCCA1FAFC9810013A9B3 /* cannon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D7BCCC91FAFC9700013A9B3 /* cannon.wav */; };
-		2D7BCCCC1FAFCC950013A9B3 /* currency.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D7BCCCB1FAFCC930013A9B3 /* currency.wav */; };
+		2D7BCCCC1FAFCC950013A9B3 /* gem_drop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D7BCCCB1FAFCC930013A9B3 /* gem_drop.wav */; };
 		2D7BCCD01FAFD6D70013A9B3 /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D7BCCCF1FAFD6D50013A9B3 /* explosion.wav */; };
 		2D7BCCD21FAFD7560013A9B3 /* map_scroll.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D7BCCD11FAFD74C0013A9B3 /* map_scroll.wav */; };
 		2D7BCCD41FAFD7A70013A9B3 /* item_collection.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D7BCCD31FAFD7A50013A9B3 /* item_collection.wav */; };
 		2D7BCCD61FAFD80B0013A9B3 /* anchor.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D7BCCD51FAFD8070013A9B3 /* anchor.wav */; };
+		2D7BCCD81FB0DD290013A9B3 /* dice_roll.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D7BCCD71FB0DD260013A9B3 /* dice_roll.wav */; };
+		2D7BCCDA1FB0DE160013A9B3 /* coin_drop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D7BCCD91FB0DE130013A9B3 /* coin_drop.wav */; };
+		2D7BCCDC1FB0DEB00013A9B3 /* pearl_drop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D7BCCDB1FB0DEAB0013A9B3 /* pearl_drop.wav */; };
+		2D7BCCDE1FB0E0DC0013A9B3 /* whirlpool.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D7BCCDD1FB0E0D80013A9B3 /* whirlpool.wav */; };
 		2D7DCFF11E81FAA6003BCE30 /* WPTButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DCFF01E81FAA6003BCE30 /* WPTButtonNode.swift */; };
 		2D7DCFF31E826C55003BCE30 /* WPTBackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DCFF21E826C55003BCE30 /* WPTBackgroundNode.swift */; };
 		2D7FD1811E5801A1001B6208 /* WPTShipNamePopUpNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */; };
@@ -214,11 +218,15 @@
 		2D7B92401F75A3ED001F3E1F /* WPTTreasureReturnsWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTTreasureReturnsWave.swift; sourceTree = "<group>"; };
 		2D7BCCC71FAFC1380013A9B3 /* WPTSoundCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTSoundCatalog.swift; sourceTree = "<group>"; };
 		2D7BCCC91FAFC9700013A9B3 /* cannon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = cannon.wav; path = Resources/Music/Effects/cannon.wav; sourceTree = "<group>"; };
-		2D7BCCCB1FAFCC930013A9B3 /* currency.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = currency.wav; path = Resources/Music/Effects/currency.wav; sourceTree = "<group>"; };
+		2D7BCCCB1FAFCC930013A9B3 /* gem_drop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gem_drop.wav; path = Resources/Music/Effects/gem_drop.wav; sourceTree = "<group>"; };
 		2D7BCCCF1FAFD6D50013A9B3 /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = explosion.wav; path = Resources/Music/Effects/explosion.wav; sourceTree = "<group>"; };
 		2D7BCCD11FAFD74C0013A9B3 /* map_scroll.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = map_scroll.wav; path = Resources/Music/Effects/map_scroll.wav; sourceTree = "<group>"; };
 		2D7BCCD31FAFD7A50013A9B3 /* item_collection.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = item_collection.wav; path = Resources/Music/Effects/item_collection.wav; sourceTree = "<group>"; };
 		2D7BCCD51FAFD8070013A9B3 /* anchor.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = anchor.wav; path = Resources/Music/Effects/anchor.wav; sourceTree = "<group>"; };
+		2D7BCCD71FB0DD260013A9B3 /* dice_roll.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dice_roll.wav; path = Resources/Music/Effects/dice_roll.wav; sourceTree = "<group>"; };
+		2D7BCCD91FB0DE130013A9B3 /* coin_drop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = coin_drop.wav; path = Resources/Music/Effects/coin_drop.wav; sourceTree = "<group>"; };
+		2D7BCCDB1FB0DEAB0013A9B3 /* pearl_drop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pearl_drop.wav; path = Resources/Music/Effects/pearl_drop.wav; sourceTree = "<group>"; };
+		2D7BCCDD1FB0E0D80013A9B3 /* whirlpool.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = whirlpool.wav; path = Resources/Music/Effects/whirlpool.wav; sourceTree = "<group>"; };
 		2D7DCFF01E81FAA6003BCE30 /* WPTButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTButtonNode.swift; sourceTree = "<group>"; };
 		2D7DCFF21E826C55003BCE30 /* WPTBackgroundNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTBackgroundNode.swift; sourceTree = "<group>"; };
 		2D7FD1801E5801A1001B6208 /* WPTShipNamePopUpNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTShipNamePopUpNode.swift; sourceTree = "<group>"; };
@@ -498,12 +506,16 @@
 			children = (
 				2DC5BD161FAD07A400A51A4F /* anchor_up.wav */,
 				2DC5BD181FAD0D7300A51A4F /* bubbles.wav */,
+				2D7BCCDB1FB0DEAB0013A9B3 /* pearl_drop.wav */,
 				2D7BCCD11FAFD74C0013A9B3 /* map_scroll.wav */,
+				2D7BCCD91FB0DE130013A9B3 /* coin_drop.wav */,
+				2D7BCCD71FB0DD260013A9B3 /* dice_roll.wav */,
+				2D7BCCDD1FB0E0D80013A9B3 /* whirlpool.wav */,
 				2D7BCCCF1FAFD6D50013A9B3 /* explosion.wav */,
 				2D7BCCD51FAFD8070013A9B3 /* anchor.wav */,
 				2D7BCCD31FAFD7A50013A9B3 /* item_collection.wav */,
 				2D7BCCC91FAFC9700013A9B3 /* cannon.wav */,
-				2D7BCCCB1FAFCC930013A9B3 /* currency.wav */,
+				2D7BCCCB1FAFCC930013A9B3 /* gem_drop.wav */,
 				7E13F62D1E48ECAD00B5D2FD /* sword1.caf */,
 			);
 			name = Effects;
@@ -964,7 +976,7 @@
 				TargetAttributes = {
 					7E16B8541E2D580600933E24 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 66743KUV39;
+						DevelopmentTeam = 3GEHA95597;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -1008,6 +1020,7 @@
 				7EF866D41E83556D0012F2C7 /* 9_boom_about.plist in Resources */,
 				2D7BCCD61FAFD80B0013A9B3 /* anchor.wav in Resources */,
 				7E16B8661E2D580600933E24 /* Assets.xcassets in Resources */,
+				2D7BCCDE1FB0E0DC0013A9B3 /* whirlpool.wav in Resources */,
 				7ECA72ED1F9AC1DD00CB70BB /* tentacle_rise.fsh in Resources */,
 				2DC5BD131FACFD6900A51A4F /* main_menu_theme.wav in Resources */,
 				2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */,
@@ -1022,10 +1035,13 @@
 				7E15B66D1E83922E00A9B1DC /* repair_items.plist in Resources */,
 				2D6D53731E36871C00AFF40E /* BOOTERFZ.ttf in Resources */,
 				7EF866CB1E83556D0012F2C7 /* 0_setting_sail.plist in Resources */,
+				2D7BCCDC1FB0DEB00013A9B3 /* pearl_drop.wav in Resources */,
+				2D7BCCD81FB0DD290013A9B3 /* dice_roll.wav in Resources */,
+				2D7BCCDA1FB0DE160013A9B3 /* coin_drop.wav in Resources */,
 				2DC5BD191FAD0D7600A51A4F /* bubbles.wav in Resources */,
 				7E15B66C1E83922E00A9B1DC /* other_items.plist in Resources */,
 				7EC7F13B1F906993007530F8 /* wake_fill.fsh in Resources */,
-				2D7BCCCC1FAFCC950013A9B3 /* currency.wav in Resources */,
+				2D7BCCCC1FAFCC950013A9B3 /* gem_drop.wav in Resources */,
 				7E43CC771E54B844009367BC /* trail_map.plist in Resources */,
 				2DC5BD151FACFD6E00A51A4F /* waypoint.wav in Resources */,
 				2D1704471E7009890000827E /* explosion.sks in Resources */,
@@ -1431,10 +1447,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 66743KUV39;
+				DEVELOPMENT_TEAM = 3GEHA95597;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
+				PRODUCT_BUNDLE_IDENTIFIER = hils124;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1449,10 +1465,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 66743KUV39;
+				DEVELOPMENT_TEAM = 3GEHA95597;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
+				PRODUCT_BUNDLE_IDENTIFIER = hils124;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;

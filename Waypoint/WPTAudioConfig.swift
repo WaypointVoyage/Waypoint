@@ -16,6 +16,8 @@ class WPTAudioConfig: NSObject, NSCoding {
     private var currentMusicVolume: Float? = nil
     private var currentEffectsVolume: Float? = nil
     
+    static var audio: WPTAudioConfig = WPTAudioConfig()
+    
     // observers
     private var volumeObservers: [(Float) -> Void] = [(Float) -> Void]()
     
@@ -50,10 +52,7 @@ class WPTAudioConfig: NSObject, NSCoding {
         return WPTValues.defaultLeftyMode
     }
     
-    static var audio: WPTAudioConfig = WPTAudioConfig()
-    
     func getURL(song: String) -> URL {
-        self.currentSong = song
         let path = Bundle.main.path(forResource: song, ofType:nil)!
         let url = URL(fileURLWithPath: path)
         return url
@@ -84,6 +83,7 @@ class WPTAudioConfig: NSObject, NSCoding {
     func playSong(song: String) {
         if (backgroundMusic == nil || !(backgroundMusic?.isPlaying)! || currentSong != song) {
             do {
+                self.currentSong = song
                 backgroundMusic = try AVAudioPlayer(contentsOf: getURL(song: song))
                 backgroundMusic?.volume = getCurrentMusicVolume()
             }

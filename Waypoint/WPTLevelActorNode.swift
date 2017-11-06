@@ -14,7 +14,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     var currentHealth: CGFloat
     var teamBitMask: UInt32
     let cannonEffect = WPTAudioNode(effect: "cannon")
-    let currencyEffect = WPTAudioNode(effect: "currency")
+    let pearlDropEffect = WPTAudioNode(effect: "pearl_drop")
+    let gemDropEffect = WPTAudioNode(effect: "gem_drop")
+    let coinDropEffect = WPTAudioNode(effect: "coin_drop")
     let itemEffect = WPTAudioNode(effect: "item_collection")
     let anchorDownEffect = WPTAudioNode(effect: "anchor_down")
     let anchorUpEffect = WPTAudioNode(effect: "anchor_up")
@@ -84,7 +86,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         }
         self.addChild(cannonEffect)
         self.addChild(itemEffect)
-        self.addChild(currencyEffect)
+        self.addChild(pearlDropEffect)
+        self.addChild(gemDropEffect)
+        self.addChild(coinDropEffect)
         self.addChild(anchorUpEffect)
         self.addChild(anchorDownEffect)
         
@@ -250,7 +254,13 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             itemEffect.playEffect()
             actor.apply(item: item)
         case WPTItemTier.currency:
-            currencyEffect.playEffect()
+            if item.name.contains("Coin") {
+                coinDropEffect.playEffect()
+            } else if item.name.contains("Pearls") {
+                pearlDropEffect.playEffect()
+            } else {
+                gemDropEffect.playEffect()
+            }
         case WPTItemTier.repair:
             itemEffect.playEffect()
         case WPTItemTier.other:

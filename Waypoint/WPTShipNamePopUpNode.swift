@@ -14,6 +14,7 @@ class WPTShipNamePopUpNode: SKNode {
     let shipName = WPTLabelNode(text: "Ship Name", fontSize: WPTValues.fontSizeSmall)
     let startLevel = WPTButtonNode(text: "Start >", fontSize: WPTValues.fontSizeSmall)
     let background = SKSpriteNode(imageNamed: "pause_scroll")
+    let diceRollEffect = WPTAudioNode(effect: "dice_roll")
     var inputField: UITextField?
     var randomIcon: SKSpriteNode?
     var shipPicker: WPTShipPickerNode?
@@ -61,6 +62,8 @@ class WPTShipNamePopUpNode: SKNode {
         shipName.fontColor = UIColor.black
         shipName.position.y += 0.23 * background.size.height
         self.addChild(shipName)
+        
+        self.addChild(diceRollEffect)
     }
     
     func setInputField(inputField: UITextField) {
@@ -96,6 +99,7 @@ class WPTShipNamePopUpNode: SKNode {
             }
         }
         else if (self.randomIcon?.contains(touch.location(in: self)))! {
+            diceRollEffect.playEffect()
             let plistNames = Bundle.main.path(forResource: "random_ship_names", ofType: "plist")!
             let shipNames = NSArray(contentsOfFile: plistNames) as! [String]
             let randomName = shipNames[Int(arc4random_uniform(UInt32(shipNames.count)))]
