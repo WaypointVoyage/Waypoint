@@ -17,6 +17,11 @@ class GameViewController: UIViewController {
         WPTValues.initValues(deviceScreenSize: self.view.frame.size)
         
         if let view = self.view as! SKView? {
+            let storage = WPTStorage()
+            if let loadedThing = storage.loadGlobalSettings() {
+                WPTAudioConfig.setInstance(loadedThing)
+            }
+            
             view.presentScene(getSceneToLoad())
             
             // set up the view
@@ -30,7 +35,6 @@ class GameViewController: UIViewController {
                 view.showsPhysics = true
             }
             
-            let storage = WPTStorage()
             if WPTConfig.values.clearHighScoresOnLoad {
                 storage.deleteHighScores()
             }
@@ -39,9 +43,6 @@ class GameViewController: UIViewController {
             }
             if WPTConfig.values.clearGlobalSettings {
                 storage.clearGlobalSettings()
-            }
-            if let loadedThing = storage.loadGlobalSettings() {
-                WPTAudioConfig.setInstance(loadedThing)
             }
             
         }
