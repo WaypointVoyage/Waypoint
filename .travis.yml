@@ -1,7 +1,7 @@
 os: osx
 language: objective-c
 osx_image: xcode9
-xcode_project: Waypoint.xcproject
+xcode_project: Waypoint.xcodeproj
 xcode_scheme: WaypointTravisCI
 podfile: Podfile
 
