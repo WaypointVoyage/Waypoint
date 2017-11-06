@@ -90,15 +90,14 @@ class WPTTentacleWave: WPTLevelWave {
     override init(_ waveDict: [String:AnyObject]) {
         self.tentacleCount = waveDict["tentacleCount"] as! Int
         super.init(waveDict)
-        
-        assert(self.tentacleCount >= 1)
     }
     
     func setup(scene: WPTLevelScene, isStatic: Bool) {
         super.setup(scene: scene)
         
         for _ in 0..<self.tentacleCount {
-            let tentacle = WPTLevelTentacleNode(isStatic: isStatic, player: scene.player, submerged: true)
+            let type = isStatic ? WPTTentacleEnemyType.STATIC_TENTACLE : WPTTentacleEnemyType.DYNAMIC_TENTACLE
+            let tentacle = WPTLevelTentacleNode(type: type, player: scene.player, submerged: true)
             tentacle.onDeath {
                 self.killedTentacles += 1
                 print("\(self.tentacleCount - self.killedTentacles) tentacles left")

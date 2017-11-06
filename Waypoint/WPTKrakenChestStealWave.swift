@@ -44,7 +44,7 @@ class WPTKrakenChestStealWave: WPTLevelWave {
         let tentaclePos = self.scene.level.xMarksTheSpot! + 1.14 * delta
         
         // make the tentacle
-        let tentacle = WPTLevelTentacleNode(isStatic: true, player: self.scene.player, submerged: true)
+        let tentacle = WPTLevelTentacleNode(type: WPTTentacleEnemyType.STATIC_TENTACLE, player: self.scene.player, submerged: true)
         tentacle.zRotation = CGVector(start: tentaclePos, end: self.scene.level.xMarksTheSpot!).angle()
         tentacle.position = tentaclePos
         self.scene.terrain.addEnemy(tentacle)
