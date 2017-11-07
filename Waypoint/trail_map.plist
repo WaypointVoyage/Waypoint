@@ -8,16 +8,16 @@
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.16837481698389459</real>
+				<real>0.1683748169838946</real>
 				<key>y</key>
-				<real>0.77623230844314306</real>
+				<real>0.7762323084431431</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.14641288433382138</real>
+				<real>0.1464128843338214</real>
 				<key>y</key>
-				<real>0.71766715470961451</real>
+				<real>0.7176671547096145</real>
 			</dict>
 			<key>levelNamed</key>
 			<string>1_sea_legs</string>
@@ -26,57 +26,57 @@
 				<key>x</key>
 				<real>0.1061493411420205</real>
 				<key>y</key>
-				<real>0.65910200097608596</real>
+				<real>0.659102000976086</real>
 			</dict>
 		</dict>
 		<dict>
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.043191800878477307</real>
+				<real>0.04319180087847731</real>
 				<key>y</key>
-				<real>0.56149341142020504</real>
+				<real>0.561493411420205</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.036603221083455345</real>
+				<real>0.03660322108345535</real>
 				<key>y</key>
-				<real>0.49511957052220601</real>
+				<real>0.495119570522206</real>
 			</dict>
 			<key>levelNamed</key>
 			<string>2_pegleg_plunder</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
-				<real>0.034773060029282578</real>
+				<real>0.03477306002928258</real>
 				<key>y</key>
-				<real>0.46323409793395154</real>
+				<real>0.4632340979339515</real>
 			</dict>
 		</dict>
 		<dict>
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.043923865300146414</real>
+				<real>0.04392386530014641</real>
 				<key>y</key>
-				<real>0.30250528713193425</real>
+				<real>0.3025052871319343</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.077964860907759878</real>
+				<real>0.07796486090775988</real>
 				<key>y</key>
-				<real>0.53090938669269561</real>
+				<real>0.5309093866926956</real>
 			</dict>
 			<key>levelNamed</key>
 			<string>3_cutlass_careen</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
-				<real>0.23169838945827234</real>
+				<real>0.2316983894582723</real>
 				<key>y</key>
-				<real>0.31226614608752234</real>
+				<real>0.3122661460875223</real>
 			</dict>
 		</dict>
 		<dict>
@@ -85,32 +85,32 @@
 				<key>x</key>
 				<real>0.3480966325036603</real>
 				<key>y</key>
-				<real>0.14503009598177974</real>
+				<real>0.1450300959817797</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.10029282576866765</real>
+				<real>0.1002928257686676</real>
 				<key>y</key>
-				<real>0.33178786399869853</real>
+				<real>0.3317878639986985</real>
 			</dict>
 			<key>levelNamed</key>
 			<string>4_fire_in_the_hole</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
-				<real>0.14970717423133237</real>
+				<real>0.1497071742313324</real>
 				<key>y</key>
-				<real>0.22571986334797467</real>
+				<real>0.2257198633479747</real>
 			</dict>
 		</dict>
 		<dict>
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.18740849194729137</real>
+				<real>0.1874084919472914</real>
 				<key>y</key>
-				<real>0.090369285830486423</real>
+				<real>0.09036928583048642</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
@@ -126,57 +126,57 @@
 				<key>x</key>
 				<real>0.3349194729136164</real>
 				<key>y</key>
-				<real>0.26150967951846427</real>
+				<real>0.2615096795184643</real>
 			</dict>
 		</dict>
 		<dict>
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.44363103953147875</real>
+				<real>0.4436310395314788</real>
 				<key>y</key>
-				<real>0.34350089474540424</real>
+				<real>0.3435008947454042</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.45131771595900438</real>
+				<real>0.4513177159590044</real>
 				<key>y</key>
 				<real>0.363673336586953</real>
 			</dict>
 			<key>levelNamed</key>
-			<string>6_davy_jones_locker</string>
+			<string>6_shiver_me_timbers</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
-				<real>0.40263543191800877</real>
+				<real>0.4026354319180088</real>
 				<key>y</key>
-				<real>0.42939645355457945</real>
+				<real>0.4293964535545794</real>
 			</dict>
 		</dict>
 		<dict>
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.41947291361639827</real>
+				<real>0.4194729136163983</real>
 				<key>y</key>
-				<real>0.56149341142020504</real>
+				<real>0.561493411420205</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.53147877013177158</real>
+				<real>0.5314787701317716</real>
 				<key>y</key>
 				<real>0.7059541239629088</real>
 			</dict>
 			<key>levelNamed</key>
-			<string>7_letter_of_marque</string>
+			<string>7_all_hands_on_deck</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
-				<real>0.58491947291361635</real>
+				<real>0.5849194729136163</real>
 				<key>y</key>
-				<real>0.51594273629412724</real>
+				<real>0.5159427362941272</real>
 			</dict>
 		</dict>
 		<dict>
@@ -185,64 +185,64 @@
 				<key>x</key>
 				<real>0.6350658857979502</real>
 				<key>y</key>
-				<real>0.74174394013339839</real>
+				<real>0.7417439401333984</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.71266471449487556</real>
+				<real>0.7126647144948756</real>
 				<key>y</key>
-				<real>0.78599316739873104</real>
+				<real>0.785993167398731</real>
 			</dict>
 			<key>levelNamed</key>
 			<string>8_give_no_quarter</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
-				<real>0.75256222547584184</real>
+				<real>0.7525622254758418</real>
 				<key>y</key>
-				<real>0.64088173092565481</real>
+				<real>0.6408817309256548</real>
 			</dict>
 		</dict>
 		<dict>
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.59407027818448022</real>
+				<real>0.5940702781844802</real>
 				<key>y</key>
-				<real>0.74044249227265335</real>
+				<real>0.7404424922726534</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.64311859443631036</real>
+				<real>0.6431185944363104</real>
 				<key>y</key>
-				<real>0.36822840409956081</real>
+				<real>0.3682284040995608</real>
 			</dict>
 			<key>levelNamed</key>
 			<string>9_boom_about</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
-				<real>0.74743777452415816</real>
+				<real>0.7474377745241582</real>
 				<key>y</key>
-				<real>0.54327314136977389</real>
+				<real>0.5432731413697739</real>
 			</dict>
 		</dict>
 		<dict>
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.75512445095168379</real>
+				<real>0.7551244509516838</real>
 				<key>y</key>
-				<real>0.41768342280787374</real>
+				<real>0.4176834228078737</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
-				<real>0.72437774524158127</real>
+				<real>0.7243777452415813</real>
 				<key>y</key>
-				<real>0.34675451439726701</real>
+				<real>0.346754514397267</real>
 			</dict>
 			<key>levelNamed</key>
 			<string>10_high_seas</string>
@@ -251,32 +251,32 @@
 				<key>x</key>
 				<real>0.6519033674963397</real>
 				<key>y</key>
-				<real>0.31291687001789492</real>
+				<real>0.3129168700178949</real>
 			</dict>
 		</dict>
 		<dict>
 			<key>controlPoint1</key>
 			<dict>
 				<key>x</key>
-				<real>0.55600292825768671</real>
+				<real>0.5560029282576867</real>
 				<key>y</key>
-				<real>0.28298356922075807</real>
+				<real>0.2829835692207581</real>
 			</dict>
 			<key>controlPoint2</key>
 			<dict>
 				<key>x</key>
 				<real>0.7141288433382138</real>
 				<key>y</key>
-				<real>0.13331706523507403</real>
+				<real>0.133317065235074</real>
 			</dict>
 			<key>levelNamed</key>
-			<string>11_shiver_me_timbers</string>
+			<string>11_x_marks_the_spot</string>
 			<key>target</key>
 			<dict>
 				<key>x</key>
-				<real>0.84846266471449483</real>
+				<real>0.8484626647144948</real>
 				<key>y</key>
-				<real>0.21010248901903372</real>
+				<real>0.2101024890190337</real>
 			</dict>
 		</dict>
 	</array>
@@ -287,9 +287,9 @@
 		<key>target</key>
 		<dict>
 			<key>x</key>
-			<real>0.12079062957540264</real>
+			<real>0.1207906295754026</real>
 			<key>y</key>
-			<real>0.83154384252480884</real>
+			<real>0.8315438425248088</real>
 		</dict>
 	</dict>
 </dict>

@@ -174,12 +174,12 @@
 		7EF866CE1E83556D0012F2C7 /* 3_cutlass_careen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C21E83556D0012F2C7 /* 3_cutlass_careen.plist */; };
 		7EF866CF1E83556D0012F2C7 /* 4_fire_in_the_hole.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C31E83556D0012F2C7 /* 4_fire_in_the_hole.plist */; };
 		7EF866D01E83556D0012F2C7 /* 5_dead_men_tell_no_tales.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C41E83556D0012F2C7 /* 5_dead_men_tell_no_tales.plist */; };
-		7EF866D11E83556D0012F2C7 /* 6_davy_jones_locker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C51E83556D0012F2C7 /* 6_davy_jones_locker.plist */; };
-		7EF866D21E83556D0012F2C7 /* 7_letter_of_marque.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C61E83556D0012F2C7 /* 7_letter_of_marque.plist */; };
+		7EF866D11E83556D0012F2C7 /* 6_shiver_me_timbers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C51E83556D0012F2C7 /* 6_shiver_me_timbers.plist */; };
+		7EF866D21E83556D0012F2C7 /* 7_all_hands_on_deck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C61E83556D0012F2C7 /* 7_all_hands_on_deck.plist */; };
 		7EF866D31E83556D0012F2C7 /* 8_give_no_quarter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C71E83556D0012F2C7 /* 8_give_no_quarter.plist */; };
 		7EF866D41E83556D0012F2C7 /* 9_boom_about.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C81E83556D0012F2C7 /* 9_boom_about.plist */; };
 		7EF866D51E83556D0012F2C7 /* 10_high_seas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866C91E83556D0012F2C7 /* 10_high_seas.plist */; };
-		7EF866D61E83556D0012F2C7 /* 11_shiver_me_timbers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866CA1E83556D0012F2C7 /* 11_shiver_me_timbers.plist */; };
+		7EF866D61E83556D0012F2C7 /* 11_x_marks_the_spot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF866CA1E83556D0012F2C7 /* 11_x_marks_the_spot.plist */; };
 		D1A59AC5F61DA7F4238F2395 /* Pods_WaypointContentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E79E8B2ECCA8ADACECFD8E0 /* Pods_WaypointContentTests.framework */; };
 		F9E4069B75C814D21F31D326 /* Pods_Waypoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6401F9B4D802B65EE2CE6CD /* Pods_Waypoint.framework */; };
 /* End PBXBuildFile section */
@@ -369,12 +369,12 @@
 		7EF866C21E83556D0012F2C7 /* 3_cutlass_careen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 3_cutlass_careen.plist; sourceTree = "<group>"; };
 		7EF866C31E83556D0012F2C7 /* 4_fire_in_the_hole.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 4_fire_in_the_hole.plist; sourceTree = "<group>"; };
 		7EF866C41E83556D0012F2C7 /* 5_dead_men_tell_no_tales.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 5_dead_men_tell_no_tales.plist; sourceTree = "<group>"; };
-		7EF866C51E83556D0012F2C7 /* 6_davy_jones_locker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 6_davy_jones_locker.plist; sourceTree = "<group>"; };
-		7EF866C61E83556D0012F2C7 /* 7_letter_of_marque.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 7_letter_of_marque.plist; sourceTree = "<group>"; };
+		7EF866C51E83556D0012F2C7 /* 6_shiver_me_timbers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 6_shiver_me_timbers.plist; sourceTree = "<group>"; };
+		7EF866C61E83556D0012F2C7 /* 7_all_hands_on_deck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 7_all_hands_on_deck.plist; sourceTree = "<group>"; };
 		7EF866C71E83556D0012F2C7 /* 8_give_no_quarter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 8_give_no_quarter.plist; sourceTree = "<group>"; };
 		7EF866C81E83556D0012F2C7 /* 9_boom_about.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 9_boom_about.plist; sourceTree = "<group>"; };
 		7EF866C91E83556D0012F2C7 /* 10_high_seas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 10_high_seas.plist; sourceTree = "<group>"; };
-		7EF866CA1E83556D0012F2C7 /* 11_shiver_me_timbers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 11_shiver_me_timbers.plist; sourceTree = "<group>"; };
+		7EF866CA1E83556D0012F2C7 /* 11_x_marks_the_spot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 11_x_marks_the_spot.plist; sourceTree = "<group>"; };
 		9E79E8B2ECCA8ADACECFD8E0 /* Pods_WaypointContentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaypointContentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EFB10BE7DE075DAA378CE83 /* Pods-WaypointContentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaypointContentTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaypointContentTests/Pods-WaypointContentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D6401F9B4D802B65EE2CE6CD /* Pods_Waypoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Waypoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -737,12 +737,12 @@
 				7EF866C21E83556D0012F2C7 /* 3_cutlass_careen.plist */,
 				7EF866C31E83556D0012F2C7 /* 4_fire_in_the_hole.plist */,
 				7EF866C41E83556D0012F2C7 /* 5_dead_men_tell_no_tales.plist */,
-				7EF866C51E83556D0012F2C7 /* 6_davy_jones_locker.plist */,
-				7EF866C61E83556D0012F2C7 /* 7_letter_of_marque.plist */,
+				7EF866C51E83556D0012F2C7 /* 6_shiver_me_timbers.plist */,
+				7EF866C61E83556D0012F2C7 /* 7_all_hands_on_deck.plist */,
 				7EF866C71E83556D0012F2C7 /* 8_give_no_quarter.plist */,
 				7EF866C81E83556D0012F2C7 /* 9_boom_about.plist */,
 				7EF866C91E83556D0012F2C7 /* 10_high_seas.plist */,
-				7EF866CA1E83556D0012F2C7 /* 11_shiver_me_timbers.plist */,
+				7EF866CA1E83556D0012F2C7 /* 11_x_marks_the_spot.plist */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -1024,7 +1024,7 @@
 				7ECA72ED1F9AC1DD00CB70BB /* tentacle_rise.fsh in Resources */,
 				2DC5BD131FACFD6900A51A4F /* main_menu_theme.wav in Resources */,
 				2D1703D71E590F8C0000827E /* random_ship_names.plist in Resources */,
-				7EF866D61E83556D0012F2C7 /* 11_shiver_me_timbers.plist in Resources */,
+				7EF866D61E83556D0012F2C7 /* 11_x_marks_the_spot.plist in Resources */,
 				7EBF5E6B1E4E213A00F81982 /* stat_bar.fsh in Resources */,
 				7EF866CF1E83556D0012F2C7 /* 4_fire_in_the_hole.plist in Resources */,
 				7ED963341E7DEA4900B58C1C /* brains.plist in Resources */,
@@ -1059,9 +1059,9 @@
 				2DC5BD171FAD07A800A51A4F /* anchor_up.wav in Resources */,
 				7E93E91B1E985A8B002CF452 /* anchored_indicator.fsh in Resources */,
 				7EF866CD1E83556D0012F2C7 /* 2_pegleg_plunder.plist in Resources */,
-				7EF866D11E83556D0012F2C7 /* 6_davy_jones_locker.plist in Resources */,
+				7EF866D11E83556D0012F2C7 /* 6_shiver_me_timbers.plist in Resources */,
 				7E73A0A91E4A6F09008F6DA8 /* trail_shader.fsh in Resources */,
-				7EF866D21E83556D0012F2C7 /* 7_letter_of_marque.plist in Resources */,
+				7EF866D21E83556D0012F2C7 /* 7_all_hands_on_deck.plist in Resources */,
 				2D7BCCD41FAFD7A70013A9B3 /* item_collection.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
