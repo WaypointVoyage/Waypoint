@@ -11,16 +11,26 @@ import SwiftySound
 
 class WPTSoundCatalog {
     static let allSounds: [SoundWrapper] = {
-        var sounds = [SoundWrapper]();
         
+        
+        var sounds = [SoundWrapper]();
+        Sound.playersPerSound = 20
         let cannonEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "cannon.wav"))!, name: "cannon")
+        
+        Sound.playersPerSound = 20
+        let coinDropEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "coin_drop.wav"))!, name: "coin_drop")
+        
+        Sound.playersPerSound = 18
+        let gemDropEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "gem_drop.wav"))!, name: "gem_drop")
+        
+        Sound.playersPerSound = 2
+        let pearlDropEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "pearl_drop.wav"))!, name: "pearl_drop")
+        
+        Sound.playersPerSound = 1
         let itemCollectionEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "item_collection.wav"))!, name: "item_collection")
         let anchorUpEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "anchor_up.wav"))!, name: "anchor_up")
         let bubblesEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "bubbles.wav"))!, name: "bubbles")
         let mapScrollEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "map_scroll.wav"))!, name: "map_scroll")
-        let pearlDropEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "pearl_drop.wav"))!, name: "pearl_drop")
-        let gemDropEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "gem_drop.wav"))!, name: "gem_drop")
-        let coinDropEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "coin_drop.wav"))!, name: "coin_drop")
         let explosionEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "explosion.wav"))!, name: "explosion")
         let anchorEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "anchor.wav"))!, name: "anchor_down")
         let diceRollEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "dice_roll.wav"))!, name: "dice_roll")

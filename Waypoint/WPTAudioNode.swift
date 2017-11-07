@@ -27,7 +27,6 @@ class WPTAudioNode : SKNode {
     }
     
     func playEffect() {
-        self.audio.stop()
         self.audio.play(numberOfLoops: 0)
         
     }

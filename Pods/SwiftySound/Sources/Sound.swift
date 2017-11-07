@@ -70,7 +70,7 @@ open class Sound {
     public static var playersPerSound: Int = 5 {
         didSet {
             stopAll()
-            sounds.removeAll()
+//            sounds.removeAll()
         }
     }
 
