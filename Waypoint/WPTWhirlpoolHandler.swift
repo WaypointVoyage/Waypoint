@@ -35,7 +35,15 @@ class WPTWhirlpoolHandler: SKNode {
     
     func enterWhirlpool(damage: CGFloat = WPTWhirlpoolHandler.whirlpoolDamage) {
         self.canEnterWhirlpool = false
-        self.whirlpoolEffect.playEffect()
+        if let scene = self.scene as? WPTLevelScene {
+            print(scene.getSceneFrame())
+            print(self.actor.position)
+            if scene.getSceneFrame().contains(self.actor.position) {
+                print("Whirlpool Noise!")
+                print(self.actor.name ?? "Yo")
+                self.whirlpoolEffect.playEffect()
+            }
+        }
         self.actor.run(WPTWhirlpoolHandler.spin)
         self.actor.doDamage(damage)
     }

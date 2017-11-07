@@ -225,4 +225,12 @@ class WPTLevelScene: WPTScene {
     func alert(header: String, desc: String) {
         self.hud.bottom.alert.show(header: header, desc: desc)
     }
+    
+    func getSceneFrame() -> CGRect {
+        let sceneWidth = self.scene!.size.width * self.cam.xScale
+        let sceneHeight = self.scene!.size.height * self.cam.yScale
+        
+        let origin = CGPoint(x: self.cam.position.x - sceneWidth / 2, y: self.cam.position.y - sceneHeight / 2)
+        return CGRect(origin: origin, size: CGSize(width: sceneWidth, height: sceneHeight))
+    }
 }
