@@ -13,6 +13,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     var player: WPTPlayer { return self.actor as! WPTPlayer }
     var portHandler: WPTPortDockingHandler! = nil
     
+    let mapScrollEffect = WPTAudioNode(effect: "map_scroll")
     let reticle = WPTReticleNode()
     var itemRad: WPTItemCollectorNode! = nil
     
@@ -37,6 +38,8 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         self.addChild(itemRad)
         
         self.physicsBody!.collisionBitMask |= WPTValues.boundaryCbm
+        
+        self.addChild(mapScrollEffect)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -97,6 +100,8 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
                 scene.hud.bottom.hideBorder()
                 scene.hud.addChild(scene.hud.pauseShroud)
                 scene.hud.destroyMenu.updateMoney()
+                
+                mapScrollEffect.playEffect()
                 WPTAudioConfig.audio.playSong(song: "level_map_theme.wav")
                 scene.hud.addChild(scene.hud.destroyMenu)
                 
