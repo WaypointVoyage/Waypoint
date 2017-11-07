@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTSettingsScene: WPTScene {
     
-    let background = WPTBackgroundNode(image: "beach_scene")
+    let background = WPTBackgroundNode(image: "simple_beach_scene")
     let headerLabel = WPTLabelNode(text: "Settings", fontSize: WPTValues.fontSizeLarge)
     var effectSlider: WPTSliderNode!
     var musicSlider: WPTSliderNode!
