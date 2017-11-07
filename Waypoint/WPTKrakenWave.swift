@@ -94,7 +94,6 @@ class WPTKrakenWave: WPTTentacleWave {
     }
     
     override func isComplete(scene: WPTLevelScene) -> Bool {
-        //return self.krakenIsDead && super.isComplete(scene: scene)
-        return super.isComplete(scene: scene)
+        return self.krakenIsDead && super.isComplete(scene: scene)
     }
 }
