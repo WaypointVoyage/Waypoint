@@ -82,7 +82,7 @@ class WPTShipNamePopUpNode: SKNode {
             let shipName = self.inputField?.text
             self.inputField?.removeFromSuperview()
             let ship = WPTShip(other: self.shipPicker!.currentShip)
-            let player = WPTPlayer(ship: ship, shipName: shipName!)
+            let player = WPTPlayer(ship: ship, shipName: shipName!, difficulty: WPTValues.defaultDifficulty)
             
             // wipe the old save with the new one
             let storage = WPTStorage()

@@ -11,7 +11,7 @@ import SpriteKit
 // wave 5 in the final boss
 class WPTKrakenWave: WPTTentacleWave {
     
-    private var kraken: WPTLevelEnemyNode! = nil
+    private var kraken: WPTLevelTentacleNode! = nil
     private let krakenLocation: CGPoint
     private let bubbleDuration: TimeInterval
     private let tentacleBubbleDuration: TimeInterval
@@ -71,23 +71,26 @@ class WPTKrakenWave: WPTTentacleWave {
     }
     
     private func spawnKraken() {
-        self.kraken = WPTLevelEnemyNode(enemy: WPTEnemyCatalog.enemiesByName["Kraken"]!, player: self.scene.player)
+        self.kraken = WPTLevelTentacleNode(type: WPTTentacleEnemyType.KRAKEN_HEAD, player: self.scene.player, submerged: false)
         self.kraken.position = self.krakenLocation
         self.kraken.onDeath {
             self.krakenIsDead = true
         }
+        self.scene.terrain.addEnemy(self.kraken)
         
-        let bubbles = WPTBubbleSquareSurfaceNode(width: 1000, height: 600, amount: 3, time: 0.6)
-        bubbles.position = self.krakenLocation
-        
-        self.scene.terrain.addChild(bubbles)
-        bubbles.run(SKAction.wait(forDuration: self.bubbleDuration)) {
-            self.scene.terrain.addEnemy(self.kraken)
-            
-            bubbles.run(SKAction.wait(forDuration: 1.0)) {
-                bubbles.removeFromParent()
-            }
+        self.kraken.run(SKAction.wait(forDuration: 3)) {
+            self.kraken.surface(duration: 1.5)
         }
+        
+//        let bubbles = WPTBubbleSquareSurfaceNode(width: 1000, height: 600, amount: 3, time: 0.6)
+//        bubbles.position = self.krakenLocation
+//        self.scene.terrain.addChild(bubbles)
+//        bubbles.run(SKAction.wait(forDuration: self.bubbleDuration)) {
+//            self.scene.terrain.addEnemy(self.kraken)
+//            bubbles.run(SKAction.wait(forDuration: 1.0)) {
+//                bubbles.removeFromParent()
+//            }
+//        }
     }
     
     override func isComplete(scene: WPTLevelScene) -> Bool {

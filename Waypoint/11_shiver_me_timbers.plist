@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>difficulty</key>
+	<integer>300</integer>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
@@ -451,7 +453,7 @@
 			<key>bubbleDuration</key>
 			<integer>2</integer>
 			<key>tentacleCount</key>
-			<integer>8</integer>
+			<integer>1</integer>
 			<key>special</key>
 			<string>WPTTentacle1Wave</string>
 		</dict>
@@ -467,7 +469,7 @@
 			<key>surroundPlayerRadius</key>
 			<integer>512</integer>
 			<key>tentacleCount</key>
-			<integer>8</integer>
+			<integer>1</integer>
 			<key>special</key>
 			<string>WPTTentacle2Wave</string>
 		</dict>
@@ -477,7 +479,7 @@
 			<key>tentacleSpawnRadius</key>
 			<integer>800</integer>
 			<key>tentacleCount</key>
-			<integer>8</integer>
+			<integer>1</integer>
 			<key>bubbleDuration</key>
 			<integer>3</integer>
 			<key>krakenLocation</key>

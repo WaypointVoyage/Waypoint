@@ -23,12 +23,21 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     private var holdPhysics: SKPhysicsBody? = nil
     private var physicsChild: SKNode? = nil
     
-    init(isStatic: Bool = true, player: WPTLevelPlayerNode, submerged: Bool) {
-        self.isStatic = isStatic
-        let enemyName = isStatic ? "Static Tentacle" : "Dynamic Tentacle"
-        self.tentacleEnemy = WPTEnemyCatalog.enemiesByName[enemyName]!
-        
-        self.bubbles = WPTBubbleSquareSurfaceNode(width: 100, height: 100, amount: 3, time: 0.6)
+    init(type: WPTTentacleEnemyType, player: WPTLevelPlayerNode, submerged: Bool) {
+        switch (type) {
+        case .STATIC_TENTACLE:
+            self.isStatic = true
+            self.tentacleEnemy = WPTEnemyCatalog.enemiesByName["Static Tentacle"]!
+            self.bubbles = WPTBubbleSquareSurfaceNode(width: 100, height: 100, amount: 3, time: 0.6)
+        case .DYNAMIC_TENTACLE:
+            self.isStatic = false
+            self.tentacleEnemy = WPTEnemyCatalog.enemiesByName["Dynamic Tentacle"]!
+            self.bubbles = WPTBubbleSquareSurfaceNode(width: 100, height: 100, amount: 3, time: 0.6)
+        case .KRAKEN_HEAD:
+            self.isStatic = true
+            self.tentacleEnemy = WPTEnemyCatalog.enemiesByName["Kraken"]!
+            self.bubbles = WPTBubbleSquareSurfaceNode(width: 200, height: 1000, amount: 30, time: 0.6)
+        }
         
         super.init(enemy: self.tentacleEnemy, player: player)
         self.zPosition = player.zPosition + 1
@@ -140,4 +149,10 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         self.physicsChild?.removeFromParent()
         self.physicsChild = nil
     }
+}
+
+enum WPTTentacleEnemyType {
+    case STATIC_TENTACLE
+    case DYNAMIC_TENTACLE
+    case KRAKEN_HEAD
 }

@@ -33,28 +33,28 @@
 		<key>colliderPath</key>
 		<array>
 			<array>
-				<integer>14</integer>
-				<integer>931</integer>
+				<integer>25</integer>
+				<integer>836</integer>
 			</array>
 			<array>
-				<integer>348</integer>
-				<integer>929</integer>
+				<integer>221</integer>
+				<integer>956</integer>
 			</array>
 			<array>
-				<integer>374</integer>
-				<integer>365</integer>
+				<integer>215</integer>
+				<integer>201</integer>
 			</array>
 			<array>
-				<integer>8</integer>
-				<integer>362</integer>
+				<integer>29</integer>
+				<integer>316</integer>
 			</array>
 		</array>
 		<key>colliderOffset</key>
 		<dict>
 			<key>x</key>
-			<integer>0</integer>
+			<integer>-1200</integer>
 			<key>y</key>
-			<integer>0</integer>
+			<integer>-1200</integer>
 		</dict>
 		<key>cannonSet</key>
 		<array/>

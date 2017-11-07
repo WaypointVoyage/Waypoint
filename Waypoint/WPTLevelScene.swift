@@ -72,6 +72,14 @@ class WPTLevelScene: WPTScene {
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
+        // difficulty
+        if self.level.difficulty > self.player.player.difficulty {
+            self.player.player.difficulty = self.level.difficulty
+            NSLog("Difficulty level increased from \(self.player.player.difficulty) to \(self.level.difficulty)")
+        } else {
+            NSLog("Scene starting with difficulty \(self.player.player.difficulty)")
+        }
+        
         // camera
         cam = SKCameraNode()
         self.camera = cam

@@ -13,6 +13,7 @@ class WPTLevel {
     let name: String
     let size: CGSize
     let spawnPoint: CGPoint
+    let difficulty: CGFloat  // augments various components of the level to scale difficulty
     
     let port: WPTPort?
     
@@ -42,6 +43,8 @@ class WPTLevel {
         
         self.name = levelDict["name"] as! String
         self.hasTutorial = (levelDict["hasTutorial"] as? Bool) == true
+        
+        self.difficulty = levelDict["difficulty"] as! CGFloat
         
         let sizeDict = levelDict["size"] as! [String: CGFloat]
         self.size = CGSize(width: sizeDict["width"]!, height: sizeDict["height"]!)
