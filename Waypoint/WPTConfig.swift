@@ -69,7 +69,6 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
 
 class WPTLevelModeConfig {
 
-    let levelFileName: String = "8_give_no_quarter"  // the name of the level file to load
     let levelFileName: String = "11_shiver_me_timbers"  // the name of the level file to load
     
     // singleton instance
