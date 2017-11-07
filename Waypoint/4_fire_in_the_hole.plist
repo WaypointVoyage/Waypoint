@@ -13,6 +13,8 @@
 	</dict>
 	<key>name</key>
 	<string>Fire In The Hole!</string>
+	<key>number</key>
+	<integer>5</integer>
 	<key>port</key>
 	<dict>
 		<key>position</key>

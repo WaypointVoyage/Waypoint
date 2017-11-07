@@ -13,6 +13,8 @@
 	</dict>
 	<key>name</key>
 	<string>Pegleg Plunder</string>
+	<key>number</key>
+	<integer>3</integer>
 	<key>port</key>
 	<dict>
 		<key>position</key>

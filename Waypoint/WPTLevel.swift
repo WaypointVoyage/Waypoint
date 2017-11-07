@@ -11,6 +11,7 @@ import SpriteKit
 class WPTLevel {
     
     let name: String
+    let number: Int
     let size: CGSize
     let spawnPoint: CGPoint
     let difficulty: CGFloat  // augments various components of the level to scale difficulty
@@ -40,8 +41,10 @@ class WPTLevel {
     init(_ levelFileNamed: String) {
         let plistPath = Bundle.main.path(forResource: levelFileNamed, ofType: "plist")!
         let levelDict = NSDictionary(contentsOfFile: plistPath) as! [String: AnyObject]
-        
         self.name = levelDict["name"] as! String
+        
+        self.number = levelDict["number"] as! Int
+        
         self.hasTutorial = (levelDict["hasTutorial"] as? Bool) == true
         
         self.difficulty = levelDict["difficulty"] as! CGFloat

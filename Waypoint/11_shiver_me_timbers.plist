@@ -11,6 +11,8 @@
 	</dict>
 	<key>name</key>
 	<string>X Marks The Spot</string>
+	<key>number</key>
+	<integer>12</integer>
 	<key>size</key>
 	<dict>
 		<key>height</key>

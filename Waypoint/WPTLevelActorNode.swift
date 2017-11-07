@@ -264,7 +264,10 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         case WPTItemTier.repair:
             itemEffect.playEffect()
         case WPTItemTier.other:
-            if item.name == "Cannon" { addCannon() }
+            if item.name == "Cannon" {
+                cannonEffect.playEffect()
+                addCannon()
+            }
         }
     }
     
