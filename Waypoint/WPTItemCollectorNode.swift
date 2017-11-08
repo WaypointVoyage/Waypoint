@@ -50,8 +50,6 @@ class WPTItemCollectorNode: SKNode, WPTUpdatable {
                     
                     let vel = mag * offset.normalized()
                     itemPhys.velocity = vel
-                } else {
-                    print("no physics...")
                 }
                 
                 item.duration += CGFloat(deltaTime)

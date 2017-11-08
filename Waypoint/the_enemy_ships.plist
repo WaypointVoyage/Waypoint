@@ -3,6 +3,13 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>imageOffset</key>
+		<dict>
+			<key>x</key>
+			<real>1100</real>
+			<key>y</key>
+			<integer>0</integer>
+		</dict>
 		<key>stats</key>
 		<dict>
 			<key>damageScale</key>
@@ -52,7 +59,7 @@
 		<key>colliderOffset</key>
 		<dict>
 			<key>x</key>
-			<integer>-1200</integer>
+			<integer>-100</integer>
 			<key>y</key>
 			<integer>-1200</integer>
 		</dict>

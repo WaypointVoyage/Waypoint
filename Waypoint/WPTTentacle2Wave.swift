@@ -80,7 +80,7 @@ class WPTTentacle2Wave: WPTTentacleWave {
     private let chaseTentacleDuration: TimeInterval
     
     private func startChasingPlayer() {
-        print("Starting the chase")
+        NSLog("Starting the chase")
         self.chasing = true
         self.curTentacleIndex = -1
         self.moveToNextTentacle()
@@ -108,7 +108,7 @@ class WPTTentacle2Wave: WPTTentacleWave {
     private var surroundTentaclesCount: Int = 0
     
     private func startSurroundingPlayer() {
-        print("Surround the player!")
+        NSLog("Surround the player!")
         self.chasing = false
         self.curTentacleIndex = -1
         self.surroundTentaclesCount = 0
@@ -123,10 +123,10 @@ class WPTTentacle2Wave: WPTTentacleWave {
                 self.surroundTentaclesCount -= 1
                 
                 if self.surroundTentaclesCount <= 0 {
-                    print("done surrounding")
+                    NSLog("done surrounding")
                     self.finishSurroundTentacles()
                 } else {
-                    print("... not done surrounding, \(self.surroundTentaclesCount) tentacles left")
+                    NSLog("... not done surrounding, \(self.surroundTentaclesCount) tentacles left")
                 }
             }
             

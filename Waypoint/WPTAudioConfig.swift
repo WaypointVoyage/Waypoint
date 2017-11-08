@@ -63,7 +63,7 @@ class WPTAudioConfig: NSObject, NSCoding {
     }
     
     func setMusicVolume(volume: Float) {
-        print(backgroundMusic!.volume)
+        NSLog("setting music volume: \(backgroundMusic!.volume)")
         backgroundMusic?.volume = volume
         currentMusicVolume = volume
     }
@@ -88,7 +88,7 @@ class WPTAudioConfig: NSObject, NSCoding {
                 backgroundMusic?.volume = getCurrentMusicVolume()
             }
             catch {
-                print("file not found")
+                NSLog("file '\(song)' not found")
             }
             backgroundMusic?.numberOfLoops = -1
             play()

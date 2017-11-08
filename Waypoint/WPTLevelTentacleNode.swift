@@ -13,6 +13,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     private var cropNode: SKCropNode! = nil
     
     public let isStatic: Bool
+    private let type: WPTTentacleEnemyType
     public private(set) var isSubmerged: Bool = false
     
     private let bubbles: WPTBubbleSurfaceNode
@@ -24,6 +25,8 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     private var physicsChild: SKNode? = nil
     
     init(type: WPTTentacleEnemyType, player: WPTLevelPlayerNode, submerged: Bool) {
+        var cropSprite: String = "tentacle_crop"
+        self.type = type
         switch (type) {
         case .STATIC_TENTACLE:
             self.isStatic = true
@@ -36,11 +39,14 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         case .KRAKEN_HEAD:
             self.isStatic = true
             self.tentacleEnemy = WPTEnemyCatalog.enemiesByName["Kraken"]!
-            self.bubbles = WPTBubbleSquareSurfaceNode(width: 200, height: 1000, amount: 30, time: 0.6)
+            self.bubbles = WPTBubbleSquareSurfaceNode(width: 150, height: 500, amount: 30, time: 0.6)
+            cropSprite = "kraken_crop"
         }
         
         super.init(enemy: self.tentacleEnemy, player: player)
-        self.zPosition = player.zPosition + 1
+        self.zPosition = player.zPosition + 2
+        
+        self.dropCoins = false // the kraken shouldn't drop coins
         
         // physics
         self.physicsBody!.isDynamic = !isStatic
@@ -50,7 +56,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         
         // sprite
         self.cropNode = SKCropNode()
-        self.cropNode.maskNode = SKSpriteNode(imageNamed: "tentacle_crop")
+        self.cropNode.maskNode = SKSpriteNode(imageNamed: cropSprite)
         self.cropNode.position = self.sprite.position
         self.addChild(cropNode)
         self.sprite.removeFromParent()
@@ -60,6 +66,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         self.sprite.position = self.submergedSpritePos
         
         // bubbles
+        self.bubbles.setScale(1 / self.actor.ship.size)
         self.bubbles.zPosition = -1
         self.addChild(bubbles)
         self.bubbles.start()
@@ -115,7 +122,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     func handlePhysicsForSurface() {
         if self.isStatic {
             self.physicsChild = SKNode()
-            self.physicsChild?.physicsBody = self.holdPhysics
+            self.physicsChild?.physicsBody = self.holdPhysics!
             self.addChild(self.physicsChild!)
         }
         

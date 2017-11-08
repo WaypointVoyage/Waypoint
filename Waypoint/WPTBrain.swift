@@ -61,12 +61,6 @@ class WPTBrain: GKStateMachine {
             }
         }
         super.init(states: states)
-        
-//        print("name: \(template.name)")
-//        print(" nothing - \(template.brainStates[WPTBrainStateType.NOTHING])")
-//        print(" offense - \(template.brainStates[WPTBrainStateType.OFFENSE])")
-//        print(" defense - \(template.brainStates[WPTBrainStateType.DEFENSE])")
-//        print(" flee    - \(template.brainStates[WPTBrainStateType.FLEE])")
     }
     
     func setBehavior() {
@@ -92,21 +86,17 @@ class WPTBrain: GKStateMachine {
         
         switch (type) {
         case WPTBrainStateType.NOTHING:
-//            print("transitioning to nothing")
             return self.enter(WPTBrainStateFactory.classFromInstance(self.nothingState))
         case WPTBrainStateType.OFFENSE:
             if let target = self.offenseState {
-//                print("transitioning to offense")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target))
             } else { return false; }
         case WPTBrainStateType.DEFENSE:
             if let target = self.defenseState {
-//                print("transitioning to defense")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
         case WPTBrainStateType.FLEE:
             if let target = self.fleeState {
-//                print("transitioning to flee")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
         }
@@ -116,19 +106,7 @@ class WPTBrain: GKStateMachine {
         let healthLow = enemy.currentHealth < healthCutoff * enemy.enemy.ship.health
         let dist = CGVector(start: enemy.position, end: player.position).magnitude()
         self.currentBrainState.update(deltaTime: sec, healthLow: healthLow, distToPlayer: dist)
-        
-//        if dist < radiusOfEngagement {
-//            print("ROE")
-//        } else if dist < innerRadiusOfObliviousness {
-//            print("iROO")
-//        } else if dist < outerRadiusOfObliviousness {
-//            print("oROO")
-//        } else if dist < radiusOfSafety {
-//            print("ROS")
-//        } else {
-//            print("N/A")
-//        }
-        
+
         // new state?
         switch (currentBrainState.type) {
         case WPTBrainStateType.NOTHING:
@@ -140,7 +118,6 @@ class WPTBrain: GKStateMachine {
         case WPTBrainStateType.FLEE:
             updateFlee(deltaTime: sec, dist: dist, healthLow: healthLow)
         }
-//        print("current state: \(self.currentBrainState.type)")
     }
     
     private func updateNothing(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {

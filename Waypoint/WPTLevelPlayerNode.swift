@@ -68,6 +68,8 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     
     public func setUserInteraction(_ value: Bool) {
         self.interactionEnabled = value
+        let hud = (self.scene as! WPTLevelScene).hud
+        hud.bottom.isUserInteractionEnabled = value
         if value {
             self.fireRateMgr.enable()
         } else {

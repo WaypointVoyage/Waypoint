@@ -100,7 +100,7 @@ class WPTTentacleWave: WPTLevelWave {
             let tentacle = WPTLevelTentacleNode(type: type, player: scene.player, submerged: true)
             tentacle.onDeath {
                 self.killedTentacles += 1
-                print("\(self.tentacleCount - self.killedTentacles) tentacles left")
+                NSLog("\(self.tentacleCount - self.killedTentacles) tentacles left")
                 self.onTentacleDead()
             }
             self.tentacles.append(tentacle)

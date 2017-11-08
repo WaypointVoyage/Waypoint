@@ -56,10 +56,8 @@ class WPTLevelWave {
     func enemySpawnPosition(_ enemy: WPTLevelEnemyNode) -> CGPoint? {
         switch enemy.enemy.terrainType {
         case WPTEnemyTerrainType.land:
-            print("placing the enemy on land")
             return landSpawnPoint(enemy)
         case WPTEnemyTerrainType.sea:
-            print("placing the enemy in water")
             return waterSpawnPoint(enemy)
         default:
             return nil

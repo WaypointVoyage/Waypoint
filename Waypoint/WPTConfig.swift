@@ -13,7 +13,7 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
@@ -22,10 +22,10 @@ class WPTConfig {
     let playSoundEffects = true     // toggle sound effects
     
     // testing
-    var testing = false                  // toggles general testing features
-    var allUnlocked = false              // determines if all of the levels on the world map are unlocked and beaten
+    var testing = true                  // toggles general testing features
+    var allUnlocked = true              // determines if all of the levels on the world map are unlocked and beaten
     var freeItems = false                // if true, all items are free
-    var invincible = false               // if true, the player is invincible
+    var invincible = true               // if true, the player is invincible
     var clearHighScoresOnLoad = false    // if true, all of the high scores are cleared when the app is loaded
 
     var showTutorial = false              // if false, the tutorial will never be shown
@@ -33,7 +33,7 @@ class WPTConfig {
     var clearGlobalSettings = false      // if true, all global settings will be cleared
     
     // visual debugging
-    let showPhysics = false                 // shows physics bodies
+    let showPhysics = true                 // shows physics bodies
     let showBrainRadii = false              // shows the brain radius for each enemy
     let showSpawnVolumesOnMinimap = false   // shows the spawn volume areas as rectangles on the level minimap
     let showTouchHandler = false            // shows a transparent shroud on the touch handler
@@ -69,7 +69,7 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
 
 class WPTLevelModeConfig {
 
-    let levelFileName: String = "11_shiver_me_timbers"  // the name of the level file to load
+    let levelFileName: String = "11_x_marks_the_spot"  // the name of the level file to load
     
     // singleton instance
     private init() {}

@@ -41,6 +41,6 @@ class WPTFinalTreasureNode: SKNode {
         sprite.texture = openTexture
         
         // spawn coins!
-        print("OPENING THE CHEST!")
+        NSLog("OPENING THE CHEST!")
     }
 }

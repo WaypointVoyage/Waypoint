@@ -44,7 +44,7 @@ class WPTBrainStateFactory {
             
         default:
             if !state.isEmpty {
-                print("WARNING: unknown brain state: \(state), Perhaps it was just added? If so, create a new WPTBrainStateFactory.get case!!!")
+                NSLog("WARNING: unknown brain state: \(state), Perhaps it was just added? If so, create a new WPTBrainStateFactory.get case!!!")
             }
             return nil
         }

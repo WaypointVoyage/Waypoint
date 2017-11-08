@@ -102,11 +102,11 @@ class WPTTreasureWave: WPTLevelWave {
         shroud.zPosition = 2 * WPTZPositions.shrouds
         scene.camera!.addChild(shroud)
         
-        print("Done! Now fading out")
+        NSLog("Done! Now fading out")
         let fadeIn = SKAction.fadeIn(withDuration: 5)
         let wait = SKAction.wait(forDuration: 2)
         shroud.run(SKAction.sequence([fadeIn, wait])) {
-            print("Going to high scored page")
+            NSLog("Going to high scored page")
             let storage = WPTStorage()
             
             // submit the score

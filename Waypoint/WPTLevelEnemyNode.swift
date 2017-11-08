@@ -19,6 +19,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     let explosionEffect = WPTAudioNode(effect: "explosion")
     
     var isDead: Bool = false
+    var dropCoins: Bool = true
     
     init(enemy: WPTEnemy, player: WPTLevelPlayerNode, startBrain: Bool = false, health: CGFloat? = nil) {
         self.enemy = enemy
@@ -86,7 +87,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     }
     
     override func doDamage(_ damage: CGFloat) {
-        print("doing \(damage) damage to a \(self.enemy.name)")
+        NSLog("doing \(damage) damage to a \(self.enemy.name)")
         super.doDamage(damage)
         let alive = healthBar.updateHealth(damage)
         if !alive && self.physicsBody != nil {
@@ -107,10 +108,16 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         
         self.explosionEffect.playEffect()
         self.run(SKAction.wait(forDuration: 0.5)) {
-            (self.scene as! WPTLevelScene).dropCoins(position: self.position, size: WPTBoulderNode.coinDropSize)
-            explosionNode.removeFromParent()
-            if let scene = (self.scene as? WPTLevelScene) {
-                scene.terrain.removeEnemy(self)
+            if let scene = self.scene as? WPTLevelScene {
+                if self.dropCoins {
+                    scene.dropCoins(position: self.position, size: WPTBoulderNode.coinDropSize)
+                }
+                explosionNode.removeFromParent()
+                if let scene = (self.scene as? WPTLevelScene) {
+                    scene.terrain.removeEnemy(self)
+                }
+            } else {
+                NSLog("Scene is nil...")
             }
         }
         

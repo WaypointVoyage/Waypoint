@@ -72,7 +72,7 @@ class WPTValues {
     static func initValues(deviceScreenSize: CGSize) {
         let ar = deviceScreenSize.width / deviceScreenSize.height
         if (ar > WPTValues.maxAspectRatio) {
-            print("WARNING: current screen aspect ratio (\(ar)) is larger than the maximum supported.")
+            NSLog("WARNING: current screen aspect ratio (\(ar)) is larger than the maximum supported.")
         }
         
         WPTValues.screenSize = deviceScreenSize

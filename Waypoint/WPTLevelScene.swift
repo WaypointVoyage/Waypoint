@@ -253,8 +253,9 @@ class WPTLevelScene: WPTScene {
     func dropCoins(position: CGPoint, size: CGSize) {
         let coins = WPTItemCatalog.randomItemSet(mean: self.meanCoinDrop, stddev: self.stddevCoinDrop)
         for coin in coins {
-            let rand = randomNumber(min: 0, max: 1)
+            var rand = randomNumber(min: 0, max: 1)
             let xPos = position.x - size.width / 2.0 + rand * size.width
+            rand = randomNumber(min: 0, max: 1)
             let yPos = position.y - size.height / 2.0 + rand * size.height
             
             let moneyNode = WPTItemNode(coin, duration: 10)

@@ -53,10 +53,8 @@ class WPTBubbleSurfaceNode: SKNode {
         let delay = randomNumber(min: 0.0, max: CGFloat(self.time))
         self.run(SKAction.wait(forDuration: TimeInterval(delay))) {
             if let scene = self.scene as? WPTLevelScene {
-                print(scene.getSceneFrame())
-                print(self.position)
-                if scene.getSceneFrame().contains(self.position) {
-                    print("Bubbles!")
+                let bubblePos = scene.convert(self.position, from: self) // TODO: confirm that this works
+                if scene.getSceneFrame().contains(bubblePos) {
                     self.bubbleEffect.playEffect()
                 }
             }

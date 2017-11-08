@@ -71,7 +71,7 @@ class WPTKrakenWave: WPTTentacleWave {
     }
     
     private func spawnKraken() {
-        self.kraken = WPTLevelTentacleNode(type: WPTTentacleEnemyType.KRAKEN_HEAD, player: self.scene.player, submerged: false)
+        self.kraken = WPTLevelTentacleNode(type: WPTTentacleEnemyType.KRAKEN_HEAD, player: self.scene.player, submerged: true)
         self.kraken.position = self.krakenLocation
         self.kraken.onDeath {
             self.krakenIsDead = true
@@ -79,18 +79,9 @@ class WPTKrakenWave: WPTTentacleWave {
         self.scene.terrain.addEnemy(self.kraken)
         
         self.kraken.run(SKAction.wait(forDuration: 3)) {
+            NSLog("The Kraken rises!!!")
             self.kraken.surface(duration: 1.5)
         }
-        
-//        let bubbles = WPTBubbleSquareSurfaceNode(width: 1000, height: 600, amount: 3, time: 0.6)
-//        bubbles.position = self.krakenLocation
-//        self.scene.terrain.addChild(bubbles)
-//        bubbles.run(SKAction.wait(forDuration: self.bubbleDuration)) {
-//            self.scene.terrain.addEnemy(self.kraken)
-//            bubbles.run(SKAction.wait(forDuration: 1.0)) {
-//                bubbles.removeFromParent()
-//            }
-//        }
     }
     
     override func isComplete(scene: WPTLevelScene) -> Bool {
