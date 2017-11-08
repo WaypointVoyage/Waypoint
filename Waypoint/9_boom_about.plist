@@ -530,16 +530,40 @@
 	<array>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Viking</key>
-				<integer>7</integer>
-				<key>Pirate</key>
-				<integer>8</integer>
-				<key>Trebuchet</key>
-				<integer>5</integer>
-				<key>Marooner</key>
-				<integer>5</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Viking</string>
+					<key>count</key>
+					<integer>7</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>enemy</key>
+					<string>Pirate</string>
+					<key>count</key>
+					<integer>8</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>enemy</key>
+					<string>Trebuchet</string>
+					<key>count</key>
+					<integer>5</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>enemy</key>
+					<string>Marooner</string>
+					<key>count</key>
+					<integer>5</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+			</array>
 		</dict>
 	</array>
 </dict>
