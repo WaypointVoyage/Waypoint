@@ -818,39 +818,87 @@
 	<array>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Pirate</key>
-				<integer>7</integer>
-				<key>Viking</key>
-				<integer>7</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Pirate</string>
+					<key>count</key>
+					<integer>7</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>enemy</key>
+					<string>Viking</string>
+					<key>count</key>
+					<integer>7</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Pirate</key>
-				<integer>20</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Pirate</string>
+					<key>count</key>
+					<integer>20</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Viking</key>
-				<integer>20</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Viking</string>
+					<key>count</key>
+					<integer>20</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Viking</key>
-				<integer>5</integer>
-				<key>Pirate</key>
-				<integer>12</integer>
-				<key>Trebuchet</key>
-				<integer>4</integer>
-				<key>Catapult</key>
-				<integer>4</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Viking</string>
+					<key>count</key>
+					<integer>5</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>enemy</key>
+					<string>Pirate</string>
+					<key>count</key>
+					<integer>12</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>enemy</key>
+					<string>Trebuchet</string>
+					<key>count</key>
+					<integer>4</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>enemy</key>
+					<string>Catapult</string>
+					<key>count</key>
+					<integer>4</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+			</array>
 		</dict>
 	</array>
 </dict>
