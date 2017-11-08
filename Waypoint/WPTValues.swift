@@ -63,6 +63,9 @@ class WPTValues {
     static let defaultMusicVolume: Float = 5.0
     static let defaultEffectsVolume: Float = 5.0
     static let defaultLeftyMode: Bool = false
+    static let defaultCoinDropMean: Int = 25
+    static let defaultCoinDropStddev: Float = 5
+    
     
     static let maxShipNameLength = 22
     

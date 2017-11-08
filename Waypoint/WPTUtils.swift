@@ -16,6 +16,15 @@ func randomNumber(min: CGFloat, max: CGFloat) -> CGFloat {
     return min + rand * (max - min)
 }
 
+// Generates a normally distributed random number
+// http://www.design.caltech.edu/erik/Misc/Gaussian.html
+func randomNormalSample(mean: Float, stddev: Float) -> Float {
+    let x1 = Float(randomNumber(min: 0, max: 1))
+    let x2 = Float(randomNumber(min: 0, max: 1))
+    let y = sqrt(-2 * log(x1)) * cos(2 * Float.pi * x2)
+    return mean + stddev * y
+}
+
 func clamp<T: Comparable>(_ value: inout T, min: T, max: T) {
     value = value < min ? min : value > max ? max : value
 }

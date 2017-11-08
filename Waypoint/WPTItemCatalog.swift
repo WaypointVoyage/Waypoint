@@ -71,4 +71,27 @@ class WPTItemCatalog {
     static let randomCurrency = WPTItemCatalog.currencyPrevalenceMap.random
     static let randomRepair = WPTItemCatalog.repairPrevalenceMap.random
     static let randomStatModifier = WPTItemCatalog.statModifierPrevalenceMap.random
+    
+    private static let sortedCurrency = {
+        return WPTItemCatalog.currencyItems.sorted(by: { (a: WPTItem, b: WPTItem) -> Bool in
+            return a.value > b.value
+        })
+    }()
+    static func randomItemSet(mean: Int, stddev: Float) -> [WPTItem] {
+        var value = Int(randomNormalSample(mean: Float(mean), stddev: stddev))
+        var result = [WPTItem]()
+        
+        while (value > 0) {
+            for item in WPTItemCatalog.sortedCurrency {
+                if item.value <= value {
+                    result.append(item)
+                    value -= item.value
+                    break
+                }
+            }
+        }
+        
+        assert(value == 0)
+        return result
+    }
 }

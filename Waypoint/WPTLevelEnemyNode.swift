@@ -148,13 +148,12 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     }
     
     func generateCoins() {
-        guard let itemNode = (self.scene as? WPTLevelScene)?.items else { return }
-        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-        for _ in 0..<Int(rand*7) {
-            let randomMoney = WPTItemCatalog.randomCurrency()
-            let moneyNode = WPTItemNode(randomMoney, duration: 10.0)
+        let scene = self.scene as! WPTLevelScene   
+        let coins = WPTItemCatalog.randomItemSet(mean: scene.meanCoinDrop, stddev: scene.stddevCoinDrop)
+        for coin in coins {
+            let moneyNode = WPTItemNode(coin, duration: 10.0)
             moneyNode.position = getRandomPosition()
-            itemNode.addChild(moneyNode)
+            scene.items.addChild(moneyNode)
         }
     }
     

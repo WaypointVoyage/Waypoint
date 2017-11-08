@@ -23,6 +23,10 @@ class WPTLevelScene: WPTScene {
     let items: SKNode
     let port: WPTPortNode?
     
+    // Calculated from the difficulty
+    let meanCoinDrop: Int
+    let stddevCoinDrop: Float
+    
     // Camera stuff
     var cam: SKCameraNode!
     private var camFollowPlayer: Bool = true
@@ -53,6 +57,10 @@ class WPTLevelScene: WPTScene {
         } else {
             self.port = nil
         }
+        
+        self.meanCoinDrop = Int(self.level.difficulty * CGFloat(WPTValues.defaultCoinDropMean))
+        self.stddevCoinDrop = Float(self.level.difficulty * CGFloat(WPTValues.defaultCoinDropStddev))
+        
         super.init(size: CGSize(width: 0, height: 0))
 //        self.touchHandler = WPTLevelTouchHandlerNode(self)
         
