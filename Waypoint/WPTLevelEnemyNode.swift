@@ -107,7 +107,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         
         self.explosionEffect.playEffect()
         self.run(SKAction.wait(forDuration: 0.5)) {
-            self.generateCoins()
+            (self.scene as! WPTLevelScene).dropCoins(position: self.position, size: WPTBoulderNode.coinDropSize)
             explosionNode.removeFromParent()
             if let scene = (self.scene as? WPTLevelScene) {
                 scene.terrain.removeEnemy(self)
@@ -145,28 +145,5 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
                 itemNode.addChild(repairNode)
             }
         }
-    }
-    
-    func generateCoins() {
-        let scene = self.scene as! WPTLevelScene   
-        let coins = WPTItemCatalog.randomItemSet(mean: scene.meanCoinDrop, stddev: scene.stddevCoinDrop)
-        for coin in coins {
-            let moneyNode = WPTItemNode(coin, duration: 10.0)
-            moneyNode.position = getRandomPosition()
-            scene.items.addChild(moneyNode)
-        }
-    }
-    
-    func getRandomPosition() -> CGPoint {
-        let minWidth = self.position.x - WPTBoulderNode.boulderRadius * 2
-        let maxWidth = self.position.x + WPTBoulderNode.boulderRadius * 2
-        let minHeight = self.position.y - WPTBoulderNode.boulderRadius * 2
-        let maxHeight = self.position.y + WPTBoulderNode.boulderRadius * 2
-        
-        var rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-        let xPos = CGFloat(maxWidth - minWidth) * rand + CGFloat(minWidth)
-        rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-        let yPos = CGFloat(maxHeight - minHeight) * rand + CGFloat(minHeight)
-        return CGPoint(x: xPos, y: yPos)
     }
 }

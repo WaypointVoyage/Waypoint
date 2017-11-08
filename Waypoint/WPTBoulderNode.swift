@@ -62,6 +62,7 @@ class WPTBoulderNode: SKNode {
         }
     }
     
+    static let coinDropSize = CGSize(width: WPTBoulderNode.boulderRadius * 2, height: WPTBoulderNode.boulderRadius * 2)
     func destroyBoulder() {
         self.health.removeFromParent()
         self.physicsBody = nil
@@ -73,33 +74,9 @@ class WPTBoulderNode: SKNode {
         
         self.boulderEffect.playEffect()
         self.run(SKAction.wait(forDuration: 0.5)) {
-            self.generateCoins()
+            (self.scene as! WPTLevelScene).dropCoins(position: self.position, size: WPTBoulderNode.coinDropSize)
             explosionNode.removeFromParent()
             self.removeFromParent()
         }
-    }
-    
-    func generateCoins() {
-        guard let itemNode = (self.scene as? WPTLevelScene)?.items else { return }
-        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-        for _ in 0..<Int(rand*7) {
-            let randomMoney = WPTItemCatalog.randomCurrency()
-            let moneyNode = WPTItemNode(randomMoney, duration: 10.0)
-            moneyNode.position = getRandomPosition()
-            itemNode.addChild(moneyNode)
-        }
-    }
-    
-    func getRandomPosition() -> CGPoint {
-        let minWidth = self.position.x - WPTBoulderNode.boulderRadius * 2
-        let maxWidth = self.position.x + WPTBoulderNode.boulderRadius * 2
-        let minHeight = self.position.y - WPTBoulderNode.boulderRadius * 2
-        let maxHeight = self.position.y + WPTBoulderNode.boulderRadius * 2
-        
-        var rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-        let xPos = CGFloat(maxWidth - minWidth) * rand + CGFloat(minWidth)
-        rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-        let yPos = CGFloat(maxHeight - minHeight) * rand + CGFloat(minHeight)
-        return CGPoint(x: xPos, y: yPos)
     }
 }

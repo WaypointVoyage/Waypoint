@@ -249,4 +249,17 @@ class WPTLevelScene: WPTScene {
         let origin = CGPoint(x: self.cam.position.x - sceneWidth / 2, y: self.cam.position.y - sceneHeight / 2)
         return CGRect(origin: origin, size: CGSize(width: sceneWidth, height: sceneHeight))
     }
+    
+    func dropCoins(position: CGPoint, size: CGSize) {
+        let coins = WPTItemCatalog.randomItemSet(mean: self.meanCoinDrop, stddev: self.stddevCoinDrop)
+        for coin in coins {
+            let rand = randomNumber(min: 0, max: 1)
+            let xPos = position.x - size.width / 2.0 + rand * size.width
+            let yPos = position.y - size.height / 2.0 + rand * size.height
+            
+            let moneyNode = WPTItemNode(coin, duration: 10)
+            moneyNode.position = CGPoint(x: xPos, y: yPos)
+            self.items.addChild(moneyNode)
+        }
+    }
 }
