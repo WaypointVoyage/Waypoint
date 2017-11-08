@@ -13,7 +13,7 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
@@ -22,10 +22,10 @@ class WPTConfig {
     let playSoundEffects = true     // toggle sound effects
     
     // testing
-    var testing = true                  // toggles general testing features
+    var testing = false                  // toggles general testing features
     var allUnlocked = false              // determines if all of the levels on the world map are unlocked and beaten
     var freeItems = false                // if true, all items are free
-    var invincible = true               // if true, the player is invincible
+    var invincible = false               // if true, the player is invincible
     var clearHighScoresOnLoad = false    // if true, all of the high scores are cleared when the app is loaded
 
     var showTutorial = true              // if false, the tutorial will never be shown
