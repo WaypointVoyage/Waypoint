@@ -85,7 +85,74 @@
 		</dict>
 	</array>
 	<key>landSpawnPoints</key>
-	<array/>
+	<array>
+		<dict>
+			<key>x</key>
+			<integer>2504</integer>
+			<key>y</key>
+			<integer>495</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>2324</integer>
+			<key>y</key>
+			<integer>827</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>1568</integer>
+			<key>y</key>
+			<integer>531</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>1240</integer>
+			<key>y</key>
+			<integer>395</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>936</integer>
+			<key>y</key>
+			<integer>1031</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>1332</integer>
+			<key>y</key>
+			<integer>1491</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>1708</integer>
+			<key>y</key>
+			<integer>1403</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>3072</integer>
+			<key>y</key>
+			<integer>2127</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>2568</integer>
+			<key>y</key>
+			<integer>2039</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>2360</integer>
+			<key>y</key>
+			<integer>2495</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>2820</integer>
+			<key>y</key>
+			<integer>3067</integer>
+		</dict>
+	</array>
 	<key>terrain</key>
 	<dict>
 		<key>bodies</key>
