@@ -12,7 +12,7 @@ import SpriteKit
 class WPTNewGameScene: WPTScene, UITextFieldDelegate {
     
     
-    let background = WPTBackgroundNode(image: "beach_scene")
+    let background = WPTBackgroundNode(image: "simple_beach_scene")
     let headerLabel = WPTLabelNode(text: "New Game", fontSize: WPTValues.fontSizeLarge)
     var startLabel = WPTButtonNode(text: "Start", fontSize: WPTValues.fontSizeMedium)
     
@@ -21,6 +21,8 @@ class WPTNewGameScene: WPTScene, UITextFieldDelegate {
     let damageLabel = WPTStatBarNode("Damage")
     let rangeLabel = WPTStatBarNode("Range")
     let shotSpeedLabel = WPTStatBarNode("Shot Speed")
+    
+    let mapScrollEffect = WPTAudioNode(effect: "map_scroll")
     
     var shipInputField:UITextField?
     var shipPop:WPTShipNamePopUpNode?
@@ -80,7 +82,10 @@ class WPTNewGameScene: WPTScene, UITextFieldDelegate {
         self.shipPop!.setInputField(inputField: self.shipInputField!)
         self.shipPop!.setShipPicker(shipPicker: self.shipPicker!)
         
+        self.addChild(mapScrollEffect)
+        
         addChild(WPTHomeScene.getBack(frame: frame))
+        
     
     }
     
@@ -103,6 +108,7 @@ class WPTNewGameScene: WPTScene, UITextFieldDelegate {
         
         if self.startLabel.contains(touch.location(in: self)) {
             self.view!.addSubview(shipInputField!)
+            mapScrollEffect.playEffect()
             self.addChild(shipPop!)
         }
     }

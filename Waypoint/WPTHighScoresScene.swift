@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTHighScoresScene: WPTScene {
     
-    let background = WPTBackgroundNode(image: "beach_scene")
+    let background = WPTBackgroundNode(image: "simple_beach_scene")
     let titleLabel = WPTLabelNode(text: "High Scores", fontSize: WPTValues.fontSizeLarge)
     var song: String = "main_menu_theme.wav"
     

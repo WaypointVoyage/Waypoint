@@ -15,10 +15,12 @@ class WPTPauseMenuNode: SKNode {
     var map: WPTMapViewNode
     private var background: SKSpriteNode! = nil
     private var levelNameNode: WPTLabelNode? = nil
+    private var levelNumberNode: WPTLabelNode? = nil
     let pauseEffect = WPTAudioNode(effect: "map_scroll")
     var levelName: String? = nil {
         didSet { self.levelNameNode?.text = self.levelName }
     }
+    
     
     // stuff for confirming a quit
     private var confirmingQuit: Bool = false
@@ -53,6 +55,13 @@ class WPTPauseMenuNode: SKNode {
         levelNameNode!.fontColor = UIColor.black
         levelNameNode!.position.y += 0.5 * background.size.height
         self.addChild(levelNameNode!)
+        
+        self.levelNumberNode = WPTLabelNode(text: "Level \(terrain.level.number)", fontSize: WPTValues.fontSizeTiny)
+        levelNumberNode!.zPosition = background.zPosition + 1
+        levelNumberNode!.fontColor = UIColor.black
+        levelNumberNode!.position.y += 0.42
+            * background.size.height
+        self.addChild(levelNumberNode!)
         
         //map
         self.map.zPosition = background.zPosition + 1
@@ -117,6 +126,7 @@ class WPTPauseMenuNode: SKNode {
         
         // remove current UI stuff
         self.levelNameNode?.removeFromParent()
+        self.levelNumberNode?.removeFromParent()
         self.map.removeFromParent()
         self.exit.removeFromParent()
         self.reset.removeFromParent()
@@ -143,6 +153,7 @@ class WPTPauseMenuNode: SKNode {
         
         // put back normal UI stuff
         self.addChild(self.levelNameNode!)
+        self.addChild(self.levelNumberNode!)
         self.addChild(self.map)
         self.addChild(self.exit)
         if WPTConfig.values.testing { self.addChild(self.reset) }

@@ -12,7 +12,7 @@ class WPTHomeScene: WPTScene {
     
     let background = WPTBackgroundNode(image: "beach_scene")
     let title = WPTLabelNode(text: "Waypoint", fontSize: WPTValues.fontSizeMedium)
-    let treasureChest = SKSpriteNode(imageNamed: "treasure_filled")
+    let treasureChest = SKSpriteNode(imageNamed: "smaller_treasure_chest")
     let newGame = WPTSceneLabelNode(text: "New Game", next: WPTNewGameScene())
     var continueLbl: WPTSceneLabelNode?
     let highScores = WPTSceneLabelNode(text: "High Scores", next: WPTHighScoresScene())
@@ -58,7 +58,7 @@ class WPTHomeScene: WPTScene {
         title.fontColor = UIColor.black
         addChild(title)
         
-        treasureChest.position = CGPoint(x: 0.17 * self.frame.width, y: 0.26 * self.frame.height)
+        treasureChest.position = CGPoint(x: 0.17 * self.frame.width, y: 0.24 * self.frame.height)
         treasureChest.setScale(0.35)
         addChild(treasureChest)
     }

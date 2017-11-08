@@ -11,6 +11,8 @@
 	</dict>
 	<key>name</key>
 	<string>Boom About</string>
+	<key>number</key>
+	<integer>10</integer>
 	<key>port</key>
 	<dict>
 		<key>position</key>

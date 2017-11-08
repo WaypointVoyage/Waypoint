@@ -29,7 +29,7 @@ class WPTConfig {
     var clearHighScoresOnLoad = false    // if true, all of the high scores are cleared when the app is loaded
 
     var showTutorial = true              // if false, the tutorial will never be shown
-    var clearPlayerProgress = false      // if true, all player progress will be cleared
+    var clearPlayerProgress = true      // if true, all player progress will be cleared
     var clearGlobalSettings = false      // if true, all global settings will be cleared
     
     // visual debugging
@@ -68,7 +68,7 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
 }
 
 class WPTLevelModeConfig {
-    
+
     let levelFileName: String = "11_shiver_me_timbers"  // the name of the level file to load
     
     // singleton instance
