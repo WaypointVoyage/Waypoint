@@ -14,7 +14,12 @@ import SwiftySound
 class WPTAudioNode : SKNode {
     
     let audio: Sound
-    init(effect: String) {
+    
+    private let maxSounds: Int?
+    private var numPlaying: Int = 0
+
+    init(effect: String, maxSounds: Int? = nil) {
+        self.maxSounds = maxSounds
         audio = WPTSoundCatalog.soundsByName[effect]!
         super.init()
         
@@ -27,11 +32,16 @@ class WPTAudioNode : SKNode {
     }
     
     func playEffect() {
-        self.audio.play(numberOfLoops: 0)
-        
+        if self.maxSounds == nil || self.numPlaying < self.maxSounds! {
+            self.numPlaying += 1
+            self.audio.play(numberOfLoops: 0) { (played: Bool) in
+                self.numPlaying = max(0, self.numPlaying - 1)
+            }
+        }
     }
     
     func stopEffect() {
+        self.numPlaying = max(0, self.numPlaying - 1)
         self.audio.stop()
     }
     

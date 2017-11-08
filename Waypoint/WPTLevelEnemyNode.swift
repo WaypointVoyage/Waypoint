@@ -17,7 +17,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     public private(set) var brain: WPTBrain?
     var brainRadii: WPTBrainRadiiNode? = nil
     let healthBar: WPTHealthNode
-    let explosionEffect = WPTAudioNode(effect: "explosion")
+    let explosionEffect = WPTAudioNode(effect: "explosion", maxSounds: 1)
     
     var isDead: Bool = false
     var dropCoins: Bool = true

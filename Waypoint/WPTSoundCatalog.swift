@@ -17,13 +17,13 @@ class WPTSoundCatalog {
         Sound.playersPerSound = 20
         let cannonEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "cannon.wav"))!, name: "cannon")
         
-        Sound.playersPerSound = 20
+        Sound.playersPerSound = 4
         let coinDropEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "coin_drop.wav"))!, name: "coin_drop")
         
-        Sound.playersPerSound = 18
+        Sound.playersPerSound = 4
         let gemDropEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "gem_drop.wav"))!, name: "gem_drop")
         
-        Sound.playersPerSound = 2
+        Sound.playersPerSound = 4
         let pearlDropEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "pearl_drop.wav"))!, name: "pearl_drop")
         
         Sound.playersPerSound = 1
