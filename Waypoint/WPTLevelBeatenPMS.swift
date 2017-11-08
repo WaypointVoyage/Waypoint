@@ -11,7 +11,7 @@ import GameplayKit
 
 class WPTLevelBeatenPMS: GKState {
     override func didEnter(from previousState: GKState?) {
-        print("Started WPTLevelBeatenPMS")
+        NSLog("Started WPTLevelBeatenPMS")
         
         if let puppetMaster = self.stateMachine as? WPTPuppetMaster {
             puppetMaster.scene.port?.active = true

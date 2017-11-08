@@ -10,11 +10,15 @@ import SpriteKit
 import GameplayKit
 
 class WPTWaveCreationPMS: GKState {
+    private static let ENEMY_SPAWN_THROTTLE: TimeInterval = 0.3
+    
     public private(set) var wave: WPTLevelWave? = nil
     private var ready = false
     
+    private var enemyQueue = [WPTEnemy]()
+    
     override func didEnter(from previousState: GKState?) {
-        print("Started WPTWaveCreationPMS")
+        NSLog("Started WPTWaveCreationPMS")
         ready = false
         
         if let prev = previousState as? WPTWaveExecutionPMS {
@@ -28,24 +32,38 @@ class WPTWaveCreationPMS: GKState {
         
         // allows the setup to happen in the background
         self.setupWave()
-        self.ready = true
     }
     
     private func setupWave() {
-        print("setting up the wave")
+        NSLog("setting up the wave")
         guard let scene = (self.stateMachine as? WPTPuppetMaster)?.scene else { return; }
         
-        print("calling specialized wave setup")
+        NSLog("calling specialized wave setup")
         self.wave!.setup(scene: scene)
         
-        for (enemy, quantity) in wave!.enemies {
-            for _ in 0..<quantity {
-                print("creating a \(enemy)")
-                let enemyNode = WPTLevelEnemyNode(enemy: enemy, player: scene.player)
-                enemyNode.position = self.wave!.enemySpawnPosition(enemyNode)!
-                print("adding the enemy to the terrain")
-                scene.terrain.addEnemy(enemyNode)
+        // start spawning enemies
+        self.spawnEnemy(scene: scene, index: 0)
+    }
+    
+    private func spawnEnemy(scene: WPTLevelScene, index: Int) {
+        if index < self.wave!.enemies.count {
+            let waveEnemy = self.wave!.enemies[index]
+            NSLog("creating a \(waveEnemy.enemy.name)")
+            
+            let enemyNode = WPTLevelEnemyNode(enemy: waveEnemy.enemy, player: scene.player)
+            for item in waveEnemy.items {
+                enemyNode.give(item: item)
             }
+            
+            NSLog("adding the enemy to the terrain")
+            enemyNode.position = self.wave!.enemySpawnPosition(enemyNode)!
+            scene.terrain.addEnemy(enemyNode)
+            scene.run(SKAction.wait(forDuration: WPTWaveCreationPMS.ENEMY_SPAWN_THROTTLE)) {
+                self.spawnEnemy(scene: scene, index: index + 1)
+            }
+        } else {
+            NSLog("Done adding enemies")
+            self.ready = true
         }
     }
     

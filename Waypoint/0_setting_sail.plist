@@ -458,17 +458,29 @@
 	<array>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Catapult</key>
-				<integer>2</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Catapult</string>
+					<key>count</key>
+					<integer>2</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Pirate</key>
-				<integer>2</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Pirate</string>
+					<key>count</key>
+					<integer>2</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+			</array>
 		</dict>
 	</array>
 </dict>

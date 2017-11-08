@@ -13,7 +13,7 @@ class WPTPlayerPrepPMS: GKState {
     private var prepClock: TimeInterval = 0
     
     override func didEnter(from previousState: GKState?) {
-        print("Started WPTPlayerPrepPMS")
+        NSLog("Started WPTPlayerPrepPMS")
         prepClock = 0
     }
     

@@ -12,14 +12,14 @@ class WPTLevelWave {
     weak var scene: WPTLevelScene! = nil
     var next: WPTLevelWave?
     
-    public private(set) var enemies = [WPTEnemy:Int]()
+    public private(set) var enemies = [WaveEnemy]()
     
     init(_ waveDict: [String:AnyObject]) {
-        if let enemies = waveDict["enemies"] as? [String:Int] {
-            for (name, quantity) in enemies {
-                let enemy = WPTEnemyCatalog.enemiesByName[name]!
-                let cur: Int = self.enemies[enemy] ?? 0
-                self.enemies[enemy] = quantity + cur
+        if let enemiesArr = waveDict["enemies"] as? [[String:AnyObject]] {
+            for enemyDict in enemiesArr {
+                for _ in 0..<(enemyDict["count"] as! Int) {
+                    self.enemies.append(WaveEnemy(dict: enemyDict))
+                }
             }
         }
     }
@@ -82,5 +82,20 @@ class WPTLevelWave {
         let ypos = spawnVol.minY + rand * (spawnVol.height)
         
         return CGPoint(x: xpos, y: ypos)
+    }
+}
+
+class WaveEnemy {
+    public let enemy: WPTEnemy
+    public private(set) var items: [WPTItem]
+    
+    init(dict: [String:AnyObject]) {
+        let enemyName = dict["enemy"] as! String
+        self.enemy = WPTEnemyCatalog.enemiesByName[enemyName]!
+        
+        self.items = [WPTItem]()
+        for itemName in dict["items"] as! [String] {
+            self.items.append(WPTItemCatalog.itemsByName[itemName]!)
+        }
     }
 }

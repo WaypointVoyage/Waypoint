@@ -15,7 +15,7 @@ class WPTWaveExecutionPMS: GKState {
     private var finishing = false
     
     override func didEnter(from previousState: GKState?) {
-        print("Started WPTWaveExecutionPMS")
+        NSLog("Started WPTWaveExecutionPMS")
         if let prev = previousState as? WPTWaveCreationPMS {
             wave = prev.wave
         }
