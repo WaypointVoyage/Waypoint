@@ -824,37 +824,79 @@
 	<array>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Marooner</key>
-				<integer>2</integer>
-				<key>Pirate</key>
-				<integer>2</integer>
-				<key>Trebuchet</key>
-				<integer>2</integer>
-				<key>Viking</key>
-				<integer>2</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Marooner</string>
+					<key>count</key>
+					<integer>2</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>enemy</key>
+					<string>Pirate</string>
+					<key>count</key>
+					<integer>2</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>enemy</key>
+					<string>Trebuchet</string>
+					<key>count</key>
+					<integer>2</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>enemy</key>
+					<string>Viking</string>
+					<key>count</key>
+					<integer>2</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Trebuchet</key>
-				<integer>4</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Trebuchet</string>
+					<key>count</key>
+					<integer>4</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Pirate</key>
-				<integer>5</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Pirate</string>
+					<key>count</key>
+					<integer>5</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Viking</key>
-				<integer>6</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Viking</string>
+					<key>count</key>
+					<integer>6</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+			</array>
 		</dict>
 	</array>
 </dict>
