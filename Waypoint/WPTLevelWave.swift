@@ -14,6 +14,8 @@ class WPTLevelWave {
     
     public private(set) var enemies = [WaveEnemy]()
     
+    private var landSpawnPoints: [CGPoint]! = nil
+    
     init(_ waveDict: [String:AnyObject]) {
         if let enemiesArr = waveDict["enemies"] as? [[String:AnyObject]] {
             for enemyDict in enemiesArr {
@@ -28,6 +30,7 @@ class WPTLevelWave {
     //      called after all of the enemies have been placed in the scene.
     func setup(scene: WPTLevelScene) {
         self.scene = scene
+        self.landSpawnPoints = self.scene.level.landSpawnPoints // should create a shallow copy
     }
     
     // Override to check if the level is complete
@@ -63,9 +66,17 @@ class WPTLevelWave {
             return nil
         }
     }
-    
+
     private func landSpawnPoint(_ enemy: WPTLevelEnemyNode) -> CGPoint {
-        return scene.terrain.randomPoint(borderWidth: enemy.sprite.frame.width / 2, onLand: true)
+        if self.landSpawnPoints.count > 0 {
+            // choose a random point from the possible positions
+            let index = Int(randomNumber(min: 0, max: CGFloat(self.landSpawnPoints.count)))
+            return self.landSpawnPoints.remove(at: index)
+        } else {
+            // otherwise, randomly generate a point
+            NSLog("WARNING: there are no more land spawn points to choose from, generating random point")
+            return scene.terrain.randomPoint(borderWidth: enemy.sprite.frame.width / 2, onLand: true)
+        }
     }
     
     private func waterSpawnPoint(_ enemy: WPTLevelEnemyNode) -> CGPoint {

@@ -94,6 +94,8 @@
 			<integer>-200</integer>
 		</dict>
 	</array>
+	<key>landSpawnPoints</key>
+	<array/>
 	<key>terrain</key>
 	<dict>
 		<key>bodies</key>

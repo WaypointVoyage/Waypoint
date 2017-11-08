@@ -31,6 +31,7 @@ class WPTLevel {
     
     // spawn volumes
     public private(set) var spawnVolumes = [CGRect]()
+    public private(set) var landSpawnPoints = [CGPoint]()
     
     // waves
     public private(set) var waves = [WPTLevelWave]()
@@ -92,6 +93,13 @@ class WPTLevel {
                 assert(maxx > minx && maxy > miny, "Invalid spawn volume")
                 let rect = CGRect(x: minx, y: miny, width: maxx - minx, height: maxy - miny)
                 self.spawnVolumes.append(rect)
+            }
+        }
+        if let landSpawnPointsArr = levelDict["landSpawnPoints"] as? [[String:CGFloat]] {
+            for point in landSpawnPointsArr {
+                let x: CGFloat = point["x"]!
+                let y: CGFloat = point["y"]!
+                self.landSpawnPoints.append(CGPoint(x: x, y: y))
             }
         }
         
