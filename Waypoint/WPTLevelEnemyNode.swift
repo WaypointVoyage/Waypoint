@@ -9,6 +9,7 @@
 import SpriteKit
 
 class WPTLevelEnemyNode: WPTLevelActorNode {
+    static let DEATH_DELAY: TimeInterval = 0.5
     
     let enemy: WPTEnemy
     let player: WPTLevelPlayerNode
@@ -20,6 +21,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
     
     var isDead: Bool = false
     var dropCoins: Bool = true
+    var explodes: Bool = true
     
     init(enemy: WPTEnemy, player: WPTLevelPlayerNode, startBrain: Bool = false, health: CGFloat? = nil) {
         self.enemy = enemy
@@ -100,14 +102,17 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         self.isDead = true
         self.brain = nil
         
+        // explode
         let explosionNode = SKSpriteNode(imageNamed: "explode")
-        explosionNode.position = self.sprite.position
-        explosionNode.size = CGSize(width: self.sprite.size.width, height: self.sprite.size.height)
-        explosionNode.zPosition = self.sprite.zPosition + WPTValues.fontSizeSmall
-        self.addChild(explosionNode)
+        if self.explodes {
+            explosionNode.position = self.sprite.position
+            explosionNode.size = CGSize(width: self.sprite.size.width, height: self.sprite.size.height)
+            explosionNode.zPosition = self.sprite.zPosition + WPTValues.fontSizeSmall
+            self.addChild(explosionNode)
+        }
         
         self.explosionEffect.playEffect()
-        self.run(SKAction.wait(forDuration: 0.5)) {
+        self.run(SKAction.wait(forDuration: WPTLevelEnemyNode.DEATH_DELAY)) {
             if let scene = self.scene as? WPTLevelScene {
                 if self.dropCoins {
                     scene.dropCoins(position: self.position, size: WPTBoulderNode.coinDropSize)

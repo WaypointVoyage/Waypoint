@@ -24,6 +24,8 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     private var holdPhysics: SKPhysicsBody? = nil
     private var physicsChild: SKNode? = nil
     
+    private var invincible: Bool = false
+    
     init(type: WPTTentacleEnemyType, player: WPTLevelPlayerNode, submerged: Bool) {
         var cropSprite: String = "tentacle_crop"
         self.type = type
@@ -47,6 +49,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         self.zPosition = player.zPosition + 2
         
         self.dropCoins = false // the kraken shouldn't drop coins
+        self.explodes = false // it also shouldn't explode
         
         // physics
         self.physicsBody!.isDynamic = !isStatic
@@ -109,6 +112,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     func submerge(duration: TimeInterval = 1.0, then: (() -> Void)? = nil) {
         guard !self.isSubmerged else { return }
         
+        self.invincible = true
         self.handlePhysicsForSubmerge()
         
         self.sprite.run(SKAction.move(to: self.submergedSpritePos, duration: duration)) {
@@ -138,6 +142,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         
         self.sprite.run(SKAction.move(to: self.surfaceSpritePos, duration: duration)) {
             self.isSubmerged = false
+            self.invincible = false
             if let then = then {
                 then()
             }
@@ -145,6 +150,8 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     }
     
     override func doDamage(_ damage: CGFloat) {
+        guard !self.invincible else { return }
+        
         super.doDamage(damage)
         if self.healthBar.curHealth <= 0 {
             self.destroyEnemy()
@@ -153,8 +160,15 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
     
     override func destroyEnemy() {
         super.destroyEnemy()
+        
+        // remove physics
         self.physicsChild?.removeFromParent()
         self.physicsChild = nil
+        
+        // submerge
+        if !self.isSubmerged {
+            self.submerge(duration: WPTLevelEnemyNode.DEATH_DELAY)
+        }
     }
 }
 
