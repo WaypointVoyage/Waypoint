@@ -58,6 +58,8 @@ class WPTItem {
         self.prevalence = itemDict["prevalence"] as! Int
         self.cannonBallImage = itemDict["cannonBallImage"] as? String
         self.description = itemDict["description"] as? String
+        
+        self.initStatModifiers(itemDict)
     }
     
     // initialize as currency

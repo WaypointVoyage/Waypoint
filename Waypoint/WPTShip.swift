@@ -213,7 +213,7 @@ class WPTShip {
 }
 
 extension WPTShip {
-    static let minSpeedScale: CGFloat = 0.4
+    static let minSpeedScale: CGFloat = 0.8
     static let maxSpeedScale: CGFloat = 10.0
     static let baseSpeed: CGFloat = 4000.0
     static let minSpeed: CGFloat = WPTShip.baseSpeed * WPTShip.minSpeedScale

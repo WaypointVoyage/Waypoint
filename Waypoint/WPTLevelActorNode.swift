@@ -13,7 +13,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     let actor: WPTActor
     var currentHealth: CGFloat
     var teamBitMask: UInt32
-    let cannonEffect = WPTAudioNode(effect: "cannon")
+    let cannonEffect = WPTAudioNode(effect: "cannon", maxSounds: 20)
     let pearlDropEffect = WPTAudioNode(effect: "pearl_drop", maxSounds: 4)
     let gemDropEffect = WPTAudioNode(effect: "gem_drop", maxSounds: 4)
     let coinDropEffect = WPTAudioNode(effect: "coin_drop", maxSounds: 4)

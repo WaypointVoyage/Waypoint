@@ -36,6 +36,8 @@ class WPTLevel {
     // waves
     public private(set) var waves = [WPTLevelWave]()
     
+    let enemyBalanceItem: WPTItem
+    
     // special values for special waves
     var xMarksTheSpot: CGPoint? = nil
     
@@ -55,6 +57,9 @@ class WPTLevel {
         
         let spawnDict = levelDict["spawnPoint"] as! [String: CGFloat]
         self.spawnPoint = CGPoint(x: spawnDict["x"]!, y: spawnDict["y"]!)
+        
+        let enemyBalanceItemName: String = levelDict["enemyBalanceItem"] as! String
+        self.enemyBalanceItem = WPTItemCatalog.itemsByName[enemyBalanceItemName]!
         
         // port
         if let portDict = levelDict["port"] as? [String:AnyObject] {
