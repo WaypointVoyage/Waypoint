@@ -75,7 +75,56 @@
 		</dict>
 	</array>
 	<key>landSpawnPoints</key>
-	<array/>
+	<array>
+		<dict>
+			<key>x</key>
+			<integer>153</integer>
+			<key>y</key>
+			<integer>817</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>1008</integer>
+			<key>y</key>
+			<integer>1105</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>1563</integer>
+			<key>y</key>
+			<integer>1045</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>2127</integer>
+			<key>y</key>
+			<integer>463</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>2533</integer>
+			<key>y</key>
+			<integer>370</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>3078</integer>
+			<key>y</key>
+			<integer>514</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>3369</integer>
+			<key>y</key>
+			<integer>988</integer>
+		</dict>
+		<dict>
+			<key>x</key>
+			<integer>4131</integer>
+			<key>y</key>
+			<integer>1516</integer>
+		</dict>
+	</array>
 	<key>terrain</key>
 	<dict>
 		<key>bodies</key>
