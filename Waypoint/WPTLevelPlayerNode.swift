@@ -92,6 +92,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
 //    }
     
     override func doDamage(_ damage: CGFloat) {
+        NSLog("Damaging player for \(damage) health")
         super.doDamage(damage)
         if let scene = (self.scene as? WPTLevelScene) {
             let alive = scene.hud.top.shipHealth.updateHealth(damage)

@@ -20,10 +20,10 @@ class WPTHealthNode: SKNode {
     var shipHealthBar = SKSpriteNode()
     let persistent: Bool
     
-    init(maxHealth: CGFloat, persistent: Bool) {
+    init(maxHealth: CGFloat, curHealth: CGFloat, persistent: Bool) {
         self.persistent = persistent
         self.maxHealth = maxHealth
-        self.curHealth = maxHealth
+        self.curHealth = curHealth
         
         super.init()
         
@@ -34,7 +34,7 @@ class WPTHealthNode: SKNode {
             shipHealthBar.alpha = 0
         }
         
-        updateHealthBar(maxHealth, flash: false)
+        updateHealthBar(self.curHealth, flash: false)
     }
     
     required init?(coder aDecoder: NSCoder) {

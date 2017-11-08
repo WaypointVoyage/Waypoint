@@ -36,7 +36,8 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         self.shipImage.position = CGPoint(x: shipOffset, y: WPTValues.screenSize.height - shipOffset)
         self.shipImage.size = CGSize(width: shipImgSize, height: shipImgSize)
         
-        self.shipHealth = WPTHealthNode(maxHealth: player.ship.health, persistent: true)
+        NSLog("HEALTH: Starting level with \(player.health) out of \(player.ship.health)")
+        self.shipHealth = WPTHealthNode(maxHealth: player.ship.health, curHealth: player.health, persistent: true)
         self.shipHealth.position = CGPoint(x: shipOffset * 2.5, y: WPTValues.screenSize.height - shipOffset * 1.1)
         
         self.moneyCount = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)

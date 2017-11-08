@@ -26,7 +26,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         self.player = player
         self.brain = WPTBrain(self.enemy.brainTemplate, player: self.player)
         let startHealth = health == nil ? enemy.ship.health : health
-        self.healthBar = WPTHealthNode(maxHealth: startHealth!, persistent: false)
+        self.healthBar = WPTHealthNode(maxHealth: startHealth!, curHealth: startHealth!, persistent: false)
         super.init(actor: enemy, teamBitMask: WPTValues.enemyTbm)
         
         // brain

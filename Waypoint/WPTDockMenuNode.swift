@@ -151,6 +151,7 @@ class WPTDockMenuNode: SKNode {
             
             // save the progress
             player.player.progress = WPTPlayerProgress(player: player.player)
+            print("----------- SAVING HEALTH \(player.player.progress!.health)")
             let storage = WPTStorage()
             player.player.progress!.levelDockInventory[level.name] = self.itemInventory
             storage.savePlayerProgress(player.player.progress!)
