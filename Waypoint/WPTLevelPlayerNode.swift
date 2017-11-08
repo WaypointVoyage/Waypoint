@@ -26,7 +26,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     init(player: WPTPlayer) {
         super.init(actor: player, teamBitMask: WPTConfig.values.testing ? 0 : WPTValues.playerTbm)
         
-        currentHealth = player.health
+        currentHealth = player.progress!.health
         
         // components
         portHandler = WPTPortDockingHandler(self)

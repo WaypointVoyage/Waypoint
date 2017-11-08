@@ -857,7 +857,7 @@
 					<key>count</key>
 					<integer>10</integer>
 					<key>items</key>
-					<dict/>
+					<array/>
 				</dict>
 			</array>
 		</dict>
@@ -870,7 +870,7 @@
 					<key>count</key>
 					<integer>1</integer>
 					<key>items</key>
-					<dict/>
+					<array/>
 				</dict>
 			</array>
 		</dict>

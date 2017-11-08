@@ -529,7 +529,7 @@
 			<key>enemies</key>
 			<array>
 				<dict>
-					<key>enemies</key>
+					<key>enemy</key>
 					<string>Trebuchet</string>
 					<key>count</key>
 					<integer>2</integer>
