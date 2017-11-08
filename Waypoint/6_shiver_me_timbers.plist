@@ -850,17 +850,29 @@
 	<array>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Viking</key>
-				<integer>10</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Viking</string>
+					<key>count</key>
+					<integer>10</integer>
+					<key>items</key>
+					<dict/>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>enemies</key>
-			<dict>
-				<key>Viking</key>
-				<integer>1</integer>
-			</dict>
+			<array>
+				<dict>
+					<key>enemy</key>
+					<string>Viking</string>
+					<key>count</key>
+					<integer>1</integer>
+					<key>items</key>
+					<dict/>
+				</dict>
+			</array>
 		</dict>
 	</array>
 </dict>
