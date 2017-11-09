@@ -42,6 +42,20 @@ class WPTEnemy: WPTActor, Hashable, Equatable {
         assertBehaviors()
     }
     
+    init(other: WPTEnemy) {
+        self.name = other.name
+        self.awareness = other.awareness
+        self.aggression = other.aggression
+        self.haste = other.haste
+        self.caution = other.caution
+        self.triggerHappiness = other.triggerHappiness
+        self.brainTemplate = other.brainTemplate
+        let ship = WPTShip(other: other.ship)
+        self.terrainType = other.terrainType
+        self.dropHealth = other.dropHealth
+        super.init(ship: ship)
+    }
+    
     private func assertBehaviors() {
         for behavior in [awareness, aggression, haste, caution] {
             assert(0 <= behavior)

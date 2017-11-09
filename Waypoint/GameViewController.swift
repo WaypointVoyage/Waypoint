@@ -56,10 +56,30 @@ class GameViewController: UIViewController {
             
         case WPTAppMode.LEVEL:
             let level = WPTLevel(WPTLevelModeConfig.values.levelFileName)
-            let player = WPTPlayer(playerProgress: getPreconfiguredPlayerProgress())
+            NSLog("Starting level \(level.name)")
+            
+            let progress = getPreconfiguredPlayerProgress()
+            if let itemCount = WPTConfig.values.giveRandomItems {
+                
+                NSLog("Giving player \(itemCount) items")
+                progress.items.removeAll()
+                for item in WPTItemCatalog.getRandomItems(count: itemCount) {
+                    NSLog("  - \(item.name)")
+                    progress.items.append(item.name)
+                }
+                
+                let cannonCount = Int(itemCount / 3)
+                NSLog("Giving player \(cannonCount) cannons")
+                for _ in 0..<cannonCount {
+                    progress.items.append("Cannon")
+                }
+            }
+            let player = WPTPlayer(playerProgress: progress)
+            
             return WPTLevelScene(player: player, level: level)
             
         case WPTAppMode.WORLDMAP:
+            NSLog("Starting on world map")
             let player = WPTPlayer(playerProgress: getPreconfiguredPlayerProgress())
             return WPTWorldScene(player: player)
             

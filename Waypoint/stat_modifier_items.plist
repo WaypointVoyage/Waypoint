@@ -10,7 +10,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>speed</key>
-			<real>0.10000000000000001</real>
+			<real>0.1</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -29,7 +29,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>shotSpeed</key>
-			<real>0.10000000000000001</real>
+			<real>0.1</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -69,7 +69,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>speed</key>
-			<real>0.33000000000000002</real>
+			<real>0.33</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>3</integer>
@@ -107,7 +107,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>speed</key>
-			<real>0.20000000000000001</real>
+			<real>0.2</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>5</integer>
@@ -120,7 +120,7 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>To the Crow's Nest!</string>
+		<string>To the Crow&apos;s Nest!</string>
 		<key>imageName</key>
 		<string>telescope</string>
 		<key>modifiers</key>
@@ -145,12 +145,12 @@
 		<key>modifiers</key>
 		<dict>
 			<key>turnRate</key>
-			<real>0.59999999999999998</real>
+			<real>0.6</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>1</integer>
 		<key>name</key>
-		<string>Ship's Wheel</string>
+		<string>Ship&apos;s Wheel</string>
 		<key>prevalence</key>
 		<integer>40</integer>
 		<key>value</key>
@@ -166,7 +166,7 @@
 			<key>damage</key>
 			<real>1.2</real>
 			<key>fireRate</key>
-			<real>-0.29999999999999999</real>
+			<real>-0.3</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>2</integer>
@@ -179,15 +179,15 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>Eye Can't See!</string>
+		<string>Eye Can&apos;t See!</string>
 		<key>imageName</key>
 		<string>eyepatch</string>
 		<key>modifiers</key>
 		<dict>
 			<key>fireRate</key>
-			<real>1.6000000000000001</real>
+			<real>1.6</real>
 			<key>range</key>
-			<integer>-1</integer>
+			<real>-0.6</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>2</integer>
@@ -225,11 +225,11 @@
 		<key>modifiers</key>
 		<dict>
 			<key>damage</key>
-			<real>2.7999999999999998</real>
+			<real>1.2</real>
 			<key>shotSpeed</key>
 			<integer>-1</integer>
 			<key>speed</key>
-			<real>-0.80000000000000004</real>
+			<real>-0.8</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -269,7 +269,7 @@
 			<key>range</key>
 			<real>1.5</real>
 			<key>size</key>
-			<real>0.20000000000000001</real>
+			<real>0.2</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -307,9 +307,9 @@
 		<key>modifiers</key>
 		<dict>
 			<key>fireRate</key>
-			<real>2.2000000000000002</real>
+			<real>2.2</real>
 			<key>turnRate</key>
-			<real>1.3999999999999999</real>
+			<real>1.4</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -349,7 +349,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>fireRate</key>
-			<real>1.1000000000000001</real>
+			<real>1.1</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>1</integer>
@@ -368,7 +368,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>turnRate</key>
-			<real>0.40000000000000002</real>
+			<real>0.4</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -389,7 +389,7 @@
 			<key>health</key>
 			<real>2.5</real>
 			<key>speed</key>
-			<real>-0.40000000000000002</real>
+			<real>-0.4</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -410,7 +410,7 @@
 			<key>damage</key>
 			<real>1</real>
 			<key>shotSpeed</key>
-			<real>0.29999999999999999</real>
+			<real>0.3</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -429,7 +429,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>health</key>
-			<real>3.5</real>
+			<real>1.2</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>

@@ -13,9 +13,11 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
+    
+    let giveRandomItems: Int? = 2          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
     
     // audio
     let playMusic = true            // toggle music
@@ -59,7 +61,8 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
     let completedLevels: [String]? = nil
     let cannonBallImage: String? = nil
     let doubloons: Int = 0
-    let items: [String]? = ["Oar", "Gun Powder", "Spiked Cannon Ball", "Propeller", "Rudder", "Sail", "Telescope", "Ship's Wheel", "Hook Hand", "Eyepatch"]
+    let items: [String]? = [String]()
+//    let items: [String]? = ["Oar", "Gun Powder", "Spiked Cannon Ball", "Propeller", "Rudder", "Sail", "Telescope", "Ship's Wheel", "Hook Hand", "Eyepatch"]
     let cannonSet: [Int:Bool]? = nil
     
     let progress = WPTPlayerProgress(shipName: shipName, ship: ship, health: health, completedLevels: completedLevels, cannonBallImage: cannonBallImage, doubloons: doubloons, items: items, cannonSet: cannonSet)
@@ -69,7 +72,7 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
 
 class WPTLevelModeConfig {
 
-    let levelFileName: String = "11_x_marks_the_spot"  // the name of the level file to load
+    let levelFileName: String = "1_sea_legs"  // the name of the level file to load
     
     // singleton instance
     private init() {}

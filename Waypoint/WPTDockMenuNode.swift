@@ -151,7 +151,6 @@ class WPTDockMenuNode: SKNode {
             
             // save the progress
             player.player.progress = WPTPlayerProgress(player: player.player)
-            print("----------- SAVING HEALTH \(player.player.progress!.health)")
             let storage = WPTStorage()
             player.player.progress!.levelDockInventory[level.name] = self.itemInventory
             storage.savePlayerProgress(player.player.progress!)
@@ -162,13 +161,17 @@ class WPTDockMenuNode: SKNode {
     }
     
     private func getRandomItems(numItems: Int) -> [ItemWrapper] {
+        let priceScale: Float = Float(player.player.difficulty)
         var items: [ItemWrapper] = []
+        
         let shipMaintenance = WPTItemCatalog.itemsByName["Ship Maintenance"]!
-        items.append(ItemWrapper(name: shipMaintenance.name, price: shipMaintenance.value, purchased: false))
+        items.append(ItemWrapper(name: shipMaintenance.name, price: Int(priceScale * Float(shipMaintenance.value)), purchased: false))
+        
         if !self.player.hasAllCannons {
             let cannon = WPTItemCatalog.itemsByName["Cannon"]!
-            items.append(ItemWrapper(name: cannon.name, price: cannon.value, purchased: false))
+            items.append(ItemWrapper(name: cannon.name, price: Int(priceScale * Float(cannon.value)), purchased: false))
         }
+        
         for _ in 0..<numItems {
             var found = false
             while (!found) {
@@ -177,11 +180,12 @@ class WPTDockMenuNode: SKNode {
                     item.itemName == randItem.name
                 })
                 if (!duplicate) {
-                    items.append(ItemWrapper(name: randItem.name, price: randItem.value, purchased: false))
+                    items.append(ItemWrapper(name: randItem.name, price: Int(priceScale * Float(randItem.value)), purchased: false))
                     found = true
                 }
             }
         }
+        
         return items
     }
     

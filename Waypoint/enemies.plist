@@ -80,7 +80,7 @@
 		<key>aggression</key>
 		<integer>1</integer>
 		<key>awareness</key>
-		<integer>1</integer>
+		<real>0.5</real>
 		<key>brain</key>
 		<string>stand_and_shoot</string>
 		<key>caution</key>

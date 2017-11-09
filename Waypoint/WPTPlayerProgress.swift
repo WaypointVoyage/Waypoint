@@ -21,8 +21,8 @@ class WPTPlayerProgress: NSObject, NSCoding {
     let ship: String                // think of this as the 'make and model' of ship that is used
     let cannonBallImage: String
     let doubloons: Int
-    let items: [String]
-    let cannonSet: [Int:Bool]
+    var items: [String]
+    var cannonSet: [Int:Bool]
     
     init(player: WPTPlayer) {
         self.difficulty = player.difficulty

@@ -242,7 +242,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
                 self.currentHealth += repair
             }
         }
-        
+
         // could have a new cannon ball image?
         if let newImg = item.cannonBallImage {
             actor.cannonBall.image = newImg
@@ -252,7 +252,14 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         switch (item.tier) {
         case WPTItemTier.statModifier:
             itemEffect.playEffect()
+            let healthBefore = self.actor.ship.health
             actor.apply(item: item)
+            let healthAfter = self.actor.ship.health
+            let healthChange = healthAfter - healthBefore
+            // if the item increased health, we want them to gain the extra health
+            if healthChange != 0 {
+                self.doDamage(healthChange)
+            }
         case WPTItemTier.currency:
             if item.name.contains("Coin") {
                 coinDropEffect.playEffect()
@@ -277,24 +284,11 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     }
     
     private func addCannon() {
-        
-        var positions = [Int]()
-        for i in 0..<self.actor.ship.cannonSet.cannons.count {
-            let cannon = self.actor.ship.cannonSet.cannons[i]
-            if !cannon.hasCannon {
-                positions.append(i)
-            }
+        if let cannon = self.actor.addCannon() {
+            let cannonNode = WPTCannonNode(cannon, actor: self)
+            self.cannonNodes.append(cannonNode)
+            self.addChild(cannonNode)
         }
-        if positions.isEmpty {
-            return
-        }
-        
-        let rand = Int(randomNumber(min: 0, max: CGFloat(positions.count)))
-        let cannon = self.actor.ship.cannonSet.cannons[positions[rand]]
-        cannon.hasCannon = true
-        let cannonNode = WPTCannonNode(cannon, actor: self)
-        self.cannonNodes.append(cannonNode)
-        self.addChild(cannonNode)
     }
     
     public func onDeath(_ action: @escaping () -> Void) {
