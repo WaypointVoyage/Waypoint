@@ -277,24 +277,11 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     }
     
     private func addCannon() {
-        
-        var positions = [Int]()
-        for i in 0..<self.actor.ship.cannonSet.cannons.count {
-            let cannon = self.actor.ship.cannonSet.cannons[i]
-            if !cannon.hasCannon {
-                positions.append(i)
-            }
+        if let cannon = self.actor.addCannon() {
+            let cannonNode = WPTCannonNode(cannon, actor: self)
+            self.cannonNodes.append(cannonNode)
+            self.addChild(cannonNode)
         }
-        if positions.isEmpty {
-            return
-        }
-        
-        let rand = Int(randomNumber(min: 0, max: CGFloat(positions.count)))
-        let cannon = self.actor.ship.cannonSet.cannons[positions[rand]]
-        cannon.hasCannon = true
-        let cannonNode = WPTCannonNode(cannon, actor: self)
-        self.cannonNodes.append(cannonNode)
-        self.addChild(cannonNode)
     }
     
     public func onDeath(_ action: @escaping () -> Void) {

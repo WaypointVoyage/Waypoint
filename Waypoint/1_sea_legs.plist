@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>enemyBalanceItem</key>
-	<string>Enemy Balance 0</string>
+	<string>Enemy Balance 1</string>
 	<key>difficulty</key>
-	<integer>2</integer>
+	<real>1.5</real>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>

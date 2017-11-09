@@ -94,4 +94,13 @@ class WPTItemCatalog {
         assert(value == 0)
         return result
     }
+    
+    static func getRandomItems(count: Int) -> [WPTItem] {
+        var result = [WPTItem]()
+        assert(count >= 0)
+        for _ in 0..<count {
+            result.append(WPTItemCatalog.randomStatModifier())
+        }
+        return result
+    }
 }

@@ -5,11 +5,36 @@
 	<dict>
 		<key>modifiers</key>
 		<dict>
+			<key>speed</key>
+			<real>0.1</real>
+			<key>health</key>
+			<real>1.5</real>
+		</dict>
+		<key>description</key>
+		<string>balance for level 1</string>
+		<key>imageName</key>
+		<string>_</string>
+		<key>multiplicity</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Enemy Balance 1</string>
+		<key>prevalence</key>
+		<integer>0</integer>
+		<key>tier</key>
+		<string>OTHER</string>
+		<key>value</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>speed</key>
+			<real>-0.3</real>
 			<key>damage</key>
 			<real>-0.3</real>
 		</dict>
 		<key>description</key>
-		<string>Extra Cannon</string>
+		<string>balance for level 0</string>
 		<key>imageName</key>
 		<string>_</string>
 		<key>multiplicity</key>
