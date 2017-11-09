@@ -114,6 +114,13 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func isStationaryEnemy() -> Bool {
+        if let enemy = self.actor as? WPTEnemy {
+            return enemy.stationary
+        }
+        return false
+    }
+    
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
         fireRateMgr.update(currentTime, deltaTime)
         
@@ -134,7 +141,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         }
         
         // move foreward if not anchored
-        if !self.anchored {
+        if !self.anchored && !self.isStationaryEnemy() {
             var force: CGVector? = nil
             if let turnVector = turnVector {
                 let dot = forward.dot(turnVector)

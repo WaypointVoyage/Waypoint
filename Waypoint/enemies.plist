@@ -75,6 +75,8 @@
 		<string>Static Tentacle</string>
 	</dict>
 	<dict>
+		<key>stationary</key>
+		<true/>
 		<key>dropHealth</key>
 		<true/>
 		<key>aggression</key>
@@ -99,6 +101,8 @@
 		<real>0.5</real>
 	</dict>
 	<dict>
+		<key>stationary</key>
+		<true/>
 		<key>dropHealth</key>
 		<true/>
 		<key>aggression</key>

@@ -77,8 +77,9 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
             if phys.collisionBitMask & WPTValues.boundaryCbm == 0 {
                 if let scene = self.scene as? WPTLevelScene {
                     let terrainBox = CGRect(origin: CGPoint.zero, size: scene.terrain.size)
-                    let enemyBoxOrigin = CGPoint(x: self.position.x - self.sprite.frame.width / 2, y: self.position.y - self.sprite.frame.height / 2)
+                    let enemyBoxOrigin = CGPoint(x: self.position.x - self.sprite.frame.width / 3, y: self.position.y - self.sprite.frame.height / 3)
                     let enemyBox = CGRect(origin: enemyBoxOrigin, size: self.sprite.frame.size)
+//                    if terrainBox.contains(self.position) {
                     if terrainBox.contains(enemyBox) {
                         self.physicsBody?.collisionBitMask |= WPTValues.boundaryCbm
                         self.brain?.start()

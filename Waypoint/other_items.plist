@@ -8,9 +8,9 @@
 			<key>range</key>
 			<string>1.3</string>
 			<key>speed</key>
-			<real>0.4</real>
+			<real>0.1</real>
 			<key>health</key>
-			<real>2.5</real>
+			<integer>2</integer>
 		</dict>
 		<key>description</key>
 		<string>balance for level 1</string>

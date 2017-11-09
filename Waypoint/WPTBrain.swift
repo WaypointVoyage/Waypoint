@@ -37,6 +37,13 @@ class WPTBrain: GKStateMachine {
         return self.currentState != nil
     }
     
+    var levelDifficulty: CGFloat {
+        if let scene = self.player.scene as? WPTLevelScene {
+            return log(scene.level.difficulty) / CG_PI + 1
+        }
+        return 1
+    }
+    
     init(_ template: WPTBrainTemplate, player: WPTLevelPlayerNode) {
         self.template = template
         self.player = player
@@ -64,14 +71,17 @@ class WPTBrain: GKStateMachine {
     }
     
     func setBehavior() {
-        radiusOfEngagement = enemy.enemy.haste * WPTBrain.baseRadiusOfEngagement
-        innerRadiusOfObliviousness = radiusOfEngagement + enemy.enemy.aggression * WPTBrain.baseInnerRadiusOfObliviousness
-        outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * WPTBrain.baseOuterRadiusOfObliviousness
-        radiusOfSafety = outerRadiusOfObliviousness + enemy.enemy.caution * WPTBrain.baseRadiusOfSafety
+        radiusOfEngagement = enemy.enemy.haste * WPTBrain.baseRadiusOfEngagement * self.levelDifficulty
+
+        innerRadiusOfObliviousness = radiusOfEngagement + enemy.enemy.aggression * WPTBrain.baseInnerRadiusOfObliviousness * self.levelDifficulty
+        
+        outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * WPTBrain.baseOuterRadiusOfObliviousness * self.levelDifficulty
+        
+        radiusOfSafety = outerRadiusOfObliviousness + enemy.enemy.caution * WPTBrain.baseRadiusOfSafety * self.levelDifficulty
         
         healthCutoff = radiusOfEngagement / radiusOfSafety
         
-        enemy.fireRateMgr.modifier = enemy.enemy.triggerHappiness
+        enemy.fireRateMgr.modifier = enemy.enemy.triggerHappiness * self.levelDifficulty
     }
     
     func start() {
@@ -86,17 +96,21 @@ class WPTBrain: GKStateMachine {
         
         switch (type) {
         case WPTBrainStateType.NOTHING:
+//            print("\(self.enemy.enemy.name) is entering the NOTHING state")
             return self.enter(WPTBrainStateFactory.classFromInstance(self.nothingState))
         case WPTBrainStateType.OFFENSE:
             if let target = self.offenseState {
+//                print("\(self.enemy.enemy.name) is entering the OFFSENSE state")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target))
             } else { return false; }
         case WPTBrainStateType.DEFENSE:
             if let target = self.defenseState {
+//                print("\(self.enemy.enemy.name) is entering the DEFENSE state")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
         case WPTBrainStateType.FLEE:
             if let target = self.fleeState {
+//                print("\(self.enemy.enemy.name) is entering the FLEE state")
                 return self.enter(WPTBrainStateFactory.classFromInstance(target));
             } else { return false; }
         }
@@ -105,6 +119,7 @@ class WPTBrain: GKStateMachine {
     override func update(deltaTime sec: TimeInterval) {
         let healthLow = enemy.currentHealth < healthCutoff * enemy.enemy.ship.health
         let dist = CGVector(start: enemy.position, end: player.position).magnitude()
+//        print("\(self.enemy.enemy.name) - {healthLow: \(healthLow), dist: \(dist), state: \(self.currentBrainState.type)}")
         self.currentBrainState.update(deltaTime: sec, healthLow: healthLow, distToPlayer: dist)
 
         // new state?
@@ -121,7 +136,6 @@ class WPTBrain: GKStateMachine {
     }
     
     private func updateNothing(deltaTime sec: TimeInterval, dist: CGFloat, healthLow: Bool) {
-        
         if healthLow && dist < outerRadiusOfObliviousness {
             if transition(WPTBrainStateType.FLEE) { return }
         }

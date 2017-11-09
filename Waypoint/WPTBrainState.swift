@@ -29,7 +29,9 @@ class WPTBrainState: GKState {
     }
     
     func tryShoot() {
-        guard enemy.fireRateMgr.canFire else { return; }
+        guard enemy.fireRateMgr.canFire else {
+            return
+        }
         
         for cannon in self.enemy.cannonNodes {
             let rot = enemy.zRotation + cannon.zRotation

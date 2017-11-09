@@ -25,12 +25,16 @@ class WPTDockMenuNode: SKNode {
     var purchaseLabel = WPTButtonNode(text: "Purchase", fontSize: WPTValues.fontSizeSmall)
     let wahm = WPTButtonNode(text: "Sail >", fontSize: WPTValues.fontSizeSmall)
     
+    private let priceScale: Float
+    
     init(player: WPTLevelPlayerNode, level: WPTLevel) {
         
         self.player = player
         self.background = SKSpriteNode(imageNamed: "pause_scroll")
         self.dockShroud = SKShapeNode(rectOf: WPTValues.screenSize)
         self.level = level
+        
+        self.priceScale = max(Float(player.player.difficulty), Float(level.difficulty))
         
         super.init()
         self.isUserInteractionEnabled = true
@@ -113,7 +117,7 @@ class WPTDockMenuNode: SKNode {
     func updateStats(item: ItemWrapper) {
         self.itemNameLabel.text = item.item.name
         self.descriptionLabel.text = item.item.description
-        if (player.player.doubloons < item.item.value || item.purchased) {
+        if (player.player.doubloons < item.price || item.purchased) {
             self.purchaseLabel.disabled = true
         } else {
             self.purchaseLabel.disabled = false
@@ -122,7 +126,7 @@ class WPTDockMenuNode: SKNode {
             self.priceLabel.text = "Price: Bought"
             self.itemPicker!.itemImage.alpha = 0.5
         } else {
-            self.priceLabel.text = "Price: \(item.item.value)"
+            self.priceLabel.text = "Price: \(item.price)"
             self.itemPicker!.itemImage.alpha = 1.0
         }
     }
@@ -161,15 +165,18 @@ class WPTDockMenuNode: SKNode {
     }
     
     private func getRandomItems(numItems: Int) -> [ItemWrapper] {
-        let priceScale: Float = Float(player.player.difficulty)
         var items: [ItemWrapper] = []
         
         let shipMaintenance = WPTItemCatalog.itemsByName["Ship Maintenance"]!
-        items.append(ItemWrapper(name: shipMaintenance.name, price: Int(priceScale * Float(shipMaintenance.value)), purchased: false))
+        let maintenanceWrapper = ItemWrapper(name: shipMaintenance.name, price: Int(priceScale * Float(shipMaintenance.value)), purchased: false)
+        NSLog("Adding maintenance of price \(maintenanceWrapper.price) to dock inventory")
+        items.append(maintenanceWrapper)
         
         if !self.player.hasAllCannons {
             let cannon = WPTItemCatalog.itemsByName["Cannon"]!
-            items.append(ItemWrapper(name: cannon.name, price: Int(priceScale * Float(cannon.value)), purchased: false))
+            let cannonWrapper = ItemWrapper(name: cannon.name, price: Int(priceScale * Float(cannon.value)), purchased: false)
+            NSLog("Adding cannon of price \(cannonWrapper.price) to dock inventory")
+            items.append(cannonWrapper)
         }
         
         for _ in 0..<numItems {
@@ -180,7 +187,9 @@ class WPTDockMenuNode: SKNode {
                     item.itemName == randItem.name
                 })
                 if (!duplicate) {
-                    items.append(ItemWrapper(name: randItem.name, price: Int(priceScale * Float(randItem.value)), purchased: false))
+                    let itemWrapper = ItemWrapper(name: randItem.name, price: Int(priceScale * Float(randItem.value)), purchased: false)
+                    NSLog("Adding \(itemWrapper.item.name) of price \(itemWrapper.price) to dock inventory")
+                    items.append(itemWrapper)
                     found = true
                 }
             }
@@ -190,7 +199,7 @@ class WPTDockMenuNode: SKNode {
     }
     
     private func purchaseItem() {
-        player.player.doubloons -= itemPicker!.currentItem.item.value
+        player.player.doubloons -= itemPicker!.currentItem.price
         assert(player.player.doubloons >= 0)
         updateDoubloons()
         if let hud = (self.scene as? WPTLevelScene)?.hud {

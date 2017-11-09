@@ -5,11 +5,11 @@
 	<key>enemyBalanceItem</key>
 	<string>Enemy Balance 1</string>
 	<key>difficulty</key>
-	<real>1.5</real>
+	<real>1.3</real>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
-		<integer>6</integer>
+		<integer>2</integer>
 		<key>whirlpoolPeriod</key>
 		<integer>20</integer>
 	</dict>

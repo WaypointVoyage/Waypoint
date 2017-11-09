@@ -21,6 +21,7 @@ class WPTEnemy: WPTActor, Hashable, Equatable {
     let triggerHappiness: CGFloat // modifies fire rate
     
     let dropHealth: Bool          // whether or not the enemy can drop some health when destroyed
+    let stationary: Bool          // when true, this enemy will not move (catapults and trebuchets)
     
     var hashValue: Int {
         return name.hashValue
@@ -37,6 +38,7 @@ class WPTEnemy: WPTActor, Hashable, Equatable {
         let ship = WPTShipCatalog.shipsByName[enemyDict["ship"] as! String]!
         terrainType = WPTEnemyTerrainType.init(rawValue: enemyDict["terrainType"] as! String)!
         self.dropHealth = enemyDict["dropHealth"] as! Bool
+        self.stationary = (enemyDict["stationary"] as? Bool) ?? false
         super.init(ship: ship)
         
         assertBehaviors()
@@ -53,6 +55,7 @@ class WPTEnemy: WPTActor, Hashable, Equatable {
         let ship = WPTShip(other: other.ship)
         self.terrainType = other.terrainType
         self.dropHealth = other.dropHealth
+        self.stationary = other.stationary
         super.init(ship: ship)
     }
     
