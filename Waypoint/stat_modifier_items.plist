@@ -225,7 +225,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>damage</key>
-			<real>2.8</real>
+			<real>1.2</real>
 			<key>shotSpeed</key>
 			<integer>-1</integer>
 			<key>speed</key>
@@ -429,7 +429,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>health</key>
-			<real>3.5</real>
+			<real>1.2</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>

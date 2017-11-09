@@ -100,8 +100,8 @@ class WaveEnemy {
     
     init(dict: [String:AnyObject]) {
         let enemyName = dict["enemy"] as! String
-        self.enemy = WPTEnemyCatalog.enemiesByName[enemyName]!
-        
+        self.enemy = WPTEnemy(other: WPTEnemyCatalog.enemiesByName[enemyName]!)
+
         self.items = [WPTItem]()
         for itemName in dict["items"] as! [String] {
             self.items.append(WPTItemCatalog.itemsByName[itemName]!)

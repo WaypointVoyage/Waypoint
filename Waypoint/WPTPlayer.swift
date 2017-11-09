@@ -47,4 +47,14 @@ class WPTPlayer: WPTActor {
             self.apply(item: WPTItemCatalog.itemsByName[itemName]!)
         }
     }
+    
+    override func apply(item: WPTItem) {
+        let healthBefore = self.ship.health
+        super.apply(item: item)
+        let healthAfter = self.ship.health
+        let healthChange = healthAfter - healthBefore
+        if healthChange != 0 {
+            self.health += healthChange
+        }
+    }
 }

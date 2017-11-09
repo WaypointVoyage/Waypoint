@@ -242,7 +242,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
                 self.currentHealth += repair
             }
         }
-        
+
         // could have a new cannon ball image?
         if let newImg = item.cannonBallImage {
             actor.cannonBall.image = newImg
@@ -252,7 +252,14 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         switch (item.tier) {
         case WPTItemTier.statModifier:
             itemEffect.playEffect()
+            let healthBefore = self.actor.ship.health
             actor.apply(item: item)
+            let healthAfter = self.actor.ship.health
+            let healthChange = healthAfter - healthBefore
+            // if the item increased health, we want them to gain the extra health
+            if healthChange != 0 {
+                self.doDamage(healthChange)
+            }
         case WPTItemTier.currency:
             if item.name.contains("Coin") {
                 coinDropEffect.playEffect()

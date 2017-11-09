@@ -17,7 +17,7 @@ class WPTConfig {
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
-    let giveRandomItems: Int? = 3          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
+    let giveRandomItems: Int? = 2          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
     
     // audio
     let playMusic = true            // toggle music
