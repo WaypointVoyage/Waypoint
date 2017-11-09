@@ -13,14 +13,16 @@ class WPTDestroyMenuNode: SKNode {
     //Thar She Blows
     private let gameOver = WPTLabelNode(text: "Game Over Matey!", fontSize: WPTValues.fontSizeMedium)
     private let shipName = WPTLabelNode(text: "", fontSize: WPTValues.fontSizeSmall)
-    private let doubloonLabel = WPTLabelNode(text: "Doubloons", fontSize: WPTValues.fontSizeSmall)
+    private let doubloonImage = SKSpriteNode(imageNamed: "doubloons")
     private let continueLabel = WPTButtonNode(text: "Continue >", fontSize: WPTValues.fontSizeSmall)
     private var doubloons: WPTLabelNode
+    private var levelsCompleted: WPTLabelNode
     private var player: WPTPlayer
     
     init(player: WPTPlayer) {
         
         self.player = player
+        self.levelsCompleted = WPTLabelNode(text: "Level: \(self.player.completedLevels.count + 1)", fontSize: WPTValues.fontSizeSmall)
         self.doubloons = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)
         super.init()
         self.isUserInteractionEnabled = true
@@ -58,17 +60,25 @@ class WPTDestroyMenuNode: SKNode {
         shipName.position.y += 0.14 * background.size.height
         self.addChild(shipName)
         
+        //levelsBeatenLabel
+        levelsCompleted.zPosition = 1
+        levelsCompleted.fontColor = UIColor.black
+        levelsCompleted.position.y += 0.03 * background.size.height
+        levelsCompleted.position.x += 0.12 * background.size.height
+        self.addChild(levelsCompleted)
+        
         // doubloonLabel
-        doubloonLabel.zPosition = 1
-        doubloonLabel.fontColor = UIColor.black
-        doubloonLabel.position.y -= 0.04 * background.size.height
-        doubloonLabel.position.x += 0.1 * background.size.height
-        self.addChild(doubloonLabel)
+        doubloonImage.zPosition = 1
+        let doubloonImgSize = 1.8 * WPTValues.fontSizeSmall
+        doubloonImage.size = CGSize(width: doubloonImgSize, height: doubloonImgSize)
+        doubloonImage.position.y -= 0.05 * background.size.height
+        doubloonImage.position.x += 0.09 * background.size.height
+        self.addChild(doubloonImage)
         
         doubloons.zPosition = 1
         doubloons.fontColor = UIColor.black
-        doubloons.position.y -= 0.04 * background.size.height
-        doubloons.position.x += 0.27 * background.size.height
+        doubloons.position.y -= 0.06 * background.size.height
+        doubloons.position.x += 0.18 * background.size.height
         self.addChild(doubloons)
         
         continueLabel.zPosition = 1
