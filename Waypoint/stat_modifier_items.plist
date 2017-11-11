@@ -206,7 +206,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>fireRate</key>
-			<real>2.5</real>
+			<real>1.5</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -225,11 +225,11 @@
 		<key>modifiers</key>
 		<dict>
 			<key>damage</key>
-			<real>1.2</real>
+			<real>0.8</real>
 			<key>shotSpeed</key>
-			<integer>-1</integer>
-			<key>speed</key>
 			<real>-0.8</real>
+			<key>speed</key>
+			<real>-0.6</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>

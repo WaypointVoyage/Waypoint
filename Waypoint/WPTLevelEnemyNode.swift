@@ -27,8 +27,9 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         self.enemy = enemy
         self.player = player
         self.brain = WPTBrain(self.enemy.brainTemplate, player: self.player)
-        let startHealth = health == nil ? enemy.ship.health : health
-        self.healthBar = WPTHealthNode(maxHealth: startHealth!, curHealth: startHealth!, persistent: false)
+        let startHealth = health ?? enemy.ship.health
+        print("MAX: \(enemy.ship.health), CURRENT: \(startHealth)")
+        self.healthBar = WPTHealthNode(maxHealth: enemy.ship.health, curHealth: startHealth, persistent: false)
         super.init(actor: enemy, teamBitMask: WPTValues.enemyTbm)
         
         // brain
@@ -72,21 +73,31 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         super.update(currentTime, deltaTime)
         healthBar.zRotation = -self.zRotation
         
-        // once the enemy is inside the boundary, they will collide with it
-        if let phys = self.physicsBody {
-            if phys.collisionBitMask & WPTValues.boundaryCbm == 0 {
-                if let scene = self.scene as? WPTLevelScene {
-                    let terrainBox = CGRect(origin: CGPoint.zero, size: scene.terrain.size)
-                    let enemyBoxOrigin = CGPoint(x: self.position.x - self.sprite.frame.width / 3, y: self.position.y - self.sprite.frame.height / 3)
-                    let enemyBox = CGRect(origin: enemyBoxOrigin, size: self.sprite.frame.size)
-//                    if terrainBox.contains(self.position) {
-                    if terrainBox.contains(enemyBox) {
-                        self.physicsBody?.collisionBitMask |= WPTValues.boundaryCbm
-                        self.brain?.start()
+        // check to see if the brain should start
+        if self.brain != nil && !self.brain!.started {
+            if self.enemy.terrainType == .land {
+                self.brain?.start()
+            } else {
+                // once the enemy is inside the boundary, they will collide with it
+                if let phys = self.physicsBody {
+                    if phys.collisionBitMask & WPTValues.boundaryCbm == 0 {
+                        if let scene = self.scene as? WPTLevelScene {
+                            let terrainBox = CGRect(origin: CGPoint.zero, size: scene.terrain.size)
+                            let enemyBoxOrigin = CGPoint(x: self.position.x - self.sprite.frame.width / 5, y: self.position.y - self.sprite.frame.height / 5)
+                            let enemyBox = CGRect(origin: enemyBoxOrigin, size: self.sprite.frame.size)
+                            if terrainBox.contains(enemyBox) {
+                                self.physicsBody?.collisionBitMask |= WPTValues.boundaryCbm
+                                self.brain?.start()
+                            }
+                        }
                     }
                 }
             }
         }
+    }
+    
+    func updateHealth() {
+        self.healthBar.maxHealth = self.enemy.ship.health
     }
     
     override func doDamage(_ damage: CGFloat) {

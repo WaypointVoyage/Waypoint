@@ -37,11 +37,20 @@ class WPTBrain: GKStateMachine {
         return self.currentState != nil
     }
     
-    var levelDifficulty: CGFloat {
+    var levelDifficultyTapered: CGFloat {
         if let scene = self.player.scene as? WPTLevelScene {
             return log(scene.level.difficulty) / CG_PI + 1
         }
         return 1
+    }
+    
+    var levelDifficultySofter: CGFloat {
+        let difficulty = (self.player.scene as? WPTLevelScene)?.level.difficulty ?? 1
+        if difficulty <= 1 {
+            return 1
+        } else {
+            return difficulty / 4
+        }
     }
     
     init(_ template: WPTBrainTemplate, player: WPTLevelPlayerNode) {
@@ -71,17 +80,17 @@ class WPTBrain: GKStateMachine {
     }
     
     func setBehavior() {
-        radiusOfEngagement = enemy.enemy.haste * WPTBrain.baseRadiusOfEngagement * self.levelDifficulty
+        radiusOfEngagement = enemy.enemy.haste * WPTBrain.baseRadiusOfEngagement * self.levelDifficultyTapered
 
-        innerRadiusOfObliviousness = radiusOfEngagement + enemy.enemy.aggression * WPTBrain.baseInnerRadiusOfObliviousness * self.levelDifficulty
+        innerRadiusOfObliviousness = radiusOfEngagement + enemy.enemy.aggression * WPTBrain.baseInnerRadiusOfObliviousness * self.levelDifficultyTapered
         
-        outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * WPTBrain.baseOuterRadiusOfObliviousness * self.levelDifficulty
+        outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * WPTBrain.baseOuterRadiusOfObliviousness * self.levelDifficultyTapered
         
-        radiusOfSafety = outerRadiusOfObliviousness + enemy.enemy.caution * WPTBrain.baseRadiusOfSafety * self.levelDifficulty
+        radiusOfSafety = outerRadiusOfObliviousness + enemy.enemy.caution * WPTBrain.baseRadiusOfSafety * self.levelDifficultyTapered
         
         healthCutoff = radiusOfEngagement / radiusOfSafety
         
-        enemy.fireRateMgr.modifier = enemy.enemy.triggerHappiness * self.levelDifficulty
+        enemy.fireRateMgr.modifier = enemy.enemy.triggerHappiness * self.levelDifficultySofter
     }
     
     func start() {

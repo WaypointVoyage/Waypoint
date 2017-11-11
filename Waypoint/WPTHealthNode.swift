@@ -14,7 +14,7 @@ class WPTHealthNode: SKNode {
     
     let healthBarWidth: CGFloat = 90
     let healthBarHeight: CGFloat = 9
-    let maxHealth: CGFloat
+    var maxHealth: CGFloat
     var curHealth: CGFloat
     
     var shipHealthBar = SKSpriteNode()
@@ -26,6 +26,7 @@ class WPTHealthNode: SKNode {
         self.curHealth = curHealth
         
         super.init()
+        self.zPosition = 10
         
         self.addChild(shipHealthBar)
         

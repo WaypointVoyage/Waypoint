@@ -141,6 +141,16 @@
 		<array>
 			<dict>
 				<key>angle</key>
+				<real>3.1415926</real>
+				<key>hasCannon</key>
+				<false/>
+				<key>x</key>
+				<integer>-100</integer>
+				<key>y</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>angle</key>
 				<integer>0</integer>
 				<key>hasCannon</key>
 				<true/>

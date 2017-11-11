@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>enemyBalanceItem</key>
-	<string>Enemy Balance 0</string>
+	<string>Enemy Balance 2</string>
 	<key>difficulty</key>
 	<integer>4</integer>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
-		<integer>4</integer>
+		<integer>2</integer>
 		<key>whirlpoolPeriod</key>
 		<integer>10</integer>
 	</dict>
@@ -592,7 +592,9 @@
 					<key>count</key>
 					<integer>4</integer>
 					<key>items</key>
-					<array/>
+					<array>
+						<string>Cannon</string>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -605,7 +607,9 @@
 					<key>count</key>
 					<integer>2</integer>
 					<key>items</key>
-					<array/>
+					<array>
+						<string>Barrel</string>
+					</array>
 				</dict>
 			</array>
 		</dict>

@@ -17,7 +17,7 @@ class WPTConfig {
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
-    let giveRandomItems: Int? = nil          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
+    let giveRandomItems: Int? = 4          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
     
     // audio
     let playMusic = true            // toggle music
@@ -72,7 +72,7 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
 
 class WPTLevelModeConfig {
 
-    let levelFileName: String = "1_sea_legs"  // the name of the level file to load
+    let levelFileName: String = "2_pegleg_plunder"  // the name of the level file to load
     
     // singleton instance
     private init() {}

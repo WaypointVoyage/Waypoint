@@ -5,8 +5,35 @@
 	<dict>
 		<key>modifiers</key>
 		<dict>
+			<key>damage</key>
+			<real>0.3</real>
 			<key>range</key>
-			<string>1.3</string>
+			<real>1.3</real>
+			<key>speed</key>
+			<real>0.1</real>
+			<key>health</key>
+			<integer>4</integer>
+		</dict>
+		<key>description</key>
+		<string>balance for level 2</string>
+		<key>imageName</key>
+		<string>_</string>
+		<key>multiplicity</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Enemy Balance 2</string>
+		<key>prevalence</key>
+		<integer>0</integer>
+		<key>tier</key>
+		<string>OTHER</string>
+		<key>value</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>range</key>
+			<real>1.3</real>
 			<key>speed</key>
 			<real>0.1</real>
 			<key>health</key>
