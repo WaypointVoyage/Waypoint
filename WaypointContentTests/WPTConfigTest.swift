@@ -14,7 +14,6 @@ class WPTConfigTest: XCTestCase {
     
     func testConfigInNormalMode() {
         XCTAssertEqual(WPTConfig.values.mode, WPTAppMode.NORMAL, "Please change WPTConfig.values.mode to WPTAppMode.NORMAL before commiting.")
-        XCTAssertNil(WPTConfig.values.giveRandomItems, "Please change WPTConfig.values.giveRandomItems to nil before commiting.")
     }
     
     func testConfigAudioSettings() {
