@@ -80,7 +80,7 @@
 		<key>dropHealth</key>
 		<true/>
 		<key>aggression</key>
-		<integer>1</integer>
+		<real>0.7</real>
 		<key>awareness</key>
 		<real>0.5</real>
 		<key>brain</key>
