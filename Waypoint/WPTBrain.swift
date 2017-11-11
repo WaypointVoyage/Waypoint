@@ -37,6 +37,10 @@ class WPTBrain: GKStateMachine {
         return self.currentState != nil
     }
     
+    var levelDifficulty: CGFloat {
+        return (self.player.scene as? WPTLevelScene)?.level.difficulty ?? 1
+    }
+
     var levelDifficultyTapered: CGFloat {
         if let scene = self.player.scene as? WPTLevelScene {
             return log(scene.level.difficulty) / CG_PI + 1
@@ -84,7 +88,7 @@ class WPTBrain: GKStateMachine {
 
         innerRadiusOfObliviousness = radiusOfEngagement + enemy.enemy.aggression * WPTBrain.baseInnerRadiusOfObliviousness * self.levelDifficultyTapered
         
-        outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * WPTBrain.baseOuterRadiusOfObliviousness * self.levelDifficultyTapered
+        outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * WPTBrain.baseOuterRadiusOfObliviousness * self.levelDifficulty
         
         radiusOfSafety = outerRadiusOfObliviousness + enemy.enemy.caution * WPTBrain.baseRadiusOfSafety * self.levelDifficultyTapered
         

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>enemyBalanceItem</key>
-	<string>Enemy Balance 0</string>
+	<string>Enemy Balance 3</string>
 	<key>difficulty</key>
-	<integer>9</integer>
+	<integer>6</integer>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
@@ -1418,7 +1418,10 @@
 					<key>count</key>
 					<integer>4</integer>
 					<key>items</key>
-					<array/>
+					<array>
+						<string>Barrel</string>
+						<string>Pile of Cannon Balls</string>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -1431,7 +1434,10 @@
 					<key>count</key>
 					<integer>5</integer>
 					<key>items</key>
-					<array/>
+					<array>
+						<string>Pile of Cannon Balls</string>
+						<string>Barrel</string>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -1444,7 +1450,10 @@
 					<key>count</key>
 					<integer>6</integer>
 					<key>items</key>
-					<array/>
+					<array>
+						<string>Pile of Cannon Balls</string>
+						<string>Barrel</string>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -1457,7 +1466,10 @@
 					<key>count</key>
 					<integer>7</integer>
 					<key>items</key>
-					<array/>
+					<array>
+						<string>Barrel</string>
+						<string>Pile of Cannon Balls</string>
+					</array>
 				</dict>
 			</array>
 		</dict>
