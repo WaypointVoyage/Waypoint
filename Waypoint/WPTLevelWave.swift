@@ -109,6 +109,6 @@ class WaveEnemy {
     }
     
     func reset() {
-        self.enemy = WPTEnemy(other: self.enemy)
+        self.enemy = WPTEnemy(other: WPTEnemyCatalog.enemiesByName[self.enemy.name]!)
     }
 }
