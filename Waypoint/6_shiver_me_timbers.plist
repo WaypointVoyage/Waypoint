@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>enemyBalanceItem</key>
-	<string>Enemy Balance 0</string>
+	<string>Enemy Balance 6</string>
 	<key>difficulty</key>
-	<integer>60</integer>
+	<integer>25</integer>
 	<key>goldDrop</key>
-	<real>3.1</real>
+	<real>9.199999999999999</real>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
 		<integer>12</integer>
 		<key>whirlpoolPeriod</key>
-		<real>3.75</real>
+		<integer>-1</integer>
 	</dict>
 	<key>name</key>
 	<string>Shiver Me Timbers</string>
@@ -938,12 +938,38 @@
 			<key>enemies</key>
 			<array>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>health</key>
+							<real>5</real>
+							<key>damage</key>
+							<real>-0.5</real>
+							<key>fireRate</key>
+							<integer>-1</integer>
+							<key>range</key>
+							<real>1.5</real>
+							<key>size</key>
+							<integer>5</integer>
+						</dict>
+					</dict>
 					<key>enemy</key>
 					<string>Viking</string>
 					<key>count</key>
 					<integer>1</integer>
 					<key>items</key>
-					<array/>
+					<array>
+						<string>Cannon</string>
+						<string>Cannon</string>
+						<string>Cannon</string>
+						<string>Cannon</string>
+						<string>Spiked Cannon Ball</string>
+						<string>Cannon</string>
+						<string>Cannon</string>
+						<string>Cannon</string>
+						<string>Cannon</string>
+					</array>
 				</dict>
 			</array>
 		</dict>

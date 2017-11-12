@@ -545,6 +545,14 @@
 			<key>enemies</key>
 			<array>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>damage</key>
+							<integer>-9223372036854775808</integer>
+						</dict>
+					</dict>
 					<key>enemy</key>
 					<string>Catapult</string>
 					<key>count</key>

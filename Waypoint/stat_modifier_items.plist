@@ -28,8 +28,10 @@
 		<string>gunpowder</string>
 		<key>modifiers</key>
 		<dict>
+			<key>fireRate</key>
+			<real>0.3</real>
 			<key>damage</key>
-			<string>0.3</string>
+			<real>0.3</real>
 			<key>shotSpeed</key>
 			<real>0.1</real>
 		</dict>
@@ -40,7 +42,7 @@
 		<key>prevalence</key>
 		<integer>75</integer>
 		<key>value</key>
-		<integer>23</integer>
+		<integer>28</integer>
 	</dict>
 	<dict>
 		<key>cannonBallImage</key>
@@ -217,17 +219,19 @@
 		<string>pile_of_cannon_balls</string>
 		<key>modifiers</key>
 		<dict>
+			<key>damage</key>
+			<real>-0.4</real>
 			<key>fireRate</key>
-			<real>0.8</real>
+			<real>0.7</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
 		<key>name</key>
 		<string>Pile of Cannon Balls</string>
 		<key>prevalence</key>
-		<integer>20</integer>
+		<integer>30</integer>
 		<key>value</key>
-		<integer>50</integer>
+		<integer>40</integer>
 	</dict>
 	<dict>
 		<key>description</key>
@@ -370,6 +374,8 @@
 		<string>bandana</string>
 		<key>modifiers</key>
 		<dict>
+			<key>damage</key>
+			<real>-0.2</real>
 			<key>health</key>
 			<real>0.05</real>
 			<key>fireRate</key>
@@ -380,7 +386,7 @@
 		<key>name</key>
 		<string>Bandana</string>
 		<key>prevalence</key>
-		<integer>25</integer>
+		<integer>30</integer>
 		<key>value</key>
 		<integer>15</integer>
 	</dict>
@@ -433,6 +439,8 @@
 		<string>blunderbuss</string>
 		<key>modifiers</key>
 		<dict>
+			<key>fireRate</key>
+			<real>0.2</real>
 			<key>damage</key>
 			<real>1</real>
 			<key>shotSpeed</key>
@@ -445,7 +453,7 @@
 		<key>prevalence</key>
 		<integer>65</integer>
 		<key>value</key>
-		<integer>25</integer>
+		<integer>30</integer>
 	</dict>
 	<dict>
 		<key>description</key>

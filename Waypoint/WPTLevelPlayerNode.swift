@@ -100,7 +100,9 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
             
             if WPTConfig.values.restartLevelOnDeath && !alive {
                 self.player.progress?.health = self.player.ship.health
-                self.player.progress?.doubloons = (self.scene as! WPTLevelScene).levelStartMoney
+                let doubloons = (self.scene as! WPTLevelScene).levelStartMoney
+                self.player.progress?.doubloons = doubloons
+                self.player.doubloons = doubloons
                 scene.level.resetWaveEnemies()
                 scene.view?.presentScene(WPTLevelScene(player: self.player, level: scene.level))
             }

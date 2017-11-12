@@ -206,7 +206,7 @@
 		<key>dropHealth</key>
 		<true/>
 		<key>aggression</key>
-		<real>0.2</real>
+		<real>1.5</real>
 		<key>awareness</key>
 		<real>1.2</real>
 		<key>brain</key>

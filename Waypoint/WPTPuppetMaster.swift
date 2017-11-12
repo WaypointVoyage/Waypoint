@@ -47,12 +47,14 @@ class WPTPuppetMaster: GKStateMachine {
         super.update(deltaTime: sec)
         
         if let period = self.scene.level.whirlpoolPeriod {
-            let rand = randomNumber(min: 0, max: CGFloat(period))
-            if rand < CGFloat(sec) {
-                let whirlpool = WPTWhirlpoolNode()
-                whirlpool.position = self.scene.terrain.randomPoint(borderWidth: WPTWhirlpoolNode.whirlpoolRadius, onLand: false)
-                self.scene.terrain.addChild(whirlpool)
-                whirlpool.start()
+            if period >= 0 {
+                let rand = randomNumber(min: 0, max: CGFloat(period))
+                if rand < CGFloat(sec) {
+                    let whirlpool = WPTWhirlpoolNode()
+                    whirlpool.position = self.scene.terrain.randomPoint(borderWidth: WPTWhirlpoolNode.whirlpoolRadius, onLand: false)
+                    self.scene.terrain.addChild(whirlpool)
+                    whirlpool.start()
+                }
             }
         }
     }

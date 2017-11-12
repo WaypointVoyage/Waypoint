@@ -42,7 +42,8 @@ class WPTCannonNode: SKNode {
         guard let projectiles = (self.scene as? WPTLevelScene)?.projectiles else { return }
         let time = actor.actor.ship.range / actor.actor.ship.shotSpeed
         
-        let ball = WPTCannonBallNode(actor.actor.cannonBall, damage: actor.actor.ship.damage, size: self.actor.actor.ship.size)
+        let size = self.actor.actor.ship.size * self.actor.actor.ship.cannonBallScale
+        let ball = WPTCannonBallNode(actor.actor.cannonBall, damage: actor.actor.ship.damage, size: size)
         ball.teamBitMask = actor.teamBitMask
         ball.position = actor.convert(self.cannonBallSpawnPoint, to: projectiles)
         ball.physics.velocity = getCannonVelocity()

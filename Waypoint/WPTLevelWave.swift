@@ -98,6 +98,8 @@ class WaveEnemy {
     public var enemy: WPTEnemy
     public private(set) var items: [WPTItem]
     
+    private var directStats: WPTItem? = nil
+    
     init(dict: [String:AnyObject]) {
         let enemyName = dict["enemy"] as! String
         self.enemy = WPTEnemy(other: WPTEnemyCatalog.enemiesByName[enemyName]!)
@@ -105,6 +107,12 @@ class WaveEnemy {
         self.items = [WPTItem]()
         for itemName in dict["items"] as! [String] {
             self.items.append(WPTItemCatalog.itemsByName[itemName]!)
+        }
+        
+        if let directStatsDict = dict["directStats"] as? [String:AnyObject] {
+            directStats = WPTItem(name: "direct_stat_item", imageName: "no_image", tier: WPTItemTier.statModifier, multiplicity: 0, value: 0, prevalence: 0)
+            directStats!.initStatModifiers(directStatsDict)
+            self.items.append(directStats!)
         }
     }
     

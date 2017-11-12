@@ -20,11 +20,27 @@
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>+50% Health</string>
+		<string>Heal 25%</string>
 		<key>imageName</key>
 		<string>repair_0</string>
 		<key>name</key>
-		<string>Ship Maintenance</string>
+		<string>Ship Maintenance Minor</string>
+		<key>prevalence</key>
+		<integer>100</integer>
+		<key>repair</key>
+		<real>0.25</real>
+		<key>repairProportionally</key>
+		<true/>
+		<key>value</key>
+		<integer>12</integer>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>Heal 50%</string>
+		<key>imageName</key>
+		<string>repair_0</string>
+		<key>name</key>
+		<string>Ship Maintenance Major</string>
 		<key>prevalence</key>
 		<integer>100</integer>
 		<key>repair</key>
@@ -32,7 +48,23 @@
 		<key>repairProportionally</key>
 		<true/>
 		<key>value</key>
-		<integer>25</integer>
+		<integer>24</integer>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>Heal 100%</string>
+		<key>imageName</key>
+		<string>repair_0</string>
+		<key>name</key>
+		<string>Ship Maintenance Complete</string>
+		<key>prevalence</key>
+		<integer>100</integer>
+		<key>repair</key>
+		<real>1</real>
+		<key>repairProportionally</key>
+		<true/>
+		<key>value</key>
+		<integer>48</integer>
 	</dict>
 </array>
 </plist>

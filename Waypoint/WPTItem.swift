@@ -106,7 +106,7 @@ class WPTItem {
         initStatModifiers(itemDict)
     }
     
-    private func initStatModifiers(_ dict: [String:AnyObject]) {
+    func initStatModifiers(_ dict: [String:AnyObject]) {
         self.speedModifier = getStatModifier(from: dict, name: "speed")
         self.damageModifier = getStatModifier(from: dict, name: "damage")
         self.healthModifier = getStatModifier(from: dict, name: "health")

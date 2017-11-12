@@ -49,7 +49,8 @@ class WPTWaveCreationPMS: GKState {
             let waveEnemy = self.wave!.enemies[index]
             NSLog("creating a \(waveEnemy.enemy.name)")
             
-            let enemyNode = WPTLevelEnemyNode(enemy: waveEnemy.enemy, player: scene.player)
+            let enemy = WPTEnemy(other: waveEnemy.enemy)
+            let enemyNode = WPTLevelEnemyNode(enemy: enemy, player: scene.player)
             enemyNode.give(item: scene.level.enemyBalanceItem)
             for item in waveEnemy.items {
                 enemyNode.give(item: item)

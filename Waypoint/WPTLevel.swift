@@ -150,9 +150,7 @@ class WPTLevel {
     }
     
     func randomSpawnVolume() -> CGRect {
-        let rand = CGFloat(arc4random()) / CGFloat(UInt32.max)
-        let index = CGFloat(spawnVolumes.count - 1) * rand
-        return self.spawnVolumes[Int(index)]
+        return self.spawnVolumes[Int(randomNumber(min: 0, max: CGFloat(self.spawnVolumes.count)))]
     }
     
     func resetWaveEnemies() {
