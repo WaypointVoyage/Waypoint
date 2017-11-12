@@ -20,7 +20,7 @@ class WPTPlayerProgress: NSObject, NSCoding {
     // actor stuff
     let ship: String                // think of this as the 'make and model' of ship that is used
     let cannonBallImage: String
-    let doubloons: Int
+    var doubloons: Int
     var items: [String]
     var cannonSet: [Int:Bool]
     

@@ -42,8 +42,11 @@ class WPTLevelScene: WPTScene {
         return progress.completedLevels.contains(self.level.name)
     }
     
+    let levelStartMoney: Int
+    
     init(player: WPTPlayer, level: WPTLevel) {
         NSLog("------------ STARTING LEVEL \"\(level.name)\" ------------")
+        self.levelStartMoney = player.progress!.doubloons
         self.player = WPTLevelPlayerNode(player: player)
         self.level = level
         self.terrain = WPTTerrainNode(level: level, player: self.player)
