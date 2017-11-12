@@ -10,7 +10,6 @@ import SpriteKit
 
 class WPTWakeNode: SKNode, WPTUpdatable {
     
-    private static let WAKE_FRAME_COUNT: Int = 24
     private static let WAKE_FRAME_TIME_DELTA: TimeInterval = 0.05
     
     public weak var actor: WPTLevelActorNode?
@@ -22,11 +21,14 @@ class WPTWakeNode: SKNode, WPTUpdatable {
     
     private var shapeNode: SKShapeNode! = nil
     
+    private let wakeFrameCount: Int
+    
     init(_ actor: WPTLevelActorNode) {
         self.actor = actor
+        self.wakeFrameCount = Int(CGFloat(24) * actor.actor.ship.sizeScale)
         super.init()
         self.zPosition = 1 // just above the terrain
-        
+
         let firstFrame = WPTWakeFrame(self.actor!)
         self.frames.append(firstFrame)
         self.framesPath = [firstFrame.starboardPoint, firstFrame.portPoint]
@@ -37,6 +39,7 @@ class WPTWakeNode: SKNode, WPTUpdatable {
         self.shapeNode.fillShader = SKShader(fileNamed: "wake_fill.fsh")
         self.shapeNode.fillShader!.addUniform(SKUniform(name: "u_actor_dir_x", float: 0.0))
         self.shapeNode.fillShader!.addUniform(SKUniform(name: "u_actor_dir_y", float: 1.0))
+        self.shapeNode.name = "WakeShapeNode"
         self.addChild(shapeNode)
     }
     
@@ -74,7 +77,7 @@ class WPTWakeNode: SKNode, WPTUpdatable {
                 self.framesPath.insert(newFrame.starboardPoint, at: middle)
             }
 
-            if self.frames.count > 0 && (self.frames.count > WPTWakeNode.WAKE_FRAME_COUNT || !self.actorAlive()) {
+            if self.frames.count > 0 && (self.frames.count > self.wakeFrameCount || !self.actorAlive()) {
                 // remove the oldest frame/points
                 self.frames.removeFirst()
                 self.framesPath.removeFirst()

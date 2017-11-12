@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>enemyBalanceItem</key>
-	<string>Enemy Balance 0</string>
+	<string>Enemy Balance 5</string>
 	<key>difficulty</key>
-	<integer>36</integer>
+	<integer>16</integer>
 	<key>goldDrop</key>
-	<real>3.1</real>
+	<real>4.5</real>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
@@ -1530,17 +1530,19 @@
 			<array>
 				<dict>
 					<key>enemy</key>
-					<string>Marooner</string>
+					<string>Pirate</string>
 					<key>count</key>
-					<integer>5</integer>
+					<integer>2</integer>
 					<key>items</key>
-					<array/>
+					<array>
+						<string>Life Ring</string>
+					</array>
 				</dict>
 				<dict>
 					<key>enemy</key>
-					<string>Pirate</string>
+					<string>Oragami</string>
 					<key>count</key>
-					<integer>5</integer>
+					<integer>6</integer>
 					<key>items</key>
 					<array/>
 				</dict>
@@ -1551,9 +1553,9 @@
 			<array>
 				<dict>
 					<key>enemy</key>
-					<string>Pirate</string>
+					<string>Oragami</string>
 					<key>count</key>
-					<integer>3</integer>
+					<integer>6</integer>
 					<key>items</key>
 					<array/>
 				</dict>
@@ -1563,7 +1565,9 @@
 					<key>count</key>
 					<integer>4</integer>
 					<key>items</key>
-					<array/>
+					<array>
+						<string>Life Ring</string>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -1576,13 +1580,15 @@
 					<key>count</key>
 					<integer>3</integer>
 					<key>items</key>
-					<array/>
+					<array>
+						<string>Life Ring</string>
+					</array>
 				</dict>
 				<dict>
 					<key>enemy</key>
-					<string>Pirate</string>
+					<string>Oragami</string>
 					<key>count</key>
-					<integer>3</integer>
+					<integer>6</integer>
 					<key>items</key>
 					<array/>
 				</dict>
@@ -1592,7 +1598,9 @@
 					<key>count</key>
 					<integer>3</integer>
 					<key>items</key>
-					<array/>
+					<array>
+						<string>Life Ring</string>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -1601,9 +1609,9 @@
 			<array>
 				<dict>
 					<key>enemy</key>
-					<string>Viking</string>
+					<string>Oragami</string>
 					<key>count</key>
-					<integer>3</integer>
+					<integer>12</integer>
 					<key>items</key>
 					<array/>
 				</dict>

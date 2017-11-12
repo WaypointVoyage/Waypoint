@@ -75,6 +75,16 @@ class GameViewController: UIViewController {
                 }
             }
             let player = WPTPlayer(playerProgress: progress)
+            let ship = player.ship
+            NSLog("  speed     : \(ship.speedScale)")
+            NSLog("  damage    : \(ship.damageScale)")
+            NSLog("  health    : \(ship.healthScale)")
+            NSLog("  range     : \(ship.rangeScale)")
+            NSLog("  shotSpeed : \(ship.shotSpeedScale)")
+            NSLog("  size      : \(ship.sizeScale)")
+            NSLog("  turnRate  : \(ship.turnRateScale)")
+            NSLog("  fireRate  : \(ship.fireRateScale)")
+            NSLog("  itemRadius: \(ship.itemRadiusScale)")
             
             return WPTLevelScene(player: player, level: level)
             

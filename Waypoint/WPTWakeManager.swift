@@ -18,9 +18,9 @@ class WPTWakeManager: WPTUpdatable {
     init(_ terrain: WPTTerrainNode) {
         self.terrain = terrain
     }
-    
+
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
-        
+
         if let terrain = self.terrain {
             self.updateForActor(terrain.player, currentTime, deltaTime)
             for enemy in terrain.enemies {
@@ -37,7 +37,7 @@ class WPTWakeManager: WPTUpdatable {
             }
         }
     }
-    
+
     public func remove(actor: WPTLevelActorNode) {
         let wake = self.wakes.removeValue(forKey: actor)
         if let oldWake = wake {
@@ -46,7 +46,10 @@ class WPTWakeManager: WPTUpdatable {
     }
     
     private func updateForActor(_ actor: WPTLevelActorNode, _ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
-        
+        if let enemy = actor.actor as? WPTEnemy {
+            if !enemy.hasWake { return }
+        }
+
         // get the wake (or make one)
         var wake: WPTWakeNode? = self.wakes[actor]
         if wake == nil {

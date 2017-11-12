@@ -109,18 +109,21 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
                 scene.levelPaused = true
                 scene.hud.top.pause.isHidden = true
                 scene.hud.bottom.hideBorder()
+                scene.hud.pauseShroud.removeFromParent()
                 scene.hud.addChild(scene.hud.pauseShroud)
                 scene.hud.destroyMenu.updateMoney()
                 
                 mapScrollEffect.playEffect()
                 WPTAudioConfig.audio.playSong(song: "level_map_theme.wav")
+                scene.hud.destroyMenu.removeFromParent()
                 scene.hud.addChild(scene.hud.destroyMenu)
                 
-                OperationQueue().addOperation {
-                    let storage = WPTStorage()
-                    
-                    // clear progress
-                    storage.clearPlayerProgress()
+                if !WPTConfig.values.restartLevelOnDeath {
+                    OperationQueue().addOperation {
+                        let storage = WPTStorage()
+                        // clear progress
+                        storage.clearPlayerProgress()
+                    }
                 }
             }
         }

@@ -22,6 +22,7 @@ class WPTEnemy: WPTActor, Hashable, Equatable {
     
     let dropHealth: Bool          // whether or not the enemy can drop some health when destroyed
     let stationary: Bool          // when true, this enemy will not move (catapults and trebuchets)
+    let hasWake: Bool             // when false, this enemy does not have a wake
     
     var hashValue: Int {
         return name.hashValue
@@ -39,6 +40,7 @@ class WPTEnemy: WPTActor, Hashable, Equatable {
         terrainType = WPTEnemyTerrainType.init(rawValue: enemyDict["terrainType"] as! String)!
         self.dropHealth = enemyDict["dropHealth"] as! Bool
         self.stationary = (enemyDict["stationary"] as? Bool) ?? false
+        self.hasWake = (enemyDict["hasWake"] as? Bool) ?? true
         super.init(ship: ship)
         
         assertBehaviors()
@@ -56,6 +58,7 @@ class WPTEnemy: WPTActor, Hashable, Equatable {
         self.terrainType = other.terrainType
         self.dropHealth = other.dropHealth
         self.stationary = other.stationary
+        self.hasWake = other.hasWake
         super.init(ship: ship)
     }
     

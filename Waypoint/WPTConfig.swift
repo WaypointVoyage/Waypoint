@@ -13,12 +13,12 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
-    let giveRandomItems: Int? = 11          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
-    let itemsPerCannon: Int? = 3          // for this many items, a single cannon is given when giveRandomItems is being used
+    let giveRandomItems: Int? = 14          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
+    let itemsPerCannon: Int? = 4          // for this many items, a single cannon is given when giveRandomItems is being used
     
     // audio
     let playMusic = true            // toggle music
@@ -33,7 +33,7 @@ class WPTConfig {
     var restartLevelOnDeath = true      // if true, a level restarts when the player dies
     var clearProgressOnQuit = false       // if true, the play will not be able to pick up where they left off when quitting
 
-    var showTutorial = true              // if false, the tutorial will never be shown
+    var showTutorial = false              // if false, the tutorial will never be shown
     var clearPlayerProgress = false      // if true, all player progress will be cleared
     var clearGlobalSettings = false      // if true, all global settings will be cleared
     
@@ -64,7 +64,8 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
     let completedLevels: [String]? = nil
     let cannonBallImage: String? = nil
     let doubloons: Int = 0
-    let items: [String]? = [String]()
+    let items: [String]? = ["Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring"]
+//    let items: [String]? = [String]()
 //    let items: [String]? = ["Oar", "Gun Powder", "Spiked Cannon Ball", "Propeller", "Rudder", "Sail", "Telescope", "Ship's Wheel", "Hook Hand", "Eyepatch"]
     let cannonSet: [Int:Bool]? = nil
     
@@ -75,7 +76,7 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
 
 class WPTLevelModeConfig {
 
-    let levelFileName: String = "4_fire_in_the_hole"  // the name of the level file to load
+    let levelFileName: String = "5_dead_men_tell_no_tales"  // the name of the level file to load
     
     // singleton instance
     private init() {}

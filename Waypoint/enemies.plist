@@ -3,6 +3,32 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>hasWake</key>
+		<false/>
+		<key>dropHealth</key>
+		<true/>
+		<key>aggression</key>
+		<integer>2</integer>
+		<key>awareness</key>
+		<integer>1</integer>
+		<key>brain</key>
+		<string>pirate_brain</string>
+		<key>caution</key>
+		<integer>1</integer>
+		<key>haste</key>
+		<real>0.2</real>
+		<key>items</key>
+		<array/>
+		<key>name</key>
+		<string>Oragami</string>
+		<key>ship</key>
+		<string>Paper Boat Enemy</string>
+		<key>terrainType</key>
+		<string>_SEA</string>
+		<key>triggerHappiness</key>
+		<real>0.5</real>
+	</dict>
+	<dict>
 		<key>dropHealth</key>
 		<false/>
 		<key>aggression</key>
