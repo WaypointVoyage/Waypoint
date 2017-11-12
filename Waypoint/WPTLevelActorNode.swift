@@ -259,7 +259,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
         // tier specific behavior
         switch (item.tier) {
         case WPTItemTier.statModifier:
-            itemEffect.playEffect()
+            if self.isPlayer == true {
+                itemEffect.playEffect()
+            }
             let healthBefore = self.actor.ship.health
             actor.apply(item: item)
             
@@ -283,7 +285,9 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
                 gemDropEffect.playEffect()
             }
         case WPTItemTier.repair:
-            itemEffect.playEffect()
+            if self.isPlayer == true {
+                itemEffect.playEffect()
+            }
         case WPTItemTier.other:
             if item.name == "Cannon" {
                 cannonEffect.playEffect()
