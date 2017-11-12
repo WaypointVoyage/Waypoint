@@ -117,6 +117,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
                 }
             }
         }
+        NSLog("Player now has \(self.currentHealth) health out of \(player.ship.health)")
     }
     
     override func give(item: WPTItem) {

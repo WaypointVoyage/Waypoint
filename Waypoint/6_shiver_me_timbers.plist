@@ -6,6 +6,8 @@
 	<string>Enemy Balance 0</string>
 	<key>difficulty</key>
 	<integer>60</integer>
+	<key>goldDrop</key>
+	<real>3.1</real>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>

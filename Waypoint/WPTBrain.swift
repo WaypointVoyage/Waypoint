@@ -88,7 +88,7 @@ class WPTBrain: GKStateMachine {
 
         innerRadiusOfObliviousness = radiusOfEngagement + enemy.enemy.aggression * WPTBrain.baseInnerRadiusOfObliviousness * self.levelDifficultyTapered
         
-        outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * WPTBrain.baseOuterRadiusOfObliviousness * self.levelDifficulty
+        outerRadiusOfObliviousness = innerRadiusOfObliviousness + enemy.enemy.awareness * WPTBrain.baseOuterRadiusOfObliviousness * self.levelDifficultyTapered
         
         radiusOfSafety = outerRadiusOfObliviousness + enemy.enemy.caution * WPTBrain.baseRadiusOfSafety * self.levelDifficultyTapered
         

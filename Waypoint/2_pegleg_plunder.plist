@@ -5,13 +5,15 @@
 	<key>enemyBalanceItem</key>
 	<string>Enemy Balance 2</string>
 	<key>difficulty</key>
-	<integer>4</integer>
+	<integer>2</integer>
+	<key>goldDrop</key>
+	<integer>2</integer>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
 		<integer>2</integer>
 		<key>whirlpoolPeriod</key>
-		<integer>10</integer>
+		<integer>4</integer>
 	</dict>
 	<key>name</key>
 	<string>Pegleg Plunder</string>
@@ -593,7 +595,7 @@
 					<integer>4</integer>
 					<key>items</key>
 					<array>
-						<string>Cannon</string>
+						<string>Gun Powder</string>
 					</array>
 				</dict>
 			</array>
@@ -607,9 +609,7 @@
 					<key>count</key>
 					<integer>2</integer>
 					<key>items</key>
-					<array>
-						<string>Barrel</string>
-					</array>
+					<array/>
 				</dict>
 			</array>
 		</dict>
@@ -645,9 +645,7 @@
 					<key>count</key>
 					<integer>4</integer>
 					<key>items</key>
-					<array>
-						<string>Barrel</string>
-					</array>
+					<array/>
 				</dict>
 				<dict>
 					<key>enemy</key>
@@ -655,9 +653,7 @@
 					<key>count</key>
 					<integer>1</integer>
 					<key>items</key>
-					<array>
-						<string>Barrel</string>
-					</array>
+					<array/>
 				</dict>
 			</array>
 		</dict>

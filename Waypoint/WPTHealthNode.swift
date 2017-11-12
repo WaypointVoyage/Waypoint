@@ -69,16 +69,16 @@ class WPTHealthNode: SKNode {
         UIGraphicsBeginImageContextWithOptions(barSize, false, 0)
         let context = UIGraphicsGetCurrentContext()
         
-        // draw the outline for the health bar
-        borderColor.setStroke()
-        let borderRect = CGRect(origin: CGPoint(x: 0, y: 0), size: barSize)
-        context!.stroke(borderRect, width: 1)
-        
         // draw the health bar with a colored rectangle
         fillColor.setFill()
         let barWidth = (barSize.width - 1) * CGFloat(currentHealth) / self.maxHealth
         let barRect = CGRect(x: 0.5, y: 0.5, width: barWidth, height: barSize.height - 1)
         context!.fill(barRect)
+        
+        // draw the outline for the health bar
+        borderColor.setStroke()
+        let borderRect = CGRect(origin: CGPoint(x: 0, y: 0), size: barSize)
+        context!.stroke(borderRect, width: 5)
         
         // extract image
         let spriteImage = UIGraphicsGetImageFromCurrentImageContext()

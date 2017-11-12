@@ -55,7 +55,7 @@ class WPTWaveCreationPMS: GKState {
                 enemyNode.give(item: item)
             }
             enemyNode.updateHealth()
-            
+
             NSLog("adding the enemy to the terrain")
             enemyNode.position = self.wave!.enemySpawnPosition(enemyNode)!
             scene.terrain.addEnemy(enemyNode)

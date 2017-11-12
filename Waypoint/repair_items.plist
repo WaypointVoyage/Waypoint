@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>description</key>
-		<string>+15% Health</string>
+		<string>+10% Health</string>
 		<key>imageName</key>
 		<string>repair_0</string>
 		<key>name</key>
@@ -12,7 +12,7 @@
 		<key>prevalence</key>
 		<integer>100</integer>
 		<key>repair</key>
-		<real>0.15</real>
+		<real>0.1</real>
 		<key>repairProportionally</key>
 		<true/>
 		<key>value</key>
@@ -32,7 +32,7 @@
 		<key>repairProportionally</key>
 		<true/>
 		<key>value</key>
-		<integer>50</integer>
+		<integer>25</integer>
 	</dict>
 </array>
 </plist>

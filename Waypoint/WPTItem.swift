@@ -13,7 +13,7 @@ class WPTItem {
     let description: String?
     let imageName: String   // the name of the image file (without extension)
     
-    let tier: WPTItemTier   // the item type
+    var tier: WPTItemTier   // the item type
     let multiplicity: Int?  // the number of times the item's effects can be applied to an actor (nil or <= 0 is unlimited)
     let value: Int          // value in doubloons
     let prevalence: Int     // how common is this item? > 0, relative to other items

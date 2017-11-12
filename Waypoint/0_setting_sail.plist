@@ -6,10 +6,12 @@
 	<string>Enemy Balance 0</string>
 	<key>difficulty</key>
 	<integer>1</integer>
+	<key>goldDrop</key>
+	<integer>1</integer>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
-		<integer>6</integer>
+		<integer>3</integer>
 	</dict>
 	<key>hasTutorial</key>
 	<true/>

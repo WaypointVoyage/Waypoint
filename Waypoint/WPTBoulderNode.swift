@@ -11,8 +11,11 @@ import SpriteKit
 class WPTBoulderNode: SKNode {
     static let nodeNameTag: String = "_BOULDER"
     
+    static let DROP_FREQUENCY: CGFloat = 0.33
+    static let DROP_SCALE: CGFloat = 0.2
+    
     static let boulderRadius: CGFloat = 80.0
-    static let maxBoulderHealth: CGFloat = 100.0
+    static let maxBoulderHealth: CGFloat = 50.0
     
     let boulderImage = SKSpriteNode(imageNamed: "boulder")
     let crackedImage = SKSpriteNode(imageNamed: "crackedBoulder")
@@ -74,9 +77,16 @@ class WPTBoulderNode: SKNode {
         
         self.boulderEffect.playEffect()
         self.run(SKAction.wait(forDuration: 0.5)) {
-            (self.scene as! WPTLevelScene).dropCoins(position: self.position, size: WPTBoulderNode.coinDropSize)
+            self.dropCoin()
             explosionNode.removeFromParent()
             self.removeFromParent()
+        }
+    }
+    
+    private func dropCoin() {
+        let rand = randomNumber(min: 0, max: 1)
+        if rand < WPTBoulderNode.DROP_FREQUENCY {
+            (self.scene as! WPTLevelScene).dropCoins(position: self.position, size: WPTBoulderNode.coinDropSize, scale: WPTBoulderNode.DROP_SCALE)
         }
     }
 }

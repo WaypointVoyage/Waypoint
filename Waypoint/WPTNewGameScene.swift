@@ -96,11 +96,11 @@ class WPTNewGameScene: WPTScene, UITextFieldDelegate {
     }
     
     func updateStats(ship: WPTShip) {
-        self.healthLabel.setStat(ship.healthScale, min: WPTShip.minHealthScale, max: WPTShip.maxHealthScale)
-        self.damageLabel.setStat(ship.damageScale, min: WPTShip.minDamageScale, max: WPTShip.maxDamageScale)
-        self.speedLabel.setStat(ship.speedScale, min: WPTShip.minSpeedScale, max: WPTShip.maxSpeedScale)
-        self.rangeLabel.setStat(ship.rangeScale, min: WPTShip.minRangeScale, max: WPTShip.maxRangeScale)
-        self.shotSpeedLabel.setStat(ship.shotSpeedScale, min: WPTShip.minShotSpeedScale, max: WPTShip.maxShotSpeedScale)
+        self.healthLabel.setStat(ship.healthScale, min: WPTShip.minHealthScale, max: 5)
+        self.damageLabel.setStat(ship.damageScale, min: WPTShip.minDamageScale, max: 5)
+        self.speedLabel.setStat(ship.speedScale, min: WPTShip.minSpeedScale, max: 4)
+        self.rangeLabel.setStat(ship.rangeScale, min: WPTShip.minRangeScale, max: 4)
+        self.shotSpeedLabel.setStat(ship.shotSpeedScale, min: WPTShip.minShotSpeedScale, max: 3)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

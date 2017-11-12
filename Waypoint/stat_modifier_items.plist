@@ -28,6 +28,8 @@
 		<string>gunpowder</string>
 		<key>modifiers</key>
 		<dict>
+			<key>damage</key>
+			<string>0.3</string>
 			<key>shotSpeed</key>
 			<real>0.1</real>
 		</dict>
@@ -38,7 +40,7 @@
 		<key>prevalence</key>
 		<integer>75</integer>
 		<key>value</key>
-		<integer>18</integer>
+		<integer>23</integer>
 	</dict>
 	<dict>
 		<key>cannonBallImage</key>
@@ -87,6 +89,8 @@
 		<string>rudder</string>
 		<key>modifiers</key>
 		<dict>
+			<key>health</key>
+			<real>0.1</real>
 			<key>turnRate</key>
 			<real>0.5</real>
 		</dict>
@@ -106,6 +110,8 @@
 		<string>sail</string>
 		<key>modifiers</key>
 		<dict>
+			<key>health</key>
+			<real>0.1</real>
 			<key>speed</key>
 			<real>0.2</real>
 		</dict>
@@ -126,7 +132,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>range</key>
-			<real>2</real>
+			<real>1.6</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -135,7 +141,7 @@
 		<key>prevalence</key>
 		<integer>60</integer>
 		<key>value</key>
-		<integer>25</integer>
+		<integer>35</integer>
 	</dict>
 	<dict>
 		<key>description</key>
@@ -144,6 +150,8 @@
 		<string>ships_wheel</string>
 		<key>modifiers</key>
 		<dict>
+			<key>health</key>
+			<real>0.15</real>
 			<key>turnRate</key>
 			<real>0.6</real>
 		</dict>
@@ -163,6 +171,8 @@
 		<string>hook_hand</string>
 		<key>modifiers</key>
 		<dict>
+			<key>health</key>
+			<real>0.1</real>
 			<key>damage</key>
 			<real>1.2</real>
 			<key>fireRate</key>
@@ -184,6 +194,8 @@
 		<string>eyepatch</string>
 		<key>modifiers</key>
 		<dict>
+			<key>health</key>
+			<real>0.2</real>
 			<key>fireRate</key>
 			<real>1.6</real>
 			<key>range</key>
@@ -196,7 +208,7 @@
 		<key>prevalence</key>
 		<integer>70</integer>
 		<key>value</key>
-		<integer>10</integer>
+		<integer>17</integer>
 	</dict>
 	<dict>
 		<key>description</key>
@@ -206,7 +218,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>fireRate</key>
-			<real>1.5</real>
+			<real>0.8</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -224,12 +236,14 @@
 		<string>rum</string>
 		<key>modifiers</key>
 		<dict>
+			<key>health</key>
+			<real>0.2</real>
 			<key>damage</key>
-			<real>0.8</real>
+			<real>0.9</real>
 			<key>shotSpeed</key>
-			<real>-0.8</real>
+			<real>-0.5</real>
 			<key>speed</key>
-			<real>-0.6</real>
+			<real>-0.3</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -266,6 +280,8 @@
 		<string>drum</string>
 		<key>modifiers</key>
 		<dict>
+			<key>health</key>
+			<real>0.1</real>
 			<key>range</key>
 			<real>1.5</real>
 			<key>size</key>
@@ -287,8 +303,10 @@
 		<string>pirate_flag</string>
 		<key>modifiers</key>
 		<dict>
+			<key>health</key>
+			<real>0.1</real>
 			<key>range</key>
-			<real>2.5</real>
+			<real>1.1</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>3</integer>
@@ -297,7 +315,7 @@
 		<key>prevalence</key>
 		<integer>75</integer>
 		<key>value</key>
-		<integer>30</integer>
+		<integer>20</integer>
 	</dict>
 	<dict>
 		<key>description</key>
@@ -306,6 +324,8 @@
 		<string>mermaid</string>
 		<key>modifiers</key>
 		<dict>
+			<key>health</key>
+			<real>0.13</real>
 			<key>fireRate</key>
 			<real>2.2</real>
 			<key>turnRate</key>
@@ -327,10 +347,12 @@
 		<string>long_barrel_cannon</string>
 		<key>modifiers</key>
 		<dict>
+			<key>health</key>
+			<real>0.5</real>
 			<key>range</key>
-			<real>2</real>
+			<real>1.4</real>
 			<key>shotSpeed</key>
-			<real>1</real>
+			<real>0.6</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>
@@ -348,8 +370,10 @@
 		<string>bandana</string>
 		<key>modifiers</key>
 		<dict>
+			<key>health</key>
+			<real>0.05</real>
 			<key>fireRate</key>
-			<real>1.1</real>
+			<real>0.5</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>1</integer>
@@ -367,6 +391,8 @@
 		<string>rope</string>
 		<key>modifiers</key>
 		<dict>
+			<key>itemRadius</key>
+			<real>0.3</real>
 			<key>turnRate</key>
 			<real>0.4</real>
 		</dict>
@@ -377,7 +403,7 @@
 		<key>prevalence</key>
 		<integer>80</integer>
 		<key>value</key>
-		<integer>10</integer>
+		<integer>15</integer>
 	</dict>
 	<dict>
 		<key>description</key>
@@ -398,7 +424,7 @@
 		<key>prevalence</key>
 		<integer>75</integer>
 		<key>value</key>
-		<integer>15</integer>
+		<integer>25</integer>
 	</dict>
 	<dict>
 		<key>description</key>
@@ -417,7 +443,7 @@
 		<key>name</key>
 		<string>Blunderbuss</string>
 		<key>prevalence</key>
-		<integer>45</integer>
+		<integer>65</integer>
 		<key>value</key>
 		<integer>25</integer>
 	</dict>
@@ -429,7 +455,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>health</key>
-			<real>1.2</real>
+			<real>1.3</real>
 		</dict>
 		<key>multiplicity</key>
 		<integer>0</integer>

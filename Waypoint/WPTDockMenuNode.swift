@@ -158,8 +158,9 @@ class WPTDockMenuNode: SKNode {
             let storage = WPTStorage()
             player.player.progress!.levelDockInventory[level.name] = self.itemInventory
             storage.savePlayerProgress(player.player.progress!)
-            
+
             // move to the world scene
+            NSLog("HEALTH: Leaving level with \(player.player.health) out of \(player.player.ship.health)")
             self.scene!.view?.presentScene(WPTWorldScene(player: player.player))
         }
     }
@@ -199,6 +200,7 @@ class WPTDockMenuNode: SKNode {
     }
     
     private func purchaseItem() {
+        NSLog("PURCHASE: buying \(itemPicker!.currentItem.itemName) for \(itemPicker!.currentItem.price)")
         player.player.doubloons -= itemPicker!.currentItem.price
         assert(player.player.doubloons >= 0)
         updateDoubloons()

@@ -78,7 +78,7 @@ class WPTItemCatalog {
         })
     }()
     static func randomItemSet(mean: Int, stddev: Float) -> [WPTItem] {
-        var value = Int(randomNormalSample(mean: Float(mean), stddev: stddev))
+        var value = max(1, Int(randomNormalSample(mean: Float(mean), stddev: stddev)))
         var result = [WPTItem]()
         
         while (value > 0) {

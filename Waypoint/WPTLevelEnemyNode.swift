@@ -28,7 +28,6 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         self.player = player
         self.brain = WPTBrain(self.enemy.brainTemplate, player: self.player)
         let startHealth = health ?? enemy.ship.health
-        print("MAX: \(enemy.ship.health), CURRENT: \(startHealth)")
         self.healthBar = WPTHealthNode(maxHealth: enemy.ship.health, curHealth: startHealth, persistent: false)
         super.init(actor: enemy, teamBitMask: WPTValues.enemyTbm)
         
@@ -161,7 +160,7 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         // a bit of health?
         if self.enemy.dropHealth {
             let chance = randomNumber(min: 0, max: 1)
-            if chance < 0.4 {
+            if chance < 0.33 {
                 let repair = WPTItemCatalog.itemsByName["Minor Ship Maintenance"]!
                 let repairNode = WPTItemNode(repair, duration: 5.0)
                 repairNode.position = self.position

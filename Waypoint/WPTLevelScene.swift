@@ -43,6 +43,7 @@ class WPTLevelScene: WPTScene {
     }
     
     init(player: WPTPlayer, level: WPTLevel) {
+        NSLog("------------ STARTING LEVEL \"\(level.name)\" ------------")
         self.player = WPTLevelPlayerNode(player: player)
         self.level = level
         self.terrain = WPTTerrainNode(level: level, player: self.player)
@@ -58,8 +59,8 @@ class WPTLevelScene: WPTScene {
             self.port = nil
         }
         
-        self.meanCoinDrop = Int(self.level.difficulty * CGFloat(WPTValues.defaultCoinDropMean))
-        self.stddevCoinDrop = Float(self.level.difficulty * CGFloat(WPTValues.defaultCoinDropStddev))
+        self.meanCoinDrop = Int(self.level.goldDrop * CGFloat(WPTValues.defaultCoinDropMean))
+        self.stddevCoinDrop = Float(self.level.goldDrop * CGFloat(WPTValues.defaultCoinDropStddev))
         
         super.init(size: CGSize(width: 0, height: 0))
 //        self.touchHandler = WPTLevelTouchHandlerNode(self)
@@ -250,8 +251,8 @@ class WPTLevelScene: WPTScene {
         return CGRect(origin: origin, size: CGSize(width: sceneWidth, height: sceneHeight))
     }
     
-    func dropCoins(position: CGPoint, size: CGSize) {
-        let coins = WPTItemCatalog.randomItemSet(mean: self.meanCoinDrop, stddev: self.stddevCoinDrop)
+    func dropCoins(position: CGPoint, size: CGSize, scale: CGFloat = 1.0) {
+        let coins = WPTItemCatalog.randomItemSet(mean: Int(scale * CGFloat(self.meanCoinDrop)), stddev: self.stddevCoinDrop)
         for coin in coins {
             var rand = randomNumber(min: 0, max: 1)
             let xPos = position.x - size.width / 2.0 + rand * size.width

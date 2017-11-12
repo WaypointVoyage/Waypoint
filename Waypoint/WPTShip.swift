@@ -18,67 +18,49 @@ class WPTShip {
     
     /* All stats are multipliers of base values and clamped between min/max values. */
     
-    var speedScale: CGFloat = 1.0 { // determines the speed of the ship as it moves
-        didSet { clamp(&speedScale, min: WPTShip.minSpeedScale, max: WPTShip.maxSpeedScale) }
-    }
+    var speedScale: CGFloat = 1.0 // determines the speed of the ship as it moves
     var speed: CGFloat {
-        get { return speedScale * WPTShip.baseSpeed }
+        return min(max(speedScale, WPTShip.minSpeedScale), WPTShip.maxSpeedScale) * WPTShip.baseSpeed
     }
-    
-    var damageScale: CGFloat = 1.0 { // determines the amount of damage that the ship does
-        didSet { clamp(&damageScale, min: WPTShip.minDamageScale, max: WPTShip.maxDamageScale) }
-    }
+
+    var damageScale: CGFloat = 1.0 // determines the amount of damage that the ship does
     var damage: CGFloat {
-        get { return damageScale * WPTShip.baseDamage }
+        return min(max(damageScale, WPTShip.minDamageScale), WPTShip.maxDamageScale) * WPTShip.baseDamage
     }
     
-    var healthScale: CGFloat = 1.0 { // determines the amount of health on the ship
-        didSet { clamp(&healthScale, min: WPTShip.minHealthScale, max: WPTShip.maxHealthScale) }
-    }
+    var healthScale: CGFloat = 1.0 // determines the amount of health on the ship
     var health: CGFloat {
-        get { return healthScale * WPTShip.baseHealth }
+        return min(max(healthScale, WPTShip.minHealthScale), WPTShip.maxHealthScale) * WPTShip.baseHealth
     }
     
-    var rangeScale: CGFloat = 1.0 { // determines how far cannon shots travel before hitting the water/ground
-        didSet { clamp(&rangeScale, min: WPTShip.minRangeScale, max: WPTShip.maxRangeScale) }
-    }
+    var rangeScale: CGFloat = 1.0 // determines how far cannon shots travel before hitting the water/ground
     var range: CGFloat {
-        get { return rangeScale * WPTShip.baseRange }
+        return min(max(rangeScale, WPTShip.minRangeScale), WPTShip.maxRangeScale) * WPTShip.baseRange
     }
     
-    var shotSpeedScale: CGFloat = 1.0 { // determines how fast cannon shots travel through the air
-        didSet { clamp(&shotSpeedScale, min: WPTShip.minShotSpeedScale, max: WPTShip.maxShotSpeedScale) }
-    }
+    var shotSpeedScale: CGFloat = 1.0 // determines how fast cannon shots travel through the air
     var shotSpeed: CGFloat {
-        get { return shotSpeedScale * WPTShip.baseShotSpeed }
+        return min(max(shotSpeedScale, WPTShip.minShotSpeedScale), WPTShip.maxShotSpeedScale) * WPTShip.baseShotSpeed
     }
     
-    var sizeScale: CGFloat = 1.0 { // determines the size of the ship on the screen
-        didSet { clamp(&sizeScale, min: WPTShip.minSizeScale, max: WPTShip.maxSizeScale) }
-    }
+    var sizeScale: CGFloat = 1.0 // determines the size of the ship on the screen
     var size: CGFloat {
-        get { return sizeScale * WPTShip.baseSize }
+        return min(max(sizeScale, WPTShip.minSizeScale), WPTShip.maxSizeScale) * WPTShip.baseSize
     }
     
-    var turnRateScale: CGFloat = 1.0 { // determines how quickly the ship makes turns
-        didSet { clamp(&turnRateScale, min: WPTShip.minTurnRateScale, max: WPTShip.maxTurnRateScale) }
-    }
+    var turnRateScale: CGFloat = 1.0 // determines how quickly the ship makes turns
     var turnRate: CGFloat {
-        get { return turnRateScale * WPTShip.baseTurnRate }
+        return min(max(turnRateScale, WPTShip.minTurnRateScale), WPTShip.maxTurnRateScale) * WPTShip.baseTurnRate
     }
     
-    var fireRateScale: CGFloat = 1.0 { // determines how many shots/second can be made
-        didSet { clamp(&fireRateScale, min: WPTShip.minFireRateScale, max: WPTShip.maxFireRateScale) }
-    }
+    var fireRateScale: CGFloat = 1.0 // determines how many shots/second can be made
     var fireRate: CGFloat {
-        get { return fireRateScale * WPTShip.baseFireRate }
+        return min(max(fireRateScale, WPTShip.minFireRateScale), WPTShip.maxFireRateScale) * WPTShip.baseFireRate
     }
     
-    var itemRadiusScale: CGFloat = 1.0 {
-        didSet { clamp(&itemRadiusScale, min: WPTShip.minItemRadiusScale, max: WPTShip.maxItemRadiusScale) }
-    }
+    var itemRadiusScale: CGFloat = 1.0 // determines how far the player can be from an item before collecting it
     var itemRadius: CGFloat {
-        get { return itemRadiusScale * WPTShip.baseItemRadius; }
+        return min(max(itemRadiusScale, WPTShip.minItemRadiusScale), WPTShip.maxItemRadiusScale) * WPTShip.baseItemRadius
     }
     
     let previewImage: String
@@ -214,8 +196,8 @@ class WPTShip {
 
 extension WPTShip {
     static let minSpeedScale: CGFloat = 0.8
-    static let maxSpeedScale: CGFloat = 10.0
-    static let baseSpeed: CGFloat = 4000.0
+    static let maxSpeedScale: CGFloat = 5.0
+    static let baseSpeed: CGFloat = 4400.0
     static let minSpeed: CGFloat = WPTShip.baseSpeed * WPTShip.minSpeedScale
     static let maxSpeed: CGFloat = WPTShip.baseSpeed * WPTShip.maxSpeedScale
     
@@ -226,14 +208,14 @@ extension WPTShip {
     static let maxDamage: CGFloat = WPTShip.baseDamage * WPTShip.maxDamageScale
     
     static let minHealthScale: CGFloat = 0.5
-    static let maxHealthScale: CGFloat = 50.0
+    static let maxHealthScale: CGFloat = 25.0
     static let baseHealth: CGFloat = 100
     static let minHealth: CGFloat = WPTShip.baseHealth * WPTShip.minHealthScale
     static let maxHealth: CGFloat = WPTShip.baseHealth * WPTShip.maxHealthScale
     
-    static let minRangeScale: CGFloat = 0.2
-    static let maxRangeScale: CGFloat = 50.0
-    static let baseRange: CGFloat = 200
+    static let minRangeScale: CGFloat = 0.4
+    static let maxRangeScale: CGFloat = 10.0
+    static let baseRange: CGFloat = 250
     static let minRange: CGFloat = WPTShip.baseRange * WPTShip.minRangeScale
     static let maxRange: CGFloat = WPTShip.baseRange * WPTShip.maxRangeScale
     

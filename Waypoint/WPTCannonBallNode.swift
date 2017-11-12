@@ -16,14 +16,15 @@ class WPTCannonBallNode: SKNode {
     var teamBitMask: UInt32? = nil
     let damage: CGFloat
     
-    init(_ cannonBall: WPTCannonBall, damage: CGFloat) {
+    init(_ cannonBall: WPTCannonBall, damage: CGFloat, size: CGFloat) {
+        let baseSize: CGFloat = 45
         self.damage = damage
         self.cannonBall = cannonBall
-        self.physics = SKPhysicsBody(circleOfRadius: 16)
+        self.physics = SKPhysicsBody(circleOfRadius: baseSize * size)
         self.sprite = SKSpriteNode(imageNamed: cannonBall.image)
         super.init()
-        
-        sprite.scale(to: CGSize(width: 32, height: 32))
+
+        sprite.scale(to: CGSize(width: 2 * baseSize * size, height: 2 * baseSize * size))
         self.addChild(sprite)
         
         self.physicsBody = physics
@@ -42,7 +43,9 @@ class WPTCannonBallNode: SKNode {
     
     func collide(with actor: WPTLevelActorNode) {
         
-        actor.doDamage(-self.damage)
+        var damage = (self.damage / WPTShip.baseDamage) - (actor.actor.ship.size - 1.0)
+        damage = WPTShip.baseDamage * damage
+        actor.doDamage(-damage)
         
         // TODO: apply damage/update health bars/explosion?
         

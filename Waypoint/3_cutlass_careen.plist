@@ -5,13 +5,15 @@
 	<key>enemyBalanceItem</key>
 	<string>Enemy Balance 3</string>
 	<key>difficulty</key>
-	<integer>6</integer>
+	<integer>4</integer>
+	<key>goldDrop</key>
+	<real>2.5</real>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
 		<integer>10</integer>
 		<key>whirlpoolPeriod</key>
-		<real>7.5</real>
+		<integer>15</integer>
 	</dict>
 	<key>name</key>
 	<string>Cutlass Careen</string>
@@ -1418,10 +1420,7 @@
 					<key>count</key>
 					<integer>4</integer>
 					<key>items</key>
-					<array>
-						<string>Barrel</string>
-						<string>Pile of Cannon Balls</string>
-					</array>
+					<array/>
 				</dict>
 			</array>
 		</dict>
@@ -1434,10 +1433,7 @@
 					<key>count</key>
 					<integer>5</integer>
 					<key>items</key>
-					<array>
-						<string>Pile of Cannon Balls</string>
-						<string>Barrel</string>
-					</array>
+					<array/>
 				</dict>
 			</array>
 		</dict>
@@ -1450,10 +1446,7 @@
 					<key>count</key>
 					<integer>6</integer>
 					<key>items</key>
-					<array>
-						<string>Pile of Cannon Balls</string>
-						<string>Barrel</string>
-					</array>
+					<array/>
 				</dict>
 			</array>
 		</dict>
@@ -1466,10 +1459,7 @@
 					<key>count</key>
 					<integer>7</integer>
 					<key>items</key>
-					<array>
-						<string>Barrel</string>
-						<string>Pile of Cannon Balls</string>
-					</array>
+					<array/>
 				</dict>
 			</array>
 		</dict>

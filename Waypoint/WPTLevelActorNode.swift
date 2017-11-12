@@ -248,6 +248,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             } else {
                 self.currentHealth += repair
             }
+            self.currentHealth = min(self.currentHealth, self.actor.ship.health)
         }
 
         // could have a new cannon ball image?
@@ -261,12 +262,18 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
             itemEffect.playEffect()
             let healthBefore = self.actor.ship.health
             actor.apply(item: item)
+            
+            // health
             let healthAfter = self.actor.ship.health
             let healthChange = healthAfter - healthBefore
             // if the item increased health, we want them to gain the extra health
             if healthChange != 0 {
                 self.doDamage(healthChange)
             }
+            
+            // size
+            self.setScale(self.actor.ship.size)
+            
         case WPTItemTier.currency:
             if item.name.contains("Coin") {
                 coinDropEffect.playEffect()
@@ -287,7 +294,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     func doDamage(_ damage: CGFloat) {
         currentHealth += damage
-        currentHealth = currentHealth > actor.ship.health ? actor.ship.health : currentHealth // clamp
+        currentHealth = max(min(currentHealth, actor.ship.health), 0)
     }
     
     private func addCannon() {

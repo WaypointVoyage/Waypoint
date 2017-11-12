@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTWhirlpoolHandler: SKNode {
     public static let nodeName: String = "_WHIRLPOOL_HANDLER"
-    public static let whirlpoolDamage: CGFloat = -5
+    public static let whirlpoolDamage: CGFloat = -10
     
     private static let spin = SKAction.rotate(byAngle: -.pi * 2, duration: 1.0)
     private static let delay = SKAction.wait(forDuration: 1)

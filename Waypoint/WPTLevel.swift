@@ -15,6 +15,7 @@ class WPTLevel {
     let size: CGSize
     let spawnPoint: CGPoint
     let difficulty: CGFloat  // augments various components of the level to scale difficulty
+    let goldDrop: CGFloat    // augments the amount of gold that is dropped
     
     let port: WPTPort?
     
@@ -51,6 +52,7 @@ class WPTLevel {
         self.hasTutorial = (levelDict["hasTutorial"] as? Bool) == true
         
         self.difficulty = levelDict["difficulty"] as! CGFloat
+        self.goldDrop = levelDict["goldDrop"] as! CGFloat
         
         let sizeDict = levelDict["size"] as! [String: CGFloat]
         self.size = CGSize(width: sizeDict["width"]!, height: sizeDict["height"]!)
@@ -60,6 +62,7 @@ class WPTLevel {
         
         let enemyBalanceItemName: String = levelDict["enemyBalanceItem"] as! String
         self.enemyBalanceItem = WPTItemCatalog.itemsByName[enemyBalanceItemName]!
+        self.enemyBalanceItem.tier = .statModifier
         
         // port
         if let portDict = levelDict["port"] as? [String:AnyObject] {

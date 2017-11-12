@@ -68,7 +68,7 @@ class GameViewController: UIViewController {
                     progress.items.append(item.name)
                 }
                 
-                let cannonCount = Int(itemCount / 3)
+                let cannonCount = Int(itemCount / WPTConfig.values.itemsPerCannon!)
                 NSLog("Giving player \(cannonCount) cannons")
                 for _ in 0..<cannonCount {
                     progress.items.append("Cannon")
