@@ -241,7 +241,7 @@
 		<key>inGameImage</key>
 		<string>paper_boat_top_down</string>
 		<key>inGamePlayerImage</key>
-		<string>paper_boat_top_down</string>
+		<string>player_paper_boat_top_down</string>
 		<key>name</key>
 		<string>Paper Boat</string>
 		<key>previewImage</key>
