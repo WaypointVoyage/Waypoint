@@ -154,4 +154,12 @@ class WPTLevel {
         let index = CGFloat(spawnVolumes.count - 1) * rand
         return self.spawnVolumes[Int(index)]
     }
+    
+    func resetWaveEnemies() {
+        for wave in self.waves {
+            for enemy in wave.enemies {
+                enemy.reset()
+            }
+        }
+    }
 }

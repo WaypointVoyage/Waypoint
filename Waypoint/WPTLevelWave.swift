@@ -95,7 +95,7 @@ class WPTLevelWave {
 }
 
 class WaveEnemy {
-    public let enemy: WPTEnemy
+    public var enemy: WPTEnemy
     public private(set) var items: [WPTItem]
     
     init(dict: [String:AnyObject]) {
@@ -106,5 +106,9 @@ class WaveEnemy {
         for itemName in dict["items"] as! [String] {
             self.items.append(WPTItemCatalog.itemsByName[itemName]!)
         }
+    }
+    
+    func reset() {
+        self.enemy = WPTEnemy(other: self.enemy)
     }
 }

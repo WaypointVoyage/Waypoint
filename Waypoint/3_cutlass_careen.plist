@@ -7,7 +7,7 @@
 	<key>difficulty</key>
 	<integer>4</integer>
 	<key>goldDrop</key>
-	<real>2.5</real>
+	<real>2.1</real>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>

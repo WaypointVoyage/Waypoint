@@ -162,9 +162,17 @@ class WPTPauseMenuNode: SKNode {
     }
     
     private func actuallyQuit() {
-        // erase save data
-        let storage = WPTStorage()
-        storage.clearPlayerProgress()
+        if WPTConfig.values.clearProgressOnQuit {
+            // erase save data
+            let storage = WPTStorage()
+            storage.clearPlayerProgress()
+        } else {
+            let player = (self.scene as! WPTLevelScene).player.player
+            player.health = player.ship.health
+            player.progress = WPTPlayerProgress(player: player)
+            let storage = WPTStorage()
+            storage.savePlayerProgress(player.progress!)
+        }
         self.scene?.view?.presentScene(WPTHomeScene())
     }
     

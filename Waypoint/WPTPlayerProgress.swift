@@ -11,7 +11,7 @@ import SpriteKit
 class WPTPlayerProgress: NSObject, NSCoding {
     // player stuff
     let shipName: String            // think of this as a name a person would give their ship
-    let health: CGFloat
+    var health: CGFloat
     let difficulty: CGFloat         // determines difficulty scaling, this changes when a level is earned
     let completedLevels: [String]
     

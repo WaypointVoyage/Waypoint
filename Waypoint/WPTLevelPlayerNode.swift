@@ -97,6 +97,13 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         super.doDamage(damage)
         if let scene = (self.scene as? WPTLevelScene) {
             let alive = scene.hud.top.shipHealth.updateHealth(damage)
+            
+            if WPTConfig.values.restartLevelOnDeath && !alive {
+                self.player.progress?.health = self.player.ship.health
+                scene.level.resetWaveEnemies()
+                scene.view?.presentScene(WPTLevelScene(player: self.player, level: scene.level))
+            }
+            
             if !alive && !WPTConfig.values.invincible {
                 scene.contactDelegate = nil
                 scene.levelPaused = true
