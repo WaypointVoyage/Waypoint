@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import SpriteKit
 
 class WPTAudioConfig: NSObject, NSCoding {
     
@@ -58,10 +59,6 @@ class WPTAudioConfig: NSObject, NSCoding {
         return url
     }
     
-    func play() {
-        backgroundMusic?.play()
-    }
-    
     func setMusicVolume(volume: Float) {
         NSLog("setting music volume: \(backgroundMusic!.volume)")
         backgroundMusic?.volume = volume
@@ -72,6 +69,10 @@ class WPTAudioConfig: NSObject, NSCoding {
         self.leftyControls = !(self.leftyControls!)
     }
     
+    func play() {
+        backgroundMusic?.play()
+    }
+    
     func stop() {
         backgroundMusic?.stop()
     }
@@ -80,7 +81,7 @@ class WPTAudioConfig: NSObject, NSCoding {
         backgroundMusic?.pause()
     }
     
-    func playSong(song: String) {
+    func playSong(song: String, numLoops: Int? = -1, completion: ((Bool) -> Void)? = nil) {
         if (backgroundMusic == nil || !(backgroundMusic?.isPlaying)! || currentSong != song) {
             do {
                 self.currentSong = song
@@ -90,8 +91,7 @@ class WPTAudioConfig: NSObject, NSCoding {
             catch {
                 NSLog("file '\(song)' not found")
             }
-            backgroundMusic?.numberOfLoops = -1
-            play()
+            let _ = backgroundMusic?.play(numberOfLoops: numLoops!, completion: completion)
         }
     }
     
