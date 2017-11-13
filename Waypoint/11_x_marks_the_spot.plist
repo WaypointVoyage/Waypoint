@@ -457,7 +457,7 @@
 		</dict>
 		<dict>
 			<key>tentacleDuration</key>
-			<integer>4</integer>
+			<integer>2</integer>
 			<key>bubbleDuration</key>
 			<integer>2</integer>
 			<key>tentacleCount</key>

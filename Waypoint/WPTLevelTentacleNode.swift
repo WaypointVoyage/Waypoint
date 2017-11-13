@@ -135,7 +135,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         }
     }
     
-    func surface(duration: TimeInterval = 1.0, then: (() -> Void)? = nil) {
+    func surface(duration: TimeInterval = 0.4, then: (() -> Void)? = nil) {
         guard self.isSubmerged else { return }
         
         self.handlePhysicsForSurface()

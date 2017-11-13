@@ -16,52 +16,53 @@ class WPTShip {
     let playable: Bool
     let turnWhenFacing: Bool
     let cannonBallScale: CGFloat
+    let restrictStats: Bool
     
     /* All stats are multipliers of base values and clamped between min/max values. */
     
     var speedScale: CGFloat = 1.0 // determines the speed of the ship as it moves
     var speed: CGFloat {
-        return min(max(speedScale, WPTShip.minSpeedScale), WPTShip.maxSpeedScale) * WPTShip.baseSpeed
+        return getStat(speedScale, base: WPTShip.baseSpeed, minScale: WPTShip.minSpeedScale, maxScale: WPTShip.maxSpeedScale)
     }
 
     var damageScale: CGFloat = 1.0 // determines the amount of damage that the ship does
     var damage: CGFloat {
-        return min(max(damageScale, WPTShip.minDamageScale), WPTShip.maxDamageScale) * WPTShip.baseDamage
+        return getStat(damageScale, base: WPTShip.baseDamage, minScale: WPTShip.minDamageScale, maxScale: WPTShip.maxDamageScale)
     }
     
     var healthScale: CGFloat = 1.0 // determines the amount of health on the ship
     var health: CGFloat {
-        return min(max(healthScale, WPTShip.minHealthScale), WPTShip.maxHealthScale) * WPTShip.baseHealth
+        return getStat(healthScale, base: WPTShip.baseHealth, minScale: WPTShip.minHealthScale, maxScale: WPTShip.maxHealthScale)
     }
     
     var rangeScale: CGFloat = 1.0 // determines how far cannon shots travel before hitting the water/ground
     var range: CGFloat {
-        return min(max(rangeScale, WPTShip.minRangeScale), WPTShip.maxRangeScale) * WPTShip.baseRange
+        return getStat(rangeScale, base: WPTShip.baseRange, minScale: WPTShip.minRangeScale, maxScale: WPTShip.maxRangeScale)
     }
     
     var shotSpeedScale: CGFloat = 1.0 // determines how fast cannon shots travel through the air
     var shotSpeed: CGFloat {
-        return min(max(shotSpeedScale, WPTShip.minShotSpeedScale), WPTShip.maxShotSpeedScale) * WPTShip.baseShotSpeed
+        return getStat(shotSpeedScale, base: WPTShip.baseShotSpeed, minScale: WPTShip.minShotSpeedScale, maxScale: WPTShip.maxShotSpeedScale)
     }
     
     var sizeScale: CGFloat = 1.0 // determines the size of the ship on the screen
     var size: CGFloat {
-        return min(max(sizeScale, WPTShip.minSizeScale), WPTShip.maxSizeScale) * WPTShip.baseSize
+        return getStat(sizeScale, base: WPTShip.baseSize, minScale: WPTShip.minSizeScale, maxScale: WPTShip.maxSizeScale)
     }
     
     var turnRateScale: CGFloat = 1.0 // determines how quickly the ship makes turns
     var turnRate: CGFloat {
-        return min(max(turnRateScale, WPTShip.minTurnRateScale), WPTShip.maxTurnRateScale) * WPTShip.baseTurnRate
+        return getStat(turnRateScale, base: WPTShip.baseTurnRate, minScale: WPTShip.minTurnRateScale, maxScale: WPTShip.maxTurnRateScale)
     }
     
     var fireRateScale: CGFloat = 1.0 // determines how many shots/second can be made
     var fireRate: CGFloat {
-        return min(max(fireRateScale, WPTShip.minFireRateScale), WPTShip.maxFireRateScale) * WPTShip.baseFireRate
+        return getStat(fireRateScale, base: WPTShip.baseFireRate, minScale: WPTShip.minFireRateScale, maxScale: WPTShip.maxFireRateScale)
     }
     
     var itemRadiusScale: CGFloat = 1.0 // determines how far the player can be from an item before collecting it
     var itemRadius: CGFloat {
-        return min(max(itemRadiusScale, WPTShip.minItemRadiusScale), WPTShip.maxItemRadiusScale) * WPTShip.baseItemRadius
+        return getStat(itemRadiusScale, base: WPTShip.baseItemRadius, minScale: WPTShip.minItemRadiusScale, maxScale: WPTShip.maxItemRadiusScale)
     }
     
     let previewImage: String
@@ -75,6 +76,7 @@ class WPTShip {
         self.playable = playable
         self.turnWhenFacing = dict["turnWhenFacing"] as! Bool
         self.cannonBallScale = (dict["cannonBallScale"] as? CGFloat) ?? 1.0
+        self.restrictStats = (dict["restrictStats"] as? Bool) ?? true
         
         self.name = dict["name"] as! String
         self.previewImage = dict["previewImage"] as! String
@@ -141,10 +143,16 @@ class WPTShip {
         }
     }
     
+    private func getStat(_ scale: CGFloat, base: CGFloat, minScale: CGFloat, maxScale: CGFloat) -> CGFloat {
+        let theScale = self.restrictStats ? min(max(scale, minScale), maxScale) : scale
+        return theScale * base
+    }
+    
     init(other: WPTShip) {
         self.name = other.name
         self.playable = other.playable
         self.turnWhenFacing = other.turnWhenFacing
+        self.restrictStats = other.restrictStats
         self.previewImage = other.previewImage
         self.inGameImage = other.inGameImage
         self.inGamePlayerImage = other.inGamePlayerImage

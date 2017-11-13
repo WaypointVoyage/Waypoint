@@ -33,7 +33,7 @@ class WPTKrakenIntroWave: WPTLevelWave {
     
     private func setHealthPickups() {
         for loc in self.healthLocations {
-            let health = WPTItemCatalog.itemsByName["Ship Maintenance"]!
+            let health = WPTItemCatalog.itemsByName["Ship Maintenance Major"]!
             let healthNode = WPTItemNode(health)
             healthNode.position = loc
             

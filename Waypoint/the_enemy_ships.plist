@@ -167,6 +167,8 @@
 		</dict>
 	</dict>
 	<dict>
+		<key>restrictStats</key>
+		<false/>
 		<key>imageOffset</key>
 		<dict>
 			<key>x</key>
@@ -177,11 +179,11 @@
 		<key>stats</key>
 		<dict>
 			<key>damageScale</key>
-			<integer>1</integer>
+			<integer>15</integer>
 			<key>fireRateScale</key>
 			<integer>1</integer>
 			<key>healthScale</key>
-			<integer>1</integer>
+			<integer>5000</integer>
 			<key>itemRadiusScale</key>
 			<integer>1</integer>
 			<key>rangeScale</key>
@@ -233,6 +235,8 @@
 		<false/>
 	</dict>
 	<dict>
+		<key>restrictStats</key>
+		<false/>
 		<key>imageOffset</key>
 		<dict>
 			<key>x</key>
@@ -275,11 +279,11 @@
 		<key>stats</key>
 		<dict>
 			<key>damageScale</key>
-			<integer>1</integer>
+			<integer>10</integer>
 			<key>fireRateScale</key>
 			<integer>1</integer>
 			<key>healthScale</key>
-			<integer>1</integer>
+			<integer>100</integer>
 			<key>itemRadiusScale</key>
 			<integer>1</integer>
 			<key>rangeScale</key>
