@@ -3,6 +3,30 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>dropHealth</key>
+		<true/>
+		<key>aggression</key>
+		<integer>5</integer>
+		<key>awareness</key>
+		<integer>3</integer>
+		<key>brain</key>
+		<string>pirate_brain</string>
+		<key>caution</key>
+		<real>0.1</real>
+		<key>haste</key>
+		<real>1.2</real>
+		<key>items</key>
+		<array/>
+		<key>name</key>
+		<string>Buccaneer</string>
+		<key>ship</key>
+		<string>Buccaneer Ship</string>
+		<key>terrainType</key>
+		<string>_SEA</string>
+		<key>triggerHappiness</key>
+		<real>0.5</real>
+	</dict>
+	<dict>
 		<key>damageOnContact</key>
 		<true/>
 		<key>hasWake</key>
@@ -166,7 +190,7 @@
 		<key>brain</key>
 		<string>pirate_brain</string>
 		<key>caution</key>
-		<integer>1</integer>
+		<real>0.2</real>
 		<key>haste</key>
 		<integer>1</integer>
 		<key>items</key>
@@ -214,7 +238,7 @@
 		<key>brain</key>
 		<string>pirate_brain</string>
 		<key>caution</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>haste</key>
 		<integer>2</integer>
 		<key>name</key>

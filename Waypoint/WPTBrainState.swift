@@ -39,7 +39,7 @@ class WPTBrainState: GKState {
             let toPlayer = CGVector(dx: player.position.x - enemy.position.x, dy: player.position.y - enemy.position.y).normalized()
             if dir.toVector().dot(toPlayer) >= 0 {
                 let line = WPTLine(p: enemy.position, q: enemy.position + dir)
-                let circle = WPTCircle(center: player.position, radius: player.sprite.frame.size.width / 2)
+                let circle = WPTCircle(center: player.position, radius: player.sprite.frame.size.width)
                 if line.intersects(circle: circle) {
                     self.enemy.fireCannons()
                     break

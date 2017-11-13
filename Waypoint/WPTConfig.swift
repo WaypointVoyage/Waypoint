@@ -13,12 +13,12 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.LEVEL// Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
-    let giveRandomItems: Int? = 18          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
-    let itemsPerCannon: Int? = 4          // for this many items, a single cannon is given when giveRandomItems is being used
+    let giveRandomItems: Int? = 22          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
+    let itemsPerCannon: Int? = 5          // for this many items, a single cannon is given when giveRandomItems is being used
     
     // audio
     let playMusic = true            // toggle music
@@ -76,7 +76,7 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
 
 class WPTLevelModeConfig {
 
-    let levelFileName: String = "8_give_no_quarter"  // the name of the level file to load
+    let levelFileName: String = "9_boom_about"  // the name of the level file to load
     
     // singleton instance
     private init() {}

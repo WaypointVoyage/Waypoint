@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>enemyBalanceItem</key>
-	<string>Enemy Balance 0</string>
+	<string>Enemy Balance 9</string>
 	<key>difficulty</key>
-	<integer>200</integer>
+	<integer>50</integer>
 	<key>goldDrop</key>
-	<real>3.1</real>
+	<integer>16</integer>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
@@ -605,10 +605,62 @@
 			<key>enemies</key>
 			<array>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>speed</key>
+							<real>1.5</real>
+							<key>health</key>
+							<integer>-10</integer>
+						</dict>
+					</dict>
+					<key>enemy</key>
+					<string>Oragami</string>
+					<key>count</key>
+					<integer>3</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>shotSpeed</key>
+							<real>0.5</real>
+							<key>fireRate</key>
+							<integer>-10</integer>
+							<key>range</key>
+							<real>2.5</real>
+							<key>speed</key>
+							<real>0.2</real>
+							<key>health</key>
+							<real>0.5</real>
+						</dict>
+					</dict>
 					<key>enemy</key>
 					<string>Viking</string>
 					<key>count</key>
 					<integer>7</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>speed</key>
+							<real>1.5</real>
+							<key>health</key>
+							<integer>-10</integer>
+						</dict>
+					</dict>
+					<key>enemy</key>
+					<string>Oragami</string>
+					<key>count</key>
+					<integer>3</integer>
 					<key>items</key>
 					<array/>
 				</dict>
@@ -621,22 +673,77 @@
 					<array/>
 				</dict>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>speed</key>
+							<real>1.5</real>
+							<key>health</key>
+							<integer>-10</integer>
+						</dict>
+					</dict>
 					<key>enemy</key>
-					<string>Trebuchet</string>
+					<string>Oragami</string>
 					<key>count</key>
-					<integer>5</integer>
+					<integer>3</integer>
 					<key>items</key>
 					<array/>
 				</dict>
 				<dict>
 					<key>enemy</key>
-					<string>Marooner</string>
+					<string>Buccaneer</string>
 					<key>count</key>
-					<integer>5</integer>
+					<integer>3</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>speed</key>
+							<real>1.5</real>
+							<key>health</key>
+							<integer>-10</integer>
+						</dict>
+					</dict>
+					<key>enemy</key>
+					<string>Oragami</string>
+					<key>count</key>
+					<integer>3</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>enemy</key>
+					<string>Buccaneer</string>
+					<key>count</key>
+					<integer>3</integer>
 					<key>items</key>
 					<array/>
 				</dict>
 			</array>
+			<key>New item</key>
+			<dict>
+				<key>directStats</key>
+				<dict>
+					<key>modifiers</key>
+					<dict>
+						<key>speed</key>
+						<real>1.5</real>
+						<key>health</key>
+						<integer>-10</integer>
+					</dict>
+				</dict>
+				<key>enemy</key>
+				<string>Oragami</string>
+				<key>count</key>
+				<integer>3</integer>
+				<key>items</key>
+				<array/>
+			</dict>
 		</dict>
 	</array>
 </dict>

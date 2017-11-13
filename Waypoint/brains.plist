@@ -70,7 +70,7 @@
 			<key>flee</key>
 			<string>WPTFleeBS</string>
 			<key>nothing</key>
-			<string>WPTWanderBS</string>
+			<string>WPTSlowlyHealBS</string>
 			<key>offense</key>
 			<string>WPTPursueBS</string>
 		</dict>
@@ -85,7 +85,7 @@
 			<key>flee</key>
 			<string>WPTFleeBS</string>
 			<key>nothing</key>
-			<string>WPTWanderBS</string>
+			<string>WPTSlowlyHealBS</string>
 			<key>offense</key>
 			<string>WPTFleeOffenseBS</string>
 		</dict>

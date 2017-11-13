@@ -217,7 +217,7 @@ extension WPTShip {
     static let maxHealth: CGFloat = WPTShip.baseHealth * WPTShip.maxHealthScale
     
     static let minRangeScale: CGFloat = 0.4
-    static let maxRangeScale: CGFloat = 5.0
+    static let maxRangeScale: CGFloat = 3.0
     static let baseRange: CGFloat = 250
     static let minRange: CGFloat = WPTShip.baseRange * WPTShip.minRangeScale
     static let maxRange: CGFloat = WPTShip.baseRange * WPTShip.maxRangeScale
