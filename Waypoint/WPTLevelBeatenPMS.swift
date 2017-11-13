@@ -15,9 +15,11 @@ class WPTLevelBeatenPMS: GKState {
         
         if let puppetMaster = self.stateMachine as? WPTPuppetMaster {
             puppetMaster.scene.port?.active = true
-            WPTAudioConfig.audio.playSong(song: "waypoint_victory.wav", numLoops: 0, completion: { (true) in
-                WPTAudioConfig.audio.playSong(song: "level_map_theme.wav")
-            })
+            if !puppetMaster.scene.levelBeaten {
+                WPTAudioConfig.audio.playSong(song: "waypoint_victory.wav", numLoops: 0, completion: { (true) in
+                    WPTAudioConfig.audio.playSong(song: "level_map_theme.wav")
+                })
+            }
             puppetMaster.scene.alert(header: "Level Complete", desc: "Dock at the port to continue.")
         }
         

@@ -32,6 +32,7 @@ class WPTAudioNode : SKNode {
     }
     
     func playEffect() {
+        guard WPTAudioConfig.audio.getCurrentEffectsVolume() > 0.01 else { return }
         if self.maxSounds == nil || self.numPlaying < self.maxSounds! {
             self.numPlaying += 1
             self.audio.play(numberOfLoops: 0) { (played: Bool) in

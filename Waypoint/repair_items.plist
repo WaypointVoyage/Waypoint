@@ -6,7 +6,7 @@
 		<key>description</key>
 		<string>+10% Health</string>
 		<key>imageName</key>
-		<string>repair_0</string>
+		<string>repair_1</string>
 		<key>name</key>
 		<string>Minor Ship Maintenance</string>
 		<key>prevalence</key>
@@ -38,7 +38,7 @@
 		<key>description</key>
 		<string>Heal 50%</string>
 		<key>imageName</key>
-		<string>repair_0</string>
+		<string>repair_1</string>
 		<key>name</key>
 		<string>Ship Maintenance Major</string>
 		<key>prevalence</key>
@@ -54,7 +54,7 @@
 		<key>description</key>
 		<string>Heal 100%</string>
 		<key>imageName</key>
-		<string>repair_0</string>
+		<string>repair_2</string>
 		<key>name</key>
 		<string>Ship Maintenance Complete</string>
 		<key>prevalence</key>
