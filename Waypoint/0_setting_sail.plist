@@ -549,6 +549,8 @@
 					<dict>
 						<key>modifiers</key>
 						<dict>
+							<key>health</key>
+							<real>-0.1</real>
 							<key>damage</key>
 							<integer>-9223372036854775808</integer>
 						</dict>

@@ -23,8 +23,7 @@ class WPTActor {
     
     // items
     var items: [WPTItem] = [] // items that modify behavior
-    private var itemCounts: [String:Int] = [:] // item.name -> count
-    
+
     init(ship: WPTShip) {
         self.ship = ship
     }
@@ -36,28 +35,10 @@ class WPTActor {
             }
             return
         }
-        var canAdd = true
-        
-        // update the item's count
-        if let mult = item.multiplicity {
-            if mult > 0 {
-                if let curCount = itemCounts[item.name] {
-                    if curCount >= mult {
-                        canAdd = false
-                    } else {
-                        itemCounts[item.name] = curCount + 1
-                    }
-                } else {
-                    itemCounts[item.name] = 1
-                }
-            }
-        }
-        
+
         // add it to the item array
-        if canAdd {
-            self.items.append(item)
-            ship.upgrade(with: item)
-        }
+        self.items.append(item)
+        ship.upgrade(with: item)
     }
     
     func addCannon() -> WPTCannon? {

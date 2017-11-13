@@ -110,7 +110,7 @@ class WaveEnemy {
         }
         
         if let directStatsDict = dict["directStats"] as? [String:AnyObject] {
-            directStats = WPTItem(name: "direct_stat_item", imageName: "no_image", tier: WPTItemTier.statModifier, multiplicity: 0, value: 0, prevalence: 0)
+            directStats = WPTItem(name: "direct_stat_item", imageName: "no_image", tier: WPTItemTier.statModifier, value: 0, prevalence: 0)
             directStats!.initStatModifiers(directStatsDict)
             self.items.append(directStats!)
         }

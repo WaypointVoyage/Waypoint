@@ -17,7 +17,7 @@
 		<key>name</key>
 		<string>Oar</string>
 		<key>prevalence</key>
-		<integer>100</integer>
+		<integer>75</integer>
 		<key>value</key>
 		<integer>20</integer>
 	</dict>
@@ -122,7 +122,7 @@
 		<key>name</key>
 		<string>Sail</string>
 		<key>prevalence</key>
-		<integer>80</integer>
+		<integer>60</integer>
 		<key>value</key>
 		<integer>25</integer>
 	</dict>

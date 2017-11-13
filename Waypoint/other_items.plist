@@ -5,6 +5,72 @@
 	<dict>
 		<key>modifiers</key>
 		<dict>
+			<key>turnRate</key>
+			<real>0.3</real>
+			<key>shotSpeed</key>
+			<integer>0</integer>
+			<key>fireRate</key>
+			<real>0.3</real>
+			<key>damage</key>
+			<integer>1</integer>
+			<key>range</key>
+			<integer>0</integer>
+			<key>speed</key>
+			<real>0.8</real>
+			<key>health</key>
+			<integer>6</integer>
+		</dict>
+		<key>description</key>
+		<string>balance for level 8</string>
+		<key>imageName</key>
+		<string>_</string>
+		<key>multiplicity</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Enemy Balance 8</string>
+		<key>prevalence</key>
+		<integer>0</integer>
+		<key>tier</key>
+		<string>OTHER</string>
+		<key>value</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>turnRate</key>
+			<real>0.3</real>
+			<key>shotSpeed</key>
+			<integer>0</integer>
+			<key>fireRate</key>
+			<real>0.3</real>
+			<key>damage</key>
+			<real>0.5</real>
+			<key>range</key>
+			<integer>0</integer>
+			<key>speed</key>
+			<real>0.8</real>
+			<key>health</key>
+			<real>5.5</real>
+		</dict>
+		<key>description</key>
+		<string>balance for level 7</string>
+		<key>imageName</key>
+		<string>_</string>
+		<key>multiplicity</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Enemy Balance 7</string>
+		<key>prevalence</key>
+		<integer>0</integer>
+		<key>tier</key>
+		<string>OTHER</string>
+		<key>value</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>modifiers</key>
+		<dict>
 			<key>shotSpeed</key>
 			<real>0.5</real>
 			<key>fireRate</key>

@@ -239,7 +239,7 @@
 				<key>angle</key>
 				<integer>0</integer>
 				<key>hasCannon</key>
-				<true/>
+				<false/>
 				<key>x</key>
 				<integer>200</integer>
 				<key>y</key>
@@ -313,11 +313,11 @@
 		<key>stats</key>
 		<dict>
 			<key>damageScale</key>
-			<real>0.5</real>
+			<integer>5</integer>
 			<key>fireRateScale</key>
-			<real>1</real>
+			<integer>5</integer>
 			<key>healthScale</key>
-			<real>0.2</real>
+			<integer>-1000000000</integer>
 			<key>itemRadiusScale</key>
 			<real>1</real>
 			<key>rangeScale</key>

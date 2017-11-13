@@ -25,6 +25,8 @@ class WPTShipWheelNode: SKNode, WPTUpdatable {
     
     private let radius: CGFloat
     
+    var enabled: Bool = true
+    
     override init() {
         self.radius = self.sprite.size.width / 2.0
         super.init()
@@ -45,6 +47,7 @@ class WPTShipWheelNode: SKNode, WPTUpdatable {
     }
     
     func update(_ currentTime: TimeInterval, _ deltaTime: TimeInterval) {
+        guard self.enabled else { return }
         guard let player = (self.scene as? WPTLevelScene)?.player, let touch = self.touch else { return }
         let touchLoc = touch.location(in: self)
         let touchVec = CGVector(dx: touchLoc.x, dy: touchLoc.y)

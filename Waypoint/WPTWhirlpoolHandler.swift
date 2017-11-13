@@ -11,7 +11,7 @@ import SpriteKit
 class WPTWhirlpoolHandler: SKNode {
     public static let nodeName: String = "_WHIRLPOOL_HANDLER"
     public static let whirlpoolDamage: CGFloat = -10
-    
+
     private static let spin = SKAction.rotate(byAngle: -.pi * 2, duration: 1.0)
     private static let delay = SKAction.wait(forDuration: 1)
     
@@ -34,19 +34,33 @@ class WPTWhirlpoolHandler: SKNode {
     }
     
     func enterWhirlpool(damage: CGFloat = WPTWhirlpoolHandler.whirlpoolDamage) {
+        guard self.canEnterWhirlpool else { return }
         self.canEnterWhirlpool = false
+        
         if let scene = self.scene as? WPTLevelScene {
             if scene.getSceneFrame().contains(self.actor.position) {
                 self.whirlpoolEffect.playEffect()
             }
         }
+        
         self.actor.run(WPTWhirlpoolHandler.spin)
         self.actor.doDamage(damage)
+        if let player = self.actor as? WPTLevelPlayerNode {
+            player.setSteeringInteration(false)
+        }
+        
+        self.run(WPTWhirlpoolHandler.delay) {
+            self.canEnterWhirlpool = true
+            if let player = self.actor as? WPTLevelPlayerNode {
+                player.setSteeringInteration(true)
+            }
+        }
     }
     
     func exitWhirlpool() {
-        self.run(WPTWhirlpoolHandler.delay) {
-            self.canEnterWhirlpool = true
-        }
+//        guard !self.canEnterWhirlpool else { return }
+//        self.run(WPTWhirlpoolHandler.delay) {
+//            self.canEnterWhirlpool = true
+//        }
     }
 }

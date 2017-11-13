@@ -53,7 +53,7 @@ class WPTBrain: GKStateMachine {
         if difficulty <= 1 {
             return 1
         } else {
-            return difficulty / 4
+            return min(difficulty / 4, 1.0)
         }
     }
     

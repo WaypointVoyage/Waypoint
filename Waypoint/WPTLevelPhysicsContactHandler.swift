@@ -75,10 +75,11 @@ class WPTLevelPhysicsContactHandler: NSObject, SKPhysicsContactDelegate {
         }
         
         else if collisionBetween(WPTValues.actorCbm, WPTValues.whirlpoolCbm) {
-            if let actor = firstBody.node as? WPTLevelActorNode, let _ = secondBody.node as? WPTWhirlpoolNode {
+            if let actor = firstBody.node as? WPTLevelActorNode, let whirlpool = secondBody.node as? WPTWhirlpoolNode {
                 if let whirlpoolHandler = actor.childNode(withName: WPTWhirlpoolHandler.nodeName) as? WPTWhirlpoolHandler {
                     if whirlpoolHandler.canEnterWhirlpool {
                         whirlpoolHandler.enterWhirlpool()
+                        whirlpool.stop()
                     }
                 }
             }
