@@ -13,11 +13,11 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
-    let giveRandomItems: Int? = 28          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
+    let giveRandomItems: Int? = nil          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
     let itemsPerCannon: Int? = 5          // for this many items, a single cannon is given when giveRandomItems is being used
     
     // audio
@@ -25,15 +25,15 @@ class WPTConfig {
     let playSoundEffects = true     // toggle sound effects
     
     // testing
-    var testing = true                  // toggles general testing features
+    var testing = false                  // toggles general testing features
     var allUnlocked = false              // determines if all of the levels on the world map are unlocked and beaten
     var freeItems = false                // if true, all items are free
     var invincible = false               // if true, the player is invincible
     var clearHighScoresOnLoad = false    // if true, all of the high scores are cleared when the app is loaded
-    var restartLevelOnDeath = true      // if true, a level restarts when the player dies
+    var restartLevelOnDeath = false      // if true, a level restarts when the player dies
     var clearProgressOnQuit = false       // if true, the play will not be able to pick up where they left off when quitting
 
-    var showTutorial = false              // if false, the tutorial will never be shown
+    var showTutorial = true              // if false, the tutorial will never be shown
     var clearPlayerProgress = false      // if true, all player progress will be cleared
     var clearGlobalSettings = false      // if true, all global settings will be cleared
     
