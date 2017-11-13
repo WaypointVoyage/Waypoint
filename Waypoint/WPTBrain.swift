@@ -92,7 +92,7 @@ class WPTBrain: GKStateMachine {
         
         radiusOfSafety = outerRadiusOfObliviousness + enemy.enemy.caution * WPTBrain.baseRadiusOfSafety * self.levelDifficultyTapered
         
-        healthCutoff = radiusOfEngagement / radiusOfSafety
+        healthCutoff = min(enemy.enemy.caution / enemy.enemy.aggression, 0.2)
         
         enemy.fireRateMgr.modifier = enemy.enemy.triggerHappiness * self.levelDifficultySofter
     }

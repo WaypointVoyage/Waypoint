@@ -14,6 +14,39 @@
 			<key>damage</key>
 			<real>1.5</real>
 			<key>range</key>
+			<real>0.8</real>
+			<key>speed</key>
+			<real>0.8</real>
+			<key>health</key>
+			<real>6.8</real>
+		</dict>
+		<key>description</key>
+		<string>balance for level 10</string>
+		<key>imageName</key>
+		<string>_</string>
+		<key>multiplicity</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Enemy Balance 10</string>
+		<key>prevalence</key>
+		<integer>0</integer>
+		<key>tier</key>
+		<string>OTHER</string>
+		<key>value</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>fireRate</key>
+			<real>0.3</real>
+			<key>turnRate</key>
+			<real>0.3</real>
+			<key>shotSpeed</key>
+			<integer>0</integer>
+			<key>damage</key>
+			<real>1.5</real>
+			<key>range</key>
 			<real>0.4</real>
 			<key>speed</key>
 			<real>0.8</real>
