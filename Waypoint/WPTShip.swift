@@ -15,6 +15,7 @@ class WPTShip {
     let name: String
     let playable: Bool
     let turnWhenFacing: Bool
+    let cannonBallScale: CGFloat
     
     /* All stats are multipliers of base values and clamped between min/max values. */
     
@@ -73,6 +74,7 @@ class WPTShip {
     init(dict: [String:AnyObject], playable: Bool) {
         self.playable = playable
         self.turnWhenFacing = dict["turnWhenFacing"] as! Bool
+        self.cannonBallScale = (dict["cannonBallScale"] as? CGFloat) ?? 1.0
         
         self.name = dict["name"] as! String
         self.previewImage = dict["previewImage"] as! String
@@ -149,6 +151,7 @@ class WPTShip {
         self.cannonSet = WPTCannonSet(other: other.cannonSet)
         self.colliderPath = other.colliderPath
         self.imageOffset = other.imageOffset
+        self.cannonBallScale = other.cannonBallScale
         self.initStats(speedScale: other.speedScale, damageScale: other.damageScale, healthScale: other.healthScale, rangeScale: other.rangeScale, shotSpeedScale: other.shotSpeedScale, sizeScale: other.sizeScale, turnRateScale: other.turnRateScale, itemRadiusScale: other.itemRadiusScale)
     }
     
@@ -201,7 +204,7 @@ extension WPTShip {
     static let minSpeed: CGFloat = WPTShip.baseSpeed * WPTShip.minSpeedScale
     static let maxSpeed: CGFloat = WPTShip.baseSpeed * WPTShip.maxSpeedScale
     
-    static let minDamageScale: CGFloat = 0.5
+    static let minDamageScale: CGFloat = 0.2
     static let maxDamageScale: CGFloat = 20.0
     static let baseDamage: CGFloat = 20.0
     static let minDamage: CGFloat = WPTShip.baseDamage * WPTShip.minDamageScale
@@ -214,7 +217,7 @@ extension WPTShip {
     static let maxHealth: CGFloat = WPTShip.baseHealth * WPTShip.maxHealthScale
     
     static let minRangeScale: CGFloat = 0.4
-    static let maxRangeScale: CGFloat = 10.0
+    static let maxRangeScale: CGFloat = 3.0
     static let baseRange: CGFloat = 250
     static let minRange: CGFloat = WPTShip.baseRange * WPTShip.minRangeScale
     static let maxRange: CGFloat = WPTShip.baseRange * WPTShip.maxRangeScale
@@ -226,7 +229,7 @@ extension WPTShip {
     static let maxShotSpeed: CGFloat = WPTShip.baseShotSpeed * WPTShip.maxShotSpeedScale
     
     static let minSizeScale: CGFloat = 0.5
-    static let maxSizeScale: CGFloat = 2.5
+    static let maxSizeScale: CGFloat = 5
     static let baseSize: CGFloat = 0.3
     static let minSize: CGFloat = WPTShip.baseSize * WPTShip.minSizeScale
     static let maxSize: CGFloat = WPTShip.baseSize * WPTShip.maxSizeScale

@@ -31,6 +31,12 @@ class WPTLevelEnemyNode: WPTLevelActorNode {
         self.healthBar = WPTHealthNode(maxHealth: enemy.ship.health, curHealth: startHealth, persistent: false)
         super.init(actor: enemy, teamBitMask: WPTValues.enemyTbm)
         
+        // physics
+        if enemy.damageOnContact {
+            self.physicsBody?.categoryBitMask = WPTValues.damageActorCbm
+            self.physicsBody?.collisionBitMask &= ~WPTValues.actorCbm
+        }
+
         // brain
         self.brain!.enemy = self
         self.brain!.setBehavior()

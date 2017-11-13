@@ -17,6 +17,10 @@ class WPTWanderBS: WPTLollygaggingBS {
         super.init(name: name)
     }
     
+    init(name: String) {
+        super.init(name: name)
+    }
+    
     override func needNewObjective() -> Bool {
         return self.target == nil
     }

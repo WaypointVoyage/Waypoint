@@ -168,10 +168,12 @@ class WPTDockMenuNode: SKNode {
     private func getRandomItems(numItems: Int) -> [ItemWrapper] {
         var items: [ItemWrapper] = []
         
-        let shipMaintenance = WPTItemCatalog.itemsByName["Ship Maintenance"]!
-        let maintenanceWrapper = ItemWrapper(name: shipMaintenance.name, price: Int(priceScale * Float(shipMaintenance.value)), purchased: false)
-        NSLog("Adding maintenance of price \(maintenanceWrapper.price) to dock inventory")
-        items.append(maintenanceWrapper)
+        for name in ["Ship Maintenance Minor", "Ship Maintenance Major", "Ship Maintenance Complete"] {
+            let shipMaintenance = WPTItemCatalog.itemsByName[name]!
+            let maintenanceWrapper = ItemWrapper(name: shipMaintenance.name, price: Int(priceScale * Float(shipMaintenance.value)), purchased: false)
+            NSLog("Adding '\(name)' of price \(maintenanceWrapper.price) to dock inventory")
+            items.append(maintenanceWrapper)
+        }
         
         if !self.player.hasAllCannons {
             let cannon = WPTItemCatalog.itemsByName["Cannon"]!

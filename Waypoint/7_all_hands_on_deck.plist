@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>enemyBalanceItem</key>
-	<string>Enemy Balance 0</string>
+	<string>Enemy Balance 7</string>
 	<key>difficulty</key>
-	<integer>90</integer>
+	<integer>38</integer>
 	<key>goldDrop</key>
-	<real>3.1</real>
+	<integer>12</integer>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
 		<integer>16</integer>
 		<key>whirlpoolPeriod</key>
-		<integer>10</integer>
+		<integer>3</integer>
 	</dict>
 	<key>name</key>
 	<string>All Hands On Deck</string>
@@ -99,12 +99,6 @@
 			<integer>544</integer>
 			<key>y</key>
 			<integer>2483</integer>
-		</dict>
-		<dict>
-			<key>x</key>
-			<integer>232</integer>
-			<key>y</key>
-			<integer>4775</integer>
 		</dict>
 		<dict>
 			<key>x</key>
@@ -905,6 +899,14 @@
 			<key>enemies</key>
 			<array>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>range</key>
+							<real>0.4</real>
+						</dict>
+					</dict>
 					<key>enemy</key>
 					<string>Marooner</string>
 					<key>count</key>
@@ -913,6 +915,14 @@
 					<array/>
 				</dict>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>range</key>
+							<real>0.4</real>
+						</dict>
+					</dict>
 					<key>enemy</key>
 					<string>Pirate</string>
 					<key>count</key>
@@ -921,6 +931,24 @@
 					<array/>
 				</dict>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>damage</key>
+							<real>-0.8</real>
+							<key>shotSpeed</key>
+							<real>0.5</real>
+							<key>fireRate</key>
+							<integer>0</integer>
+							<key>range</key>
+							<integer>3</integer>
+							<key>speed</key>
+							<integer>0</integer>
+							<key>health</key>
+							<real>0.6</real>
+						</dict>
+					</dict>
 					<key>enemy</key>
 					<string>Trebuchet</string>
 					<key>count</key>
@@ -929,6 +957,22 @@
 					<array/>
 				</dict>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>shotSpeed</key>
+							<real>0.5</real>
+							<key>fireRate</key>
+							<integer>-10</integer>
+							<key>range</key>
+							<real>2.5</real>
+							<key>speed</key>
+							<real>0.2</real>
+							<key>health</key>
+							<real>0.5</real>
+						</dict>
+					</dict>
 					<key>enemy</key>
 					<string>Viking</string>
 					<key>count</key>
@@ -942,6 +986,37 @@
 			<key>enemies</key>
 			<array>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>range</key>
+							<real>0.4</real>
+						</dict>
+					</dict>
+					<key>enemy</key>
+					<string>Pirate</string>
+					<key>count</key>
+					<integer>3</integer>
+					<key>items</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>modifiers</key>
+					<dict>
+						<key>damage</key>
+						<real>-0.8</real>
+						<key>shotSpeed</key>
+						<real>0.5</real>
+						<key>fireRate</key>
+						<integer>0</integer>
+						<key>range</key>
+						<integer>3</integer>
+						<key>speed</key>
+						<integer>0</integer>
+						<key>health</key>
+						<real>0.6</real>
+					</dict>
 					<key>enemy</key>
 					<string>Trebuchet</string>
 					<key>count</key>
@@ -955,6 +1030,14 @@
 			<key>enemies</key>
 			<array>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>range</key>
+							<real>0.4</real>
+						</dict>
+					</dict>
 					<key>enemy</key>
 					<string>Pirate</string>
 					<key>count</key>
@@ -968,6 +1051,22 @@
 			<key>enemies</key>
 			<array>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>shotSpeed</key>
+							<real>0.5</real>
+							<key>fireRate</key>
+							<integer>-10</integer>
+							<key>range</key>
+							<real>2.5</real>
+							<key>speed</key>
+							<real>0.2</real>
+							<key>health</key>
+							<real>0.5</real>
+						</dict>
+					</dict>
 					<key>enemy</key>
 					<string>Viking</string>
 					<key>count</key>

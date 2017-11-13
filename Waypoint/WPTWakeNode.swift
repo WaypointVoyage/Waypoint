@@ -115,7 +115,7 @@ class WPTWakeNode: SKNode, WPTUpdatable {
         let sizeFraction: CGFloat = (ship.size - WPTShip.minSize) / (WPTShip.maxSize - WPTShip.minSize)
         let curSpeedFraction: CGFloat = atan(0.0005 * (actor.physicsBody?.velocity.magnitude() ?? 0.0)) / CGFloat(.pi / 2.0)
         var result: CGFloat = pow(sizeFraction, 4.0) * curSpeedFraction
-        clamp(&result, min: 0.0, max: 1.0)
+        clamp(&result, min: 0.01, max: 0.2)
         return result
     }
     

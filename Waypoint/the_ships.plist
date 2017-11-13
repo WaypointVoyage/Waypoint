@@ -269,6 +269,8 @@
 		</dict>
 	</dict>
 	<dict>
+		<key>cannonBallScale</key>
+		<real>0.65</real>
 		<key>turnWhenFacing</key>
 		<true/>
 		<key>cannonSet</key>

@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>enemyBalanceItem</key>
-	<string>Enemy Balance 0</string>
+	<string>Enemy Balance 8</string>
 	<key>difficulty</key>
-	<integer>150</integer>
+	<integer>40</integer>
 	<key>goldDrop</key>
-	<real>3.1</real>
+	<integer>8</integer>
 	<key>entities</key>
 	<dict>
 		<key>boulders</key>
@@ -917,8 +917,16 @@
 			<key>enemies</key>
 			<array>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>health</key>
+							<integer>-10</integer>
+						</dict>
+					</dict>
 					<key>enemy</key>
-					<string>Marooner</string>
+					<string>Oragami</string>
 					<key>count</key>
 					<integer>3</integer>
 					<key>items</key>
@@ -933,6 +941,22 @@
 					<array/>
 				</dict>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>shotSpeed</key>
+							<real>0.5</real>
+							<key>fireRate</key>
+							<integer>-10</integer>
+							<key>range</key>
+							<real>2.5</real>
+							<key>speed</key>
+							<real>0.2</real>
+							<key>health</key>
+							<real>0.5</real>
+						</dict>
+					</dict>
 					<key>enemy</key>
 					<string>Viking</string>
 					<key>count</key>
@@ -954,6 +978,22 @@
 					<array/>
 				</dict>
 				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>shotSpeed</key>
+							<real>0.5</real>
+							<key>fireRate</key>
+							<integer>-10</integer>
+							<key>range</key>
+							<real>2.5</real>
+							<key>speed</key>
+							<real>0.2</real>
+							<key>health</key>
+							<real>0.5</real>
+						</dict>
+					</dict>
 					<key>enemy</key>
 					<string>Viking</string>
 					<key>count</key>
@@ -966,6 +1006,22 @@
 		<dict>
 			<key>enemies</key>
 			<array>
+				<dict>
+					<key>directStats</key>
+					<dict>
+						<key>modifiers</key>
+						<dict>
+							<key>health</key>
+							<integer>-10</integer>
+						</dict>
+					</dict>
+					<key>enemy</key>
+					<string>Oragami</string>
+					<key>count</key>
+					<integer>1</integer>
+					<key>items</key>
+					<array/>
+				</dict>
 				<dict>
 					<key>enemy</key>
 					<string>Pirate</string>

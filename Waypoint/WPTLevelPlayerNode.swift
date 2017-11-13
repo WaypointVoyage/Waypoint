@@ -70,12 +70,16 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         self.interactionEnabled = value
         let hud = (self.scene as! WPTLevelScene).hud
         hud.bottom.isUserInteractionEnabled = value
-        hud.bottom.wheel.setTouch(nil)
         if value {
             self.fireRateMgr.enable()
         } else {
             self.fireRateMgr.disable()
         }
+    }
+    
+    func setSteeringInteration(_ value: Bool) {
+        let hud = (self.scene as! WPTLevelScene).hud
+        hud.bottom.wheel.enabled = value
     }
     
     override func getShipSpeed() -> CGFloat {
@@ -98,9 +102,11 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         if let scene = (self.scene as? WPTLevelScene) {
             let alive = scene.hud.top.shipHealth.updateHealth(damage)
             
-            if WPTConfig.values.restartLevelOnDeath && !alive {
+            if !WPTConfig.values.invincible && WPTConfig.values.restartLevelOnDeath && !alive {
                 self.player.progress?.health = self.player.ship.health
-                self.player.progress?.doubloons = (self.scene as! WPTLevelScene).levelStartMoney
+                let doubloons = (self.scene as! WPTLevelScene).levelStartMoney
+                self.player.progress?.doubloons = doubloons
+                self.player.doubloons = doubloons
                 scene.level.resetWaveEnemies()
                 scene.view?.presentScene(WPTLevelScene(player: self.player, level: scene.level))
             }

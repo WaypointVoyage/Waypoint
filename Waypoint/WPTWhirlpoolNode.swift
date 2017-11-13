@@ -43,13 +43,15 @@ class WPTWhirlpoolNode: SKNode {
         }
     }
     
-    private func stop() {
+    func stop() {
         let shrink = SKAction.resize(toWidth: 0, height: 0, duration: 1.0)
         let fadeOut = SKAction.fadeOut(withDuration: 1.0)
         
         self.whirlImage.run(SKAction.group([shrink, fadeOut])) {
             self.removeFromParent()
         }
+        
+        self.physicsBody = nil
     }
     
     required init?(coder aDecoder: NSCoder) {
