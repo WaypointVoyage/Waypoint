@@ -15,7 +15,7 @@ class WPTHealthNode: SKNode {
     let healthBarWidth: CGFloat = 90
     let healthBarHeight: CGFloat = 9
     var maxHealth: CGFloat
-    var curHealth: CGFloat
+    public private(set) var curHealth: CGFloat
     
     var shipHealthBar = SKSpriteNode()
     let persistent: Bool
@@ -42,8 +42,12 @@ class WPTHealthNode: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setCurHealth(_ value: CGFloat) {
+        self.curHealth = min(max(value, 0), self.maxHealth)
+    }
+    
     func updateHealth(_ healthPoints: CGFloat) -> Bool {
-        self.curHealth += healthPoints
+        self.setCurHealth(self.curHealth + healthPoints)
         updateHealthBar(self.curHealth)
         if (self.curHealth <= 0) {
             return false

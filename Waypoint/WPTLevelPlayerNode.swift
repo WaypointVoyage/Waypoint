@@ -107,67 +107,72 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
             
             // restart the level?
             if !WPTConfig.values.invincible && WPTConfig.values.restartLevelOnDeath && !alive {
-                self.setHealth(self.player.ship.health)
-                self.doubloons = (self.scene as! WPTLevelScene).levelStartMoney
-                self.player.progress = WPTPlayerProgress(playerNode: self)
-                scene.level.resetWaveEnemies()
-                scene.view?.presentScene(WPTLevelScene(player: self.player, level: scene.level))
+                self.restartLevel(scene)
             }
             
             // dead
             if !alive && !WPTConfig.values.invincible {
-                scene.contactDelegate = nil
-                scene.levelPaused = true
-                scene.hud.top.pause.isHidden = true
-                scene.hud.bottom.hideBorder()
-                scene.hud.pauseShroud.removeFromParent()
-                scene.hud.addChild(scene.hud.pauseShroud)
-                scene.hud.destroyMenu.updateMoney()
-                
-                mapScrollEffect.playEffect()
-                WPTAudioConfig.audio.playSong(song: "level_map_theme.wav")
-                scene.hud.destroyMenu.removeFromParent()
-                scene.hud.addChild(scene.hud.destroyMenu)
-                
-                if !WPTConfig.values.restartLevelOnDeath {
-                    OperationQueue().addOperation {
-                        let storage = WPTStorage()
-                        // clear progress
-                        storage.clearPlayerProgress()
-                    }
-                }
+                self.handleDeath(scene)
             }
         }
         NSLog("Player now has \(self.health) health out of \(player.ship.health)")
     }
-    
+
     override func give(item: WPTItem) {
         super.give(item: item)
         
-        // update doubloons at the top
-        if let _ = item.doubloons, let top = (self.scene as? WPTLevelScene)?.hud.top {
+        if let top = (self.scene as? WPTLevelScene)?.hud.top {
+            // update doubloons at the top
             top.updateMoney()
+            
+            // and health
+            top.shipHealth.maxHealth = self.player.ship.health
+            let _ = top.shipHealth.updateHealth(0)
+            NSLog("Top Health Bar now shows \(top.shipHealth.curHealth)/\(top.shipHealth.maxHealth)")
         }
-        
-        // update the health bar
-        if let repair = item.repair {
-            if item.repairProportionally {
-                self.doDamage(repair * self.player.ship.health)
-            } else {
-                self.doDamage(repair)
-            }
-        }
-        
+
         // show description
         if let desc = item.description {
             if let scene = self.scene as? WPTLevelScene {
-               scene.alert(header: item.name, desc: desc)
+                scene.alert(header: item.name, desc: desc)
             }
         }
+        
     }
     
     override func aimAt(node target: SKNode) {
         super.aimAt(node: target)
         self.reticle.track(node: target)
+    }
+    
+    private func restartLevel(_ scene: WPTLevelScene) {
+        self.setHealth(self.player.ship.health)
+        self.doubloons = (self.scene as! WPTLevelScene).levelStartMoney
+        self.player.progress = WPTPlayerProgress(playerNode: self)
+        scene.level.resetWaveEnemies()
+        scene.view?.presentScene(WPTLevelScene(player: self.player, level: scene.level))
+    }
+    
+    private func handleDeath(_ scene: WPTLevelScene) {
+        scene.contactDelegate = nil
+        scene.levelPaused = true
+        scene.hud.top.pause.isHidden = true
+        scene.hud.bottom.hideBorder()
+        scene.hud.pauseShroud.removeFromParent()
+        scene.hud.addChild(scene.hud.pauseShroud)
+        scene.hud.destroyMenu.updateMoney()
+        
+        mapScrollEffect.playEffect()
+        WPTAudioConfig.audio.playSong(song: "level_map_theme.wav")
+        scene.hud.destroyMenu.removeFromParent()
+        scene.hud.addChild(scene.hud.destroyMenu)
+        
+        if !WPTConfig.values.restartLevelOnDeath {
+            OperationQueue().addOperation {
+                let storage = WPTStorage()
+                // clear progress
+                storage.clearPlayerProgress()
+            }
+        }
     }
 }

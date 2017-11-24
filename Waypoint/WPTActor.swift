@@ -20,16 +20,13 @@ class WPTActor {
     }
     
     func apply(item: WPTItem) {
-        guard item.tier == .statModifier else {
-            if item.name == "Cannon" {
-                let _ = self.addCannon()
-            }
-            return
+        if item.tier == .statModifier {
+            // add it to the item array
+            self.items.append(item)
+            self.ship.upgrade(with: item)
+        } else if item.name == "Cannon" {
+            let _ = self.addCannon()
         }
-
-        // add it to the item array
-        self.items.append(item)
-        ship.upgrade(with: item)
     }
     
     func addCannon() -> WPTCannon? {

@@ -251,64 +251,63 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     func give(item: WPTItem) {
         // all items have the potential to give money
-        if let doubloons = item.doubloons {
-            self.doubloons += doubloons
-        }
+        self.doubloons += item.doubloons ?? 0
         
-        // all items have the potential to do repairs
-        if let repair = item.repair {
-            if item.repairProportionally {
-                self.setHealth(self.health + repair * self.actor.ship.health)
-            } else {
-                self.setHealth(self.health + repair)
-            }
-        }
-
         // could have a new cannon ball image?
         if let newImg = item.cannonBallImage {
             actor.cannonBall.image = newImg
         }
         
+        var effect: WPTAudioNode? = nil
+        
         // tier specific behavior
         switch (item.tier) {
-        case WPTItemTier.statModifier:
-            if self.isPlayer == true {
-                itemEffect.playEffect()
-            }
-            let healthBefore = self.actor.ship.health
-            actor.apply(item: item)
-            
-            // health
-            let healthAfter = self.actor.ship.health
-            let healthChange = healthAfter - healthBefore
-            // if the item increased health, we want them to gain the extra health
-            if healthChange != 0 {
-                self.doDamage(healthChange)
-            }
-            
-            // size
-            self.setScale(self.actor.ship.size)
-            
-        case WPTItemTier.currency:
-            if item.name.contains("Coin") {
-                coinDropEffect.playEffect()
-            } else if item.name.contains("Pearls") {
-                pearlDropEffect.playEffect()
-            } else {
-                gemDropEffect.playEffect()
-            }
-        case WPTItemTier.repair:
-            if self.isPlayer == true {
-                itemEffect.playEffect()
-            }
-        case WPTItemTier.other:
+        case .statModifier:
+            self.giveStatModifier(item: item)
+            effect = self.itemEffect
+        case .currency:
+            effect = item.name.contains("Coin") ? self.coinDropEffect : item.name.contains("Pearls") ? self.pearlDropEffect : self.gemDropEffect
+        case .repair:
+            effect = self.itemEffect
+        case .other:
             if item.name == "Cannon" {
-                cannonEffect.playEffect()
-                addCannon()
+                effect = self.cannonEffect
+                self.addCannon()
             }
         }
+        
+        // all items have the potential to do repairs
+        if let repair = item.repair {
+            let repairAmount = item.repairProportionally ? repair * self.actor.ship.health : repair
+            self.doDamage(repairAmount)
+            let type = self.isPlayer ? "player" : "enemy"
+            NSLog("\(type) repaired \(repairAmount) from \(item.name)")
+        }
+        
+        // play a sound?
+        effect?.playEffect()
     }
     
+    private func giveStatModifier(item: WPTItem) {
+        assert(item.tier == .statModifier)
+        
+        let healthBefore = self.actor.ship.health
+        actor.apply(item: item)
+        
+        // health
+        let healthAfter = self.actor.ship.health
+        let healthChange = healthAfter - healthBefore
+        // if the item increased health, we want to gain the extra health
+        if healthChange != 0 {
+            let type = self.isPlayer ? "player" : "enemy"
+            self.doDamage(healthChange)
+            NSLog("\(type) Gained \(healthChange) with a health boost from an \(item.name)")
+        }
+        
+        // size
+        self.setScale(self.actor.ship.size)
+    }
+
     func doDamage(_ damage: CGFloat) {
         self.setHealth(self.health + damage)
     }
