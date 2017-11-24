@@ -549,6 +549,8 @@
 					<dict>
 						<key>modifiers</key>
 						<dict>
+							<key>fireRate</key>
+							<real>-0.5</real>
 							<key>health</key>
 							<real>-0.1</real>
 							<key>damage</key>
