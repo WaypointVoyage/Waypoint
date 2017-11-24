@@ -20,7 +20,7 @@ class WPTLevelBeatenPMS: GKState {
                     WPTAudioConfig.audio.playSong(song: "level_map_theme.wav")
                 })
             }
-            puppetMaster.scene.alert(header: "Level Complete", desc: "Dock at the port to continue.")
+            puppetMaster.scene.alert(header: "Level Complete", desc: "Dock at the port to continue.", large: true)
         }
         
         // allow the player to dock at the port

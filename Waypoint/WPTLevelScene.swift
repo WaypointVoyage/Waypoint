@@ -243,8 +243,12 @@ class WPTLevelScene: WPTScene {
         }
     }
     
-    func alert(header: String, desc: String) {
-        self.hud.bottom.alert.show(header: header, desc: desc)
+    func alert(header: String, desc: String, large: Bool = false) {
+        if large {
+            self.hud.alert.show(header: header, desc: desc)
+        } else {
+            self.hud.bottom.alert.show(header: header, desc: desc)
+        }
     }
     
     func getSceneFrame() -> CGRect {

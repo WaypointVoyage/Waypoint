@@ -18,6 +18,8 @@ class WPTHudNode: SKNode, WPTUpdatable {
     let destroyMenu: WPTDestroyMenuNode
     let dockMenu: WPTDockMenuNode
     
+    var alert = WPTAlertNode()
+    
     init(player: WPTLevelPlayerNode, terrain: WPTTerrainNode) {
         self.player = player
         self.top = WPTHudTopNode(player: player)
@@ -52,6 +54,11 @@ class WPTHudNode: SKNode, WPTUpdatable {
         // dock menu
         self.dockMenu.zPosition = pauseShroud.zPosition + 1
         self.dockMenu.position = CGPoint(x: WPTValues.screenSize.width / 2.0, y: WPTValues.screenSize.height / 2.0)
+        
+        // alert
+        self.alert.setScale(1.5)
+        self.alert.position = CGPoint(x: WPTValues.screenSize.width * 0.5, y: WPTValues.screenSize.height * 0.5)
+        self.addChild(self.alert)
     }
     
     required init?(coder aDecoder: NSCoder) {
