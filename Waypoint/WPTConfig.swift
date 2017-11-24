@@ -66,7 +66,7 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
     let doubloons: Int = 0
 //    let items: [String]? = ["Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring", "Life Ring"]
 //    let items: [String]? = [Sjtring]()
-    let items: [String]? = ["Oar", "Gun Powder", "Spiked Cannon Ball", "Propeller", "Rudder", "Sail", "Telescope", "Ship's Wheel", "Hook Hand", "Eyepatch"]
+    let items: [String]? = ["Oar", "Gun Powder", "Spiked Cannon Ball", "Propeller", "Rudder", "Sail", "Telescope", "Ship's Wheel", "Hook Hand", "Eyepatch", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls", "Pile of Cannon Balls"]
     let cannonSet: [Int:Bool]? = nil
     
     let progress = WPTPlayerProgress(shipName: shipName, ship: ship, health: health, completedLevels: completedLevels, cannonBallImage: cannonBallImage, doubloons: doubloons, items: items, cannonSet: cannonSet)
