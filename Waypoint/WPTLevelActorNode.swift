@@ -11,7 +11,8 @@ import SpriteKit
 class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     let actor: WPTActor
-    var currentHealth: CGFloat
+    var health: CGFloat
+    var doubloons: Int
     var teamBitMask: UInt32
     let cannonEffect = WPTAudioNode(effect: "cannon", maxSounds: 20)
     let pearlDropEffect = WPTAudioNode(effect: "pearl_drop", maxSounds: 4)
@@ -64,9 +65,10 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     init(actor: WPTActor, teamBitMask tbm: UInt32) {
         self.actor = actor
-        self.currentHealth = actor.ship.health
+        self.health = actor.ship.health
         self.fireRateMgr = WPTFireRateManager(actor.ship)
         self.teamBitMask = tbm
+        self.doubloons = 0
         super.init()
         self.physicsBody = SKPhysicsBody(polygonFrom: actor.ship.colliderPath)
         self.zPosition = WPTZPositions.actors - WPTZPositions.terrain
@@ -112,6 +114,18 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func isAlive() -> Bool {
+        return self.health > (0.001) // delta
+    }
+    
+    func setHealth(_ value: CGFloat) {
+        self.health = min(max(value, 0), self.actor.ship.health);
+    }
+    
+    func setDoubloons(_ value: Int) {
+        self.doubloons = max(value, 0)
     }
     
     private func isStationaryEnemy() -> Bool {
@@ -238,17 +252,16 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     func give(item: WPTItem) {
         // all items have the potential to give money
         if let doubloons = item.doubloons {
-            actor.doubloons += doubloons
+            self.doubloons += doubloons
         }
         
         // all items have the potential to do repairs
         if let repair = item.repair {
             if item.repairProportionally {
-                self.currentHealth += repair * self.actor.ship.health
+                self.setHealth(self.health + repair * self.actor.ship.health)
             } else {
-                self.currentHealth += repair
+                self.setHealth(self.health + repair)
             }
-            self.currentHealth = min(self.currentHealth, self.actor.ship.health)
         }
 
         // could have a new cannon ball image?
@@ -297,8 +310,7 @@ class WPTLevelActorNode: SKNode, WPTUpdatable {
     }
     
     func doDamage(_ damage: CGFloat) {
-        currentHealth += damage
-        currentHealth = max(min(currentHealth, actor.ship.health), 0)
+        self.setHealth(self.health + damage)
     }
     
     private func addCannon() {

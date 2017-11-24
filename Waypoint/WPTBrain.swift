@@ -130,7 +130,7 @@ class WPTBrain: GKStateMachine {
     }
     
     override func update(deltaTime sec: TimeInterval) {
-        let healthLow = enemy.currentHealth < healthCutoff * enemy.enemy.ship.health
+        let healthLow = enemy.health < healthCutoff * enemy.enemy.ship.health
         let dist = CGVector(start: enemy.position, end: player.position).magnitude()
 //        print("\(self.enemy.enemy.name) - {healthLow: \(healthLow), dist: \(dist), state: \(self.currentBrainState.type)}")
         self.currentBrainState.update(deltaTime: sec, healthLow: healthLow, distToPlayer: dist)

@@ -31,7 +31,7 @@ class WPTConfig {
     var invincible = false               // if true, the player is invincible
     var clearHighScoresOnLoad = false    // if true, all of the high scores are cleared when the app is loaded
     var restartLevelOnDeath = false      // if true, a level restarts when the player dies
-    var clearProgressOnQuit = false       // if true, the play will not be able to pick up where they left off when quitting
+    var clearProgressOnQuit = true       // if true, the play will not be able to pick up where they left off when quitting
 
     var showTutorial = true              // if false, the tutorial will never be shown
     var clearPlayerProgress = false      // if true, all player progress will be cleared

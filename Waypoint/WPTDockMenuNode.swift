@@ -117,7 +117,7 @@ class WPTDockMenuNode: SKNode {
     func updateStats(item: ItemWrapper) {
         self.itemNameLabel.text = item.item.name
         self.descriptionLabel.text = item.item.description
-        if (player.player.doubloons < item.price || item.purchased) {
+        if (player.doubloons < item.price || item.purchased) {
             self.purchaseLabel.disabled = true
         } else {
             self.purchaseLabel.disabled = false
@@ -132,7 +132,7 @@ class WPTDockMenuNode: SKNode {
     }
     
     func updateDoubloons() {
-        self.doubloonsLabel.text = String(player.player.doubloons)
+        self.doubloonsLabel.text = String(player.doubloons)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -148,19 +148,19 @@ class WPTDockMenuNode: SKNode {
             purchaseItem()
         } else if self.wahm.contains(touchPos) {
             // update the player's progress
-            player.player.health = player.currentHealth
             if let scene = self.scene as? WPTLevelScene {
                 player.player.completedLevels.append(scene.level.name)
             }
             
             // save the progress
-            player.player.progress = WPTPlayerProgress(player: player.player)
+            player.player.progress = WPTPlayerProgress(playerNode: player)
+            player.player.progress?.print()
             let storage = WPTStorage()
             player.player.progress!.levelDockInventory[level.name] = self.itemInventory
             storage.savePlayerProgress(player.player.progress!)
 
             // move to the world scene
-            NSLog("HEALTH: Leaving level with \(player.player.health) out of \(player.player.ship.health)")
+            NSLog("HEALTH: Leaving level with \(player.health) out of \(player.player.ship.health)")
             self.scene!.view?.presentScene(WPTWorldScene(player: player.player))
         }
     }
@@ -203,8 +203,8 @@ class WPTDockMenuNode: SKNode {
     
     private func purchaseItem() {
         NSLog("PURCHASE: buying \(itemPicker!.currentItem.itemName) for \(itemPicker!.currentItem.price)")
-        player.player.doubloons -= itemPicker!.currentItem.price
-        assert(player.player.doubloons >= 0)
+        player.doubloons -= itemPicker!.currentItem.price
+        assert(player.doubloons >= 0)
         updateDoubloons()
         if let hud = (self.scene as? WPTLevelScene)?.hud {
             hud.top.updateMoney()

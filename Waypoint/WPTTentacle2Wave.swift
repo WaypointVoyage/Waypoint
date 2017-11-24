@@ -39,7 +39,7 @@ class WPTTentacle2Wave: WPTTentacleWave {
     
     private func moveToNextTentacle() {
         self.curTentacleIndex += 1
-        if self.curTentacleIndex < self.tentacleCount && self.curTentacle.currentHealth <= 0 {
+        if self.curTentacleIndex < self.tentacleCount && !self.curTentacle.isAlive() {
             self.moveToNextTentacle()
         }
     }

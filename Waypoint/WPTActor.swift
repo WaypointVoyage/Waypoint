@@ -11,16 +11,7 @@ import SpriteKit
 class WPTActor {
     var ship: WPTShip;
     let cannonBall: WPTCannonBall = WPTCannonBall()
-    
-    // currency
-    var doubloons: Int = 0 {
-        didSet {
-            if self.doubloons < 0 {
-                self.doubloons = 0
-            }
-        }
-    }
-    
+
     // items
     var items: [WPTItem] = [] // items that modify behavior
 

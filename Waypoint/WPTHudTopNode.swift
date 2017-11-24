@@ -10,7 +10,7 @@ import SpriteKit
 
 class WPTHudTopNode: SKNode, WPTUpdatable {
     
-    private let player: WPTPlayer
+    private let player: WPTLevelPlayerNode
     
     let pause = SKSpriteNode(imageNamed: "pause")
     let moneyImage = SKSpriteNode(imageNamed: "doubloons")
@@ -19,10 +19,10 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
     var shipHealth: WPTHealthNode
     var shipImage: SKSpriteNode
     
-    init(player: WPTPlayer) {
+    init(player: WPTLevelPlayerNode) {
         self.player = player
         
-        self.shipName = WPTLabelNode(text: player.shipName, fontSize: WPTValues.fontSizeSmall)
+        self.shipName = WPTLabelNode(text: player.player.shipName, fontSize: WPTValues.fontSizeSmall)
         let shipNameSize = WPTValues.fontSizeSmall
         let nameOffset = 0.95 * shipNameSize
         self.shipName.position = CGPoint(x: nameOffset, y: WPTValues.screenSize.height - nameOffset)
@@ -30,14 +30,14 @@ class WPTHudTopNode: SKNode, WPTUpdatable {
         self.shipName.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.shipName.fontColor = UIColor.black
         
-        self.shipImage = SKSpriteNode(imageNamed: player.ship.previewImage)
+        self.shipImage = SKSpriteNode(imageNamed: player.player.ship.previewImage)
         let shipImgSize = 1.15 * WPTValues.fontSizeSmall
         let shipOffset = 1.4 * shipImgSize
         self.shipImage.position = CGPoint(x: shipOffset, y: WPTValues.screenSize.height - shipOffset)
         self.shipImage.size = CGSize(width: shipImgSize, height: shipImgSize)
         
-        NSLog("HEALTH: Starting level with \(player.health) out of \(player.ship.health)")
-        self.shipHealth = WPTHealthNode(maxHealth: player.ship.health, curHealth: player.health, persistent: true)
+        NSLog("HEALTH: Starting level with \(player.health) out of \(player.player.ship.health)")
+        self.shipHealth = WPTHealthNode(maxHealth: player.player.ship.health, curHealth: player.health, persistent: true)
         self.shipHealth.position = CGPoint(x: shipOffset * 2.5, y: WPTValues.screenSize.height - shipOffset * 1.1)
         
         self.moneyCount = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)

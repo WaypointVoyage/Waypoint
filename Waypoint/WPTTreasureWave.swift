@@ -110,7 +110,7 @@ class WPTTreasureWave: WPTLevelWave {
             let storage = WPTStorage()
             
             // submit the score
-            let loot = WPTLootSummary(player: scene.player.player)
+            let loot = WPTLootSummary(player: scene.player)
             storage.submitScore(loot)
             
             // clear the progress

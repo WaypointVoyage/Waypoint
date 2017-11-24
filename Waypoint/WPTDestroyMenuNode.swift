@@ -17,12 +17,12 @@ class WPTDestroyMenuNode: SKNode {
     private let continueLabel = WPTButtonNode(text: "Continue >", fontSize: WPTValues.fontSizeSmall)
     private var doubloons: WPTLabelNode
     private var levelsCompleted: WPTLabelNode
-    private var player: WPTPlayer
+    private var player: WPTLevelPlayerNode
     
-    init(player: WPTPlayer) {
+    init(player: WPTLevelPlayerNode) {
         
         self.player = player
-        self.levelsCompleted = WPTLabelNode(text: "Level: \(self.player.completedLevels.count + 1)", fontSize: WPTValues.fontSizeSmall)
+        self.levelsCompleted = WPTLabelNode(text: "Level: \(self.player.player.completedLevels.count + 1)", fontSize: WPTValues.fontSizeSmall)
         self.doubloons = WPTLabelNode(text: String(player.doubloons), fontSize: WPTValues.fontSizeSmall)
         super.init()
         self.isUserInteractionEnabled = true
@@ -38,7 +38,7 @@ class WPTDestroyMenuNode: SKNode {
         self.addChild(background)
         
         //ship image
-        let shipImage = SKSpriteNode(imageNamed: player.ship.previewImage)
+        let shipImage = SKSpriteNode(imageNamed: player.player.ship.previewImage)
         shipImage.position.x -= background.size.width * 0.3
         shipImage.position.y -= 0.05 * background.size.height
         let shipImgSize = 0.25 * WPTValues.screenSize.width
@@ -56,7 +56,7 @@ class WPTDestroyMenuNode: SKNode {
         shipName.horizontalAlignmentMode = .center
         shipName.zPosition = 1
         shipName.fontColor = UIColor.black
-        shipName.text = player.shipName
+        shipName.text = player.player.shipName
         shipName.position.y += 0.14 * background.size.height
         self.addChild(shipName)
         

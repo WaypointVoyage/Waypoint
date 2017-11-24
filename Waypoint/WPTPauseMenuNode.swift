@@ -167,11 +167,11 @@ class WPTPauseMenuNode: SKNode {
             let storage = WPTStorage()
             storage.clearPlayerProgress()
         } else {
-            let player = (self.scene as! WPTLevelScene).player.player
-            player.health = player.ship.health
-            player.progress = WPTPlayerProgress(player: player)
+            let player = (self.scene as! WPTLevelScene).player
+            player.setHealth(player.player.ship.health)
+            player.player.progress = WPTPlayerProgress(playerNode: player)
             let storage = WPTStorage()
-            storage.savePlayerProgress(player.progress!)
+            storage.savePlayerProgress(player.player.progress!)
         }
         self.scene?.view?.presentScene(WPTHomeScene())
     }

@@ -11,7 +11,6 @@ import SpriteKit
 class WPTPlayer: WPTActor {
     
     let shipName: String
-    var health: CGFloat
     var difficulty: CGFloat
     var completedLevels: [String]
     var progress: WPTPlayerProgress? = nil
@@ -20,7 +19,6 @@ class WPTPlayer: WPTActor {
         self.shipName = shipName
         self.difficulty = difficulty
         self.completedLevels = completedLevels ?? [String]()
-        self.health = ship.health
         super.init(ship: ship)
         
         progress = WPTPlayerProgress(player: self)
@@ -29,7 +27,6 @@ class WPTPlayer: WPTActor {
     init(playerProgress: WPTPlayerProgress) {
         self.progress = playerProgress
         shipName = playerProgress.shipName
-        health = playerProgress.health
         completedLevels = playerProgress.completedLevels
         self.difficulty = playerProgress.difficulty
         
@@ -41,20 +38,9 @@ class WPTPlayer: WPTActor {
         super.init(ship: ship)
         
         self.cannonBall.image = playerProgress.cannonBallImage
-        self.doubloons = playerProgress.doubloons
-        
+
         for itemName in playerProgress.items {
             self.apply(item: WPTItemCatalog.itemsByName[itemName]!)
-        }
-    }
-    
-    override func apply(item: WPTItem) {
-        let healthBefore = self.ship.health
-        super.apply(item: item)
-        let healthAfter = self.ship.health
-        let healthChange = healthAfter - healthBefore
-        if healthChange != 0 {
-            self.health += healthChange
         }
     }
 }

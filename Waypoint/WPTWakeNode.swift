@@ -48,7 +48,7 @@ class WPTWakeNode: SKNode, WPTUpdatable {
             if actor.isPlayer && WPTConfig.values.invincible {
                 return true
             }
-            return actor.currentHealth > 0
+            return actor.isAlive()
         }
         return false
     }

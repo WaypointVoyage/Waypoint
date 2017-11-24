@@ -25,8 +25,11 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
     
     init(player: WPTPlayer) {
         super.init(actor: player, teamBitMask: WPTConfig.values.testing ? 0 : WPTValues.playerTbm)
-        
-        currentHealth = player.progress!.health
+        if let prog = player.progress {
+            self.doubloons = prog.doubloons
+        }
+
+        self.setHealth(player.progress!.healthSnapshot)
         
         // components
         portHandler = WPTPortDockingHandler(self)
@@ -102,15 +105,16 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
         if let scene = (self.scene as? WPTLevelScene) {
             let alive = scene.hud.top.shipHealth.updateHealth(damage)
             
+            // restart the level?
             if !WPTConfig.values.invincible && WPTConfig.values.restartLevelOnDeath && !alive {
-                self.player.progress?.health = self.player.ship.health
-                let doubloons = (self.scene as! WPTLevelScene).levelStartMoney
-                self.player.progress?.doubloons = doubloons
-                self.player.doubloons = doubloons
+                self.setHealth(self.player.ship.health)
+                self.doubloons = (self.scene as! WPTLevelScene).levelStartMoney
+                self.player.progress = WPTPlayerProgress(playerNode: self)
                 scene.level.resetWaveEnemies()
                 scene.view?.presentScene(WPTLevelScene(player: self.player, level: scene.level))
             }
             
+            // dead
             if !alive && !WPTConfig.values.invincible {
                 scene.contactDelegate = nil
                 scene.levelPaused = true
@@ -134,7 +138,7 @@ class WPTLevelPlayerNode: WPTLevelActorNode {
                 }
             }
         }
-        NSLog("Player now has \(self.currentHealth) health out of \(player.ship.health)")
+        NSLog("Player now has \(self.health) health out of \(player.ship.health)")
     }
     
     override func give(item: WPTItem) {

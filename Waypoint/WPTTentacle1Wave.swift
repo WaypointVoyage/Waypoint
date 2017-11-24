@@ -37,7 +37,7 @@ class WPTTentacle1Wave: WPTTentacleWave {
     private func moveToNextTentacleIndex() {
         for _ in 0..<self.tentacleCount {
             self.curTentacleIndex = (self.curTentacleIndex + 1) % self.tentacleCount
-            if self.curTentacle.currentHealth > 0 {
+            if self.curTentacle.isAlive() {
                 return
             }
         }
@@ -45,7 +45,7 @@ class WPTTentacle1Wave: WPTTentacleWave {
     
     private func startTentacleCycle() {
         self.moveToNextTentacleIndex()
-        guard self.tentacleCount > 0 && self.curTentacle.currentHealth > 0 else {
+        guard self.tentacleCount > 0 && self.curTentacle.isAlive() else {
             return
         }
         
@@ -113,7 +113,7 @@ class WPTTentacleWave: WPTLevelWave {
     
     public func allTentaclesDead() -> Bool {
         for tentacle in self.tentacles {
-            if tentacle.currentHealth > 0 {
+            if tentacle.isAlive() {
                 return false
             }
         }

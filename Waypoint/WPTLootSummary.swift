@@ -22,10 +22,10 @@ class WPTLootSummary: NSObject, NSCoding, Comparable {
         self.items = items
     }
     
-    init(player: WPTPlayer) {
-        self.shipName = player.shipName
+    init(player: WPTLevelPlayerNode) {
+        self.shipName = player.player.shipName
         self.doubloons = player.doubloons
-        items = player.items.map { $0.name }
+        items = player.player.items.map { $0.name }
         
         date = Date()
     }
