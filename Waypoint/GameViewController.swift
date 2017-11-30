@@ -75,6 +75,7 @@ class GameViewController: UIViewController {
                 }
             }
             let player = WPTPlayer(playerProgress: progress)
+            player.progress!.healthSnapshot = player.ship.health // start with max health
             let ship = player.ship
             NSLog("  speed     : \(ship.speedScale)")
             NSLog("  damage    : \(ship.damageScale)")

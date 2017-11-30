@@ -20,6 +20,9 @@ class WPTTentacle2Wave: WPTTentacleWave {
     
     private var curTentacleIndex: Int = -1
     private var curTentacle: WPTLevelTentacleNode {
+        if self.curTentacleIndex >= self.tentacles.count {
+            self.curTentacleIndex = 0
+        }
         return self.tentacles[self.curTentacleIndex]
     }
     

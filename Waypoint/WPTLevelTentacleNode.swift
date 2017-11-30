@@ -39,7 +39,7 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
             self.tentacleEnemy = WPTEnemyCatalog.enemiesByName["Dynamic Tentacle"]!
             self.bubbles = WPTBubbleSquareSurfaceNode(width: 100, height: 100, amount: 3, time: 0.6)
         case .KRAKEN_HEAD:
-            self.isStatic = true
+            self.isStatic = false
             self.tentacleEnemy = WPTEnemyCatalog.enemiesByName["Kraken"]!
             self.bubbles = WPTBubbleSquareSurfaceNode(width: 150, height: 500, amount: 30, time: 0.6)
             cropSprite = "kraken_crop"
@@ -153,12 +153,13 @@ class WPTLevelTentacleNode: WPTLevelEnemyNode {
         guard !self.invincible else { return }
         
         super.doDamage(damage)
-        if self.healthBar.curHealth <= 0 {
+        if !self.isAlive() {
             self.destroyEnemy()
         }
     }
     
     override func destroyEnemy() {
+        NSLog("Destroying tentacle")
         super.destroyEnemy()
         
         // remove physics

@@ -13,12 +13,12 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
-    let giveRandomItems: Int? = nil          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
-    let itemsPerCannon: Int? = 5          // for this many items, a single cannon is given when giveRandomItems is being used
+    let giveRandomItems: Int? = 34          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
+    let itemsPerCannon: Int? = 6          // for this many items, a single cannon is given when giveRandomItems is being used
     
     // audio
     let playMusic = true            // toggle music
@@ -38,7 +38,7 @@ class WPTConfig {
     var clearGlobalSettings = false      // if true, all global settings will be cleared
     
     // visual debugging
-    let showPhysics = false                 // shows physics bodies
+    let showPhysics = true                 // shows physics bodies
     let showBrainRadii = false              // shows the brain radius for each enemy
     let showSpawnVolumesOnMinimap = false   // shows the spawn volume areas as rectangles on the level minimap
     let showTouchHandler = false            // shows a transparent shroud on the touch handler
@@ -76,7 +76,7 @@ func getPreconfiguredPlayerProgress() -> WPTPlayerProgress {
 
 class WPTLevelModeConfig {
 
-    let levelFileName: String = "0_setting_sail"  // the name of the level file to load
+    let levelFileName: String = "11_x_marks_the_spot"  // the name of the level file to load
     
     // singleton instance
     private init() {}
