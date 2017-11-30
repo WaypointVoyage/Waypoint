@@ -461,7 +461,7 @@
 			<key>bubbleDuration</key>
 			<integer>2</integer>
 			<key>tentacleCount</key>
-			<integer>8</integer>
+			<integer>1</integer>
 			<key>special</key>
 			<string>WPTTentacle1Wave</string>
 		</dict>
@@ -477,7 +477,7 @@
 			<key>surroundPlayerRadius</key>
 			<integer>512</integer>
 			<key>tentacleCount</key>
-			<integer>8</integer>
+			<integer>1</integer>
 			<key>special</key>
 			<string>WPTTentacle2Wave</string>
 		</dict>

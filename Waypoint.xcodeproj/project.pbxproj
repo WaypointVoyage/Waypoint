@@ -982,7 +982,7 @@
 				TargetAttributes = {
 					7E16B8541E2D580600933E24 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3GEHA95597;
+						DevelopmentTeam = 66743KUV39;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -1455,11 +1455,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3GEHA95597;
+				DEVELOPMENT_TEAM = 66743KUV39;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hils124;
+				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1474,11 +1474,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3GEHA95597;
+				DEVELOPMENT_TEAM = 66743KUV39;
 				INFOPLIST_FILE = Waypoint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hils124;
+				PRODUCT_BUNDLE_IDENTIFIER = ctaylo36;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;

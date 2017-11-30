@@ -206,20 +206,20 @@
 		<key>colliderPath</key>
 		<array>
 			<array>
-				<integer>25</integer>
-				<integer>836</integer>
+				<integer>40</integer>
+				<integer>670</integer>
 			</array>
 			<array>
-				<integer>221</integer>
-				<integer>956</integer>
+				<integer>100</integer>
+				<integer>700</integer>
 			</array>
 			<array>
-				<integer>215</integer>
-				<integer>201</integer>
+				<integer>100</integer>
+				<integer>480</integer>
 			</array>
 			<array>
-				<integer>29</integer>
-				<integer>316</integer>
+				<integer>40</integer>
+				<integer>515</integer>
 			</array>
 		</array>
 		<key>colliderOffset</key>
