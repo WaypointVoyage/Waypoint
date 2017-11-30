@@ -26,6 +26,9 @@ class WPTSoundCatalog {
         Sound.playersPerSound = 4
         let pearlDropEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "pearl_drop.wav"))!, name: "pearl_drop")
         
+        Sound.playersPerSound = 3
+        let diceRollEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "dice_roll.wav"))!, name: "dice_roll")
+        
         Sound.playersPerSound = 1
         let itemCollectionEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "item_collection.wav"))!, name: "item_collection")
         let anchorUpEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "anchor_up.wav"))!, name: "anchor_up")
@@ -33,7 +36,6 @@ class WPTSoundCatalog {
         let mapScrollEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "map_scroll.wav"))!, name: "map_scroll")
         let explosionEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "explosion.wav"))!, name: "explosion")
         let anchorEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "anchor.wav"))!, name: "anchor_down")
-        let diceRollEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "dice_roll.wav"))!, name: "dice_roll")
         let whirlpoolEffect = SoundWrapper(sound: Sound(url: WPTAudioConfig.audio.getURL(song: "whirlpool.wav"))!, name: "whirlpool")
         
         sounds.append(cannonEffect)

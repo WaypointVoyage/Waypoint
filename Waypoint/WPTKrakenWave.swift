@@ -85,6 +85,12 @@ class WPTKrakenWave: WPTTentacleWave {
     }
     
     override func isComplete(scene: WPTLevelScene) -> Bool {
-        return self.krakenIsDead && super.isComplete(scene: scene)
+        let result = self.krakenIsDead && super.isComplete(scene: scene)
+        if result {
+            WPTAudioConfig.audio.playSong(song: "waypoint_victory.wav", numLoops: 0, completion: { (true) in
+                WPTAudioConfig.audio.playSong(song: "level_map_theme.wav")
+            })
+        }
+        return result
     }
 }

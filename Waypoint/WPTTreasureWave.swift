@@ -28,9 +28,6 @@ class WPTTreasureWave: WPTLevelWave {
     
     override func setup(scene: WPTLevelScene) {
         super.setup(scene: scene)
-        WPTAudioConfig.audio.playSong(song: "waypoint_victory.wav", numLoops: 0, completion: { (true) in
-            WPTAudioConfig.audio.playSong(song: "level_map_theme.wav")
-        })
         scene.alert(header: "Shiver Me Timbers!", desc: "Collect the treasure!")
     }
     

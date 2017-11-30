@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="pearl_drop_data" version="1.3.0" audacityversion="2.1.0" sel0="0.4997441049" sel1="0.5326404869" vpos="0" h="0.0000000000" zoom="1094.5601851852" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds">
+	<tags/>
+	<wavetrack name="Jewelry necklace grab pick up pearl plastic beads rustle movement_BLASTWAVEFX_01949" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="22039">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000020.au" len="22039" min="-0.298185" max="0.232926" rms="0.010161"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Jewelry necklace grab pick up pearl plastic beads rustle movement_BLASTWAVEFX_01949" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="22039">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000327.au" len="22039" min="-0.267827" max="0.220586" rms="0.008415"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
