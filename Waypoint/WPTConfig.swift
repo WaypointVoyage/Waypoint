@@ -38,7 +38,7 @@ class WPTConfig {
     var clearGlobalSettings = false      // if true, all global settings will be cleared
     
     // visual debugging
-    let showPhysics = true                 // shows physics bodies
+    let showPhysics = false                 // shows physics bodies
     let showBrainRadii = false              // shows the brain radius for each enemy
     let showSpawnVolumesOnMinimap = false   // shows the spawn volume areas as rectangles on the level minimap
     let showTouchHandler = false            // shows a transparent shroud on the touch handler
