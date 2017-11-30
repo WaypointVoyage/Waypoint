@@ -10,9 +10,9 @@
 			<key>flee</key>
 			<string></string>
 			<key>nothing</key>
-			<string>WPTDoNothingBS</string>
+			<string>WPTTentacleWanderBS</string>
 			<key>offense</key>
-			<string></string>
+			<string>WPTTentacleAttackBS</string>
 		</dict>
 		<key>name</key>
 		<string>kraken_brain</string>

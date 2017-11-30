@@ -461,7 +461,7 @@
 			<key>bubbleDuration</key>
 			<integer>2</integer>
 			<key>tentacleCount</key>
-			<integer>8</integer>
+			<integer>1</integer>
 			<key>special</key>
 			<string>WPTTentacle1Wave</string>
 		</dict>
@@ -471,13 +471,13 @@
 			<key>surroundBubbleDuration</key>
 			<real>2.5</real>
 			<key>chaseTentacleDuration</key>
-			<real>1.2</real>
-			<key>chaseBubbleDuration</key>
 			<real>0.8</real>
+			<key>chaseBubbleDuration</key>
+			<real>1.2</real>
 			<key>surroundPlayerRadius</key>
 			<integer>512</integer>
 			<key>tentacleCount</key>
-			<integer>8</integer>
+			<integer>1</integer>
 			<key>special</key>
 			<string>WPTTentacle2Wave</string>
 		</dict>
