@@ -13,11 +13,11 @@ import AVFoundation
 class WPTConfig {
     
     // mode
-    let mode: WPTAppMode = WPTAppMode.LEVEL // Switch value to change the testing mode
+    let mode: WPTAppMode = WPTAppMode.NORMAL // Switch value to change the testing mode
                                              // Configuration for individual modes can be found later in this file
                                              // IMPORTANT: keep this set to NORMAL when committing.
     
-    let giveRandomItems: Int? = 34          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
+    let giveRandomItems: Int? = nil          // if not nil, and mode == .LEVEL or .WORLD, this many random items will be given to the player on launch
     let itemsPerCannon: Int? = 6          // for this many items, a single cannon is given when giveRandomItems is being used
     
     // audio
