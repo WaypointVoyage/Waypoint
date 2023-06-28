@@ -1,5 +1,5 @@
 PODS:
-  - SwiftySound (0.7.0)
+  - SwiftySound (1.2.0)
 
 DEPENDENCIES:
   - SwiftySound
@@ -9,8 +9,8 @@ SPEC REPOS:
     - SwiftySound
 
 SPEC CHECKSUMS:
-  SwiftySound: bca0bb721690fb65249f4776cb0875abd98e9941
+  SwiftySound: 9eb28bb14edb601b40027e44319e0ef8383f88bf
 
-PODFILE CHECKSUM: 00c130233c10a184746b9eac0865774e197969dc
+PODFILE CHECKSUM: ff659f144921e4f591fbb849e7c34d9e02f9a41a
 
 COCOAPODS: 1.12.1
