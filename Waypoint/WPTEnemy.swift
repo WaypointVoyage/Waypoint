@@ -24,11 +24,11 @@ class WPTEnemy: WPTActor, Hashable, Equatable {
     let stationary: Bool          // when true, this enemy will not move (catapults and trebuchets)
     let hasWake: Bool             // when false, this enemy does not have a wake
     let damageOnContact: Bool
-    
-    var hashValue: Int {
-        return name.hashValue
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
     }
-    
+
     init(_ enemyDict: [String:AnyObject]) {
         name = enemyDict["name"] as! String
         self.awareness = enemyDict["awareness"] as! CGFloat

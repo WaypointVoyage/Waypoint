@@ -45,7 +45,7 @@ class WPTStorage {
     
     func savePlayerProgress(_ progress: WPTPlayerProgress) {
         NSLog("Saving PlayerProgress")
-        NSKeyedArchiver.archiveRootObject(progress, toFile: self.playerProgressPath)
+        self.archiveObject(data: progress, path: self.playerProgressPath)
     }
     
     func deletePlayerProgress() {
@@ -70,25 +70,21 @@ class WPTStorage {
     
     func loadPlayerProgress() -> WPTPlayerProgress? {
         NSLog("Loading Player Progress")
-        if let unarchivedThing = NSKeyedUnarchiver.unarchiveObject(withFile: playerProgressPath) {
-            if let asPlayerProgress = unarchivedThing as? WPTPlayerProgress {
-                return asPlayerProgress
-            }
+        if let asPlayerProgress : WPTPlayerProgress = self.unarchiveObject(path: playerProgressPath) {
+            return asPlayerProgress
         }
         return nil
     }
     
     func saveGlobalSettings() {
         NSLog("Saving global settings")
-        NSKeyedArchiver.archiveRootObject(WPTAudioConfig.audio, toFile: self.globalSettingsPath)
+        self.archiveObject(data: WPTAudioConfig.audio, path: self.globalSettingsPath)
     }
     
     func loadGlobalSettings() -> WPTAudioConfig? {
         NSLog("Loading global settings")
-        if let unarchivedThing = NSKeyedUnarchiver.unarchiveObject(withFile: globalSettingsPath) {
-            if let asGlobalSettings = unarchivedThing as? WPTAudioConfig {
-                return asGlobalSettings
-            }
+        if let asGlobalSettings : WPTAudioConfig = self.unarchiveObject(path: globalSettingsPath) {
+            return asGlobalSettings
         }
         return nil
     }
@@ -104,10 +100,8 @@ class WPTStorage {
     }
     
     func loadHighScores() -> [WPTLootSummary] {
-        if let unarchivedThing = NSKeyedUnarchiver.unarchiveObject(withFile: highScorePath) {
-            if let asArray = unarchivedThing as? [WPTLootSummary] {
-                return asArray.sorted()
-            }
+        if let asArray: [WPTLootSummary] = self.unarchiveArray(path: highScorePath) {
+            return asArray.sorted()
         }
         return [WPTLootSummary]()
     }
@@ -121,7 +115,38 @@ class WPTStorage {
             if extra > 0 {
                 scores.removeLast(extra)
             }
-            NSKeyedArchiver.archiveRootObject(scores, toFile: highScorePath)
+            self.archiveObject(data: scores, path: highScorePath)
+        }
+    }
+
+    private func archiveObject(data: Any, path: String) {
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: data, requiringSecureCoding: false)
+            try data.write(to: URL(fileURLWithPath: path))
+        } catch let error {
+            NSLog("Error: WPTStorage failed to archive object: \(error.localizedDescription)")
+        }
+    }
+
+    private func unarchiveObject<T: NSObject & NSCoding>(path: String) -> T? {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path))
+            let result = try NSKeyedUnarchiver.unarchivedObject(ofClass: T.self, from: data)
+            return result
+        } catch let error {
+            NSLog("Error: WPTStorage failed to unarchive object: \(error.localizedDescription)")
+            return nil
+        }
+    }
+
+    private func unarchiveArray<T: NSObject & NSSecureCoding>(path: String) -> [T]? {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path))
+            let result = try NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: T.self, from: data)
+            return result
+        } catch let error {
+            NSLog("Error: WPTStorage failed to unarchive object: \(error.localizedDescription)")
+            return nil
         }
     }
 }

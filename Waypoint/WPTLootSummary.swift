@@ -8,7 +8,9 @@
 
 import SpriteKit
 
-class WPTLootSummary: NSObject, NSCoding, Comparable {
+class WPTLootSummary: NSObject, NSSecureCoding, Comparable {
+    static var supportsSecureCoding: Bool = false
+
     
     let shipName: String
     let doubloons: Int

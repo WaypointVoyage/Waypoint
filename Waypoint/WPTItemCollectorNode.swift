@@ -62,8 +62,6 @@ class WPTItemCollectorNode: SKNode, WPTUpdatable {
     }
     
     private class WPTFoundItemEntry: Hashable {
-        var hashValue: Int
-        
         static func ==(lhs: WPTItemCollectorNode.WPTFoundItemEntry, rhs: WPTItemCollectorNode.WPTFoundItemEntry) -> Bool {
             return lhs.hashValue == rhs.hashValue
         }
@@ -73,7 +71,10 @@ class WPTItemCollectorNode: SKNode, WPTUpdatable {
         
         init(_ item: WPTItemNode) {
             self.item = item
-            self.hashValue = item.hashValue
+        }
+
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(self.item)
         }
     }
 }

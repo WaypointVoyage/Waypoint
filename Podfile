@@ -6,7 +6,7 @@ target 'Waypoint' do
   use_frameworks!
 
   # Pods for Waypoint
-  platform :ios, '8.0'
+  platform :ios, '11.0'
   pod 'SwiftySound'
 
   target 'WaypointContentTests' do
