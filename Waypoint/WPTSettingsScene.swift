@@ -18,8 +18,8 @@ class WPTSettingsScene: WPTScene {
     
     override func didMove(to view: SKView) {
         
-        effectSlider = WPTSliderNode(title: "Effects", min: 0, max: 10, val: WPTAudioConfig.audio.getCurrentEffectsVolume(), onChange: WPTAudioConfig.audio.setEffectsVolume)
-        musicSlider = WPTSliderNode(title: "Music", min: 0, max: 10, val: WPTAudioConfig.audio.getCurrentMusicVolume(), onChange: WPTAudioConfig.audio.setMusicVolume)
+        effectSlider = WPTSliderNode(title: "Effects", min: 0, max: 1.0, val: WPTAudioConfig.audio.getCurrentEffectsVolume(), onChange: WPTAudioConfig.audio.setEffectsVolume)
+        musicSlider = WPTSliderNode(title: "Music", min: 0, max: 1.0, val: WPTAudioConfig.audio.getCurrentMusicVolume(), onChange: WPTAudioConfig.audio.setMusicVolume)
         leftySwitch = WPTSwitchNode(title: "Lefty Mode", switchValue: WPTAudioConfig.audio.getLeftyControls(), onChange: WPTAudioConfig.audio.setLeftyControls)
         
         super.didMove(to: view)
