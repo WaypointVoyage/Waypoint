@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class WPTPlayerProgress: NSObject, NSCoding {
+class WPTPlayerProgress: NSObject, Codable {
     // player stuff
     let shipName: String            // think of this as a name a person would give their ship
     var healthSnapshot: CGFloat
@@ -109,31 +109,5 @@ class WPTPlayerProgress: NSObject, NSCoding {
         } else {
             self.levelDockInventory = [String:[ItemWrapper]]()
         }
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        self.shipName = aDecoder.decodeObject(forKey: "shipName") as! String
-        self.healthSnapshot = aDecoder.decodeObject(forKey: "health") as! CGFloat
-        self.difficulty = aDecoder.decodeObject(forKey: "difficulty") as! CGFloat
-        self.completedLevels = aDecoder.decodeObject(forKey: "completedLevels") as! [String]
-        self.ship = aDecoder.decodeObject(forKey: "ship") as! String
-        self.cannonBallImage = aDecoder.decodeObject(forKey: "cannonBallImage") as! String
-        self.doubloons = aDecoder.decodeInteger(forKey: "doubloons")
-        self.items = aDecoder.decodeObject(forKey: "items") as! [String]
-        self.cannonSet = aDecoder.decodeObject(forKey: "cannonSet") as! [Int:Bool]
-        self.levelDockInventory = aDecoder.decodeObject(forKey: "levelDockInventory") as! [String:[ItemWrapper]]
-    }
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(shipName, forKey: "shipName")
-        aCoder.encode(healthSnapshot, forKey: "health")
-        aCoder.encode(difficulty, forKey: "difficulty")
-        aCoder.encode(completedLevels, forKey: "completedLevels")
-        aCoder.encode(ship, forKey: "ship")
-        aCoder.encode(cannonBallImage, forKey: "cannonBallImage")
-        aCoder.encode(doubloons, forKey: "doubloons")
-        aCoder.encode(items, forKey: "items")
-        aCoder.encode(cannonSet, forKey: "cannonSet")
-        aCoder.encode(levelDockInventory, forKey: "levelDockInventory")
     }
 }

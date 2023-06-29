@@ -9,8 +9,7 @@
 import AVFoundation
 import SpriteKit
 
-class WPTAudioConfig: NSObject, NSCoding {
-    
+class WPTAudioConfig: NSObject, Codable {
     var backgroundMusic: AVAudioPlayer?
     var currentSong: String?
     var leftyControls: Bool? = nil
@@ -106,17 +105,25 @@ class WPTAudioConfig: NSObject, NSCoding {
             action(self.currentEffectsVolume!)
         }
     }
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.currentMusicVolume, forKey: "musicVolume")
-        aCoder.encode(self.currentEffectsVolume, forKey: "effectsVolume")
-        aCoder.encode(self.leftyControls, forKey: "leftyControls")
+
+    enum CodingKeys: String, CodingKey {
+        case leftyControls
+        case currentMusicVolume
+        case currentEffectsVolume
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        self.currentMusicVolume = aDecoder.decodeObject(forKey: "musicVolume") as? Float
-        self.currentEffectsVolume = aDecoder.decodeObject(forKey: "effectsVolume") as? Float
-        self.leftyControls = aDecoder.decodeObject(forKey: "leftyControls") as? Bool
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(leftyControls, forKey: .leftyControls)
+        try container.encode(currentMusicVolume, forKey: .currentMusicVolume)
+        try container.encode(currentEffectsVolume, forKey: .currentEffectsVolume)
+    }
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.leftyControls = try container.decode(Bool.self, forKey: .leftyControls)
+        self.currentMusicVolume = try container.decodeIfPresent(Float.self, forKey: .currentMusicVolume)
+        self.currentEffectsVolume = try container.decodeIfPresent(Float.self, forKey: .currentEffectsVolume)
     }
 }
 

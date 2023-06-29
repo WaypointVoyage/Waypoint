@@ -43,7 +43,7 @@ class WPTNewGameScene: WPTScene, UITextFieldDelegate {
 
         // ship stats
         let width: CGFloat = 0.35 * self.frame.width
-        var labels = [healthLabel, damageLabel, speedLabel, rangeLabel, shotSpeedLabel]
+        let labels = [healthLabel, damageLabel, speedLabel, rangeLabel, shotSpeedLabel]
         let spacing = WPTValues.fontSizeMiniscule + WPTStatBarNode.fontSize
         let h = CGFloat(labels.count) * spacing
         let top = self.frame.midY + (h / 2) - WPTValues.fontSizeMiniscule

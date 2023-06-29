@@ -31,30 +31,30 @@ import AVFoundation
 /// SoundCategory is a convenient wrapper for AVAudioSessions category constants.
     public enum SoundCategory {
 
-        /// Equivalent of AVAudioSessionCategoryAmbient.
+        /// Equivalent of AVAudioSession.Category.ambient.
         case ambient
-        /// Equivalent of AVAudioSessionCategorySoloAmbient.
+        /// Equivalent of AVAudioSession.Category.soloAmbient.
         case soloAmbient
-        /// Equivalent of AVAudioSessionCategoryPlayback.
+        /// Equivalent of AVAudioSession.Category.playback.
         case playback
-        /// Equivalent of AVAudioSessionCategoryRecord.
+        /// Equivalent of AVAudioSession.Category.record.
         case record
-        /// Equivalent of AVAudioSessionCategoryPlayAndRecord.
+        /// Equivalent of AVAudioSession.Category.playAndRecord.
         case playAndRecord
 
-        fileprivate var avFoundationCategory: String {
+        fileprivate var avFoundationCategory: AVAudioSession.Category {
             get {
                 switch self {
                 case .ambient:
-                    return AVAudioSessionCategoryAmbient
+                    return .ambient
                 case .soloAmbient:
-                    return AVAudioSessionCategorySoloAmbient
+                    return .soloAmbient
                 case .playback:
-                    return AVAudioSessionCategoryPlayback
+                    return .playback
                 case .record:
-                    return AVAudioSessionCategoryRecord
+                    return .record
                 case .playAndRecord:
-                    return AVAudioSessionCategoryPlayAndRecord
+                    return .playAndRecord
                 }
             }
         }
@@ -70,7 +70,7 @@ open class Sound {
     public static var playersPerSound: Int = 5 {
         didSet {
             stopAll()
-//            sounds.removeAll()
+            sounds.removeAll()
         }
     }
 
@@ -113,6 +113,9 @@ open class Sound {
     /// The class that is used to create `Player` instances. Defaults to `AVAudioPlayer`.
     public static var playerClass: Player.Type = AVAudioPlayer.self
 
+    /// The bundle used to load sounds from filenames. The default value of this property is Bunde.main. It can be changed to load sounds from another bundle.
+    public static var soundsBundle: Bundle = .main
+
     // MARK: - Initialization
 
     /// Create a sound object.
@@ -129,7 +132,7 @@ open class Sound {
             do {
                 let player = try Sound.playerClass.init(contentsOf: url)
                 myPlayers.append(player)
-            } catch let error {
+            } catch {
                 print("SwiftySound initialization error: \(error)")
             }
         }
@@ -160,8 +163,9 @@ open class Sound {
         if !Sound.enabled {
             return false
         }
-        let player = players[counter]
+        paused = false
         counter = (counter + 1) % players.count
+        let player = players[counter]
         return player.play(numberOfLoops: numberOfLoops, completion: completion)
     }
 
@@ -172,7 +176,33 @@ open class Sound {
         for player in players {
             player.stop()
         }
+        paused = false
     }
+
+    /// Pause current playback.
+    public func pause() {
+        players[counter].pause()
+        paused = true
+    }
+
+
+    /// Resume playing.
+    @discardableResult public func resume() -> Bool {
+        if paused {
+            players[counter].resume()
+            paused = false
+            return true
+        }
+        return false
+    }
+
+    /// Indicates if the sound is currently playing.
+    public var playing: Bool {
+        return players[counter].isPlaying
+    }
+
+    /// Indicates if the sound is paused.
+    public private(set) var paused: Bool = false
 
     // MARK: - Prepare sound
 
@@ -180,7 +210,8 @@ open class Sound {
     ///
     /// - Returns: True if the sound has been prepared, false in case of error
     @discardableResult public func prepare() -> Bool {
-        return players[counter].prepare()
+        let nextIndex = (counter + 1) % players.count
+        return players[nextIndex].prepareToPlay()
     }
 
     // MARK: - Convenience static methods
@@ -228,7 +259,7 @@ open class Sound {
     /// Duration of the sound.
     public var duration: TimeInterval {
         get {
-            return self.players[counter].duration
+            return players[counter].duration
         }
     }
 
@@ -264,7 +295,7 @@ open class Sound {
 
     // MARK: - Private helper method
     private static func url(for file: String, fileExtension: String? = nil) -> URL? {
-        return Bundle.main.url(forResource: file, withExtension: fileExtension)
+        return soundsBundle.url(forResource: file, withExtension: fileExtension)
     }
 
 }
@@ -283,8 +314,14 @@ public protocol Player: class {
     /// Stop playing the sound.
     func stop()
 
+    /// Pause current playback.
+    func pause()
+
+    /// Resume playing.
+    func resume()
+
     /// Prepare the sound.
-    func prepare() -> Bool
+    func prepareToPlay() -> Bool
 
     /// Create a Player for sound url.
     ///
@@ -296,6 +333,9 @@ public protocol Player: class {
 
     /// Sound volume.
     var volume: Float { get set }
+
+    /// Indicates if the player is currently playing.
+    var isPlaying: Bool { get }
 }
 
 fileprivate var associatedCallbackKey = "com.moonlightapps.SwiftySound.associatedCallbackKey"
@@ -304,10 +344,6 @@ public typealias PlayerCompletion = ((Bool) -> ())
 
 extension AVAudioPlayer: Player, AVAudioPlayerDelegate {
 
-    public func prepare() -> Bool {
-        return prepareToPlay()
-    }
-
     public func play(numberOfLoops: Int, completion: PlayerCompletion?) -> Bool {
         if let cmpl = completion {
             objc_setAssociatedObject(self, &associatedCallbackKey, cmpl, .OBJC_ASSOCIATION_COPY_NONATOMIC)
@@ -315,6 +351,10 @@ extension AVAudioPlayer: Player, AVAudioPlayerDelegate {
         }
         self.numberOfLoops = numberOfLoops
         return play()
+    }
+
+    public func resume() {
+        play()
     }
 
     public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
@@ -332,11 +372,11 @@ extension AVAudioPlayer: Player, AVAudioPlayerDelegate {
 
 #if os(iOS) || os(tvOS)
 /// Session protocol. It duplicates `setCategory` method of `AVAudioSession` class.
-public protocol Session: class {
+public protocol Session: AnyObject {
     /// Set category for session.
     ///
     /// - Parameter category: category.
-    func setCategory(_ category: String) throws
+    func setCategory(_ category: AVAudioSession.Category) throws
 }
 
 extension AVAudioSession: Session {}
