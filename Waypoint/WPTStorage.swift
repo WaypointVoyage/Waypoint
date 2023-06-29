@@ -10,7 +10,10 @@ import Foundation
 import SpriteKit
 
 class WPTStorage {
-    
+    private static let version = "1.1"
+    private let jsonEncoder = JSONEncoder()
+    private let jsonDecoder = JSONDecoder()
+
     let highScorePath: String
     let playerProgressPath: String
     let globalSettingsPath: String
@@ -18,9 +21,9 @@ class WPTStorage {
     init() {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
         let documentsDirectory = paths[0] as! NSString
-        highScorePath = documentsDirectory.appendingPathComponent("high_scores.plist")
-        playerProgressPath = documentsDirectory.appendingPathComponent("player_progress.plist")
-        globalSettingsPath = documentsDirectory.appendingPathComponent("global_settings.plist")
+        highScorePath = documentsDirectory.appendingPathComponent("high_scores.\(WPTStorage.version).json")
+        playerProgressPath = documentsDirectory.appendingPathComponent("player_progress.\(WPTStorage.version).json")
+        globalSettingsPath = documentsDirectory.appendingPathComponent("global_settings.\(WPTStorage.version).json")
     }
     
     func deleteHighScores() {
@@ -45,7 +48,12 @@ class WPTStorage {
     
     func savePlayerProgress(_ progress: WPTPlayerProgress) {
         NSLog("Saving PlayerProgress")
-        self.archiveObject(data: progress, path: self.playerProgressPath)
+        do {
+            let data = try jsonEncoder.encode(progress)
+            try data.write(to: URL(fileURLWithPath: playerProgressPath))
+        } catch let error {
+            NSLog("ERROR: WPTStorage failed to save player progress: \(String(describing: error))")
+        }
     }
     
     func deletePlayerProgress() {
@@ -70,21 +78,34 @@ class WPTStorage {
     
     func loadPlayerProgress() -> WPTPlayerProgress? {
         NSLog("Loading Player Progress")
-        if let asPlayerProgress : WPTPlayerProgress = self.unarchiveObject(path: playerProgressPath) {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: playerProgressPath))
+            let asPlayerProgress = try jsonDecoder.decode(WPTPlayerProgress.self, from: data)
             return asPlayerProgress
+        } catch let error {
+            NSLog("ERROR: WPTStorage failed to load player progress: \(String(describing: error))")
         }
         return nil
     }
     
     func saveGlobalSettings() {
         NSLog("Saving global settings")
-        self.archiveObject(data: WPTAudioConfig.audio, path: self.globalSettingsPath)
+        do {
+            let data = try jsonEncoder.encode(WPTAudioConfig.audio)
+            try data.write(to: URL(fileURLWithPath: globalSettingsPath))
+        } catch let error {
+            NSLog("ERROR: WPTStorage failed to save global settings: \(String(describing: error))")
+        }
     }
     
     func loadGlobalSettings() -> WPTAudioConfig? {
         NSLog("Loading global settings")
-        if let asGlobalSettings : WPTAudioConfig = self.unarchiveObject(path: globalSettingsPath) {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: globalSettingsPath))
+            let asGlobalSettings = try jsonDecoder.decode(WPTAudioConfig.self, from: data)
             return asGlobalSettings
+        } catch let error {
+            NSLog("ERROR: WPTStorage failed to load global settings: \(String(describing: error))")
         }
         return nil
     }
@@ -100,8 +121,12 @@ class WPTStorage {
     }
     
     func loadHighScores() -> [WPTLootSummary] {
-        if let asArray: [WPTLootSummary] = self.unarchiveArray(path: highScorePath) {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: highScorePath))
+            let asArray = try jsonDecoder.decode([WPTLootSummary].self, from: data)
             return asArray.sorted()
+        } catch let error {
+            NSLog("ERROR: WPTStorage failed to load high scores: \(String(describing: error))")
         }
         return [WPTLootSummary]()
     }
@@ -115,38 +140,13 @@ class WPTStorage {
             if extra > 0 {
                 scores.removeLast(extra)
             }
-            self.archiveObject(data: scores, path: highScorePath)
-        }
-    }
 
-    private func archiveObject(data: Any, path: String) {
-        do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: data, requiringSecureCoding: false)
-            try data.write(to: URL(fileURLWithPath: path))
-        } catch let error {
-            NSLog("Error: WPTStorage failed to archive object: \(error.localizedDescription)")
-        }
-    }
-
-    private func unarchiveObject<T: NSObject & NSCoding>(path: String) -> T? {
-        do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            let result = try NSKeyedUnarchiver.unarchivedObject(ofClass: T.self, from: data)
-            return result
-        } catch let error {
-            NSLog("Error: WPTStorage failed to unarchive object: \(error.localizedDescription)")
-            return nil
-        }
-    }
-
-    private func unarchiveArray<T: NSObject & NSSecureCoding>(path: String) -> [T]? {
-        do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            let result = try NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: T.self, from: data)
-            return result
-        } catch let error {
-            NSLog("Error: WPTStorage failed to unarchive object: \(error.localizedDescription)")
-            return nil
+            do {
+                let data = try jsonEncoder.encode(scores)
+                try data.write(to: URL(fileURLWithPath: highScorePath))
+            } catch let error {
+                NSLog("ERROR: WPTStorage failed to submit score: \(String(describing: error))")
+            }
         }
     }
 }
